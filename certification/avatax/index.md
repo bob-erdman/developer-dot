@@ -47,6 +47,9 @@ doctype: certification
 		    <div class="col-sm-2">
 		      <a href="communication-badge"><img src="/public/images/devdot/badges/COMMS.svg" class="img-responsive" alt="Communications Badge"></a>
 		    </div>
+		    <div class="col-sm-2">
+		      <a href="extractor-badge"><img src="/public/images/devdot/badges/Extractor.svg" class="img-responsive" alt="Extractor Badge"></a>
+		    </div>
 		</div>
      </div>
  </div>
