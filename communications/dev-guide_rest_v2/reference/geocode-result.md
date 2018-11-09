@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.25 - Geocode Result
+title:  Chapter 5.3.5 - Geocode Result
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference

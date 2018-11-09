@@ -70,7 +70,7 @@ You can also encode a plaintext string to Base64 in <b>Windows Powershell</b> us
 
 <h3>Optional Headers</h3>
 
-Our tax engine allows for additional customization when calculating taxes through <b>Client Profiles</b>. For details about how Client Profiles work, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>.  For now, just know that you can pass an additional header to use a specific profile:
+Our tax engine allows for additional customization when calculating taxes through <b>client profiles</b>. For details about how client profiles work, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>.  For now, just know that you can pass an additional header to use a specific profile:
 
 <div class="mobile-table">
   <table class="styled-table">

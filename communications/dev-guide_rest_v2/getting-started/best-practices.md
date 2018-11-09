@@ -98,7 +98,7 @@ The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-unc
     <li>All committed transactions are locked at the end of the month and can't be uncommitted or changed</li>
 </ul>
 
-<h3>Flexibility for the Future</h3>
+<h3 id="flexibility">Flexibility for the Future</h3>
 Pass the <code>client_id</code> and <code>client_profile_id</code> in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/">header</a>.
 <ul class="dev-guide-list">
     <li>Passing the <code>client_id</code> and <code>client_profile_id</code> fields allows for future support of multiple profiles and clients</li>
