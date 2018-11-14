@@ -261,7 +261,7 @@ As you can see, the response can be quite lengthy, because we try to send back e
 Here are all 8 options for the `$include` query string:
 
 <ul class="normal">
-    <li>`Lines`</li>
+    <li>Lines</li>
     <li>Details</li>
     <li>Summary</li>
     <li>Addresses</li>
