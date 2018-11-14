@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using $include with CreateTransaction
-description: How can you determine the rate for a line on an invoice?
+description: How to use $include with the CreateTransaction endpoint
 date: 2018-11-14 12:00
 author: Genevieve Conty
 comments: true
