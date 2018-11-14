@@ -11,12 +11,14 @@ doctype: blog
 disqus: 1
 ---
 
-The CreateTransaction endpoint is one of our most used endpoints, so we’ve baked in a certain flexibility to allow our users to makes sure they get the exact information they need to continue making accurate and well-informed tax calculations. How did we do this? Our team built the `$include` parameter to help you unearth the information you need. Now the question is: how do you actually make use of this parameter?
+The CreateTransaction endpoint is one of our most used endpoints, so we’ve baked in a certain flexibility to allow our users to ensure they get the exact information they need. How did we do this? Our team built the `$include` parameter to help you pinpoint data you'll use in your calculations. Now the question is: how do you actually make use of this parameter?
 
-<details> 
-  <summary>First, let’s start with an example of an unedited response from the CreateTransaction endpoint: </summary>
-
-```json
+First, let’s start with an example of an unedited response from the CreateTransaction endpoint:
+<div class="panel-group">
+  <a data-toggle="collapse" href="#response1">Click here to view a CreateTransaction response</a>
+  <div id="response1" class="panel-collapse collapse">
+    <div class="panel-body">
+{% highlight json %}
 {
     "id": 6783815606,
     "code": "ec52444f-1eda-4df4-b6ff-279efe984160",
@@ -248,19 +250,18 @@ The CreateTransaction endpoint is one of our most used endpoints, so we’ve bak
     ],
     "parameters": {}
 }
-```
-
-</details>
-
-
-As you can see, the response can be quite lengthy, because we try to send back everything that might be useful. However, you might not need every single line of this response every time you call this endpoint. That’s exactly where the `$include` parameter comes into play. If you find you only need some of this information, you can tailor your response to fit your needs. 
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+As you can see, the response can be quite lengthy, because we try to send back everything that might be useful. However, you might not need every line of the standard response for each call you make. That’s exactly where the `$include` parameter comes into play. If you find you only need some of this information, you can tailor your response to fit your needs. 
 
 <h2>So, what are the options?</h2>
 
 Here are all 8 options for the `$include` query string:
 
 <ul class="normal">
-    <li>Lines</li>
+    <li>`Lines`</li>
     <li>Details</li>
     <li>Summary</li>
     <li>Addresses</li>
@@ -273,10 +274,10 @@ Here are all 8 options for the `$include` query string:
 When you build your query string, you can use any combination of the above, but be sure to separate them with commas! 
 
 <h2>What are these options for?</h2>
-These options specify what you want included in your response. The REST API can be verbose in it’s responses which is great for accuracy and understanding. However, if you find you only need a certain object to do you calculations, you can tell the api to respond with only what you need.
+These options specify what you want included in your response. The REST API can be verbose in it’s responses which is great for accuracy and understanding. However, if you find you only need a certain object to do your calculations, you can tell the api to respond with only what you need.
 
 <h3>Lines</h3>
-Each transaction can have multiple lines items detailing the various items involved. The lines object array will give you each line involved in the transaction. Each line focuses will have information like item cost, item quantity, tax codes, total tax and more. 
+Each transaction can have multiple lines items detailing the various items involved. The `lines` object array will give you each line involved in the transaction. Each line will have information like item cost, item quantity, tax codes, total tax and more. 
 
 Here is a truncated example of the lines object array:
 ```json
