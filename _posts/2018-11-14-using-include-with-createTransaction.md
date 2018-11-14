@@ -271,7 +271,7 @@ Here are all 8 options for the `$include` query string:
     <li>TaxDetailsByTaxType</li>
 </ul>
 
-When you build your query string, you can use any combination of the above, but be sure to separate them with commas! 
+When you build your query string, you can use any combination of the above, but be sure to separate them with commas! Here's an example query string: `$include=Lines,Addresses,TaxDetailsByTaxType`.
 
 <h2>What are these options for?</h2>
 These options specify what you want included in your response. The REST API can be verbose in it’s responses which is great for accuracy and understanding. However, if you find you only need a certain object to do your calculations, you can tell the api to respond with only what you need.
@@ -414,7 +414,7 @@ The addresses object array will contain any of the shipping locations involved. 
 ```
 
 <h3>ForceTimeout</h3>
-As the name implies, this option will force a timeout which will simply result in an empty object: `{ }`.  
+As the name implies, this option will force a timeout which will simply result in an empty object: `{ }`. This option can be particularly useful for testing integration and a full response is not necessary. 
 
 <h3>TaxDetailsByTaxType</h3>
 With this object array, you can expect to see things like aggregated tax, non-taxable totals, exempt tax totals and more for each tax type in the summary. Here is a quick example of the `TaxDetailsByTaxType` object array:
