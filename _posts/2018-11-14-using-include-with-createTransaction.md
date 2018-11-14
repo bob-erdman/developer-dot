@@ -414,7 +414,7 @@ The addresses object array will contain any of the shipping locations involved. 
 ```
 
 <h3>ForceTimeout</h3>
-As the name implies, this option will force a time out which will simply result in an empty object `{ }`.  
+As the name implies, this option will force a timeout which will simply result in an empty object: `{ }`.  
 
 <h3>TaxDetailsByTaxType</h3>
 With this object array, you can expect to see things like aggregated tax, non-taxable totals, exempt tax totals and more for each tax type in the summary. Here is a quick example of the `TaxDetailsByTaxType` object array:
@@ -431,6 +431,6 @@ With this object array, you can expect to see things like aggregated tax, non-ta
 ```
 
 <h2>Want to give it a try?</h2>
-On the CreateTransaction page, you can test out the `$include` feature with some sample data. For the `$include` input, put any combination of filters separated by commas and press submit. You’ll see the full output for the CreateTransaction endpoint, so you know what to expect before you test out your own code.
+On the [CreateTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) page, you can test out the `$include` feature with some sample data. For the `$include` input, put any combination of filters separated by commas and press submit. You’ll see the full output for the CreateTransaction endpoint, so you know what to expect before you test out your own code.
 
 You can also find links to our swagger in addition to more information about the capabilities of the `CreateTransaction` endpoint. If you can’t find the answer you are looking for, don’t hesitate to comment below!
