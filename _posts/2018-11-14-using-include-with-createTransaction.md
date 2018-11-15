@@ -2,7 +2,7 @@
 layout: post
 title: Using $include with CreateTransaction
 description: How to use $include with the CreateTransaction endpoint
-date: 2018-11-14 12:00
+date: 2018-11-15 12:00
 author: Genevieve Conty
 comments: true
 categories: avatax
