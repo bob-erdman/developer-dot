@@ -11,14 +11,16 @@ Some web clients (such as cURL for Windows) will require you to download the Ava
 
 <h4>Root Certificate (directly from the CA)</h4>
 <ol>
-	<li>Go to <a href="https://www.digicert.com/digicert-root-certificates.htm">Root Certificate CA</a> and follow the instructions.</li>
+	<li>Go to <a href="https://www.digicert.com/digicert-root-certificates.htm">Root Certificate CA</a>.</li>
+	<li>Download the  "DigiCert Global Root G2" certificate.</li>
 	<li>Save the file in your preferred directory named like "root-certs-ca-bundle.crt".</li>
 	<li>Register that file following your standard certificate store process.</li>
 </ol>
 
 <h4>Intermediate Certificate (directly from the CA)</h4>
 <ol>
-	<li>Go to <a href="https://www.digicert.com/digicert-root-certificates.htm#intermediates">Intermediate Certificate CA</a> and follow the instructions.</li>
+	<li>Go to <a href="https://www.digicert.com/digicert-root-certificates.htm#intermediates">Intermediate Certificate CA</a>.</li>
+	<li>Download the "GeoTrust TLS RSA CA G1" certificate.</li>
 	<li>Save the file in your preferred directory named like "intermiediate-certs-ca-bundle.crt".</li>
 	<li>Register that file following your standard certificate store process.</li>
 </ol>
