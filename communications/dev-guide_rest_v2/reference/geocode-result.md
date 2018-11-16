@@ -39,7 +39,7 @@ The <code>geocodeResult</code> object contains a list of <b>geocoding results</b
         </tr>
         <tr>
             <td><code>cBlk</code></td>
-            <td><code>[int]</code> Census Block</td>
+            <td><code>[int]</code> Census Block Group</td>
         </tr>
         <tr>
             <td><code>cTrc</code></td>
