@@ -46,7 +46,7 @@ These items must appear in your request header:
 
 The <code>api_key</code> is your Customer Portal "username:password" encoded in Base64.  For example, if your username is <code>first.last@avalara.com</code> and your password is <code>secretpassword!</code>, your <code>api_key</code> is <code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE=</code>.
 
-The <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Communications REST v2 Swagger page</a> automatically generates your api_key for you.  To generate the api_key on the <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Swagger</a> page:
+The <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTax">Communications REST v2 Swagger page</a> automatically generates your api_key for you.  To generate the api_key on the <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Swagger</a> page:
 <ol class="dev-guide-list">
   <li>Enter your username in the <code>email address</code> field.</li>
   <li>Enter your password in the <code>password</code> field.</li>

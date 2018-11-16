@@ -42,6 +42,8 @@ Some differences between Sandbox and Production:
 </ol>
 
 <h3 id="endpoints">Endpoints</h3>
+Check out <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTax/">Swagger</a>!
+
 <h4 id="healthcheck">Healthcheck</h4>
 <div class="mobile-table">
   <table class="styled-table">
