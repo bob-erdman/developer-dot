@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chapter 1.4 - Best Practices
+title: Chapter 1.5 - Best Practices
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: getting-started
@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started/demo-app/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/calculate-taxes/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -108,6 +108,6 @@ Pass the <code>client_id</code> and <code>client_profile_id</code> in the <a cla
 
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started/demo-app/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/calculate-taxes/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
