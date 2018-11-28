@@ -5,10 +5,10 @@
   mass: 2.5
   unit: Kilogram
   checked: checked
-  hsCodeToUs: 9506290080
-  hsCodeToBr: somethingBr
-  hsCodeToUk: somethingUk
-  hsCodeToIn: somethingIn
+  hsCodeToUs: 1806101500
+  hsCodeToBr: 18062000
+  hsCodeToUk: 1806201090
+  hsCodeToIn: 18062000
   isPhysical: true
 - name: Pre-packaged Sushi
   taxCode: PF160024
