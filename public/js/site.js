@@ -678,6 +678,8 @@ $(document).ready(function() {
     fixDropDownMenuLargePosition();
 
     var sections = document.getElementsByClassName("accordion");
+    console.log('SECTIONS', sections);
+    
     for (let i = 0; i < sections.length; i++) {
         sections[i].addEventListener("click", function() {
             // Toggle between adding and removing the "active" class,
@@ -686,6 +688,7 @@ $(document).ready(function() {
 
             // Toggle between hiding and showing the active panel
             var panel = this.nextElementSibling;
+            console.log('PANEL', panel)
             if (panel.style.display === "block") {
                 panel.style.display = "none";
             } else {

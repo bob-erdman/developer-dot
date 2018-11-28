@@ -1,0 +1,42 @@
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500);
+
+    .tm10 { margin-top: 10px; }
+    .mb20 { margin-bottom: 20px; }
+    .p5 { padding: 5px;}
+    
+
+
+    button:hover { background-color: #059bd2 }
+    label {  line-height: 1.4rem;  }
+    input, textarea { padding: 2px 4px 2px 4px; max-width: 270px; width: 100%; }
+    select { max-width: 270px; width: 100%; }
+    input, label, select, textarea, button { font-family: "Source Sans Pro", sans-serif; font-size: 14px; color: #72767e; }
+    button { background-color: #027fad; color: white; padding: 6px; cursor: pointer; }
+    .inverted_button { color: #027fad !important; background-color: white !important; padding: 6px; border: 1px solid #027fad; }
+    // TODO: remove important
+    .accordion {
+        color: #027fad !important;
+        background-color: white;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        text-decoration: underline;
+    }
+    .active, .accordion:hover {
+        background-color: white !important;;
+    }
+
+    .panel {
+        padding: 0px 10px;
+        margin-bottom: 10px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        border-bottom: 1px solid #ccc;
+    }
