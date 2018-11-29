@@ -672,6 +672,164 @@ function accordionTrigger(currentElementId, nextElementId) {
 }
 /***************** END GENERAL Functions *******************************/
 
+/************************************************************************
+**   CERTCAPTURE Demo Page Functions
+************************************************************************/
+
+function init_api()
+{
+
+    if ( document.getElementById( 'gencert_url' ).value == "" ) {
+        alert( 'Enter a GenCert URL.' );
+        return;
+    }
+
+    var sel  = document.getElementById( "set_zone" );
+    var zone = sel.options[ sel.selectedIndex ].text;
+    var form_element = document.getElementById( 'form_container' );
+    form_element.className = "";
+    var randomString = Math.random().toString(36).substring(7);
+
+    if ( document.getElementById( 'client_id' ).value != "" ) {
+
+        if ( document.getElementById( 'key' ).value == "" ) {
+            alert( 'Enter a gencert key.' );
+            return;
+        }
+
+        if ( document.getElementById( 'customer_number' ).value == "" ) {
+            alert( 'Enter a customer number.' );
+            return;
+        }
+
+        var script = document.createElement( 'script' );
+        script.onload = function () {
+
+            GenCert.init(form_element,
+                {
+                    customer_number: document.getElementById( 'customer_number' ).value,
+                    ship_zone: zone
+                });
+            set_options();
+
+        };
+        script.src = document.getElementById( 'gencert_url' ).value + "/Gencert2/js?cid=" + document.getElementById( 'client_id' ).value + "&key=" + document.getElementById( 'key' ).value+'&'+randomString;
+        document.head.appendChild( script );
+    }
+    else if ( document.getElementById( 'token' ).value != "" ) {
+        var script = document.createElement( 'script' );
+        script.onload = function () {
+
+            GenCert.init(form_element,
+                {
+                    token: document.getElementById( 'token' ).value,
+                    ship_zone: zone
+                });
+            set_options();
+
+        };
+        script.src = document.getElementById( 'gencert_url' ).value + "/Gencert2/js"+'&'+randomString;
+        document.head.appendChild( script );
+    }
+    else {
+        alert( 'Please provide some information to get started.' );
+    }
+
+    function set_options() {
+        GenCert.__setOption( 'edit_purchaser', document.getElementById( 'edit_purchaser' ).checked );
+        GenCert.__setOption( 'show_files', document.getElementById( 'show_files' ).checked );
+        GenCert.__setOption( 'submit_to_stack', document.getElementById( 'submit_to_stack' ).checked );
+        GenCert.__setOption( 'preview', document.getElementById( 'preview' ).checked );
+        GenCert.__setOption( 'upload_only', document.getElementById( 'upload_only' ).checked );
+        GenCert.__setOption( 'fill_only', document.getElementById( 'fill_only' ).checked );
+        GenCert.__setOption( 'customer_list', document.getElementById( 'customer_list' ).checked );
+        GenCert.__setOption( 'append_barcode', document.getElementById( 'append_barcode' ).checked );
+        GenCert.__setOption( 'upload_form_unavailable', document.getElementById( 'upload_form_unavailable' ).checked );
+
+        GenCert.show();
+        document.getElementById( 'gencert_test' ).style.display = 'none';
+        document.getElementById( 'divider' ).style.display = 'none';
+        document.getElementById( 'script_test' ).style.display = 'none';
+    }
+}
+
+function init_script() {
+
+    if ( document.getElementById( 'gencert_url_script' ).value == "" ) {
+        alert( 'Enter a GenCert URL.' );
+        return;
+    }
+
+    if ( document.getElementById( 'sample_script' ).value == "" ) {
+        alert( 'Enter some valid javascript.' );
+        return;
+    }
+
+    var script = document.createElement( 'script') ;
+    script.onload = function () {
+      
+        try {
+            eval( document.getElementById( 'sample_script' ).value );
+        } 
+        catch ( e ) {
+            if ( e instanceof SyntaxError ) {
+                alert( e.message );
+            }
+        }
+        document.getElementById( 'gencert_test' ).style.display = 'none';
+        document.getElementById( 'divider' ).style.display      = 'none';
+        document.getElementById( 'script_test' ).style.display  = 'none';
+        
+    };
+    
+    // TODO: add random string to end
+    script.src = document.getElementById( 'gencert_url_script' ).value + "/Gencert2/js";
+    document.head.appendChild( script );
+}
+
+function get_token() {
+
+    if ( document.getElementById( 'api_url' ).value == "" ||  
+         document.getElementById( 'api_user' ).value == "" || 
+         document.getElementById( 'api_password' ).value == "" || 
+         document.getElementById( 'token_client_id' ).value == "" || 
+         document.getElementById( 'token_customer_number' ).value == "" ) {
+             alert( 'You must provide all values to retrieve a token.' );
+             return;
+    }
+  
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if ( xmlhttp.readyState == XMLHttpRequest.DONE ) {
+            if ( xmlhttp.status == 200 && xmlhttp.responseText !== "" ) {
+
+
+                var response = JSON.parse( xmlhttp.responseText );
+                if ( response.success == false ) {
+                    alert( response.error );
+                }
+                else {
+                    alert( 'Token successfully generated.' );
+                    document.getElementById( "token" ).value = response.response.token;
+                }
+            }
+            else  {
+                alert( 'Failed to generate a token.' );
+            }
+        }
+    };
+
+    xmlhttp.open( "POST", 'callapi.php', true );
+    xmlhttp.setRequestHeader( 'api-url', document.getElementById('api_url').value + '/v2/auth/get-token' );
+    xmlhttp.setRequestHeader( 'x-customer-number', document.getElementById('token_customer_number').value );
+    xmlhttp.setRequestHeader( 'x-client-id', document.getElementById('token_client_id').value );
+    xmlhttp.setRequestHeader( 'api-user', document.getElementById('api_user').value );
+    xmlhttp.setRequestHeader( 'api-password', document.getElementById('api_password').value );
+    xmlhttp.send();
+}
+
+/***************** END CERTCAPTURE Functions *******************************/
+
 
 $(document).ready(function() {
     fixApiRefNav();
