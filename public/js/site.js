@@ -1,3 +1,5 @@
+var isIntlTransaction = false;
+
 var fixApiRefNav = function() {
     if ($('#the-nav li').length >= 22) {
         $('#the-nav').data('offset-bottom', '160');
@@ -32,19 +34,29 @@ function getCompareDate() {
 // HELPER: build lines with correct template for given language
 function lineBuilder(reqType) {
     let lines = reqType === 'JSON' ? [] : ``;
-    
+    let hsCode = '';
     let lineNum = 1;
     const allProducts = $('input[type=checkbox][name=product]:checked');
     
+   
+
     // build line for each selected products
     allProducts.each(function () {
         const taxCode = $(this).val();
         const amount = $('#' + $(this).attr('id') + '-amount').val();
         const description = $(this).attr('description');
 
+        // If this is an international transaction, get the appropriate HS Code
+        // for the destination country.
+        if(isIntlTransaction) {
+            //hsCode = 
+        }
+
         // pick the correct line template
         switch (reqType) {
             case 'JSON':
+                
+
                 lines.push({
                     "number": lineNum,
                     "amount": amount,
@@ -158,6 +170,7 @@ function addressBuilder(reqType, addressName, prefix) {
 // HELPER: check if shipFrom address is selected
 function shipFromChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
+    isIntlTransaction = checked && ($('input[type=radio][name=srcAddress]:checked')[0].attributes['country'].value != $('input[type=radio][name=address]:checked')[0].attributes['country'].value);
     return checked;
 }
 

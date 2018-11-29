@@ -23,10 +23,10 @@
   taxCode: DM040200
   inputId: p3c
   value: 0.99
-  hsCodeToUs: 9506290080
-  hsCodeToBr: somethingBr
-  hsCodeToUk: somethingUk
-  hsCodeToIn: somethingIn
+  hsCodeToUs: 
+  hsCodeToBr: 
+  hsCodeToUk: 
+  hsCodeToIn: 
   isPhysical: false
 - name: Baseball Bat
   taxCode: PC040400
@@ -50,10 +50,10 @@
   taxCode: SA090700
   inputId: p6c
   value: 89.99
-  hsCodeToUs: 9506290080
-  hsCodeToBr: somethingBr
-  hsCodeToUk: somethingUk
-  hsCodeToIn: somethingIn
+  hsCodeToUs: 
+  hsCodeToBr: 
+  hsCodeToUk: 
+  hsCodeToIn: 
   isPhysical: false
 - name: Shipping
   taxCode: FR010000

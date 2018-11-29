@@ -93,7 +93,7 @@ doctype: use_cases
                         <!-- loop thru addresses -->
                         {% for address in site.data.demo_page.addresses %}
                             <label class="demo-label-container">
-                                <input name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
+                                <input name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}" country="{{ address.country }}"/>
                                 <span class="demo-label"> {{ address.city }}</span>
                                 <br>
                                 <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
@@ -143,7 +143,7 @@ doctype: use_cases
                         <!-- loop thru addresses -->
                         {% for address in site.data.demo_page.addresses %}
                             <label class="demo-label-container">
-                                <input name="srcAddress" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
+                                <input name="srcAddress" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}" country="{{ address.country }}"/>
                                 <span class="demo-label"> {{ address.city }}</span>
                                 <br>
                                 <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
