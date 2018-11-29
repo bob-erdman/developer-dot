@@ -24,15 +24,15 @@ doctype: overview
             <h3>Step 1: Enter your customer info (Required)</h3>
             <div>
                 <input id="token" placeholder="Token *" type="text">
-                <input id="api_url" class="tm10" placeholder="API URL" placeholder="https://beta-api.certcapture.com/v2/auth/get-token" value="http://dev.api.certcapture.com/v2/auth/get-token" type="text">
+                <input id="api_url" class=" " placeholder="API URL" placeholder="https://beta-api.certcapture.com/v2/auth/get-token" value="http://dev.api.certcapture.com/v2/auth/get-token" type="text">
             </div>
             <div>
-                <input id="api_user" class="tm10" placeholder="API User Name" type="text">
-                <input id="api_password" class="tm10" placeholder="API Password" type="password">
+                <input id="api_user" class="" placeholder="API User Name" type="text">
+                <input id="api_password" class="" placeholder="API Password" type="password">
             </div>
             <div>
-                <input id="token_client_id" class="tm10" placeholder="Client ID" type="text">
-                <input id="token_customer_number" class="tm10" placeholder="Customer Number" type="text">
+                <input id="token_client_id" class="" placeholder="Client ID" type="text">
+                <input id="token_customer_number" class="" placeholder="Customer Number" type="text">
             </div>
             <button class="btn btn-primary" style="margin-top: 10px;" onclick="get_token()">Get Token</button>
             <!-- option -->
@@ -91,7 +91,7 @@ doctype: overview
         <!-- response output -->
         <div class="col-md-9">
             <h3 style="">Step 3: Load your example response</h3>
-            <div id="script_test" class="p5">
+            <div id="script_test" class="  ">
                 <div id="sample_script" class="code-snippet respScroll api-console-output" style="height: 400px;">
                     <div class="loading-pulse" style="display: none;"></div>
                     <pre id="demo-console-output" style="height: 400px">{ }</pre>
@@ -101,68 +101,6 @@ doctype: overview
         </div>
     </div>
     <hr style="margin: 20px 0px 20px 0px" id="divider">
-    <!-- V2 section -->
-    <div class="row">
-        <h3>Step 1: Enter your customer info (Required)</h3>
-        <div class="" style="">
-            <input id="client_id" class="" placeholder="Client ID *" type="text">
-            <input id="key" class="" placeholder="GenCert Key *" type="text">
-            <input id="customer_number" placeholder="Customer Number *" type="text">
-        </div>
-        <!-- option -->
-        <!-- TODO: make data file, do for loop for this -->
-        <h3>Step 2: Select your options</h3>
-        <div class="" style="">
-            <ul id="test_options">
-                <li>
-                    <label>
-                        <input type='checkbox' id="edit_purchaser">Edit Purchaser
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="show_files">Show Files
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="submit_to_stack">Submit To Stack
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="preview">Preview
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="upload_only">Upload Only
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="fill_only">Fill Only
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="customer_list">Customer List
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="append_barcode">Append Barcode
-                    </label> 
-                </li>
-                <li>
-                    <label>
-                        <input type='checkbox' id="upload_form_unavailable">Upload If Form Unavailable
-                    </label>
-                </li>
-            </ul>
-        </div>
-        <button class="btn btn-primary" id="gencert2_button" style="margin-top: 10px; display: block;" onclick="init_api();">Load script</button>
-    </div>
 </div>
 
 <!-- Form ouput -->
