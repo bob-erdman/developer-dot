@@ -35,10 +35,10 @@ function getCompareDate() {
 function lineBuilder(reqType) {
     let lines = reqType === 'JSON' ? [] : ``;
     let hsCode = '';
+    let mass = '';
+    let unit = '';
     let lineNum = 1;
-    const allProducts = $('input[type=checkbox][name=product]:checked');
-    
-   
+    const allProducts = $('input[type=checkbox][name=product]:checked');   
 
     // build line for each selected products
     allProducts.each(function () {
@@ -49,20 +49,52 @@ function lineBuilder(reqType) {
         // If this is an international transaction, get the appropriate HS Code
         // for the destination country.
         if(isIntlTransaction) {
-            //hsCode = 
+            let destCountry = $('input[type=radio][name=address]:checked')[0].attributes['country'].value;
+            hsCode = $(this).attr('hsCodeTo'+ destCountry);
+            mass = $(this).attr('mass');
+            unit = $(this).attr('unit');
         }
 
         // pick the correct line template
         switch (reqType) {
             case 'JSON':
-                
-
-                lines.push({
+                let o ={
                     "number": lineNum,
                     "amount": amount,
                     "taxCode": taxCode,
-                    "description": description
-                });
+                    "description": description                    
+                };
+                if (hsCode.length) {
+                    Object.assign(o, {
+                        "hsCode": hsCode,
+                        "parameters": {
+                            "mass": mass,
+                            "mass.UOM": unit
+                        }
+                    })
+                }
+                lines.push(o);
+                // if(hsCode.length > 0) {
+                //     lines.push({
+                //         "number": lineNum,
+                //         "amount": amount,
+                //         "taxCode": taxCode,
+                //         "description": description,
+                //         "hsCode": hsCode,
+                //         "parameters": {
+                //             "mass": mass,
+                //             "mass.UOM": unit
+                //         }
+                //     });
+                // }
+                // else {
+                //     lines.push({
+                //         "number": lineNum,
+                //         "amount": amount,
+                //         "taxCode": taxCode,
+                //         "description": description                    
+                //     });
+                // }
                 break;
             case 'JS':
             case 'Ruby':
@@ -170,7 +202,9 @@ function addressBuilder(reqType, addressName, prefix) {
 // HELPER: check if shipFrom address is selected
 function shipFromChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
-    isIntlTransaction = checked && ($('input[type=radio][name=srcAddress]:checked')[0].attributes['country'].value != $('input[type=radio][name=address]:checked')[0].attributes['country'].value);
+    isIntlTransaction = checked && 
+        ($('input[type=radio][name=srcAddress]:checked')[0].attributes['country'].value != 
+            $('input[type=radio][name=address]:checked')[0].attributes['country'].value);
     return checked;
 }
 

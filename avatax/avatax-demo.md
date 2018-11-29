@@ -120,8 +120,8 @@ doctype: use_cases
                         <!-- loop thru products -->
                         {% for product in site.data.demo_page.products %}
                             <label class="demo-label demo-label-container">
-                                <input value="{{ product.taxCode }}" name="product" id="{{ product.inputId }}" type="checkbox" description="{{ product.name }}" hsCodeToUs="{{ product.hsCodeToUs }}" hsCodeToUk="{{ product.hsCodeToUk }}" hsCodeToBr="{{ product.hsCodeToBr }}" hsCodeToIn="{{ product.hsCodeToIn }}" class="demo-radio" {{ product.checked }}/>
-                                <input value="{{ product.value }}" type="text" id="{{ product.inputId }}-amount" style="width: 50px;">
+                                <input value="{{ product.taxCode }}" name="product" id="{{ product.inputId }}" type="checkbox" description="{{ product.name }}" hsCodeToUs="{{ product.hsCodeToUs }}" hsCodeToUk="{{ product.hsCodeToUk }}" hsCodeToBr="{{ product.hsCodeToBr }}" hsCodeToIn="{{ product.hsCodeToIn }}" mass="{{ product.mass }}" unit="{{ product.unit }}"  class="demo-radio" {{ product.checked }}/>
+                                <input value="{{ product.value }}" type="text" id="{{ product.inputId }}-amount"  style="width: 50px;">
                                 <span class="demo-label"> {{ product.name }} 
                                 {% if product.subLabel %}
                                     <i>{{ product.subLabel }}</i>
