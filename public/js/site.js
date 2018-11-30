@@ -199,6 +199,7 @@ function jsonSampleData() {
     const shipToAddress = addressBuilder('JSON', 'address');
     let address;
     let sampleData;
+    let today = new Date();
 
     // check if there is a shipTo address selected
     if(shipFromSelected) {
@@ -219,7 +220,7 @@ function jsonSampleData() {
         "lines": lineBuilder('JSON'),
         "type": "SalesOrder",
         "companyCode": "DEMOPAGE",
-        "date": "2018-09-05",
+        "date": today.toISOString().split('T')[0], 
         "customerCode": "ABC",
         "addresses": address
     };
