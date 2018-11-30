@@ -65,41 +65,22 @@ function lineBuilder(reqType) {
                     "description": description                    
                 };
                 
+                // Add HS Code if applicable.
                 if (hsCode.length) {
                     Object.assign(o, {
                         "hsCode": hsCode
                     });
                 }
 
+                // Add Mass and UOM if applicable.
                 if (mass.length && unit.length) {
                     o["parameters"] = {
-                        "mass": mass,
-                        "mass.UOM": unit
+                        "Mass": mass,
+                        "Mass.UOM": unit
                     };
                 }
 
                 lines.push(o);
-                // if(hsCode.length > 0) {
-                //     lines.push({
-                //         "number": lineNum,
-                //         "amount": amount,
-                //         "taxCode": taxCode,
-                //         "description": description,
-                //         "hsCode": hsCode,
-                //         "parameters": {
-                //             "mass": mass,
-                //             "mass.UOM": unit
-                //         }
-                //     });
-                // }
-                // else {
-                //     lines.push({
-                //         "number": lineNum,
-                //         "amount": amount,
-                //         "taxCode": taxCode,
-                //         "description": description                    
-                //     });
-                // }
                 break;
             case 'JS':
             case 'Ruby':
