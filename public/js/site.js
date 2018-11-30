@@ -64,15 +64,20 @@ function lineBuilder(reqType) {
                     "taxCode": taxCode,
                     "description": description                    
                 };
+                
                 if (hsCode.length) {
                     Object.assign(o, {
-                        "hsCode": hsCode,
-                        "parameters": {
-                            "mass": mass,
-                            "mass.UOM": unit
-                        }
-                    })
+                        "hsCode": hsCode
+                    });
                 }
+
+                if (mass.length && unit.length) {
+                    o["parameters"] = {
+                        "mass": mass,
+                        "mass.UOM": unit
+                    };
+                }
+
                 lines.push(o);
                 // if(hsCode.length > 0) {
                 //     lines.push({
@@ -237,6 +242,11 @@ function jsonSampleData() {
         "customerCode": "ABC",
         "addresses": address
     };
+
+    //Add DDP if the transaction is cross-border.
+    if(isIntlTransaction) {
+        sampleData["isSellerImporterOfRecord"] = true;
+    }
 
     sampleData.lines = lineBuilder('JSON');
 

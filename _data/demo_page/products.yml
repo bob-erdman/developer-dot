@@ -1,7 +1,7 @@
 - name: Chocolate
   taxCode: PF050099
   inputId: p1c
-  value: 199.99
+  value: 900.00
   mass: 2.5
   unit: Kilogram
   checked: checked
@@ -16,10 +16,10 @@
   value: 15.99
   mass: 
   unit: 
-  hsCodeToUs: 9506290080
-  hsCodeToBr: somethingBr
-  hsCodeToUk: somethingUk
-  hsCodeToIn: somethingIn
+  hsCodeToUs: 1604204000
+  hsCodeToBr: 16041100
+  hsCodeToUk: 1604209011
+  hsCodeToIn: 16041100
   isPhysical: true
 - name: MP3 download
   taxCode: DM040200
@@ -71,8 +71,8 @@
   value: 19.99
   mass: 
   unit:
-  hsCodeToUs: 9506290080
-  hsCodeToBr: somethingBr
-  hsCodeToUk: somethingUk
-  hsCodeToIn: somethingIn
+  hsCodeToUs: 
+  hsCodeToBr: 
+  hsCodeToUk: 
+  hsCodeToIn: 
   isPhysical: false
