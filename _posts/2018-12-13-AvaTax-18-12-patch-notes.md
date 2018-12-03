@@ -69,5 +69,3 @@ We improved Swagger loading time by pre-compiling the swagger.json file and cach
     <li>Fix issue where filtering by date range of 1900-01-01 results in an unhandled error</li>
     <li>Fix unhandled exception in CommitTransaction and UncommitTransaction</li>
 </ul>
-
--- Qijing Yu, Manager, AvaTax API
