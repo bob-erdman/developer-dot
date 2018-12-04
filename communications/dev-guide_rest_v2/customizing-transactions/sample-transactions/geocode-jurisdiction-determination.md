@@ -42,7 +42,7 @@ Specify a street address using one or more of these fields:
   <li>Postal Code (<code>zip</code>)</li>
 </ul>
 <br/>
-Considerations when using street address:
+<b>Considerations when using street address</b>:
 <ul class="dev-guide-list">
   <li>One of the following is required when geocoding a street address:</li>
   <ul class="dev-guide-list">

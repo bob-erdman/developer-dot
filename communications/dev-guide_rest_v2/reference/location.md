@@ -113,6 +113,20 @@ The <code>Location</code> object contains information about a <b>jurisdiction</b
 }
 {% endhighlight %}
 
+<h4>Geocoded Street Address</h4>
+Geocoding doesn't support PO Box address
+
+{% highlight json %}
+"bill": {
+  "ctry": "USA",
+  "geo": true,
+  "addr": "11 West 53 Street",
+  "city": "Manhattan",
+  "st": "NY",
+  "zip": "10019"
+}
+{% endhighlight %}
+
 <h4>FIPS code</h4>
 {% highlight json %}
 "to": {

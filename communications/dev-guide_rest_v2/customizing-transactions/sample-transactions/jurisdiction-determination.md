@@ -66,6 +66,7 @@ Keep these points in mind if using the Geocoding functionality (<code>geo</code>
 <ol class="dev-guide-list">
   <li>The geocoding is slower, but provides a more accurate jurisdiction</li>
   <li>If the geocoding process fails, the entire <code>CalcTaxes</code> request fails</li>
+  <li>PO Box addresses are not valid when using Geocoding</li>
 </ol>
 
 <h4>Note</h4>
