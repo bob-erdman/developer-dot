@@ -33,7 +33,7 @@ function getCompareDate() {
 
 // HELPER: build lines with correct template for given language
 function lineBuilder(reqType) {
-    let lines = reqType === 'JSON' ? [] : ``;
+    let lines = reqType === 'JSON' || 'JS' ? [] : ``;
     let hsCode = '';
     let mass = '';
     let unit = '';
@@ -84,31 +84,40 @@ function lineBuilder(reqType) {
                 break;
             case 'JS':
             case 'Ruby':
-                lines += `{
-            amount: "${amount}",
-            description: "${description}",
-            number: "${lineNum}",
-            taxCode: "${taxCode}"
-        }`;
-                if (lineNum !== allProducts.length) lines += ',\n        ';
+                let o2 = {
+                    "amount": amount ,
+                    "description": description,
+                    "number": lineNum,
+                    "taxCode": taxCode
+                };
+
+                // lines += `{
+                //     amount: "${amount}",
+                //     description: "${description}",
+                //     number: "${lineNum}",
+                //     taxCode: "${taxCode}"
+                // }`;
+                
+                // if (lineNum !== allProducts.length) lines += ',\n        ';
+                lines.push(o2);
                 break;
             case 'Python':
                 lines += `{
-            'amount': '${amount}',
-            'description': '${description}',
-            'number': '${lineNum}',
-            'taxCode': '${taxCode}'
-        }`;
+                    'amount': '${amount}',
+                    'description': '${description}',
+                    'number': '${lineNum}',
+                    'taxCode': '${taxCode}'
+                }`;
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'C#':
                 lines += `new LineItemModel() 
-        {
-            number = ${lineNum},
-            quantity = 1,
-            amount = ${amount},
-            taxCode = "${taxCode}"
-        }`;                
+                {
+                    number = ${lineNum},
+                    quantity = 1,
+                    amount = ${amount},
+                    taxCode = "${taxCode}"
+                }`;                
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'PHP':
@@ -230,7 +239,7 @@ function jsonSampleData() {
         sampleData["isSellerImporterOfRecord"] = true;
     }
 
-    sampleData.lines = lineBuilder('JSON');
+    //sampleData.lines = lineBuilder('JSON');
 
     return sampleData;
 }
@@ -450,6 +459,7 @@ function javascriptSampleData() {
     const lines = lineBuilder('JS');
     const shipFromSelected = shipFromChecked(); 
     const shipToAddress = addressBuilder('Ruby', 'address');
+    let today = new Date();
     let address;
   
     if (shipFromSelected) {
@@ -461,12 +471,14 @@ function javascriptSampleData() {
         address = `SingleLocation: ${shipToAddress}`;
     }
 
-    const sampleData = `const config = {
-    appName: "your-app",
-    appVersion: "1.0",
-    environment: "sandbox",
-    machineName: "your-machine-name"
-};
+    let config = {
+        appName: "your-app",
+        appVersion: "1.0",
+        environment: "sandbox",
+        machineName: "your-machine-name"
+    };
+
+    const sampleData = `const config = ${JSON.stringify(config, null, 4)};
     
 const creds = {
     username: "<your-username>",
@@ -478,14 +490,13 @@ var client = new Avatax(config).withSecurity(creds);
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
-    date: "2017-04-12",
+    date: ${today.toISOString().split('T')[0]},
     customerCode: "ABC",
     addresses: {
         ${address}
     },
-    lines: [
-        ${lines}
-    ],
+    lines: 
+        ${JSON.stringify(lines, null, 4)}
 }
     
 return client.createTransaction({ model: taxDocument })
@@ -496,6 +507,8 @@ return client.createTransaction({ model: taxDocument })
 
     return sampleData
 }
+
+
 
 //
 // MAIN Sample Data function: populates request console
