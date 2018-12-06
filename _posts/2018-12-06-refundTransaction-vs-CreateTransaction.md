@@ -142,7 +142,7 @@ Is the partial line refund doable? Yes, but only with the CreateTransaction endp
 <h2>How do you construct Return Invoices?</h2>
 If partial line refunds are fair game, how do we construct the correct <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" target="_blank">model for the CreateTransaction</a> endpoint?  Let’s continue with our yarn example and say each ball of yarn originally cost $5. 
 
-First, we need to set up a request with `type = ReturnInvoice` and a negative value for `amount`. In this case,  `amount = -50`. We also need key information like addresses and the `customerCode`. 
+First, we need to set up a request with `type = ReturnInvoice` and a negative value for `amount` and a positive amount for `quantity`. In this case,  `amount = -50` and `quantity = 10`. We also need key information like addresses and the `customerCode`. 
 
 
 ```json
