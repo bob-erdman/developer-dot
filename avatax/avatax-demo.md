@@ -121,7 +121,7 @@ doctype: use_cases
                         {% for product in site.data.demo_page.products %}
                             <label class="demo-label demo-label-container">
                                 <input value="{{ product.taxCode }}" name="product" id="{{ product.inputId }}" type="checkbox" description="{{ product.name }}" class="demo-radio" {{ product.checked }}/>
-                                <input value="{{ product.value }}" type="text" id="{{ product.inputId }}-amount" style="width: 50px;">
+                                <input value="{{ product.value }}" type="text" id="{{ product.inputId }}-amount" hsCode="{{ product.hsCode }}" style="width: 50px;">
                                 <span class="demo-label"> {{ product.name }} 
                                 {% if product.subLabel %}
                                     <i>{{ product.subLabel }}</i>
