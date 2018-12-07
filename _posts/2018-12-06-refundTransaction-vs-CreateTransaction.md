@@ -2,7 +2,7 @@
 layout: post
 title: RefundTransaction vs ReturnInvoice
 description: When to use refundTransaction endpoint vs returnInvoice type with createTransaction endpoint
-date: 2018-12-06 12:00
+date: 2018-12-07 12:00
 author: Genevieve Conty
 comments: true
 categories: [avatax, how to]
