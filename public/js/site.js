@@ -58,6 +58,7 @@ function lineBuilder(reqType) {
         // pick the correct line template
         switch (reqType) {
             case 'JSON':
+            case 'JS':
                 let o ={
                     "number": lineNum,
                     "amount": amount,
@@ -81,33 +82,46 @@ function lineBuilder(reqType) {
                 }
 
                 lines.push(o);
-                break;
-            case 'JS':
-            case 'Ruby':
-                let o2 = {
-                    "amount": amount ,
-                    "description": description,
-                    "number": lineNum,
-                    "taxCode": taxCode
-                };
-
-                // lines += `{
-                //     amount: "${amount}",
-                //     description: "${description}",
-                //     number: "${lineNum}",
-                //     taxCode: "${taxCode}"
-                // }`;
-                
-                // if (lineNum !== allProducts.length) lines += ',\n        ';
-                lines.push(o2);
+                break;           
+            case 'Ruby':            
+                lines += `{
+            amount: "${amount}",
+            description: "${description}",
+            number: "${lineNum}",
+            taxCode: "${taxCode}"`;
+                lines += hsCode.length ? "," : "";
+                lines += hsCode.length ? `
+            hsCode: "${hsCode}"` : "" 
+                lines += (mass.length && unit.length) ? "," : "";
+                lines += (mass.length && unit.length) ?
+                `   
+            parameters: {
+                Mass: "${mass}",
+                Mass.UOM: "${unit}"
+            }` : "";                    
+                lines += `
+        }`;
+                if (lineNum !== allProducts.length) lines += ',\n        ';                
                 break;
             case 'Python':
                 lines += `{
-                    'amount': '${amount}',
-                    'description': '${description}',
-                    'number': '${lineNum}',
-                    'taxCode': '${taxCode}'
-                }`;
+            'amount': '${amount}',
+            'description': '${description}',
+            'number': '${lineNum}',
+            'taxCode': '${taxCode}'`;
+                    lines += hsCode.length ? "," : "";
+                    lines += hsCode.length ? `
+            'hsCode': '${hsCode}'` : "" 
+            lines += (mass.length && unit.length) ? "," : "";
+            lines += (mass.length && unit.length) ?
+            `   
+            'parameters': {
+                'Mass': '${mass}',
+                'Mass.UOM': '${unit}'
+            }` : "";                    
+        lines += `
+        }`;
+        
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'C#':
@@ -136,6 +150,10 @@ function lineBuilder(reqType) {
     });
 
     return lines;
+}
+
+function lanaugeSpecificLineBuilder(indent, indented, aWrap, vWrap, assignment, objToTranslate) {
+
 }
 
 // HELPER: build address with correct template for given language
