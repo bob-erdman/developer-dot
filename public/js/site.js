@@ -126,12 +126,25 @@ function lineBuilder(reqType) {
                 break;
             case 'C#':
                 lines += `new LineItemModel() 
-                {
-                    number = ${lineNum},
-                    quantity = 1,
-                    amount = ${amount},
-                    taxCode = "${taxCode}"
-                }`;                
+        {
+            number = ${lineNum},
+            quantity = 1,
+            amount = ${amount},
+            taxCode = "${taxCode}"`;
+                    lines += hsCode.length ? "," : "";
+                    lines += hsCode.length ? `
+            hsCode: "${hsCode}"` : "" 
+                    lines += (mass.length && unit.length) ? "," : "";
+                    lines += (mass.length && unit.length) ?
+                `   
+            parameters: {
+                Mass: "${mass}",
+                Mass.UOM: "${unit}"
+            }` : "";                                    
+                if (lineNum !== allProducts.length) lines += ',\n        ';
+                    
+                lines += `
+        }`;                
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'PHP':
