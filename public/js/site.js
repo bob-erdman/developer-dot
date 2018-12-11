@@ -393,8 +393,7 @@ client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
 tax_document = {
     'addresses': {
         ${address}
-    },
-    ${isIntlTransaction ? `'isSellerImporterOfRecord': 'true',`:``}
+    },${isIntlTransaction ? `\n    'isSellerImporterOfRecord': 'true',`:``}     
     'companyCode': 'DEMO PAGE',
     'customerCode': 'ABC',
     'date': '2017-04-12',
@@ -447,7 +446,7 @@ createTransactionModel = {
     type: "SalesOrder",
     companyCode: "12670",
     date: "2017-06-05",
-    customerCode: "ABC",
+    customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
        ${address} 
     },
@@ -525,7 +524,7 @@ const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
     date: ${today.toISOString().split('T')[0]},
-    customerCode: "ABC",
+    customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
         ${address}
     },
