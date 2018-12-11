@@ -241,8 +241,7 @@ function init_script() {
             <!-- TODO: works -->
             <!-- TODO: populate submit script -->
             <button class="btn btn-primary" style="margin-top: 10px;" onclick="get_token()">Get Token</button>
-            <!-- option -->
-            <!-- TODO: make data file, do for loop for this -->
+            <!-- options -->
             <!-- TODO: populates script when clicked -->
             <h3>Step 3: Select your options</h3>
             <!-- TODO: fill in instructions -->
