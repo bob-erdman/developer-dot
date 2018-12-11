@@ -678,6 +678,7 @@ function accordionTrigger(currentElementId, nextElementId) {
 **      TODO: move to diff file
 ************************************************************************/
 
+// populate the expsoure zone dropdown
 function exposureZoneReq() {
     $.ajax({
         url: "https://beta-api.certcapture.com/v2/states",
@@ -691,15 +692,13 @@ function exposureZoneReq() {
         },
     }).then((res) => {
         let zones = ``;
-        
         res.data.forEach((state) => {
-            console.log("State: ", state);
             zones += `<option value=${state.id}>${state.name}</option>`;
         })
-        console.log("ZONES: ", zones);
         $('#set_zone').html(zones);
     });
 }
+
 
 /***************** END CERTCAPTURE Functions *******************************/
 
@@ -707,6 +706,8 @@ function exposureZoneReq() {
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
+
+    // TODO: move to sensical place
     exposureZoneReq();
 
     var sections = document.getElementsByClassName("accordion");

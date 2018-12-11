@@ -5,24 +5,8 @@ nav: apis
 doctype: overview
 ---
 <!-- TODO: consistent naming -->
+<!-- TODO: move inline CSS to cert-demo.scss -->
 <script language="php" src="">
-    // TODO: translate to JS
-    // TODO: move to diff file
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://beta-api.certcapture.com/v2/states");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        "x-client-id: 444",
-        "Authorization: Basic " . base64_encode('api-test:api-test'),
-        ));
-        $response = curl_exec($ch);
-        $response = json_decode($response);
-        $exposure_zones = $response->data;
-        curl_close($ch);
-
     // TODO: translate to JS
     // TODO: move to diff file
     function callapi() {
@@ -47,7 +31,10 @@ doctype: overview
         echo $response
     } 
 </script>
+<!-- TODO: jquery -->
+<!-- TODO: move to different file -->
 <script language="javascript">
+    // TODO: works
     function init_api()
 {
 
@@ -107,6 +94,7 @@ doctype: overview
         alert( 'Please provide some information to get started.' );
     }
 
+    // TODO: rework
     function set_options() {
         GenCert.__setOption( 'edit_purchaser', document.getElementById( 'edit_purchaser' ).checked );
         GenCert.__setOption( 'show_files', document.getElementById( 'show_files' ).checked );
@@ -124,7 +112,7 @@ doctype: overview
         document.getElementById( 'script_test' ).style.display = 'none';
     }
 }
-
+//TODO: works
 function init_script() {
 
     if ( document.getElementById( 'gencert_url_script' ).value == "" ) {
@@ -159,6 +147,7 @@ function init_script() {
     document.head.appendChild( script );
 }
 
+    // TODO: works
     function get_token() {
 
     if ( document.getElementById( 'api_url' ).value == "" ||  
@@ -169,7 +158,8 @@ function init_script() {
              alert( 'You must provide all values to retrieve a token.' );
              return;
     }
-  
+    
+    // TODO: change to AJAX
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if ( xmlhttp.readyState == XMLHttpRequest.DONE ) {
@@ -203,9 +193,9 @@ function init_script() {
 <h1>CertCapture Demo</h1>
 <!-- TODO: instructions -->
 <p>Hi! I will be filled with instructions soon, so you can understand what this page does.</p>
+<!-- TODO: is outer div needed? -->
 <div id="gencert_test" class="">
     <hr style="margin: 20px 0px 20px 0px" id="divider">
-    <!-- V3 section -->
     <div class="row">
         <div class="col-md-5">
             <h3>Step 1: Setup</h3>
@@ -216,6 +206,7 @@ function init_script() {
                     <input id="gencert_url_script" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
                 </label>
                 <!-- TODO: update script when clicked -->
+                <!-- populated with exposureZoneReq() -->
                 <label>Exposure Zone *
                     <select id="set_zone"></select>
                 </label>
@@ -241,8 +232,9 @@ function init_script() {
             <button class="btn btn-primary" style="margin-top: 10px;" onclick="get_token()">Get Token</button>
             <!-- options -->
             <!-- TODO: populates script when clicked -->
+            <!-- TODO: instructions -->
+            <!-- TODO: checkbox spacing -->
             <h3>Step 3: Select your options</h3>
-            <!-- TODO: fill in instructions -->
             <p>INSTRUCTIONS</p>
             <div class="" style="">
                 <ul id="test_options">
@@ -276,6 +268,7 @@ function init_script() {
 <!-- end container -->
 
 <!-- Form ouput -->
+<!-- TODO: formatting/styling -->
 <div id="form_parent_container">
     <div id="form_parent" style="display:none"></div>
 </div>
