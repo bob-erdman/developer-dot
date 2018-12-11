@@ -676,6 +676,7 @@ function accordionTrigger(currentElementId, nextElementId) {
 /************************************************************************
 **   CERTCAPTURE Demo Page Functions
 **      TODO: move to diff file
+**      TODO: consistent naming
 ************************************************************************/
 
 // populate the expsoure zone dropdown
@@ -697,6 +698,88 @@ function exposureZoneReq() {
         })
         $('#set_zone').html(zones);
     });
+}
+
+// TODO: works
+// TODO: jquery
+// TODO: block script if missing info
+function init_script() {
+    console.log('INIT SCRIPT')
+    if ( document.getElementById( 'gencert_url_script' ).value == "" ) {
+        alert( 'Enter a GenCert URL.' );
+        return;
+    }
+
+    if ( document.getElementById( 'sample_script' ).value == "" ) {
+        alert( 'Enter some valid javascript.' );
+        return;
+    }
+
+    var script = document.createElement( 'script') ;
+    script.onload = function () {
+    
+        try {
+            eval( document.getElementById( 'sample_script' ).value );
+        } 
+        catch ( e ) {
+            if ( e instanceof SyntaxError ) {
+                alert( e.message );
+            }
+        }
+        document.getElementById( 'gencert_test' ).style.display = 'none';
+        document.getElementById( 'divider' ).style.display      = 'none';
+        document.getElementById( 'script_test' ).style.display  = 'none';
+        
+    };
+    
+    // TODO: add random string to end
+    script.src = document.getElementById( 'gencert_url_script' ).value + "/Gencert2/js";
+    document.head.appendChild( script );
+}
+
+// TODO: works
+// TODO: jquery
+function get_token() {
+    console.log('GET TOKEN')
+
+    if ( document.getElementById( 'api_url' ).value == "" ||  
+         document.getElementById( 'api_user' ).value == "" || 
+         document.getElementById( 'api_password' ).value == "" || 
+         document.getElementById( 'token_client_id' ).value == "" || 
+         document.getElementById( 'token_customer_number' ).value == "" ) {
+             alert( 'You must provide all values to retrieve a token.' );
+             return;
+    }
+    
+    // TODO: change to AJAX
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if ( xmlhttp.readyState == XMLHttpRequest.DONE ) {
+            if ( xmlhttp.status == 200 && xmlhttp.responseText !== "" ) {
+
+
+                var response = JSON.parse( xmlhttp.responseText );
+                if ( response.success == false ) {
+                    alert( response.error );
+                }
+                else {
+                    alert( 'Token successfully generated.' );
+                    document.getElementById( "token" ).value = response.response.token;
+                }
+            }
+            else  {
+                alert( 'Failed to generate a token.' );
+            }
+        }
+    };
+
+    xmlhttp.open( "POST", callapi(), true );
+    xmlhttp.setRequestHeader( 'api-url', document.getElementById('api_url').value + '/v2/auth/get-token' );
+    xmlhttp.setRequestHeader( 'x-customer-number', document.getElementById('token_customer_number').value );
+    xmlhttp.setRequestHeader( 'x-client-id', document.getElementById('token_client_id').value );
+    xmlhttp.setRequestHeader( 'api-user', document.getElementById('api_user').value );
+    xmlhttp.setRequestHeader( 'api-password', document.getElementById('api_password').value );
+    xmlhttp.send();
 }
 
 
