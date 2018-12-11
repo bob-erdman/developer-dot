@@ -20699,7 +20699,7 @@
 						"description": "The service to check",
 						"required": true,
 						"type": "string",
-						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance", "SendSalesRateFile"],
+						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance"/*, "SendSalesRateFile"*/],
 						"x-enum-type": "ServiceTypeId",
 						"x-enum-description": "Represents the type of service or subscription given to a user",
 						"x-enum-value-comments": {
@@ -20730,8 +20730,8 @@
 							"MRSComplianceManager": "MRSComplianceManager",
 							"AvaBikeTax": "AvaBikeTax",
 							"AvaCheckoutBag": "AvaCheckoutBag",
-							"TFOCompliance": "TFOCompliance",
-							"SendSalesRateFile": "Send Sales Rate file service"
+							"TFOCompliance": "TFOCompliance"/*,
+							"SendSalesRateFile": "Send Sales Rate file service"*/
 						}
 					}, {
 						"name": "X-Avalara-Client",
@@ -29229,7 +29229,7 @@
 					"uniqueItems": false,
 					"type": "array",
 					"items": {
-						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance", "SendSalesRateFile"],
+						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance" /*, "SendSalesRateFile"*/],
 						"type": "string"
 					},
 					"example": ["AvaLodging"],
@@ -29264,7 +29264,7 @@
 						"AvaBikeTax": "AvaBikeTax",
 						"AvaCheckoutBag": "AvaCheckoutBag",
 						"TFOCompliance": "TFOCompliance",
-						"SendSalesRateFile": "Send Sales Rate file service"
+						/*"SendSalesRateFile": "Send Sales Rate file service"*/
 					}
 				},
 				"prompt": {
