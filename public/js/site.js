@@ -702,7 +702,7 @@ function exposureZoneReq() {
 
 // TODO: works/rework
 // TODO: jquery
-// TODO: block script if missing info
+// TODO: block function if missing info
 function init_script() {
     console.log('INIT SCRIPT')
     if ( document.getElementById( 'gencert_url_script' ).value == "" ) {
@@ -737,7 +737,6 @@ function init_script() {
     document.head.appendChild( script );
 }
 
-// TODO: works
 // TODO: jquery
 function get_token() {
     console.log('GET TOKEN')
@@ -766,29 +765,23 @@ function get_token() {
             console.log('SUCCESS status: ', status)
             console.log('SUCCESS xhr', xhr)
 
-            return result;
-        },
-        error: function(xhr,status,error) {
-            console.log('ERROR error: ', error)
-            console.log('ERROR status: ', status)
-            console.log('ERROR xhr', xhr)
-            return result;
-        },
-    }).then(function (res) {
-        console.log('RES', res)
-        console.log('RES.response:', res.response.token)
-        if (res.status == 200 && res.responseText !== "") {
-            alert( 'YASSSSSS' );
+            if (xhr.responseText !== "") {
+                alert( 'Token successfully generated.' );
+                // TODO: put into UI
+                console.log(xhr.responseJSON.response.token);
+            } else {
+                alert( 'Failed to generate a token. Please check your credentials and try again.' );
+            }
 
-            // var response = JSON.parse( xmlhttp.responseText );
-            // if ( response.success === false ) {
-            //     alert( response.error );
-            // } else {
-            //     alert( 'Token successfully generated.' );
-            //     document.getElementById( "token" ).value = response.response.token;
-            // }
-        } else {
-            alert( 'Failed to generate a token.' );
+            return status;
+        },
+        error: function(xhr, status, error) {
+            if (error === 'Unauthorized') {
+                alert( "Invalid Credentials. Please try again." );
+            } else {
+                alert( `Error: ${xhr.responseJson.error}` );
+            }
+            return status;
         }
     });
 }
