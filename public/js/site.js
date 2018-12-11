@@ -675,21 +675,52 @@ function accordionTrigger(currentElementId, nextElementId) {
 
 /************************************************************************
 **   CERTCAPTURE Demo Page Functions
+**      TODO: move to diff file
 ************************************************************************/
 
 function exposureZoneReq() {
-    console.warn("BASIC", "Basic"+window.btoa('api-test:api-test'))
-    xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        console.warn("exposureZone", xhr.response)
-    }
-    xhr.open("GET", "https://beta-api.certcapture.com/v2/states", true);
-    xhr.setRequestHeader( 'x-client-id', '444' );
-    xhr.setRequestHeader( 'Authorization', "Basic"+window.btoa('api-test:api-test') );
-    xhr.setRequestHeader( "Content-type", 'application/json');
-    xhr.setRequestHeader( "SSL_VERIFYPEER", 0);
-    xhr.setRequestHeader( "SSL_VERIFYHOST", 0);
-    xhr.send();
+    // TODO: change to ajax req
+    // xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function() {
+    //     console.warn("exposureZone", xhr.response)
+    // }
+    
+    // xhr.open("GET", "https://beta-api.certcapture.com/v2/states", true);
+
+    // const data = {
+    //     'Authorization': "Basic"+window.btoa('api-test:api-test'),
+    //     'x-client-id': 444
+    // }
+    
+    // xhr.setRequestHeader( "Access-Control-Allow-Origin", "*");
+    // xhr.setRequestHeader( "Access-Control-Allow-Credentials", true);
+    // xhr.setRequestHeader( 'Authorization', "Basic"+window.btoa('api-test:api-test') );
+    // xhr.setRequestHeader( "Content-type", 'application/json');
+    // xhr.setRequestHeader( "data", data);
+    // xhr.setRequestHeader( "headers", data);
+
+    // xhr.setRequestHeader( "SSL_RETURNTRANSFER", true);
+    // xhr.setRequestHeader( "SSL_VERIFYHOST", 0);
+    // xhr.setRequestHeader( "SSL_VERIFYPEER", 0);
+    // xhr.setRequestHeader( 'x-client-id', '444' );
+
+    // xhr.send();
+
+    $.ajax({
+        url: "https://beta-api.certcapture.com/v2/states",
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+            'Authorization': "Basic"+window.btoa('api-test:api-test'),
+            'Content-Type': 'application/json',
+            // 'x-client-id': 444
+        },
+        body: {
+            'x-client-id': 444
+        }
+    }).then((res) => {
+        console.log(res);
+    });
 }
 
 /***************** END CERTCAPTURE Functions *******************************/

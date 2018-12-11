@@ -200,6 +200,7 @@ function init_script() {
 }
 </script>
 <h1>CertCapture Demo</h1>
+<!-- TODO: instructions -->
 <p>Hi! I will be filled with instructions soon, so you can understand what this page does.</p>
 <div id="gencert_test" class="">
     <hr style="margin: 20px 0px 20px 0px" id="divider">
@@ -213,6 +214,7 @@ function init_script() {
                     GenCert URL *
                     <input id="gencert_url_script" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
                 </label>
+                <!-- TODO: fill with US states -->
                 <label>Exposure Zone *
                     <select id="set_zone">
                         <option value="Washington">Washington</option>
@@ -236,64 +238,31 @@ function init_script() {
                     <td><input id="token_customer_number" class="" placeholder="Customer Number" type="text"></td>
                 </tr>
             </table>
+            <!-- TODO: works -->
+            <!-- TODO: populate submit script -->
             <button class="btn btn-primary" style="margin-top: 10px;" onclick="get_token()">Get Token</button>
             <!-- option -->
             <!-- TODO: make data file, do for loop for this -->
+            <!-- TODO: populates script when clicked -->
             <h3>Step 3: Select your options</h3>
+            <!-- TODO: fill in instructions -->
             <p>INSTRUCTIONS</p>
             <div class="" style="">
                 <ul id="test_options">
-                    <li>
-                        <label>
-                            <input type='checkbox' id="edit_purchaser">Edit Purchaser
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="show_files">Show Files
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="submit_to_stack">Submit To Stack
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="preview">Preview
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="upload_only">Upload Only
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="fill_only">Fill Only
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="customer_list">Customer List
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="append_barcode">Append Barcode
-                        </label> 
-                    </li>
-                    <li>
-                        <label>
-                            <input type='checkbox' id="upload_form_unavailable">Upload If Form Unavailable
-                        </label>
-                    </li>
+                    {% for option in site.data.demo_page.cert-options %}
+                        <li>
+                            <label>
+                                <input type='checkbox' id="{{ option.id }}">{{ option.label }}
+                            </label>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
         <!-- response output -->
         <!-- TODO: automagically updated token-->
         <!-- TODO: allow user to input token; see createTransaction pg -->
+        <!-- TODO: pretty script -->
         <div class="col-md-7">
             <h3 style="">Step 4: Submit your script</h3>
             <div id="script_test" class="  ">

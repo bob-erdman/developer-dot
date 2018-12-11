@@ -1,0 +1,18 @@
+- label: Edit Purchaser
+  id: edit_purchaser
+- label: Show Files
+  id: show_files
+- label: Submit To Stack
+  id: submit_to_stack
+- label: Preview
+  id: preview
+- label: Upload Only
+  id: upload_only
+- label: Fill Only
+  id: fill_only
+- label: Customer List
+  id: customer_list
+- label: Append Barcode
+  id: append_barcode
+- label: Upload If Form Unavailable
+  id: upload_form_unavailable
