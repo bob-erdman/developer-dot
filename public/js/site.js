@@ -677,7 +677,20 @@ function accordionTrigger(currentElementId, nextElementId) {
 **   CERTCAPTURE Demo Page Functions
 ************************************************************************/
 
-
+function exposureZoneReq() {
+    console.warn("BASIC", "Basic"+window.btoa('api-test:api-test'))
+    xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        console.warn("exposureZone", xhr.response)
+    }
+    xhr.open("GET", "https://beta-api.certcapture.com/v2/states", true);
+    xhr.setRequestHeader( 'x-client-id', '444' );
+    xhr.setRequestHeader( 'Authorization', "Basic"+window.btoa('api-test:api-test') );
+    xhr.setRequestHeader( "Content-type", 'application/json');
+    xhr.setRequestHeader( "SSL_VERIFYPEER", 0);
+    xhr.setRequestHeader( "SSL_VERIFYHOST", 0);
+    xhr.send();
+}
 
 /***************** END CERTCAPTURE Functions *******************************/
 
@@ -685,9 +698,9 @@ function accordionTrigger(currentElementId, nextElementId) {
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
+    exposureZoneReq();
 
     var sections = document.getElementsByClassName("accordion");
-    console.log('SECTIONS', sections);
     
     for (let i = 0; i < sections.length; i++) {
         sections[i].addEventListener("click", function() {
