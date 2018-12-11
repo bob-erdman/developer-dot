@@ -6,31 +6,6 @@ doctype: overview
 ---
 <!-- TODO: consistent naming -->
 <!-- TODO: move inline CSS to cert-demo.scss -->
-<script language="php" src="">
-    // TODO: translate to JS
-    // TODO: move to diff file
-    function callapi() {
-        $headers = apache_request_headers();
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $headers['api-url']);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        curl_setopt($ch, CURLOPT_POST, TRUE);
-        curl_setopt($ch, CURLOPT_VERBOSE, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            "x-client-id: " . $headers['x-client-id'],
-            "x-customer-number: " . $headers['x-customer-number'],        
-            "Authorization: Basic " . base64_encode( $headers['api-user'] . ":" . $headers['api-password'] ),
-            "Content-Length: 0"
-        ));
-    
-        $response = curl_exec($ch);
-        curl_close($ch);
-        echo $response
-    } 
-</script>
 <h1>CertCapture Demo</h1>
 <!-- TODO: instructions -->
 <p>Hi! I will be filled with instructions soon, so you can understand what this page does.</p>
@@ -57,7 +32,7 @@ doctype: overview
             <table>
                 <tr>
                     <label>API URL
-                    <input id="api_url" class=" " placeholder="API URL" placeholder="https://api.certcapture.com" value="https://api.certcapture.com" type="text"></label>
+                    <input id="api_url" placeholder="https://api.certcapture.com" value="https://api.certcapture.com" type="text"></label>
                 </tr>
                 <tr>
                     <td><input id="api_user" class="" placeholder="API User Name" type="text"></td>

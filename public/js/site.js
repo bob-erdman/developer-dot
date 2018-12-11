@@ -700,7 +700,7 @@ function exposureZoneReq() {
     });
 }
 
-// TODO: works
+// TODO: works/rework
 // TODO: jquery
 // TODO: block script if missing info
 function init_script() {
@@ -750,36 +750,47 @@ function get_token() {
              alert( 'You must provide all values to retrieve a token.' );
              return;
     }
-    
-    // TODO: change to AJAX
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if ( xmlhttp.readyState == XMLHttpRequest.DONE ) {
-            if ( xmlhttp.status == 200 && xmlhttp.responseText !== "" ) {
 
+    return $.ajax({
+        url: $('#api_url')[0].value + '/v2/auth/get-token',
+        type: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api_user')[0].value + ":" + $('#api_password')[0].value));
+            xhr.setRequestHeader("x-client-id", $('#token_client_id')[0].value);
+        },
+        success: function(result, status, xhr) {
+            console.log('SUCCESS result: ', result)
+            console.log('SUCCESS status: ', status)
+            console.log('SUCCESS xhr', xhr)
 
-                var response = JSON.parse( xmlhttp.responseText );
-                if ( response.success == false ) {
-                    alert( response.error );
-                }
-                else {
-                    alert( 'Token successfully generated.' );
-                    document.getElementById( "token" ).value = response.response.token;
-                }
-            }
-            else  {
-                alert( 'Failed to generate a token.' );
-            }
+            return result;
+        },
+        error: function(xhr,status,error) {
+            console.log('ERROR error: ', error)
+            console.log('ERROR status: ', status)
+            console.log('ERROR xhr', xhr)
+            return result;
+        },
+    }).then(function (res) {
+        console.log('RES', res)
+        console.log('RES.response:', res.response.token)
+        if (res.status == 200 && res.responseText !== "") {
+            alert( 'YASSSSSS' );
+
+            // var response = JSON.parse( xmlhttp.responseText );
+            // if ( response.success === false ) {
+            //     alert( response.error );
+            // } else {
+            //     alert( 'Token successfully generated.' );
+            //     document.getElementById( "token" ).value = response.response.token;
+            // }
+        } else {
+            alert( 'Failed to generate a token.' );
         }
-    };
-
-    xmlhttp.open( "POST", callapi(), true );
-    xmlhttp.setRequestHeader( 'api-url', document.getElementById('api_url').value + '/v2/auth/get-token' );
-    xmlhttp.setRequestHeader( 'x-customer-number', document.getElementById('token_customer_number').value );
-    xmlhttp.setRequestHeader( 'x-client-id', document.getElementById('token_client_id').value );
-    xmlhttp.setRequestHeader( 'api-user', document.getElementById('api_user').value );
-    xmlhttp.setRequestHeader( 'api-password', document.getElementById('api_password').value );
-    xmlhttp.send();
+    });
 }
 
 
