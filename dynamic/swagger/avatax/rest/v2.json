@@ -17876,89 +17876,6 @@
 				]
 			}
 		},
-		/*
-		"/api/v2/sendsalescontent/download/{companyId}/{taxCode}/{date}": {
-			"get": {
-				"tags": ["TaxContent"],
-				"summary": "Retrieve send-sale tax content for this company.",
-				"description": "This API is available by invitation only.",
-				"operationId": "DownloadSendSalesRateFile",
-				"consumes": [],
-				"produces": ["application/json", "application/octet-stream"],
-				"parameters": [{
-						"name": "date",
-						"in": "path",
-						"description": "The date for which we are fetching tax content.",
-						"required": true,
-						"type": "string",
-						"format": "date-time"
-					}, {
-						"name": "taxCode",
-						"in": "path",
-						"description": "The tax code for which we are fetching tax content.",
-						"required": true,
-						"type": "string"
-					}, {
-						"name": "companyId",
-						"in": "path",
-						"description": "The unique ID number of the company which is fetching tax content.",
-						"required": true,
-						"type": "integer",
-						"format": "int32"
-					}, {
-						"name": "format",
-						"in": "query",
-						"description": "Requests a specific data format for this content file.",
-						"required": false,
-						"type": "string",
-						"enum": ["STANDARD", "DMA"],
-						"x-enum-type": "SendSalesOutputFileFormat",
-						"x-enum-description": "",
-						"x-enum-value-comments": {}
-					}, {
-						"name": "type",
-						"in": "query",
-						"description": "Requests a specific encoding for this content file.",
-						"required": false,
-						"type": "string",
-						"enum": ["Csv", "Json"],
-						"x-enum-type": "SendSalesFileType",
-						"x-enum-description": "",
-						"x-enum-value-comments": {
-							"Csv": "File is in Comma Separated Values format",
-							"Json": "File is in Javascript Object Notation format"
-						}
-					}, {
-						"name": "X-Avalara-Client",
-						"in": "header",
-						"description": "Identifies the software you are using to call this API.  For more information on the client header, see [Client Headers](https://developer.avalara.com/avatax/client-headers/) .",
-						"required": false,
-						"type": "string",
-						"default": "Swagger UI; 18.10.2-245; Custom; 1.0"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"format": "byte",
-							"type": "file"
-						}
-					},
-					"401": {
-						"description": "Unauthorized"
-					},
-					"400": {
-						"description": "BadRequest"
-					}
-				},
-				"security": [{
-						"UserSecurity": [],
-						"OauthSecurity": []
-					}
-				]
-			}
-		}, */
 		"/api/v2/taxratesbyzipcode/download/{date}": {
 			"get": {
 				"tags": ["TaxContent"],
@@ -20699,7 +20616,7 @@
 						"description": "The service to check",
 						"required": true,
 						"type": "string",
-						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance"/*, "SendSalesRateFile"*/],
+						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance"],
 						"x-enum-type": "ServiceTypeId",
 						"x-enum-description": "Represents the type of service or subscription given to a user",
 						"x-enum-value-comments": {
@@ -20730,8 +20647,7 @@
 							"MRSComplianceManager": "MRSComplianceManager",
 							"AvaBikeTax": "AvaBikeTax",
 							"AvaCheckoutBag": "AvaCheckoutBag",
-							"TFOCompliance": "TFOCompliance"/*,
-							"SendSalesRateFile": "Send Sales Rate file service"*/
+							"TFOCompliance": "TFOCompliance"
 						}
 					}, {
 						"name": "X-Avalara-Client",
@@ -29229,7 +29145,7 @@
 					"uniqueItems": false,
 					"type": "array",
 					"items": {
-						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance" /*, "SendSalesRateFile"*/],
+						"enum": ["None", "AvaTaxST", "AvaTaxPro", "AvaTaxGlobal", "AutoAddress", "AutoReturns", "TaxSolver", "AvaTaxCsp", "Twe", "Mrs", "AvaCert", "AuthorizationPartner", "CertCapture", "AvaUpc", "AvaCUT", "AvaLandedCost", "AvaLodging", "AvaBottle", "AvaComms", "AvaEWaste", "AvaExemptTier1", "AvaExemptTier2", "AvaExemptTier3", "AvaExemptTier4", "MRSComplianceManager", "AvaBikeTax", "AvaCheckoutBag", "TFOCompliance"],
 						"type": "string"
 					},
 					"example": ["AvaLodging"],
@@ -29263,8 +29179,7 @@
 						"MRSComplianceManager": "MRSComplianceManager",
 						"AvaBikeTax": "AvaBikeTax",
 						"AvaCheckoutBag": "AvaCheckoutBag",
-						"TFOCompliance": "TFOCompliance",
-						/*"SendSalesRateFile": "Send Sales Rate file service"*/
+						"TFOCompliance": "TFOCompliance"
 					}
 				},
 				"prompt": {
