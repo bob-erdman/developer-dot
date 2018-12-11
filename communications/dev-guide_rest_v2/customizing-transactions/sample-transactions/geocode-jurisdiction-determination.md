@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The <code>/api/v2/geo/Geocode</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/">Jurisdiction Determination endpoint</a> returns a list of geocoded results.
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#jur_determine"><code>/api/v2/geo/Geocode</code> Jurisdiction Determination endpoint</a> returns a list of geocoded results.
 
 <h4>Note</h4>
 The Geocode Jurisdiction Determination endpoint supports geocoding for US, Puerto Rico, and other US territories.  Addresses and coordinate pairs in foreign countries, including Canada and Mexico, are not supported and do not return results.
@@ -436,6 +436,17 @@ The returned geocoded address is unincorporated (<code>inc</code> is <code>false
     </div>
   </div>
 </div>
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/geocode-requests/">Geocode requests</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/geocode-result/">Geocode result</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

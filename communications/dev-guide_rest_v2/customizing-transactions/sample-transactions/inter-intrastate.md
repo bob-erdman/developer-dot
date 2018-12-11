@@ -146,7 +146,6 @@ The <b>service types</b> is set to one of these based on the jurisdiction inform
     <li><code>50</code>: INTRASTATE USAGE</li>
 </ul>
 
-
 <h3>Transaction Type Determination Example</h3>
 The Transaction Type (<code>tran</code>) is set to <code>-1</code> and is automatically determined based on the jurisdiction and Service Type (<code>serv</code>) provided.
 {% highlight json %}
@@ -769,6 +768,20 @@ Taxes are returned based on the <b>Intrastate</b> service type since San Francis
   </div>
 </div>
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized tax results</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

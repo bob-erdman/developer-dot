@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The simplest <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a> in Communications REST v2 is 1 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> contained within 1 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>.
+The simplest <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a> in Communications REST v2 is a single <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> contained within a single <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>.
 
 <h3>Simple Request Example</h3>
 This is an example of a simple request containing an invoice and 1 line item.  All <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/required-fields/">required fields</a> are set, plus a charge (<code>chg</code>) of 100 and a lines count (<code>line</code>) of 10.
@@ -361,6 +361,20 @@ In this <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/refere
     </div>
   </div>
 </div>
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
