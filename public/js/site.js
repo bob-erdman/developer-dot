@@ -690,7 +690,14 @@ function exposureZoneReq() {
             xhr.setRequestHeader("x-client-id", 444);
         },
     }).then((res) => {
-        console.log(res);
+        let zones = ``;
+        
+        res.data.forEach((state) => {
+            console.log("State: ", state);
+            zones += `<option value=${state.id}>${state.name}</option>`;
+        })
+        console.log("ZONES: ", zones);
+        $('#set_zone').html(zones);
     });
 }
 

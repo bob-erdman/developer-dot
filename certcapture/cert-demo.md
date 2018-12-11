@@ -4,6 +4,7 @@ product: certCapture
 nav: apis
 doctype: overview
 ---
+<!-- TODO: consistent naming -->
 <script language="php" src="">
     // TODO: translate to JS
     // TODO: move to diff file
@@ -214,12 +215,9 @@ function init_script() {
                     GenCert URL *
                     <input id="gencert_url_script" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
                 </label>
-                <!-- TODO: fill with US states -->
+                <!-- TODO: update script when clicked -->
                 <label>Exposure Zone *
-                    <select id="set_zone">
-                        <option value="Washington">Washington</option>
-                        <option value="RhodeIsland">Rhode Island</option>
-                    </select>
+                    <select id="set_zone"></select>
                 </label>
             </div> 
             <h3>Step 2: Get your token</h3>
