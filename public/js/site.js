@@ -149,10 +149,12 @@ function lineBuilder(reqType) {
                 break;
             case 'PHP':
                 lines += `->withLine(${amount}, ${lineNum}, null, ${taxCode})`; 
+
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             case 'Java':
                 lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum}), "${taxCode}")`; 
+                lines += ``;
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             default:
@@ -392,6 +394,7 @@ tax_document = {
     'addresses': {
         ${address}
     },
+    ${isIntlTransaction ? `'isSellerImporterOfRecord': 'true',`:``}
     'companyCode': 'DEMO PAGE',
     'customerCode': 'ABC',
     'date': '2017-04-12',
