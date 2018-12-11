@@ -17876,6 +17876,7 @@
 				]
 			}
 		},
+		/*
 		"/api/v2/sendsalescontent/download/{companyId}/{taxCode}/{date}": {
 			"get": {
 				"tags": ["TaxContent"],
@@ -17957,7 +17958,7 @@
 					}
 				]
 			}
-		},
+		}, */
 		"/api/v2/taxratesbyzipcode/download/{date}": {
 			"get": {
 				"tags": ["TaxContent"],
