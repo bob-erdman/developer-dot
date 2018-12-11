@@ -154,7 +154,8 @@ function lineBuilder(reqType) {
                 break;
             case 'Java':
                 lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum}), "${taxCode}")`; 
-                lines += ``;
+                lines += (mass.length && unit.length) ? 
+                `\n    .withLineParameter("Mass", "${mass}")\n    .withLineParameter("Mass.UOM", "${unit}")` : ``;
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             default:
@@ -315,9 +316,9 @@ var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTa
 var createModel = new CreateTransactionModel()
 {
     type = DocumentType.SalesOrder,
-    companyCode = "DEMOPAGE",
+    companyCode = "DEMOPAGE",${isIntlTransaction ? `\n    isSellerImporterOfRecord: true,`:``}
     date = DateTime.Today,
-    customerCode = "ABC",
+    customerCode = "ABC", 
     lines = new List<LineItemModel>() 
     {
         ${lines}
@@ -393,8 +394,8 @@ client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
 tax_document = {
     'addresses': {
         ${address}
-    },${isIntlTransaction ? `\n    'isSellerImporterOfRecord': 'true',`:``}     
-    'companyCode': 'DEMO PAGE',
+    },     
+    'companyCode': 'DEMO PAGE', ${isIntlTransaction ? `\n    'isSellerImporterOfRecord': 'true',`:``}
     'customerCode': 'ABC',
     'date': '2017-04-12',
     'lines': [
