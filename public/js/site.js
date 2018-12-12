@@ -694,9 +694,9 @@ function exposureZoneReq() {
     }).then((res) => {
         let zones = ``;
         res.data.forEach((state) => {
-            zones += `<option value=${state.id}>${state.name}</option>`;
+            zones += `<option value=${state.name}>${state.name}</option>`;
         })
-        $('#set_zone').html(zones);
+        $('#setZone').html(zones);
     });
 }
 
@@ -737,34 +737,29 @@ function init_script() {
     document.head.appendChild( script );
 }
 
-// TODO: jquery
 function get_token() {
-    console.log('GET TOKEN')
 
-    if ( document.getElementById( 'api_url' ).value == "" ||  
-         document.getElementById( 'api_user' ).value == "" || 
-         document.getElementById( 'api_password' ).value == "" || 
-         document.getElementById( 'token_client_id' ).value == "" || 
-         document.getElementById( 'token_customer_number' ).value == "" ) {
-             alert( 'You must provide all values to retrieve a token.' );
-             return;
+    if ($('#apiUrl' ).val() === "" ||  $('#apiUser' ).val() === "" || 
+        $('#apiPassword' ).val() === "" || $('#clientId' ).val() === "" || 
+        $('#customerNumber' ).val() === "" ) {
+            alert( 'You must provide all values to retrieve a token.' );
+            return;
     }
 
     return $.ajax({
-        url: $('#api_url')[0].value + '/v2/auth/get-token',
+        url: $('#apiUrl').val() + '/v2/auth/get-token',
         type: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api_user')[0].value + ":" + $('#api_password')[0].value));
-            xhr.setRequestHeader("x-client-id", $('#token_client_id')[0].value);
+            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#apiUser').val() + ":" + $('#apiPassword').val()));
+            xhr.setRequestHeader("x-client-id", $('#clientId').val());
         },
-        success: function(result, status, xhr) {
+        success: function(result, status, xhr) {            
             if (xhr.responseText !== "") {
                 alert( 'Token successfully generated.' );
-                // TODO: put into UI
-                console.log(xhr.responseJSON.response.token);
+                updateCertScript(result.response.token);
             } else {
                 alert( 'Failed to generate a token. Please check your credentials and try again.' );
             }
@@ -782,9 +777,15 @@ function get_token() {
     });
 }
 
+function updateCertScript(tokenKey) {
+    const exposureZone = $('#setZone').val();    
+    const token = tokenKey ? tokenKey : '';    
+    const sampleScript = `GenCert.init({ \n  ship_zone: '${exposureZone}', \n  token: '${token}', \n  edit_purchaser: true \n}); \nGenCert.show();`;
+
+    $('#cert-request').empty().text(sampleScript);
+};
 
 /***************** END CERTCAPTURE Functions *******************************/
-
 
 $(document).ready(function() {
     fixApiRefNav();
@@ -811,10 +812,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    var sampleScript = "GenCert.init( document.getElementById( 'form_container' ), { \n  ship_zone: 'California', \n  token: '', \n  edit_purchaser: true \n}); \nGenCert.show();";
-    // document.getElementById( 'demo-console-output' ).text(sampleScript);
-    $('#demo-console-output').text(sampleScript);
         
     var clist = document.getElementsByClassName( "checkbox" );
     for (var j = 0; j < clist.length; j++) { 
