@@ -9,21 +9,12 @@ doctype: integration_checklists
       <img src="/public/images/devdot/badges/Comms.png" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
-      <h2>Avalara Communications Badge Requirements</h2>
+      <h2>Avalara Communications Badge</h2>
       <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
-        <h3>Administration/Utilities Integration</h3>
-            <h5>Validate ability to associate materials/products to Transaction Service type pair (T/S pair) - <em>Required</em></h5>
-                <p class="badgerequirement">You should be able to run a transaction with valid AFC T/S pair.<br>
-                How AFC T/S pairs are aligned to material/product in source system.
-                </p>
-            
-            <h5>Validate process to determine Jurisdiction(s) - <em>Required</em></h5>
-                <p class="badgerequirement">You should be able to obtain correct Pcode for the jurisdiction. For example, ability to obtain correct Pcode using Location lookup APIs.<br>
-                Provide the ability to set the Incorporated/Unincorporated status of Locations.
-                </p>
-                
+        <h3>Administration/Utilities Requirements</h3>
+                        
             <h5>Validate specific data in transactional inputs - <em>Required</em></h5>
                 <p class="badgerequirement">Submit transactions with required data values. For example, ability to calculate taxes using API call and get correct tax results.</p>
                 <p class="badgerequirement">Demonstrate in souce system how each of the input values are configured and passed to the API fields.
@@ -59,7 +50,16 @@ doctype: integration_checklists
                 </p>
                 <p class="badgerequirement">Demonstrate results in source system based upon different input parameters required for a basic transaction.</p>
             
+            <h5>Validate process to determine Jurisdiction(s) - <em>Required</em></h5>
+                <p class="badgerequirement">You should be able to obtain correct Pcode for the jurisdiction. For example, ability to obtain correct Pcode using Location lookup APIs.<br>
+                Provide the ability to set the Incorporated/Unincorporated status of Locations.
+                </p>
             
+            <h5>Validate ability to associate materials/products to Transaction Service type pair (T/S pair) - <em>Required</em></h5>
+                <p class="badgerequirement">You should be able to run a transaction with valid AFC T/S pair.<br>
+                How AFC T/S pairs are aligned to material/product in source system.
+                </p>
+
             <h5>Validate Adjustment handling - <em>Required</em></h5>
                 <p class="badgerequirement">Ability to use an adjustment call for a normal transaction.</p>
                 <p class="badgerequirement">Ability to apply adjustment call for current/previous month transactions.</p>
