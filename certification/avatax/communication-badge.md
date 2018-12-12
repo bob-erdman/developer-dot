@@ -13,7 +13,7 @@ doctype: integration_checklists
       <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
-        <h3>Administration/Utilities Requirements</h3>
+        <h3>Requirements</h3>
                         
             <h5>Validate specific data in transactional inputs - <em>Required</em></h5>
                 <p class="badgerequirement">Submit transactions with required data values. For example, ability to calculate taxes using API call and get correct tax results.</p>
