@@ -761,10 +761,6 @@ function get_token() {
             xhr.setRequestHeader("x-client-id", $('#token_client_id')[0].value);
         },
         success: function(result, status, xhr) {
-            console.log('SUCCESS result: ', result)
-            console.log('SUCCESS status: ', status)
-            console.log('SUCCESS xhr', xhr)
-
             if (xhr.responseText !== "") {
                 alert( 'Token successfully generated.' );
                 // TODO: put into UI
@@ -794,7 +790,7 @@ $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
 
-    // TODO: move to sensical place
+    // TODO: move to sensical place, populates on load
     exposureZoneReq();
 
     var sections = document.getElementsByClassName("accordion");
