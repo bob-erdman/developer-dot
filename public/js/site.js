@@ -676,7 +676,6 @@ function accordionTrigger(currentElementId, nextElementId) {
 /************************************************************************
 **   CERTCAPTURE Demo Page Functions
 **      TODO: move to diff file
-**      TODO: consistent naming
 ************************************************************************/
 
 // populate the expsoure zone dropdown
@@ -703,14 +702,14 @@ function exposureZoneReq() {
 // TODO: works/rework
 // TODO: jquery
 // TODO: block function if missing info
-function init_script() {
+function initScript() {
     console.log('INIT SCRIPT')
-    if ( document.getElementById( 'gencert_url_script' ).value == "" ) {
+    if ( document.getElementById( 'gencertUrl' ).value == "" ) {
         alert( 'Enter a GenCert URL.' );
         return;
     }
 
-    if ( document.getElementById( 'sample_script' ).value == "" ) {
+    if ( document.getElementById( 'sampleScript' ).value == "" ) {
         alert( 'Enter some valid javascript.' );
         return;
     }
@@ -726,18 +725,18 @@ function init_script() {
                 alert( e.message );
             }
         }
-        document.getElementById( 'gencert_test' ).style.display = 'none';
+        document.getElementById( 'gencertTest' ).style.display = 'none';
         document.getElementById( 'divider' ).style.display      = 'none';
-        document.getElementById( 'script_test' ).style.display  = 'none';
+        document.getElementById( 'scriptTest' ).style.display  = 'none';
         
     };
     
     // TODO: add random string to end
-    script.src = document.getElementById( 'gencert_url_script' ).value + "/Gencert2/js";
+    script.src = document.getElementById( 'gencertUrl' ).value + "/Gencert2/js";
     document.head.appendChild( script );
 }
 
-function get_token() {
+function getToken() {
 
     if ($('#apiUrl' ).val() === "" ||  $('#apiUser' ).val() === "" || 
         $('#apiPassword' ).val() === "" || $('#clientId' ).val() === "" || 
