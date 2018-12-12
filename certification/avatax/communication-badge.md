@@ -24,17 +24,17 @@ doctype: integration_checklists
                 Provide the ability to set the Incorporated/Unincorporated status of Locations.
                 </p>
                 
-            <h5>Validate Company specific data in transactional inputs - <em>Required</em></h5>
+            <h5>Validate specific data in transactional inputs - <em>Required</em></h5>
                 <p class="badgerequirement">Submit transactions with required data values. For example, ability to calculate taxes using API call and get correct tax results.</p>
                 <p class="badgerequirement">Demonstrate in souce system how each of the input values are configured and passed to the API fields.
                     <ul class="normal">
-                    <li>System level settings</li>
+                    <li><h3>System level settings</h3></li>
                         <ul class="normal">
                             <li>Account/Key - API access tokens</li>
                             <li>Client ID - Required</li>
                             <li>Profile - this allows Sellers / Operators to override the default bahavior of Avalara and use a custom tax profile - <b>Suggested</b></li>
                         </ul>
-                    <li>Company or Seller Level Settings</li>
+                    <li><h3>Company or Seller Level Settings</h3></li>
                         <ul class="normal">
                             <li>Company Identifier - This value identifies the Seller / Separate Legal Entity / Division / etc.</li>
                             <li>Service Class: Primary Local or Primary Long Distance</li>
@@ -42,14 +42,14 @@ doctype: integration_checklists
                             <li>Facilities Based</li>
                             <li>Franchise</li>
                         </ul>
-                    <li>Customer or Buyer Level Settings</li>
+                    <li><h3>Customer or Buyer Level Settings</h3></li>
                         <ul class="normal">
                             <li>Sale Type - Retail or Wholesale</li>
                             <li>Customer Type: Business, Residential, Industrial, Senior Citizen</li>
                             <li>Lifeline</li>
                             <li>Exemptions</li>
                         </ul>
-                    <li>Transaction Level Settings</li>
+                    <li><h3>Transaction Level Settings</h3></li>
                         <ul class="normal">
                             <li>Company Identifier - Depends on use case if this value is required</li>
                             <li>T/S Pairs</li>
@@ -59,17 +59,6 @@ doctype: integration_checklists
                 </p>
                 <p class="badgerequirement">Demonstrate results in source system based upon different input parameters required for a basic transaction.</p>
             
-            <h5 style="color:red;">Validate execution of base calculate tax function - <em>Required</em></h5>
-                <p class="badgerequirement">You should be able to submit basic transactions with required data values. For example, ability to calculate taxes using CalcTaxesWithPcode API call and get correct tax results.<br>
-                Display in source system how each of the input values are configured and passed to the API fields.<br>
-                Demonstrate results in source system based upon different input parameters required for a basic transaction.
-                </p>
-                
-            <h5 style="color:red;">Validate Company specific data in AFC transactional inputs - <em>Required</em></h5>
-                <p class="badgerequirement">You should be able to submit basic transaction with required data values. For example, ability to calculate taxes using CalcTaxesWithPcode API call and get correct tax results.<br>
-                Display in source system how each of the input values are configured and passed to the API fields.<br>
-                Demonstrate results in source system based upon different input parameters required for a basic transaction.
-                </p>
             
             <h5>Validate Adjustment handling - <em>Required</em></h5>
                 <p class="badgerequirement">Ability to use an adjustment call for a normal transaction.</p>
@@ -82,29 +71,14 @@ doctype: integration_checklists
                 <p class="badgerequirement">Ability to handle specific exemptions</p>
                 <p class="badgerequirement">Ability to handle category exemptions</p>
                 
-            <h5>Ability to handle level exemptions - <em>optional</em><br>
+            <h5>Ability to handle level exemptions - <em>optional</em><br></h5>
                 <p class="badgerequirement">You should be able to submit transactions with exemption information for Level, category, and specific exemption. The results should reflect the exempted taxes.</p>
                 <p class="badgerequirement">Display Pre API setup and execute transaction without exemption, displaying results in originating system.</p>
                 <p class="badgerequirement">Display Pre API setup with level exemptions and execute transaction, displaying results in originating system.</p>
                 <p class="badgerequirement">Display Pre API setup with specify exemptions and execute transaction, displaying results in originating system.</p>
-                <p class="badgerequirement">Display Pre API setup with category exemptions and execute transaction, displaying results in originating system.                </p>
-            
-            <h5 style="color:red;">Validate Invoice transaction (Customer Mode) - <em>Required</em></h5>
-                <p class="badgerequirement">Batch customer mode.<br>
-                Transaction Customer Mode.	User should be able to submit invoice mode/customer mode transactions and received results from API service For example, Ability to submit a single transaction to be processed for a customer batch using "CalcCustTaxes" API and verify results using "ProcessCustomerbatch" API.<br>
-                Show API setup in Invoice mode and execute transaction, displaying results in source system.<br>
-                Show API setup in Batch mode and execute transaction, displaying results in source system.
-                </p>
+                <p class="badgerequirement">Display Pre API setup with category exemptions and execute transaction, displaying results in originating system.</p>
                 
-            <h5 style="color:red;">Validate Batch Invoice/Customer Mode Adjustment handling - <em>Required</em></h5>
-                <p class="badgerequirement">How to apply adjustment to current batch/previous batch.<br>
-                Ability to use an adjustment call for batch transaction.<br>
-                User should be able to submit invoice mode/customer mode adjustment transactions and received results from API service. For example, ability to submit a single adjustment transaction to be processed for a customer batch using "CalcCustAdj" API and verify results using "ProcessCustomerbatch" API.<br>
-                Show API setup in Invoice mode and execute adjustment transaction, displaying results in source system.<br>
-                Show API setup in Batch mode and execute adjustment transaction, displaying results in source system.
-                </p>
-            
-            <h5 style="color:red;">Validate Invoices/Transactions get committed - <em>Required</em></h5>
+            <h5>Validate Invoices/Transactions get committed - <em>Required</em></h5>
                 <p class="badgerequirement">Validate invoices/transactions are identified by DocumentCode</p>
                 <p class="badgerequirement">Validate the related / unrelated flag gets set appropriately</p>
                 <p class="badgerequirement">Validate fact patterns</p>
