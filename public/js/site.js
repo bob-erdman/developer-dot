@@ -705,13 +705,13 @@ function exposureZoneReq() {
 // TODO: block function if missing info
 function initScript() {
     console.log('INIT SCRIPT')
-    if ( document.getElementById( 'gencertUrl' ).value == "" ) {
+    if ( $('#gencertUrl').val() === "" ) {
         alert( 'Enter a GenCert URL.' );
         return;
     }
 
-    if ( document.getElementById( 'sampleScript' ).value == "" ) {
-        alert( 'Enter some valid javascript.' );
+    if ( $('#cert-request').val() === "" ) {
+        alert( 'Enter valid javascript in the script box.' );
         return;
     }
 
@@ -719,7 +719,7 @@ function initScript() {
     script.onload = function () {
     
         try {
-            eval( document.getElementById( 'sample_script' ).value );
+            eval( document.getElementById( 'sampleScript' ).value );
         } 
         catch ( e ) {
             if ( e instanceof SyntaxError ) {
@@ -776,6 +776,7 @@ function getToken() {
     });
 }
 
+// TODO: updates when script box is cleared out
 function updateCertScript(tokenKey) {
     const exposureZone = $('#setZone').val();    
     const token = tokenKey ? tokenKey : '';   

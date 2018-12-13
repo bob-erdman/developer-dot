@@ -9,72 +9,68 @@ doctype: overview
 
 <!-- TODO: instructions -->
 <p>Hi! I will be filled with instructions soon, so you can understand what this page does.</p>
-<!-- TODO: is outer div needed? -->
-<div id="gencertTest">
-    <hr style="margin: 20px 0px 20px 0px" id="divider">
-    <div class="row">
-        <div class="col-md-5">
-            <h3>Step 1: Setup</h3>
-            <p>INSTRUCTIONS</p>
-            <div>
-                <label style="display: block;">
-                    GenCert URL *
-                    <input id="gencertUrl" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
-                </label>
-                <!-- populated with exposureZoneReq() -->
-                <label>Exposure Zone *
-                    <select id="setZone" onChange="updateCertScript();"></select>
-                </label>
-            </div> 
-            <h3>Step 2: Get your token</h3>
-            <p>INSTRUCTIONS</p>
-            <table>
-                <tr>
-                    <label>API URL
-                    <input id="apiUrl" placeholder="https://api.certcapture.com" value="https://api.certcapture.com" type="text"></label>
-                </tr>
-                <tr>
-                    <td><input id="apiUser" placeholder="API User Name" type="text"></td>
-                    <td><input id="apiPassword" placeholder="API Password" type="password"></td> 
-                </tr>
-                <tr>
-                    <td><input id="clientId" placeholder="Client ID" type="text"></td>
-                    <td><input id="customerNumber" placeholder="Customer Number" type="text"></td>
-                </tr>
-            </table>
-            <button class="btn btn-primary" style="margin-top: 10px;" onclick="getToken()">Get Token</button>
-            <!-- options -->
-            <!-- TODO: instructions -->
-            <h3>Step 3: Select your options</h3>
-            <p>INSTRUCTIONS</p>
-            <div>
-                <ul id="testOptions" onChange="updateCertScript();">
-                    {% for option in site.data.demo_page.cert-options %}
-                        <li>
-                            <label>
-                                <input type='checkbox' class="cert-demo-option" id="{{ option.id }}">{{ option.label }}
-                            </label>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        <!-- response output -->
-        <!-- TODO: pretty script -->
-        <div class="col-md-7">
-            <h3 style="">Step 4: Submit your script</h3>
-            <div id="scriptTest">
-                <div id="sampleScript" class="code-snippet respScroll api-console-output" style="height: 400px;max-width: 800px;">
-                    <div class="loading-pulse" style="display: none;"></div>
-                    <textarea id="cert-request" spellcheck="false">{ }</textarea>
-                </div>
-                <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>
-            </div>
+<hr style="margin: 20px 0px 20px 0px" id="divider">
+
+<div class="row" id="gencertTest">
+    <div class="col-md-5">
+        <h3>Step 1: Setup</h3>
+        <p>INSTRUCTIONS</p>
+        <div>
+            <label style="display: block;">
+                GenCert URL *
+                <input id="gencertUrl" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
+            </label>
+            <!-- populated with exposureZoneReq() -->
+            <label>Exposure Zone *
+                <select id="setZone" onChange="updateCertScript();"></select>
+            </label>
+        </div> 
+        <h3>Step 2: Get your token</h3>
+        <p>INSTRUCTIONS</p>
+        <table>
+            <tr>
+                <label>API URL
+                <input id="apiUrl" placeholder="https://api.certcapture.com" value="https://api.certcapture.com" type="text"></label>
+            </tr>
+            <tr>
+                <td><input id="apiUser" placeholder="API User Name" type="text"></td>
+                <td><input id="apiPassword" placeholder="API Password" type="password"></td> 
+            </tr>
+            <tr>
+                <td><input id="clientId" placeholder="Client ID" type="text"></td>
+                <td><input id="customerNumber" placeholder="Customer Number" type="text"></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary" style="margin-top: 10px;" onclick="getToken()">Get Token</button>
+        <!-- options -->
+        <!-- TODO: instructions -->
+        <h3>Step 3: Select your options</h3>
+        <p>INSTRUCTIONS</p>
+        <div>
+            <ul id="testOptions" onChange="updateCertScript();">
+                {% for option in site.data.demo_page.cert-options %}
+                    <li>
+                        <label>
+                            <input type='checkbox' class="cert-demo-option" id="{{ option.id }}">{{ option.label }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
-    <!-- end row -->
+    <!-- request example script -->
+    <div class="col-md-7">
+        <h3 style="">Step 4: Submit your script</h3>
+        <div id="scriptTest">
+            <div id="sampleScript" class="code-snippet respScroll api-console-output" style="height: 400px;max-width: 800px;">
+                <div class="loading-pulse" style="display: none;"></div>
+                <textarea id="cert-request" spellcheck="false">{ }</textarea>
+            </div>
+            <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>
+        </div>
+    </div>
 </div>
-<!-- end container -->
+<!-- end row -->
 
 <!-- Form ouput -->
 <!-- TODO: formatting/styling -->
