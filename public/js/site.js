@@ -153,7 +153,9 @@ function lineBuilder(reqType) {
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             case 'Java':
-                lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum}), "${taxCode}")`; 
+            //.withLine("1", new BigDecimal(900.0), new BigDecimal(1), "PF050099", null, null, null, null, null, "1806101500")
+                lines += `.withLine("${lineNum}", new BigDecimal(${amount}), null, "${taxCode}", null, null, null, null, null,` 
+                lines += hsCode.length ? `"${hsCode}")` : `"null")`; 
                 lines += (mass.length && unit.length) ? 
                 `\n    .withLineParameter("Mass", "${mass}")\n    .withLineParameter("Mass.UOM", "${unit}")` : ``;
                 if (lineNum !== allProducts.length) lines += '\n    ';
