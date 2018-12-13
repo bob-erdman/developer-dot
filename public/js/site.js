@@ -704,7 +704,9 @@ function exposureZoneReq() {
 // TODO: jquery
 // TODO: block function if missing info
 function initScript() {
-    console.log('INIT SCRIPT')
+    console.warn('INIT SCRIPT')
+    console.warn('value: ', document.getElementById( 'cert-request' ).value);
+    
     if ( $('#gencertUrl').val() === "" ) {
         alert( 'Enter a GenCert URL.' );
         return;
@@ -715,20 +717,22 @@ function initScript() {
         return;
     }
 
+    // TODO: token validation
+
     var script = document.createElement( 'script') ;
     script.onload = function () {
     
         try {
-            eval( document.getElementById( 'sampleScript' ).value );
+            eval( document.getElementById( 'cert-request' ).value );
         } 
         catch ( e ) {
             if ( e instanceof SyntaxError ) {
                 alert( e.message );
             }
         }
-        document.getElementById( 'gencertTest' ).style.display = 'none';
-        document.getElementById( 'divider' ).style.display      = 'none';
-        document.getElementById( 'scriptTest' ).style.display  = 'none';
+        //document.getElementById( 'gencertTest' ).style.display = 'none';
+        //document.getElementById( 'divider' ).style.display      = 'none';
+        //document.getElementById( 'scriptTest' ).style.display  = 'none';
         
     };
     
@@ -791,7 +795,7 @@ function updateCertScript(tokenKey) {
         options = `  edit_purchaser: false, \n`;
     }
     
-    const sampleScript = `GenCert.init({ \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
+    const sampleScript = `GenCert.init(document.getElementById( 'formContainer' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().text(sampleScript);
 };
