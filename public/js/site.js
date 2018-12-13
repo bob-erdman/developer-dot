@@ -780,22 +780,24 @@ function getToken() {
 function updateCertScript(tokenKey) {
     const exposureZone = $('#setZone').val();    
     const token = tokenKey ? tokenKey : '';   
-    const selectionOptions = $('.cert-demo-option:checked');
-    let options;
+    const selectedOptions = $('.cert-demo-option:checked');
+    let options = ``;
     
-    if (selectionOptions.length > 0) {
-        console.warn('selectionOptions', selectionOptions);
+    if (selectedOptions.length > 0) {
+        console.warn('selectionOptions', selectedOptions);
         
-        $.each(selectionOptions, (i, val) => {
+        $.each(selectedOptions, (i, val) => {
             console.warn('val', val);
             
-            options += `${val.id} : true, \n`;
+            options += `  ${val.id} : true, \n`;
         })
     } else {
-        options = `edit_purchaser: false,`;
+        options = `  edit_purchaser: false, \n`;
     }
     
-    const sampleScript = `GenCert.init({ \n  ${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
+    console.warn('options: ', options);
+
+    const sampleScript = `GenCert.init({ \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().text(sampleScript);
 };
