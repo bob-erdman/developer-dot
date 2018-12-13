@@ -738,7 +738,6 @@ function initScript() {
 }
 
 function getToken() {
-
     if ($('#apiUrl' ).val() === "" ||  $('#apiUser' ).val() === "" || 
         $('#apiPassword' ).val() === "" || $('#clientId' ).val() === "" || 
         $('#customerNumber' ).val() === "" ) {
@@ -791,8 +790,6 @@ function updateCertScript(tokenKey) {
         options = `  edit_purchaser: false, \n`;
     }
     
-    console.warn('options: ', options);
-
     const sampleScript = `GenCert.init({ \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().text(sampleScript);

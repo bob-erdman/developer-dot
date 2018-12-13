@@ -60,14 +60,13 @@ doctype: overview
             </div>
         </div>
         <!-- response output -->
-        <!-- TODO: allow user to input token; see createTransaction pg -->
         <!-- TODO: pretty script -->
         <div class="col-md-7">
             <h3 style="">Step 4: Submit your script</h3>
             <div id="scriptTest">
                 <div id="sampleScript" class="code-snippet respScroll api-console-output" style="height: 400px;max-width: 800px;">
                     <div class="loading-pulse" style="display: none;"></div>
-                    <pre id="cert-request" style="">{ }</pre>
+                    <textarea id="cert-request" spellcheck="false">{ }</textarea>
                 </div>
                 <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>
             </div>
