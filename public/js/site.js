@@ -696,6 +696,7 @@ function exposureZoneReq() {
             zones += `<option value=${state.name}>${state.name}</option>`;
         })
         $('#setZone').html(zones);
+        updateCertScript();
     });
 }
 
@@ -778,8 +779,23 @@ function getToken() {
 
 function updateCertScript(tokenKey) {
     const exposureZone = $('#setZone').val();    
-    const token = tokenKey ? tokenKey : '';    
-    const sampleScript = `GenCert.init({ \n  ship_zone: '${exposureZone}', \n  token: '${token}', \n  edit_purchaser: true \n}); \nGenCert.show();`;
+    const token = tokenKey ? tokenKey : '';   
+    const selectionOptions = $('.cert-demo-option:checked');
+    let options;
+    
+    if (selectionOptions.length > 0) {
+        console.warn('selectionOptions', selectionOptions);
+        
+        $.each(selectionOptions, (i, val) => {
+            console.warn('val', val);
+            
+            options += `${val.id} : true, \n`;
+        })
+    } else {
+        options = `edit_purchaser: false,`;
+    }
+    
+    const sampleScript = `GenCert.init({ \n  ${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().text(sampleScript);
 };

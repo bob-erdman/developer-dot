@@ -10,13 +10,13 @@ doctype: overview
 <!-- TODO: instructions -->
 <p>Hi! I will be filled with instructions soon, so you can understand what this page does.</p>
 <!-- TODO: is outer div needed? -->
-<div id="gencertTest" class="">
+<div id="gencertTest">
     <hr style="margin: 20px 0px 20px 0px" id="divider">
     <div class="row">
         <div class="col-md-5">
             <h3>Step 1: Setup</h3>
             <p>INSTRUCTIONS</p>
-            <div class="">
+            <div>
                 <label style="display: block;">
                     GenCert URL *
                     <input id="gencertUrl" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
@@ -34,22 +34,21 @@ doctype: overview
                     <input id="apiUrl" placeholder="https://api.certcapture.com" value="https://api.certcapture.com" type="text"></label>
                 </tr>
                 <tr>
-                    <td><input id="apiUser" class="" placeholder="API User Name" type="text"></td>
-                    <td><input id="apiPassword" class="" placeholder="API Password" type="password"></td> 
+                    <td><input id="apiUser" placeholder="API User Name" type="text"></td>
+                    <td><input id="apiPassword" placeholder="API Password" type="password"></td> 
                 </tr>
                 <tr>
-                    <td><input id="clientId" class="" placeholder="Client ID" type="text"></td>
-                    <td><input id="customerNumber" class="" placeholder="Customer Number" type="text"></td>
+                    <td><input id="clientId" placeholder="Client ID" type="text"></td>
+                    <td><input id="customerNumber" placeholder="Customer Number" type="text"></td>
                 </tr>
             </table>
             <button class="btn btn-primary" style="margin-top: 10px;" onclick="getToken()">Get Token</button>
             <!-- options -->
             <!-- TODO: populates script when clicked -->
             <!-- TODO: instructions -->
-            <!-- TODO: checkbox spacing -->
             <h3>Step 3: Select your options</h3>
             <p>INSTRUCTIONS</p>
-            <div class="" style="">
+            <div>
                 <ul id="testOptions">
                     {% for option in site.data.demo_page.cert-options %}
                         <li>
@@ -67,7 +66,7 @@ doctype: overview
         <!-- TODO: general script on pg load -->
         <div class="col-md-7">
             <h3 style="">Step 4: Submit your script</h3>
-            <div id="scriptTest" class="  ">
+            <div id="scriptTest">
                 <div id="sampleScript" class="code-snippet respScroll api-console-output" style="height: 400px;max-width: 800px;">
                     <div class="loading-pulse" style="display: none;"></div>
                     <pre id="cert-request" style="">{ }</pre>
