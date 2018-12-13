@@ -170,10 +170,6 @@ function lineBuilder(reqType) {
     return lines;
 }
 
-function lanaugeSpecificLineBuilder(indent, indented, aWrap, vWrap, assignment, objToTranslate) {
-
-}
-
 // HELPER: build address with correct template for given language
 function addressBuilder(reqType, addressName, prefix) {
     const addressArray = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
