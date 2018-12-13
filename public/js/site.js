@@ -784,12 +784,8 @@ function updateCertScript(tokenKey) {
     let options = ``;
     
     if (selectedOptions.length > 0) {
-        console.warn('selectionOptions', selectedOptions);
-        
-        $.each(selectedOptions, (i, val) => {
-            console.warn('val', val);
-            
-            options += `  ${val.id} : true, \n`;
+        selectedOptions.each(function() {            
+            options += `  ${this.id} : true, \n`;
         })
     } else {
         options = `  edit_purchaser: false, \n`;
