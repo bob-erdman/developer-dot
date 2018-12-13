@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -229,6 +229,6 @@ Taxes for both Point 'A' and Point 'B' are returned.
 </ul>
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
