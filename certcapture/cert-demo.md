@@ -44,12 +44,11 @@ doctype: overview
             </table>
             <button class="btn btn-primary" style="margin-top: 10px;" onclick="getToken()">Get Token</button>
             <!-- options -->
-            <!-- TODO: populates script when clicked -->
             <!-- TODO: instructions -->
             <h3>Step 3: Select your options</h3>
             <p>INSTRUCTIONS</p>
             <div>
-                <ul id="testOptions">
+                <ul id="testOptions" onChange="updateCertScript();">
                     {% for option in site.data.demo_page.cert-options %}
                         <li>
                             <label>
@@ -63,7 +62,6 @@ doctype: overview
         <!-- response output -->
         <!-- TODO: allow user to input token; see createTransaction pg -->
         <!-- TODO: pretty script -->
-        <!-- TODO: general script on pg load -->
         <div class="col-md-7">
             <h3 style="">Step 4: Submit your script</h3>
             <div id="scriptTest">
