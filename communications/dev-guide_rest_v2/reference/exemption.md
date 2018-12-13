@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Exemption</h3>
 
-The <code>Exemption</code> object allows you to specify <b>exemptions</b> for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>:
+The <code>Exemption</code> object allows you to specify <b>exemptions</b> for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -39,9 +39,9 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
       </tr>
       <tr>
         <td><code>loc</code></td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Location for the exemption to be applied. Match is at the level specified by domain.
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Location for the exemption to be applied. Match is at the level specified by domain
         <br>
-        There are several ways to input location information. See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> for more information</td>
+        There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a></td>
       </tr>
       <tr>
         <td><code>tpe</code></td>
@@ -54,7 +54,7 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
         <td><code>lvl</code></td>
         <td><code>[int]</code> Tax Level ID
           <br/>
-          <b>Obsolete</b> - provided for legacy support only.  Use <b>Domain</b> (<code>dom</code>) and <b>Scope</b> (<code>scp</code>) instead
+          <b>Deprecated</b> - provided for legacy support only.  Use <b>Domain</b> (<code>dom</code>) and <b>Scope</b> (<code>scp</code>) instead
         </td>
       </tr>
       <tr>
@@ -97,7 +97,7 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
         <td><code>scp</code></td>
         <td><code>[int]</code> Exemption Scope
           <br/>
-          Defines the tax levels in which the taxes will be considered as candidates for exemption.
+          Defines the tax levels in which the taxes will be considered as candidates for exemption
           <br/>
           <br/>
           Combination of one or more of these values (add the appropriate values together):

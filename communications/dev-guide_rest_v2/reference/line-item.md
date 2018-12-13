@@ -37,14 +37,14 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>from</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> The point of origin for the line item
             <br>
-            There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details
+            There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
             </td>
         </tr>
         <tr>
             <td><code>to</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> The destination of the line item
             <br>
-            There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details
+            There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
             </td>
         </tr>
         <tr>
@@ -198,7 +198,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
         <td><code>bill</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> Bill To Location
           <br>
-          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details
+          There are several ways to input location information. For more information,see the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
         </td>
       </tr>
       <tr>
@@ -229,10 +229,10 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
           <br>
           <i>ex.</i><code> 2009-12-01T03:00:00</code>
           <br>
-          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This will affect the rules our tax engine applies when calculating taxes
+          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This affects the rules our tax engine applies when calculating taxes
           <br>
           <br>
-          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, our tax engine will use the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information
+          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, the tax engine uses the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information
         </td>
       </tr>
     </tbody>

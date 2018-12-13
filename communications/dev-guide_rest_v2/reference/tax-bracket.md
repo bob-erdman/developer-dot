@@ -30,14 +30,14 @@ The <code>TaxBracket</code> object allows the user to specify a list of <b>tax b
         <td><code>rate</code></td>
         <td><code>[double]</code> <span class="t5">required</span> Tax Rate
           <br/>
-          Tax rate for this tax bracket.  The value cannot be negative.  For rated taxes, the value must be between 0 and 1.  Otherwise, the value may be greater than 1.
+          Tax rate for this tax bracket.  The value cannot be negative.  For rated taxes, the value must be between 0 and 1.  Otherwise, the value may be greater than 1
         </td>
       </tr>
       <tr>
         <td><code>rate</code></td>
         <td><code>[double]</code> <span class="t5">required</span> Max Base
           <br/>
-          The maximum base that this rate applies to.  Use <code>2147483647</code> for "unlimited".
+          The maximum base that this rate applies to.  Use <code>2147483647</code> for "unlimited"
         </td>
       </tr>
     </tbody>

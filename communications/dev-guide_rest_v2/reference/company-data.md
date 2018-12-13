@@ -48,7 +48,7 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
         <td><code>fclt</code></td>
         <td><code>[bool]</code> <span class="t5">required</span> Facilities
           <br/>
-          Specifies if the carrier delivering the service has company-owned facilities to provide the service.
+          Specifies if the carrier delivering the service has company-owned facilities to provide the service
           <ul class="dev-guide-list">
             <li><code>true</code>: Seller is facilities-based (cable operators and telephone companies)</li>
             <li><code>false</code>: Seller is not facilities-based (Internet based providers)</li>
@@ -59,7 +59,7 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
         <td><code>frch</code></td>
         <td><code>[bool]</code> Franchise 
           <br/>
-          Indicates if the company provides services sold pursuant to a franchise agreement between the carrier and jurisdiction.
+          Indicates if the company provides services sold pursuant to a franchise agreement between the carrier and jurisdiction
           <ul class="dev-guide-list">
             <li><code>true</code>: Seller has a franchise agreement</li>
             <li><code>false</code>: Franchise taxes do not apply to the seller</li>
@@ -79,14 +79,14 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
         <td><code>excl</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/"><code>[Exclusion]</code></a> Exclusions 
         <br>
-        This is an array of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> objects that identify states/provinces/territories where your company is excluded from collecting taxes.  For increased performance, we suggest using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with an <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">Exclusion file</a> applied.
+        An array of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> objects that identify states/provinces/territories where your company is excluded from collecting taxes.  We suggest using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with an <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">Exclusion file</a> applied for increased performance
         </td>
       </tr>
       <tr>
         <td><code>idnt</code></td>
         <td><code>[string]</code> Company Identifier 
         <br>
-        An optional company identifier for reporting.  This is a 20 byte alphanumeric field that represents your company or, if you are a third-party billing provider, could represent one of your clients.
+        An optional company identifier used in reporting.  This is a 20 byte alphanumeric field that represents your company or, if you are a third-party billing provider, could represent one of your clients
         </td>
       </tr>
     </tbody>

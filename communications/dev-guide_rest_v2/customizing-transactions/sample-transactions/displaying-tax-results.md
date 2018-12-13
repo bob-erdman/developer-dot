@@ -81,6 +81,15 @@ Setting the ReturnSummary flag (<code>summ</code>) displays or hides the summary
   </table>
 </div>
 
+<h3>Taxable Measure</h3>
+Taxable measure is returned as part the detailed taxes.  It is the basis for calculation of rate-based taxes.  Simple transactions result in a taxable measure equal to the sale price.  However, tax-on-tax, caps, thresholds, tiers, and taxable amount modifiers can all result in taxable measures that are greater than or less than the sale price.  For rate-based taxes, Tax Amount = Taxable Measure * Rate.
+<br/><br/>
+Taxable measure is adjusted by any factor that changes the tax calculation.  Examples:
+<ul class="dev-guide-list">
+    <li>Taxable measure exceeds the sale amount: Tax-on-tax occurs - the tax amount calculated includes tax amount from other taxes.  The additional taxes to be included are added to the taxable measure</li>
+    <li>Taxable measure is less than the sale price: A discount is applied - safe harbor exemptions or internet tax in Texas where the first $25 is exempt from taxation</li>
+</ul> 
+
 <h3>Example 1 - Summary and Detailed taxes Returned</h3>
 This example demonstrates both the Detail taxes (<code>txs</code>) and Summary taxes (<code>summ</code>) returned in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes response</a>.
 

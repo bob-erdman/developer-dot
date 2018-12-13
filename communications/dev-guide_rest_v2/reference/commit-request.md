@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Commit Request</h3>
 
-The <code>CommitRequest</code> object contains the <b>Document Code and optional field data</b> to override in reports:
+The <code>CommitRequest</code> object contains the <b>Document Code</b> and <b>optional fields</b> used in reports:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -30,14 +30,14 @@ The <code>CommitRequest</code> object contains the <b>Document Code and optional
             <td><code>doc</code></td>
             <td><code>[string]</code> Document Code
             <br/>
-            The Document Code is a unique string that is used to Commit or Uncommit transactions
+            A unique string that is used to Commit or Uncommit transactions
             </td>
         </tr>
         <tr>
             <td><code>cmmt</code></td>
             <td><code>[bool]</code> Commit
             <br/>
-            Indicates if invoice should be committed as soon as it is processed.
+            Indicates if invoice should be committed as soon as it is processed
             <ul class="dev-guide-list">
                 <li><code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">committed</a></li>
                 <li><code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">uncommitted</a></li>
@@ -48,7 +48,7 @@ The <code>CommitRequest</code> object contains the <b>Document Code and optional
             <td><code>opt</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/"><code>[KeyValuePair]</code></a> Optional Fields
             <br/>
-            A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to this invoice.
+            A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to this invoice
             </td>
         </tr>
     </tbody>

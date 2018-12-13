@@ -95,7 +95,7 @@ The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarize
             <td><code>sur</code></td>
             <td><code>[bool]</code> Surcharge
             <br/>
-            Indicates if this tax is a surcharge.
+            Indicates if this tax is a surcharge
             <ul class="dev-guide-list">
                 <li><code>true</code>: Surcharge rules apply to this tax</li>
                 <li><code>false</code>: Tax is not a surcharge</li>

@@ -65,9 +65,9 @@ The <code>TSPairData</code> object contains a list of <b>transaction/service pai
           <td><code>InputType</code></td>
           <td><code>[int]</code> Input Type ID
           <br/>
-          The Input Type ID defines the input fields (charge, lines, locations, and minutes) required when using the transaction/service pair.
+          The Input Type ID defines the input fields (charge, lines, locations, and minutes) required when using the transaction/service pair
           <ul class="dev-guide-list">
-            <li><code>0</code>: None.  Tax is based per invoice per account per billing cycle.  Taxable amount or numbers of lines are irrelevant for the transaction/service pair.</li>
+            <li><code>0</code>: None.  Tax is based per invoice per account per billing cycle.  Taxable amount or numbers of lines are irrelevant for the transaction/service pair</li>
             <li><code>1</code>: Charge (<code>chg</code>)</li>
             <li><code>2</code>: Lines (<code>line</code>)</li>
             <li><code>4</code>: Locations (<code>loc</code>)</li>

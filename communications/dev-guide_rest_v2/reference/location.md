@@ -39,7 +39,7 @@ The <code>Location</code> object contains information about a <b>jurisdiction</b
             <td><code>int</code></td>
             <td><code>[bool]</code> Incorporated
                 <br/>
-                Indicates if the location is within city limits.
+                Indicates if the location is within city limits
                 <ul class="dev-guide-list">
                     <li><code>true</code>: Address is within city limits</li>
                     <li><code>false</code>: Address is outside of city limits (unincorporated)</li>
@@ -50,7 +50,7 @@ The <code>Location</code> object contains information about a <b>jurisdiction</b
             <td><code>geo</code></td>
             <td><code>[bool]</code> Geocode
                 <br/>
-                Indicates if this address should be geocoded in order to obtain taxing jurisdiction.
+                Indicates if this address should be geocoded in order to obtain taxing jurisdiction
                 <ul class="dev-guide-list">
                     <li><code>true</code>: Use Geo lookup</li>
                     <li><code>false</code>: Do not use Geo lookup</li>
@@ -61,7 +61,7 @@ The <code>Location</code> object contains information about a <b>jurisdiction</b
             <td><code>pcd</code></td>
             <td><code>[int]</code> PCode
                 <br>
-                Proprietary code returned from our AFC Geo service.  PCodes provide the <b>most accurate</b> jurisdiction determination for calculating taxes with our engine.
+                Proprietary code returned from AFC Geo.  PCodes provide the <b>most accurate</b> jurisdiction determination for calculating taxes with the AFC tax engine
             </td>
         </tr>
         <tr>

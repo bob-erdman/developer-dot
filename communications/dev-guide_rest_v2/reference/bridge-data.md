@@ -33,7 +33,7 @@ The <code>BridgeData</code> functionality is still in beta.  Contact <a class="d
         <td><code>proc</code></td>
         <td><code>[bool]</code> Process Invalid Participant
           <br/>
-          Indicates if invalid participants should fail the transaction or continue processing.
+          Indicates if invalid participants should fail the transaction or continue processing
           <ul class="dev-guide-list">
             <li><code>true</code>: Continue processing the transaction on an invalid participant</li>
             <li><code>false</code>: Abort transaction processing on an invalid participant</li>
@@ -44,7 +44,7 @@ The <code>BridgeData</code> functionality is still in beta.  Contact <a class="d
         <td><code>rtrn</code></td>
         <td><code>[bool]</code> Return Participant Taxes 
           <br/>
-          Indicates if the individual participant taxes should be included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>.
+          Indicates if the individual participant taxes should be included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>
           <ul class="dev-guide-list">
             <li><code>true</code>: Return an array of individual participant taxes</li>
             <li><code>false</code>: Individual participant taxes should not be included in the returned tax data</li>
