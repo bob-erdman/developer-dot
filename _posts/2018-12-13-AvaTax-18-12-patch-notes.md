@@ -52,13 +52,13 @@ Items can be set up with parameters, which were previously only allowed in trans
 
 In assisting setting up your items to facilitate your transactions, we are providing a suite of new definition APIs:
 
-[ListParametersByItem](/api-reference/avatax/rest/v2/methods/Definitions/ListParametersByItem) Different than the existing [ListParameters](/api-reference/avatax/rest/v2/methods/Definitions/ListParameters) API which provides all available parameters recognized in Avalara system, this API provides you the more refined result set that are relevant to your profile setup (service subscriptions, nexus configuration and items).
+<b>ListParametersByItem</b> is similar to the existing [ListParameters](/api-reference/avatax/rest/v2/methods/Definitions/ListParameters), but provides you the more refined result set that are relevant to your profile setup (service subscriptions, nexus configuration and items).
 <br/>
 <br/>
-[ListProductClassificationSystems](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystems) This APIs provides all classification systems recognized by Avalara.
+<b>ListProductClassificationSystems</b> provides all classification systems recognized by Avalara.
 <br/>
 <br/>
-[ListProductClassificationSystemsByCompany](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystemsByCompany) Different than the API above, this API returns the more refined result set that are relevant to your profile setup (nexus configurations).
+<b>ListProductClassificationSystemsByCompany</b> is similar to the API above, but returns the more refined result set that are relevant to your profile setup (nexus configurations).
 
 <h3>Swagger loading time is improved</h3>
 
