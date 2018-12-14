@@ -4,7 +4,32 @@ product: certCapture
 nav: apis
 doctype: overview
 ---
-<script type='text/javascript' src='cert-demo.js'></script>
+<script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
+<script type='text/javascript' src='../cert-demo.js'></script>
+<script type='text/javascript'>
+    // get all the US exposure zones
+    $.ajax({
+        url: "https://beta-api.certcapture.com/v2/states",
+        type: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + window.btoa('api-test:api-test'));
+            xhr.setRequestHeader("x-client-id", 444);
+        },
+    }).then((res) => {
+        let zones = ``;
+        res.data.forEach((state) => {
+            zones += `<option value=${state.name}>${state.name}</option>`;
+        })
+        // populate exposure zone drop down
+        $('#set-zone').html(zones);
+        // TODO: can probs remove
+        updateCertScript();
+    });
+</script>
+
 
 <h1>CertCapture Demo</h1>
 
@@ -22,7 +47,6 @@ doctype: overview
                     GenCert URL *
                     <input id="gencert-url" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
                 </label>
-                <!-- populated with exposureZoneReq() -->
                 <label class="cert-label">Exposure Zone *
                     <select id="set-zone" onChange="updateCertScript();"></select>
                 </label>
@@ -65,6 +89,7 @@ doctype: overview
             <h3>Step 4: Submit your script</h3>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
+                    <!-- TODO: populate on load -->
                     <textarea id="cert-request" spellcheck="false">{ }</textarea>
                 </div>
                 <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>

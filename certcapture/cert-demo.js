@@ -1,25 +1,3 @@
-// populate the expsoure zone dropdown
-function exposureZoneReq() {
-    $.ajax({
-        url: "https://beta-api.certcapture.com/v2/states",
-        type: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + window.btoa('api-test:api-test'));
-            xhr.setRequestHeader("x-client-id", 444);
-        },
-    }).then((res) => {
-        let zones = ``;
-        res.data.forEach((state) => {
-            zones += `<option value=${state.name}>${state.name}</option>`;
-        })
-        $('#set-zone').html(zones);
-        updateCertScript();
-    });
-}
-
 // TODO: jquery
 function initScript() {
     console.warn('INIT SCRIPT')
@@ -69,6 +47,7 @@ function getToken() {
         type: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'x-customer-number' : $('#customer-number').val(),
         },
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
@@ -96,6 +75,7 @@ function getToken() {
 }
 
 // TODO: updates when script box is cleared out
+// TODO: doesn't clear token when updating exposure zone
 function updateCertScript(tokenKey) {
     const exposureZone = $('#set-zone').val();    
     const token = tokenKey ? tokenKey : '';   
@@ -116,12 +96,7 @@ function updateCertScript(tokenKey) {
 };
 
 function backToDemo() {
-    document.getElementById( 'gencert_test' ).style.display = 'block';
-    document.getElementById( 'cert-demo-back' ).style.display = 'none';
-    document.getElementById( 'form-container' ).style.display = 'none';
+    $('#gencert_test').css("display","block");
+    $('#cert-demo-back').css("display","none");
+    $('#form-container').css("display","none");
 }
-
-$(document).ready(function() {
-    // TODO: move to sensical place, populates on load
-    exposureZoneReq();
-});
