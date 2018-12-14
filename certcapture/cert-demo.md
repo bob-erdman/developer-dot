@@ -5,6 +5,7 @@ nav: apis
 doctype: overview
 ---
 <!-- TODO: move inline CSS to cert-demo.scss -->
+<!-- TODO: classes to dashes instead of camelCase -->
 <h1>CertCapture Demo</h1>
 
 <!-- TODO: instructions -->
@@ -70,12 +71,12 @@ doctype: overview
                 <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>
             </div>
         </div>
-    </div>
-<!-- end row -->
-</div>
+    </div><!-- end row -->
+</div><!-- end gencert_test -->
 
 <!-- Form ouput -->
 <!-- TODO: formatting/styling -->
-<div id="formParentContainer">
-    <div id="formContainer" style="display:none"></div>
+<div id="form-parent-container">
+    <div id="form-container" style="display:none"></div>
 </div>
+<button class="btn btn-primary" id="cert-demo-back" onclick="backToDemo();" style="display:none">Back to demo</button>

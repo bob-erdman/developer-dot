@@ -730,10 +730,8 @@ function initScript() {
                 alert( e.message );
             }
         }
-        //document.getElementById( 'gencertTest' ).style.display = 'none';
-        //document.getElementById( 'divider' ).style.display      = 'none';
-        //document.getElementById( 'scriptTest' ).style.display  = 'none';
-        
+        document.getElementById( 'gencert_test' ).style.display = 'none';
+        document.getElementById( 'cert-demo-back' ).style.display = 'block';
     };
     
     // TODO: add random string to end
@@ -795,10 +793,16 @@ function updateCertScript(tokenKey) {
         options = `  edit_purchaser: false, \n`;
     }
     
-    const sampleScript = `GenCert.init(document.getElementById( 'formContainer' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
+    const sampleScript = `GenCert.init(document.getElementById( 'form-container' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().text(sampleScript);
 };
+
+function backToDemo() {
+    document.getElementById( 'gencert_test' ).style.display = 'block';
+    document.getElementById( 'cert-demo-back' ).style.display = 'none';
+    document.getElementById( 'form-container' ).style.display = 'none';
+}
 
 /***************** END CERTCAPTURE Functions *******************************/
 
