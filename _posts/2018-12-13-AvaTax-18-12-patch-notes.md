@@ -42,26 +42,23 @@ The AvaTax release schedule includes a preview period where the latest software 
 
 In addition to existing basic configurations for Items, we are now allowing more advanced settings, including:
 
-<ul class="normal">
-    <li>Items can be tagged into multiple classification systems. As opposed to Avalara tax code being the only way of classifying your item, we are now supporting more than 100 classification systems recognized worldwide, including HTS, TARIC, etc. We are also continuing supporting Avalara Tax Code with a system code of AVATAXCODE.</li>
-    <li>Items can be set up with parameters, which were previously only allowed in transactions. Calling [CreateTransaction](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction) with a pre-configured item with parameters will allow your transaction request a lot cleaner.</li>
-</ul>
+Items can be tagged into multiple classification systems. As opposed to Avalara tax code being the only way of classifying your item, we are now supporting more than 100 classification systems recognized worldwide, including HTS, TARIC, etc. We are also continuing supporting Avalara Tax Code with a system code of `AVATAXCODE`.
+<br/>
+<br/>
+Items can be set up with parameters, which were previously only allowed in transactions. Calling [CreateTransaction](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction) with a pre-configured item with parameters will allow your transaction request a lot cleaner.
+
 
 <h3>Definition APIs in supporting configuring Items</h3>
 
 In assisting setting up your items to facilitate your transactions, we are providing a suite of new definition APIs:
 
-<ul class="normal">
-    <li>
-        [ListParametersByItem](/api-reference/avatax/rest/v2/methods/Definitions/ListParametersByItem) Different than the existing [ListParameters](/api-reference/avatax/rest/v2/methods/Definitions/ListParameters) API which provides all available parameters recognized in Avalara system, this API provides you the more refined result set that are relevant to your profile setup (service subscriptions, nexus configuration and items).
-    </li>
-    <li>
-        [ListProductClassificationSystems](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystems) This APIs provides all classification systems recognized by Avalara.
-    </li>
-    <li>
-        [ListProductClassificationSystemsByCompany](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystemsByCompany) Different than the API above, this API returns the more refined result set that are relevant to your profile setup (nexus configurations).
-    </li>
-</ul>
+[ListParametersByItem](/api-reference/avatax/rest/v2/methods/Definitions/ListParametersByItem) Different than the existing [ListParameters](/api-reference/avatax/rest/v2/methods/Definitions/ListParameters) API which provides all available parameters recognized in Avalara system, this API provides you the more refined result set that are relevant to your profile setup (service subscriptions, nexus configuration and items).
+<br/>
+<br/>
+[ListProductClassificationSystems](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystems) This APIs provides all classification systems recognized by Avalara.
+<br/>
+<br/>
+[ListProductClassificationSystemsByCompany](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystemsByCompany) Different than the API above, this API returns the more refined result set that are relevant to your profile setup (nexus configurations).
 
 <h3>Swagger loading time is improved</h3>
 
