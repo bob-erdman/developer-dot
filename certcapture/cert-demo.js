@@ -47,11 +47,15 @@ function getToken() {
         type: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'x-customer-number' : $('#customer-number').val(),
+            // 'Access-Control-Allow-Headers' : "*"
+            // 'x-customer-number': $('#customer-number').val(),
+            "x-client-id": $('#client-id').val()
         },
         beforeSend: function (xhr) {
+            xhr.setRequestHeader("Access-Control-Allow-Headers", "x-customer-number")
+            // xhr.setRequestHeader("x-client-id", $('#client-id').val());
+            // xhr.setRequestHeader("x-customer-number", $('#customer-number').val());
             xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
-            xhr.setRequestHeader("x-client-id", $('#client-id').val());
         },
         success: function(result, status, xhr) {            
             if (xhr.responseText !== "") {
@@ -66,7 +70,7 @@ function getToken() {
         error: function(xhr, status, error) {
             if (error === 'Unauthorized') {
                 alert( "Invalid Credentials. Please try again." );
-            } else {
+            } else if (xhr.responseJson.error){
                 alert( `Error: ${xhr.responseJson.error}` );
             }
             return status;

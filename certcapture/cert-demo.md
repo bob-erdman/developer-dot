@@ -25,7 +25,7 @@ doctype: overview
         })
         // populate exposure zone drop down
         $('#set-zone').html(zones);
-        // TODO: can probs remove
+        // populate the example script
         updateCertScript();
     });
 </script>
@@ -89,7 +89,6 @@ doctype: overview
             <h3>Step 4: Submit your script</h3>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
-                    <!-- TODO: populate on load -->
                     <textarea id="cert-request" spellcheck="false">{ }</textarea>
                 </div>
                 <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>
