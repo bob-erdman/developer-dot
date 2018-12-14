@@ -230,7 +230,6 @@ function cSharpSampleData() {
     // build sample data for c#
     const sampleData = `// Create AvaTaxClient
 var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
-
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -247,7 +246,6 @@ var createModel = new CreateTransactionModel()
         ${address}
     }
 }
-
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
@@ -273,7 +271,6 @@ function phpSampleData() {
     const sampleData = `// Create a new client
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
-
 // Create a simple transaction using the fluent transaction builder
 $tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb${address}
@@ -305,10 +302,8 @@ function pythonSampleData() {
     'ver 0.0',
     'my test machine',
     'sandbox')
-
 #Add your credentials
 client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
-
 #Build your tax document
 tax_document = {
     'addresses': {
@@ -322,7 +317,6 @@ tax_document = {
     ],
     'type': 'SalesOrder'
 }
-
 #Create transaction
 transaction_response = client.create_transaction(tax_document)
 print(transaction_response.text())`;
@@ -346,7 +340,6 @@ function rubySampleData() {
     }
 
     const sampleData = `credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
-
 AvaTax.configure do |config|
     begin
     credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
@@ -359,9 +352,7 @@ AvaTax.configure do |config|
     config.password = ENV['SANDBOX_PASSWORD']
     end
 end
-
 @client = AvaTax::Client.new(:logger => true)
-
 createTransactionModel = {
     type: "SalesOrder",
     companyCode: "12670",
@@ -374,7 +365,6 @@ createTransactionModel = {
         ${lines}
     ]
 }
-
 transaction = @client.create_transaction(createTransactionModel)`;
 
     return sampleData;
@@ -398,7 +388,6 @@ function javaSampleData() {
     const sampleData = `//creates our AvaTaxClient
 AvaTaxClient client = new AvaTaxClient("Test", "1.0", "localhost", AvaTaxEnvironment.Sandbox)
     .withSecurity("MyUsername", "MyPassword");
-
 // build and create transaction
 TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", DocumentType.SalesOrder, "ABC")
     ${address}
@@ -436,7 +425,6 @@ const creds = {
 };
     
 var client = new Avatax(config).withSecurity(creds);
-
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
@@ -695,19 +683,17 @@ function exposureZoneReq() {
         res.data.forEach((state) => {
             zones += `<option value=${state.name}>${state.name}</option>`;
         })
-        $('#setZone').html(zones);
+        $('#set-zone').html(zones);
         updateCertScript();
     });
 }
 
-// TODO: works/rework
 // TODO: jquery
-// TODO: block function if missing info
 function initScript() {
     console.warn('INIT SCRIPT')
     console.warn('value: ', document.getElementById( 'cert-request' ).value);
     
-    if ( $('#gencertUrl').val() === "" ) {
+    if ( $('#gencert-url').val() === "" ) {
         alert( 'Enter a GenCert URL.' );
         return;
     }
@@ -730,34 +716,31 @@ function initScript() {
                 alert( e.message );
             }
         }
-        //document.getElementById( 'gencertTest' ).style.display = 'none';
-        //document.getElementById( 'divider' ).style.display      = 'none';
-        //document.getElementById( 'scriptTest' ).style.display  = 'none';
-        
+        document.getElementById( 'gencert_test' ).style.display = 'none';
+        document.getElementById( 'cert-demo-back' ).style.display = 'block';
     };
     
-    // TODO: add random string to end
-    script.src = document.getElementById( 'gencertUrl' ).value + "/Gencert2/js";
+    script.src = document.getElementById( 'gencert-url' ).value + "/Gencert2/js";
     document.head.appendChild( script );
 }
 
 function getToken() {
-    if ($('#apiUrl' ).val() === "" ||  $('#apiUser' ).val() === "" || 
-        $('#apiPassword' ).val() === "" || $('#clientId' ).val() === "" || 
-        $('#customerNumber' ).val() === "" ) {
+    if ($('#api-url' ).val() === "" ||  $('#api-user' ).val() === "" || 
+        $('#api-password' ).val() === "" || $('#client-id' ).val() === "" || 
+        $('#customer-number' ).val() === "" ) {
             alert( 'You must provide all values to retrieve a token.' );
             return;
     }
 
     return $.ajax({
-        url: $('#apiUrl').val() + '/v2/auth/get-token',
+        url: $('#api-url').val() + '/v2/auth/get-token',
         type: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#apiUser').val() + ":" + $('#apiPassword').val()));
-            xhr.setRequestHeader("x-client-id", $('#clientId').val());
+            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
+            xhr.setRequestHeader("x-client-id", $('#client-id').val());
         },
         success: function(result, status, xhr) {            
             if (xhr.responseText !== "") {
@@ -782,7 +765,7 @@ function getToken() {
 
 // TODO: updates when script box is cleared out
 function updateCertScript(tokenKey) {
-    const exposureZone = $('#setZone').val();    
+    const exposureZone = $('#set-zone').val();    
     const token = tokenKey ? tokenKey : '';   
     const selectedOptions = $('.cert-demo-option:checked');
     let options = ``;
@@ -795,10 +778,16 @@ function updateCertScript(tokenKey) {
         options = `  edit_purchaser: false, \n`;
     }
     
-    const sampleScript = `GenCert.init(document.getElementById( 'formContainer' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
+    const sampleScript = `GenCert.init(document.getElementById( 'form-container' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().text(sampleScript);
 };
+
+function backToDemo() {
+    document.getElementById( 'gencert_test' ).style.display = 'block';
+    document.getElementById( 'cert-demo-back' ).style.display = 'none';
+    document.getElementById( 'form-container' ).style.display = 'none';
+}
 
 /***************** END CERTCAPTURE Functions *******************************/
 
