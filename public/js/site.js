@@ -695,19 +695,17 @@ function exposureZoneReq() {
         res.data.forEach((state) => {
             zones += `<option value=${state.name}>${state.name}</option>`;
         })
-        $('#setZone').html(zones);
+        $('#set-zone').html(zones);
         updateCertScript();
     });
 }
 
-// TODO: works/rework
 // TODO: jquery
-// TODO: block function if missing info
 function initScript() {
     console.warn('INIT SCRIPT')
     console.warn('value: ', document.getElementById( 'cert-request' ).value);
     
-    if ( $('#gencertUrl').val() === "" ) {
+    if ( $('#gencert-url').val() === "" ) {
         alert( 'Enter a GenCert URL.' );
         return;
     }
@@ -734,28 +732,27 @@ function initScript() {
         document.getElementById( 'cert-demo-back' ).style.display = 'block';
     };
     
-    // TODO: add random string to end
-    script.src = document.getElementById( 'gencertUrl' ).value + "/Gencert2/js";
+    script.src = document.getElementById( 'gencert-url' ).value + "/Gencert2/js";
     document.head.appendChild( script );
 }
 
 function getToken() {
-    if ($('#apiUrl' ).val() === "" ||  $('#apiUser' ).val() === "" || 
-        $('#apiPassword' ).val() === "" || $('#clientId' ).val() === "" || 
-        $('#customerNumber' ).val() === "" ) {
+    if ($('#api-url' ).val() === "" ||  $('#api-user' ).val() === "" || 
+        $('#api-password' ).val() === "" || $('#client-id' ).val() === "" || 
+        $('#customer-number' ).val() === "" ) {
             alert( 'You must provide all values to retrieve a token.' );
             return;
     }
 
     return $.ajax({
-        url: $('#apiUrl').val() + '/v2/auth/get-token',
+        url: $('#api-url').val() + '/v2/auth/get-token',
         type: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#apiUser').val() + ":" + $('#apiPassword').val()));
-            xhr.setRequestHeader("x-client-id", $('#clientId').val());
+            xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
+            xhr.setRequestHeader("x-client-id", $('#client-id').val());
         },
         success: function(result, status, xhr) {            
             if (xhr.responseText !== "") {
@@ -780,7 +777,7 @@ function getToken() {
 
 // TODO: updates when script box is cleared out
 function updateCertScript(tokenKey) {
-    const exposureZone = $('#setZone').val();    
+    const exposureZone = $('#set-zone').val();    
     const token = tokenKey ? tokenKey : '';   
     const selectedOptions = $('.cert-demo-option:checked');
     let options = ``;
