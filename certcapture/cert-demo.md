@@ -4,6 +4,8 @@ product: certCapture
 nav: apis
 doctype: overview
 ---
+<script type='text/javascript' src='cert-demo.js'></script>
+
 <h1>CertCapture Demo</h1>
 
 <!-- TODO: instructions -->
