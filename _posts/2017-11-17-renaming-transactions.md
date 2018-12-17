@@ -12,7 +12,7 @@ doctype: blog
 disqus: 1
 ---
 
-<center><img src="/images/renaming-transaction.jpg" height="300" width="75%"/></center>
+<center><img src="/public/images/blog/renaming-transaction.jpg" height="300" width="75%"/></center>
 
 You're building your integration using the AvaTax REST API.  The way your application works; you only have access to a temporary invoice number and at the end of all the processing your system assigns a permanent invoice number.  Given this; how can you keep the final values assigned by your application in sync with AvaTax?
 
