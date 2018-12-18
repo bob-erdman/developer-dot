@@ -24,7 +24,7 @@ This article is about the December 2018 monthly update to the AvaTax API.
         <tr>
             <td>Sandbox</td>
             <td><a href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></td>
-            <td>2018-12-17</td>
+            <td>2018-12-19</td>
         </tr>
         <tr>
             <td>Production</td>
