@@ -45,7 +45,7 @@ doctype: overview
             <div>
                 <label class="cert-label">
                     GenCert URL *
-                    <input id="gencert-url" value="https://app.certcapture.com/Gencert2/js" placeholder="https://beta.certcapture.com/Gencert2/js" type="text">
+                    <input id="gencert-url" value="https://beta.certcapture.com/Gencert2/js" placeholder="https://beta.certcapture.com/Gencert2/js" type="text">
                 </label>
                 <label class="cert-label">Exposure Zone *
                     <select id="set-zone" onChange="updateCertScript();"></select>
@@ -56,7 +56,7 @@ doctype: overview
             <table>
                 <tr>
                     <label>API URL
-                    <input id="api-url" placeholder="https://api.certcapture.com" value="https://api.certcapture.com" type="text"></label>
+                    <input id="api-url" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text"></label>
                 </tr>
                 <tr>
                     <td><input id="api-user" placeholder="API User Name" type="text"></td>
