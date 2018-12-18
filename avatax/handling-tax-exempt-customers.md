@@ -34,8 +34,8 @@ Depending on how you store your customer information, there are several ways you
 </ul>
 </li>
 </ul>
-<h4><a name="CustomerUsageType"></a>CustomerUsageType values</h4>
-CustomerUsageType (or Entity/Use Code) is a value that can be passed at the document or line level of a tax request, and identifies the customer within a group. Frequently, it is used to mark a customer as fully or partially tax exempt. To that end, there are pre-populated customer taxability profiles present in the AvaTax system with rules for the United States and Canada:
+<h4><a name="EntityUseCode"></a>EntityUseCode values</h4>
+Entity/Use Code (previously called CustomerUsageType, now deprecated) is a value that can be passed at the document or line level of a tax request, and identifies the customer within a group. Frequently, it is used to mark a customer as fully or partially tax exempt. To that end, there are pre-populated customer taxability profiles present in the AvaTax system with rules for the United States and Canada:
 <ol type="A">
 	<li>Federal government (United States)</li>
 	<li>State government (United States)</li>
