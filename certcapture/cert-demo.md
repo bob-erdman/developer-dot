@@ -45,7 +45,7 @@ doctype: overview
             <div>
                 <label class="cert-label">
                     GenCert URL *
-                    <input id="gencert-url" value="https://app.certcapture.com/Gencert2/js" placeholder="https://app.certcapture.com/Gencert2/js" type="text">
+                    <input id="gencert-url" value="https://app.certcapture.com/Gencert2/js" placeholder="https://beta.certcapture.com/Gencert2/js" type="text">
                 </label>
                 <label class="cert-label">Exposure Zone *
                     <select id="set-zone" onChange="updateCertScript();"></select>
