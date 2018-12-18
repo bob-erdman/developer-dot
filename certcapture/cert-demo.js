@@ -41,69 +41,87 @@ function getToken() {
             alert( 'You must provide all values to retrieve a token.' );
             return;
     }
-    const apiURL = $('#api-url').val() + '/v2/auth/get-token';
+
+    // FIXME: CORS errors
+    // const apiURL = $('#api-url').val() + '/v2/auth/get-token';
     const authorization = "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val());
-    var request = new Request(apiURL, {
-        headers: new Headers({ 
-            'Content-Type': 'application/json', 
-            Authorization: authorization,
-            'x-customer-number': $('#customer-number').val(),
-            'x-client-id': $('#client-id').val(),
-        })
-    })
+    // var request = new Request(apiURL, {
+    //     headers: new Headers({ 
+    //         'Content-Type': 'application/json', 
+    //         'Authorization': authorization,
+    //         'Access-Control-Allow-Headers': 'OPTIONS, POST'
+    //     })
+    // })
     
-    return fetch(request, { 
-        mode: 'cors', 
-        method: 'POST',
-        credentials: 'include',
-        'x-customer-number': $('#customer-number').val(),
-        'x-client-id': $('#client-id').val(),
-        // Authorization: authorization
-    })
-    .then((data) => {
-        console.warn("DATA: ", data.json());
-        return data.json();
-    })
-
-    // return $.ajax({
-    //     url: $('#api-url').val() + '/v2/auth/get-token',
-    //     type: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         // 'Access-Control-Allow-Headers' : "*"
-    //         // "x-customer-number": $('#customer-number').val(),
-    //         // "x-client-id": $('#client-id').val()
-    //     },
-    //     // crossDomain: true,
-    //     // xhrFields: {
-    //     //     withCredentials: true
+    // return fetch(request, { 
+    //     method: 'POST',
+    //     // headers: {
+    //     //     'x-customer-number': $('#customer-number').val(),
+    //     //     'x-client-id': $('#client-id').val(),
     //     // },
-    //     beforeSend: function (xhr) {
-    //         // xhr.setRequestHeader("Access-Control-Request-Headers", "x-customer-number, x-client-id")
-    //         xhr.setRequestHeader("x-client-id", $('#client-id').val());
-    //         xhr.setRequestHeader("x-customer-number", $('#customer-number').val());
-    //         // xhr.withCredentials = true;
-    //         xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
-    //     },
-    //     success: function(result, status, xhr) {            
-    //         if (xhr.responseText !== "") {
-    //             alert( 'Token successfully generated.' );
-    //             updateCertScript(result.response.token);
-    //         } else {
-    //             alert( 'Failed to generate a token. Please check your credentials and try again.' );
-    //         }
+    //     'x-customer-number': $('#customer-number').val(),
+    //     'x-client-id': $('#client-id').val()
+    // })
+    // .then((data) => {
+    //     console.warn("DATA: ", data.json());
+    //     return data.json();
+    // })
 
-    //         return status;
-    //     },
-    //     error: function(xhr, status, error) {
-    //         if (error === 'Unauthorized') {
-    //             alert( "Invalid Credentials. Please try again." );
-    //         } else if (xhr.responseJson.error){
-    //             alert( `Error: ${xhr.responseJson.error}` );
-    //         }
-    //         return status;
-    //     }
-    // });
+    return $.ajax({
+        url: $('#api-url').val() + '/v2/auth/get-token',
+        type: 'OPTIONS',
+        headers: {
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            // 'Access-Control-Allow-Headers' : "*"
+            // "x-customer-number": $('#customer-number').val(),
+            // "x-client-id": $('#client-id').val(),
+            'Authorization': authorization, 
+            // 'Access-Control-Request-Headers': 'x-client-id, x-customer-number'
+        }
+    }).then((response) =>{
+        console.warn('RESPONSE: ', response);
+        $.ajax({
+            url: $('#api-url').val() + '/v2/auth/get-token',
+            type: 'POST',
+            headers: {
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                // 'Access-Control-Allow-Headers' : "*"
+                // "x-customer-number": $('#customer-number').val(),
+                // "x-client-id": $('#client-id').val(),
+                'Authorization': authorization, 
+                // 'Access-Control-Request-Headers': 'x-client-id, x-customer-number'
+            },
+            // crossDomain: true,
+            // xhrFields: {
+            //     withCredentials: true
+            // },
+            beforeSend: function (xhr) {
+                // xhr.setRequestHeader("Access-Control-Request-Headers", "x-customer-number, x-client-id")
+                xhr.setRequestHeader("x-client-id", $('#client-id').val());
+                xhr.setRequestHeader("x-customer-number", $('#customer-number').val());
+                // xhr.withCredentials = true;
+                // xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
+            },
+            success: function(result, status, xhr) {            
+                if (xhr.responseText !== "") {
+                    alert( 'Token successfully generated.' );
+                    updateCertScript(result.response.token);
+                } else {
+                    alert( 'Failed to generate a token. Please check your credentials and try again.' );
+                }
+    
+                return status;
+            },
+            error: function(xhr, status, error) {
+                if (error === 'Unauthorized') {
+                    alert( "Invalid Credentials. Please try again." );
+                } else if (xhr.responseJson.error){
+                    alert( `Error: ${xhr.responseJson.error}` );
+                }
+                return status;
+            }
+        })
+    });
 }
 
 // TODO: updates when script box is cleared out
