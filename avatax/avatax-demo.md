@@ -190,11 +190,11 @@ doctype: use_cases
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">
-                        <button class="btn btn-link demo-console-btn" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
+                        <button class="btn btn-link demo-console-btn" type="submit" onClick="copyToClipboard('#demo-console-input');">
                             <i class="glyphicon glyphicon-copy" title="Copy"></i>COPY
                         </button>
-                        <button class="btn btn-link demo-console-btn" style="display:inline;color:#000000;margin-right:5px;">
-                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
+                        <button class="btn btn-link demo-console-btn">
+                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" target="_blank">
                                 <i class="glyphicon glyphicon-list-alt" title="Docs"></i>DOCS
                             </a>
                         </button>
@@ -214,12 +214,12 @@ doctype: use_cases
                         Response
                     </h5>
                     <div style="display:inline-block;float:right;" class="btn-group">
-                        <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-output');" style="color:#000000;margin-right:5px;display:inline;">
-                            <i class="glyphicon glyphicon-copy"></i>Copy
+                        <button class="btn btn-link demo-console-btn" type="submit" onClick="copyToClipboard('#demo-console-output');">
+                            <i class="glyphicon glyphicon-copy"></i>COPY
                         </button>
-                        <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
-                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" style="color:#000000;" target="_blank">
-                                <i class="glyphicon glyphicon-list-alt"></i>Docs
+                        <button class="btn btn-link demo-console-btn">
+                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" target="_blank">
+                                <i class="glyphicon glyphicon-list-alt"></i>DOCS
                             </a>
                         </button>
                     </div>
