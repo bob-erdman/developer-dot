@@ -26,7 +26,7 @@ function getCompareDate() {
 
 /************************************************************************
 **   SAMPLE DATA Functions: Build the sample data in the correct language
-**   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
+**   Langauges: JSON, C#, PHP, Python, Ruby, Java, JavaScript
 ************************************************************************/
 
 // HELPER: build lines with correct template for given language

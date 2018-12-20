@@ -158,9 +158,6 @@ doctype: use_cases
                             <br>
                         {% endfor %}
                     </form>
-                    <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:block;">
-                        Submit
-                    </button>
                 </div>
             </div>
         </div>
@@ -193,13 +190,16 @@ doctype: use_cases
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">
-                        <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
-                            <i class="glyphicon glyphicon-copy"></i>Copy
+                        <button class="btn btn-link demo-console-btn" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
+                            <i class="glyphicon glyphicon-copy" title="Copy"></i>COPY
                         </button>
-                        <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
+                        <button class="btn btn-link demo-console-btn" style="display:inline;color:#000000;margin-right:5px;">
                             <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
-                                <i class="glyphicon glyphicon-list-alt"></i>Docs
+                                <i class="glyphicon glyphicon-list-alt" title="Docs"></i>DOCS
                             </a>
+                        </button>
+                        <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:block;">
+                            Submit
                         </button>
                     </div>
                 </div>
