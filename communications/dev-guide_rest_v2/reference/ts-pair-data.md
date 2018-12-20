@@ -10,6 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/tax-type-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>TS Pair Data</h3>
@@ -126,4 +127,5 @@ The <code>TSPairData</code> object contains a list of <b>transaction/service pai
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/tax-type-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
