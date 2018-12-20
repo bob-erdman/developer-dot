@@ -6,7 +6,6 @@ doctype: overview
 ---
 <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
 <script type='text/javascript' src='../cert-demo.js'></script>
-<!-- REVIEW:  -->
 <script type='text/javascript' src='https://beta.certcapture.com/Gencert2/js'></script>
 <script type='text/javascript'>
     // get all the US exposure zones

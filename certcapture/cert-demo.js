@@ -69,8 +69,8 @@ function getToken() {
     });
 }
 
-// BUG: updates when script box is cleared out
-// BUG: doesn't clear token when updating exposure zone
+// BUG: when script box is cleared out, doesn't update
+// BUG: clears token when updating exposure zone
 function updateCertScript(tokenKey) {
     const exposureZone = $('#set-zone').val();    
     const token = tokenKey ? tokenKey : '';   
