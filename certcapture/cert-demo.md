@@ -6,6 +6,8 @@ doctype: overview
 ---
 <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
 <script type='text/javascript' src='../cert-demo.js'></script>
+<!-- REVIEW:  -->
+<script type='text/javascript' src='https://beta.certcapture.com/Gencert2/js'></script>
 <script type='text/javascript'>
     // get all the US exposure zones
     $.ajax({
@@ -13,11 +15,9 @@ doctype: overview
         type: 'GET',
         headers: {
             'Content-Type': 'application/json',
-        },
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + window.btoa('api-test:api-test'));
-            xhr.setRequestHeader("x-client-id", 444);
-        },
+            'Authorization': "Basic " + window.btoa('api-test:api-test'),
+            "x-client-id": 444,
+        }
     }).then((res) => {
         let zones = ``;
         res.data.forEach((state) => {
@@ -26,6 +26,7 @@ doctype: overview
         // populate exposure zone drop down
         $('#set-zone').html(zones);
         // populate the example script
+        // TODO: just put in a default/hardcoded script to start
         updateCertScript();
     });
 </script>
@@ -41,6 +42,7 @@ doctype: overview
     <div class="row" >
         <div class="col-md-5">
             <h3>Step 1: Setup</h3>
+            <!-- TODO: instructions -->
             <p>INSTRUCTIONS</p>
             <div>
                 <label class="cert-label">
@@ -52,6 +54,7 @@ doctype: overview
                 </label>
             </div> 
             <h3>Step 2: Get your token</h3>
+            <!-- TODO: instructions -->
             <p>INSTRUCTIONS</p>
             <table>
                 <tr>

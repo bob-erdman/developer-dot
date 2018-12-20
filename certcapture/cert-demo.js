@@ -1,7 +1,6 @@
-// TODO: jquery
+// TODO: allow user to update genCert URL
 function initScript() {
     console.warn('INIT SCRIPT')
-    console.warn('value: ', document.getElementById( 'cert-request' ).value);
     
     if ( $('#gencert-url').val() === "" ) {
         alert( 'Enter a GenCert URL.' );
@@ -13,25 +12,21 @@ function initScript() {
         return;
     }
 
-    // TODO: token validation
+    // TODO: token validation, check if it is there
+    // - ask if they really want to regenerate if token already created
 
-    var script = document.createElement( 'script') ;
-    script.onload = function () {
-    
-        try {
-            eval( document.getElementById( 'cert-request' ).value );
-        } 
-        catch ( e ) {
-            if ( e instanceof SyntaxError ) {
-                alert( e.message );
-            }
+    try {
+        console.warn('EVAL');
+        eval( $('#cert-request').val() );
+    } 
+    catch ( e ) {
+        console.warn('ERROR', e);
+        if ( e instanceof SyntaxError ) {
+            alert( e.message );
         }
-        document.getElementById( 'gencert_test' ).style.display = 'none';
-        document.getElementById( 'cert-demo-back' ).style.display = 'block';
-    };
-    
-    script.src = document.getElementById( 'gencert-url' ).value + "/Gencert2/js";
-    document.head.appendChild( script );
+    }
+    $('#gencert_test').css('display', 'none');
+    $('#cert-demo-back').css('display', 'block');
 }
 
 function getToken() {
@@ -42,56 +37,19 @@ function getToken() {
             return;
     }
 
-    // FIXME: CORS errors
-    // const apiURL = $('#api-url').val() + '/v2/auth/get-token';
     const authorization = "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val());
-    // var request = new Request(apiURL, {
-    //     headers: new Headers({ 
-    //         'Content-Type': 'application/json', 
-    //         'Authorization': authorization,
-    //         'Access-Control-Allow-Headers': 'OPTIONS, POST'
-    //     })
-    // })
-    
-    // return fetch(request, { 
-    //     method: 'POST',
-    //     // headers: {
-    //     //     'x-customer-number': $('#customer-number').val(),
-    //     //     'x-client-id': $('#client-id').val(),
-    //     // },
-    //     'x-customer-number': $('#customer-number').val(),
-    //     'x-client-id': $('#client-id').val()
-    // })
-    // .then((data) => {
-    //     console.warn("DATA: ", data.json());
-    //     return data.json();
-    // })
 
     return $.ajax({
         url: $('#api-url').val() + '/v2/auth/get-token',
         type: 'POST',
         headers: {
             'Content-Type': 'text/plain',
-            // 'Access-Control-Allow-Headers' : "*"
-            // "x-customer-number": $('#customer-number').val(),
-            // "x-client-id": $('#client-id').val(),
+            "x-customer-number": $('#customer-number').val(),
+            "x-client-id": $('#client-id').val(),
             'Authorization': authorization, 
-            // 'Access-Control-Request-Headers': 'x-client-id, x-customer-number'
-        },
-        // crossDomain: true,
-        // xhrFields: {
-        //     withCredentials: true
-        // },
-        beforeSend: function (xhr) {
-            // xhr.setRequestHeader("Access-Control-Request-Headers", "x-customer-number, x-client-id")
-            xhr.setRequestHeader("x-client-id", $('#client-id').val());
-            // xhr.setRequestHeader("x-customer-primary-key", $('#customer-number').val());
-            xhr.setRequestHeader("x-customer-number", $('#customer-number').val());
-            // xhr.withCredentials = true;
-            // xhr.setRequestHeader("Authorization", "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val()));
         },
         success: function(result, status, xhr) {            
-            if (xhr.responseText !== "") {
+            if (xhr.responseText !== "" && result.response.token) {
                 alert( 'Token successfully generated.' );
                 updateCertScript(result.response.token);
             } else {
@@ -101,20 +59,18 @@ function getToken() {
             return status;
         },
         error: function(xhr, status, error) {
-            if (error === 'Unauthorized') {
-                alert( "Invalid Credentials. Please try again." );
-            } else if (xhr.responseJson.error){
+            if (xhr.responseJson.error) {
                 alert( `Error: ${xhr.responseJson.error}` );
+            } else {
+                alert( `Error: ${error}` );
             }
             return status;
         }
-    }).then((response) =>{
-        console.warn('RESPONSE: ', response);
     });
 }
 
-// TODO: updates when script box is cleared out
-// TODO: doesn't clear token when updating exposure zone
+// BUG: updates when script box is cleared out
+// BUG: doesn't clear token when updating exposure zone
 function updateCertScript(tokenKey) {
     const exposureZone = $('#set-zone').val();    
     const token = tokenKey ? tokenKey : '';   
