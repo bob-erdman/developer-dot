@@ -24,7 +24,7 @@ const App = ({isEmpty}) => (
     <li>Resolve an address against Avalara's address-validation system. </li>
     <li><h2><a href='https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/' target='_blank'>CommitTransaction</a></h2></li>
     <li>Marks a transaction by changing its status to Committed.</li>
-    <li><h2><a href='https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VoidTransaction/' target='_blank'>VoidTransation</a></h2></li>
+    <li><h2><a href='https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VoidTransaction/' target='_blank'>VoidTransaction</a></h2></li>
     <li>Voids the current transaction uniquely identified by this URL.</li>
     <li><h2><a href='https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction/' target='_blank'>AdjustTransactions</a></h2></li>
     <li>Replaces the current transaction uniquely identified by this URL with a new transaction.</li>
