@@ -649,51 +649,12 @@ function copyToClipboard(element) {
     document.execCommand("copy");
     $temp.remove();
 }
-
-function accordionTrigger(currentElementId, nextElementId) {
-    // get accordion elements
-    var currentElement = document.getElementById(currentElementId);
-    var nextElement = document.getElementById(nextElementId);
-
-    // toggle active class on elements
-    currentElement.classList.toggle("active");
-    nextElement.classList.toggle("active");
-
-    var panels = [currentElement.nextElementSibling, nextElement.nextElementSibling];
-
-    // toggle display on panels
-    panels.forEach(panel => {
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    })
-
-}
 /***************** END GENERAL Functions *******************************/
 
 
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
-
-    var sections = document.getElementsByClassName("accordion");
-    for (let i = 0; i < sections.length; i++) {
-        sections[i].addEventListener("click", function() {
-            // Toggle between adding and removing the "active" class,
-            // to highlight the button that controls the panel
-            this.classList.toggle("active");
-
-            // Toggle between hiding and showing the active panel
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
