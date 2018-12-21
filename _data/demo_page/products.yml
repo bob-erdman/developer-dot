@@ -20,7 +20,8 @@
   taxCode: PC070400
   inputId: p5c
   value: 199.00
-- name: Oil change service (with synthetic oil)
+- name: Oil change service 
+  subLabel: (with synthetic oil)
   taxCode: SA090700
   inputId: p6c
   value: 89.99

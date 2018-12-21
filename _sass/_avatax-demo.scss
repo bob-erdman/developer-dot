@@ -10,7 +10,10 @@
     max-height: 900px;
     padding-left:15px;
     overflow: auto;
+    font-family: Arial, "source sans pro light";
 }
+
+
 
 #demo-api-details {
     max-height: 500px;
@@ -22,31 +25,28 @@
     height: 450px;
 }
 
-.demo-shortcut-desc {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.demo-label {
-    font-weight: bold;
-    font-size: 16px;
-    padding-left: 5px;
-}
-
-.demo-city-marker {
-    color: $Ava-orange;
-    padding-left: 15px;
-}
-
-.demo-city-zip {
-    padding-left: 20px;
-}
-
-.demo-label-container {
-    padding: 5px 0;
+.demo-option {
+    font-weight: normal;
     font-size: 14px;
+
+    .demo-label {
+        font-weight: bold;
+        padding-left: 5px;
+    }
+    
+    .demo-city-marker {
+        color: $Ava-orange;
+        padding-left: 15px;
+    }
+  
+    .demo-city-zip {
+        padding-left: 20px;
+    }
+
+    label.demo-label-container {
+        padding: 5px 0;
+        font-weight: normal;
+    }
 }
 
 .demo-infobox {
@@ -86,6 +86,12 @@
 
 .demo-radio {
     margin-top: 0;
+}
+
+.demo-step {
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 .btn.demo-console-btn {

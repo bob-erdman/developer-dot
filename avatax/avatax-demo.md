@@ -86,14 +86,14 @@ doctype: use_cases
             <!-- steps to submit -->
             <div class="row">
                 <!-- step 1 / ship to -->
-                <p id='step-one'>Step 1: Where are you shipping to?</p>
-                <div class="" style="display:block;">
+                <p class="demo-step">Step 1: Where are you shipping to?</p>
+                <div class="demo-option">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <!-- loop thru addresses -->
                         {% for address in site.data.demo_page.addresses %}
                             <label class="demo-label-container">
-                                <input name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
+                                <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}" {% if address.region %} checked {% endif %}/>
                                 <span class="demo-label"> {{ address.city }}</span>
                                 <br>
                                 <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
@@ -109,29 +109,33 @@ doctype: use_cases
                         {% endfor %}
                     </form>
                 </div>
+                <hr>
                 <!-- step 2 / products -->
-                <p id='step-two'>Step 2: What's being taxed?</p>
-                <div class="">
+                <p class="demo-step">Step 2: What's being taxed?</p>
+                <div class="demo-option">
                     <p>Choose a common product or service to calculate tax</p>
                     <form id="dropdown-products" onChange="fillWithSampleData();" class="demo-form">
                         <!-- loop thru products -->
                         {% for product in site.data.demo_page.products %}
-                            <label class="demo-label demo-label-container">
+                            <label class="demo-label-container">
+                                <!-- radio input -->
                                 <input value="{{ product.taxCode }}" name="product" id="{{ product.inputId }}" type="checkbox" description="{{ product.name }}" class="demo-radio" {{ product.checked }}/>
+                                <!-- amount input -->
                                 <input value="{{ product.value }}" type="text" id="{{ product.inputId }}-amount" hsCode="{{ product.hsCode }}" style="width: 50px;">
-                                <span class="demo-label"> {{ product.name }} 
+                                <!-- label and sublabel -->
+                                <span class="demo-label"> {{ product.name }} </span>
                                 {% if product.subLabel %}
-                                    <i>{{ product.subLabel }}</i>
+                                    <span>{{ product.subLabel }}</span>
                                 {% endif %}
-                                </span>
                             </label>
                             <br>
                         {% endfor %}
                     </form>
                 </div>
+                <hr>
                 <!-- step 3 / ship from -->
-                <p id='step-three'>Step 3: Where are you shipping from? (optional) </p>
-                <div class="">
+                <p class="demo-step">Step 3: Where are you shipping from? (optional) </p>
+                <div class="demo-option">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <!-- loop thru addresses -->

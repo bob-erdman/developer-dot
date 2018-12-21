@@ -677,6 +677,7 @@ $(document).ready(function() {
         $('main').removeClass('section-nav-open');
     });
 
+    // REVIEW: make function, put on onChange
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
         const lat = $('input[type=radio][name=address]:checked').attr('lat');
@@ -684,6 +685,7 @@ $(document).ready(function() {
         GetMapWithLine(lat, long, null, null, null, showInfobox);
     });
 
+    // REVIEW: make function, put on onChange
     //When the source changes, fire the map script with source and dest lat-long.
     $('#dropdown-src-addresses').change(function(e){
         const lat     = $('input[type=radio][name=address]:checked').attr('lat');
@@ -700,5 +702,7 @@ $(document).ready(function() {
         GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
     }); 
 
-    $('#dropdown-addresses').trigger('change');
+    // REVIEW: update with reworks of above functions
+    // set default on demo pg
+    $('#Irvine').checked
 });
