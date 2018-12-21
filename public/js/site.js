@@ -638,7 +638,6 @@ function ApiRequest() {
 }
 /***************** END API REQUEST Functions ****************************/
 
-
 /************************************************************************
 **   GENERAL Demo Page Functions
 ************************************************************************/
@@ -704,5 +703,4 @@ $(document).ready(function() {
 
     // REVIEW: update with reworks of above functions
     // set default on demo pg
-    $('#Irvine').checked
 });

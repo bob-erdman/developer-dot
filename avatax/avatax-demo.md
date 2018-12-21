@@ -5,7 +5,6 @@ product: avatax
 doctype: use_cases
 ---
 
-
 <script type='text/javascript'>
     var map;
 
@@ -21,6 +20,7 @@ doctype: use_cases
     `;
 
     function displayToolTip(showInfobox) {
+        console.warn('YOYO')
         if (showInfobox || showInfobox === undefined) {
             const topLeft = (map.getPageX(), map.getPageY());
 
@@ -74,7 +74,7 @@ doctype: use_cases
         });
     }
 </script>
-<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer ></script>
 
 <!-- demo container -->
 <div class="row">
@@ -93,7 +93,7 @@ doctype: use_cases
                         <!-- loop thru addresses -->
                         {% for address in site.data.demo_page.addresses %}
                             <label class="demo-label-container">
-                                <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}" {% if address.region %} checked {% endif %}/>
+                                <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
                                 <span class="demo-label"> {{ address.city }}</span>
                                 <br>
                                 <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
