@@ -4,10 +4,9 @@ categories: [avatax, api]
 product: avatax
 doctype: use_cases
 ---
-
+<body onload="updateDestAddress()">
 <script type='text/javascript'>
     var map;
-
     const infoboxTemplate = `
         <div class="demo-infobox">
             <h4 id="demo-infobox-header" style="display: inline;">Getting Started</h4>
@@ -18,24 +17,19 @@ doctype: use_cases
             <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
         </div>
     `;
-
     function displayToolTip(showInfobox) {
         console.warn('YOYO')
         if (showInfobox || showInfobox === undefined) {
             const topLeft = (map.getPageX(), map.getPageY());
-
             //Create an infobox that will render in the top left of the map.
             const infobox = new Microsoft.Maps.Infobox(topLeft, {
                 htmlContent: infoboxTemplate,
             });
-
             //Assign the infobox to a map instance.
             infobox.setMap(map);
         }
-
         return;
     }
-
     function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox) {
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
@@ -44,21 +38,17 @@ doctype: use_cases
             displayToolTip(showInfobox);
             return;
         }  
-
         //Single location layer (pushpin)
         if(srcLat == null || srcLong == null) {
-
             var location  = new Microsoft.Maps.Location(destLat, destLong);         
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
             displayToolTip(showInfobox);
             map.layers.insert(layer);
-
             //Exit out since it is a single location.
             return;
         }
-
         //Source and destination layer (polyline)
         map = new Microsoft.Maps.Map('#myMap', {});
         center = map.getCenter();
@@ -89,11 +79,11 @@ doctype: use_cases
                 <p class="demo-step">Step 1: Where are you shipping to?</p>
                 <div class="demo-option">
                     <p>Choose a pre-selected address</p>
-                    <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
+                    <form id="dest-addresses" onChange="updateDestAddress();" class="demo-form">
                         <!-- loop thru addresses -->
                         {% for address in site.data.demo_page.addresses %}
                             <label class="demo-label-container">
-                                <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
+                                <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}" {% if address.selected %} checked {% endif %}/>
                                 <span class="demo-label"> {{ address.city }}</span>
                                 <br>
                                 <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
@@ -114,7 +104,7 @@ doctype: use_cases
                 <p class="demo-step">Step 2: What's being taxed?</p>
                 <div class="demo-option">
                     <p>Choose a common product or service to calculate tax</p>
-                    <form id="dropdown-products" onChange="fillWithSampleData();" class="demo-form">
+                    <form id="products" onChange="fillWithSampleData();" class="demo-form">
                         <!-- loop thru products -->
                         {% for product in site.data.demo_page.products %}
                             <label class="demo-label-container">
@@ -137,7 +127,7 @@ doctype: use_cases
                 <p class="demo-step">Step 3: Where are you shipping from? (optional) </p>
                 <div class="demo-option">
                     <p>Choose a pre-selected address</p>
-                    <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
+                    <form id="src-addresses" onChange="updateSrcAddress();" class="demo-form">
                         <!-- loop thru addresses -->
                         {% for address in site.data.demo_page.addresses %}
                             <label class="demo-label-container">
@@ -234,3 +224,4 @@ doctype: use_cases
     <!-- end map & api details container-->
 </div>
 <!-- end demo container -->
+</body>

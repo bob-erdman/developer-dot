@@ -462,7 +462,8 @@ return client.createTransaction({ model: taxDocument })
 //
 // MAIN Sample Data function: populates request console
 //
-function fillWithSampleData() {     
+function fillWithSampleData() { 
+    // REMOVE: check shouldn't be needed after updates
     const noAddress = $('input[type=radio][name=address]:checked').length === 0;
 
     if (noAddress) {
@@ -648,6 +649,31 @@ function copyToClipboard(element) {
     document.execCommand("copy");
     $temp.remove();
 }
+
+// {% if address.selected %} checked {% endif %}
+function updateDestAddress() {
+    console.warn('BRUH');
+    const lat = $('input[type=radio][name=address]:checked').attr('lat');
+    const long = $('input[type=radio][name=address]:checked').attr('long');
+    GetMapWithLine(lat, long, null, null, null, showInfobox);
+    fillWithSampleData();
+}
+
+function updateSrcAddress() {
+    const lat     = $('input[type=radio][name=address]:checked').attr('lat');
+    const long    = $('input[type=radio][name=address]:checked').attr('long');
+    const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+    const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
+
+    // check if both address are in the US
+    const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
+    const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
+
+    const usAddresses = addressType && srcType;
+
+    GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
+    fillWithSampleData();
+}
 /***************** END GENERAL Functions *******************************/
 
 
@@ -676,30 +702,32 @@ $(document).ready(function() {
         $('main').removeClass('section-nav-open');
     });
 
+    
+
     // REVIEW: make function, put on onChange
     //When the destination changes, fire the map script and set the lat-long.
-    $('#dropdown-dest-addresses').change(function(e){
-        const lat = $('input[type=radio][name=address]:checked').attr('lat');
-        const long = $('input[type=radio][name=address]:checked').attr('long');
-        GetMapWithLine(lat, long, null, null, null, showInfobox);
-    });
+    // $('#dest-addresses').change(function(e){
+    //     const lat = $('input[type=radio][name=address]:checked').attr('lat');
+    //     const long = $('input[type=radio][name=address]:checked').attr('long');
+    //     GetMapWithLine(lat, long, null, null, null, showInfobox);
+    // });
 
     // REVIEW: make function, put on onChange
     //When the source changes, fire the map script with source and dest lat-long.
-    $('#dropdown-src-addresses').change(function(e){
-        const lat     = $('input[type=radio][name=address]:checked').attr('lat');
-        const long    = $('input[type=radio][name=address]:checked').attr('long');
-        const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-        const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
+    // $('#src-addresses').change(function(e){
+    //     const lat     = $('input[type=radio][name=address]:checked').attr('lat');
+    //     const long    = $('input[type=radio][name=address]:checked').attr('long');
+    //     const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+    //     const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
 
-        // check if both address are in the US
-        const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-        const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
+    //     // check if both address are in the US
+    //     const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
+    //     const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
 
-        const usAddresses = addressType && srcType;
+    //     const usAddresses = addressType && srcType;
 
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
-    }); 
+    //     GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
+    // }); 
 
     // REVIEW: update with reworks of above functions
     // set default on demo pg
