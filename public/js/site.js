@@ -650,32 +650,31 @@ function copyToClipboard(element) {
     $temp.remove();
 }
 
-// {% if address.selected %} checked {% endif %}
-function updateDestAddress() {
+function updateAddress() {
     console.warn('BRUH');
-    const lat = $('input[type=radio][name=address]:checked').attr('lat');
-    const long = $('input[type=radio][name=address]:checked').attr('long');
-    GetMapWithLine(lat, long, null, null, null, showInfobox);
-    fillWithSampleData();
-}
 
-function updateSrcAddress() {
-    const lat     = $('input[type=radio][name=address]:checked').attr('lat');
-    const long    = $('input[type=radio][name=address]:checked').attr('long');
-    const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-    const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
-
+    const src = $('input[type=radio][name=srcAddress]:checked');
+    const dest = $('input[type=radio][name=address]:checked');
+    const destLat     = dest.attr('lat') ? dest.attr('lat') : null;
+    const destLong    = dest.attr('long') ? dest.attr('long') : null;
     // check if both address are in the US
-    const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-    const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
+    const destType = dest.attr('addressType') === 'national';
+    const srcType = src.attr('addressType') === 'national';
+    const usAddresses = destType && srcType;
+    
+    let srcLat = src.attr('lat');
+    let srcLong = src.attr('long');
 
-    const usAddresses = addressType && srcType;
+    // check that src exists and src != dest
+    if (!srcLat || (srcLat === destLat && srcLong === destLong)) {
+        srcLat = null;
+        srcLong = null;
+    }
 
-    GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
+    GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
     fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
-
 
 $(document).ready(function() {
     fixApiRefNav();
@@ -701,34 +700,4 @@ $(document).ready(function() {
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
     });
-
-    
-
-    // REVIEW: make function, put on onChange
-    //When the destination changes, fire the map script and set the lat-long.
-    // $('#dest-addresses').change(function(e){
-    //     const lat = $('input[type=radio][name=address]:checked').attr('lat');
-    //     const long = $('input[type=radio][name=address]:checked').attr('long');
-    //     GetMapWithLine(lat, long, null, null, null, showInfobox);
-    // });
-
-    // REVIEW: make function, put on onChange
-    //When the source changes, fire the map script with source and dest lat-long.
-    // $('#src-addresses').change(function(e){
-    //     const lat     = $('input[type=radio][name=address]:checked').attr('lat');
-    //     const long    = $('input[type=radio][name=address]:checked').attr('long');
-    //     const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-    //     const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
-
-    //     // check if both address are in the US
-    //     const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-    //     const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
-
-    //     const usAddresses = addressType && srcType;
-
-    //     GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
-    // }); 
-
-    // REVIEW: update with reworks of above functions
-    // set default on demo pg
 });
