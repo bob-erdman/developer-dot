@@ -230,8 +230,7 @@ function addressBuilder(reqType, addressName, prefix) {
 function shipFromChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     isIntlTransaction = checked && 
-        ($('input[type=radio][name=srcAddress]:checked')[0].attributes['country'].value != 
-            $('input[type=radio][name=address]:checked')[0].attributes['country'].value);
+        ($('input[type=radio][name=srcAddress]:checked').attr('country') != $('input[type=radio][name=address]:checked').attr('country'));
     return checked;
 }
 

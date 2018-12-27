@@ -47,28 +47,16 @@
   taxCode: PC070400
   inputId: p5c
   value: 199.00
-<<<<<<< HEAD
-- name: Oil change service 
-  subLabel: (with synthetic oil)
-=======
+- name: Oil change service (with synthetic oil)
+  taxCode: SA090700
+  inputId: p6c
+  value: 89.99
   mass: 
   unit:
   hsCodeToUs: 8521900000
   hsCodeToBr: 85219090
   hsCodeToUk: 8521900090
   hsCodeToIn: 85219090
-  isPhysical: true
-- name: Oil change service (with synthetic oil)
->>>>>>> 97c6410f4c4ce712522aeebf9f4930f7c862e098
-  taxCode: SA090700
-  inputId: p6c
-  value: 89.99
-  mass: 
-  unit:
-  hsCodeToUs: 
-  hsCodeToBr: 
-  hsCodeToUk: 
-  hsCodeToIn: 
   isPhysical: false
 - name: Shipping
   taxCode: FR010000
