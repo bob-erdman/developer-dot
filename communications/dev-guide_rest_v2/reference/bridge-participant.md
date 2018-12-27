@@ -37,7 +37,7 @@ The <code>BridgeParticipant</code> functionality is still in beta.  Contact <a c
         <td><code>loc</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Location data used to determine taxing jurisdiction for a conference bridge participant
           <br>
-          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+          There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
         </td>
       </tr>
     </tbody>

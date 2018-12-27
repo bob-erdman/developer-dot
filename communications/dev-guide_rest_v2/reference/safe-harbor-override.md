@@ -47,7 +47,7 @@ The <code>SafeHarborOverride</code> object allows the user to change <b>safe har
         <td><code>new</code></td>
         <td><code>[double]</code> <span class="t5">required</span> New Federal TAM
         <br/>
-        New TAM value that will replace the original TAM value.
+        New TAM value that replaces the original TAM value
         </td>
       </tr>
     </tbody>

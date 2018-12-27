@@ -10,13 +10,38 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-REST v2 provides Sales and Use taxes in addition to Communications taxes.
+Communications REST v2 returns Sales and Use taxes in addition to communications taxes.
+
+On an SAU transaction:
+<ul class="dev-guide-list">
+  <li>Use the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> endpoint</a> to find a list of Sales and Use Transaction/Service Pairs</li>
+  <li>Set <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">Attribute Property</a> (<code>prop</code>)</li>
+  <li>Specify the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">jurisdiction(s)</a></li>
+  <li>Set the common characteristics of a transaction, such as charge (<code>chg</code>), invoice date (<code>date</code>), and sale type (<code>sale</code>)</li>
+  <li>Include any additional information, such as tax overrides (<code>ovr</code>) and exemptions (<code>exms</code>)</li>
+</ul>
+
+<h3>Property and Attributes</h3>
+An SAU transaction requires that an attribute and properties are set to describe the transaction in more detail. 
+<ul class="dev-guide-list">
+  <li>An Attribute refers to ancillary transactions related to the actual sale.  For example:
+    <ul class='dev-guide-list'>
+      <li>installation</li>
+      <li>Maintenance and service contracts</li>
+      <li>Warranties</li>
+    </ul>
+  </li>
+  <li>Properties specify the details of the transaction’s Attribute</li>
+<br/>
+Set Attribute Property (<code>prop</code>) to the ID of the property and attribute combination.
+<br/>
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">SAU Attributes and Properties</a> for a list of valid attribute and property combinations.
 
 <h3>Sales and Use Example</h3>
-Sales and Use Transaction/Service Pairs (<code>tran</code> and <code>serv</code>) are used.  To find a list of Sales and Use Transaction/Service Pairs, use the <code>/api/v2/afc/tspairs</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/">endpoint</a>.
+Sales and Use Transaction/Service Pairs (<code>tran</code> and <code>serv</code>) are used.
 
 {% highlight json %}
 {
@@ -342,8 +367,28 @@ Sales and Use taxes, identified by the <b>SALES AND USE TAXES</b> category (<cod
   </div>
 </div>
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized tax results</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups">Lookups endpoints</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction determination</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Key Value Pair</h3>
 
-The <code>KeyValuePair</code> object allows the user to specify a list of <b>key/value pair data</b>.
+The <code>KeyValuePair</code> object allows the user to specify a list of <b>key/value pairs</b>.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -30,7 +30,7 @@ The <code>KeyValuePair</code> object allows the user to specify a list of <b>key
             <td><code>key</code></td>
             <td><code>[string]</code> Key
               <br/>
-              An index for the key/value pair.  Numeric value between 1 and 10.
+              An index for the key/value pair.  Numeric value between 1 and 10
             </td>
         </tr>
         <tr>

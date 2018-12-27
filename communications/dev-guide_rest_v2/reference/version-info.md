@@ -28,7 +28,7 @@ The <code>ServiceInfo</code> object contains the <b>version specific results</b>
     <tbody>
         <tr>
             <td><code>AfcEngineVersion</code></td>
-            <td><code>[string]</code> AFC Engine Version</td>
+            <td><code>[string]</code> AFC Tax Engine Version</td>
         </tr>
         <tr>
             <td><code>BuildVersion</code></td>
