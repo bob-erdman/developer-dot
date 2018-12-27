@@ -6,6 +6,7 @@
   long: -117.850629887389
   type: national
   selected: true
+  country: US
 - city: Seattle
   street: 255 S. King Street
   countryZip: Seattle, WA, 98104
@@ -14,6 +15,7 @@
   long: -122.331206
   type: national
   selected: false
+  country: US
 - city: Durham
   street: 512 S Mangum Street
   countryZip: Durham, NC 27701
@@ -22,6 +24,7 @@
   long: -78.902647
   type: national
   selected: false
+  country: US
 - city: Brighton
   street: 3rd Floor Trafalgar Place
   countryZip: Brighton, UK BN1 4FU
@@ -30,6 +33,7 @@
   long: -0.139584
   type: international
   selected: false
+  country: UK
 - city: Pune
   street: 3rd Floor, Pride Portal
   region: Bahiratwadi, Shivajinagar
@@ -39,6 +43,7 @@
   long: 73.827597
   type: international
   selected: false
+  country: IN
 - city: São Paulo
   street: Rua Henri Dunant 137
   countryZip: São Paulo, Brazil 04709-110
@@ -47,3 +52,4 @@
   long: -46.695348
   type: international
   selected: false
+  country: BR
