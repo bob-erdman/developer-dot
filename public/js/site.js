@@ -463,7 +463,6 @@ return client.createTransaction({ model: taxDocument })
 // MAIN Sample Data function: populates request console
 //
 function fillWithSampleData() { 
-    // REMOVE: check shouldn't be needed after updates
     const noAddress = $('input[type=radio][name=address]:checked').length === 0;
 
     if (noAddress) {

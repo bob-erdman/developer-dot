@@ -31,18 +31,19 @@ doctype: use_cases
         }
         function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox) {
             if(destLat === null || destLong === null) {
-                console.warn('DEST')
                 map = new Microsoft.Maps.Map('#myMap', {zoom: 3});
                 displayToolTip(showInfobox);
             } else if(srcLat === null || srcLong === null) {
                 //Single location layer (pushpin)
-                console.warn('SOURCE')
+                console.warn('hello: ', $('input[type=radio][name=address]:checked'))
                 var location  = new Microsoft.Maps.Location(destLat, destLong);         
                 map = new Microsoft.Maps.Map('#myMap', {center: location});
-                var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
-                layer.add(new Microsoft.Maps.Pushpin(location));
+                const pin = new Microsoft.Maps.Pushpin(location, {
+                    color: '#ff6600',
+                    title: $('input[type=radio][name=address]:checked').attr('city') + ' Office'
+                })
                 displayToolTip(showInfobox);
-                map.layers.insert(layer);
+                map.entities.push(pin)
                 //Exit out since it is a single location.
             } else if (srcLat != null && destLat != null){
                 //Source and destination layer (polyline)
@@ -81,7 +82,7 @@ doctype: use_cases
                             <!-- loop thru addresses -->
                             {% for address in site.data.demo_page.addresses %}
                                 <label class="demo-label-container">
-                                    <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}" {% if address.selected %} checked {% endif %}/>
+                                    <input id="{{ address.city }}" name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" city="{{ address.city }}" addressType="{{ address.type }}" {% if address.selected %} checked {% endif %}/>
                                     <span class="demo-label"> {{ address.city }}</span>
                                     <br>
                                     <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
