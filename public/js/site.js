@@ -28,7 +28,7 @@ function getCompareDate() {
 
 /************************************************************************
 **   SAMPLE DATA Functions: Build the sample data in the correct language
-**   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
+**   Langauges: JSON, C#, PHP, Python, Ruby, Java, JavaScript
 ************************************************************************/
 
 // HELPER: build lines with correct template for given language
@@ -230,8 +230,7 @@ function addressBuilder(reqType, addressName, prefix) {
 function shipFromChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     isIntlTransaction = checked && 
-        ($('input[type=radio][name=srcAddress]:checked')[0].attributes['country'].value != 
-            $('input[type=radio][name=address]:checked')[0].attributes['country'].value);
+        ($('input[type=radio][name=srcAddress]:checked').attr('country') != $('input[type=radio][name=address]:checked').attr('country'));
     return checked;
 }
 
@@ -545,7 +544,7 @@ return client.createTransaction({ model: taxDocument })
 //
 // MAIN Sample Data function: populates request console
 //
-function fillWithSampleData() {     
+function fillWithSampleData() { 
     const noAddress = $('input[type=radio][name=address]:checked').length === 0;
 
     if (noAddress) {
@@ -721,7 +720,6 @@ function ApiRequest() {
 }
 /***************** END API REQUEST Functions ****************************/
 
-
 /************************************************************************
 **   GENERAL Demo Page Functions
 ************************************************************************/
@@ -733,50 +731,33 @@ function copyToClipboard(element) {
     $temp.remove();
 }
 
-function accordionTrigger(currentElementId, nextElementId) {
-    // get accordion elements
-    var currentElement = document.getElementById(currentElementId);
-    var nextElement = document.getElementById(nextElementId);
+function updateAddress() {
+    const src = $('input[type=radio][name=srcAddress]:checked');
+    const dest = $('input[type=radio][name=address]:checked');
+    const destLat     = dest.attr('lat') ? dest.attr('lat') : null;
+    const destLong    = dest.attr('long') ? dest.attr('long') : null;
+    // check if both address are in the US
+    const destType = dest.attr('addressType') === 'national';
+    const srcType = src.attr('addressType') === 'national';
+    const usAddresses = destType && srcType;
+    
+    let srcLat = src.attr('lat');
+    let srcLong = src.attr('long');
 
-    // toggle active class on elements
-    currentElement.classList.toggle("active");
-    nextElement.classList.toggle("active");
+    // check that src exists and src != dest
+    if (!srcLat || (srcLat === destLat && srcLong === destLong)) {
+        srcLat = null;
+        srcLong = null;
+    }
 
-    var panels = [currentElement.nextElementSibling, nextElement.nextElementSibling];
-
-    // toggle display on panels
-    panels.forEach(panel => {
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    })
-
+    GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
+    fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
-
 
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
-
-    var sections = document.getElementsByClassName("accordion");
-    for (let i = 0; i < sections.length; i++) {
-        sections[i].addEventListener("click", function() {
-            // Toggle between adding and removing the "active" class,
-            // to highlight the button that controls the panel
-            this.classList.toggle("active");
-
-            // Toggle between hiding and showing the active panel
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -798,29 +779,4 @@ $(document).ready(function() {
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
     });
-
-    //When the destination changes, fire the map script and set the lat-long.
-    $('#dropdown-dest-addresses').change(function(e){
-        const lat = $('input[type=radio][name=address]:checked').attr('lat');
-        const long = $('input[type=radio][name=address]:checked').attr('long');
-        GetMapWithLine(lat, long, null, null, null, showInfobox);
-    });
-
-    //When the source changes, fire the map script with source and dest lat-long.
-    $('#dropdown-src-addresses').change(function(e){
-        const lat     = $('input[type=radio][name=address]:checked').attr('lat');
-        const long    = $('input[type=radio][name=address]:checked').attr('long');
-        const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-        const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
-
-        // check if both address are in the US
-        const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-        const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
-
-        const usAddresses = addressType && srcType;
-
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
-    }); 
-
-    $('#dropdown-addresses').trigger('change');
 });
