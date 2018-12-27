@@ -650,8 +650,6 @@ function copyToClipboard(element) {
 }
 
 function updateAddress() {
-    console.warn('BRUH');
-
     const src = $('input[type=radio][name=srcAddress]:checked');
     const dest = $('input[type=radio][name=address]:checked');
     const destLat     = dest.attr('lat') ? dest.attr('lat') : null;

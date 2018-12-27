@@ -35,7 +35,6 @@ doctype: use_cases
                 displayToolTip(showInfobox);
             } else if(srcLat === null || srcLong === null) {
                 //Single location layer (pushpin)
-                console.warn('hello: ', $('input[type=radio][name=address]:checked'))
                 var location  = new Microsoft.Maps.Location(destLat, destLong);         
                 map = new Microsoft.Maps.Map('#myMap', {center: location});
                 const pin = new Microsoft.Maps.Pushpin(location, {
@@ -47,7 +46,6 @@ doctype: use_cases
                 //Exit out since it is a single location.
             } else if (srcLat != null && destLat != null){
                 //Source and destination layer (polyline)
-                console.warn('BOTH')
                 map = new Microsoft.Maps.Map('#myMap', {});
                 center = map.getCenter();
                 let srcLocation = new Microsoft.Maps.Location(srcLat, srcLong);
@@ -177,12 +175,12 @@ doctype: use_cases
                             </select>
                         </div>
                         <div style="display:inline-block;float:right;" class="btn-group">
-                            <button class="btn btn-link demo-console-btn" type="submit" onClick="copyToClipboard('#demo-console-input');">
-                                <i class="glyphicon glyphicon-copy" title="Copy"></i>COPY
+                            <button class="btn btn-link demo-console-btn copy-btn" type="submit" onClick="copyToClipboard('#demo-console-input');">
+                                <i class="glyphicon glyphicon-copy" title="Copy"></i>
                             </button>
                             <button class="btn btn-link demo-console-btn">
                                 <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" target="_blank">
-                                    <i class="glyphicon glyphicon-list-alt" title="Docs"></i>DOCS
+                                    <i class="glyphicon glyphicon-list-alt" title="Docs"></i>
                                 </a>
                             </button>
                             <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:block;">
@@ -201,12 +199,12 @@ doctype: use_cases
                             Response
                         </h5>
                         <div style="display:inline-block;float:right;" class="btn-group">
-                            <button class="btn btn-link demo-console-btn" type="submit" onClick="copyToClipboard('#demo-console-output');">
-                                <i class="glyphicon glyphicon-copy"></i>COPY
+                            <button class="btn btn-link demo-console-btn copy-btn" type="submit" onClick="copyToClipboard('#demo-console-output');">
+                                <i class="glyphicon glyphicon-copy"></i>
                             </button>
                             <button class="btn btn-link demo-console-btn">
                                 <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" target="_blank">
-                                    <i class="glyphicon glyphicon-list-alt"></i>DOCS
+                                    <i class="glyphicon glyphicon-list-alt"></i>
                                 </a>
                             </button>
                         </div>
