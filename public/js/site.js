@@ -612,14 +612,16 @@ function buildInfoboxHTML(body) {
     let stateTax = 0.00; 
     let countyTax = 0.00; 
     let cityTax = 0.00; 
-    let specialTax = 0.00;          
+    let specialTax = 0.00;
+    let dutiesTax = 0.00;          
     
     if (summaryArray.length > 0) {
         for(let i = 0; i < summaryArray.length; i++) {
             const item = summaryArray[i];
             switch (item.jurisType) {
                 case 'Country':
-                    countryTax += item.taxCalculated;
+                    item.taxType == 'LandedCost' ? dutiesTax += item.taxCalculated : countryTax += item.taxCalculated;
+                    break;
                 case 'State':
                     stateTax += item.taxCalculated;
                     break;
@@ -640,12 +642,16 @@ function buildInfoboxHTML(body) {
     
     infoboxHTML = `
         AvaTax's engine can calculate tax down to the roof-top level. In this case, 
-        AvaTax returned a total tax of <span class="demo-tax-totals">$${body.totalTax.toFixed(2)}</span>, 
-        which encompassed country <span class="demo-tax-totals">$${countryTax.toFixed(2)}</span>,
-        state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
-        county <span class="demo-tax-totals">$${countyTax.toFixed(2)}</span>, 
-        city <span class="demo-tax-totals">$${cityTax.toFixed(2)}</span>,
-        and special taxing districts <span class="demo-tax-totals">$${specialTax.toFixed(2)}</span>.
+        AvaTax returned:  
+        <ul>
+        <li>• total tax <span class="demo-tax-totals" style="display:block; float:right;">$${body.totalTax.toFixed(2)}</span></li>
+        <li>• country tax <span class="demo-tax-totals" style="display:block; float:right;">$${countryTax.toFixed(2)}</span></li>
+        <li>• duties and tariffs <span class="demo-tax-totals" style="display:block; float:right;">$${dutiesTax.toFixed(2)}</span></li>
+        <li>• state tax <span class="demo-tax-totals" style="display:block; float:right;">$${stateTax.toFixed(2)}</span></li>
+        <li>• county tax <span class="demo-tax-totals" style="display:block; float:right;">$${countyTax.toFixed(2)}</span></li>
+        <li>• city tax <span class="demo-tax-totals" style="display:block; float:right;">$${cityTax.toFixed(2)}</span></li>
+        <li>• special taxing disctricts <span class="demo-tax-totals" style="display:block; float:right;">$${specialTax.toFixed(2)}</span></li>  
+        </ul>
         Feel free to continue tinkering with the options to the left to test 
         the flexibility of the AvaTax API. Or, if you've seen enough, 
         <a href='https://developer.avalara.com/avatax/' target='_blank'>sign up for a 60-day API trial</a> 
