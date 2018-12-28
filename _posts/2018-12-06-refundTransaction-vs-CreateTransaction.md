@@ -21,9 +21,9 @@ What’s the difference? The RefundTransaction endpoint is a shortcut for creati
 
 <h2>When do you use Refund Transaction Endpoint?</h2>
 
-For most refunds, the RefundTransaction endpoint can do everything you need. The endpoint sets up a certain amount of automation for creating a <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/#comment-3475229272" target="_blank">return invoice</a>, so it’s essentially the quickest way to an accurate refund. While the CreateTransaction endpoint can also create return invoices, it requires much more user input to do so.
+For most refunds, the RefundTransaction endpoint can do everything you need. The endpoint sets up a certain amount of automation for creating a <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/" target="_blank">return invoice</a>, so it’s essentially the quickest way to an accurate refund. While the CreateTransaction endpoint can also create return invoices, it requires much more user input to do so.
 
-The <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/#comment-3895519974" target="_blank">RefundTransaction endpoint</a> is ideal for situations where you need to:
+The <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/" target="_blank">RefundTransaction endpoint</a> is ideal for situations where you need to:
 <ul class="normal">
     <li>Issue a full refund</li>
     <li>Issue a partial refund</li>
@@ -228,6 +228,24 @@ Now that we’ve set up our response with a negative amount value, we can expect
   "locationTypes": [...],
   "summary": [...],
   "parameters": {}
+}
+```
+<h2>A Note About Dates</h2>
+Whether you are building a return invoice or a RefundTransactionModel, be sure to use the date of your original invoice. This will ensure the two calculations align properly. 
+
+As an example, let's say your original transaction occured on 12/05/2018. For a return invoice, set the `taxOverride.taxDate` equal to the original transaction date, like so:
+
+```json
+taxOverride: {
+    "taxDate": "2018-12-05",
+}
+```
+
+For a refund transaciton, you would accomplish the same date specification with the following:
+
+```json
+{
+  "refundDate": "2018-12-05",
 }
 ```
 
