@@ -13,10 +13,10 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/geocode-jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The <code>/api/v2/afc/PCode</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/">Jurisdiction Determination endpoint</a> returns a list of PCodes associated with a specified location.
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#jur_determine"><code>/api/v2/afc/PCode</code> Jurisdiction Determination endpoint</a> returns a list of PCodes associated with a specified location.
 
 <h3>PCode Jurisdiction Determination</h3>
-The PCode Jurisdiction Determination endpoint accepts a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-request/">Zip Lookup Request</a>.  Specify a location, best match or exact match, and how many results you want to see.  Location data, including PCode, is returned along with additional details in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup Result</a> .
+The PCode Jurisdiction Determination endpoint accepts a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-request/">Zip Lookup Request</a>.  Specify a location, best match or exact match, and how many results you want to see.  Location data, including PCode, is returned along with additional details in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup Result</a>.
 
 
 <h4>Location Data</h4>
@@ -246,6 +246,17 @@ No results are returned because an exact match for the requested jurisdiction ca
     </div>
   </div>
 </div>
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-request/">Zip Lookup request</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup result</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/jurisdiction-determination-use-cases/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

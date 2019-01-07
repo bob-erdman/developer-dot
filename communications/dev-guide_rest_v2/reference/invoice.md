@@ -30,14 +30,14 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code>.
+          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code>
         </td>
       </tr>
       <tr>
         <td><code>cmmt</code></td>
         <td><code>[bool]</code> Commit
           <br/>
-          Indicates if invoice should be committed as soon as it is processed.
+          Indicates if invoice should be committed as soon as it is processed
           <ul class="dev-guide-list">
             <li><code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">committed</a></li>
             <li><code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">uncommitted</a></li>
@@ -48,7 +48,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>bill</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Bill To Location
           <br>
-          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+          There are several ways to input location information. FOr more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
         </td>
       </tr>
       <tr>
@@ -70,7 +70,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
             <li><code>true</code>: The customer is a Lifeline participant</li>
             <li><code>false</code>: The customer is not a Lifeline participant</li>
           </ul>
-          Lifeline is a federal program that subsidizes the cost of phone and internet for eligible customers.
+          Lifeline is a federal program that subsidizes the cost of phone and internet for eligible customers
         </td>
       </tr>
       <tr>
@@ -79,31 +79,31 @@ The <code>Invoice</code> object contains information about one or more <b>transa
           <br>
           <i>ex.</i><code> 2009-12-01T03:00:00</code>
           <br>
-          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This will affect the rules our tax engine applies when calculating taxes. 
+          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This affects the rules our tax engine applies when calculating taxes
           <br>
           <br>
-          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, our tax engine will use the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information.
+          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, the tax engine uses the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information.
         </td>
       </tr>
       <tr>
         <td><code>exms</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/"><code>[Exemption]</code></a> Exemptions
           <br>
-          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemptions</a> to apply to this transaction.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemptions</a> to apply to this transaction
         </td>
       </tr>
       <tr>
         <td><code>itms</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>[LineItems]</code></a> <span class="t5">required</span> Line Items
           <br>
-          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-items/">Line Items</a> to process for this transaction.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-items/">Line Items</a> to process for this transaction
         </td>
       </tr>
       <tr>
         <td><code>invm</code></td>
         <td><code>[bool]</code> Invoice Mode
           <br/>
-          Indicates if all line items within invoice should be processed in invoice mode.
+          Indicates if all line items within invoice should be processed in invoice mode
           <ul class="dev-guide-list">
             <li><code>true</code>: Line Items are part of a single invoice</li>
             <li><code>false</code>: Line Items are unrelated</li>
@@ -114,7 +114,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>dtl</code></td>
         <td><code>[bool]</code> Return Detail
           <br/>
-          Indicates if individual line item taxes should be included in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>.
+          Indicates if individual line item taxes should be included in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>
           <ul class="dev-guide-list">
             <li><code>true</code>: Return Line Item level tax results</li>
             <li><code>false</code>: Do not return Line Item level tax results</li>
@@ -125,7 +125,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>sum</code></td>
         <td><code>[bool]</code> Return Summary
           <br/>
-          Indicates if the summarized taxes for the invoice should be included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>.
+          Indicates if the summarized taxes for the invoice should be included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>
           <ul class="dev-guide-list">
             <li><code>true</code>: Return summarized tax results</li>
             <li><code>false</code>: Do not return summarized tax results</li>
@@ -138,7 +138,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>opt</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/"><code>[KeyValuePair]</code></a> Optional Fields
           <br>
-          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to this invoice.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to this invoice
         </td>
       </tr>
     </tbody>

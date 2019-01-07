@@ -13,26 +13,28 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-Communications REST v2 takes the transaction as a whole and bases the returned taxes off of the information provided.  
+Communications REST v2 takes the transaction as a whole and returns taxes based on the information provided.  
 
-Each transaction contains the following information:
+Each transaction contains:
 <ul class="dev-guide-list">
     <li><a class="dev-guide-link" href="#company">Company (Seller) Data</a></li>
     <li><a class="dev-guide-link" href="#customer">Customer (Buyer) Data</a></li>
     <li><a class="dev-guide-link" href="#transaction">Transaction (Invoice and Line Item) Data</a></li>
 </ul>
 
-A product (defined by the transaction/service pair) can return different taxes, or no taxes, depending on the selections made.  For example, setting the following details on a transaction returns 0 taxes:
+A product (defined by the Transaction/Service pair) can return different taxes, or no taxes, depending on the selections made.  For example, setting these details on a transaction returns 0 taxes:
 <ul class="dev-guide-list">
-    <li><b>Customer Type</b> (<code>cust</code>): "Residential" (<code>0</code>)</li>
+    <li><b>Customer Type</b> (<code>cust</code>): Residential (<code>0</code>)</li>
     <li><b>Jurisdiction</b> (<code>bill</code>): Richmond, OH</li>
     <li><b>Transaction/Service Pair</b> (<code>tran</code> and <code>serv</code>): Internet/WEB Hosting (5/29)</li>
 </ul>
 
-But by changing <b>Customer Type</b> to <b>Business</b> (<code>cust</code> to <code>1</code>), State and Country Sales Tax is returned.  It is <b>imperative</b> that the transaction information is set correctly in order to get the proper taxes back.
+But by changing <b>Customer Type</b> to <b>Business</b> (<code>cust</code> to <code>1</code>), State and Country Sales Tax is returned.  It is <b>imperative</b> that the transaction information is set correctly to get the proper taxes back.
 
 <h3 id="company">Company (Seller) Data</h3>
-Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the <code>CompanyData</code> object.  See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/"><code>CompanyData</code> Reference</a> for more information.
+Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in <code>CompanyData</code>.
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/"><code>CompanyData</code></a>.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -47,7 +49,9 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
       <tr>
         <td>Business Class</td>
         <td><code>bscl</code></td>
-        <td>Specifies whether the business making the transaction is an Incumbent Local Exchange Company (ILEC) or not an ILEC.  Only impacts Communications transactions in certain jurisdictions, such as Oregon.
+        <td>Specifies whether the business making the transaction is an Incumbent Local Exchange Company (ILEC) or not an ILEC
+        <br/><br/>
+        Only impacts Communications transactions in certain jurisdictions, such as Oregon
             <br/>
             <br/>
             <div class="mobile-table">
@@ -81,7 +85,9 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
       <tr>
         <td>Service Class</td>
         <td><code>svcl</code></td>
-        <td>Delineates the primary activity of an organization as Local Service or Long Distance.   Only impacts Communications transactions in certain jurisdictions, such as New York.
+        <td>Delineates the primary activity of an organization as Local Service or Long Distance
+        <br/><br/>
+        Only impacts Communications transactions in certain jurisdictions, such as New York
           <br/>
           <br/>
           <div class="mobile-table">
@@ -112,7 +118,7 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
       <tr>
         <td>Facilities</td>
         <td><code>fclt</code></td>
-        <td>Specifies whether the transaction is sold over tangible facilities controlled by the seller.  In some jurisdictions, tax outcomes vary depending on whether the service is delivered over infrastructure controlled by the seller.
+        <td>Specifies whether the transaction is sold over tangible facilities controlled by the seller.  In some jurisdictions, tax outcomes vary depending on whether the service is delivered over infrastructure controlled by the seller
           <br/>
           <br/>  
           <div class="mobile-table">
@@ -222,8 +228,12 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
 
 
 <h3 id="customer">Customer (Buyer) Data</h3>
-Customer data defines the <b>customer</b> or <b>buyer</b>.  Set these keys in the <code>Invoice</code>, <code>Location</code>, or <code>LineItem</code> objects.  
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code></a>, <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>Location</code></a>, and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code></a> for more information.
+Customer data defines the <b>customer</b> or <b>buyer</b>.  Set these keys in:
+<ul class="dev-guide-list"> 
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code></a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>Location</code></a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code></a></li>
+</ul>
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -238,7 +248,9 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td>Customer Type</td>
         <td><code>cust</code></td>
-        <td>Specifies the type of customer involved in the transaction.  Customer Type is set on the invoice but can be overridden on the line item.
+        <td>Specifies the type of customer involved in the transaction 
+        <br/><br/>
+        Set on the invoice but can be overridden on a line item
           <br/>
           <br/>  
           <div class="mobile-table">
@@ -279,7 +291,9 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td>Lifeline</td>
         <td><code>lfln</code></td>
-        <td>Indicates if the customer is a Lifeline participant.  Lifeline is set on the invoice but can be overridden on the line item.
+        <td>Indicates if the customer is a Lifeline participant
+        <br/><br/>
+        Set on the invoice but can be overridden on the line item
           <br/>
           <br/>  
           <div class="mobile-table">
@@ -310,7 +324,7 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td>Incorporated</td>
         <td><code>int</code></td>
-        <td>Specifies whether the customer is involved in this transaction inside or outside of the Local level of the jurisdiction.
+        <td>Specifies whether the customer is involved in this transaction inside or outside of the Local level of the jurisdiction
           <br/>
           <br/>  
           <div class="mobile-table">
@@ -351,12 +365,20 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
 
 
 <h3 id="transaction">Transaction Data</h3>
-Transaction data defines the <b>transaction</b> in terms of where the transaction takes place, what is being be taxed, and other details.  Set these keys in the <a class="dev-guide-link" href="#invoice"><code>Invoice</code></a> or <a class="dev-guide-link" href="#lineitem"><code>LineItem</code></a> objects.  
+Transaction data defines the <b>transaction</b>:
+<ul class="dev-guide-list">
+  <li>Where the transaction takes place</li>
+  <li>What is being be taxed</li>
+  <li>How to process the transaction (is the transaction an adjustment?)</li>
+  <li>Other details, such as how the results are to be returned</li>
+</ul>
+
+Set these keys in <a class="dev-guide-link" href="#invoice"><code>Invoice</code></a> or <a class="dev-guide-link" href="#lineitem"><code>LineItem</code></a>.  
 
 Transactions can also be customized through <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Overrides</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Overrides</a>.
 
 <h4 id="invoice">Invoice Keys</h4>
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code> Reference</a> for more information.
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code></a>.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -372,8 +394,8 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Document Code</a></td>
         <td><code>doc</code></td>
         <td>Identifies a single or group of transactions, quotes, or invoices in the calling system. This is a user-defined field limited to 150 characters
-            <br/>
-            Document Code must be set if <b>Commit</b> is <code>true</code>
+        <br/><br/>
+        Document Code must be set if <b>Commit</b> is <code>true</code>
         </td>
       </tr>
       <tr>
@@ -411,14 +433,16 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         </td>
       </tr>
       <tr>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Bill To Jurisdiction</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">BillTo Jurisdiction</a></td>
         <td><code>bill</code></td>
-        <td>Identifies the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> to be billed.  BillTo is set on the invoice but can be overridden on the line item.</td>
+        <td>Identifies the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> to be billed.  BillTo is set on the invoice but can be overridden on the line item</td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></td>
         <td><code>date</code></td>
-        <td>Date to be applied to the transaction or invoice.  Normally set to the bill date, invoice date, or call date (as applicable).  Invoice Date is set on the invoice but can be overridden on the line item.</td>
+        <td>Date applied to the transaction or invoice.  Normally set to the bill date, invoice date, or call date (as applicable)
+        <br/><br/>
+        Set on the invoice but can be overridden on the line item</td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></td>
@@ -527,7 +551,7 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
 </div>
 
 <h4 id="lineitem">LineItem Keys</h4>
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code> Reference</a> for more information.
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code></a>.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -558,31 +582,35 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td>Charge</td>
         <td><code>chg</code></td>
         <td>Specifies the amount of the transaction to be taxed.  For <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a> transactions, Charge specifies the desired total (base charge + taxes)
-            <br/>
-            Defaults to <code>0</code> if not set
+        <br/><br/>
+        Defaults to <code>0</code> if not set
         </td>
       </tr>
       <tr>
         <td>Lines</td>
         <td><code>line</code></td>
-        <td>Specifies the line count.  Defaults to <code>0</code> if not set
-            <br/>
-            When local service is provided, a transaction should be generated with Lines populated with the number of lines the customer subscribes to.  This information is used to generate per line taxes usually associated with local E911 charges and local telecommunications relay service taxes and other assorted taxes.
+        <td>Specifies the line count
+            <br/><br/>
+            When local service is provided, Lines should be populated with the number of lines the customer subscribes to.  This information is used to generate per-line taxes usually associated with local E911 charges, local telecommunications relay service taxes, and other assorted taxes
+            <br/><br/>
+            Defaults to <code>0</code> if not set
         </td>
       </tr>
       <tr>
         <td>Locations</td>
         <td><code>loc</code></td>
         <td>Specifies the number of customer locations
-            <br/>
-            Defaults to <code>0</code> if not set</td>
+        <br/><br/>
+        Defaults to <code>0</code> if not set</td>
       </tr>
       <tr>
         <td>Minutes</td>
         <td><code>min</code></td>
-        <td>Specifies the length of a phone call.  Defaults to <code>0</code> if not set
-            <br/>
-            Used in the generation of taxes that are specified as per minute flat fees in some taxing jurisdictions. The number is a double so any seconds added should be in decimal format.  For example, use <code>20.5</code> for 20 minutes and 30 seconds.
+        <td>Specifies the length of a phone call
+            <br/><br/>
+            Used in the generation of taxes that are specified as per-minute flat fees in some taxing jurisdictions. Minutes is a double so any seconds added should be in decimal format.  For example, use <code>20.5</code> for 20 minutes and 30 seconds
+            <br/><br/>
+            Defaults to <code>0</code> if not set
         </td>
       </tr>
       <tr>
@@ -603,7 +631,7 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
               <tbody>
                 <tr>
                   <td><code>0</code></td>
-                  <td>wholesale</td>
+                  <td>Wholesale</td>
                   <td>Specifies that the transaction is a sale to another company that will resell the product or service to a consumer</td>
                 </tr>
                 <tr>
@@ -633,7 +661,9 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line Split</a></td>
         <td><code>plsp</code></td>
-        <td>Percentage split for a private line transaction.  Set as a decimal and defaults to <code>0</code> if not set</td>
+        <td>Percentage split for a private line transaction
+        <br/><br/>
+        Set as a decimal and defaults to <code>0</code> if not set</td>
       </tr>
       <tr>
         <td>Tax Inclusive</td>
@@ -669,7 +699,9 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Proration</a></td>
         <td><code>pror</code></td>
-        <td>Percentage allocation for a pro-rated calculation of fixed taxes.  Set as a decimal and defaults to <code>0</code> if not set</td>
+        <td>Percentage allocation for a pro-rated calculation of fixed taxes
+        <br/><br/>
+        Set as a decimal and defaults to <code>0</code> if not set</td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/bridge-conferencing/">Bridge Conferencing</a></td>
@@ -679,12 +711,16 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td>Transaction Type</td>
         <td><code>tran</code></td>
-        <td>Transaction Type ID of the service being taxed.  Use the <code>/api/v2/afc/tspairs</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/#lookups">endpoint</a> for a list of transaction type IDs.</td>
+        <td>Transaction Type ID of the service being taxed
+        <br/><br/>
+        Use the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> Lookups endpoint</a> for a list of transaction type IDs</td>
       </tr>
       <tr>
         <td>Service Type</td>
         <td><code>serv</code></td>
-        <td>Service Type ID of the service being taxed.  Use the <code>/api/v2/afc/tspairs</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/#lookups">endpoint</a> for a list of service type IDs.</td>
+        <td>Service Type ID of the service being taxed
+        <br/><br/>
+        Use the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> Lookups endpoint</a> for a list of service type IDs</td>
       </tr>
       <tr>
         <td>Debit</td>
@@ -814,12 +850,31 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Attribute Property</a></td>
         <td><code>prop</code></td>
-        <td>Attribute/property value for sales and use transaction/service pairs</td>
+        <td>Attribute/property value for <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> Transaction/Service pairs</td>
       </tr>
     </tbody>
   </table>
 </div>
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">Company data</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional fields</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">Tax override</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe harbor override</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups">Lookups endpoints</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

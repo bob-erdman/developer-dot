@@ -30,14 +30,14 @@ At the highest level, a <code>CalcTaxes</code> response is a JSON object compris
         <td><code>inv</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice-result/"><code>[InvoiceResult]</code></a> Invoice Result
         <br>
-        This object contains information about the tax calculation results for each invoice submitted in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes request</a>.
+        Contains information about the tax calculation results for each invoice submitted in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes request</a>.
         </td>
       </tr>
       <tr>
         <td><code>err</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/error-response/"><code>[Error]</code></a> Error
         <br>
-        This object contains information about any <b>errors</b> returned (as applicable)
+        Contains information about any <b>errors</b> returned (as applicable)
         </td>
       </tr>
     </tbody>

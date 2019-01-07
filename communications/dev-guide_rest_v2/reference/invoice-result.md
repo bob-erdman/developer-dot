@@ -30,28 +30,28 @@ The <code>InvoiceResult</code> object contains the <b>tax calculation results</b
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-        The Document Code for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>.
+        The Document Code for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>
         </td>
       </tr>
       <tr>
         <td><code>itms</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item-result/"><code>[LineItemResult]</code></a> Line Item Results
         <br>
-        This object contains the <b>tax calculation results</b> for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>.
+        Contains the <b>tax calculation results</b> for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>
         </td>
       </tr>
       <tr>
         <td><code>summ</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/"><code>[SummarizedTax]</code></a> Summarized Taxes
         <br>
-        This object contains the <b>summarized taxes</b> for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>.
+        Contains the <b>summarized taxes</b> for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>
         </td>
       </tr>
       <tr>
         <td><code>err</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/error-response/"><code>[Error]</code></a> Error
         <br>
-        This object contains information about any errors returned (as applicable)
+        Contains information about any errors returned (as applicable)
         </td>
       </tr>
     </tbody>

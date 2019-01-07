@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>The CalcTaxes Request</h3>
 
-The <code>CalcTaxesRequest</code> object supports a list of transactions and override options. Actual limit varies depending on message size and your timeout values, but the standard recommendation is to process no more than 1,000 entries per request.
+<code>CalcTaxesRequest</code> supports a list of invoices and override options. Actual limit varies depending on message size and your timeout values, but the standard recommendation is to process no more than 1,000 entries per request.
 
 At the highest level, a <code>CalcTaxes</code> request is a JSON object comprised of the following:
 
@@ -32,25 +32,25 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
         <td><code>cmpn</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/"><code>[CompanyData]</code></a> Company Data
         <br>
-        This object contains information about <b>your</b> company or the Seller.</td>
+        Contains information about <b>your</b> company or the Seller</td>
       </tr>
       <tr>
         <td><code>inv</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>[Invoice]</code></a> Invoice
         <br/>
-        This object contains information about the <b>transaction</b>, including a list of invoices to be taxed.</td>
+        Contains information about the <b>transaction</b>, including a list of line items to be taxed</td>
       </tr>
       <tr>
         <td><code>ovr</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/"><code>[TaxOverride]</code></a> Tax Override
         <br/>
-        This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+        Contains information about <b>tax overrides</b> you want to <a class="dev-guide-link" href="#note">apply to the transaction</a></td>
       </tr>
       <tr>
         <td><code>sovr</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/"><code>[SafeHarborOverride]</code></a> Safe Harbor Override
         <br/>
-        This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+        Contains information about <b>safe harbor overrides</b> you want to <a class="dev-guide-link" href="#note">apply to the transaction</a></td>
       </tr>
     </tbody>
   </table>
@@ -82,8 +82,8 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
 }
 {% endhighlight %}
 
-<h4 id="note">Note</h4>
-Although the <code>CalcTaxes</code> request gives the user the flexibility to input Override/Safe Harbor Override information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with a custom override file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
+<h4>Note</h4>
+We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with an override file or configuration update included were possible.  Using a client profile results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-REST v2 provides the ability to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">commit or uncommit</a> transactions and only include the committed transactions within compliance reports.  A transaction can be committed at any time as long as there is a Document Code associated to it.  However, be aware that committing or uncommiting a document code commits/uncommits all transactions with the specified Document Code (<code>doc</code>).  The Document Code can be associated with a bill run, an invoice, a customer, or a transaction.
+REST v2 provides the ability to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">commit or uncommit</a> transactions and only include the committed transactions within compliance reports.  A transaction can be committed at any time as long as there is a Document Code associated to it.  However, be aware that committing or uncommitting a document code commits/uncommits all transactions with the specified Document Code (<code>doc</code>).  The Document Code can be associated with a bill run, an invoice, a customer, or a transaction.
 
 Use these methods to commit and uncommit Document Codes:
 <ul class="dev-guide-list">
@@ -21,7 +21,7 @@ Use these methods to commit and uncommit Document Codes:
   <li>Commit field (<code>cmmt</code>) directly in the transaction</li>
 </ul>
 
-This page covers the transaction-level Commit/Uncommit process.  The Commit API can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/">here</a>.
+This page covers the transaction-level Commit/Uncommit process.  For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/">Commit Request</a>.
 
 <h3>Transaction-Level Commit Example</h3>
 This example is committing Document Code (<code>doc</code>) "DocumentXYZ123" by setting the Commit flag (<code>cmmt</code>) to <code>true</code>.
@@ -468,7 +468,26 @@ Taxes (<code>txs</code>) are returned as normal.
 
 
 <h3>Commit API</h3>
-The same actions can be taken by using the <code>/api/v2/afc/Commit</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/">endpoint</a>.  Just execute the <code>Commit</code> API with the desired Document Code (<code>doc</code>) and Commit flag (<code>cmmt</code>) values set.
+The same actions can be taken by using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/"><code>/api/v2/afc/Commit</code> endpoint</a>.  Just execute the <code>Commit</code> endpoint with the desired Document Code (<code>doc</code>) and Commit flag (<code>cmmt</code>) values set.
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit">Commit/Uncommit</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

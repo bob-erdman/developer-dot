@@ -30,7 +30,7 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
         <td><code>loc</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Override location information
           <br>
-          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+          There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
         </td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
         <td>
           <code>[int]</code> <span class="t5">required</span> Tax Type ID
           <br/>
-          Tax Type to override.  For a list of Tax Type IDs, see the <a class ="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/"><code>/api/v2/afc/taxtype/{taxType}</code> endpoint.</a>
+          Tax Type to override.  For a list of Tax Type IDs, see the <a class ="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/taxtype/{taxType}</code> endpoint</a>
         </td>
       </tr>
       <tr>
@@ -74,7 +74,7 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
         <td>
           <code>[bool]</code> Level Exemptible
           <br/>
-          Indicates if the tax can be exempted using level exemptions.
+          Indicates if the tax can be exempted using level exemptions
           <ul class="dev-guide-list">
             <li><code>true</code>: Level Exemptible</li>
             <li><code>false</code>: Not Level Exemptible</li>

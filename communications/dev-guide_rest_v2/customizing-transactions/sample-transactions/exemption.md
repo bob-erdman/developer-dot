@@ -37,6 +37,10 @@ Communications REST v2 provides different types of exemptions:
         <br/>
         Provide the tax type (<code>tpe</code>) and tax level (<code>lvl</code>).  Specify the location (<code>loc</code>) if applicable to a specific jurisdiction.</td>
       </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="#jur_tax_rule">Jurisdiction Tax Rule Exemption</a></td>
+        <td>Exemptions applied automatically by the AFC Tax Engine based on characteristics of the transaction</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -241,6 +245,13 @@ The Force Level Exemptible flag (<code>frc</code>) override level exempt flag on
   <li><code>false</code>: Wildcard exemptions exclude taxes tagged as not level exemptible from consideration</li>
 </ul>
 
+<h3 id="jur_tax_rule">Jurisdiction Tax Rule Exemption</h3>
+A Jurisdiction Tax Rule Exemption is applied automatically based on the taxing jurisdiction and the taxes returned.  For example:
+<ul class="dev-guide-list">
+  <li>First $25 of a Texas Internet transaction</li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Override</a> applied to VoIP or Cellular transactions</li>
+</ul>
+
 <h3 id="cat">Exemption Example</h3>
 This example demonstrates:
 <ul class="dev-guide-list">
@@ -426,6 +437,29 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizin
 
 <h4>Note</h4>
 We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with an exemption file included were possible.  Using a client profile results in better performance from the Tax Engine because your exemption settings are cached <i>before</i> tax calculation begins.
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/">Category exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/">Tax Type exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups">Lookups endpoints</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

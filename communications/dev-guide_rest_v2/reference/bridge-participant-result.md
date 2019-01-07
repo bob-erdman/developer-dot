@@ -37,21 +37,21 @@ The <code>BridgeParticipantResult</code> functionality is still in beta.  Contac
             <td><code>tran</code></td>
             <td><code>[int]</code> Transaction Type
             <br/>
-            Transaction Type ID used for the participant.  The transaction/service pair is determined automatically based on the Participant location, and other information specified in the transaction.
+            Transaction Type ID used for the participant.  The transaction/service pair is determined automatically based on the Participant location and other information specified in the transaction
             </td>
         </tr>
         <tr>
             <td><code>serv</code></td>
             <td><code>[int]</code> Service Type
             <br/>
-            Service Type ID used for the participant.  The transaction/service pair is determined automatically based on the Participant location, and other information specified in the transaction.
+            Service Type ID used for the participant.  The transaction/service pair is determined automatically based on the Participant location and other information specified in the transaction
             </td>
         </tr>
         <tr>
             <td><code>txs</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/"><code>[Tax]</code></a> Detailed Tax Results
             <br>
-            This object contains the <b>detailed tax results</b> generated for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant/">participant</a>
+            Contains the <b>detailed tax results</b> generated for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant/">participant</a>
             </td>
         </tr>
         <tr>

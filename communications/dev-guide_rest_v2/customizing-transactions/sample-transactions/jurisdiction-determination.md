@@ -66,6 +66,7 @@ Keep these points in mind if using the Geocoding functionality (<code>geo</code>
 <ol class="dev-guide-list">
   <li>The geocoding is slower, but provides a more accurate jurisdiction</li>
   <li>If the geocoding process fails, the entire <code>CalcTaxes</code> request fails</li>
+  <li>PO Box addresses are not valid when using Geocoding</li>
 </ol>
 
 <h4>Note</h4>
@@ -886,6 +887,21 @@ If you have a PCode (<code>pcd</code>), NPANXX (<code>npa</code>), or FIPS (<cod
 }
 {% endhighlight %}
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized tax results</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

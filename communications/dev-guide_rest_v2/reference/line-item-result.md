@@ -38,21 +38,21 @@ The <code>LineItemResult</code> object contains the <b>individual tax calculatio
             <td><code>txs</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/"><code>[Tax]</code></a> Detailed Tax Results
             <br>
-            This object contains the <b>detailed tax results</b> generated for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>
+            Contains the <b>detailed tax results</b> generated for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>
             </td>
       </tr>
             <tr>
             <td><code>brdg</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/"><code>[BridgeParticipantResult]</code></a> Bridge Participant Results
             <br>
-            This object contains the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant/">conference bridge participant</a> tax calculation results
+            Contains the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant/">conference bridge participant</a> tax calculation results
             </td>
         </tr>
         <tr>
             <td><code>err</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/error-response/"><code>[Error]</code></a> Error
             <br>
-            This object contains information about any errors returned (as applicable)
+            Contains information about any errors returned (as applicable)
             </td>
         </tr>
     </tbody>

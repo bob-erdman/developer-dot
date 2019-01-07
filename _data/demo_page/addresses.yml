@@ -5,6 +5,7 @@
   lat: 33.6846603698176
   long: -117.850629887389
   type: national
+  selected: true
   country: US
 - city: Seattle
   street: 255 S. King Street
@@ -13,6 +14,7 @@
   lat: 47.598100-122.331206
   long: -122.331206
   type: national
+  selected: false
   country: US
 - city: Durham
   street: 512 S Mangum Street
@@ -21,6 +23,7 @@
   lat: 35.991727
   long: -78.902647
   type: national
+  selected: false
   country: US
 - city: Brighton
   street: 3rd Floor Trafalgar Place
@@ -29,6 +32,7 @@
   lat: 50.828746
   long: -0.139584
   type: international
+  selected: false
   country: UK
 - city: Pune
   street: 3rd Floor, Pride Portal
@@ -38,6 +42,7 @@
   lat: 18.533946
   long: 73.827597
   type: international
+  selected: false
   country: IN
 - city: São Paulo
   street: Rua Henri Dunant 137
@@ -46,4 +51,5 @@
   lat: -23.633102
   long: -46.695348
   type: international
+  selected: false
   country: BR
