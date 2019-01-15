@@ -42,7 +42,7 @@ These items must appear in your request header:
   </table>
 <div>
 
-<h3>Encode your API Key</h3>
+<h3 id="api_key">Encode your API Key</h3>
 
 The <code>api_key</code> is your Customer Portal "username:password" encoded in Base64.  For example, if your username is <code>first.last@avalara.com</code> and your password is <code>secretpassword!</code>, your <code>api_key</code> is <code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE=</code>.
 
