@@ -13,9 +13,9 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The Optional Fields object (<code>opt</code>) is a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Key/Value Pair</a> that allows you to include up to 10 custom fields for use in Reporting.  The Optional Fields are not returned as part of the CalcTaxes response, but Optional Field 1 - Optional Field 10 can be included on reports generated in the <a class="dev-guide-link" href="https://communications.avalara.net">Customer Portal</a>.
+The Optional Fields object (<code>opt</code>) is a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Key/Value Pair</a> that allows you to include up to 10 custom fields for use in Reporting.  The Optional Fields are not returned as part of the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a>, but Optional Field 1 - Optional Field 10 can be included on reports generated in the <a class="dev-guide-link" href="https://communications.avalara.net">Customer Portal</a>.
 
-The Optional Fields object can be used in both the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a> levels.  The 10 available <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Key/Value pairs</a> can be spread across both the invoice and each line item individually.  <a class="dev-guide-link" href="#example">For example</a>:
+Optional Fields can be used in both the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a>.  The 10 available <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Key/Value pairs</a> can be spread across both the invoice and each line item individually.  <a class="dev-guide-link" href="#example">For example</a>:
 <ul class="dev-guide-list">
   <li>The <b>transaction</b> contains 1 Invoice and 5 LineItem objects</li>
   <li>The <b>Invoice</b> object contains Optional Fields keys 1 through 5</li>
@@ -29,22 +29,25 @@ The Optional Fields object can be used in both the <a class="dev-guide-link" hre
     </ul>
 </ul>
 
-This Optional Fields at the <b>Invoice</b> level are applied to all Line Items contained within that Invoice. 
+The Optional Fields at the <b>Invoice</b> level are applied to all Line Items. 
 
-To use the Optional Field object:
+To use the Optional Fields:
 <ul class="dev-guide-list">
-  <li>Set the Key (<code>key</code>) to a number between 1 and 10</li>
+  <li>Set the Key (<code>key</code>) to a number between 1 and 10
+  <ul class="dev-guide-list">
+    <li>Each key/value pair must have a unique key</li>
+  </ul></li>
   <li>Add the custom value for the specified key in Value (<code>val</code>)</li>
 </ul>
 
 <h4>Notes</h4>
 <ol class="dev-guide-list">
-  <li>The Optional Field value field (<code>val</code>) does not need to be the same across all LineItems even if the Key field is the same</li>
-  <li>While the distribution of the Optional Field key/value pairs is not mandated by REST v2, it is <b>recommended</b> to set Keys 1-5 on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and Keys 5-10 on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a></li>
+  <li>The Optional Field value field (<code>val</code>) does not need to be the same across all Line Items even if the Key (<code>key</code>) is the same</li>
+  <li>The distribution of the Optional Field key/value pairs (<code>opt</code>) is not mandated by REST v2, but it is <b>recommended</b> to set Keys 1-5 on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and Keys 5-10 on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a></li>
 </ol>
 
 <h3 id="example">Optional Fields Example</h3>
-This example demonstrates using the Optional Field object on both the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItems</a>.
+This example demonstrates using Optional Fields on both the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItems</a>.
 
 {% highlight json %}
 {
@@ -57,7 +60,7 @@ This example demonstrates using the Optional Field object on both the <a class="
   },
   "inv": [
     {
-      "doc": "TEST-OPTIONAL FIELD EXAMPLE",
+      "doc": "OPTIONAL FIELDS EXAMPLE",
       "cmmt": false,
       "bill": {
         "cnty": "San Francisco",
@@ -233,7 +236,7 @@ This example demonstrates using the Optional Field object on both the <a class="
 {% endhighlight %}
 
 <h4>Response</h4>
-Taxes (<code>txs</code> and <code>summ</code>) are returned as normal.
+Taxes (<code>txs</code> and <code>summ</code>) are returned as normal.  No Optional Fields (<code>opt</code>) are returned in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a>.
 
 <div class="panel-group">
   <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
@@ -243,7 +246,7 @@ Taxes (<code>txs</code> and <code>summ</code>) are returned as normal.
 {
   "inv": [
     {
-      "doc": "TEST-OPTIONAL FIELD EXAMPLE",
+      "doc": "OPTIONAL FIELDS EXAMPLE",
       "itms": [
         {
           "ref": "Line Item 001",
