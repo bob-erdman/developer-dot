@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+An item in this request has multiple entries for a given system code. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Each item can have one entry per given system code. The API supports multiple systems inluding the Avalara Tax Code. See the [18.12 Path Notes](/blog/2018/12/13/AvaTax-18-12-patch-notes/#18-12-advanced-items-setup) for more information about supported system codes. 
