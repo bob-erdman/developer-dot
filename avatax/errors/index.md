@@ -67,7 +67,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>10</td>
 			<td><a href="EntityLimitExceeded">EntityLimitExceeded</a></td>
-			<td>TBD</td>
+			<td>The number of entities in the request exceeded the limit.</td>
 		</tr>		
         <tr>
 			<td>11</td>
@@ -242,7 +242,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>48</td>
 			<td><a href="InvalidDecimalValue">InvalidDecimalValue</a></td>
-			<td>TBD</td>
+			<td>A field in your request has too many decimal places or too many digits over all.</td>
 		</tr>		
         <tr>
 			<td>50</td>
@@ -1292,7 +1292,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1705</td>
 			<td><a href="DuplicateSystemForItem">DuplicateSystemForItem</a></td>
-			<td>TBD</td>
+			<td>An item in this request has multiple entries for a given system code.</td>
 		</tr>		
         <tr>
 			<td>1800</td>

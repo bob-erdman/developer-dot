@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The number of entities in the request exceeded the limit. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Only a defined number of entities is allowed for this type of request. The error description will tell you the entity limit for your type of request. Check your request for the amount of `entityUseCode` fields and ensure the total does not exceed the limit.

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A field in your request has too many decimal places or too many digits over all. 
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+Certain numeric fields have a limit for the size of the number. This restriction limits both the number of decimal places and the number of total digits. In the `message` of your error, you'll find the name of the field you should check where the `-0-` is located. 
+
+Once you've identified the field, check that the demical places and total digits do not exceed the field's limit. The decimal (see `-1-` above) and digit (see `-2-` above) limits will be in your error `description`.
