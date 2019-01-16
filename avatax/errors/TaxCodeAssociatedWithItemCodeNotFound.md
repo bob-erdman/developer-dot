@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The tax code in the request could not be found.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+The tax code used is not available or does not exist. 
+
+To find the tax code causing the error, check your error's description. Using the example error above, the error-causing tax code can be found at position `-0-` and the item code it is associated with can be found at position `-1-`.

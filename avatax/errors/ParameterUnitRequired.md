@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A parameter in the request doesn't have a unit of measure.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+Some parameters are expected to have a unit of measure. A parameter in your request does not have the expected unit of measure element. 
+
+You can find which parameter is causing the error and the expected unit of measure type in your error's description. Looking at the example error, the error-causing parameter is at position `-0-` and the measurement type is at poistion `-1-`.

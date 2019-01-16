@@ -1287,7 +1287,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1704</td>
 			<td><a href="TaxCodeAssociatedWithItemCodeNotFound">TaxCodeAssociatedWithItemCodeNotFound</a></td>
-			<td>TBD</td>
+			<td>The tax code in the request could not be found.</td>
 		</tr>		
         <tr>
 			<td>1705</td>
@@ -1337,7 +1337,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2101</td>
 			<td><a href="ParameterUnitRequired">ParameterUnitRequired</a></td>
-			<td>TBD</td>
+			<td>A parameter in the request doesn't have a unit of measure.</td>
 		</tr>		
         <tr>
 			<td>2102</td>
@@ -1352,5 +1352,5 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2104</td>
 			<td><a href="SubscriptionRequiredForParameter">SubscriptionRequiredForParameter</a></td>
-			<td>TBD</td>
+			<td>The account's subscription level doesn't include use of the parameter in your request.</td>
 		</tr></tbody></table>

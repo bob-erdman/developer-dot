@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The account's subscription level doesn't include use of the parameter in your request.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+Avalara has various subscriptions that grant access to different features. The parameter in your request cannot be accessed or used with your current subscription. If you want to gain access and use the parameter, you must update or add a subscription. 
+
+To find the error-causing parameter, look in your error's description. Using the example error above, you can see the error-causing parameter is located at position `-1-`. Additionally, subscriptions allowing the use of the parameter can be found at position `-2-`.
