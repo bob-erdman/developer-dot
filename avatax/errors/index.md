@@ -1332,7 +1332,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2100</td>
 			<td><a href="InvalidParameterUnitMeasurementType">InvalidParameterUnitMeasurementType</a></td>
-			<td>TBD</td>
+			<td>A paremeter in the request has an unexpected unit of measurement type.</td>
 		</tr>		
         <tr>
 			<td>2101</td>
@@ -1342,12 +1342,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2102</td>
 			<td><a href="InvalidParameterValueDataType">InvalidParameterValueDataType</a></td>
-			<td>TBD</td>
+			<td>A parameter value in the request has an invalid data type.</td>
 		</tr>		
         <tr>
 			<td>2103</td>
 			<td><a href="InvalidParameterAttributeType">InvalidParameterAttributeType</a></td>
-			<td>TBD</td>
+			<td>A parameter in the request doesn't match the expected attribute type.</td>
 		</tr>		
         <tr>
 			<td>2104</td>

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A parameter value in the request has an invalid data type.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+Certain parameters expect specific data types to ensure proper tax calculations and accurate information. 
+
+The information regarding the invalid parameter value and correct data type can be found in the description of your error. Looking at the example error above, the invalid parameter will be named at position `-2-`. The expected data type can be found in the description at position `1`.
