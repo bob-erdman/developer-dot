@@ -14,11 +14,11 @@
 		}
 	},
 	"host": "sandbox-rest.avatax.com",
-"x-production-host": "rest.avatax.com",
-"schemes": [
-  "https"
-],
-    "basePath": "/",
+	"x-production-host": "rest.avatax.com",
+	"schemes": [
+		"https"
+	],
+	"basePath": "/",
 	"paths": {
 		"/api/v2/accounts": {
 			"get": {
@@ -4119,9 +4119,7 @@
 						"schema": {
 							"uniqueItems": false,
 							"type": "array",
-							"items": {
-								"$ref": "#/definitions/CustomerModel"
-							}
+							"items": {}
 						}
 					}, {
 						"name": "X-Avalara-Client",
@@ -86838,7 +86836,7 @@
   "securityDefinitions": {
     "OauthSecurity": {
       "flow": "implicit",
-      "authorizationUrl": "https://identity.avalara.com/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=42a9c253-5aa2-4df3-9a3b-ca91c9d644be&",
+      "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=aad18261-8a6a-45d2-972b-c25c9fc135fe&",
       "type": "oauth2",
       "description": "A bearer token provided by the Avalara Identity server."
     },
@@ -86854,10 +86852,11 @@
   "x-ApiType": "REST",
   "x-avalara-version": "18.12.0",
   "x-api-proxy": {
-    "route": "https://e3zwcxla5k.execute-api.us-west-2.amazonaws.com/prod/",
-    "key": {
-      "name": "api-key",
-      "location": "api-proxy-key/key"
-    }
+	"route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
+	"key": {
+	  "name": "api-key",
+	  "location": "v2-devdot-keys/devdot-proxy-key"
+  
+	}
   }
 }
