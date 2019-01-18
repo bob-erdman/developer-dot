@@ -31,7 +31,7 @@ The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
 <ul class="dev-guide-list">
     <li>Confirm that at least one instance of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice (<code>inv</code>)</a> is included in your <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
     <li>Verify that the format of the JSON within Invoice to ensure all required fields are populated in your request</li>
-    <li>Verify the structure of the JSON within Invoice is complete (for example, no missing braces)</li>
+    <li>Verify the structure of the JSON within Invoice is complete (for example, no missing braces or commas)</li>
 </ul>
 
 <ul class="pager">

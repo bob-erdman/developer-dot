@@ -28,9 +28,9 @@ The PCode (<code>pcd</code>) provided in a <a class="dev-guide-link" href="/comm
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-Validate that the PCode field (<code>pcd</code>) on all <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">locations</a> (<code>loc</code>) is a valid PCode.
+Validate that the PCode field (<code>pcd</code>) on all <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">locations</a> (<code>bill</code>, <code>from</code>, <code>to</code>, or <code>loc</code>) is a valid PCode.
 
-Use the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#jur_determine"><code>/api/v2/afc/PCode</code> endpoint</a> to validate that the correct PCode is being used for a country/state/count/city.
+Use the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#jur_determine"><code>/api/v2/afc/PCode</code> endpoint</a> to validate that the correct PCode is being used for a country/state/county/city.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

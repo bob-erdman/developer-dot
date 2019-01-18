@@ -28,9 +28,9 @@ The value field (<code>val</code>) in the <a class="dev-guide-link" href="/commu
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-Ensure that the value field (<code>val</code>) in the Optional Fields (<code>opt</code>) is 150 characters or less.
+Ensure that the value field (<code>val</code>) in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Field</a> (<code>opt</code>) is 150 characters or less.
 
-For more information, see the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields use case</a>.
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

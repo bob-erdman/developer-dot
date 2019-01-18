@@ -152,6 +152,11 @@ disqus: 0
       </tr>
       <tr>
         <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-bill-to-location/">Invalid BillTo location: Insufficient information provided to determine taxing jurisdiction.</a></td>
+        <td>Not enough information to determine a BillTo location</td>
+      </tr>
+      <tr>
+        <td>-2000</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/customer-type-is-required/">CustomerType is required.</a></td>
         <td>Missing CustomerType field in Invoice</td>
       </tr> 
@@ -197,6 +202,16 @@ disqus: 0
       </tr>
       <tr>
         <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/invalid-exemption-location/">Invalid TaxExemption: {\"loc\":{\"ctry\":\"USA\",\"st\":\"PA\",\"zip\":\"27701\"},\"tpe\":35,\"dom\":1,\"scp\":256} - Unable to determine jurisdiction for TaxExemption: County/State/Zip not found..</a></td> <!--PLAT-8023 to fix misspelling of "Country" -->
+        <td>Invalid Exemption location</td>
+      </tr>
+      <tr>
+        <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-exemption-location/">Exemption Error - {\"frc\":true,\"loc\":{},\"tpe\":1,\"lvl\":1,\"cat\":0,\"dom\":0,\"scp\":0,\"exnb\":true} - Insufficient information provided to determine taxing jurisdiction.</a></td>
+        <td>Not enough information to determine an Exemption location</td>
+      </tr>
+      <tr>
+        <td>-2000</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/exemption-required-fields/">Exemption Error - {\"frc\":true,\"loc\":{\"ctry\":\"USA\",\"st\":\"NC\",\"zip\":\"27701\"}} - Bad data in exemption: Tax Type value and one of (Tax Level, Domain) or Category are required.</a></td>
         <td>Missing required fields in Exemption</td>
       </tr>
@@ -237,17 +252,27 @@ disqus: 0
       </tr>
       <tr>
         <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-from-location/">Invalid From location: Insufficient information provided to determine taxing jurisdiction.</a></td>
+        <td>Not enough information to determine a From/Origination location</td>
+      </tr>
+      <tr>
+        <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-to-location/">Invalid To location: Insufficient information provided to determine taxing jurisdiction.</a></td>
+        <td>Not enough information to determine a To/Termination location</td>
+      </tr>
+      <tr>
+        <td>-2000</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/sale-is-required/">Sale is required.</a></td>
         <td>Missing Sale field in LineItem</td>
       </tr>
       <tr>
         <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/trans-serv-required/">A valid TransactionType and/or ServiceType are required.</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/tran-serv-required/">A valid TransactionType and/or ServiceType are required.</a></td>
         <td>Missing Transaction Type or Service Type field in LineItem</td>
       </tr>
       <tr>
         <td>-28</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/trans-serv-invalid/">Invalid transaction/service pair.</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/tran-serv-invalid/">Invalid transaction/service pair.</a></td>
         <td>Transaction Type or Service Type is invalid</td>
       </tr>
       <tr>
@@ -311,9 +336,19 @@ disqus: 0
       </thead>
     <tbody>
       <tr>
-      <td>-2000</td>
+        <td>-2000</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/tax-override-location-is-required/">Invalid TaxOverride: {\"scp\":0,\"tid\":162,\"lvl\":0,\"lvlExm\":true,\"brkt\":[{\"rate\":0.0,\"max\":2147483647.0}]} - Invalid location for override: Location is null.</a></td>
         <td>Missing location in Tax Override</td>
+      </tr>
+      <tr>
+        <td>-1011</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/invalid-tax-override-location/">Invalid Override: {\"loc\":{\"ctry\":\"USA\",\"st\":\"PA\",\"zip\":\"27701\"},\"scp\":0,\"tid\":162,\"lvl\":0,\"lvlExm\":true,\"brkt\":[{\"rate\":0.0,\"max\":2147483647.0}]} - County/State/Zip not found..</a></td>
+        <td>Invalid Tax Override location</td> <!--PLAT-8023 to fix misspelling of "Country" -->
+      </tr>
+      <tr>
+        <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-tax-override-location/">Invalid TaxOverride: {\"loc\":{},\"scp\":0,\"tid\":162,\"lvl\":0,\"lvlExm\":true,\"brkt\":[{\"rate\":0.0,\"max\":2147483647.0}]} - Invalid location for override: Insufficient information provided to determine taxing jurisdiction.</a></td>
+        <td>Not enough information to determine a Tax Override location</td>
       </tr>
       <tr>
         <td>-2000</td>
@@ -430,41 +465,6 @@ disqus: 0
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-bill-to-location/">Invalid BillTo location: Insufficient information provided to determine taxing jurisdiction.</a></td>
-        <td>Not enough information to determine a BillTo location</td>
-      </tr>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-from-location/">Invalid From location: Insufficient information provided to determine taxing jurisdiction.</a></td>
-        <td>Not enough information to determine a From/Origination location</td>
-      </tr>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-to-location/">Invalid To location: Insufficient information provided to determine taxing jurisdiction.</a></td>
-        <td>Not enough information to determine a To/Termination location</td>
-      </tr>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/invalid-exemption-location/">Invalid TaxExemption: {\"loc\":{\"ctry\":\"USA\",\"st\":\"PA\",\"zip\":\"27701\"},\"tpe\":35,\"dom\":1,\"scp\":256} - Unable to determine jurisdiction for TaxExemption: County/State/Zip not found..</a></td> <!--PLAT-8023 to fix misspelling of "Country" -->
-        <td>Invalid Exemption location</td>
-      </tr>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-exemption-location/">Exemption Error - {\"frc\":true,\"loc\":{},\"tpe\":1,\"lvl\":1,\"cat\":0,\"dom\":0,\"scp\":0,\"exnb\":true} - Insufficient information provided to determine taxing jurisdiction.</a></td>
-        <td>Not enough information to determine an Exemption location</td>
-      </tr>
-      <tr>
-        <td>-1011</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/invalid-tax-override-location/">Invalid Override: {\"loc\":{\"ctry\":\"USA\",\"st\":\"PA\",\"zip\":\"27701\"},\"scp\":0,\"tid\":162,\"lvl\":0,\"lvlExm\":true,\"brkt\":[{\"rate\":0.0,\"max\":2147483647.0}]} - County/State/Zip not found..</a></td>
-        <td>Invalid Tax Override location</td> <!--PLAT-8023 to fix misspelling of "Country" -->
-      </tr>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/insufficient-tax-override-location/">Invalid TaxOverride: {\"loc\":{},\"scp\":0,\"tid\":162,\"lvl\":0,\"lvlExm\":true,\"brkt\":[{\"rate\":0.0,\"max\":2147483647.0}]} - Invalid location for override: Insufficient information provided to determine taxing jurisdiction.</a></td>
-        <td>Not enough information to determine a Tax Override location</td>
-      </tr>
       <tr>
         <td>-16</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/invalid-location/">County/State/Zip not found.</a></td> <!--PLAT-8023 to fix misspelling of "Country" -->

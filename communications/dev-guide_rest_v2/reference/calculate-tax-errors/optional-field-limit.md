@@ -32,7 +32,7 @@ The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
 
 Ensure that only 10 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> (<code>opt</code>) key value pairs are being used across the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> and the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Items</a>.  The same Optional Field key can be used in multiple <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Items</a>.
 
-For more information, see the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields use case</a>.
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

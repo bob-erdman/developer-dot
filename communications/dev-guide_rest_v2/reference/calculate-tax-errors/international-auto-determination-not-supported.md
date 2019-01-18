@@ -29,7 +29,7 @@ The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizin
 
 <h3>How to Resolve</h3>
 <ul class="dev-guide-list">
-  <li>Confirm that all jurisdictions included in the transaction (BillTo <code>bill</code>, From/Origination (<code>from</code>), and To/Termination (<code>to</code>)) are within the same country</li>
+  <li>Confirm that all jurisdictions included in the transaction (BillTo (<code>bill</code>), From/Origination (<code>from</code>), and To/Termination (<code>to</code>)) are within the same country</li>
   <li>Update the Transaction Type (<code>tran</code>) and Service Type (<code>sev</code>) to be an explicit and valid a Transaction/Service pair, not using <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/inter-intrastate/">Interstate/Intrastate Determination</a></li>
 </ul>
 

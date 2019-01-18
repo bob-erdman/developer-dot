@@ -28,7 +28,7 @@ The FIPS code (<code>fips</code>) provided in a <a class="dev-guide-link" href="
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-Validate that the FIPS field (<code>fips</code>) on all <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">locations</a> (<code>loc</code>) is a valid FIPS code.
+Validate that the FIPS field (<code>fips</code>) on all <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">locations</a> (<code>bill</code>, <code>from</code>, <code>to</code>, or <code>loc</code>) is a valid FIPS code.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

@@ -13,7 +13,7 @@ disqus: 0
 </ul>
 
 <h3>Error Description</h3>
-The CustomerType field (<code>cust</code>) is set to an invalid enumerator in an <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> (<code>inv</code>).
+The CustomerType field (<code>cust</code>) is set to an invalid enumerator on an <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> (<code>inv</code>).
 
 <h3>Example</h3>
 {% highlight json %}
