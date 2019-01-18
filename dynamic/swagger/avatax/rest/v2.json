@@ -11,8 +11,14 @@
     "license": {
       "name": "Terms of Use",
       "url": "https://www.avalara.com/terms-of-use/"
-    }
+	}
   },
+  "host": "sandbox-rest.avatax.com",
+  "x-production-host": "rest.avatax.com",
+  "schemes": [
+	"https"
+  ],
+  "basePath": "/",
   "paths": {
     "/api/v2/accounts": {
       "get": {
@@ -28935,9 +28941,6 @@
           "description": "A list of customers to which this certificate applies.  You can fetch this data by specifying\r\n`$include=customers` when calling a certificate fetch API.",
           "uniqueItems": false,
           "type": "array",
-          "items": {
-            "$ref": "#/definitions/CustomerModel"
-          },
           "example": [
             {
               "companyId": 0,
@@ -47191,7 +47194,7 @@
   "securityDefinitions": {
     "OauthSecurity": {
       "flow": "implicit",
-      "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=aad18261-8a6a-45d2-972b-c25c9fc135fe&",
+	  "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=aad18261-8a6a-45d2-972b-c25c9fc135fe&",
       "type": "oauth2",
       "description": "A bearer token provided by the Avalara Identity server."
     },
