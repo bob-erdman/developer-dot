@@ -187,14 +187,8 @@ export default (api, apiWithRefs, rootPath) => {
                 // console.log(`*** ${JSON.stringify(endpoint[action].responses)}`);
 
                 if (endpoint[action].responses[200] && endpoint[action].responses[200].schema) {
-
-                    console.warn('YO_0');
-
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[200].schema);
-                    console.warn('YO_1');
-
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[200];
-                    console.warn('YO_2');
                 } else if (endpoint[action].responses[204] && endpoint[action].responses[204].schema) {
 
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[204].schema);
