@@ -190,7 +190,6 @@ export default (api, apiWithRefs, rootPath) => {
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[200].schema);
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[200];
                 } else if (endpoint[action].responses[204] && endpoint[action].responses[204].schema) {
-
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[204].schema);
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[204];
                 }
