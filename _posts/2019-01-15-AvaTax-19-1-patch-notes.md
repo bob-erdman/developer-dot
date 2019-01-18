@@ -40,7 +40,7 @@ The AvaTax release schedule includes a preview period where the latest software 
 
 <h3>AVATAXCODE as a classification system</h3>
 
-[ListProductClassificationSystems](/api-reference/avatax/rest/v2/methods/Definitions/ListProductClassificationSystems) API provides all classification systems you can tag your product into. Avalara TaxCode as a system to classify your product into Avalara recognized code, is now officially showed up as a classification type in this API.
+In addition to globally recognized classification systems, as TARIC, HTS, etc., Avalara maintains our own classification system, called AVATAXCODE. If you have used our [ListTaxCodes](/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes) API, you must be familiar with it. In this new release, you will notice this system be presented as one of the classification systems by our <b>ListProductClassificationSystems</b> API.
 
 <h3>New TaxSubTypes</h3>
 
