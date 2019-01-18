@@ -13,7 +13,8 @@
     "test": "NODE_ENV=test mocha --compilers js:babel-register --recursive _test/react _test/unit",
     "test-web": "bash ./scripts/test-web.sh",
     "test-web-bstack": "_test/browser/nightwatch --config _test/browser/nightwatchBrowserStack.json --retries 1",
-    "lint": "eslint --ext .js,.jsx ./dynamic ./_test"
+    "lint": "eslint --ext .js,.jsx ./dynamic ./_test",
+    "clean": "rm -rf node_modules; npm i"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -54,6 +55,7 @@
     "whatwg-fetch": "^1.0.0"
   },
   "dependencies": {
+    "JSONStream": "^1.3.5",
     "oidc-client": "^1.3.0"
   }
 }

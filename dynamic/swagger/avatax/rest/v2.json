@@ -28940,7 +28940,8 @@
         "customers": {
           "description": "A list of customers to which this certificate applies.  You can fetch this data by specifying\r\n`$include=customers` when calling a certificate fetch API.",
           "uniqueItems": false,
-          "type": "array",
+		  "type": "array",
+		  "items": {},
           "example": [
             {
               "companyId": 0,
