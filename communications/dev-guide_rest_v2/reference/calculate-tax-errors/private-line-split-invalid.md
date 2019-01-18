@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Split for private line transaction must be greater than or equal to 0 and less than or equal to 1.
+title:  Split for private line transaction must be greater than or equal to 0 and less than or equal to 1 
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -13,7 +13,7 @@ disqus: 0
 </ul>
 
 <h3>Error Description</h3>
-The Private Line Split field (<code>plsp</code>) is set to an invalid number on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> (<code>itms</code>).
+The Private Line Split field (<code>plsp</code>) is set to an invalid value on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> (<code>itms</code>).
 
 <h3>Example</h3>
 {% highlight json %}

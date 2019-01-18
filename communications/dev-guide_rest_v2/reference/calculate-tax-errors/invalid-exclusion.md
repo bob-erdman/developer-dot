@@ -13,9 +13,7 @@ disqus: 0
 </ul>
 
 <h3>Error Description</h3>
-One or more fields within <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> (<code>excl</code>) contains invalid data.  The provided data is included within the curly brackets in the error message.  This error message is returned even when ExclusionOn (<code>excl</code>) is set to <code>false</code>.
-
-EZTax is another name for the AFC Tax Engine.
+One or more fields within <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> (<code>excl</code>) contains invalid data (returned when ExclusionOn (<code>excl</code>) is set to <code>false</code> as well).
 
 <h3>Example</h3>
 {% highlight json %}
@@ -36,6 +34,8 @@ Validate the values passed in Country (<code>ctry</code>) and State (<code>st</c
   <li>State is a valid state abbreviation</li>
   <li>State is within the provided country</li>
 </ul> 
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusion</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

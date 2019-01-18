@@ -13,7 +13,7 @@ disqus: 0
 </ul>
 
 <h3>Error Description</h3>
-One or more fields are missing in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> (<code>excl</code>) within in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">CompanyData</a> (<code>cmpn</code>).
+One or more fields are missing in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> (<code>excl</code>) in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">CompanyData</a> (<code>cmpn</code>).
 
 <h3>Example</h3>
 {% highlight json %}
@@ -34,6 +34,8 @@ If using <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/refer
   <li>State (<code>st</code>)</li>
   <li>Exclusion On (<code>excl</code>)</li>
 </ul>
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusion</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

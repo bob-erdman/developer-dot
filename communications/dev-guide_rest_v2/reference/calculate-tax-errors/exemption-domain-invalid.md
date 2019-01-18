@@ -36,6 +36,8 @@ Ensure that Domain (<code>dom</code>) in <a class="dev-guide-link" href="/commun
   <li><code>3</code>: City</li>
 </ul>
 
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemption</a>.
+
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
 </ul>

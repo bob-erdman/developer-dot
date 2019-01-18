@@ -32,7 +32,7 @@ The request body of the API call is empty or incomplete.
     <li>Confirm that a request body is included in your API call</li>
     <li>Verify that the format of the JSON request to ensure all required objects are included in your request</li>
     <li>Validate that all fields are set with the proper data type - see the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/">Reference section</a> for more information</li>
-    <li>Verify the structure of the JSON is complete (for example, no missing braces)</li>
+    <li>Verify the structure of the JSON is complete (for example, no missing braces or commas)</li>
 </ul>
 
 <ul class="pager">

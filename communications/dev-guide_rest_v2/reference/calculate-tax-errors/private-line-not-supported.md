@@ -28,7 +28,7 @@ The Private Line Split field (<code>plsp</code>) can't be included on the <a cla
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-Remove the Private Line Split field (<code>plsp</code>) from the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> (<code>itms</code>) when running a Tax Inclusive <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">ine item</a> (<code>itms</code>).
+Remove the Private Line Split field (<code>plsp</code>) from the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> (<code>itms</code>) when running a Tax Inclusive (<code>incl</code> = <code>true</code>) <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> (<code>itms</code>).
 
 For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a>.
 

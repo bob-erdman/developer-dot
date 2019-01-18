@@ -28,9 +28,11 @@ The Document Code field (<code>doc</code>) is missing from your <a class="dev-gu
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit functionality</a> (<code>cmmt</code> set to <code>true</code>), add and populate Document Code (<code>doc</code>) to the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a> (<code>inv</code>) in your <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a>.
+When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit functionality</a> (<code>cmmt</code> set to <code>true</code>), add and populate Document Code (<code>doc</code>) on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a> (<code>inv</code>) in your <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a>.
 
 Otherwise, set Commit (<code>cmmt</code>) to <code>false</code>.
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Commit</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

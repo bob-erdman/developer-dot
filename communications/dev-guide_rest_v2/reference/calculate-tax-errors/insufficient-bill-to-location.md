@@ -28,7 +28,9 @@ The BillTo (<code>bill</code>) <a class="dev-guide-link" href="/communications/d
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-Validate that the BillTo (<code>bill</code>) <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> contains as much detail as possible.  For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a>.
+Validate that the BillTo (<code>bill</code>) <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> contains as much detail as possible.  
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
