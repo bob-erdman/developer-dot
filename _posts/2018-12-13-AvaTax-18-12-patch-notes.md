@@ -38,7 +38,7 @@ This article is about the December 2018 monthly update to the AvaTax API.
 
 The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the [AvaTax Sandbox Environment](https://sandbox-rest.avatax.com) two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or [open a support ticket](https://help.avalara.com/Directory/Contact_Avalara/Submit_a_Case).
 
-<h3>Advanced Items Setup</h3>
+<h3 id="18-12-advanced-items-setup">Advanced Items Setup</h3>
 
 In addition to existing basic configurations for Items, we are now allowing more advanced settings, including:
 

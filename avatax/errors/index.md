@@ -65,6 +65,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>Customers subscribing to Avalara Returns must identify each company by its United States Taxpayer ID Number (TIN).</td>
 		</tr>		
         <tr>
+			<td>10</td>
+			<td><a href="EntityLimitExceeded">EntityLimitExceeded</a></td>
+			<td>The number of entities in the request exceeded the limit.</td>
+		</tr>		
+        <tr>
 			<td>11</td>
 			<td><a href="CommonPassword">CommonPassword</a></td>
 			<td>The password you have chosen is a commonly-guessed password and cannot be used.</td>
@@ -233,6 +238,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>47</td>
 			<td><a href="JsonFormatError">JsonFormatError</a></td>
 			<td>The JSON you sent with your request was invalid.</td>
+		</tr>		
+        <tr>
+			<td>48</td>
+			<td><a href="InvalidDecimalValue">InvalidDecimalValue</a></td>
+			<td>A field in your request has too many decimal places or too many digits over all.</td>
 		</tr>		
         <tr>
 			<td>50</td>
@@ -1275,6 +1285,16 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The DataSource Source and Instance fields cannot be modified.</td>
 		</tr>		
         <tr>
+			<td>1704</td>
+			<td><a href="TaxCodeAssociatedWithItemCodeNotFound">TaxCodeAssociatedWithItemCodeNotFound</a></td>
+			<td>The tax code in the request could not be found.</td>
+		</tr>		
+        <tr>
+			<td>1705</td>
+			<td><a href="DuplicateSystemForItem">DuplicateSystemForItem</a></td>
+			<td>An item in this request has multiple entries for a given system code.</td>
+		</tr>		
+        <tr>
 			<td>1800</td>
 			<td><a href="UnsupportedFileFormat">UnsupportedFileFormat</a></td>
 			<td>The requested output file format is invalid.</td>
@@ -1308,4 +1328,29 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>2000</td>
 			<td><a href="TraceDataNotAvailable">TraceDataNotAvailable</a></td>
 			<td>The trace data is not available for the date and time selected.</td>
+		</tr>		
+        <tr>
+			<td>2100</td>
+			<td><a href="InvalidParameterUnitMeasurementType">InvalidParameterUnitMeasurementType</a></td>
+			<td>A paremeter in the request has an unexpected unit of measurement type.</td>
+		</tr>		
+        <tr>
+			<td>2101</td>
+			<td><a href="ParameterUnitRequired">ParameterUnitRequired</a></td>
+			<td>A parameter in the request doesn't have a unit of measure.</td>
+		</tr>		
+        <tr>
+			<td>2102</td>
+			<td><a href="InvalidParameterValueDataType">InvalidParameterValueDataType</a></td>
+			<td>A parameter value in the request has an invalid data type.</td>
+		</tr>		
+        <tr>
+			<td>2103</td>
+			<td><a href="InvalidParameterAttributeType">InvalidParameterAttributeType</a></td>
+			<td>A parameter in the request doesn't match the expected attribute type.</td>
+		</tr>		
+        <tr>
+			<td>2104</td>
+			<td><a href="SubscriptionRequiredForParameter">SubscriptionRequiredForParameter</a></td>
+			<td>The account's subscription level doesn't include use of the parameter in your request.</td>
 		</tr></tbody></table>

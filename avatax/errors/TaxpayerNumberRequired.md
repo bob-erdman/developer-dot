@@ -21,7 +21,7 @@ Customers subscribing to Avalara Returns must identify each company by its Unite
       "code": "TaxpayerNumberRequired",
       "number": 9,
       "message": "taxpayerIdNumber is required for customers subscribing to Avalara Returns.",
-      "description": "Customers who have an active MRS or CSP service must provide taxpayerIdNumber for all company records.",
+      "description": "Customers who have an active MRS or CSP service must provide their United States taxpayerIdNumber (TIN) for all company records.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/TaxpayerNumberRequired",
       "severity": "Error"
