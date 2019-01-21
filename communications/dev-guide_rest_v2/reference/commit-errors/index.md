@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/jurisdiction-determination-errors/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>Commit</h3>
@@ -57,5 +57,5 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/jurisdiction-determination-errors/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
