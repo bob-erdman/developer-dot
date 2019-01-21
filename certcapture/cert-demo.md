@@ -45,10 +45,10 @@ doctype: overview
             <p>Candy canes jujubes cake pudding. Liquorice I love gingerbread gingerbread chocolate cake cotton candy.</p>
             <div>
                 <label class="cert-label">
-                    GenCert URL *
-                    <input id="gencert-url" value="https://beta.certcapture.com/Gencert2/js" placeholder="https://beta.certcapture.com/Gencert2/js" type="text">
+                    GenCert URL
+                    <input id="gencert-url" value="https://beta.certcapture.com" type="text">
                 </label>
-                <label class="cert-label">Exposure Zone *
+                <label class="cert-label">Exposure Zone
                     <select id="set-zone" onChange="updateCertScript();"></select>
                 </label>
             </div> 
@@ -58,7 +58,7 @@ doctype: overview
             <table>
                 <tr>
                     <label>API URL
-                    <input id="api-url" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text"></label>
+                    <input id="api-url" value="https://beta-api.certcapture.com" type="text"></label>
                 </tr>
                 <tr>
                     <td><input id="api-user" placeholder="API User Name" type="text"></td>
@@ -93,7 +93,7 @@ doctype: overview
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
                     <textarea id="cert-request" spellcheck="false">{ }</textarea>
                 </div>
-                <button class="btn btn-primary" id="cert-demo-submit" onclick="initScript();">Submit</button>
+                <button class="btn btn-primary" id="cert-demo-submit" onclick="submitEcom();">Submit</button>
             </div>
         </div><!-- end request example script -->
     </div><!-- end row -->
@@ -103,4 +103,4 @@ doctype: overview
 <div id="form-parent-container">
     <div id="form-container" class="form-output"></div>
 </div>
-<button class="btn btn-primary cert-btn form-output" id="cert-demo-back" onclick="backToDemo();">Back to demo</button>
+<button class="btn btn-primary cert-btn form-output" id="cert-demo-back-btn" onclick="backToDemo();">Back to demo</button>

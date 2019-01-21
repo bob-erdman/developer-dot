@@ -2,6 +2,28 @@
 
 let currentToken;
 
+function submitEcom(){
+    initScript();
+
+    let errMsg = window.addEventListener('error', function(e) {
+        console.warn('submit ERROR', e);
+        let err = e.message || $('#gencert-url').val() + "\n URL does not exist";
+        alert(err);
+        return err;
+    }, true);
+
+    console.warn('err', errMsg);
+
+    if (errMsg && errMsg.length > 0) {
+        console.warn('errMsg');
+        // window.removeEventListener('error');
+        return;
+    }
+
+    $('#gencert_test').css('display', 'none');
+    $('#cert-demo-back-btn').css('display', 'block');
+}
+
 function initScript() {
     console.warn('INIT SCRIPT')
     
@@ -15,18 +37,22 @@ function initScript() {
         return;
     }
 
-    try {
-        console.warn('EVAL');
-        eval( $('#cert-request').val() );
-    } 
-    catch ( e ) {
-        console.warn('ERROR', e);
-        if ( e instanceof SyntaxError ) {
+    var script = document.createElement( 'script') ;
+    script.onload = function () {
+        try {
+            console.warn('EVAL');
+            eval( $('#cert-request').val() );
+        } 
+        catch ( e ) {
+            console.warn('ERROR', e);
+            if ( e instanceof SyntaxError ) {
+                alert( e.message );
+            }
             alert( e.message );
         }
     }
-    $('#gencert_test').css('display', 'none');
-    $('#cert-demo-back').css('display', 'block');
+    script.src = $('#gencert-url').val() + "/Gencert2/js";
+    document.head.appendChild(script);
 }
 
 function getToken() {
@@ -66,8 +92,10 @@ function getToken() {
             return status;
         },
         error: function(xhr, status, error) {
-            if (xhr.responseJson.error) {
-                alert( `Error: ${xhr.responseJson.error}` );
+            console.warn('ERROR api url', xhr);
+
+            if (xhr && xhr.responseJSON && xhr.responseJSON.error) {
+                alert( `Error: ${xhr.responseJSON.error}` );
             } else {
                 alert( `Error: ${error}` );
             }
