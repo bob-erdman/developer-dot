@@ -18,7 +18,7 @@ A client profile allows you to customize how the AFC tax engine interprets a req
 <ul class="dev-guide-list">
   <li>Bundle</li>
   <li>Exclusion</li>
-  <li>Exemption</li>
+  <!--<li>Exemption</li>  LKK 1/2/19 - Exemption file only applicable to SaaS Standard right now.  Removing references until AFC Batch is released-->
   <li>Tax Override</li>
   <li>AFC Tax Engine configuration</li>
 </ul>

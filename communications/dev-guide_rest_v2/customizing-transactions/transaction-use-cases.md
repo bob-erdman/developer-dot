@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -41,6 +41,6 @@ Response objects used in the transaction use cases:
 </ul>
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

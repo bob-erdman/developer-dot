@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 The components of client profile account customizations are:
@@ -24,11 +24,11 @@ Customization files allow you to change how the AFC tax engine produces the resu
 
 Customization files include:
 <ul class="dev-guide-list">
-  <li>Bundle file</li>
-  <li>Exclusion file</li>
-  <li>Exemption file</li>
-  <li>Override file</li>
-  <li>Nexus file (for use with Sales and Use transactions only)</li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Bundle file</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/exclusion-file/">Exclusion file</a></li>
+  <!--<li>Exemption file</li>  LKK 1/2/19 - Exemption file only applicable to SaaS Standard right now.  Removing references until AFC Batch is released-->
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/override-file/">Override file</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/">Nexus file</a> (for use with Sales and Use transactions only)</li>
 </ul>
 
 <div class="mobile-table">
@@ -43,7 +43,7 @@ Customization files include:
     </thead>
     <tbody>
       <tr>
-        <td>Bundle</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Bundle</a></td>
         <td>Bundles enable you to:
         <ol class="dev-guide-list">
           <li>Associate a group of transaction/service pairs with an offering</li>
@@ -55,12 +55,12 @@ Customization files include:
         <td>AFC Manager (AFC Bundler component)</td>
       </tr>
       <tr>
-        <td>Exclusion</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/exclusion-file/">Exclusion</a></td>
         <td>Removes a jurisdiction from consideration as the taxing jurisdiction</td>
         <td>.exc</td>
         <td>AFC Manager</td>
       </tr>
-      <tr>
+      <!--<tr>    LKK 1/2/19 - Exemption file only applicable to SaaS Standard right now.  Removing references until AFC Batch is released
         <td>Exemption</td>
         <td>Removes the tax liability from the specified jurisdiction
         <br/><br/>
@@ -68,15 +68,15 @@ Customization files include:
         </td>
         <td>.exc</td>
         <td>AFC Manager</td>
-      </tr>
+      </tr>-->
       <tr>
-        <td>Override</td>
-        <td>Used to modify tax rates for a specified jurisdiction, alter the tax logic for transaction/ services, and add or remove taxes from transaction/services</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/override-file/">Override</a></td>
+        <td>Used to modify tax rates for a specified jurisdiction, alter the tax logic (how or when the tax is applied) for a Transaction/Service pair, and add or remove taxes from a Transaction/Service pair</td>
         <td>.ovr</td>
         <td>AFC Manager (Rate and Logic Modifier (RLM) component)</td>
       </tr>
       <tr>
-        <td>Nexus</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/">Nexus</a></td>
         <td>Indicates the jurisdictions that require you to calculate Sales and Use (SAU) taxes</td>
         <td>.nex</td>
         <td>AFC Manager - Sales and Use Viewer</td>
@@ -138,5 +138,5 @@ Contact <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com"
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
