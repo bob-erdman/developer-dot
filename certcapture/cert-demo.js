@@ -1,24 +1,24 @@
-// TODO: allow user to update genCert URL
-
 let currentToken;
 
 function submitEcom(){
+    //TODO: script empty
     initScript();
 
-    let errMsg = window.addEventListener('error', function(e) {
-        console.warn('submit ERROR', e);
-        let err = e.message || $('#gencert-url').val() + "\n URL does not exist";
-        alert(err);
-        return err;
-    }, true);
+    // let errMsg;
+    // window.addEventListener('error', function(e) {
+    //     console.warn('submit ERROR', e);
+    //     err = e.message || $('#gencert-url').val() + "\n URL does not exist";
+    //     alert(err);
+    //     return;
+    // }, true);
 
-    console.warn('err', errMsg);
+    // console.warn('err', errMsg);
 
-    if (errMsg && errMsg.length > 0) {
-        console.warn('errMsg');
-        // window.removeEventListener('error');
-        return;
-    }
+    // if (errMsg && errMsg.length > 0) {
+    //     console.warn('errMsg');
+    //     // window.removeEventListener('error');
+    //     return;
+    // }
 
     $('#gencert_test').css('display', 'none');
     $('#cert-demo-back-btn').css('display', 'block');
