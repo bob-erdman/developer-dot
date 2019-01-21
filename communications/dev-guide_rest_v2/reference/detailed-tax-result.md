@@ -30,7 +30,7 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
             <td><code>bill</code></td>
             <td><code>[bool]</code> Billable
             <br/>
-            Indicates if the tax is billable to <b>your</b> customer.
+            Indicates if the tax is billable to <b>your</b> customer
             <ul class="dev-guide-list">
                 <li><code>true</code>: Standard billable tax</li>
                 <li><code>false</code>: Non-billable tax that cannot be billed to the customer</li>
@@ -41,7 +41,7 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
             <td><code>cmpl</code></td>
             <td><code>[bool]</code> Compliance
             <br/>
-            Indicates if the tax is to be reported to the jurisdiction.
+            Indicates if the tax is to be reported to the jurisdiction
             <ul class="dev-guide-list">
                 <li><code>true</code>: Standard compliance tax</li>
                 <li><code>false</code>: Non-compliance tax that should not be reported to the jurisdiction</li>
@@ -52,7 +52,13 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
             <td><code>tm</code></td>
             <td><code>[double]</code> Taxable Measure
             <br/>
-            The basis for calculation of percentage-based taxes.  Simple transactions result in a taxable measure equal to the sale price.  However, tax-on-tax, caps, thresholds, tiers, and taxable amount modifiers can all result in taxable measures that are greater than or less than the sale price.
+            The basis for calculation of rate-based taxes.  Simple transactions result in a taxable measure equal to the sale price.  However, tax-on-tax, caps, thresholds, tiers, and taxable amount modifiers can all result in taxable measures that are greater than or less than the sale price.  For rate-based taxes, Tax Amount = Taxable Measure * Rate.
+            <br/><br/>
+            Taxable measure is adjusted by any factor that changes the tax calculation.  Examples:
+            <ul class="dev-guide-list">
+                <li>Taxable measure exceeds the sale amount: Tax-on-tax occurs - the tax amount calculated includes tax amount from other taxes.  The additional taxes to be included are added to the taxable measure</li>
+                <li>Taxable measure is less than the sale price: A discount is applied - safe harbor exemptions or internet tax in Texas where the first $25 is exempt from taxation</li>
+            </ul>
             </td>
         </tr>
         <tr>
@@ -107,7 +113,7 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
             <td><code>sur</code></td>
             <td><code>[bool]</code> Surcharge
             <br/>
-            Indicates if this tax is a surcharge.
+            Indicates if this tax is a surcharge
             <ul class="dev-guide-list">
                 <li><code>true</code>: Surcharge rules apply to this tax</li>
                 <li><code>false</code>: Tax is not a surcharge</li>
@@ -116,7 +122,9 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
         </tr>
         <tr>
             <td><code>tax</code></td>
-            <td><code>[double]</code> Tax Amount</td>
+            <td><code>[double]</code> Tax Amount
+            <br/>
+            For rate-based taxes, Tax Amount = Taxable Measure * Rate</td>
         </tr>
         <tr>
             <td><code>lvl</code></td>

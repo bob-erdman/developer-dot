@@ -38,3 +38,5 @@ models
 tmp
 
 package-lock.json
+
+.python-version

@@ -13,25 +13,20 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The Interstate/Intrastate Determination feature provides you with the ability to apply interstate or intrastate charges appropriately when sending transaction messages to AFC REST v2 without specifying either the transaction type or the service type. To use this functionality:
+The Communications REST v2 Interstate/Intrastate Determination feature allows you to apply interstate or intrastate charges without specifying either the transaction type or the service type. 
+
+To use the Interstate/Intrastate Determination feature (pick one):
 <ul class="dev-guide-list">
-    <li>Set the transaction type (<code>tran</code>) to "-1" and a valid service type (<code>serv</code>)</li>
-    <li>Set the transaction type to a valid transaction type (<code>tran</code>) and the service type (<code>serv</code>) to "-1"</li>
+    <li>Transaction Type Determination: Set the transaction type (<code>tran</code>) to "-1" and a <a class="dev-guide-link" href="#tran">valid service type</a> (<code>serv</code>)</li>
+    <li>Service Type Determination: Set the transaction type (<code>tran</code>) to a <a class="dev-guide-link" href="#serv">valid transaction type</a> and the service type (<code>serv</code>) to "-1"</li>
 </ul>
 
-REST v2 will determine the appropriate interstate or intrastate transaction or service and return the appropriate taxes.  See the scenarios below for further details.
+REST v2 determines the correct interstate or intrastate transaction or service type based on the jurisdiction and Transaction/Service Pair provided.
 
 <h3>How to use Interstate/Intrastate Determination</h3>
-Below are the two scenarios in which the Interstate/Intrastate Determination feature applies.
 
-<h4>Transaction Type Determination</h4>
-In this scenario, you already know one of the <b>service types</b> listed below but the <b>transaction type</b> needs to be determined.  Provide a service type (<code>serv</code>) from the table below and set the transaction type (<code>tran</code>) is to set to "-1".  
-
-REST v2 automatically determines one of the following <b>transaction types</b> based on the jurisdiction information provided and the service type (<code>serv</code>) set in the <code>CalcTaxes</code> request:
-<ul class="dev-guide-list">
-    <li>Transaction Type 1 (INTERSTATE)</li>
-    <li>Transaction Type 2 (INTRASTATE)</li>
-</ul>
+<h4 id="tran">Transaction Type Determination</h4>
+For Transaction Type determination, you already know the <b>service type</b>, so the <b>transaction type</b> needs to be determined.  Provide a service type (<code>serv</code>) found in this table and set the transaction type (<code>tran</code>) to "-1".
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -81,17 +76,17 @@ REST v2 automatically determines one of the following <b>transaction types</b> b
     </tbody>
   </table>
 </div>
-<br/><br/>
-
-
-<h4>Service Type Determination</h4>
-In this scenario, you already know one of the <b>transaction types</b> listed below but the <b>service type</b> needs to be determined.  Provide a transaction type (<code>tran</code>) from the table below and set the service type (<code>serv</code>) is to set to "-1". 
-
-REST v2 automatically determines one of the following <b>service types</b> based on the jurisdiction information provided and the transaction type (<code>tran</code>) set in the <code>CalcTaxes</code> request:
+<br/>
+The <b>transaction type</b> is set to one of these based on the jurisdiction information and service type (<code>serv</code>):
 <ul class="dev-guide-list">
-    <li>Service Type 585 (INTERSTATE MPLS)</li>
-    <li>Service Type 586 (INTRASTATE MPLS)</li>
+    <li><code>1</code>: INTERSTATE</li>
+    <li><code>2</code>: INTRASTATE</li>
 </ul>
+<br/>
+
+
+<h4 id="serv">Service Type Determination</h4>
+For Service Type Determination, you already know the <b>transaction type</b>, so the <b>service type</b> needs to be determined.  Provide a transaction type (<code>tran</code>) from in these tables and set the service type (<code>serv</code>) is to set to "-1".
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -109,14 +104,13 @@ REST v2 automatically determines one of the following <b>service types</b> based
     </tbody>
   </table>
 </div>
-<br/><br/>
-
-
-REST v2 automatically determines one of the following <b>service types</b> based on the jurisdiction information provided and the transaction type (<code>tran</code>) set in the <code>CalcTaxes</code> request:
+The <b>service types</b> is set to one of these based on the jurisdiction information and transaction type (<code>tran</code>) from above:
 <ul class="dev-guide-list">
-    <li>Service Type 49 (INTERSTATE USAGE)</li>
-    <li>Service Type 50 (INTRASTATE USAGE)</li>
+    <li><code>585</code>: INTERSTATE MPLS</li>
+    <li><code>586</code> INTRASTATE MPLS</li>
 </ul>
+
+Or
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -146,10 +140,14 @@ REST v2 automatically determines one of the following <b>service types</b> based
     </tbody>
   </table>
 </div>
-
+The <b>service types</b> is set to one of these based on the jurisdiction information and transaction type (<code>tran</code>) from above:
+<ul class="dev-guide-list">
+    <li><code>49</code>: INTERSTATE USAGE</li>
+    <li><code>50</code>: INTRASTATE USAGE</li>
+</ul>
 
 <h3>Transaction Type Determination Example</h3>
-In this example, the Transaction Type (<code>tran</code>) is set to <code>-1</code>.  The transaction type will be automatically determined based on the jurisdiction provided.  In this case, since San Francisco is the only jurisdiction, an <b>Intrastate</b> transaction type is expected to be used.
+The Transaction Type (<code>tran</code>) is set to <code>-1</code> and is automatically determined based on the jurisdiction and Service Type (<code>serv</code>) provided.
 {% highlight json %}
 {
   "cmpn": {
@@ -177,7 +175,7 @@ In this example, the Transaction Type (<code>tran</code>) is set to <code>-1</co
       "date": "2017-05-01T12:00:00Z",
       "itms": [
         {
-          "ref": "Line Item 001 : -1/4 Intra/Inter for Transaction (Intrastate Test)",
+          "ref": "Line Item 001: -1/4 Intra/Inter for Transaction (Intrastate Test)",
           "chg": 100,
           "line": 0,
           "sale": 1,
@@ -203,7 +201,7 @@ In this example, the Transaction Type (<code>tran</code>) is set to <code>-1</co
 {% endhighlight %}
 
 <h4>Response</h4>
-Taxes are returned based upon the determined transaction type.
+Taxes are returned based on the <b>Intrastate</b> transaction type since San Francisco is the only jurisdiction set in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request"><code>CalcTaxes</code> request</a>.
 
 <div class="panel-group">
   <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
@@ -216,7 +214,7 @@ Taxes are returned based upon the determined transaction type.
       "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
       "itms": [
         {
-          "ref": "Line Item 001 : -1/4 Intra/Inter for Transaction (Intrastate Test)",
+          "ref": "Line Item 001: -1/4 Intra/Inter for Transaction (Intrastate Test)",
           "txs": [
             {
               "bill": true,
@@ -442,7 +440,8 @@ Taxes are returned based upon the determined transaction type.
 </div>
 
 <h3>Service Type Determination Example</h3>
-In this example, the Service Type (<code>serv</code>) is set to <code>-1</code>.  The service type will be automatically determined based on the jurisdiction provided.  In this case, since San Francisco is the only jurisdiction, an <b>Intrastate</b> service type is expected to be used.
+The Service Type (<code>serv</code>) is set to <code>-1</code> and is automatically determined based on the jurisdiction provided.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -470,7 +469,7 @@ In this example, the Service Type (<code>serv</code>) is set to <code>-1</code>.
       "date": "2017-05-01T12:00:00Z",
       "itms": [
         {
-          "ref": "Line Item 002 : 19/-1 Intra/Inter for Service (Intrastate Test)",
+          "ref": "Line Item 002: 19/-1 Intra/Inter for Service (Intrastate Test)",
           "chg": 100,
           "line": 10,
           "sale": 1,
@@ -496,7 +495,7 @@ In this example, the Service Type (<code>serv</code>) is set to <code>-1</code>.
 {% endhighlight %}
 
 <h4>Response</h4>
-Taxes are returned based upon the determined service type.
+Taxes are returned based on the <b>Intrastate</b> service type since San Francisco is the only jurisdiction set in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request"><code>CalcTaxes</code> request</a>.
 
 <div class="panel-group">
   <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
@@ -509,7 +508,7 @@ Taxes are returned based upon the determined service type.
       "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
       "itms": [
         {
-          "ref": "Line Item 002 : 19/-1 Intra/Inter for Service (Intrastate Test)",
+          "ref": "Line Item 002: 19/-1 Intra/Inter for Service (Intrastate Test)",
           "txs": [
             {
               "bill": true,
@@ -769,6 +768,20 @@ Taxes are returned based upon the determined service type.
   </div>
 </div>
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized tax results</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

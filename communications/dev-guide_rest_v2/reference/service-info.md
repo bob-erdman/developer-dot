@@ -34,7 +34,7 @@ The <code>ServiceInfo</code> object contains the results of the <b>ServiceInfo e
             <td><code>Versions</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/version-info/"><code>[VersionInfo]</code></a> Version Information
             <br>
-            This object contains information about versions for the Service Info request
+            Contains information about versions for the Service Info request
             </td>
         </tr>
         <tr>

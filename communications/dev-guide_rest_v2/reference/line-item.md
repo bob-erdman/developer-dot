@@ -30,21 +30,21 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>ref</code></td>
             <td><code>[string]</code>Reference code
             <br/>
-            Reference ID for line item.
+            Reference ID for line item
             </td>
         </tr>
         <tr>
             <td><code>from</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> The point of origin for the line item
             <br>
-            There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+            There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
             </td>
         </tr>
         <tr>
             <td><code>to</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> The destination of the line item
             <br>
-            There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+            There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
             </td>
         </tr>
         <tr>
@@ -71,7 +71,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>sale</code></td>
             <td><code>[int]</code> <span class="t5">required</span> Sale Type
                 <br>
-                Indicates the type transaction, such as retail or wholesale.
+                Indicates the type transaction, such as retail or wholesale
                 <ul class="dev-guide-list">
                     <li><code>0</code> Wholesale</li>
                     <li><code>1</code> Retail</li>
@@ -96,7 +96,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>incl</code></td>
             <td><code>[bool]</code> Tax Inclusive
                 <br/>
-                Indicates if the charge for this line item is tax inclusive.
+                Indicates if the charge for this line item is tax inclusive
                 <ul class="dev-guide-list">
                     <li><code>true</code> Tax is included in the charge</li>
                     <li><code>false</code> Tax is exclusive to the charge</li>
@@ -107,39 +107,39 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>pror</code></td>
             <td><code>[double]</code> Pro-rated Percentage
             <br>
-            A percentage used for the pro-rated calculation of fixed taxes.
+            A percentage used for the pro-rated calculation of fixed taxes
             </td>
         </tr>
         <tr>
             <td><code>brdg</code></td>
-            <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-data/"><code>[BridgeData]</code></a> Bridge Data
+            <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-data/"><code>[BridgeData]</code></a> Conference Bridge Data
             <br>
-            A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-data/">Bridge Conference</a> specific settings to apply to the line item.
+            A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-data/">Bridge Conference</a> specific settings to apply to the line item
             </td>
         </tr>
         <tr>
             <td><code>tran</code></td>
             <td><code>[int]</code> <span class="t5">required</span> Transaction Type ID
             <br>
-            The first part of the T/S Pair that defines the product to be taxed.
+            The first part of the T/S Pair that defines the product to be taxed
             <br>
-            For a list of transaction/service types, check out the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/"><code>/api/v2/afc/tspairs</code> endpoint</a>.
+            For a list of transaction/service types, check out the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> endpoint</a>
             </td>
         </tr>
         <tr>
             <td><code>serv</code></td>
             <td><code>[int]</code> <span class="t5">required</span> Service Type ID
             <br>
-            The second part of the T/S Pair that defines the product to be taxed.
+            The second part of the T/S Pair that defines the product to be taxed
             <br>
-            For a list of transaction/service types, check out the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/"><code>/api/v2/afc/tspairs</code> endpoint</a>.
+            For a list of transaction/service types, check out the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> endpoint</a>
             </td>
         </tr>
         <tr>
             <td><code>dbt</code></td>
             <td><code>[bool]</code> Debit
                 <br>
-                Indicates if this line item is a debit card transaction.
+                Indicates if this line item is a debit card transaction
                 <ul class="dev-guide-list">
                     <li><code>true</code> Apply debit card logic to the transaction</li>
                     <li><code>false</code> Not a debit card transaction</li>
@@ -150,7 +150,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>adj</code></td>
             <td><code>[bool]</code> IsAdjustment
                 <br>
-                Indicates if this line item is an adjustment.
+                Indicates if this line item is an adjustment
                 <ul class="dev-guide-list">
                     <li><code>true</code> The transaction represents a credit or adjustment</li>
                     <li><code>false</code> The transaction does not represent a credit or adjustment</li>
@@ -170,11 +170,11 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
                 <br>
                 <ul class="dev-guide-list">
                     <li><code>0</code> <b>None</b></li>
-                    <li><code>1</code> <b>Retail Product</b>: An amount subtracted from the original price to arrive at a lower price.</li>
-                    <li><code>2</code> <b>Manufacturer Product</b>: A discount of the total amount reimbursed to either the retailer or the customer by the manufacturer.</li>
-                    <li><code>3</code> <b>Account Level</b>: A stand-alone discount that is not applied against any service but instead as a stand-alone product.</li>
-                    <li><code>4</code> <b>Subsidized</b>: A discount caused exclusively in telephone service where the telephone provider provides a service to a lifeline eligible customer. The discount will be on the local exchange service.</li>
-                    <li><code>5</code> <b>Goodwill</b>: The total discount of a service that is recorded for accounting purposes but never billed to a customer.</li>
+                    <li><code>1</code> <b>Retail Product</b>: An amount subtracted from the original price to arrive at a lower price</li>
+                    <li><code>2</code> <b>Manufacturer Product</b>: A discount of the total amount reimbursed to either the retailer or the customer by the manufacturer</li>
+                    <li><code>3</code> <b>Account Level</b>: A stand-alone discount that is not applied against any service but instead as a stand-alone product</li>
+                    <li><code>4</code> <b>Subsidized</b>: A discount caused exclusively in telephone service where the telephone provider provides a service to a lifeline eligible customer. The discount will be on the local exchange service</li>
+                    <li><code>5</code> <b>Goodwill</b>: The total discount of a service that is recorded for accounting purposes but never billed to a customer</li>
                 </ul>
             </td>
         </tr>
@@ -182,21 +182,23 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
         <td><code>opt</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/"><code>[KeyValuePair]</code></a> Optional Fields
           <br>
-          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to the line item.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to the line item
         </td>
       </tr>
       <tr>
         <td><code>prop</code></td>
         <td><code>[int]</code> Attribute Property
             <br>
-            The Attribute property used for supported Sales and Use Transaction/Service pairs.
+            The attribute and property used for supported Sales and Use Transaction/Service pairs
+            <br/><br/>
+            See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">SAU Attributes and Properties</a> for a list of valid attribute and property combinations
         </td>
       </tr>
       <tr>
         <td><code>bill</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> Bill To Location
           <br>
-          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+          There are several ways to input location information. For more information,see the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
         </td>
       </tr>
       <tr>
@@ -218,7 +220,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <li><code>true</code>: The customer is a Lifeline participant</li>
             <li><code>false</code>: The customer is not a Lifeline participant</li>
           </ul>
-          Lifeline is a federal program that subsidizes the cost of phone and internet for eligible customers.
+          Lifeline is a federal program that subsidizes the cost of phone and internet for eligible customers
         </td>
       </tr>
       <tr>
@@ -227,10 +229,10 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
           <br>
           <i>ex.</i><code> 2009-12-01T03:00:00</code>
           <br>
-          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This will affect the rules our tax engine applies when calculating taxes. 
+          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This affects the rules our tax engine applies when calculating taxes
           <br>
           <br>
-          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, our tax engine will use the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information.
+          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, the tax engine uses the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information
         </td>
       </tr>
     </tbody>

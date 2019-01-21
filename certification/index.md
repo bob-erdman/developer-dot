@@ -71,7 +71,7 @@ nav: certification
         <h5 class="text-left">Explore the API before you build. Make live API calls directly from our documentation.</h5>
     </div>
     <div class="col-sm-2 text-center">
-        <h4 class="visible-xs-block">Develpment tools & support</h4>
+        <h4 class="visible-xs-block">Development tools & support</h4>
         <h5 class="text-left">Get started quickly with our sample code and libraries. If you get stuck, your Certification Manager, Avalara Support, and Avalara's developer community are here with answers.</h5>
     </div>
     <div class="col-sm-2 text-center">
@@ -80,7 +80,7 @@ nav: certification
     </div>
     <div class="col-sm-2 text-center">
         <h4 class="visible-xs-block">Certify your Integration</h4>
-        <h5 class="text-left">Certify your integration to recieve sales and marketing support from Avalara.</h5>
+        <h5 class="text-left">Certify your integration to receive sales and marketing support from Avalara.</h5>
     </div>
 </div>
 <div class="row padding-top">

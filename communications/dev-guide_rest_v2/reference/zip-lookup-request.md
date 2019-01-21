@@ -70,7 +70,7 @@ The <code>zipLookupRequest</code> object contains the <b>location data</b> used 
             <td><code>LimitResults</code></td>
             <td><code>[int]</code> Limit Results
             <br/>
-            Maximum number of results to return.  Default is 100.
+            Maximum number of results to return.  Default is 100
             </td>
         </tr>
     </tbody>

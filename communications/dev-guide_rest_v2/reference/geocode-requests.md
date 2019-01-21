@@ -21,7 +21,7 @@ The <code>geocodeRequests</code> object contains a list of <b>street addresses a
 The <code>geocodeRequest</code> object contains the <b>input data</b> to geocode:
 
 <h4>Note</h4>
-Only address information <b>or</b> latitude/longitude coordinates should be provided in the request, but not both.
+Only address information <b>or</b> latitude/longitude coordinates can be provided in the request, but not both.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -43,7 +43,7 @@ Only address information <b>or</b> latitude/longitude coordinates should be prov
             <td><code>cass</code></td>
             <td><code>[bool]</code> CASS Validated Address
             <br/>
-            Indicates if the CASS validated address is desired in the results.
+            Indicates if the CASS validated address is desired in the results
             <ul class="dev-guide-list">
                 <li><code>true</code>: Return the CASS validated address in the results</li>
                 <li><code>false</code>: Do not return the CASS validated address</li>

@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The Safe Harbor override (<code>sovr</code>) object allows you to apply traffic study TAM overrides to the <code>CalcTaxes</code> request.  See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe Harbor Override</a> for more information.
+Use the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe Harbor Override</a> (<code>sovr</code>) to apply traffic study TAM overrides to the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request"><code>CalcTaxes</code> request</a>.
 
 The Safe Harbor Override allows you to adjust Federal traffic study percentages for:
 <ul class="dev-guide-list">
@@ -22,9 +22,6 @@ The Safe Harbor Override allows you to adjust Federal traffic study percentages 
     <li>Paging</li>
 </ul>
 
-<h4 id="note">Note</h4>
-Although the <code>CalcTaxes</code> request gives the user the flexibility to input Safe Harbor Override information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a>. Using a client profile results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
-
 Provide the following information for a Safe Harbor override:
 <ul class="dev-guide-list">
     <li>Safe Harbor Type (<code>sh</code>)</li>
@@ -32,10 +29,22 @@ Provide the following information for a Safe Harbor override:
     <li>New Federal TAM (<code>new</code>)</li>
 </ul>
 
-The Original and New Federal TAM values are passed as a decimal.  For example, a 64.9% Federal TAM value is entered as "0.649".  The <b>State</b> TAM is calculated automatically (State TAM = 1.0 - Federal TAM).
+The Original and New Federal TAM values are decimals.  For example, a 64.9% Federal TAM value is entered as "0.649".  The <b>State</b> TAM is calculated automatically (State TAM = 1.0 - Federal TAM).
+
+<h4 id="note">Note</h4>
+We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with a custom configuration applied even though the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a> gives you the flexibility to input Safe Harbor Override information for each transaction. This results in better performance from the AFC Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
+
+<h3>Why use a Safe Harbor Override?</h3>
+Default federal safe harbor percentages are used by the AFC Tax Engine:
+<ul class="dev-guide-list">
+  <li>Cellular: 37.1%</li>
+  <li>VoIP: 64.9%</li>
+  <li>Paging: 12%</li>
+</ul>
+Override the federal safe harbor percentage based on the result of a traffic study.  The state safe harbor percentage is calculated automatically based on the overridden federal percentage.
 
 <h3>Safe Harbor Override Example</h3>
-This example shows the use of the Safe Harbor Override (<code>sovr</code>) object.  The <b>VoIP</b> safe harbor type (<code>sh</code>) is being overridden from the <b>original</b> Federal TAM (<code>old</code>) of 0.649 (64.9%) to <b>your</b> calculated Federal TAM (<code>new</code>) of 0.250 (25%).
+The <b>VoIP</b> safe harbor type (<code>sh</code>) is being overridden from the <b>original</b> Federal TAM (<code>old</code>) of 0.649 (64.9%) to <b>your</b> calculated Federal TAM (<code>new</code>) of 0.250 (25%).
 
 {% highlight json %}
 {
@@ -587,6 +596,26 @@ State taxes are automatically updated based on the Federal override.  The State 
   </div>
 </div>
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe harbor override</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized tax results</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client profile</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

@@ -30,7 +30,7 @@ The <code>CommitResponse</code> object contains the commit request <b>status</b>
             <td><code>ok</code></td>
             <td><code>[bool]</code> OK
             <br/>
-            Indicates if the Document Code's commit status has been updated successfully.
+            Indicates if the Document Code commit status has been updated successfully
             <ul class="dev-guide-list">
                 <li><code>true</code>: Commit status successfully updated</li>
                 <li><code>false</code>: Commit status update failed</li>
@@ -41,7 +41,7 @@ The <code>CommitResponse</code> object contains the commit request <b>status</b>
             <td><code>err</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/error-response/"><code>[Error]</code></a> Error
             <br>
-            This object contains information about any errors returned (as applicable)
+            Contains information about any errors returned (as applicable)
             </td>
         </tr>
     </tbody>

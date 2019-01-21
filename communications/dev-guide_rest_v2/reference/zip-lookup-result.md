@@ -30,7 +30,7 @@ The <code>zipLookupResult</code> object contains the <b>jurisdiction information
             <td><code>LocationData</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location-item/"><code>[LocationItem]</code></a> Location Item
             <br>
-            This object contains a list of location matches for the address being searched
+            Contains a list of location matches for the address being searched
             </td>
         </tr>
         <tr>

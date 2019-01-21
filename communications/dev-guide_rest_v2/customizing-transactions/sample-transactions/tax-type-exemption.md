@@ -923,6 +923,29 @@ All taxes are exempt with the exception of the taxes that are not level exemptib
   </div>
 </div>
 
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/">Category exemption</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups">Lookups endpoints</a></li>
+</ul>
+
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/inter-intrastate/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>

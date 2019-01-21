@@ -1,3 +1,5 @@
+var isIntlTransaction = false;
+
 var fixApiRefNav = function() {
     if ($('#the-nav li').length >= 22) {
         $('#the-nav').data('offset-bottom', '160');
@@ -26,49 +28,100 @@ function getCompareDate() {
 
 /************************************************************************
 **   SAMPLE DATA Functions: Build the sample data in the correct language
-**   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
+**   Langauges: JSON, C#, PHP, Python, Ruby, Java, JavaScript
 ************************************************************************/
 
 // HELPER: build lines with correct template for given language
 function lineBuilder(reqType) {
-    let lines = reqType === 'JSON' ? [] : ``;
-    
+    let lines = reqType === 'JSON' || 'JS' ? [] : ``;
+    let hsCode = '';
+    let mass = '';
+    let unit = '';
     let lineNum = 1;
-    const allProducts = $('input[type=checkbox][name=product]:checked');
-    
+    const allProducts = $('input[type=checkbox][name=product]:checked');   
+
     // build line for each selected products
     allProducts.each(function () {
         const taxCode = $(this).val();
         const amount = $('#' + $(this).attr('id') + '-amount').val();
         const description = $(this).attr('description');
 
+        // If this is an international transaction, get the appropriate HS Code
+        // for the destination country.
+        if(isIntlTransaction) {
+            let destCountry = $('input[type=radio][name=address]:checked')[0].attributes['country'].value;
+            hsCode = $(this).attr('hsCodeTo'+ destCountry);
+            mass = $(this).attr('mass');
+            unit = $(this).attr('unit');
+        }
+
         // pick the correct line template
         switch (reqType) {
             case 'JSON':
-                lines.push({
+            case 'JS':
+                let o ={
                     "number": lineNum,
                     "amount": amount,
                     "taxCode": taxCode,
-                    "description": description
-                });
-                break;
-            case 'JS':
-            case 'Ruby':
+                    "description": description                    
+                };
+                
+                // Add HS Code if applicable.
+                if (hsCode.length) {
+                    Object.assign(o, {
+                        "hsCode": hsCode
+                    });
+                }
+
+                // Add Mass and UOM if applicable.
+                if (mass.length && unit.length) {
+                    o["parameters"] = {
+                        "Mass": mass,
+                        "Mass.UOM": unit
+                    };
+                }
+
+                lines.push(o);
+                break;           
+            case 'Ruby':            
                 lines += `{
             amount: "${amount}",
             description: "${description}",
             number: "${lineNum}",
-            taxCode: "${taxCode}"
+            taxCode: "${taxCode}"`;
+                lines += hsCode.length ? "," : "";
+                lines += hsCode.length ? `
+            hsCode: "${hsCode}"` : "" 
+                lines += (mass.length && unit.length) ? "," : "";
+                lines += (mass.length && unit.length) ?
+                `   
+            parameters: {
+                Mass: "${mass}",
+                Mass.UOM: "${unit}"
+            }` : "";                    
+                lines += `
         }`;
-                if (lineNum !== allProducts.length) lines += ',\n        ';
+                if (lineNum !== allProducts.length) lines += ',\n        ';                
                 break;
             case 'Python':
                 lines += `{
             'amount': '${amount}',
             'description': '${description}',
             'number': '${lineNum}',
-            'taxCode': '${taxCode}'
+            'taxCode': '${taxCode}'`;
+                    lines += hsCode.length ? "," : "";
+                    lines += hsCode.length ? `
+            'hsCode': '${hsCode}'` : "" 
+            lines += (mass.length && unit.length) ? "," : "";
+            lines += (mass.length && unit.length) ?
+            `   
+            'parameters': {
+                'Mass': '${mass}',
+                'Mass.UOM': '${unit}'
+            }` : "";                    
+        lines += `
         }`;
+        
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'C#':
@@ -77,16 +130,34 @@ function lineBuilder(reqType) {
             number = ${lineNum},
             quantity = 1,
             amount = ${amount},
-            taxCode = "${taxCode}"
+            taxCode = "${taxCode}"`;
+                    lines += hsCode.length ? "," : "";
+                    lines += hsCode.length ? `
+            hsCode: "${hsCode}"` : "" 
+                    lines += (mass.length && unit.length) ? "," : "";
+                    lines += (mass.length && unit.length) ?
+                `   
+            parameters: {
+                Mass: "${mass}",
+                Mass.UOM: "${unit}"
+            }` : "";                                    
+                if (lineNum !== allProducts.length) lines += ',\n        ';
+                    
+                lines += `
         }`;                
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'PHP':
                 lines += `->withLine(${amount}, ${lineNum}, null, ${taxCode})`; 
+
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             case 'Java':
-                lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum}), "${taxCode}")`; 
+            //.withLine("1", new BigDecimal(900.0), new BigDecimal(1), "PF050099", null, null, null, null, null, "1806101500")
+                lines += `.withLine("${lineNum}", new BigDecimal(${amount}), null, "${taxCode}", null, null, null, null, null,` 
+                lines += hsCode.length ? `"${hsCode}")` : `"null")`; 
+                lines += (mass.length && unit.length) ? 
+                `\n    .withLineParameter("Mass", "${mass}")\n    .withLineParameter("Mass.UOM", "${unit}")` : ``;
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             default:
@@ -158,6 +229,8 @@ function addressBuilder(reqType, addressName, prefix) {
 // HELPER: check if shipFrom address is selected
 function shipFromChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
+    isIntlTransaction = checked && 
+        ($('input[type=radio][name=srcAddress]:checked').attr('country') != $('input[type=radio][name=address]:checked').attr('country'));
     return checked;
 }
 
@@ -187,12 +260,17 @@ function jsonSampleData() {
         "lines": lineBuilder('JSON'),
         "type": "SalesOrder",
         "companyCode": "DEMOPAGE",
-        "date": today.toISOString().split('T')[0],
+        "date": today.toISOString().split('T')[0], 
         "customerCode": "ABC",
         "addresses": address
     };
 
-    sampleData.lines = lineBuilder('JSON');
+    //Add DDP if the transaction is cross-border.
+    if(isIntlTransaction) {
+        sampleData["isSellerImporterOfRecord"] = true;
+    }
+
+    //sampleData.lines = lineBuilder('JSON');
 
     return sampleData;
 }
@@ -234,9 +312,9 @@ var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTa
 var createModel = new CreateTransactionModel()
 {
     type = DocumentType.SalesOrder,
-    companyCode = "DEMOPAGE",
+    companyCode = "DEMOPAGE",${isIntlTransaction ? `\n    isSellerImporterOfRecord: true,`:``}
     date = DateTime.Today,
-    customerCode = "ABC",
+    customerCode = "ABC", 
     lines = new List<LineItemModel>() 
     {
         ${lines}
@@ -308,8 +386,8 @@ client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
 tax_document = {
     'addresses': {
         ${address}
-    },
-    'companyCode': 'DEMO PAGE',
+    },     
+    'companyCode': 'DEMO PAGE', ${isIntlTransaction ? `\n    'isSellerImporterOfRecord': 'true',`:``}
     'customerCode': 'ABC',
     'date': '2017-04-12',
     'lines': [
@@ -357,7 +435,7 @@ createTransactionModel = {
     type: "SalesOrder",
     companyCode: "12670",
     date: "2017-06-05",
-    customerCode: "ABC",
+    customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
        ${address} 
     },
@@ -401,6 +479,7 @@ function javascriptSampleData() {
     const lines = lineBuilder('JS');
     const shipFromSelected = shipFromChecked(); 
     const shipToAddress = addressBuilder('Ruby', 'address');
+    let today = new Date();
     let address;
   
     if (shipFromSelected) {
@@ -412,12 +491,14 @@ function javascriptSampleData() {
         address = `SingleLocation: ${shipToAddress}`;
     }
 
-    const sampleData = `const config = {
-    appName: "your-app",
-    appVersion: "1.0",
-    environment: "sandbox",
-    machineName: "your-machine-name"
-};
+    let config = {
+        appName: "your-app",
+        appVersion: "1.0",
+        environment: "sandbox",
+        machineName: "your-machine-name"
+    };
+
+    const sampleData = `const config = ${JSON.stringify(config, null, 4)};
     
 const creds = {
     username: "<your-username>",
@@ -428,14 +509,13 @@ var client = new Avatax(config).withSecurity(creds);
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
-    date: "2017-04-12",
-    customerCode: "ABC",
+    date: ${today.toISOString().split('T')[0]},
+    customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
         ${address}
     },
-    lines: [
-        ${lines}
-    ],
+    lines: 
+        ${JSON.stringify(lines, null, 4)}
 }
     
 return client.createTransaction({ model: taxDocument })
@@ -447,10 +527,12 @@ return client.createTransaction({ model: taxDocument })
     return sampleData
 }
 
+
+
 //
 // MAIN Sample Data function: populates request console
 //
-function fillWithSampleData() {     
+function fillWithSampleData() { 
     const noAddress = $('input[type=radio][name=address]:checked').length === 0;
 
     if (noAddress) {
@@ -626,7 +708,6 @@ function ApiRequest() {
 }
 /***************** END API REQUEST Functions ****************************/
 
-
 /************************************************************************
 **   GENERAL Demo Page Functions
 ************************************************************************/
@@ -638,56 +719,33 @@ function copyToClipboard(element) {
     $temp.remove();
 }
 
-function accordionTrigger(currentElementId, nextElementId) {
-    // get accordion elements
-    var currentElement = document.getElementById(currentElementId);
-    var nextElement = document.getElementById(nextElementId);
+function updateAddress() {
+    const src = $('input[type=radio][name=srcAddress]:checked');
+    const dest = $('input[type=radio][name=address]:checked');
+    const destLat     = dest.attr('lat') ? dest.attr('lat') : null;
+    const destLong    = dest.attr('long') ? dest.attr('long') : null;
+    // check if both address are in the US
+    const destType = dest.attr('addressType') === 'national';
+    const srcType = src.attr('addressType') === 'national';
+    const usAddresses = destType && srcType;
+    
+    let srcLat = src.attr('lat');
+    let srcLong = src.attr('long');
 
-    // toggle active class on elements
-    currentElement.classList.toggle("active");
-    nextElement.classList.toggle("active");
+    // check that src exists and src != dest
+    if (!srcLat || (srcLat === destLat && srcLong === destLong)) {
+        srcLat = null;
+        srcLong = null;
+    }
 
-    var panels = [currentElement.nextElementSibling, nextElement.nextElementSibling];
-
-    // toggle display on panels
-    panels.forEach(panel => {
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    })
-
+    GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
+    fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
 
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
-
-    var sections = document.getElementsByClassName("accordion");
-    
-    for (let i = 0; i < sections.length; i++) {
-        sections[i].addEventListener("click", function() {
-            // Toggle between adding and removing the "active" class,
-            // to highlight the button that controls the panel
-            this.classList.toggle("active");
-
-            // Toggle between hiding and showing the active panel
-            var panel = this.nextElementSibling;
-            console.log('PANEL', panel)
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-        
-    var clist = document.getElementsByClassName( "checkbox" );
-    for (var j = 0; j < clist.length; j++) { 
-      clist[j].checked = false; 
-    }
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -709,29 +767,4 @@ $(document).ready(function() {
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
     });
-
-    //When the destination changes, fire the map script and set the lat-long.
-    $('#dropdown-dest-addresses').change(function(e){
-        const lat = $('input[type=radio][name=address]:checked').attr('lat');
-        const long = $('input[type=radio][name=address]:checked').attr('long');
-        GetMapWithLine(lat, long, null, null, null, showInfobox);
-    });
-
-    //When the source changes, fire the map script with source and dest lat-long.
-    $('#dropdown-src-addresses').change(function(e){
-        const lat     = $('input[type=radio][name=address]:checked').attr('lat');
-        const long    = $('input[type=radio][name=address]:checked').attr('long');
-        const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-        const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
-
-        // check if both address are in the US
-        const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-        const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
-
-        const usAddresses = addressType && srcType;
-
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
-    }); 
-
-    $('#dropdown-addresses').trigger('change');
 });
