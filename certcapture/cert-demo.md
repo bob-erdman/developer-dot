@@ -24,9 +24,6 @@ doctype: overview
         })
         // populate exposure zone drop down
         $('#set-zone').html(zones);
-        // populate the example script
-        // TODO: just put in a default/hardcoded script to start
-        updateCertScript();
     });
 </script>
 
@@ -91,7 +88,14 @@ doctype: overview
             <h3>Step 4: Submit your script</h3>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
-                    <textarea id="cert-request" spellcheck="false">{ }</textarea>
+                    <textarea id="cert-request" spellcheck="false">
+GenCert.init(document.getElementById( 'form-container' ), { 
+    edit_purchaser: false, 
+    ship_zone: 'Alabama', 
+    token: ''
+});
+GenCert.show();
+                    </textarea>
                 </div>
                 <button class="btn btn-primary" id="cert-demo-submit" onclick="submitEcom();">Submit</button>
             </div>
