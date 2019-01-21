@@ -527,8 +527,6 @@ return client.createTransaction({ model: taxDocument })
     return sampleData
 }
 
-
-
 //
 // MAIN Sample Data function: populates request console
 //

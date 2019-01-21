@@ -1,4 +1,7 @@
 // TODO: allow user to update genCert URL
+
+let currentToken;
+
 function initScript() {
     console.warn('INIT SCRIPT')
     
@@ -11,9 +14,6 @@ function initScript() {
         alert( 'Enter valid javascript in the script box.' );
         return;
     }
-
-    // TODO: token validation, check if it is there
-    // - ask if they really want to regenerate if token already created
 
     try {
         console.warn('EVAL');
@@ -37,6 +37,12 @@ function getToken() {
             return;
     }
 
+    if(currentToken && currentToken.length > 0){
+        if (!confirm( 'Are you sure you want to regenerate your token?')) {
+            return;
+        }
+    }
+
     const authorization = "Basic " + window.btoa($('#api-user').val() + ":" + $('#api-password').val());
 
     return $.ajax({
@@ -50,8 +56,9 @@ function getToken() {
         },
         success: function(result, status, xhr) {            
             if (xhr.responseText !== "" && result.response.token) {
+                currentToken = result.response.token;
                 alert( 'Token successfully generated.' );
-                updateCertScript(result.response.token);
+                updateCertScript(currentToken);
             } else {
                 alert( 'Failed to generate a token. Please check your credentials and try again.' );
             }

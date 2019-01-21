@@ -34,7 +34,7 @@ doctype: overview
 <h1>CertCapture Demo</h1>
 
 <!-- TODO: instructions -->
-<p>Hi! I will be filled with instructions soon, so you can understand what this page does.</p>
+<p>Jujubes donut cookie dragée I love cotton candy. Lollipop chocolate bar cake topping halvah.</p>
 <hr id="cert-divider">
 
 <div id="gencert_test">
@@ -42,7 +42,7 @@ doctype: overview
         <div class="col-md-5">
             <h3>Step 1: Setup</h3>
             <!-- TODO: instructions -->
-            <p>INSTRUCTIONS</p>
+            <p>Candy canes jujubes cake pudding. Liquorice I love gingerbread gingerbread chocolate cake cotton candy.</p>
             <div>
                 <label class="cert-label">
                     GenCert URL *
@@ -54,7 +54,7 @@ doctype: overview
             </div> 
             <h3>Step 2: Get your token</h3>
             <!-- TODO: instructions -->
-            <p>INSTRUCTIONS</p>
+            <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
             <table>
                 <tr>
                     <label>API URL
@@ -73,7 +73,7 @@ doctype: overview
             <!-- options -->
             <!-- TODO: instructions -->
             <h3>Step 3: Select your options</h3>
-            <p>INSTRUCTIONS</p>
+            <p>Topping I love candy oat cake bear claw I love sugar plum tart bear claw.</p>
             <div>
                 <ul id="test-options" onChange="updateCertScript();">
                     {% for option in site.data.demo_page.cert-options %}
