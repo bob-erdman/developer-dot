@@ -86,6 +86,7 @@ doctype: overview
         <!-- request example script -->
         <div class="col-md-7">
             <h3>Step 4: Submit your script</h3>
+            <button class="btn btn-primary" id="cert-demo-refill-btn" onclick="updateCertScript();">Refill</button>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
                     <textarea id="cert-request" spellcheck="false">
