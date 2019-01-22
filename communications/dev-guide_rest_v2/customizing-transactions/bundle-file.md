@@ -21,6 +21,10 @@ Communications REST v2 handles these bundled products through the creation of a 
 The Bundle file is made up of:
 <ul class="dev-guide-list">
     <li>Assigned Bundle Transaction and Service IDs to be used in a REST v2 transaction</li>
+    <ul class="dev-guide-list">
+      <li>Sequential IDs (for example, 20000/20001 for the first bundle and 20000/20002 for the second bundle)</li>
+      <li>Transaction ID and Service ID cannot be changed</li>
+    </ul>
     <li>Transaction/Service pairs</li>
     <li>Percentage of the sale amount to apply to the particular Transaction/Service pair</li>
 </ul>
@@ -45,6 +49,7 @@ The Bundle file can also be created manually.  The file contains a header row co
     </ul>
     </li>
 </ul>
+
 Bundle files use a *.bdl file extension.
 
 <h4>Sample</h4>

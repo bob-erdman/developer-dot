@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-<h3>Commit</h3>
+<h3>Lookups</h3>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
