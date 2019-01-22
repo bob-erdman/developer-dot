@@ -78,3 +78,14 @@ doctype: overview
     </ul>
   </div>
 </div>
+<div class="row border-top padding-top padding-bottom">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <ul class="pipe" class="padding-marginbottom" >
+        <li>
+            <h4 class="">
+                <a href="/certcapture/cert-demo">Check out the Ecommece Plugin Demo</a>
+                </h4>
+        </li>
+    </ul>
+  </div>
+</div>

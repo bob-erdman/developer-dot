@@ -91,9 +91,9 @@ doctype: overview
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
                     <textarea id="cert-request" spellcheck="false">
 GenCert.init(document.getElementById( 'form-container' ), { 
-    edit_purchaser: false, 
-    ship_zone: 'Alabama', 
-    token: ''
+  edit_purchaser: false, 
+  ship_zone: 'Alabama', 
+  token: ''
 });
 GenCert.show();
                     </textarea>

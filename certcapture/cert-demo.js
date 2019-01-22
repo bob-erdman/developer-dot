@@ -123,7 +123,7 @@ function updateCertScript() {
         options = `  edit_purchaser: false, \n`;
     }
 
-    const sampleScript = `GenCert.init(document.getElementById( 'form-container' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
+    const sampleScript = `GenCert.init(document.getElementById( 'form-container' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}' \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().val(sampleScript);
 };
