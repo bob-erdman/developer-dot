@@ -29,16 +29,14 @@ doctype: overview
 </script>
 
 <h1>Ecommerce Plugin Demo</h1>
-<!-- TODO: instructions -->
-<p>Jujubes donut cookie dragée I love cotton candy. Lollipop chocolate bar cake topping halvah.</p>
+<p>The Ecommerce plugin is used to embed CertCapture's exemption document submission form into your ecommerce site so it can communicate with CertCapture. For more information about the plugin, <a href="https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Install_Avalara_CertCapture_for_Ecommerce" target="_blank">check out the documentation.</a></p>
 <hr id="cert-divider">
 
 <div id="gencert_test">
     <div class="row" >
         <div class="col-md-3">
             <h3>Step 1: Setup</h3>
-            <!-- TODO: instructions -->
-            <p>Candy canes jujubes cake pudding. Liquorice I love gingerbread gingerbread chocolate cake cotton candy.</p>
+            <p>Pick the GenCert URL you'd like to hit and choose your exposure zone.</p>
             <form>
                 <div class="form-group row">
                     <label for="api-url" class="col-sm-3 col-form-label">GenCert URL</label>
@@ -54,8 +52,7 @@ doctype: overview
                 </div>
             </form>
             <h3>Step 2: Get your token</h3>
-            <!-- TODO: instructions -->
-            <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
+            <p>Use your ecommerce credentials to generate a valid token. If you already have a valid token, just paste it in the script box and you can move on to Step 3.</p>
             <form>
                 <div class="form-group row">
                     <label for="api-url" class="col-sm-3 col-form-label">URL</label>
@@ -92,9 +89,8 @@ doctype: overview
         </div>
         <div class="col-md-3">
             <!-- options -->
-            <!-- TODO: instructions -->
-            <h3>Step 3: Select your options</h3>
-            <p>Topping I love candy oat cake bear claw I love sugar plum tart bear claw.</p>
+            <h3>Step 3: Select your parameters (optional)</h3>
+            <p>If you would like to include any of the parameters below, click the appropriate box. If not, move on to Step 4.</p>
             <div>
                 <ul id="test-options" onChange="updateCertScript();">
                     {% for option in site.data.demo_page.cert-options %}
@@ -110,8 +106,7 @@ doctype: overview
         <!-- request example script -->
         <div class="col-md-6">
             <h3>Step 4: Submit your script</h3>
-            <!-- TODO: instructions m-l-1 clickable hdr-btn-adj-text fill-sample-data-->
-            <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
+            <p>If you've completed steps 1 - 3, just click submit. If the script box is empty, click 'Fill Script' to see an up-to-date script based on your input for previous steps.</p>
             <button class="btn btn-link " id="cert-demo-refill-btn" onclick="updateCertScript();">Fill Script</button>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
