@@ -42,11 +42,6 @@ function initScript() {
         return;
     }
 
-    if ( $('#cert-request').val() === "" ) {
-        alert( 'Enter valid javascript in the script box.' );
-        return;
-    }
-
     var script = document.createElement( 'script') ;
     script.onload = function () {
         try {
@@ -119,7 +114,6 @@ function updateCertScript() {
     const token = currentToken ? currentToken : '';   
     const selectedOptions = $('.cert-demo-option:checked');
     let options = ``;
-    console.warn('YO');
     
     if (selectedOptions.length > 0) {
         selectedOptions.each(function() {            
@@ -128,12 +122,10 @@ function updateCertScript() {
     } else {
         options = `  edit_purchaser: false, \n`;
     }
-    console.warn('Bruh');
 
     const sampleScript = `GenCert.init(document.getElementById( 'form-container' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
     $('#cert-request').empty().val(sampleScript);
-    console.warn('so real');
 };
 
 function backToDemo() {
