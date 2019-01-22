@@ -35,7 +35,7 @@ doctype: overview
 
 <div id="gencert_test">
     <div class="row" >
-        <div class="col-md-6">
+        <div class="col-md-3">
             <h3>Step 1: Setup</h3>
             <!-- TODO: instructions -->
             <p>Candy canes jujubes cake pudding. Liquorice I love gingerbread gingerbread chocolate cake cotton candy.</p>
@@ -58,19 +58,19 @@ doctype: overview
             <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
             <form>
                 <div class="form-group row">
-                    <label for="api-url" class="col-sm-3 col-form-label">API URL</label>
+                    <label for="api-url" class="col-sm-3 col-form-label">URL</label>
                     <div class="col-sm-9">
                         <input id="api-url" class="form-control" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="api-user" class="col-sm-3 col-form-label">API User Name</label>
+                    <label for="api-user" class="col-sm-3 col-form-label">User Name</label>
                     <div class="col-sm-9">
                         <input id="api-user" class="form-control" placeholder="userName01" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="api-password" class="col-sm-3 col-form-label">API Password</label>
+                    <label for="api-password" class="col-sm-3 col-form-label">Password</label>
                     <div class="col-sm-9">
                         <input id="api-password" class="form-control" placeholder="p@ssW0rd" type="password">
                     </div>
@@ -89,6 +89,8 @@ doctype: overview
                 </div>
             </form>
             <button class="btn btn-primary cert-btn" onclick="getToken()">Get Token</button>
+        </div>
+        <div class="col-md-3">
             <!-- options -->
             <!-- TODO: instructions -->
             <h3>Step 3: Select your options</h3>
@@ -108,9 +110,9 @@ doctype: overview
         <!-- request example script -->
         <div class="col-md-6">
             <h3>Step 4: Submit your script</h3>
-            <!-- TODO: instructions -->
+            <!-- TODO: instructions m-l-1 clickable hdr-btn-adj-text fill-sample-data-->
             <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
-            <button class="btn btn-primary" id="cert-demo-refill-btn" onclick="updateCertScript();">Refill</button>
+            <button class="btn btn-link " id="cert-demo-refill-btn" onclick="updateCertScript();">Fill Script</button>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
                     <textarea id="cert-request" spellcheck="false">

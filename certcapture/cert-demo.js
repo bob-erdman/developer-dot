@@ -3,7 +3,7 @@ let currentToken;
 function submitEcom(){
     var txt = $('#cert-request'); 
     if (txt.val() == null || !txt.val().replace(/\s/g, '').length) {  
-        alert("Please fill out the request by hitting the 'Refill' button.");
+        alert("Please fill out the request by hitting the 'Fill Script' button.");
         return;
     } 
 
@@ -12,44 +12,25 @@ function submitEcom(){
         return;
     }
 
+    if ( $('#gencert-url').val() === "" ) {
+        alert( 'Enter a GenCert URL.' );
+        return;
+    }
+
     initScript();
-
-    // let errMsg;
-    // window.addEventListener('error', function(e) {
-    //     console.warn('submit ERROR', e);
-    //     err = e.message || $('#gencert-url').val() + "\n URL does not exist";
-    //     alert(err);
-    //     return;
-    // }, true);
-
-    // console.warn('err', errMsg);
-
-    // if (errMsg && errMsg.length > 0) {
-    //     console.warn('errMsg');
-    //     // window.removeEventListener('error');
-    //     return;
-    // }
 
     $('#gencert_test').css('display', 'none');
     $('#cert-demo-back-btn').css('display', 'block');
 }
 
 function initScript() {
-    console.warn('INIT SCRIPT')
     
-    if ( $('#gencert-url').val() === "" ) {
-        alert( 'Enter a GenCert URL.' );
-        return;
-    }
-
     var script = document.createElement( 'script') ;
     script.onload = function () {
         try {
-            console.warn('EVAL');
             eval( $('#cert-request').val() );
         } 
         catch ( e ) {
-            console.warn('ERROR', e);
             if ( e instanceof SyntaxError ) {
                 alert( e.message );
             }
@@ -97,8 +78,6 @@ function getToken() {
             return status;
         },
         error: function(xhr, status, error) {
-            console.warn('ERROR api url', xhr);
-
             if (xhr && xhr.responseJSON && xhr.responseJSON.error) {
                 alert( `Error: ${xhr.responseJSON.error}` );
             } else {
