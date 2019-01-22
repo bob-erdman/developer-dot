@@ -9,3 +9,5 @@ nav_links:
     path: /communications
   - title: REST v2 Developer Guide
     path: /communications/dev-guide_rest_v2
+  - title: AFC Geo Soap Developer Guide
+    path: /communications/dev-guide_geo_soap
