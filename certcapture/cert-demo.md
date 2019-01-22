@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Ecommerce Plugin Demo
 product: certCapture
 nav: apis
 doctype: overview
@@ -27,45 +28,65 @@ doctype: overview
     });
 </script>
 
-
-<h1>CertCapture Demo</h1>
-
 <!-- TODO: instructions -->
 <p>Jujubes donut cookie dragée I love cotton candy. Lollipop chocolate bar cake topping halvah.</p>
 <hr id="cert-divider">
 
 <div id="gencert_test">
     <div class="row" >
-        <div class="col-md-5">
+        <div class="col-md-6">
             <h3>Step 1: Setup</h3>
             <!-- TODO: instructions -->
             <p>Candy canes jujubes cake pudding. Liquorice I love gingerbread gingerbread chocolate cake cotton candy.</p>
-            <div>
-                <label class="cert-label">
-                    GenCert URL
-                    <input id="gencert-url" value="https://beta.certcapture.com" type="text">
-                </label>
-                <label class="cert-label">Exposure Zone
-                    <select id="set-zone" onChange="updateCertScript();"></select>
-                </label>
-            </div> 
+            <form>
+                <div class="form-group row">
+                    <label for="api-url" class="col-sm-2 col-form-label">GenCert URL</label>
+                    <div class="col-sm-10">
+                        <input id="api-url" value="https://beta-api.certcapture.com" type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Exposure Zone</label>
+                    <div class="col-sm-10">
+                        <select id="set-zone" onChange="updateCertScript();"></select>
+                    </div>
+                </div>
+            </form>
             <h3>Step 2: Get your token</h3>
             <!-- TODO: instructions -->
             <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
-            <table>
-                <tr>
-                    <label>API URL
-                    <input id="api-url" value="https://beta-api.certcapture.com" type="text"></label>
-                </tr>
-                <tr>
-                    <td><input id="api-user" placeholder="API User Name" type="text"></td>
-                    <td><input id="api-password" placeholder="API Password" type="password"></td> 
-                </tr>
-                <tr>
-                    <td><input id="client-id" placeholder="Client ID" type="text"></td>
-                    <td><input id="customer-number" placeholder="Customer Number" type="text"></td>
-                </tr>
-            </table>
+            <form>
+                <div class="form-group row">
+                    <label for="api-url" class="col-sm-2 col-form-label">API URL</label>
+                    <div class="col-sm-10">
+                        <input id="api-url" value="https://beta-api.certcapture.com" type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="api-user" class="col-sm-2 col-form-label">API User Name</label>
+                    <div class="col-sm-10">
+                        <input id="api-user" placeholder="userName01" type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="api-password" class="col-sm-2 col-form-label">API Password</label>
+                    <div class="col-sm-10">
+                        <input id="api-password" placeholder="p@ssW0rd" type="password">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="client-id" class="col-sm-2 col-form-label">Client ID</label>
+                    <div class="col-sm-10">
+                        <input id="client-id" placeholder="111" type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="customer-number" class="col-sm-3 col-form-label">Customer Number</label>
+                    <div class="col-sm-9">
+                        <input id="customer-number" placeholder="222" type="text">
+                    </div>
+                </div>
+            </form>
             <button class="btn btn-primary cert-btn" onclick="getToken()">Get Token</button>
             <!-- options -->
             <!-- TODO: instructions -->
@@ -84,8 +105,10 @@ doctype: overview
             </div>
         </div>
         <!-- request example script -->
-        <div class="col-md-7">
+        <div class="col-md-6">
             <h3>Step 4: Submit your script</h3>
+            <!-- TODO: instructions -->
+            <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
             <button class="btn btn-primary" id="cert-demo-refill-btn" onclick="updateCertScript();">Refill</button>
             <div id="script-test">
                 <div id="sample-script" class="code-snippet respScroll api-console-output">
