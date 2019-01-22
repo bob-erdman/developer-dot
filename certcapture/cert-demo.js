@@ -84,7 +84,7 @@ function getToken() {
             if (xhr.responseText !== "" && result.response.token) {
                 currentToken = result.response.token;
                 alert( 'Token successfully generated.' );
-                updateCertScript(currentToken);
+                updateCertScript();
             } else {
                 alert( 'Failed to generate a token. Please check your credentials and try again.' );
             }
@@ -105,10 +105,9 @@ function getToken() {
 }
 
 // BUG: when script box is cleared out, doesn't update
-// BUG: clears token when updating exposure zone
-function updateCertScript(tokenKey) {
+function updateCertScript() {
     const exposureZone = $('#set-zone').val();    
-    const token = tokenKey ? tokenKey : '';   
+    const token = currentToken ? currentToken : '';   
     const selectedOptions = $('.cert-demo-option:checked');
     let options = ``;
     
@@ -122,7 +121,8 @@ function updateCertScript(tokenKey) {
     
     const sampleScript = `GenCert.init(document.getElementById( 'form-container' ), { \n${options}  ship_zone: '${exposureZone}', \n  token: '${token}', \n}); \nGenCert.show();`;
 
-    $('#cert-request').empty().text(sampleScript);
+    $('#cert-request').empty();
+    $('#cert-request').text(sampleScript);
 };
 
 function backToDemo() {
