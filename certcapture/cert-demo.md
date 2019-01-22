@@ -41,7 +41,7 @@ doctype: overview
                 <div class="form-group row">
                     <label for="api-url" class="col-sm-3 col-form-label">GenCert URL</label>
                     <div class="col-sm-9">
-                        <input id="api-url" class="form-control" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text">
+                        <input id="gencert-url" class="form-control" placeholder="https://beta.certcapture.com" value="https://beta.certcapture.com/" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
