@@ -28,6 +28,7 @@ doctype: overview
     });
 </script>
 
+<h1>Ecommerce Plugin Demo</h1>
 <!-- TODO: instructions -->
 <p>Jujubes donut cookie dragée I love cotton candy. Lollipop chocolate bar cake topping halvah.</p>
 <hr id="cert-divider">
@@ -40,15 +41,15 @@ doctype: overview
             <p>Candy canes jujubes cake pudding. Liquorice I love gingerbread gingerbread chocolate cake cotton candy.</p>
             <form>
                 <div class="form-group row">
-                    <label for="api-url" class="col-sm-2 col-form-label">GenCert URL</label>
-                    <div class="col-sm-10">
-                        <input id="api-url" value="https://beta-api.certcapture.com" type="text">
+                    <label for="api-url" class="col-sm-3 col-form-label">GenCert URL</label>
+                    <div class="col-sm-9">
+                        <input id="api-url" class="form-control" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Exposure Zone</label>
-                    <div class="col-sm-10">
-                        <select id="set-zone" onChange="updateCertScript();"></select>
+                    <label for="inputPassword" class="form-control" class="col-sm-3 col-form-label">Exposure Zone</label>
+                    <div class="col-sm-9">
+                        <select id="set-zone" class="form-control" onChange="updateCertScript();"></select>
                     </div>
                 </div>
             </form>
@@ -57,33 +58,33 @@ doctype: overview
             <p>Bear claw pudding sesame snaps. Jelly beans dragée powder biscuit</p>
             <form>
                 <div class="form-group row">
-                    <label for="api-url" class="col-sm-2 col-form-label">API URL</label>
-                    <div class="col-sm-10">
-                        <input id="api-url" value="https://beta-api.certcapture.com" type="text">
+                    <label for="api-url" class="col-sm-3 col-form-label">API URL</label>
+                    <div class="col-sm-9">
+                        <input id="api-url" class="form-control" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="api-user" class="col-sm-2 col-form-label">API User Name</label>
-                    <div class="col-sm-10">
-                        <input id="api-user" placeholder="userName01" type="text">
+                    <label for="api-user" class="col-sm-3 col-form-label">API User Name</label>
+                    <div class="col-sm-9">
+                        <input id="api-user" class="form-control" placeholder="userName01" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="api-password" class="col-sm-2 col-form-label">API Password</label>
-                    <div class="col-sm-10">
-                        <input id="api-password" placeholder="p@ssW0rd" type="password">
+                    <label for="api-password" class="col-sm-3 col-form-label">API Password</label>
+                    <div class="col-sm-9">
+                        <input id="api-password" class="form-control" placeholder="p@ssW0rd" type="password">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="client-id" class="col-sm-2 col-form-label">Client ID</label>
-                    <div class="col-sm-10">
-                        <input id="client-id" placeholder="111" type="text">
+                    <label for="client-id" class="col-sm-3 col-form-label">Client ID</label>
+                    <div class="col-sm-9">
+                        <input id="client-id" class="form-control" placeholder="111" type="text">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="customer-number" class="col-sm-3 col-form-label">Customer Number</label>
                     <div class="col-sm-9">
-                        <input id="customer-number" placeholder="222" type="text">
+                        <input id="customer-number" class="form-control" placeholder="222" type="text">
                     </div>
                 </div>
             </form>
