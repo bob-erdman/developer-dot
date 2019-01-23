@@ -10,7 +10,7 @@ doctype: overview
 <script type='text/javascript' src='https://beta.certcapture.com/Gencert2/js'></script>
 
 <h1>eCommerce Plugin Demo</h1>
-<p>The Ecommerce plugin is used to embed CertCapture's exemption document submission form into your ecommerce site so it can communicate with CertCapture. For more information about the plugin, <a href="https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Install_Avalara_CertCapture_for_Ecommerce" target="_blank">check out the documentation.</a></p>
+<p>The eCommerce plugin is used to embed CertCapture's exemption document submission form into your eCommerce site so it can communicate with CertCapture. For more information about the plugin, <a href="https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Install_Avalara_CertCapture_for_Ecommerce" target="_blank">check out the documentation.</a></p>
 <hr id="cert-divider">
 
 <div id="gencert_test">
@@ -37,7 +37,7 @@ doctype: overview
                 </div>
             </form>
             <h3>Step 2: Get your token</h3>
-            <p>Use your ecommerce credentials to generate a valid token. If you already have a valid token, just paste it in the script box and you can move on to Step 3.</p>
+            <p>Use your eCommerce credentials to generate a valid token. If you already have a valid token, just paste it in the script box and you can move on to Step 3.</p>
             <form>
                 <div class="form-group row">
                     <label for="api-url" class="col-sm-3 col-form-label">URL</label>
