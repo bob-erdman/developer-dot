@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ecommerce Plugin Demo
+title: eCommerce Plugin Demo
 product: certCapture
 nav: apis
 doctype: overview
@@ -8,27 +8,8 @@ doctype: overview
 <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
 <script type='text/javascript' src='../cert-demo.js'></script>
 <script type='text/javascript' src='https://beta.certcapture.com/Gencert2/js'></script>
-<script type='text/javascript'>
-    // get all the US exposure zones
-    $.ajax({
-        url: "https://beta-api.certcapture.com/v2/states",
-        type: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': "Basic " + window.btoa('api-test:api-test'),
-            "x-client-id": 444,
-        }
-    }).then((res) => {
-        let zones = ``;
-        res.data.forEach((state) => {
-            zones += `<option value=${state.name}>${state.name}</option>`;
-        })
-        // populate exposure zone drop down
-        $('#set-zone').html(zones);
-    });
-</script>
 
-<h1>Ecommerce Plugin Demo</h1>
+<h1>eCommerce Plugin Demo</h1>
 <p>The Ecommerce plugin is used to embed CertCapture's exemption document submission form into your ecommerce site so it can communicate with CertCapture. For more information about the plugin, <a href="https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Install_Avalara_CertCapture_for_Ecommerce" target="_blank">check out the documentation.</a></p>
 <hr id="cert-divider">
 
@@ -47,7 +28,11 @@ doctype: overview
                 <div class="form-group row">
                     <label for="inputPassword" class="form-control" class="col-sm-3 col-form-label">Exposure Zone</label>
                     <div class="col-sm-9">
-                        <select id="set-zone" class="form-control" onChange="updateCertScript();"></select>
+                        <select id="set-zone" class="form-control" onChange="updateCertScript();">
+                            {% for state in site.data.demo_page.cert-states %}
+                                <option value="{{state.value}}">{{ state.value }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
             </form>

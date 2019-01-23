@@ -83,7 +83,7 @@ doctype: overview
     <ul class="pipe" class="padding-marginbottom" >
         <li>
             <h4 class="">
-                <a href="/certcapture/cert-demo">Check out the Ecommece Plugin Demo</a>
+                <a href="/certcapture/cert-demo">Check out the eCommece Plugin Demo</a>
                 </h4>
         </li>
     </ul>
