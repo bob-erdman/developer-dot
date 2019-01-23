@@ -27,7 +27,7 @@ To run the Avalara developer site locally requires the following software:
 
 ### A guide to Jekyll's Posting and Editing Capabilities; Turning Local Github Repositories into a Locally Generated Website
 
-In this *How To* guide I'm hoping to give you the necessary tools and knowledge to make pain free contributions to the [Avalara Developer Blog](http://developer.avalara.com/blog/).
+In this *How To* guide I'm hoping to give you the necessary tools and knowledge to make pain free contributions to the [Avalara Developer Blog](https://www.avalara.com/us/en/blog/category/developer.html).
 Understandably in software development, the continuous flow of developments, cool features, and small improvements can get lost in the fray of a relatively new and expanding industry.
 Well, things don't have to be that way, not if you decide to get involved that is. Have experience you can share about a specific Avalara product or cool new tool that assists you in development you'd like to share? Now's your chance to do just that.
 
@@ -210,7 +210,7 @@ or
 
 `$ npm rebuild`
 
-This should serve up a url link to the locally hosted site. the port will most likely be `:4000` or `:8080`. For me, since I'm using Cloud9 to run my local instance, the jekyll port has been `:8080`. Though I've been using a Cloud9 workspace which actually hosts the site at https://WorkspaceName-UserName.c9users.io:8080 rather than http://localhost:4000. If you've just made an edit to a post rather than added a new post altogether and want to compare the changes, go ahead and pull up the [Developer Blog Page](http://developer.avalara.com/blog/) along with your running application to actually compare the current site to what it might look like with your contributions.
+This should serve up a url link to the locally hosted site. the port will most likely be `:4000` or `:8080`. For me, since I'm using Cloud9 to run my local instance, the jekyll port has been `:8080`. Though I've been using a Cloud9 workspace which actually hosts the site at https://WorkspaceName-UserName.c9users.io:8080 rather than http://localhost:4000. If you've just made an edit to a post rather than added a new post altogether and want to compare the changes, go ahead and pull up the [Developer Blog Page](https://www.avalara.com/us/en/blog/category/developer.html) along with your running application to actually compare the current site to what it might look like with your contributions.
 
 
 ### Lets get those changes Committed
