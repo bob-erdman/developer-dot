@@ -308,7 +308,6 @@ function cSharpSampleData() {
     // build sample data for c#
     const sampleData = `// Create AvaTaxClient
 var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
-
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -325,7 +324,6 @@ var createModel = new CreateTransactionModel()
         ${address}
     }
 }
-
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
@@ -351,7 +349,6 @@ function phpSampleData() {
     const sampleData = `// Create a new client
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
-
 // Create a simple transaction using the fluent transaction builder
 $tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb${address}
@@ -383,10 +380,8 @@ function pythonSampleData() {
     'ver 0.0',
     'my test machine',
     'sandbox')
-
 #Add your credentials
 client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
-
 #Build your tax document
 tax_document = {
     'addresses': {
@@ -400,7 +395,6 @@ tax_document = {
     ],
     'type': 'SalesOrder'
 }
-
 #Create transaction
 transaction_response = client.create_transaction(tax_document)
 print(transaction_response.text())`;
@@ -424,7 +418,6 @@ function rubySampleData() {
     }
 
     const sampleData = `credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
-
 AvaTax.configure do |config|
     begin
     credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
@@ -437,9 +430,7 @@ AvaTax.configure do |config|
     config.password = ENV['SANDBOX_PASSWORD']
     end
 end
-
 @client = AvaTax::Client.new(:logger => true)
-
 createTransactionModel = {
     type: "SalesOrder",
     companyCode: "12670",
@@ -452,7 +443,6 @@ createTransactionModel = {
         ${lines}
     ]
 }
-
 transaction = @client.create_transaction(createTransactionModel)`;
 
     return sampleData;
@@ -476,7 +466,6 @@ function javaSampleData() {
     const sampleData = `//creates our AvaTaxClient
 AvaTaxClient client = new AvaTaxClient("Test", "1.0", "localhost", AvaTaxEnvironment.Sandbox)
     .withSecurity("MyUsername", "MyPassword");
-
 // build and create transaction
 TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", DocumentType.SalesOrder, "ABC")
     ${address}
@@ -517,7 +506,6 @@ const creds = {
 };
     
 var client = new Avatax(config).withSecurity(creds);
-
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
@@ -538,8 +526,6 @@ return client.createTransaction({ model: taxDocument })
 
     return sampleData
 }
-
-
 
 //
 // MAIN Sample Data function: populates request console
