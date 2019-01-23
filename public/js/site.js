@@ -641,21 +641,24 @@ function buildInfoboxHTML(body) {
     
     infoboxHTML = `
         AvaTax's engine can calculate tax down to the roof-top level. In this case, 
-        AvaTax returned:  
+        AvaTax returned ${body.totalTax == 0 ? 'a tax-free calculation. This transaction has zero applicable taxes.' : ':'}`
+    if(body.totalTax > 0) {
+    infoboxHTML += `
         <ul>
         <li>• total tax <span class="demo-tax-totals" style="display:block; float:right;">$${body.totalTax.toFixed(2)}</span></li>
-        <li>• country tax <span class="demo-tax-totals" style="display:block; float:right;">$${countryTax.toFixed(2)}</span></li>
-        <li>• duties and tariffs <span class="demo-tax-totals" style="display:block; float:right;">$${dutiesTax.toFixed(2)}</span></li>
-        <li>• state tax <span class="demo-tax-totals" style="display:block; float:right;">$${stateTax.toFixed(2)}</span></li>
-        <li>• county tax <span class="demo-tax-totals" style="display:block; float:right;">$${countyTax.toFixed(2)}</span></li>
-        <li>• city tax <span class="demo-tax-totals" style="display:block; float:right;">$${cityTax.toFixed(2)}</span></li>
-        <li>• special taxing disctricts <span class="demo-tax-totals" style="display:block; float:right;">$${specialTax.toFixed(2)}</span></li>  
+        ${countryTax != 0 ? '<li>• country tax <span class="demo-tax-totals" style="display:block; float:right;">$'+countryTax.toFixed(2)+'</span></li>' : ''}
+        ${dutiesTax != 0 ? '<li>• duties and tariffs <span class="demo-tax-totals" style="display:block; float:right;">$'+dutiesTax.toFixed(2)+'</span></li>' : ''}
+        ${stateTax != 0 ? '<li>• state tax <span class="demo-tax-totals" style="display:block; float:right;">$'+stateTax.toFixed(2)+'</span></li>' :''}
+        ${countyTax != 0 ? '<li>• county tax <span class="demo-tax-totals" style="display:block; float:right;">$'+countyTax.toFixed(2)+'</span></li>' : ''}
+        ${cityTax != 0 ? '<li>• city tax <span class="demo-tax-totals" style="display:block; float:right;">$'+cityTax.toFixed(2)+'</span></li>' : ''}
+        ${specialTax != 0 ? '<li>• special taxing districts <span class="demo-tax-totals" style="display:block; float:right;">$'+specialTax.toFixed(2)+'</span></li>' : ''}  
         </ul>
         Feel free to continue tinkering with the options to the left to test 
         the flexibility of the AvaTax API. Or, if you've seen enough, 
         <a href='https://developer.avalara.com/avatax/' target='_blank'>sign up for a 60-day API trial</a> 
         and production account.
     `;
+    }
     return infoboxHTML;
 }
 /***************** END INFOBOX Functions ********************************/
