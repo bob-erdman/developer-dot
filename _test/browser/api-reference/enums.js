@@ -23,7 +23,7 @@ module.exports = {
     },
     'Enums: REST v2: Models - Request Body': function(browser) {
         const modelURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/AccountModel/`;
-        const enumURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/enums/accountStatusId/`;
+        const enumURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/enums/AccountModel%20>%20accountStatusId/`;
         const attr = 'AccountModel > accountStatusId';
 
         browser
@@ -31,10 +31,7 @@ module.exports = {
             .navigateToUrl(`.model-summary a[href="../enums/${attr}"]`, '.enum-summary', enumURL);
 
         browser.page.enums()
-            .pageIsValid(attr, 'Request Body Parameter - Enum', 'The current status of this account.', 4)
-            .getText('main table tbody tr:nth-child(2) td:nth-child(2)', function(element) {
-                browser.assert.ok(element.value.length > 0);
-            });
+            .pageIsValid(attr, 'Request Body Parameter - Enum', 'The current status of this account.', 4);
     },
 
     'Enums: REST v2: Methods - Path Parameter': function(browser) {
