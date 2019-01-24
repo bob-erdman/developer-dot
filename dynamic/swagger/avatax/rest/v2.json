@@ -11,7 +11,13 @@
     "license": {
       "name": "Terms of Use",
       "url": "https://www.avalara.com/terms-of-use/"
-    }
+    },
+    "host": "sandbox-rest.avatax.com",
+    "x-production-host": "rest.avatax.com",
+    "schemes": [
+      "https"
+    ],
+    "basePath": "/"
   },
   "paths": {
     "/api/v2/accounts": {
@@ -31639,9 +31645,7 @@
           "description": "A list of customers to which this certificate applies.  You can fetch this data by specifying\r\n`$include=customers` when calling a certificate fetch API.",
           "uniqueItems": false,
           "type": "array",
-          "items": {
-            "$ref": "#/definitions/CustomerModel"
-          },
+          "items": {},
           "example": [
             {
               "companyId": 0,
@@ -54855,8 +54859,7 @@
   "securityDefinitions": {
     "OauthSecurity": {
       "flow": "implicit",
-      "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=f8996e00-0c60-46fe-8837-1a9fbc9d673c&",
-      "type": "oauth2",
+      "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=aad18261-8a6a-45d2-972b-c25c9fc135fe&",      "type": "oauth2",
       "description": "A bearer token provided by the Avalara Identity server."
     },
     "UserSecurity": {
@@ -54871,10 +54874,11 @@
   "x-ApiType": "REST",
   "x-avalara-version": "19.1.0",
   "x-api-proxy": {
-    "route": "https://e3zwcxla5k.execute-api.us-west-2.amazonaws.com/prod/",
+    "route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
     "key": {
       "name": "api-key",
-      "location": "api-proxy-key/key"
+      "location": "v2-devdot-keys/devdot-proxy-key"
+  
     }
   }
 }
