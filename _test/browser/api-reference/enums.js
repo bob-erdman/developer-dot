@@ -24,7 +24,7 @@ module.exports = {
     'Enums: REST v2: Models - Request Body': function(browser) {
         const modelURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/AccountModel/`;
         const enumURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/enums/accountStatusId/`;
-        const attr = 'AccountStatusId';
+        const attr = 'accountStatusId';
 
         browser
             .initialize(modelURL, '.model-summary')
