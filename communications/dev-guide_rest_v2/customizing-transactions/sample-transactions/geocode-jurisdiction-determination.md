@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/all_adr-jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints#jur_determine"><code>/api/v2/geo/Geocode</code> Jurisdiction Determination endpoint</a> returns a list of geocoded results.
@@ -450,5 +450,5 @@ The returned geocoded address is unincorporated (<code>inc</code> is <code>false
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/all_adr-jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
