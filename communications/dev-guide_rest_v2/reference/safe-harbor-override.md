@@ -28,7 +28,7 @@ The <code>SafeHarborOverride</code> object allows the user to change <b>safe har
     <tbody>
       <tr>
         <td><code>sh</code></td>
-        <td><code>[int]</code> <span class="t5">required</span> Safe Harbor Override Type
+        <td><code>[int]</code> <span class="t5">required</span> Safe Harbor Type
           <ul class="dev-guide-list">
             <li><code>1</code>: Cellular</li>
             <li><code>2</code>: VoIP</li>

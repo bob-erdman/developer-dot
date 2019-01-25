@@ -18,6 +18,9 @@ The Communications REST v2 <a class="dev-guide-link" href="/communications/dev-g
 <h4 id="note">Note</h4>
 We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with a custom override file applied even though the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a> gives you the flexibility to input Override information for each transaction. This results in better performance from the AFC Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
+<h4>Note</h4>
+A <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">Tax Override</a> (<code>ovr</code>) can only be applied to a tax type (<code>tid</code>) that applies to the specified <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> (<code>loc</code>) and tax level (<code>lvl</code>).
+
 <h3>Tax Override Fields</h3>
 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">Tax Override</a> fields used for overriding a tax type rate:
 <div class="mobile-table">
@@ -82,43 +85,14 @@ We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_r
 </div>
 
 <h4 id="scope">Scope</h4>
-Scope (<code>scp</code>) defines the tax levels in which the taxes will be considered as candidates for override.  The field is a combination of one or more of these values (add the appropriate values together):
+Scope (<code>scp</code>) defines the tax level in which the taxes will be considered as candidates for override:
 <ul class="dev-guide-list">
-    <li><code>128</code>: Federal</li>
-    <li><code>256</code>: State</li>
-    <li><code>512</code>: County</li>
-    <li><code>1024</code>: Local</li>
+  <li><code>0</code>: Country</li>
+  <li><code>1</code>: State</li>
+  <li><code>2</code>: County</li>
+  <li><code>3</code>: City</li>
 </ul>
-For example: 
-<div class="mobile-table">
-  <table class="styled-table">
-    <thead>
-      <tr>
-        <th>Scope</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1920</td>
-            <td>All (Federal + State + County + Local)</td>
-        </tr>
-        <tr>
-            <td>1792</td>
-            <td>State + County + Local</td>
-        </tr>
-        <tr>
-            <td>384</td>
-            <td>Federal + State</td>
-        </tr>
-        <tr>
-            <td>128</td>
-            <td>Federal</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<br/>
+
 
 <h4 id="brkt">Tax Bracket</h4>
 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-bracket/">Tax Bracket</a> sets the rate and bracket information for the override.
