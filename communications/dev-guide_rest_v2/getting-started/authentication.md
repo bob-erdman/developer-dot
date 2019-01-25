@@ -66,10 +66,13 @@ You can also encode a plaintext string to Base64 in <b>Windows Powershell</b> us
   [System.Text.Encoding]::UTF8.GetBytes("first.last@avalara.com:secretpassword!"));
 {% endhighlight %}
 
+<h4>Note</h4>
+If your <code>api_key</code> contains a "=" (for example, <code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE=</code>), the cUrl statement in Swagger encodes the "=" special character to the ASCII "%3D" value (<code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE%3D</code>).  The "%3D" value is decoded to "=" during authentication and does not impact the authentication request.
 
+<h4>Note</h4>
+Different factors can impact your <code>api_key</code>, namely different username capitalization.  Usernames are not case sensitive, but passwords are.  Base64 encoded values for usernames <code>first.last@avalara.com</code> and <code>First.Last@avalara.com</code> are different but are treated as being identical behind the scenes during authentication.  Base64 encoded values for passwords <code>secretpassword!</code> and <code>SecretPassword!</code> are different and cause authentication to fail because the password is not what is expected.
 
 <h3>Optional Headers</h3>
-
 Our tax engine allows for additional customization when calculating taxes through <b>client profiles</b>. For details about how client profiles work, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>.  For now, just know that you can pass an additional header to use a specific profile:
 
 <div class="mobile-table">
