@@ -16,6 +16,7 @@ disqus: 0
 Avalara Communications provides the all_adr.txt file to help you identify the proper PCode for the taxing jurisdiction.
 <ul class="dev-guide-list">
   <li>Updated monthly with the latest jurisdictions, PCodes, and Postal Code ranges</li>
+  <li>Contains all valid PCodes</li>
   <li>Download available from the <a class="dev-guide-link" href="https://communications.avalara.net/ClientAdmin/ClientDownload">Customer Portal Downloads page</a></li>
   <li>Load all_adr.txt into a local database to easily search for the taxing jurisdiction and related PCode</li>
 </ul>
