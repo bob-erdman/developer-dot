@@ -15,9 +15,8 @@ disqus: 0
 
 This chapter explains how to get started with Communications Geo SaaS Pro Soap:
 <ul class="dev-guide-list">
-  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/account-creation/">Establishing</a> your AFC Geo account</li>
-  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/authentication/">Authenticating</a> to AFC Geo SaaS Pro Soap</li>
-  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/environments-endpoints/">Environments and endpoints</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/account-creation/">Establishing</a> your AFC Geo SaaS Pro Soap account</li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods/">Endpoints and Web Service Methods</a></li>
   <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/best-practices/">Best Practices</a></li>
 </ul>
 
