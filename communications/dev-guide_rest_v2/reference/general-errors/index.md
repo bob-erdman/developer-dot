@@ -52,6 +52,26 @@ disqus: 0
     </tbody>
   </table>
 </div>
+<br/>
+<h3>Request</h3>
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Message</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>      
+      <tr>
+        <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/general-errors/request-body-cannot-be-empty/">Request body cannot be empty.</a></td>
+        <td>Body of the API request is empty or incomplete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/ts-pair-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

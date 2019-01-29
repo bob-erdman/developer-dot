@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/general-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/commit-errors/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3><code>CalcTaxes</code> Request</h3>
@@ -24,11 +24,6 @@ disqus: 0
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/request-body-cannot-be-empty/">Request body cannot be empty.</a></td>
-        <td>Body of the API request is empty or incomplete</td>
-      </tr>
       <tr>
         <td>-2000</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/company-data-is-null/">CompanyData is null.</a></td>
@@ -124,7 +119,7 @@ disqus: 0
 </div>
 <br/>
 <h3>Invoice</h3>
-<!-- LKK 1/17/19 - No error message for total invoices over a max -->
+<!-- LKK 1/17/19 - No error message for total invoices over a max (PLAT-8037)-->
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
@@ -527,5 +522,5 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/general-errors/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/commit-errors/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
