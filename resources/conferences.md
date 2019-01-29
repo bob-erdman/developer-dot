@@ -3,13 +3,13 @@ layout: page
 title: AvaTax Developer Conferences
 nav: resources
 ---
-
+<div><img src="/public/images/CRUSH19_Logo_OR_Teal_RGB.png" style="display:block; margin-left:auto;margin-right:auto;" alt="Avalara CRUSH19 Logo" height="365" width="432" /></div>
 You’re invited to join Avalara’s API development team in Huntington Beach, CA on May 8–10, 2019 for **CRUSH19**. We’re seeing a surge of change in the world of tax compliance and **CRUSH19** brings together the country's leading visionaries and practitioners in transaction tax to help customers and partners master tax compliance trends. Attend our fourth annual event where you’ll get to meet and mingle with your industry peers and key Avalarians from our developer team.
 
 We’ll have two full days of training sessions to give you hands-on guidance for mastering tax today and the Avalara API. Come to learn, share, and network as well as experience tech demos and exciting events.
 
 
-<p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-2019-pre-registration/event-summary-dc5dcbc0f73f4620b7eef100dc358fd7.aspx" role="button">Register now</a></p>
+<p class="btn-callout"><a href="https://www.avalaracrush.com/" role="button">Register now</a></p>
 
 ## Thursday, May 9, 2019
 
@@ -52,7 +52,7 @@ We’ll have two full days of training sessions to give you hands-on guidance fo
 	</table>
 </div>
 
-<p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-2019-pre-registration/event-summary-dc5dcbc0f73f4620b7eef100dc358fd7.aspx" role="button">Register now</a></p>
+<p class="btn-callout"><a href="https://www.avalaracrush.com/" role="button">Register now</a></p>
 
 ## Friday, May 10, 2019
 
@@ -95,4 +95,4 @@ We’ll have two full days of training sessions to give you hands-on guidance fo
 	</table>
 </div>
 
-<p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-2019-pre-registration/event-summary-dc5dcbc0f73f4620b7eef100dc358fd7.aspx" role="button">Register now</a></p>
+<p class="btn-callout"><a href="https://www.avalaracrush.com/" role="button">Register now</a></p>
