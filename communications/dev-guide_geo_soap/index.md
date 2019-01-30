@@ -16,7 +16,7 @@ Welcome to the Avalara for Communications Geo SaaS Pro Soap Developer Guide!
 This guide provides you with an overview of the Avalara for Communications Geo SaaS Pro Soap API functionality, including:
 
 <ul class="dev-guide-list">
-  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/authentication/">Authentication</a> and <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/environments-endpoints/">endpoints</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods/">Endpoints and web service methods</a></li>
   <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/">Descriptions</a> of XML key/value pairs and request formatting</li>
   <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/customizing-transactions/transaction-use-cases">Examples</a> of specific use cases and how to customize your transactions</li>
 </ul>
