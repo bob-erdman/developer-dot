@@ -3,6 +3,7 @@ layout: page
 categories: [avatax, api]
 product: avatax
 doctype: use_cases
+image: /public/images/avatax-demo-img.png
 ---
 <body onload="updateAddress()">
     <script type='text/javascript'>
