@@ -16,9 +16,9 @@ disqus: 0
 The Client Profile passed in the header is not a valid <code>client_profile_id</code> for your account.
 
 <h3>Example</h3>
-{% highlight json %}
+<pre>
 Profile ID not found.
-{% endhighlight %}
+</pre>
 
 <h3>How to Resolve</h3>
 <ul class="dev-guide-list">

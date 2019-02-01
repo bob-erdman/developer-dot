@@ -28,7 +28,7 @@ The key field (<code>key</code>) in the <a class="dev-guide-link" href="/communi
 {% endhighlight %}
 
 <h3>How to Resolve</h3>
-Ensure that the key field (<code>key</code>) in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Field</a> (<code>opt</code>) is a number between 1 and 10.
+Ensure that the key field (<code>key</code>) is included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Field</a> (<code>opt</code>) and is a number between 1 and 10.
 
 For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a>.
 
