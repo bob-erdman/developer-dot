@@ -16,9 +16,9 @@ disqus: 0
 You are not properly authenticated with Communications REST v2 or the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/authentication/">header fields</a> are not populated correctly.
 
 <h3>Example</h3>
-{% highlight json %}
+<pre>
 "Unauthorized"
-{% endhighlight %}
+</pre>
 
 <h3>How to Resolve</h3>
 <ul class="dev-guide-list">
