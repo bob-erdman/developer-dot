@@ -3,8 +3,7 @@
   inputId: p1c
   value: 900.00
   mass: 2.5
-  unit: Kilogram
-  checked: checked
+  unit: Kilogram  
   hsCodeToUs: 1806101500
   hsCodeToBr: 18062000
   hsCodeToUk: 1806201090
@@ -38,6 +37,7 @@
   value: 40.21
   mass: 
   unit:
+  checked: checked
   hsCodeToUs: 9506996080
   hsCodeToBr: 95069100
   hsCodeToUk: 9506919000
