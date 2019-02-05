@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_geo_soap/getting-started/sample-messages/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-<h3>Endpoints</h3>
+<h3 id="endpoints">Endpoints</h3>
 
 AFC Geo SaaS Pro Soap has two sets of endpoints:
 <ol class="dev-guide-list">
@@ -50,7 +50,7 @@ AFC Geo SaaS Pro Soap has two sets of endpoints:
   </table>
 </div>
 <br/>
-<h3>Web Service Methods</h3>
+<h3 id="methods">Web Service Methods</h3>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
