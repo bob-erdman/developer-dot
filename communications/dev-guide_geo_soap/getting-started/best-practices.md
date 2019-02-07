@@ -22,8 +22,12 @@ Specify a minimum score (<code>MinimumScore</code>) for an address or check the 
     <li>Setting Minimum Score (<code>MinimumScore</code>) to 0.0 returns all matches that AFC Geo can find, regardless of confidence in the results</li>
 </ul>
 
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/address-geocoding/">Address Geocoding</a>.
+
 <h3>Special Tax Jurisdictions</h3>
-Return Special Tax Jurisdictions (Options bit flag 16) to get the most accurate jurisdiction.  Only the city or county is returned when the Special Tax Jurisdictions option is not include.
+Return Special Tax Jurisdictions (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">Options</a> bitwise value 16) to get the most accurate jurisdiction.  Only the city or county is returned when the Special Tax Jurisdictions option is not include.
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special Tax Jurisdiction</a>.
 
 <h3>Numeric Street Number</h3>
 <ul class="dev-guide-list">
@@ -39,11 +43,10 @@ Return Special Tax Jurisdictions (Options bit flag 16) to get the most accurate 
 </ul>
 
 <h3>CASS Validation</h3>
-Turn CASS Validation (Coding Accuracy Support System) on to increase the accuracy of the address results. 
+Turn <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validation</a> on (<code>CassCertify</code> set to <code>true</code> ) to increase the accuracy of the address results. 
 
 <h4>Note</h4>
-CASS Validation is always be performed on Florida addresses, no matter what the value of the input flag.
-
+<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validation</a> is always be performed on <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/florida-certification/">Florida addresses</a>, no matter what the value of the input flag.
 
 <h3>Secondary Unit</h3>
 When the input address contains an apartment or suite numbers, use <code>SecondaryUnit</code> to enter this information rather than including apartment or suite numbers at the end of the street address. The Secondary Unit (<code>SecondaryUnit</code>) is not using in the geocoding process, but including an apartment or suite number on the street address line can cause the score to be lowered to the point that a valid match is missed.
@@ -53,6 +56,9 @@ Use the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getti
 
 <h3>Request</h3>
 The order of input fields is important. AFC Geo SaaS Pro Soap requires a static order of input values, such as fields for <code>inputAddress</code>.  Fields that are out of order remain unassigned, impacting the final geocoding results.
+
+<h3>Options</h3>
+Don't use Street Number Snapping (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">Options</a> bitwise value 1) or Postal Code Centroid (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">Options</a> bitwise value 2) unless no results are returned.  Using these <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">options</a> can cause incorrect results to be returned when the street database contains complete data.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/getting-started/sample-messages/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
