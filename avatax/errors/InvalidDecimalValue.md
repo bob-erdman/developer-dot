@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-A field in your request has too many decimal places or too many digits over all. 
+A field in your request has too many decimal places or too many digits over all.
 
 ## Example
 

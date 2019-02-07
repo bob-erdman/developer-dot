@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ParserFieldNotQueryableError
+title: FieldNotQueryableError
 number: 1408
 categories: [AvaTax Error Codes]
 disqus: 1
@@ -8,22 +8,22 @@ disqus: 1
 
 ## Summary
 
-This field is not queryable.
+TBD
 
 ## Example
 
 ```json
 {
-  "code": "ParserFieldNotQueryableError",
+  "code": "FieldNotQueryableError",
   "target": "Unknown",
   "details": [
     {
-      "code": "ParserFieldNotQueryableError",
+      "code": "FieldNotQueryableError",
       "number": 1408,
       "message": "The field '-0-' in the query '-1-' is not queryable.",
       "description": "The field '-0-' in the query '-1-' is not queryable.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/ParserFieldNotQueryableError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/FieldNotQueryableError",
       "severity": "Error"
     }
   ]
@@ -32,4 +32,4 @@ This field is not queryable.
 
 ## Explanation
 
-Please note that this query cannot be queried.
+TBD

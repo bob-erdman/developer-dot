@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The number of entities in the request exceeded the limit. 
+The number of entities in the request exceeded the limit.
 
 ## Example
 
