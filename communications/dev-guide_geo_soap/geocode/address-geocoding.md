@@ -15,8 +15,8 @@ disqus: 0
 
 Address geocoding accepts an address and returns 1 or more addresses.
 <ul class="dev-guide-list">
-   <li><code>GeocodeAddress</code> <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods/">method</a> returns the single best match</li>
-   <li><code>GeocodeAllMatches</code> <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a> returns the all matches above the minimum score requested</li>
+   <li><code>GeocodeAddress</code> <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a> returns the single best match</li>
+   <li><code>GeocodeAllMatches</code> <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a> returns all matches above the minimum score requested, up to the requested match count (<code>matchCount</code>)</li>
 </ul>
 
 <h4>Note</h4>

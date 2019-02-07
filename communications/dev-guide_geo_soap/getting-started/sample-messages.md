@@ -15,7 +15,26 @@ disqus: 0
 
 Geocoding requests through AFC Geo SaaS Pro Soap are made using SOAP messages, with each message written in XML.  Examples of both types of <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods/">bindings</a> are provided here to help you understand what should be sent to the service.
 
-<h3>Basic HTTP Binding</h3>
+<h3>Your First Address Geocoding Request</h3>
+
+We're going to send a simple <code>GetServerTime</code> request using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and then inspect the results.  Examples for both the <a class="dev-guide-link" href="#basic_http">Basic HTTP Binding</a> and <a class="dev-guide-link" href="#custom">Custom Binding</a> are provided here.
+
+<h3>Headers</h3>
+Add these headers to your request:
+<ul class="dev-guide-list">
+  <li><code>Content-Type</code>: text/xml</li>
+  <li><code>SOAPAction</code>: http://tempuri.org/ILocatorService/GetServerTime</li>
+</ul>
+
+The SOAPAction value is updated based on the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods/">method</a> you are using.
+
+<h4>Postman example</h4>
+<img src="/public/images/comms/dev-guide_geo_soap/comms_geo_soap_dev_guide_1.png" width="975" height="275">
+
+<h3>Body</h3>
+For the body of the <code>GetServerTime</code> request, copy and paste this example and update with your <code>Username</code> and <code>Password</code>:
+
+<h3 id="basic_http">Basic HTTP Binding Example</h3>
 <h4>Request</h4>
 {% highlight xml %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:s="s">
@@ -52,7 +71,7 @@ Geocoding requests through AFC Geo SaaS Pro Soap are made using SOAP messages, w
 </s:Envelope>
 {% endhighlight %}
 
-<h3>Custom Binding</h3>
+<h3 id="custom">Custom Binding Example</h3>
 <h4>Request</h4>
 {% highlight xml %}
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:s="s">
@@ -82,6 +101,8 @@ Geocoding requests through AFC Geo SaaS Pro Soap are made using SOAP messages, w
 {% endhighlight%}
 
 For more sample requests, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/customizing-transactions/sample-transactions/">Customizing Transactions</a>.
+
+Sample code for other languages, such as C# and Java, can be found on <a class="dev-guide-link" href="https://github.com/Avalara/Communications-Developer-Content/tree/master/afc_saaspro_geo/sample_code/">GitHub</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
