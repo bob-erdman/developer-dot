@@ -21,9 +21,9 @@ function writeHtml(dir, fileName, html) {
 function tableBody(attr) {
     const values = {};
 
-    attr['x-enum-value-comments'] = attr['x-enum-value-comments'] || {};
-    attr.enum.forEach((a) => {
-        values[a] = attr['x-enum-value-comments'][a] || '';
+    attr['x-enum-value-comments'] = attr['x-enum-metadata'].values ? attr['x-enum-metadata'].values : {};
+    attr['x-enum-value-comments'].forEach((a) => {
+        values[a.name] = a.summary || '';
     });
 
     return Object.keys(values).reduce((html, k) => {
