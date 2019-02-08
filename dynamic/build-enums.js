@@ -21,10 +21,12 @@ function writeHtml(dir, fileName, html) {
 function tableBody(attr) {
     const values = {};
 
-    attr['x-enum-value-comments'] = attr['x-enum-metadata'].values ? attr['x-enum-metadata'].values : {};
-    attr['x-enum-value-comments'].forEach((a) => {
-        values[a.name] = a.summary || '';
-    });
+    const enums = attr['x-enum-metadata'] ?  attr['x-enum-metadata'].values : {};
+    
+    for(let i = 0; i < enums.length; i++) {
+        let e = enums[i];
+        values[e.name] = e.summary || "none";
+    }
 
     return Object.keys(values).reduce((html, k) => {
         let temp = values[k].split('`');
