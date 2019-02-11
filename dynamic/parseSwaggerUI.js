@@ -64,7 +64,8 @@ const buildRequestParams = (params, paramType) => {
     if (paramType !== 'query' && paramType !== 'path' && paramType !== 'header') {
         throw new Error('In parseSwaggerUI.buildRequestParams: Invalid `paramType` ' + paramType);
     }
-    return params.filter((p) => (p.in === paramType)).reduce((paramObj, p) => ({...paramObj, [p.name]: {description: p.description, required: p.required, value: '', example: p.example || p['x-example'] || '', enum: p.enum, fieldType: p.type}}), {});
+    
+    return params.filter((p) => (p.in === paramType)).reduce((paramObj, p) => ({...paramObj, [p.name]: {description: p.description, required: p.required, value: '', example: p.example || p['x-example'] || '', enum: p.enum, enumMetaData: p['x-enum-metadata'], fieldType: p.type}}), {});
 };
 
 // Builds a schema of what a request to a particular endpoint should look like, based on its Swagger definition
