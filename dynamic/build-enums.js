@@ -23,11 +23,10 @@ function tableBody(attr) {
 
     const enums = attr['x-enum-metadata'] ? attr['x-enum-metadata'].values : {};
     
-    // for (let i = 0; i < attr.enum.length; i++) {
-    //     const e = enums[i];
-
-    //     values[e.name] = e.summary || ' ';
-    // }
+    for (let i = 0; i < attr.enum.length; i++) {
+        const e = enums[i];
+        values[e.name] = e.summary || ' ';
+    }
 
     return Object.keys(values).reduce((html, k) => {
         let temp = values[k].split('`');
@@ -64,7 +63,6 @@ function titleLinks(parent, name) {
 }
 
 function appendEnum(info, attr) {
-    // console.log(info)
     const enumName = attr['x-enum-type'] || info.name;
     const fileName = attr['x-enum-type'] || `${info.def} > ${info.name}`;
 
@@ -138,9 +136,6 @@ function buildEnumFromMethod(info, method) {
         let params;
         const doit = (param) => {
             if (params[param].enum) {
-                const thing = params[param]
-                console.log("\x1b[32mENUM:\x1b[0m" + params[param].enumMetaData.values[0].name)
-
                 info.def = endpoint.operationId.replace(/\s/g, '');
                 info.name = param;
                 appendEnum(info, params[param]);
