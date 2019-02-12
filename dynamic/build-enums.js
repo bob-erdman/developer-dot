@@ -22,9 +22,10 @@ function tableBody(attr) {
     const values = {};
 
     const enums = attr['x-enum-metadata'] ? attr['x-enum-metadata'].values : {};
-    
+
     for (let i = 0; i < attr.enum.length; i++) {
         const e = enums[i];
+
         values[e.name] = e.summary || ' ';
     }
 
