@@ -20,34 +20,31 @@ function writeHtml(dir, fileName, html) {
 
 function tableBody(attr) {
     const values = {};
-
-    const enums = attr['x-enum-metadata'] ? attr['x-enum-metadata'].values : {};
+    const enums = attr['x-enum-metadata'] ? attr['x-enum-metadata'].values : attr.enum;
 
     for (let i = 0; i < attr.enum.length; i++) {
         const e = enums[i];
-        // const name = e.name ? e.name : e;
-        values[e.name] = e ? e.summary : ' ';
+        const name = e.name || e;
+
+        values[name] = e.summary || 'n/a ';
     }
 
     return Object.keys(values).reduce((html, k) => {
-        if(values[k])
-        {
-            let temp = values[k].split('`');
+        let temp = values[k].split('`');
 
-            temp.map((w) => {
-                if (!(/\s/g).test(w)) {
-                    temp[temp.indexOf(w)] = '<code class="markdown">' + w + '</code>';
-                }
-            });
+        temp.map((w) => {
+            if (!(/\s/g).test(w)) {
+                temp[temp.indexOf(w)] = '<code class="markdown">' + w + '</code>';
+            }
+        });
 
-            temp = temp.join(' ');
+        temp = temp.join(' ');
 
-            return `${html}
-            <tr>
-                <td>${k}</td>
-                <td>${temp}</td>
-            </tr>`;
-        }  
+        return `${html}
+        <tr>
+            <td>${k}</td>
+            <td>${temp}</td>
+        </tr>`;
     }, '');
 }
 

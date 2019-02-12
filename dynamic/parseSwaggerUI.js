@@ -63,7 +63,7 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
 const buildRequestParams = (params, paramType) => {
     if (paramType !== 'query' && paramType !== 'path' && paramType !== 'header') {
         throw new Error('In parseSwaggerUI.buildRequestParams: Invalid `paramType` ' + paramType);
-    }  
+    }
     return params.filter((p) => (p.in === paramType)).reduce((paramObj, p) => ({...paramObj, [p.name]: {description: p.description, required: p.required, value: '', example: p.example || p['x-example'] || '', enum: p.enum, ['x-enum-metadata']: p['x-enum-metadata'], fieldType: p.type}}), {});
 };
 
