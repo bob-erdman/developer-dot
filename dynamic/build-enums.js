@@ -25,12 +25,13 @@ function tableBody(attr) {
 
     for (let i = 0; i < attr.enum.length; i++) {
         const e = enums[i];
-
-        values[e] = e ? e.summary : ' ';
+        // const name = e.name ? e.name : e;
+        values[e.name] = e ? e.summary : ' ';
     }
 
     return Object.keys(values).reduce((html, k) => {
-        if(values[k]) {
+        if(values[k])
+        {
             let temp = values[k].split('`');
 
             temp.map((w) => {
@@ -46,7 +47,7 @@ function tableBody(attr) {
                 <td>${k}</td>
                 <td>${temp}</td>
             </tr>`;
-        }
+        }  
     }, '');
 }
 
