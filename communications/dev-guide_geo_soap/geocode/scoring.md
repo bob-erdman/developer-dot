@@ -10,6 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/customizing-geocoding-requests">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 AFC Geo SaaS Pro Soap provides a confidence score  when returning a location.  The score is based on how well street database values match the input (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/address-geocoding/">address</a> or <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/lat-long-geocoding/">latitude/longitude coordinate pair</a>).  A score of 1.0 (100%) indicates an exact match.
@@ -47,4 +48,5 @@ The centroid is a very coarse approximation of the real location.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/customizing-geocoding-requests">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
