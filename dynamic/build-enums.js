@@ -26,25 +26,27 @@ function tableBody(attr) {
     for (let i = 0; i < attr.enum.length; i++) {
         const e = enums[i];
 
-        values[e.name] = e.summary || ' ';
+        values[e] = e ? e.summary : ' ';
     }
 
     return Object.keys(values).reduce((html, k) => {
-        let temp = values[k].split('`');
+        if(values[k]) {
+            let temp = values[k].split('`');
 
-        temp.map((w) => {
-            if (!(/\s/g).test(w)) {
-                temp[temp.indexOf(w)] = '<code class="markdown">' + w + '</code>';
-            }
-        });
+            temp.map((w) => {
+                if (!(/\s/g).test(w)) {
+                    temp[temp.indexOf(w)] = '<code class="markdown">' + w + '</code>';
+                }
+            });
 
-        temp = temp.join(' ');
+            temp = temp.join(' ');
 
-        return `${html}
-        <tr>
-            <td>${k}</td>
-            <td>${temp}</td>
-        </tr>`;
+            return `${html}
+            <tr>
+                <td>${k}</td>
+                <td>${temp}</td>
+            </tr>`;
+        }
     }, '');
 }
 
