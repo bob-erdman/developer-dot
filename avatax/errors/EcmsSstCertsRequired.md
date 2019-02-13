@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The `EcmsSstCertsRequired` field should be set to true. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+As part of complieance with the Streamlined Sales Tax program rules, the `EcmsSstCertsRequired` field must be set to true. Check the request for this field and set it to true.

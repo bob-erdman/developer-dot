@@ -987,7 +987,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>904</td>
 			<td><a href="FilingCalendarCannotBeEdited">FilingCalendarCannotBeEdited</a></td>
-			<td>TBD</td>
+			<td>The filing calander cannot be edited.</td>
 		</tr>		
         <tr>
 			<td>1100</td>
@@ -1132,7 +1132,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1223</td>
 			<td><a href="EcmsSstCertsRequired">EcmsSstCertsRequired</a></td>
-			<td>TBD</td>
+			<td>The `EcmsSstCertsRequired` field should be set to true.</td>
 		</tr>		
         <tr>
 			<td>1300</td>
@@ -1227,7 +1227,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1408</td>
 			<td><a href="FieldNotQueryableError">FieldNotQueryableError</a></td>
-			<td>TBD</td>
+			<td>A field in the query is not a queryable.</td>
 		</tr>		
         <tr>
 			<td>1409</td>
@@ -1317,7 +1317,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1706</td>
 			<td><a href="CannotDismissGlobalNotification">CannotDismissGlobalNotification</a></td>
-			<td>TBD</td>
+			<td>This notification cannot be dismissed because it is a global notification.</td>
 		</tr>		
         <tr>
 			<td>1800</td>

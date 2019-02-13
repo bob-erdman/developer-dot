@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The filing calander cannot be edited.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+Worksheets are generated monthly and approved between the 5th and the 10th. For monthly returns, the worksheet will be approved monthly. Quartly returns' worksheets will stay in a `pending approval` state until the quarter expires. 
+
+Once the worksheet approval occurs, the filing calander cannot be edited or adjusted. For more information about filing calendar actions, look at the [Api Reference for Filing calendars](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/FilingCalendars/).

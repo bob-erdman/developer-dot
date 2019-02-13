@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+This notification cannot be dismissed because it is a global notification.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Global notification cannot be dismissed. The notification name and type can be found at position `-0-` of the error's description (see example error above).
