@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The account is currently inactive. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+The account in the request is inactive so the action cannot be applied or completed. To reactivate your account or find more information, contact your account administrator. 

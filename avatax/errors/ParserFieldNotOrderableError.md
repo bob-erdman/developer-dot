@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The field in the query cannot be ordered. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Looking at the error's description, the field at position `-0-` is not orderable. For more information about the query and accepted behavior for the various fields, check the documentation for the method or model used. 

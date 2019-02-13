@@ -102,12 +102,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>17</td>
 			<td><a href="InvalidQueryField">InvalidQueryField</a></td>
-			<td>TBD</td>
+			<td>A field in the query was not found.</td>
 		</tr>		
         <tr>
 			<td>18</td>
 			<td><a href="InvalidQueryValue">InvalidQueryValue</a></td>
-			<td>TBD</td>
+			<td>The value provided for a query field is invalid.</td>
 		</tr>		
         <tr>
 			<td>19</td>
@@ -252,7 +252,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>51</td>
 			<td><a href="InactiveAccount">InactiveAccount</a></td>
-			<td>TBD</td>
+			<td>The account is currently inactive.</td>
 		</tr>		
         <tr>
 			<td>60</td>
@@ -1242,7 +1242,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1411</td>
 			<td><a href="ParserFieldNotOrderableError">ParserFieldNotOrderableError</a></td>
-			<td>TBD</td>
+			<td>The field in the query cannot be ordered.</td>
 		</tr>		
         <tr>
 			<td>1500</td>
