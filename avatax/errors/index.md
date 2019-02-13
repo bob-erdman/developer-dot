@@ -112,17 +112,17 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>19</td>
 			<td><a href="SyntaxError">SyntaxError</a></td>
-			<td>TBD</td>
+			<td>The filter parameter has a syntax error.</td>
 		</tr>		
         <tr>
 			<td>20</td>
 			<td><a href="TooManyParametersError">TooManyParametersError</a></td>
-			<td>TBD</td>
+			<td>The filter parameter has too many values.</td>
 		</tr>		
         <tr>
 			<td>21</td>
 			<td><a href="UnterminatedValueError">UnterminatedValueError</a></td>
-			<td>TBD</td>
+			<td>A filter value was not properly terminated.</td>
 		</tr>		
         <tr>
 			<td>22</td>

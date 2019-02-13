@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A filter value was not properly terminated.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+A paramter value in the `$filter` of the query was not terminated properly. Check out this [guide for filtering in REST ](ttps://developer.avalara.com/blog/2016/10/06/filtering-in-rest-v2) for more information on filters and parameters. Additionally, check the documention for the method or model used to gain further insight into the filtering guidelines.

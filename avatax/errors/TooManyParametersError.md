@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The filter parameter has too many values.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Depending on the query, the `$filter` paramater has a size limit. Check to ensure your filter is not too large for the given query. For more information on filtering in REST, visit this [guide for REST filtering](ttps://developer.avalara.com/blog/2016/10/06/filtering-in-rest-v2). Additionally, check the documention for the method or model used to gain further insight into the filtering guidelines.
