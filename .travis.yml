@@ -34,7 +34,7 @@ before_install:
   - docker-compose -v
   - docker -v
   - gem update --system
-  - gem install bundler
+  - gem install bundler:2.0.1
 install:
   - gem install jekyll
   - gem install s3_website
