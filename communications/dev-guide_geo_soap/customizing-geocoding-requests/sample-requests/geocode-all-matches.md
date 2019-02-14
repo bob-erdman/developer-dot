@@ -66,7 +66,7 @@ This request contains the following:
 The <code>GeocodeAllMatchesResponse</code> contains detailed address information for 2 matching addresses.  The records returned contain detailed information including:
 <ul class="dev-guide-list">
    <li><code>CassAddress</code>: CASS information including Carrier Route, USPS Barcode, and standardized address</li>
-   <li>Census block group and tract information</li>
+   <li>Census block and tract information</li>
    <li><code>PCode</code>, <code>FeatureID</code>, and <code>FipsCode</code></li>
    <li>Results are from different sources</li> 
    <ul class="dev-guide-list">

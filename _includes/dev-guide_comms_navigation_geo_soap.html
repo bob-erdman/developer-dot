@@ -38,14 +38,36 @@
             </ol>
             {% endif %}
         </li>
-<!--        <li {% if page.url=="/communications/dev-guide_geo_soap/reference/" %}class="active" {% endif %}><a href="/communications/dev-guide_geo_soap/reference/">Reference</a>
+        <li {% if page.url=="/communications/dev-guide_geo_soap/reference/" %}class="active" {% endif %}><a href="/communications/dev-guide_geo_soap/reference/">Reference</a>
             {% if page.chapter=="reference" %}
             <ol>
-                
+                <li>Requests
+                    <ol> 
+                        <li><a href="/communications/dev-guide_geo_soap/reference/geocode-address">Geocode Address</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/geocode-all-matches">Geocode All Matches</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/input-address">Input Address</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/geocode-lat-long">Geocode Lat Long</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/get-server-time">Get Server Time</a></li>
+                    </ol>
+                </li>
+                <li>Responses
+                    <ol>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/geocode-address-response">Geocode Address Response</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/goecode-all-matches-response">Geocode All Matches Response</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/geocode-lat-long-response">Geocode Lat Long Response</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/address-location">Address Location</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/cass-address">Cass Address</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/get-server-time-response">Get Server Time Response</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/get-server-time-result">Get Server Time Result</a></li>
+                        <li><a href="/communications/dev-guide_geo_soap/reference/fault">Fault</a></li>
+                    </ol>
+                </li>
+                <li>Responses</li>
+                <li>Errors</li>
             </ol>
             {% endif %}
         </li>
-        <li {% if page.url=="/communications/dev-guide_geo_soap/geocode-offline/" %}class="active" {% endif %}><a href="/communications/dev-guide_geo_soap/geocode-offline/">Calculating Tax Offline</a>
+<!--        <li {% if page.url=="/communications/dev-guide_geo_soap/geocode-offline/" %}class="active" {% endif %}><a href="/communications/dev-guide_geo_soap/geocode-offline/">Calculating Tax Offline</a>
             {% if page.chapter=="geocode-offline" %}
             <ol>
                 <li><a href="/communications/dev-guide_geo_soap/geocode-offline/detect-dropped-connection/">Detect a Dropped Connection</a></li>
