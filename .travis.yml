@@ -33,11 +33,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -v
   - docker -v
+  - gem update --system
+  - gem install bundler
 install:
   - gem install jekyll
   - gem install s3_website
-  - gem install bundler:2.0.1
-  - bundler update --bundler
   - bundle install
   - npm i --progress=false --silent
 before_script:
