@@ -101,28 +101,28 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>17</td>
-			<td><a href="ParserFieldNameError">ParserFieldNameError</a></td>
-			<td>You attempted to search on a field that does not exist or cannot be searched.</td>
+			<td><a href="InvalidQueryField">InvalidQueryField</a></td>
+			<td>A field in the query was not found.</td>
 		</tr>		
         <tr>
 			<td>18</td>
-			<td><a href="ParserFieldValueError">ParserFieldValueError</a></td>
-			<td>You attempted to search for a value that is not a correct value type.</td>
+			<td><a href="InvalidQueryValue">InvalidQueryValue</a></td>
+			<td>The value provided for a query field is invalid.</td>
 		</tr>		
         <tr>
 			<td>19</td>
-			<td><a href="ParserSyntaxError">ParserSyntaxError</a></td>
-			<td>You provided an unrecognized string or token in the "$filter" parameter of your fetch request.</td>
+			<td><a href="SyntaxError">SyntaxError</a></td>
+			<td>The filter parameter has a syntax error.</td>
 		</tr>		
         <tr>
 			<td>20</td>
-			<td><a href="ParserTooManyParametersError">ParserTooManyParametersError</a></td>
-			<td>You attempted a fetch call that included too many parameters.</td>
+			<td><a href="TooManyParametersError">TooManyParametersError</a></td>
+			<td>The filter parameter has too many values.</td>
 		</tr>		
         <tr>
 			<td>21</td>
-			<td><a href="ParserUnterminatedValueError">ParserUnterminatedValueError</a></td>
-			<td>You attempted to retrieve data with a "$filter" parameter that contained syntax errors.</td>
+			<td><a href="UnterminatedValueError">UnterminatedValueError</a></td>
+			<td>A filter value was not properly terminated.</td>
 		</tr>		
         <tr>
 			<td>22</td>
@@ -248,6 +248,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>50</td>
 			<td><a href="UnhandledException">UnhandledException</a></td>
 			<td>The API you attempted to call resulted in an unhandled exception within Avalara AvaTax.</td>
+		</tr>		
+        <tr>
+			<td>51</td>
+			<td><a href="InactiveAccount">InactiveAccount</a></td>
+			<td>The account is currently inactive.</td>
 		</tr>		
         <tr>
 			<td>60</td>
@@ -980,6 +985,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>This filing calendar overlaps with another calendar.</td>
 		</tr>		
         <tr>
+			<td>904</td>
+			<td><a href="FilingCalendarCannotBeEdited">FilingCalendarCannotBeEdited</a></td>
+			<td>The filing calander cannot be edited.</td>
+		</tr>		
+        <tr>
 			<td>1100</td>
 			<td><a href="CannotModifyLockedTransaction">CannotModifyLockedTransaction</a></td>
 			<td>A locked transaction may not be modified.</td>
@@ -1120,6 +1130,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The API call you made expects a ShipTo customer record, but you supplied a BillTo customer instead.</td>
 		</tr>		
         <tr>
+			<td>1223</td>
+			<td><a href="EcmsSstCertsRequired">EcmsSstCertsRequired</a></td>
+			<td>The `EcmsSstCertsRequired` field should be set to true.</td>
+		</tr>		
+        <tr>
 			<td>1300</td>
 			<td><a href="TransactionNotCancelled">TransactionNotCancelled</a></td>
 			<td>A multi-company transaction was partially created.</td>
@@ -1211,8 +1226,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1408</td>
-			<td><a href="ParserFieldNotQueryableError">ParserFieldNotQueryableError</a></td>
-			<td>This field is not queryable.</td>
+			<td><a href="FieldNotQueryableError">FieldNotQueryableError</a></td>
+			<td>A field in the query is not a queryable.</td>
 		</tr>		
         <tr>
 			<td>1409</td>
@@ -1223,6 +1238,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1410</td>
 			<td><a href="InvalidAuditMessage">InvalidAuditMessage</a></td>
 			<td>Please review your audit message and ensure no special characters are used.</td>
+		</tr>		
+        <tr>
+			<td>1411</td>
+			<td><a href="ParserFieldNotOrderableError">ParserFieldNotOrderableError</a></td>
+			<td>The field in the query cannot be ordered.</td>
 		</tr>		
         <tr>
 			<td>1500</td>
@@ -1293,6 +1313,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1705</td>
 			<td><a href="DuplicateSystemForItem">DuplicateSystemForItem</a></td>
 			<td>An item in this request has multiple entries for a given system code.</td>
+		</tr>		
+        <tr>
+			<td>1706</td>
+			<td><a href="CannotDismissGlobalNotification">CannotDismissGlobalNotification</a></td>
+			<td>This notification cannot be dismissed because it is a global notification.</td>
 		</tr>		
         <tr>
 			<td>1800</td>
