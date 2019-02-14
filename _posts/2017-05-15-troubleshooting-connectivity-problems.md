@@ -10,6 +10,7 @@ categories: [avatax, how to, troubleshooting]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/05/troubleshooting-connectivity-problems.html
 ---
 
 Getting started with any new piece of software can take a bit of time.  AvaTax is in use today by tens of thousands of customers processing billions of transactions per year – but they all had to start first by connecting to the software. For today’s article, let’s look at the common challenges you can face when first getting started.

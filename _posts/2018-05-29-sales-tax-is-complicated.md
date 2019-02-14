@@ -9,6 +9,7 @@ categories: avatax
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/05/sales-tax-is-complicated.html
 ---
 
 Sales tax is complex and getting more complex. 

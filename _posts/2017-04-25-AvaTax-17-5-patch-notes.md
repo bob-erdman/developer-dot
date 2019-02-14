@@ -9,6 +9,7 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/04/avatax-17-5-patch-notes.html
 ---
 
 This article is about the May 2017 monthly update to the AvaTax REST v2 API.

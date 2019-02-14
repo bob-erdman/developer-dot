@@ -8,6 +8,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/09/how-to-calculate-ewaste-tax-in-california.html
 ---
 
 In this post, we will demonstrate how to calculate e-waste tax in California. First, we need to understand unit-based rates and their implementation. Many tax rates and tariffs are ad valorem, which means tax is calculated based on the monetary value of the goods sold or shipped. Rates can also be **unit-based**. Unit-based rates depend on how much of an item is sold or shipped, for example volume, mass, size, or quantity. 

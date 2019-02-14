@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/09/getting-started-with-avalara-apis.html
 ---
 
 # First Steps with Avalara APIs

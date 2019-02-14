@@ -9,6 +9,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/12/reconciling-transactions.html
 ---
 
 <center><img src="/images/reconciling.jpg" height="350" width="75%"/></center>

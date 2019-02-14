@@ -8,6 +8,7 @@ categories: [ui, web]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/10/better-ui-components.html
 ---
 
 # Custom HTML Tags

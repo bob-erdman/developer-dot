@@ -10,6 +10,7 @@ categories: [avatax, shipping, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/05/how-to-handle-freight-and-handling-charges.html
 ---
 
 <h2>Wait, I need to include a shipping charge in my transaction?</h2>

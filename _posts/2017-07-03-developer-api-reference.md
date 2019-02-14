@@ -9,6 +9,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/07/developer-api-reference.html
 ---
 
 As part of our commitment to the [Open API initiative](https://www.openapis.org/), Avalara's development team knows that the quality of the documentation we use matters.  Our customers rely on us to make tax simple: our documentation can help you to learn how to properly design your software so you can charge the correct amount of tax every time.  That's why Avalara spends so much time updating our developer documentation, and why we've introduced a new layout to our API reference pages.

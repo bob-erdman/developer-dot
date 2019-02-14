@@ -8,6 +8,7 @@ categories: [avatax, announcements]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/10/new-rest-v2-api-for-avatax.html
 ---
 
 <h2>AvaTax at 12 Years of Age</h2>

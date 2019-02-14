@@ -8,6 +8,7 @@ categories: [avatax, landed cost]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/12/landed-cost-who-pays.html
 ---
 *Update March 22, 2018 - AvaTax REST has a new syntax for representing DDP. This post is retained for historical purposes and the information around DDP and DAP remains relevant. You may read about the new LandedCost integration at <a href="/blog/2018/03/13/calculate-customs-duties-in-rest/" target="_blank">https://developer.avalara.com/blog/2018/03/13/calculate-customs-duties-in-rest/</a>.*
 

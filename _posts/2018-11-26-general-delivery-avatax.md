@@ -9,6 +9,7 @@ categories: avatax
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/11/general-delivery-in-avatax.html
 ---
 
 ## What is General Delivery?

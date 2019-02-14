@@ -9,6 +9,7 @@ categories: [avatax, landed cost]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/03/hs-code-search-in-rest.html
 ---
 
 <h2>How Do I Know Which HS Code to Use?</h2>

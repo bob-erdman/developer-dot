@@ -8,6 +8,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/09/avatax-developer-guide.html
 ---
 If including tax calculation and remittance capabilities into your application has been daunting, tiresome, and therefore easy to put on the back burner, we understand. Your users need these capabilities to keep the tax auditors at bay, but you don't have time to wade through pages of documentation to try to understand the complexities of sales and use tax. We want to help you deliver that huge operational efficiency and tax protection to your users quickly and easily. 
 
