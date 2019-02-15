@@ -10,6 +10,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/04/performance-tuning-with-avatax.html
 ---
 
 After more than a decade of offering the world-leading AvaTax software suite, we've learned a bit about providing high performance software for our thousands of customers worldwide.  Our high performance API provides tax calculation answers faster than the blink of an eye - but we will always keep challenging ourselves to improve the AvaTax experience.  We won't rest until everyone can calculate tax effortlessly.

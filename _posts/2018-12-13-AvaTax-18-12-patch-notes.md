@@ -10,6 +10,7 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/12/avatax-18-12-patch-notes.html
 ---
 
 This article is about the December 2018 monthly update to the AvaTax API.

@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/05/how-to-get-tax-with-avatax.html
 ---
 
 <h2>Boots, belts and bagels — which ones are tax-free? Here’s how to find out using Avalara’s sales tax API!</h2>

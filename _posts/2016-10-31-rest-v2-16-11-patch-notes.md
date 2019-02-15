@@ -8,6 +8,7 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/10/rest-v2-16-11-patch-notes.html
 ---
 
 <h2>REST v2.16.11 Patch Notes</h2>

@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/01/from-rest-v1-to-rest-v2.html
 ---
 
 ## As Easy as v1, v2...

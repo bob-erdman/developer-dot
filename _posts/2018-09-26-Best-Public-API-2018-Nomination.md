@@ -8,6 +8,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/09/best-public-api-2018-nomination.html
 ---
 
 Avalara nominated for **Nordic APIs Best Public API of 2018** – Voting starts today!

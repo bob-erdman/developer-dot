@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/06/whats-my-tax-profile.html
 ---
 
 VIDEO: What's My Tax Profile?

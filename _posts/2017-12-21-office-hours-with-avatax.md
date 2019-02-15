@@ -9,6 +9,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/12/office-hours-with-avatax.html
 ---
 Avalara’s crack team of engineers receives dozens of questions every week from developers using our APIs, SDKs and documentation, and we want to answer as many as we can.
 

@@ -9,6 +9,7 @@ categories: avatax
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/11/tax-rate-by-line.html
 ---
 
 The Avalara engineering team built AvaTax so it can solve tax problems for you and make your life easier.  We solve compliance problems of all shapes and sizes; and our software must be both accurate and usable.

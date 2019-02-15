@@ -10,6 +10,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/01/lifecycle-of-a-transaction.html
 ---
 
 The centerpiece of Avalara's world-leading AvaTax service is the 'Transaction'.  A Transaction can reflect <a href="/blog/2016/11/18/types-of-transactions/">one of many different types of business documents</a>, and it's worth discussing how a transaction can change over time.  Let's begin by understanding how a "Sales" transaction is created, and how it can change over time.

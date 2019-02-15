@@ -8,6 +8,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/09/avatax-api-october-events.html
 ---
 
 The Avalara Developer Relations Team is excited to announce it will have a presence at two upcoming events in the local developer community.

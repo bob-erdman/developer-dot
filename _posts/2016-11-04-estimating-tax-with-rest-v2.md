@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/11/estimating-tax-with-rest-v2.html
 ---
 
 The AvaTax REST API provides lots of different levels of estimated tax values, and sometimes it may be hard to know the right way to estimate tax for your customers.  For today's blog article, I will be walking you through the different types of estimates that are available in AvaTax REST v2 and how they can help you.

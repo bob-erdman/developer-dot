@@ -9,6 +9,7 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/03/avatax-18-3-patch-notes.html
 ---
 
 This article is about the March 2018 monthly update to the AvaTax API.

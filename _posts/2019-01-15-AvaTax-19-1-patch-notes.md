@@ -10,7 +10,10 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+permalink: /blog/2019/01/15/AvaTax-19-1-patch-notes/
+redirect_to: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html
 ---
+
 
 This article is about the January 2019 monthly update to the AvaTax API.
 

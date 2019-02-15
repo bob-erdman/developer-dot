@@ -9,6 +9,7 @@ product: blog
 doctype: blog
 disqus: 1
 imgsrc: /public/images/blog/python.png
+redirect_to: https://www.avalara.com/us/en/blog/2018/04/introducing-the-new-python-sdk.html
 ---
 
 Python is said to be the <a href="https://adtmag.com/articles/2017/09/07/python-popularity.aspx">"fastest-growing"</a> programming language, and it is constantly growing in areas such as machine learning and data analysis.

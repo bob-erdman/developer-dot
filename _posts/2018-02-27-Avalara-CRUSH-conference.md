@@ -9,6 +9,7 @@ categories: [avatax, crush, conference]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/02/avalara-crush-conference.html
 ---
 
 If you're a developer working on building tax compliance solutions, then we hope you'll consider coming to [CRUSH DC](http://www.avalaracrush.com/?CampaignID=7010b000001Dq5K), the premier event for transaction tax professionals. The event is from May 9-11 in Washington, D.C.

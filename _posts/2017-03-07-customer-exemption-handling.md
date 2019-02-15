@@ -11,6 +11,7 @@ categories: [avatax, how to, exemptions]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/03/customer-exemption-handling.html
 ---
 
 You're all set to build an integration into AvaTax for your client when they bring up another facet of their business with you not previously mentioned: They need to properly calculate for the tax exempt clients as well.

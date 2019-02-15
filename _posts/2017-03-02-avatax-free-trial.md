@@ -11,6 +11,7 @@ product: blog
 doctype: blog
 disqus: 1
 avaform: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/03/avatax-free-trial.html
 ---
 
 Want to try out AvaTax before you buy?  As of the February release, AvaTax now offers both a [free TaxRates API](/api-reference/avatax/rest/v2/methods/Free/TaxRatesByAddress/) and a [free trial of AvaTax](/api-reference/avatax/rest/v2/methods/Free/RequestFreeTrial/) - both of which are available today in the [AvaTax SDK](/sdk)!

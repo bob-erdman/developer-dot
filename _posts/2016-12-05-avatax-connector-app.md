@@ -9,6 +9,7 @@ product: blog
 doctype: blog
 disqus: 1
 imgsrc: /public/images/blog/DevDot_ResetLisenceKey.png
+redirect_to: https://www.avalara.com/us/en/blog/2016/12/avatax-connector-app.html
 ---
 
 # Using The REST API To Build a Connector

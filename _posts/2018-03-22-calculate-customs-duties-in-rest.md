@@ -10,6 +10,7 @@ categories: [avatax, landed cost]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/03/calculate-customs-duties-in-rest.html
 ---
 
 We are excited about our updated customs duty calculation functionality in REST. If you previously used the customs duty calculator in REST, your requests will still work. If you are just starting out or would like to make use of the full functionality of CrossBorder in REST, this post is for you.

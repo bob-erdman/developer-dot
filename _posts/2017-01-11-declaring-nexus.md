@@ -9,6 +9,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/01/declaring-nexus.html
 ---
 
 One of the most frequent questions I am asked is "Where do I need to collect taxes?"  The challenge of determining which jurisdictions you fall under is a complex one.  In the United States, the rule that determines when your company has to obey a particular jurisdiction's tax law is called 'Nexus', so AvaTax uses this word to refer to the overall concept of selecting jurisdictions where you are signed up to collect and remit taxes.  Keep in mind, these rules have significant legal repercussions, and you should strongly consider getting legal or tax advice to ensure that your Nexus is correct - and in today's article, I'll show you how to use the API to assist in this process.

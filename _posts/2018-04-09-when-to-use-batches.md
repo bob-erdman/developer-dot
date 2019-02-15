@@ -9,6 +9,7 @@ categories: [avatax, batches]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/04/when-to-use-batches.html
 ---
 <h2>Process transactions in bulk - is it right for your organization?</h2>
 
