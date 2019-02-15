@@ -10,10 +10,10 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/get-server-time"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-address-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-all-matches-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-<h3>Geocode Address Result</h3>
+<h3>Geocode Address Response</h3>
 
 <code>GeocodeAddressResponse</code> contains a single (<code>GeocodeAddressResult</code>):
 
@@ -49,5 +49,5 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/get-server-time"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-address-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-all-matches-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

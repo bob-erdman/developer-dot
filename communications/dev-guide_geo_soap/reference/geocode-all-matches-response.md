@@ -28,7 +28,7 @@ disqus: 0
     <tbody>
       <tr>
         <td><code>GeocodeAllMatchesResult</code></td>
-        <td><code>[ArrayOfAddressLocation]</code> Geocode All Matches Result
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/address-location/"><code>[ArrayOfAddressLocation]</code></a> Geocode All Matches Result
         <br/>
         Contains one or more <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/address-location/">address locations</a> based on your input location</td>
       </tr>
@@ -50,6 +50,6 @@ disqus: 0
 {% endhighlight %}
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/get-server-time"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-address-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/geocode-address-response"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-lat-long-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

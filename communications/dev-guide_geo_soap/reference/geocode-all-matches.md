@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 4.1.2 - Geocode All Matches Address
+title:  Chapter 4.1.2 - Geocode All Matches
 product: communications
 doctype: comms_geo_soap_dev_guide
 chapter: reference

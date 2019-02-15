@@ -44,7 +44,7 @@ disqus: 0
         <td><code>Source</code></td>
         <td><code>[string]</code> Source
         <br/>
-        Internal use only - do not populate
+        Leave blank - Internal use only
         </td>
       </tr>
     </tbody>

@@ -10,6 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/special-tax-jurisdiction"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 AFC Geo SaaS Pro Soap is <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/florida-certification/">certified in the state of Florida</a>.  Addresses that are certified by Florida have a couple characteristics to look for:
@@ -137,4 +138,5 @@ A jurisdiction is returned in Florida with no <code>NetworkID</code> and a <code
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/special-tax-jurisdiction"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

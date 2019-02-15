@@ -32,8 +32,8 @@ The <code>InputAddress</code> object contains the address information to geocode
         <br/>
         Indicates if <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validation</a> should be performed
         <ul class="dev-guide-list">
-            <li><code>true</code>: <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS Validation</a> is attempted</li>
-            <li><code>false</code>: <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validation</a> is bypassed, unless the address is in Florida where CASS validation is always performed</li>
+            <li><code>true</code>: CASS Validation is attempted</li>
+            <li><code>false</code>: CASS validation is bypassed, unless the address is in <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/florida-certification/">Florida</a> where CASS validation is always performed</li>
         </ul>
         </td>
       </tr>
@@ -50,7 +50,7 @@ The <code>InputAddress</code> object contains the address information to geocode
         <td><code>CityStateZip</code></td>
         <td><code>[string]</code> City, State, and Zip
         <br/>
-        Specifies the city, state, and Zip code in a single line
+        City, state, and Zip code in a single line
         <br/>
         Use in place of individual <code>City</code>, <code>State</code>, and <code>Zip</code> fields 
         </td>
@@ -87,14 +87,14 @@ The <code>InputAddress</code> object contains the address information to geocode
         <td><code>SecondaryUnit</code></td>
         <td><code>[string]</code> Secondary Unit
         <br/>
-        A part of the street address - an apartment, suite, or other unit type in USPS Publication 28
+        A part of the street address - an apartment, suite, or other unit type in <a class="dev-guide-link" href="https://pe.usps.com/cpim/ftp/pubs/pub28/pub28.pdf">USPS Publication 28</a>
         </td>
       </tr>
       <tr>
         <td><code>Source</code></td>
         <td><code>[string]</code> Source
         <br/>
-        Internal use only - do not populate
+        Leave blank - Internal use only
         </td>
       </tr>
       <tr>

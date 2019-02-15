@@ -49,5 +49,5 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/input-address/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/reference/geocode-all-matches/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

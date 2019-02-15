@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Address Location</h3>
 
-The <code>AddressLocation</code> object contains information about a <b>jurisdiction</b>:
+The <code>AddressLocation</code> object contains information about a geocoded <b>jurisdiction</b>:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -30,10 +30,10 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>Alternate</code></td>
         <td><code>[int]</code> Alternate
         <br/>
-        Indicates if the matching address is an alternate to a primary location
+        Indicates if the matching jurisdiction is an alternate to a primary location
         <ul class="dev-guide-list">
-          <li><code>0</code>: location is not an alternate</li>
-          <li><code>1</code>: location is an alternate</li>
+          <li><code>0</code>: jurisdiction is not an alternate</li>
+          <li><code>1</code>: jurisdiction is an alternate</li>
         </ul>
         </td>
       </tr>
@@ -42,7 +42,7 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/cass-address/"><code>[CassAddress]</code></a> CASS Address
         <br/>
         Contains the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/cass-address/">CASS address</a> data 
-        <ul class="dev-guide-link">
+        <ul class="dev-guide-list">
           <li>Populated if the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/"><code>CassCertify</code></a> property of <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/input-address/"><code>InputAddress</code></a> is set to <code>true</code> and <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS Validation</a> is successful</li>
           <li>NULL if <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/"><code>CassCertify</code></a> is <code>false</code> or the address fails <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS Validation</a></li>
         </ul>
@@ -52,16 +52,18 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>CensusBlockGroup</code></td>
         <td><code>[int]</code> Census Block ID
         <br/>
-        Individual Census Block ID - the smallest area surrounded by streets, geocoded based on census data
+        Smallest area surrounded by streets, geocoded based on census data
         <br/>
-        <code>CensusBlockGroup</code> returns the Census Block ID rather than the Census Block Group ID.  For example: Block Group ID is 01 and Block ID is 014.  <code>CensusBlockGroup</code> contains <code>1014</code>
+        <code>CensusBlockGroup</code> returns the individual Census Block ID rather than the Census Block Group ID
+        <br/><br/>
+        Example: Block Group ID is 01 and Block ID is 014 - <code>CensusBlockGroup</code> contains <code>1014</code>
         </td>
       </tr>
       <tr>
         <td><code>CensusTract</code></td>
         <td><code>[int]</code> Census Tract ID
         <br/>
-        Census Tract ID - a contiguous group of census block groups, geocoded based on census data
+        Contiguous group of census block groups, geocoded based on census data
         </td>
       </tr>
       <tr>
@@ -107,7 +109,7 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
           <li>10-digit FIPS code (Federal Information Processing Standards) of the matching address</li>
           <li>Format of FIPS code: SSCCCPPPPP where SS = State Code, CCC = County Code, and PPPPP = Place Code</li>
           <li>Leading zeros in the state code are lost</li>
-          <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special tax jurisdiction</a> are assigned by Avalara and start with a “99” in the state location</li>
+          <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special tax jurisdiction</a> are assigned by Avalara and start with a “99” in the State Code position</li>
         </ul>
         </td>
       </tr>
@@ -122,10 +124,10 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>Incorporated</code></td>
         <td><code>[bool]</code> Incorporated
         <br/>
-        Indicates if the matching address is within the city limits of a town
+        Indicates if the matching jurisdiction is within the city limits of a town
         <ul class="dev-guide-list">
-          <li><code>true</code>: location is within the city limits</li>
-          <li><code>false</code>: location is outside the city limits</li>
+          <li><code>true</code>: jurisdiction is within the city limits</li>
+          <li><code>false</code>: jurisdiction is outside the city limits</li>
         </ul>
         </td>
       </tr>
@@ -144,21 +146,21 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>Latitude</code></td>
         <td><code>[double]</code> Latitude
         <br/>
-        Latitude of the matching address
+        Latitude of the matching jurisdiction
         </td>
       </tr>
       <tr>
         <td><code>Longitude</code></td>
         <td><code>[double]</code> Longitude
         <br/>
-        Longitude of the matching address
+        Longitude of the matching jurisdiction
         </td>
       </tr>
       <tr>
         <td><code>NetworkID</code></td>
         <td><code>[string]</code> Network ID
         <br/>
-        Indicates from which street database the matching address is returned
+        Indicates from which street database the matching jurisdiction is returned
         <ul class="dev-guide-list">
           <li><code>nt</code>: NavTeq</li>
           <li><code>ta</code>: TeleAtlas</li>
@@ -169,7 +171,7 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>PCode</code></td>
         <td><code>[int]</code> PCode
         <br/>
-        Avalara PCode of the matching address, correlating to the set of taxes that are applicable to the address
+        Avalara PCode of the matching jurisdiction, correlating to the set of taxes that are applicable to the location
         </td>
       </tr>
       <tr>
@@ -191,7 +193,7 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>[string]</code> Primary Jurisdiction Name
         <br/>
         Tax Jurisdiction name of the county or city of the location (underlying tax jurisdiction for <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdictions</a>)
-        <br/>
+        <br/><br/>
         This field is for informational purposes only
         </td>
       </tr>
@@ -200,7 +202,7 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>[int]</code> Primary Jurisdiction PCode
         <br/>
         PCode of the county or city of the location (underlying tax jurisdiction for <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdictions</a>)
-        <br/>
+        <br/></br/>
         This field is for informational purposes only.  Use <code>PCode</code> field when calculating taxes in the AFC Engine
         </td>
       </tr>
@@ -222,14 +224,14 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>SpecialTaxDistrictName</code></td>
         <td><code>[string]</code> Special Tax Jurisdiction Name
         <br/>
-        <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special tax jurisdiction</a> name if the address is within a special tax jurisdiction. Otherwise, blank (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdiction</a>)
+        <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special tax jurisdiction</a> name if the address is within a special tax jurisdiction. Otherwise, blank (not a <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdiction</a>)
         </td>
       </tr>
       <tr>
         <td><code>SpecialTaxDistrictPCode</code></td>
         <td><code>[int]</code> Special Tax Jurisdiction PCode
         <br/>
-        Avalara PCode of the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdiction</a> if the address is within a special tax jurisdiction. Otherwise, returns -1 (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdiction</a>)
+        Avalara PCode of the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdiction</a> if the address is within a special tax jurisdiction. Otherwise, returns -1 (not a <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdiction</a>)
         </td>
       </tr>
       <tr>
@@ -268,14 +270,14 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>TaxJurisdictionName</code></td>
         <td><code>[string]</code> Tax Jurisdiction Name
         <br/>
-        Jurisdiction name identified by the PCode
+        Taxing jurisdiction name identified by the PCode (<code>PCode</code>)
         </td>
       </tr>
       <tr>
         <td><code>TimeZone</code></td>
         <td><code>[string]</code> Time Zone
         <br/>
-        Time zone of the matching address.  Field is left blank
+        Field is blank
         </td>
       </tr>
       <tr>
@@ -283,7 +285,7 @@ The <code>AddressLocation</code> object contains information about a <b>jurisdic
         <td><code>[long]</code> Underlying FIPS Code
         <br/>
         Federal FIPS code of the location (underlying tax jurisdiction FIPS code for <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">special tax jurisdictions</a>)
-        <br/>
+        <br/><br/>
         This field is for informational purposes only.  Use <code>FIPSCode</code> field when calculating taxes in the AFC Engine
         </td>
       </tr>

@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Cass Address</h3>
 
-The <code>CassAddress</code> object contains the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validated</a> dat
+The <code>CassAddress</code> object contains the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validated</a> data:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -37,14 +37,14 @@ The <code>CassAddress</code> object contains the <a class="dev-guide-link" href=
         <td><code>AddressLine</code></td>
         <td><code>[string]</code> AddressLine
         <br/>
-        street address portion of the CASS address
+        Street address portion of the CASS address
         </td>
       </tr>
       <tr>
         <td><code>AddressQualityFlags</code></td>
         <td><code>[string]</code> Address Quality Flags
         <br/>
-        Address Quality Flags identified by the CASS software.  Refer to <a class="dev-guide-link" href="https://aescass.com/Doc/MailSTAR.pdf">Appendix B - Address Quality Flags</a> in the <a class="dev-guide-link" href="https://aescass.com/Doc/MailSTAR.pdf">Mail*STAR Users Guide</a> for more information about Address Quality Flags
+        USPS-assigned  Address Quality Flags.  Refer to <a class="dev-guide-link" href="https://aescass.com/Doc/MailSTAR.pdf">Appendix B - Address Quality Flags</a> in the <a class="dev-guide-link" href="https://aescass.com/Doc/MailSTAR.pdf">Mail*STAR Users Guide</a> for more information about Address Quality Flags
         </td>
       </tr>
       <tr>
@@ -93,7 +93,7 @@ The <code>CassAddress</code> object contains the <a class="dev-guide-link" href=
         <td><code>Reliability</code></td>
         <td><code>[double]</code> Reliability
         <br/>
-        A number, between 0 and 1, indicating the closeness of the match between a location address and USPS standards
+        Indicates the closeness of the match between a location address and USPS standards (value between 0 and 1)
         </td>
       </tr>
       <tr>
@@ -121,7 +121,9 @@ The <code>CassAddress</code> object contains the <a class="dev-guide-link" href=
         <td><code>Zip4</code></td>
         <td><code>[string]</code> Zip code extension
         <br/>
-        4-digit Zip code extension.  If empty: the address is not <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS certified</a> and may not be deliverable by the Post Office
+        4-digit Zip code extension  
+        <br/><br/>
+        If empty: the address is not <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS certified</a> and may not be deliverable by the Post Office
         </td>
       </tr>
     </tbody>
