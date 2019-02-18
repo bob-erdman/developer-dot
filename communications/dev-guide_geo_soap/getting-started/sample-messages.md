@@ -100,7 +100,7 @@ For the body of the <code>GetServerTime</code> request, copy and paste this exam
 </s:Envelope>
 {% endhighlight%}
 
-For more sample requests, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/customizing-transactions/sample-transactions/">Customizing Transactions</a>.
+For more sample requests, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/customizing-geocoding-requests/index/">Customizing Geocoding Requests</a>.
 
 Sample code for other languages, such as C# and Java, can be found on <a class="dev-guide-link" href="https://github.com/Avalara/Communications-Developer-Content/tree/master/afc_saaspro_geo/sample_code/">GitHub</a>.
 
