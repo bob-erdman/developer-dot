@@ -10,6 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/get-server-time-response"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/geocode-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>EZGeo Fault</h3>
@@ -44,4 +45,5 @@ The <code>EZGeoFault</code> object contains the error description as applicable:
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_geo_soap/reference/get-server-time-response"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_geo_soap/geocode-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
