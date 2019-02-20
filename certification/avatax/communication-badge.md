@@ -22,7 +22,7 @@ doctype: integration_checklists
                     <li><h3>System level settings</h3></li>
                         <ul class="normal">
                             <li>Account/Key - API access tokens</li>
-                            <li>Client ID - Suggested</li>
+                            <li>Client ID - <b>Required</b></li>
                             <li>Profile - this allows Sellers / Operators to override the default bahavior of Avalara and use a custom tax profile - <b>Required</b></li>
                         </ul>
                     <li><h3>Company or Seller Level Settings</h3></li>
