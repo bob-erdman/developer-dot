@@ -66,7 +66,7 @@ This request contains the following:
 The <code>GeocodeAddressResponse</code> contains detailed address information for a single matching address.  The record returned contains detailed information including:
 <ul class="dev-guide-list">
   <li><code>CassAddress</code>: CASS information including Carrier Route, USPS Barcode, and standardized address</li>
-  <li>Census block group and tract information</li>
+  <li>Census block and tract information</li>
   <li><code>PCode</code>, <code>FeatureID</code>, and <code>FipsCode</code></li>
   <li>Results are from NavTeq (<code>NetworkID</code> is <code>nt</code>)</li>
   <li>AFC Geo SaaS Pro Soap is 100% confident in this result (<code>Score</code> is 1)</li>
@@ -331,7 +331,7 @@ This request contains the following:
 The <code>GeocodeAddressResponse</code> contains detailed address information for a single matching address.  The record returned contains detailed information including:
 <ul class="dev-guide-list">
   <li><code>CassAddress</code> is <code>nil</code> since <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validation</a> is off</li>
-  <li>Census block group (<code>CensusBlockGroup</code>) and tract (<code>CensusTract</code>) fields are included but set to 0</li>
+  <li>Census block ID (<code>CensusBlockGroup</code>) and census tract ID (<code>CensusTract</code>) fields are included but set to 0</li>
   <li><code>PCode</code>, <code>FeatureID</code>, and <code>FipsCode</code></li>
   <li>Results are from NavTeq (<code>NetworkID</code> is <code>nt</code>)</li>
   <li>AFC Geo SaaS Pro Soap is 100% confident in this result (<code>Score</code> is 1)</li>

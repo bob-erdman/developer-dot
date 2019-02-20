@@ -42,7 +42,7 @@ This request contains the latitude (<code>latitude</code>) and longitude (<code>
 The <code>GeocodeLatLongResponse</code> contains basic address information for a single matching address based on the coordinate pair.  The record returned contains:
 <ul class="dev-guide-list">
   <li><code>CassAddress</code> is <code>nil</code> since <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/cass/">CASS validation</a> is not performed on a lat/long geocode request</li>
-  <li>Census block group (<code>CensusBlockGroup</code>) and tract (<code>CensusTract</code>) fields are included but set to 0</li>
+  <li>Census block ID (<code>CensusBlockGroup</code>) and tract ID (<code>CensusTract</code>) fields are included but set to 0</li>
   <li><code>PCode</code>, <code>FeatureID</code>, and <code>FipsCode</code></li>
   <li>Results are from NavTeq (<code>NetworkID</code> is <code>nt</code>)</li>
   <li>AFC Geo SaaS Pro Soap is 99.9% confident in this result (<code>Score</code> is 0.9999)</li>

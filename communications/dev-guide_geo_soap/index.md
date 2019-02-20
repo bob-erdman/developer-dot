@@ -17,7 +17,7 @@ This guide provides you with an overview of the Avalara for Communications Geo S
 
 <ul class="dev-guide-list">
   <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods/">Endpoints and web service methods</a></li>
-  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/">Descriptions</a> of XML key/value pairs and request formatting</li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/">Descriptions</a> of XML properties and request formatting</li>
   <li><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/customizing-transactions/transaction-use-cases">Examples</a> of specific use cases and how to customize your transactions</li>
 </ul>
 
