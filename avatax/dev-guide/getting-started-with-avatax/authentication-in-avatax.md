@@ -166,9 +166,6 @@ Account ID/license key and username/password authentication are very similar in 
 
 Avalara recommends using account ID / License Key authentication when implementing connectors.  Your software should have a configuration page or file that allows a customer to type in their account ID and license key when they set up your connector; then all API calls made through your connector will use these credentials.
 
-<h3>Bearer Token Authentication</h3>
-
-AvaTax is currently implementing support for OAuth 2.0 based bearer token authentication.  This feature is available to select partners.  To make use of the OAuth bearer token feature, please contact your account manager.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/getting-started-with-avatax/connecting-to-avatax/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
