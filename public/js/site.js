@@ -127,9 +127,9 @@ function lineBuilder(reqType) {
             case 'C#':
                 lines += `new LineItemModel() 
         {
-            number = ${lineNum},
+            number = "${lineNum}",
             quantity = 1,
-            amount = ${amount},
+            amount = ${amount}m,
             taxCode = "${taxCode}"`;
                     lines += hsCode.length ? "," : "";
                     lines += hsCode.length ? `
@@ -209,8 +209,8 @@ function addressBuilder(reqType, addressName, prefix) {
             line1 = "${addressArray[0]}",
             city = "${addressArray[1]}",
             region = "${addressArray[2]}",
-            country = "${addressArray[4]}",
-            postalCode = "${addressArray[3]}"
+            country = "${addressArray[3]}",
+            postalCode = "${addressArray[4]}"
         }`;
             break;
         case 'PHP':
@@ -307,7 +307,9 @@ function cSharpSampleData() {
 
     // build sample data for c#
     const sampleData = `// Create AvaTaxClient
-var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
+var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
+    .WithSecurity("MyUsername", "MyPassword");
+
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -323,7 +325,7 @@ var createModel = new CreateTransactionModel()
     {
         ${address}
     }
-}
+};
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
