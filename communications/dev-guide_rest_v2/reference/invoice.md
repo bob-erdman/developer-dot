@@ -105,8 +105,8 @@ The <code>Invoice</code> object contains information about one or more <b>transa
           <br/>
           Indicates if all line items within invoice should be processed in invoice mode
           <ul class="dev-guide-list">
-            <li><code>true</code>: Line Items are part of a single invoice</li>
-            <li><code>false</code>: Line Items are unrelated</li>
+            <li><code>true</code>: Line Items are part of a single invoice; caps, thresholds, tax brackets, and tiers applied per invoice as a whole</li>
+            <li><code>false</code>: Line Items are unrelated; caps, thresholds, tax brackets, and tiers applied per line item individually</li>
           </ul>
         </td>
       </tr>
