@@ -326,6 +326,7 @@ var createModel = new CreateTransactionModel()
         ${address}
     }
 };
+
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
@@ -377,13 +378,17 @@ function pythonSampleData() {
         address = `'SingleLocation': ${shipToAddress}`;
     }
     
-    const sampleData = `#Create a new AvaTaxClient object
-    client = AvataxClient('my test app',
+    const sampleData = `from client import AvataxClient
+
+#Create a new AvaTaxClient object
+client = AvataxClient('my test app',
     'ver 0.0',
     'my test machine',
     'sandbox')
+
 #Add your credentials
 client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
+
 #Build your tax document
 tax_document = {
     'addresses': {
@@ -397,9 +402,10 @@ tax_document = {
     ],
     'type': 'SalesOrder'
 }
+
 #Create transaction
 transaction_response = client.create_transaction(tax_document)
-print(transaction_response.text())`;
+print(transaction_response.text)`;
     
     return sampleData;
 }
