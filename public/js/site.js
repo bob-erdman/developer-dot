@@ -349,11 +349,14 @@ function phpSampleData() {
     }
 
     // build sample data for PHP
-    const sampleData = `// Create a new client
+    const sampleData = `use Avalara\AvaTaxClient;
+    
+// Create a new client
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
+
 // Create a simple transaction using the fluent transaction builder
-$tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
+$tb = new Avalara\TransactionBuilder($client, “DEMOPAGE", Avalara\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb${address}
     ${lines}
     ->create();
