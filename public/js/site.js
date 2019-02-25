@@ -349,9 +349,10 @@ function phpSampleData() {
     }
 
     // build sample data for PHP
-    const sampleData = `use Avalara\AvaTaxClient;
+    const sampleData = `require __DIR__ . '/vendor/autoload.php';
+use Avalara\AvaTaxClient;
     
-// Create a new client
+// Create a new clients
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
 
@@ -360,6 +361,10 @@ $tb = new Avalara\TransactionBuilder($client, “DEMOPAGE", Avalara\DocumentType
 $t = $tb${address}
     ${lines}
     ->create();
+
+// print results
+echo('<h2>Transaction #1</h2>');
+echo('<pre>' . json_encode($t, JSON_PRETTY_PRINT) . '</pre>');
     `;
 
     return sampleData
