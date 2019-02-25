@@ -525,7 +525,7 @@ var client = new Avatax(config).withSecurity(creds);
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
-    date: ${today.toISOString().split('T')[0]},
+    date: "${today.toISOString().split('T')[0]}",
     customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
         ${address}
