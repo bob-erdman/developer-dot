@@ -514,7 +514,9 @@ function javascriptSampleData() {
         machineName: "your-machine-name"
     };
 
-    const sampleData = `const config = ${JSON.stringify(config, null, 4)};
+    const sampleData = `var Avatax = require('avatax');
+
+const config = ${JSON.stringify(config, null, 4)};
     
 const creds = {
     username: "<your-username>",
