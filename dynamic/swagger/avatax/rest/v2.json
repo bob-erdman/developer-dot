@@ -54904,7 +54904,7 @@
     "securityDefinitions": {
         "OauthSecurity": {
             "flow": "implicit",
-            "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=00e8f7d7-c626-4043-abbd-5daf896a2a64&",
+            "authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=aad18261-8a6a-45d2-972b-c25c9fc135fe&",
             "type": "oauth2",
             "description": "A bearer token provided by the Avalara Identity server."
         },
