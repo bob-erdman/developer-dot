@@ -13,6 +13,14 @@
             "url": "https://www.avalara.com/terms-of-use/"
         }
     },
+
+    "host": "sandbox-rest.avatax.com",
+    "x-production-host": "rest.avatax.com",
+    "schemes": [
+      "https"
+    ],
+    "basePath": "/",
+
     "paths": {
         "/api/v2/accounts": {
             "get": {
