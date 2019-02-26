@@ -6,14 +6,14 @@ import DownloadPostmanCollection from './containers/downloadPostmanCollection';
 import ApiDescription from './components/apiDescription';
 import {connect} from 'react-redux';
 
-const App = ({isEmpty, apiType}) => (
+const App = ({isEmpty, apiName}) => (
     <div>
         
         {isEmpty ?
             <div>
                 <ApiDescription />
          
-                {apiType === 'REST' && 
+                {apiName === 'AvaTax API' && 
                     <div>
                         <h2>Top 10 EndPoints</h2>
                         <ul>
@@ -49,8 +49,9 @@ const App = ({isEmpty, apiType}) => (
 );
 
 const mapStateToProps = (state) => {
+    console.warn('STATE: ', state)
     return {
-        apiType: state.apiType,
+        apiName: state.apiName,
         tagName: state.tagName,
         endpoint: state.apiEndpoint || null,
         isEmpty: state.apiEndpoints.length === 0
