@@ -38,7 +38,8 @@ The <code>Fault</code> object contains the error description as applicable:
         <td><code>detail</code></td>
         <td><code>[ArrayOfstring]</code> Detailed Error Message
         <br/><br/>
-        Includes the error message, stack trace, and type of error generated (if applicable)
+        Includes the error message, stack trace, and type of error generated (if applicable)</td>
+      </tr>
     </tbody>
   </table>
 </div>
