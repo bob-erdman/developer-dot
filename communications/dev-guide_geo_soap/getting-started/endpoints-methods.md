@@ -67,26 +67,26 @@ AFC Geo SaaS Pro Soap has two sets of endpoints:
       <tr>
         <td><code>GeocodeAddress</code></td>
         <td>Accepts a single address as input and returns a single address in the street database that best matches the input data</td>
-        <td>GeocodeAddress</td>
-        <td>GeocodeAddressResponse</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/geocode-address/">GeocodeAddress</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/geocode-address-response/">GeocodeAddressResponse</a></td>
       </tr>
       <tr>
         <td><code>GeocodeAllMatches</code></td>
         <td>Accepts a single address as input and returns all addresses in the street database that matches the input data</td>
-        <td>GeocodeAllMatches</td>
-        <td>GeocodeAllMatchesResponse</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/geocode-all-matches/">GeocodeAllMatches</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/geocode-all-matches-response/">GeocodeAllMatchesResponse</a></td>
       </tr>
       <tr>
         <td><code>GeocodeLatLong</code></td>
         <td>Accepts the latitude and longitude of a location as input and returns jurisdiction information only (not complete addresses)</td>
-        <td>GeocodeLatLong</td>
-        <td>GeocodeLatLongResponse</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/geocode-lat-long/">GeocodeLatLong</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/geocode-lat-long-response/">GeocodeLatLongResponse</a></td>
       </tr>
       <tr>
         <td><code>GetServerTime</code></td>
         <td>Returns current time on the web server in UTC</td>
-        <td>GetServerTime</td>
-        <td>GetServerTimeResponse</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/get-server-time/">GetServerTime</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/get-server-time-response/">GetServerTimeResponse</a></td>
       </tr>
     </tbody>
   </table>

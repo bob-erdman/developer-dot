@@ -14,15 +14,15 @@ disqus: 0
 </ul>
 
 <h3>Minimum Score</h3>
-Specify a minimum score (<code>MinimumScore</code>) for an address or check the score returned for any matching addresses before using the address.  We recommend using addresses with a score of 0.7 (for 70%) or greater. 
+Specify a minimum score (<code>MinimumScore</code>) for an address or check the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/scoring/">score</a> returned for matching locations before using the jurisdiction.  We recommend using locations with a score of 0.7 (for 70%) or greater. 
 <ul class="dev-guide-list">
     <li>Minimum Score (<code>MinimumScore</code>) of 0.7 allows for a reasonable number of typos in the input address</li>
     <li>Increase or decrease the Minimum Score (<code>MinimumScore</code>) to allow for a higher or lower level accuracy</li>
-    <li>Setting Minimum Score (<code>MinimumScore</code>) to 1.0 returns only exact matches - this may not return a valid jurisdiction if the input data contains a small error</li>
-    <li>Setting Minimum Score (<code>MinimumScore</code>) to 0.0 returns all matches that AFC Geo can find, regardless of confidence in the results</li>
+    <li>Setting Minimum Score (<code>MinimumScore</code>) to 1.0 returns only exact matches - this may not return a valid jurisdiction if the input address contains a small error</li>
+    <li>Setting Minimum Score (<code>MinimumScore</code>) to 0.0 returns all matches that AFC Geo SaaS Pro Soap can find, regardless of confidence in the results</li>
 </ul>
 
-For more information, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/address-geocoding/">Address Geocoding</a>.
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/address-geocoding/">Address Geocoding</a> and <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/scoring/">Scoring</a>.
 
 <h3>Special Tax Jurisdictions</h3>
 Return Special Tax Jurisdictions (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">Options</a> bitwise value 16) to get the most accurate jurisdiction.  Only the city or county is returned when the Special Tax Jurisdictions option is not include.
@@ -38,7 +38,7 @@ For more information, see <a class="dev-guide-link" href="/communications/dev-gu
 
 <h3>Post Office (PO) Box</h3>
 <ul class="dev-guide-list">
-    <li>PO Boxes aren't supported because a PO Box is not considered acceptable by tax jurisdictions for tax situsing purposes</li>
+    <li>PO Boxes <b>aren't supported</b> because a PO Box is not considered acceptable by tax jurisdictions for tax situsing purposes</li>
     <li>Zip Codes associated with a PO Box should not be used for geocoding because the zip code represents the physical location of a PO Box, not the location of the actual transaction</li>
 </ul>
 
@@ -55,7 +55,7 @@ When the input address contains an apartment or suite numbers, use <code>Seconda
 Use the <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/endpoints-methods/">endpoints</a> ending in <code>/2.0</code> so that any exceptions generated are returned to you and you can better handle the exceptions in your code.
 
 <h3>Request</h3>
-The order of input fields is important. AFC Geo SaaS Pro Soap requires a static order of input values, such as fields for <code>inputAddress</code>.  Fields that are out of order remain unassigned, impacting the final geocoding results.
+The order of input fields is important. AFC Geo requires a static order of input values, such as fields in <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/input-address/"><code>inputAddress</code></a>.  Fields that are out of order remain unassigned, impacting the final geocoding results.
 
 <h3>Options</h3>
 Don't use Street Number Snapping (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">Options</a> bitwise value 1) or Postal Code Centroid (<a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">Options</a> bitwise value 2) unless no results are returned.  Using these <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/geocode/options/">options</a> can cause incorrect results to be returned when the street database contains complete data.
