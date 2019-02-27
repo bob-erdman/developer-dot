@@ -11,8 +11,7 @@ const App = ({isEmpty, apiName}) => (
         {isEmpty ?
             <div>
                 <ApiDescription />
-         
-                {apiName === 'AvaTax API' && 
+                {apiName === 'AvaTax API' &&
                     <div>
                         <h2>Top 10 EndPoints</h2>
                         <ul>
