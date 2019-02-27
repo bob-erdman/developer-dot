@@ -8,7 +8,6 @@ import {connect} from 'react-redux';
 
 const App = ({isEmpty, apiName}) => (
     <div>
-        
         {isEmpty ?
             <div>
                 <ApiDescription />

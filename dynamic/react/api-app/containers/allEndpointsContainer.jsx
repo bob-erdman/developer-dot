@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import EndpointContainer from './endpointContainer';
 
 const mapStateToProps = (state) => {
+    console.warn('STATE bru: ', state)
     return {
         apiEndpoints: state.apiEndpoints,
         tagName: state.tagName
@@ -11,6 +12,7 @@ const mapStateToProps = (state) => {
 };
 
 const Endpoints = ({apiEndpoints, tagName}) => {
+    console.warn('bruh: ')
     return (
         <div>
             {apiEndpoints.map((endpoint, i) => <EndpointContainer endpoint={endpoint} tagName={tagName} key={i} />)}
