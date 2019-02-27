@@ -48,7 +48,6 @@ const App = ({isEmpty, apiName}) => (
 );
 
 const mapStateToProps = (state) => {
-    console.warn('STATE: ', state)
     return {
         apiName: state.apiName,
         tagName: state.tagName,
