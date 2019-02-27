@@ -20,7 +20,7 @@ Address geocoding accepts an address and returns 1 or more addresses.
 </ul>
 
 <h4>Note</h4>
-AFC Geo SaaS Pro Soap supports geocoding for the United States, Puerto Rico, and other US territory addresses.  Addresses in foreign countries (<b>including Canada and Mexico</b>) are not supported and don't return results.
+AFC Geo SaaS Pro Soap supports geocoding for the United States, Puerto Rico, and other US territory addresses.  Addresses or latitude/longitude coordinate pairs in foreign countries (<b>including Canada and Mexico</b>) are not supported and don't return results.
 
 <h3>Address Parsing</h3>
 An address is made up of several parts:
@@ -39,7 +39,7 @@ The <code>CityStateZip</code> is used in place of the individual <code>City</cod
 See <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/getting-started/best-practices/">Best Practices</a> for additional guidance when setting up an input address.
 
 <h3>Matching</h3>
-The input address is used to look up candidate locations within the street database.  Some fields, such as <code>StreetAddress</code> and <code>City</code>, don't require a strict match to produce a candidate.  For example "1 Renee Street" matches "1 Rena Street".  A street with an alternate name (alias) in the database is considered as a candidate as well.
+The <a class="dev-guide-link" href="/communications/dev-guide_geo_soap/reference/input-address/">input address (<code>inputAddress</code>)</a> is used to look up candidate locations within the street database.  Some fields, such as <code>StreetAddress</code> and <code>City</code>, don't require a strict match to produce a candidate.  For example, "1 Renee Street" matches "1 Rena Street".  A street with an alternate name (alias) in the database is considered as a candidate as well.
 
 The street number is matched against the address ranges supplied in the vendor's street database.  A single street is represented in the street database as a chain of segments called a street link.  A link is:
 <ul class="dev-guide-list">
@@ -54,7 +54,7 @@ The street number is matched against the address ranges supplied in the vendor's
       <li>Right side of the street has the street number range 1 - 47</li>
       <li>Left side of the street has the street number range of 2 - 48</li>
       <li>Input address has street number 24</li>
-      <li>AFC Geo SaaS Pro Soap computes the geographic coordinates based on the location (street number 24) being approximately in the middle of the link on the left side of the street</li>
+      <li>AFC Geo computes the geographic coordinates based on the location (street number 24) being approximately in the middle of the link on the left side of the street</li>
    </ul>
 </ul>
 
