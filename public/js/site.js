@@ -127,9 +127,9 @@ function lineBuilder(reqType) {
             case 'C#':
                 lines += `new LineItemModel() 
         {
-            number = ${lineNum},
+            number = "${lineNum}",
             quantity = 1,
-            amount = ${amount},
+            amount = ${amount}m,
             taxCode = "${taxCode}"`;
                     lines += hsCode.length ? "," : "";
                     lines += hsCode.length ? `
@@ -209,8 +209,8 @@ function addressBuilder(reqType, addressName, prefix) {
             line1 = "${addressArray[0]}",
             city = "${addressArray[1]}",
             region = "${addressArray[2]}",
-            country = "${addressArray[4]}",
-            postalCode = "${addressArray[3]}"
+            country = "${addressArray[3]}",
+            postalCode = "${addressArray[4]}"
         }`;
             break;
         case 'PHP':
@@ -307,7 +307,9 @@ function cSharpSampleData() {
 
     // build sample data for c#
     const sampleData = `// Create AvaTaxClient
-var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
+var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
+    .WithSecurity("MyUsername", "MyPassword");
+
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -323,7 +325,8 @@ var createModel = new CreateTransactionModel()
     {
         ${address}
     }
-}
+};
+
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
@@ -346,14 +349,22 @@ function phpSampleData() {
     }
 
     // build sample data for PHP
-    const sampleData = `// Create a new client
+    const sampleData = `require __DIR__ . '/vendor/autoload.php';
+use Avalara\AvaTaxClient;
+    
+// Create a new clients
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
+
 // Create a simple transaction using the fluent transaction builder
-$tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
+$tb = new Avalara\TransactionBuilder($client, “DEMOPAGE", Avalara\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb${address}
     ${lines}
     ->create();
+
+// print results
+echo('<h2>Transaction #1</h2>');
+echo('<pre>' . json_encode($t, JSON_PRETTY_PRINT) . '</pre>');
     `;
 
     return sampleData
@@ -375,13 +386,17 @@ function pythonSampleData() {
         address = `'SingleLocation': ${shipToAddress}`;
     }
     
-    const sampleData = `#Create a new AvaTaxClient object
-    client = AvataxClient('my test app',
+    const sampleData = `from client import AvataxClient
+
+#Create a new AvaTaxClient object
+client = AvataxClient('my test app',
     'ver 0.0',
     'my test machine',
     'sandbox')
+
 #Add your credentials
 client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
+
 #Build your tax document
 tax_document = {
     'addresses': {
@@ -395,9 +410,10 @@ tax_document = {
     ],
     'type': 'SalesOrder'
 }
+
 #Create transaction
 transaction_response = client.create_transaction(tax_document)
-print(transaction_response.text())`;
+print(transaction_response.text)`;
     
     return sampleData;
 }
@@ -498,7 +514,9 @@ function javascriptSampleData() {
         machineName: "your-machine-name"
     };
 
-    const sampleData = `const config = ${JSON.stringify(config, null, 4)};
+    const sampleData = `var Avatax = require('avatax');
+
+const config = ${JSON.stringify(config, null, 4)};
     
 const creds = {
     username: "<your-username>",
@@ -509,7 +527,7 @@ var client = new Avatax(config).withSecurity(creds);
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
-    date: ${today.toISOString().split('T')[0]},
+    date: "${today.toISOString().split('T')[0]}",
     customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
         ${address}

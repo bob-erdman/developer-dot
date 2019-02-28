@@ -11,8 +11,6 @@ if [[ "$@" != *"--skip-initial-build"* ]]; then
     bundle exec jekyll build
 fi
 
-# gem install bundler:2.0.1
-# bundler update --bundler
 bundle install 
 bundle exec jekyll serve --detach --skip-initial-build
 
