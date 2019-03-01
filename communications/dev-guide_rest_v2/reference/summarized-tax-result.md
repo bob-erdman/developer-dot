@@ -44,7 +44,7 @@ The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarize
             <td><code>tchg</code></td>
             <td><code>[double]</code> Total Charge
             <br/>
-            The total charge amount for the invoice
+            Summarized charge amounts applied to the tax item from Invoice processing.  Each entry in the summarized data has an individual total charge as it applies to the calculation of that specific summarized tax type and jurisdiction
             </td>
         </tr>
         <tr>
