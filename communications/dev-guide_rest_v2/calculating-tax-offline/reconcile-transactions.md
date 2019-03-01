@@ -10,6 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/recover-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/geocode-offline/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>Reconcile Transactions</h3>
@@ -27,4 +28,5 @@ When a transaction is included more times than expected:
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/recover-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/geocode-offline/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

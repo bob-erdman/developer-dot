@@ -13,6 +13,32 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
+<h3>General</h3>
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Message</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HTTP 403 Forbidden</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/general-errors/forbidden/">Forbidden</a></td>
+        <td>The request has been denied</td>
+      </tr>
+      <tr>
+        <td>HTTP 503</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/general-errors/service-unavailable/">Service Unavailable</a></td>
+        <td>The service is unavailable</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+
 <h3>Authentication</h3>
 <div class="mobile-table">
   <table class="styled-table">

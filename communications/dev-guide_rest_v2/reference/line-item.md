@@ -30,7 +30,10 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>ref</code></td>
             <td><code>[string]</code>Reference code
             <br/>
-            Reference ID for line item
+            Reference ID for line item 
+            <ul class="dev-guide-list">
+              <li>Max length: 150 bytes</li>
+            </ul>
             </td>
         </tr>
         <tr>

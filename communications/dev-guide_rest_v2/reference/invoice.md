@@ -30,7 +30,10 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code>
+          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code> 
+          <ul class="dev-guide-list">
+            <li>Max length: 150 bytes</li>
+          </ul>
         </td>
       </tr>
       <tr>
@@ -105,8 +108,8 @@ The <code>Invoice</code> object contains information about one or more <b>transa
           <br/>
           Indicates if all line items within invoice should be processed in invoice mode
           <ul class="dev-guide-list">
-            <li><code>true</code>: Line Items are part of a single invoice</li>
-            <li><code>false</code>: Line Items are unrelated</li>
+            <li><code>true</code>: Line Items are part of a single invoice; caps, thresholds, tax brackets, and tiers applied per invoice as a whole</li>
+            <li><code>false</code>: Line Items are unrelated; caps, thresholds, tax brackets, and tiers applied per line item individually</li>
           </ul>
         </td>
       </tr>

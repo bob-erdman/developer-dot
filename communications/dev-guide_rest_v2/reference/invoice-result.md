@@ -30,7 +30,10 @@ The <code>InvoiceResult</code> object contains the <b>tax calculation results</b
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-        The Document Code for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>
+        The Document Code for the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a> 
+        <ul class="dev-guide-list">
+          <li>Max length: 150 bytes</li>
+        </ul>
         </td>
       </tr>
       <tr>
