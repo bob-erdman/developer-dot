@@ -31,7 +31,11 @@ The <code>BridgeParticipant</code> functionality is still in beta.  Contact <a c
     <tbody>
       <tr>
         <td><code>ref</code></td>
-        <td><code>[string]</code>Participant Reference code</td>
+        <td><code>[string]</code>Participant Reference code
+        <ul class="dev-guide-list">
+          <li>Max length: 15 bytes</li>
+        </ul>
+        </td>
       </tr>
       <tr>
         <td><code>loc</code></td>

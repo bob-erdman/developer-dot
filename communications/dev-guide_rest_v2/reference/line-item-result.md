@@ -28,7 +28,11 @@ The <code>LineItemResult</code> object contains the <b>individual tax calculatio
     <tbody>
       <tr>
             <td><code>ref</code></td>
-            <td><code>[string]</code> Reference ID for the line item</td>
+            <td><code>[string]</code> Reference ID for the line item 
+            <ul class="dev-guide-list">
+              <li>Max length: 150 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>base</code></td>
