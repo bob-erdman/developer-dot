@@ -15,7 +15,7 @@ info:
     Access-Control-Allow-Headers: X-Requested-With
   contact:
     name: Trustfile API Support
-    url: trustfile.com
+    url: https://app.trustfile.com
     email: api@trustfile.com
 host: app.trustfile.avalara.com
 basePath: /v4
@@ -75,7 +75,7 @@ paths:
                 type: boolean
               error:
                 type: string
-  /company/signup:
+  /v4/company/signup:
     post:
       tags:
         - Api
@@ -84,19 +84,21 @@ paths:
       description: |
         * All data is expected in the request body in a flat JSON format.
         * User Fields: email firstName lastName
-        * Company fields: companyName companyPhone companyLine1 companyLine2 companyLine3 companyCity companyZip companyState companyCountry
+        * Company fields: companyName companyPhone companyLine1 companyLine2 companyCity companyZip companyState companyCountry
         * companyName cannot be more than 50 chars
-        * transactionType
-        * License purchase fields: totalPrice paymentId
-        * Optional Lead fields: campaignId lsmr integratorId salesUserId salesUserEmail
+        * companyName must be unique
+        * offerName
+        * paymentId
         * The new user will receive an email to set their password
         * company token will be passed upon successful provisioning of the company
+        * Once logged in, the user will be directed to set startDate for the connector
       parameters:
         - in: body
           name: body
           description: Company signup object
           required: true
           schema:
+            $ref: '#/definitions/SignupBody'
             type: object
             required:
               - email
@@ -107,15 +109,14 @@ paths:
               lastName: lastname
               companyPhone: '4258776015'
               companyName: Best Company Ever
-              companyLine1: street address
-              companyCity: city
+              companyLine1: '255 S King St.'
+              companyLine2: 'P.O. Box 2321'
+              companyCity: 'Seattle'
               companyZip: '98101'
-              companyState: WA
+              companyState: 'WA'
               campaignId: '2'
-              transactionType: purchase
-              license:
-                totalPrice: 3600
-                paymentId: '123456789'
+              paymentId: '123456789'
+              offerName: 'TFShopifyApp'
             properties:
               email:
                 type: string
@@ -215,3 +216,77 @@ paths:
                     properties:
                       level:
                         type: string
+definitions:
+  SignupBody:
+    type: object
+    required:
+      - email
+      - firstName
+      - lastName
+      - companyPhone
+      - companyName
+      - companyLine1
+      - companyCity
+      - companyZip
+      - companyState
+      - campaignId
+      - paymentId
+      - offerName
+
+    properties:
+      email:
+        type: string
+        description: customer email
+        example: 'test@avalara.com'
+      firstName:
+        type: string
+        description: first name
+        example: 'Fred'
+      lastName:
+        type: string
+        description: last name
+        example: 'Jackson'
+      companyPhone:
+        type: string
+        description: company phone number
+        example: '2068675309'
+      companyName:
+        type: string
+        description: company name
+        example: 'Avalara'
+      companyLine1:
+        type: string
+        description: address line 1
+        example: '255 S King St.'
+      companyLine2:
+        type: string
+        description: address line 2 (optional)
+        example: 'PO Box 2321'
+      companyCity:
+        type: string
+        description: city
+        example: 'Seattle'
+      companyZip:
+        type: string
+        description: zip code
+        example: '98102'
+      companyState:
+        type: string
+        description: state
+        example: 'WA'
+      companyCountry:
+        type: string
+        description: country (optional)
+        example: 'United States'
+      campaignId:
+        type: string
+        description: TFO campaignId
+        example: '70133000000y2dq'
+      paymentId:
+        type: string
+        description: paymentId
+        example: '1393033269'
+      offerName:
+        type: string
+        description: TFO offer name
+        example: 'TFShopifyApp'
