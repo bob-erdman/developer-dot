@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2016/01/avatax-php-sdk-updated-to-v15-5-0-0.html
 ---
 We've just recently updated our PHP library on <a href="https://github.com/avadev/AvaTax-SOAP-PHP-SDK">Github</a>.
 

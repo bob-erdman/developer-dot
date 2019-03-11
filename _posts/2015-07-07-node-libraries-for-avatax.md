@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/07/node-libraries-for-avatax.html
 ---
 I'm using my blog post this month to start a conversation. I'm beginning work on an NPM module to simplify the AvaTax REST interface for node.js. This leaves me with two questions I'd like to pose:
 <ul class="normal">

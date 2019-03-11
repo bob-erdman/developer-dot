@@ -8,6 +8,7 @@ categories: [older]
 product: blog
 doctype: blog
 imagesrc: /public/images/blog/Loke-Saber-257x300.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/05/lokeasinjoke.html
 ---
 <img src="/public/images/blog/Loke-Saber-257x300.jpg" alt="Loke" width="257" height="300" />
 

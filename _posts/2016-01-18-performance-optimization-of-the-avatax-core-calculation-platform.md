@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/Picture1.png
+redirect_to: https://www.avalara.com/us/en/blog/2016/01/performance-optimization-of-the-avatax-core-calculation-platform.html
 ---
 Over the past year we’ve invested in our core tax calculation engine, growing SAits features, expanding its reach, and making it faster and faster.  This has presented some amazing challenges, especially to materially speed up a service while its transactional load grows by 60% annually.  Simply keeping up with that level of growth can be a challenge.  So, how did we manage to more than triple the speed at which our current engine calculates and returns information while keeping it stable, growing, and expanding?
 
