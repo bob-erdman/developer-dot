@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/08/wsdl-changes-in-avatax-release-15-4.html
 ---
 The next AvaTax release (15.4) scheduled for August 5th 2015 will include some minor WSDL changes to include a few additional parameters. We do not foresee any impact to your code but we wanted everyone to be aware of this change in case it might. Here are the details :
 <ul class="normal">

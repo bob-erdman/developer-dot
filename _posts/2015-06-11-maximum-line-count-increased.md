@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/06/maximum-line-count-increased.html
 ---
 As of the <a href="https://help.avalara.com/000_AvaTax_Calc/Avalara_AvaTax_Release_Notes/Avalara_AvaTax_Release_Guides/Avalara_AvaTax_15_Release_Guide">last service release</a> to development, the maximum number of allowed lines on a GetTaxRequest has been increased from a mere 1000 to a spacious 15,000! This will allow longer documents to be processed and recorded through the standard recommended process. No longer will documents need to be split into multiple requests or records at the 1000 line mark!
 

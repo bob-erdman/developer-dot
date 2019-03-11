@@ -8,6 +8,7 @@ categories: [older]
 product: blog
 doctype: blog
 imgsrc: /public/images/blog/IMG_1053-195x300.jpeg
+redirect_to: https://www.avalara.com/us/en/blog/2015/05/oh-so-thats-who-that-is.html
 ---
 <img src="/public/images/blog/IMG_1053-195x300.jpeg" alt="Anya Stettler" width="195" height="300" />
 

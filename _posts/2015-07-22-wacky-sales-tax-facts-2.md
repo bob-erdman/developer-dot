@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/Screen-Shot-2015-07-21-at-2.38.32-PM.png
+redirect_to: https://www.avalara.com/us/en/blog/2015/07/wacky-sales-tax-facts-2.html
 ---
 Did you know that most developers will tell you that Sales Tax can be determined by using zip code alone? They're sorely mistaken as it takes more than just zip codes to determine accurate sales tax rates. My <a href="/blog/2015/06/16/the-business-of-sales-tax-is-bizarre">previous post</a> illustrated that each jurisdiction can be determined by the local city or state officials depending on their own laws and needs.
 

@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: blog
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2014/09/documenting-apis-with-cats-by-anya-stettler.html
 ---
 Anya delivered a thought provoking topic about Documenting APIs and it's best practices (with the help of some cats) at API World recently to some rave reviews.
 

@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/zce_logo-150x150.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/06/avalara-php-windows.html
 ---
 <img src="/public/images/blog/zce_logo-150x150.jpg" alt="Zend Certified Engineer Logo" width="150" height="150" /> As I said in my <a href="/blog/2015/05/05/subject-so-much-new-we-cant-even-was-because-awesome">introduction</a>, I'm a <a href="http://www.zend.com/en/services/certification/php-5-certification">Zend Certified PHP Engineer</a>. I may not have mentioned that, like many developers, I tend to trust my abilities probably more than I should, jump into projects head first, and only start to <i>read the fine manual</i> when something doesn't work as expected.
 

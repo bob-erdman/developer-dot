@@ -8,6 +8,8 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/shutterstock_310565729.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/09/how-is-tax-calculated.html
+
 ---
 <img src="/public/images/blog/shutterstock_310565729.jpg" width="167" height="250" alt="parfait dessert with many layers, just like tax determination" />
 

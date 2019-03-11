@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/12/new-terms-conditions.html
 ---
 Avalara just posted a new version of our <a href="http://www.avalara.com/new-terms/">AvaTax terms and conditions</a>, effective January 1, 2016. New Ts and Cs are always an opportunity for some fun recreational reading, but these are especially exciting. From section 3.b.ii:
 <blockquote> ii. If Customer does submit Documents to the AvaTax Service in a billing month, but usage of the AvaTax APIs or the number of invoice lines submitted significantly exceeds ordinary AvaTax usage in that month, the following calculations may be used to determine “Document” usage during that month:

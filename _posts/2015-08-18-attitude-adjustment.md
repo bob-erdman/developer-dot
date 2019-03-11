@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/08/attitude-adjustment.html
 ---
 Earlier today, I was talking to a colleague about some taxation reporting scenarios. Yes: this is the kind of thrilling stuff we talk about every day (and, for that matter, <a href="http://www.avalara.com/about/jobs/">so could you</a>)!
 
