@@ -15,14 +15,14 @@ doctype: overview
   <div class="col-md-8 col-md-offset-2 text-center">
     <h1 class="h1p" class="text-left  ">How does the API work?</h1>
     <h4 class="text-left">The Communications Tax API provides communications tax calculation using
-        information provided by jurisdiction codes, NPANXX, address and ZIP codes,
-        supporting thousands of taxing jurisdictions, including country state/province, county,
-        city and special taxing jurisdiction levels.
+        information provided by jurisdiction codes, NPANXX, address and Postal codes,
+        supporting thousands of taxing jurisdictions, including country, state/province, county,
+        city, and special taxing jurisdiction levels.
     </h4>
-    <h3 class="h1p" class="text-left text-colorchange">The Communications Tax API's are web services</h3>
-    <p class="text-left">This service is the external programmatic interface into the Avalara Communications tax engine. It provides a platform-independent mechanism for obtaining tax calculation information.</p>
+    <h3 class="h1p" class="text-left text-colorchange">The Communications Tax APIs are web services</h3>
+    <p class="text-left">This service is the external programmatic interface into the Avalara AvaTax for Communications tax engine. It provides a platform-independent mechanism for obtaining tax calculation information.</p>
      <h2 class="text-left">How does the Avalara Communications solution benefit businesses?</h2>
-     <h4 class="text-left">Avalara Communications connects to billing or ERP systems to quickly determine taxes
+     <h4 class="text-left">Avalara AvaTax for Communications connects to billing or ERP systems to quickly determine taxes
          for telecommunication services, as well as VoIP, internet services, satellite TV, and other
          communications services. <a href="https://www.avalara.com/products/communications-tax">Learn more</a>
      </h4>
@@ -42,7 +42,8 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <ul>
-                    <li><a href="https://github.com/Avalara/Communications-Developer-Content/" target="_blank">API documentation</a></li>
+                    <li><a href="/communications/dev-guide_rest_v2/index/" target="_blank">AFC REST v2 Developer Guide</a></li>
+                    <li><a href="/communications/dev-guide_geo_soap/index/" targe="_blank">AFC Geo Soap Developer Guide</a></li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
@@ -67,7 +68,7 @@ doctype: overview
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-1 padding-top">
-                <p class="text-left">To access the Avalara Communications service
+                <p class="text-left">To access the Avalara AvaTax for Communications service
                     and obtain an API key, contact your Avalara
                     account manager or <a href="mailto:communicationsupport@avalara.com?subject=Communications Tax API Interest from Developer.Avalara.com site.">email us</a>.
                 </p>

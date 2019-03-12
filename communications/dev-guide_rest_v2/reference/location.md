@@ -28,11 +28,18 @@ The <code>Location</code> object contains information about a <b>jurisdiction</b
     <tbody>
         <tr>
             <td><code>cnty</code></td>
-            <td><code>[string]</code> County</td>
+            <td><code>[string]</code> County 
+            <ul class="dev-guide-list">
+              <li>Max length: 25 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>ctry</code></td>
-            <td><code>[string]</code> Country ISO code
+            <td><code>[string]</code> Country ISO code 
+            <ul class="dev-guide-list">
+              <li>Max length: 3 bytes</li>
+            </ul>
             </td>
         </tr>
         <tr>
@@ -75,27 +82,47 @@ The <code>Location</code> object contains information about a <b>jurisdiction</b
             <td><code>fips</code></td>
             <td><code>[string]</code> FIPS code
             <br/>
-            10-digit USAF FIPS for taxing jurisdiction
+            10-digit USAF FIPS for taxing jurisdiction 
+            <ul class="dev-guide-list">
+              <li>Max length: 10 bytes</li>
+            </ul>
             </td>
         </tr>
         <tr>
             <td><code>addr</code></td>
-            <td><code>[string]</code> Street Address</td>
+            <td><code>[string]</code> Street Address 
+            <ul class="dev-guide-list">
+              <li>Max length: Unlimited (within reason)</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>city</code></td>
-            <td><code>[string]</code> City</td>
+            <td><code>[string]</code> City
+            <ul class="dev-guide-list">
+              <li>Max length: Unlimited (within reason)</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>st</code></td>
             <td><code>[string]</code> State
             <br/>
             State name or abbreviation
+            <ul class="dev-guide-list">
+              <li>Max length: Unlimited (within reason)</li>
+            </ul>
             </td>
         </tr>
         <tr>
             <td><code>zip</code></td>
-            <td><code>[string]</code> Postal Code</td>
+            <td><code>[string]</code> Postal Code
+            <br/>
+            Postal code in the format of 12345-6789 or A0A 1B1 
+            <ul class="dev-guide-list">
+              <li>Max length: 10 bytes</li>
+            </ul>
+            </td>
         </tr>
     </tbody>
   </table>
