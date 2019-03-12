@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/01/take-rest-sales-tax-easy-free-tax-rates-developers.html
 ---
 Tax compliance is challenging, and static tax rate tables are a common place to start looking for answers. Manually updating tax rates from a file is inefficient, though, and tax rates may change at any time – not just once per month. This is the perfect use case for a REST API, so that’s what we built. Our new Tax Rates API makes it easy to get the most current and accurate tax rate in your software. And it’s completely free.
 

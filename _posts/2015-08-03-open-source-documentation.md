@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: blog
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/08/open-source-documentation.html
 ---
 <a href="https://github.com/lord/slate"><img src="https://camo.githubusercontent.com/14cfd4aa8ce9c2899a6c87e988d7542d428d616d/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f39353834373239312f676974687562253230696d616765732f736c6174652f736c6174655f73637265656e73686f745f6e65772e706e67" width="30%" height="30%" alt="slate screenshot"/></a>
 

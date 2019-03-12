@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/Screen-Shot-2015-11-09-at-2.26.01-PM.png
+redirect_to: https://www.avalara.com/us/en/blog/2015/11/findevrs-wacky-world-of-sales-tax-video.html
 ---
 <img src="/public/images/blog/Screen-Shot-2015-11-09-at-2.26.01-PM.png" width="548" height="160" alt="FinDEVr 2015 Avalara" />
 

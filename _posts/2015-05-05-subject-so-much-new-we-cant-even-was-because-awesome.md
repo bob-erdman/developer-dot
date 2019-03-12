@@ -8,6 +8,7 @@ categories: [older]
 product: blog
 doctype: blog
 imgsrc: /public/images/blog/headshot-279x300.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/05/subject-so-much-new-we-cant-even-was-because-awesome.html
 ---
 <img src="/public/images/blog/headshot-279x300.jpg" alt="Greg Bulmash" width="279" height="300" />
 

@@ -8,6 +8,7 @@ categories: [older]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/09/gettax-for-excel.html
 ---
 
 # Just because you can, doesn't mean you should.

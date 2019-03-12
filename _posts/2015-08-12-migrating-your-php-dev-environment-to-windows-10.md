@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/pingtest.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/08/migrating-your-php-dev-environment-to-windows-10.html
 ---
 If you've been reading our blog, you might remember me posting about <a href="/blog/2015/06/02/avalara-php-windows">using our PHP samples for AvaTax</a> with PHP and Windows.
 
