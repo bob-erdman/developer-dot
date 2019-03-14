@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: avaTax
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/12/using-our-c-soap-libs-with-tls-1-2.html
 ---
 One of the fun parts of my job is getting to field developer support requests. Besides the joy of being able to solve a customer's problem and make them happy, I often get to fire up a development environment I'm unfamiliar with and learn something myself.
 

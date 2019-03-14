@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: blog
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/11/defragcon-and-apistrat-2015.html
 ---
 This week I had the great pleasure of talking at <a href="http://defragcon.com/">DefragCon 2015</a>. I talked about the technological and political implications around using API descriptions to build a Developer Portal. This is something we've been working through here at Avalara - how to minimize the delay between updates to the service and updates to our site? How do we know that everything is correct forever with no manual work???
 

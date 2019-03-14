@@ -31,7 +31,11 @@ The <code>BridgeParticipantResult</code> functionality is still in beta.  Contac
     <tbody>
       <tr>
             <td><code>ref</code></td>
-            <td><code>[string]</code> Reference ID for the participant</td>
+            <td><code>[string]</code> Reference ID for the participant 
+            <ul class="dev-guide-list">
+              <li>Max length: 150 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>tran</code></td>
@@ -58,7 +62,10 @@ The <code>BridgeParticipantResult</code> functionality is still in beta.  Contac
             <td><code>err</code></td>
             <td><code>[string]</code> Error
             <br>
-            Error message for the participant tax calculation (as applicable)
+            Error message for the participant tax calculation (as applicable) 
+            <ul class="dev-guide-list">
+              <li>Max length: Unlimited</li>
+            </ul>
             </td>
         </tr>
     </tbody>

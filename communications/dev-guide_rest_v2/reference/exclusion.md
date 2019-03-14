@@ -30,14 +30,20 @@ The <code>Exclusion</code> object allows the user to specify <b>exclusions</b> f
         <td><code>ctry</code></td>
         <td><code>[string]</code> <span class="t5">required</span> Country for exclusion
         <br/>
-        Use the Country ISO code
+        Use the Country ISO code 
+        <ul class="dev-guide-list">
+          <li>Max length: 3 bytes</li>
+        </ul>
         </td>
       </tr>
       <tr>
         <td><code>st</code></td>
         <td><code>[string]</code> State for exclusion
         <br/>
-        Use the State abbreviation
+        Use the State abbreviation 
+        <ul class="dev-guide-list">
+          <li>Max length: 2 bytes</li>
+        </ul>
         </td>
       </tr>
       <tr>

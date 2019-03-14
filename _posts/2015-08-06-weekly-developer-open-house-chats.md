@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/Sticker-DevAndTaxes_Hangouts_600w.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/08/weekly-developer-open-house-chats.html
 ---
 <img src="/public/images/blog/Sticker-DevAndTaxes_Hangouts_600w.jpg" alt="Sticker: DevAndTaxes" width="600" height="150" />
 

@@ -79,7 +79,11 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
         </tr>
         <tr>
             <td><code>cat</code></td>
-            <td><code>[string]</code> Tax Category Name</td>
+            <td><code>[string]</code> Tax Category Name 
+            <ul class="dev-guide-list">
+              <li>Max length: 50 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>cid</code></td>
@@ -87,7 +91,11 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
         </tr>
         <tr>
             <td><code>name</code></td>
-            <td><code>[string]</code> Tax Name</td>
+            <td><code>[string]</code> Tax Name 
+            <ul class="dev-guide-list">
+              <li>Max length: 50 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>exm</code></td>

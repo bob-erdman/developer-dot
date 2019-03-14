@@ -30,7 +30,10 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code>
+          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code> 
+          <ul class="dev-guide-list">
+            <li>Max length: 150 bytes</li>
+          </ul>
         </td>
       </tr>
       <tr>

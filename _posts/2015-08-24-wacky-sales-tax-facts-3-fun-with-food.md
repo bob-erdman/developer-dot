@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/Screen-Shot-2015-08-18-at-2.03.49-PM.png
+redirect_to: https://www.avalara.com/us/en/blog/2015/08/wacky-sales-tax-facts-3-fun-with-food.html
 ---
 Here's fun food related sales-tax fact. Did you know that if you bought a bagel in New York,  you're exempt from Sales Tax? but with one caveat, it's not sliced so you'd have to do this yourself. I found out when I was in New York a couple of years ago and decided to stop by a bagel place before heading in for a political technology convention.
 

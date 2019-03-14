@@ -63,4 +63,15 @@ You can modify the behavior of these codes (and create your own codes) with tax 
 
 Note that you only need to pass the single-letter code as the CustomerUsageType to trigger the exemption behavior.
 
+<h3>Exempt Transaction in Canada</h3>
+How do you make transactions exempt in Canada? You have a few options:
+<ul class="normal">
+	<li>Utilize the Tribal entity use code `C`. In Canada, it is exempt everywhere.</li>
+	<li>Create a customer exemption using the Tribal entity use code. Add Canada and the province to exemption.</li>
+	<li>Create a Product Taxability Tax Rule making the tax codes of the products non-taxable in Canada and in the province.</li>
+	<li>Create an Exempt Entity Tax Rule making the entity use code of your choice tax exempt in Canada and in the province.</li>
+</ul>
+
+For more information on Canada Exmeptions, check out <a href="https://help.avalara.com/Frequently_Asked_Questions/Avalara_AvaTax_FAQ/How_do_I_make_a_transaction_exempt_in_Canada%3F" target="_blank">this help page</a>.
+
 <hr />
