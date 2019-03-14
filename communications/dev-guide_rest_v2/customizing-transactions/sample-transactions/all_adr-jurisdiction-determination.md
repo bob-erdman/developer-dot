@@ -17,7 +17,11 @@ Avalara Communications provides the all_adr.txt file to help you identify the pr
 <ul class="dev-guide-list">
   <li>Updated monthly with the latest jurisdictions, PCodes, and Postal Code ranges</li>
   <li>Contains all valid PCodes</li>
-  <li>Download available from the <a class="dev-guide-link" href="https://communications.avalara.net/ClientAdmin/ClientDownload">Customer Portal Downloads page</a></li>
+  <li>File download available from the <a class="dev-guide-link" href="https://communications.avalara.net/ClientAdmin/ClientDownload">Customer Portal Downloads page</a></li>
+  <ul class="dev-guide-list">
+    <li>Download and open the .zip folder related to your product</li>
+    <li>all_adr.txt is available in the txt or db folder (depending on the package) within the zip folder</li>
+  </ul>
   <li>Load all_adr.txt into a local database to easily search for the taxing jurisdiction and related PCode</li>
 </ul>
 
