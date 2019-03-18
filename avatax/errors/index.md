@@ -1241,8 +1241,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1411</td>
-			<td><a href="ParserFieldNotOrderableError">ParserFieldNotOrderableError</a></td>
-			<td>The field in the query cannot be ordered.</td>
+			<td><a href="FieldNotOrderableError">FieldNotOrderableError</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1500</td>

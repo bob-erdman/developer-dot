@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-A field in the query is not a queryable. 
+A field in the query is not a queryable.
 
 ## Example
 
@@ -32,4 +32,4 @@ A field in the query is not a queryable.
 
 ## Explanation
 
-Queries have a defined list of acceptable fields that are queryable. The field at position `-0-` of the error's description is not accepted for the query at positoin `-1-`. To find a list the accepted fields for your query, consult the documentation for the model or method used. 
+Queries have a defined list of acceptable fields that are queryable. The field at position `-0-` of the error's description is not accepted for the query at positoin `-1-`. To find a list the accepted fields for your query, consult the documentation for the model or method used.

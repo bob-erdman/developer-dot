@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The `EcmsSstCertsRequired` field should be set to true. 
+The `EcmsSstCertsRequired` field should be set to true.
 
 ## Example
 
