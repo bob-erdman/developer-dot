@@ -17,13 +17,13 @@ doctype: integration_checklists
                         
             <h5>Validate specific data in transactional inputs - <em>Required</em></h5>
                 <p class="badgerequirement">Submit transactions with required data values. For example, ability to calculate taxes using API call and get correct tax results.</p>
-                <p class="badgerequirement">Demonstrate in souce system how each of the input values are configured and passed to the API fields.
+                <p class="badgerequirement">Demonstrate in source system how each of the input values are configured and passed to the API fields.
                     <ul class="normal">
                     <li><h3>System level settings</h3></li>
                         <ul class="normal">
                             <li>Account/Key - API access tokens</li>
                             <li>Client ID - <b>Required</b></li>
-                            <li>Profile - this allows Sellers / Operators to override the default bahavior of Avalara and use a custom tax profile - <b>Required</b></li>
+                            <li>Profile ID - this allows Sellers / Operators to override the default behavior of Avalara and use a custom tax profile - <b>Required</b></li>
                         </ul>
                     <li><h3>Company or Seller Level Settings</h3></li>
                         <ul class="normal">
@@ -42,7 +42,7 @@ doctype: integration_checklists
                         </ul>
                     <li><h3>Transaction Level Settings</h3></li>
                         <ul class="normal">
-                            <li>Company Identifier - Depends on use case if this value is required</li>
+                            
                             <li>T/S Pairs</li>
                             <li>Bundles</li>
                         </ul>
@@ -68,8 +68,8 @@ doctype: integration_checklists
                 </p>
                 
             <h5>Validate Exemption handling - <em>Required</em></h5>
-                <p class="badgerequirement">Ability to handle specific exemptions</p>
-                <p class="badgerequirement">Ability to handle category exemptions</p>
+                <p class="badgerequirement">Ability to handle specific exemptions - allow you to exempt a type of tax or fee for all jurisdiction levels.</p>
+                <p class="badgerequirement">Ability to handle category exemptions - allows you to exempt a specific tax type and at a specific jurisdiction level e.g. city level sales tax exemptions.</p>
                 
             <h5>Ability to handle level exemptions - <em>optional</em><br></h5>
                 <p class="badgerequirement">You should be able to submit transactions with exemption information for Level, category, and specific exemption. The results should reflect the exempted taxes.</p>
@@ -80,7 +80,6 @@ doctype: integration_checklists
                 
             <h5>Validate Invoices/Transactions get committed - <em>Required</em></h5>
                 <p class="badgerequirement">Validate invoices/transactions are identified by DocumentCode</p>
-                <p class="badgerequirement">Validate the related / unrelated flag gets set appropriately</p>
                 <p class="badgerequirement">Validate fact patterns</p>
 
             <h5>Validate ability to pass a single channel line and a multi-channel line - <em>Required</em></h5>
