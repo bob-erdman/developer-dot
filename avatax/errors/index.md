@@ -1242,7 +1242,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1411</td>
 			<td><a href="FieldNotOrderableError">FieldNotOrderableError</a></td>
-			<td>TBD</td>
+			<td>The field you have tried to sort cannot be organized in the desired manner.</td>
 		</tr>		
         <tr>
 			<td>1500</td>
