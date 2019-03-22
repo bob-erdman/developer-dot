@@ -175,6 +175,11 @@ disqus: 0
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/dtl_or_summ_set_to_true/">ReturnDetail and/or ReturnSummary must be set to true.</a></td>
         <td>Either ReturnDetail, ReturnSummary, or both must be true</td>
       </tr>
+      <tr>
+        <td>-2000</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/invoice-limit/">Total Invoices 1001 cannot exceed 1000</a></td>
+        <td>Too many Invoices on a request</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -297,8 +302,8 @@ disqus: 0
       </tr>
       <tr>
         <td>-2000</td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/line-item-limit/">Total LineItems cannot exceed 10000</a></td>
-        <td>Too many LineItems on an invoice</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calculate-tax-errors/line-item-limit/">Total LineItems 10001 cannot exceed 10000</a></td>
+        <td>Too many LineItems on a request</td>
       </tr>
       <tr>
         <td>-1000</td>
