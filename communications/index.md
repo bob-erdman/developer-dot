@@ -42,8 +42,8 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <ul>
-                    <li><a href="/communications/dev-guide_rest_v2/index/" target="_blank">AFC REST v2 Developer Guide</a></li>
-                    <li><a href="/communications/dev-guide_geo_soap/index/" targe="_blank">AFC Geo Soap Developer Guide</a></li>
+                    <li><a href="/communications/dev-guide_rest_v2/" target="_blank">AFC REST v2 Developer Guide</a></li>
+                    <li><a href="/communications/dev-guide_geo_soap/" targe="_blank">AFC Geo Soap Developer Guide</a></li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
