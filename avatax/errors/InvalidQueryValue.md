@@ -32,4 +32,4 @@ The value provided for a query field is invalid.
 
 ## Explanation
 
-Looking at the error's description, the value provided for the field at position `-0-` is invalid. Valid values for the field may be discerned from the type at position `-1-` of the error's description. For further information regarding valid values for the field, check the documentation for the method or model used. 
+Looking at the error's description, the value provided for the field at position `-0-` is invalid. Valid values for the field may be discerned from the type at position `-1-` of the error's description. For further information regarding valid values for the field, check the documentation for the method or model used.

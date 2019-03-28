@@ -32,4 +32,4 @@ A field in the query was not found.
 
 ## Explanation
 
-Looking at the error's description, the field at position `-0-` cannot be found. Check your field for any syntax errors. For more information on accepted fields for your query, check the documentation for the model or method used. 
+Looking at the error's description, the field at position `-0-` cannot be found. Check your field for any syntax errors. For more information on accepted fields for your query, check the documentation for the model or method used.

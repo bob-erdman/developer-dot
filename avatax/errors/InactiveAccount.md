@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The account is currently inactive. 
+The account is currently inactive.
 
 ## Example
 
@@ -32,4 +32,4 @@ The account is currently inactive.
 
 ## Explanation
 
-The account in the request is inactive so the action cannot be applied or completed. To reactivate your account or find more information, contact your account administrator. 
+The account in the request is inactive so the action cannot be applied or completed. To reactivate your account or find more information, contact your account administrator.
