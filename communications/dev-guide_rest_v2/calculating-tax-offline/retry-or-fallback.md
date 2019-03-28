@@ -15,6 +15,9 @@ disqus: 0
 
 After your application detects a timeout or an error, it must next make a decision whether to retry the transaction or fallback to cached tax types and tax rates.
 
+<h3>Set the Timeout Setting</h3>
+Set your timeout setting appropriately.  Run a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/">single line item request</a> and record the response time.  Add 2 to 3 seconds to the response time to get a recommended client-side Timeout Setting value.  Scale the timeout setting value accordingly for transactions containing <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">multiple line items</a>.
+
 <h3>Retry a Transaction</h3>
 Retry your transaction a few times if timeouts are still being returned:
 <ol class="dev-guide-list">
