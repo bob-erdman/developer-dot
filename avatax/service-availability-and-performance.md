@@ -12,7 +12,7 @@ Consuming sales tax related services can be considered mission-critical, especia
 Avalara’s Server Status can be viewed publicly at <a href="http://status.avalara.com">http://status.avalara.com</a>. This page outlines the availability of the service, current performance in terms of response time and a historical view of the availability for the past week.
 
 
-Avalara is committed to providing a minimum service uptime of 99.5%. Certain interested customers can purchase a higher Service Level Agreement if they need a higher commitment to ensuring service availability. You can contact your assigned Avalara Account Manager for further information.
+Avalara is committed to providing a minimum service uptime of 99.5%. You can contact your assigned Avalara Account Manager for further information.
 <h3>Network Latency</h3>
 While there are no Latency Service Level Agreements available, Avalara will strive for a minimum of 300ms service calculation time, not taking network or other latency issues into account. A typical round-trip API call will take anywhere from 400-1000ms depending on network topology, number of hops from source to destination, (de)serialization algorithms and other factors.
 
