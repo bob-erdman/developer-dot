@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: demoPage
 categories: [avatax, api]
-product: avatax
+product: Sales Tax API Demo
 doctype: use_cases
 image: /public/images/avatax-demo-img.png 
 twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png 
@@ -70,7 +70,6 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
         <!-- shortcuts container -->
         <div class="col-md-3">
             <!-- page header -->
-            <h1 style="margin-top:0;">Sales Tax API Demo</h1>
             <div id="demo-shortcuts">
                 <!-- steps to submit -->
                 <div class="row">

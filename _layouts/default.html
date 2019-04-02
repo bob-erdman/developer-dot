@@ -68,8 +68,10 @@
                 <img src="/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
                 <span>Developer</span>
             </a>
+            <!-- TODO: works for avatax demo without need for hyphen -->
             {% if product_name %}<span class="slash">/&nbsp;</span><a href="/{{product_name | downcase}}">{{product_name}}</a>{% endif %}
         </div>
+        {%if page.layout != 'demoPage'%}
         <nav class="navbar navbar-default navbar-static">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
@@ -214,6 +216,7 @@
                 {% endif %}
             </div>
         </nav>
+        {%endif%}
     </header>
     <div class="container-fluid {{page.doctype}}">
         {% if page.nav=="home" %}
@@ -283,52 +286,53 @@
         </section>
         {% endif %}
     </div>
-    <footer>
-        <ul class="global">
-            <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
-            <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
-        </ul>
+    {% if page.layout != 'demoPage' %}
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
 
 
-        <ul class="social">
-            <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
-            <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
-            <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
-            <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
-        </ul>
-        {% if page.api_console == 1 %}
-            {% for api_console_hash in site.data.api_consoles %}
-                {% assign api_console = api_console_hash[1] %}
-                {% assign api_console_path = api_console.nav_link.path | remove_first: '/' %}
-                {% if page.path contains api_console_path %}
-                    {% for config in site.data.SWAGGER_CONFIG %}
-                        {% if config[1].name == page.api_name %}
-                            {% assign swagger_path = config[0] %}
-                        {% endif %}
-                    {% endfor %}
-                    {% assign githubpath = swagger_path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/' %}
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            {% assign githubpath = page.path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/' %}
-        {% endif %}
-        {% unless githubpath contains '/blog/page' %}
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            {% if page.api_console == 1 %}
+                {% for api_console_hash in site.data.api_consoles %}
+                    {% assign api_console = api_console_hash[1] %}
+                    {% assign api_console_path = api_console.nav_link.path | remove_first: '/' %}
+                    {% if page.path contains api_console_path %}
+                        {% for config in site.data.SWAGGER_CONFIG %}
+                            {% if config[1].name == page.api_name %}
+                                {% assign swagger_path = config[0] %}
+                            {% endif %}
+                        {% endfor %}
+                        {% assign githubpath = swagger_path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/' %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% assign githubpath = page.path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/' %}
+            {% endif %}
+            {% unless githubpath contains '/blog/page' %}
 
-        {% endunless %}
+            {% endunless %}
 
 
-        <ul class="legal">
-            <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
-            <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
-            <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
-        </ul>
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
 
-        <ul class="github">
-            <li class="social github-icon"><a href="{{githubpath}}"><span>GH</span> Edit this page on GitHub</a></li>
+            <ul class="github">
+                <li class="social github-icon"><a href="{{githubpath}}"><span>GH</span> Edit this page on GitHub</a></li>
 
-        </ul>
-    </footer>
-
+            </ul>
+        </footer>
+    {% endif %}
     <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="/public/js/vendor/bootstrap.min.js"></script>
     <script src="/public/js/site.js"></script>
