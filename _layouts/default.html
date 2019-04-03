@@ -72,6 +72,8 @@
             {% if product_name %}<span class="slash">/&nbsp;</span><a href="/{{product_name | downcase}}">{{product_name}}</a>{% endif %}
         </div>
         {%if page.layout != 'demoPage'%}
+        <!-- TODO: combine and make look not horrible -->
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
         <nav class="navbar navbar-default navbar-static">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
@@ -334,6 +336,8 @@
         </footer>
     {% endif %}
     <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
     <script src="/public/js/vendor/bootstrap.min.js"></script>
     <script src="/public/js/site.js"></script>
 
@@ -349,6 +353,11 @@
     </script>
     {% endif %}
 
+    {% if page.layout == demoPage %}
+    <script src="/public/js/map-infobubble.js"></script>
+    <script src="/public/js/avaMap.js"></script>
+    <script src="/public/js/avatax-www.js"></script>
+    {% endif %}
     <!-- Adobe Dynamic Tag Manager -->
     <script type="text/javascript">
         _satellite.pageBottom();

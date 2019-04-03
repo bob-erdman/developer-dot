@@ -6,65 +6,8 @@ doctype: use_cases
 image: /public/images/avatax-demo-img.png 
 twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png 
 ---
-<body onload="updateAddress()">
-    <script type='text/javascript'>
-        var map;
-        const infoboxTemplate = `
-            <div class="demo-infobox">
-                <h4 id="demo-infobox-header" style="display: inline;">Getting Started</h4>
-                <i class="glyphicon glyphicon-remove" id="demo-infobox-icon" style="display: inline;float: right;padding-top:5px;" onClick="hideInfobox()"></i>
-                <p id="demo-infobox-text" style="margin-bottom:0;">
-                    Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
-                </p>
-                <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
-            </div>
-        `;
-        function displayToolTip(showInfobox) {
-            if (showInfobox || showInfobox === undefined) {
-                const topLeft = (map.getPageX(), map.getPageY());
-                //Create an infobox that will render in the top left of the map.
-                const infobox = new Microsoft.Maps.Infobox(topLeft, {
-                    htmlContent: infoboxTemplate,
-                });
-                //Assign the infobox to a map instance.
-                infobox.setMap(map);
-            }
-            return;
-        }
-        function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox) {
-            if(destLat === null || destLong === null) {
-                map = new Microsoft.Maps.Map('#myMap', {zoom: 3});
-                displayToolTip(showInfobox);
-            } else if(srcLat === null || srcLong === null) {
-                //Single location layer (pushpin)
-                var location  = new Microsoft.Maps.Location(destLat, destLong);         
-                map = new Microsoft.Maps.Map('#myMap', {center: location});
-                const pin = new Microsoft.Maps.Pushpin(location, {
-                    color: '#ff6600',
-                    title: $('input[type=radio][name=address]:checked').attr('city') + ' Office'
-                })
-                displayToolTip(showInfobox);
-                map.entities.push(pin)
-                //Exit out since it is a single location.
-            } else if (srcLat != null && destLat != null){
-                //Source and destination layer (polyline)
-                map = new Microsoft.Maps.Map('#myMap', {});
-                center = map.getCenter();
-                let srcLocation = new Microsoft.Maps.Location(srcLat, srcLong);
-                let destLocation = new Microsoft.Maps.Location(destLat, destLong);
-                var coords = [destLocation, srcLocation];
-                var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
-                displayToolTip(showInfobox);
-                map.entities.push(line);
-                map.setView({
-                    center: new Microsoft.Maps.Location(srcLat + 1, destLong + 1),
-                    zoom: usAddresses ? 4 : 2,
-                });
-            }
-            return;
-        }
-    </script>
-    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer ></script>
+<body onload="">
+    <link href="../../public/css/avatax.css" rel="stylesheet" type="text/css"/>
     <!-- demo container -->
     <div class="row">
         <!-- shortcuts container -->
@@ -153,7 +96,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
         <div class="col-md-9">
             <!-- map row -->
             <div class="row">
-                <div id="myMap"></div>
+                <div id="map" style="position:absolute;z-index:2;top:56px;left:0px;right:0px;bottom:400px;"></div>
             </div>
             <!-- api details row -->
             <div class="row" id="demo-api-details">
