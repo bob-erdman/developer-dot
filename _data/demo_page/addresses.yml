@@ -34,22 +34,21 @@
   type: international
   selected: false
   country: UK
-- city: Pune
-  street: 3rd Floor, Pride Portal
-  region: Bahiratwadi, Shivajinagar
-  countryZip: Pune, India 411 016
-  value: Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016
-  lat: 18.533946
-  long: 73.827597
+- city: Toronto
+  street: 317 Adelaide St W
+  countryZip: Toronto, Ontario, CA M5V 1P9
+  value: 317 Adelaide St W,Toronto,Ontario,CA,M5V 1P9 
+  lat: 43.647409 
+  long: -79.392299
   type: international
   selected: false
-  country: IN
-- city: São Paulo
-  street: Rua Henri Dunant 137
-  countryZip: São Paulo, Brazil 04709-110
-  value: Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110
-  lat: -23.633102
-  long: -46.695348
+  country: CA
+- city: Brussels
+  street: O.L.Vrouwstraat 6 
+  countryZip: 1850 Grimbergen, Belgium
+  value: O.L.Vrouwstraat 6,Grimbergen,BE,B-1850
+  lat: 50.932458
+  long: 4.372408
   type: international
   selected: false
-  country: BR
+  country: BE
