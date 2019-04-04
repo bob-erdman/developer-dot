@@ -213,7 +213,7 @@ $(function()
    var showMain = function()
    {
       $("#splash").hide();
-      resize()
+      resize();
    }
 
    var emptyBubbleState = 
@@ -445,9 +445,9 @@ $(function()
    // handler that is called when the window size has changed
    var resize = function()
    {
-        var left = $("#main-top-search");
-        var width = $("#main-top-right").offset().left - $("#main-top-avalara").width() - parseInt(left.css("padding-left"), 10) - parseInt(left.css("padding-right"), 10) - 4
-        left.width(width)
+      //   var left = $("#main-top-search");
+      //   var width = $("#main-top-right").offset().left - $("#main-top-avalara").width() - parseInt(left.css("padding-left"), 10) - parseInt(left.css("padding-right"), 10) - 4
+      //   left.width(width)
    }
 
    // handler that is called when the user wants the device GPS or location to be read and placed on the map
@@ -610,7 +610,7 @@ $(function()
          })
       })
       $(window).bind("resize", resize)
-      resize()
+      resize();
    }
 
    // handler that is called when app is initialized by some external trigger
