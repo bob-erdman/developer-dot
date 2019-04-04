@@ -6,7 +6,7 @@ doctype: use_cases
 image: /public/images/avatax-demo-img.png 
 twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png 
 ---
-<body onload="">
+<body onload="" style="position:fixed;">
     <link href="../../public/css/avatax.css" rel="stylesheet" type="text/css"/>
     <!-- demo container -->
     <div class="row">
@@ -96,7 +96,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
         <div class="col-md-9">
             <!-- map row -->
             <div class="row">
-                <div id="map" style="position:absolute;z-index:2;top:56px;left:0px;right:0px;bottom:400px;"></div>
+                <div id="map" style="position: relative;z-index:2;top:0px;left:0px;right:0px;bottom:0px;min-height: 400px;"></div>
             </div>
             <!-- api details row -->
             <div class="row" id="demo-api-details">
