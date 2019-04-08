@@ -38,7 +38,11 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
         <td><code>inv</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>[Invoice]</code></a> Invoice
         <br/>
-        Contains information about the <b>transaction</b>, including a list of line items to be taxed</td>
+        Contains information about the <b>transaction</b>, including a list of line items to be taxed.  
+        <ul class="dev-guide-list">
+          <li>Limit 1,000 invoices per request</li>
+        </ul>
+        </td>
       </tr>
       <tr>
         <td><code>ovr</code></td>
