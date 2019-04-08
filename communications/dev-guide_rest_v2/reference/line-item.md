@@ -30,7 +30,10 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>ref</code></td>
             <td><code>[string]</code>Reference code
             <br/>
-            Reference ID for line item
+            Reference ID for line item 
+            <ul class="dev-guide-list">
+              <li>Max length: 150 bytes</li>
+            </ul>
             </td>
         </tr>
         <tr>
@@ -238,6 +241,9 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
     </tbody>
   </table>
 </div>
+
+<h4>Note</h4>
+Limited to 10,000 line items per request.
 
 <h4>Note</h4>
 These fields override the same fields set on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>:

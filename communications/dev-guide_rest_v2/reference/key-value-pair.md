@@ -26,18 +26,24 @@ The <code>KeyValuePair</code> object allows the user to specify a list of <b>key
       </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><code>key</code></td>
-            <td><code>[string]</code> Key
-              <br/>
-              An index for the key/value pair.  Numeric value between 1 and 10
-            </td>
-        </tr>
-        <tr>
+      <tr>
+        <td><code>key</code></td>
+        <td><code>[string]</code> Key
+        <br/>
+        An index for the key/value pair.  Numeric value between 1 and 10 
+        <ul class="dev-guide-list">
+          <li>Max length: 2 bytes</li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
         <td><code>val</code></td>
         <td><code>[string]</code> Value
-          <br/>
-          150-byte alpha-numeric value
+        <br/>
+        150-byte alpha-numeric value 
+        <ul class="dev-guide-list">
+          <li>Max length: 150 bytes</li>
+        </ul>
         </td>
       </tr>
     </tbody>

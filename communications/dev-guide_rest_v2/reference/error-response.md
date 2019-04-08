@@ -35,7 +35,11 @@ The <code>Error</code> object contains the <b>error description</b> as applicabl
       </tr>
       <tr>
         <td><code>msg</code></td>
-        <td><code>[string]</code> Error Message</td>
+        <td><code>[string]</code> Error Message 
+        <ul class="dev-guide-list">
+          <li>Max length: Unlimited</li>
+        </ul>
+        </td>
       </tr>
     </tbody>
   </table>

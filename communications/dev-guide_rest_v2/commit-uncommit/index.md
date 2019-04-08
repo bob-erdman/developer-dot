@@ -34,7 +34,7 @@ Communications REST v2 provides the ability to commit or uncommit transactions a
 To group transactions:
 <ol class="dev-guide-list">
   <li>Create new transactions at any point in the reporting cycle</li>
-  <li>Populate the Document Code (<code>doc</code>) with a unique identifier (for example, an invoice number) 
+  <li>Populate the Document Code (<code>doc</code>) with a unique identifier (for example, an invoice number)</li>
   <li>Use the Commit (<code>cmmt</code>) flag to identify transactions to include in or exclude from the compliance report for the reporting cycle</li>
 </ol>
 

@@ -86,7 +86,10 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
         <td><code>idnt</code></td>
         <td><code>[string]</code> Company Identifier 
         <br>
-        An optional company identifier used in reporting.  This is a 20 byte alphanumeric field that represents your company or, if you are a third-party billing provider, could represent one of your clients
+        An optional company identifier used in reporting.  Represents your company or, if you are a third-party billing provider, could represent one of your clients 
+        <ul class="dev-guide-list">
+          <li>Max length: 20 bytes</li>
+        </ul>
         </td>
       </tr>
     </tbody>
