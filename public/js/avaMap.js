@@ -8,7 +8,7 @@ $(function()
      tiles1: "https://1.tiles.avataxrates.com/tiles/", 
      tiles2: "https://2.tiles.avataxrates.com/tiles/", 
      tiles3: "https://3.tiles.avataxrates.com/tiles/",
-     // widget api for jurisdiction tax rates https://avalara-stage.adobemsbasic.com/taxrates/en/state-rates/api/getRateForAddress/ 
+     // widget api for jurisdiction tax rates
      widget: "https://www.avalara.com/taxrates/en/state-rates/api/getRateForAddress/"
    };
 
@@ -25,14 +25,6 @@ $(function()
       map:null, 
       bubble:null
    };
-
-   var ihateie = function()
-   {
-     if ($.browser.msie) {
-        $("#main-top-avalara").hide()
-        $("#main-top-avalara").show()
-     }
-   }
 
    // http://msdn.microsoft.com/en-us/library/bb259689.aspx
    // quadkey algorithm function used to pull in tax tiling and map it ontop of google maps
@@ -52,12 +44,12 @@ $(function()
 
          if((tileX & mask) !== 0)
          {
-             digit++;
+            digit++;
          }
 
          if((tileY & mask) !== 0)
          {
-             digit += 2;
+            digit += 2;
          }
 
          key += digit.toString();
@@ -72,31 +64,34 @@ $(function()
    {
       if(!state.pane)
       {
-        $("input[name=query]").trigger('close.suggest').blur()
-        state.pane = pane;
+         $("input[name=query]").trigger('close.suggest').blur()
+         state.pane = pane;
 
-        $("#main-top").one("click.pane-close", function(e) {return paneClose(e)})
-        if (nohide)
-          $(".pane-off").not('#main-top-layers').not('#main-top-locate').hide()
-        else
-          $(".pane-off").hide()
-        $(".pane-on").show();
+         $("#main-top").one("click.pane-close", function(e) {return paneClose(e)})
+        
+         if (nohide)
+            $(".pane-off").not('#main-top-layers').not('#main-top-locate').hide()
+         else
+            $(".pane-off").hide()
+        
+         $(".pane-on").show();
 
-        var height = state.pane.css({visibility:"hidden"}).show().height();
-        state.pane.css({top:-height, visibility:"visible"
-        }).animate(
+         var height = state.pane.css({visibility:"hidden"}).show().height();
+         state.pane.css({top:-height, visibility:"visible"
+         }).animate(
             {top:0}, 
-            300)
+            300
+         )
       }
       else if(state.pane.get(0) != pane.get(0))
       {
-          state.pane.hide();
-          state.pane = null;
+         state.pane.hide();
+         state.pane = null;
 
-          $(".pane-on").hide();
-          $(".pane-off").show();
+         $(".pane-on").hide();
+         $(".pane-off").show();
 
-          paneOpen(pane,nohide)
+         paneOpen(pane,nohide)
       }
       return false;
    };
@@ -105,28 +100,28 @@ $(function()
    var paneClose = function(e)
    {
       if(state.pane) {
-        // this is very intentional -- it's quite possible to have several
-        // pane close transitions going on simultaneously...
-        // such is the nature of async events. This may be a bit of a 
-        // cop-out though.
-        var pane = state.pane
-        state.pane = null
-        $("#main-top").off("click.pane-close")
-        $("#main-top-logo").off("click.pane-close")
-        $("#info").off("click.pane-close")
-        $("#register").off("click.pane-close")
-        $("#about").off("click.pane-close")
-        $(".pane-on").hide()
-        $(".pane-off").show()
-        $("input[name=query]").blur()
-        pane.animate(
-          {top:-pane.height()}, 
-          300,
-          function()
-          {
-            ihateie()
-            pane.hide();
-          })
+         // this is very intentional -- it's quite possible to have several
+         // pane close transitions going on simultaneously...
+         // such is the nature of async events. This may be a bit of a 
+         // cop-out though.
+         var pane = state.pane
+         state.pane = null
+         $("#main-top").off("click.pane-close")
+         $("#main-top-logo").off("click.pane-close")
+         $("#info").off("click.pane-close")
+         $("#register").off("click.pane-close")
+         $("#about").off("click.pane-close")
+         $(".pane-on").hide()
+         $(".pane-off").show()
+         $("input[name=query]").blur()
+         pane.animate(
+            {top:-pane.height()}, 
+            300,
+            function()
+            {
+               pane.hide();
+            }
+   )
       }
       else {
         $("input[name=query]").blur()
@@ -152,31 +147,31 @@ $(function()
             var address_components = results[0].address_components;
             $.each(address_components, function(index,address_type)
             {   
-                key = '';
+               key = '';
 
-                if($.inArray("route", address_type.types) > -1 && address_type['long_name'] !== 'Unnamed Road') {
+               if($.inArray("route", address_type.types) > -1 && address_type['long_name'] !== 'Unnamed Road') {
                   key = 'line1';
-                } 
+               } 
 
-                if($.inArray("locality", address_type.types) > -1) {
+               if($.inArray("locality", address_type.types) > -1) {
                   key = 'city';
-                }
+               }
 
-                if($.inArray("administrative_area_level_1", address_type.types) > -1) {
+               if($.inArray("administrative_area_level_1", address_type.types) > -1) {
                   key = 'region';
-                }
+               }
 
-                if($.inArray("country", address_type.types) > -1) {
+               if($.inArray("country", address_type.types) > -1) {
                   key = 'country';
-                }
+               }
 
-                if($.inArray("postal_code", address_type.types) > -1) {
+               if($.inArray("postal_code", address_type.types) > -1) {
                   key = 'postalCode';
-                }
+               }
 
-                if(key != '') {
+               if(key != '') {
                   address[key] = address_type.short_name;
-                }                
+               }                
             });
 
             address.longitude = latlng.lng;
@@ -186,17 +181,17 @@ $(function()
          } else {
             switch(Math.floor((Math.random()*10)))
             {
-              case 0: bubbleContent("Toto, we’re not in Kansas anymore."); break;
-              case 1: bubbleContent("Searching for sunken treasure?"); break;
-              case 2: bubbleContent("Looking for Never Never Land?"); break;
-              case 3: bubbleContent("Know where you’re going?"); break;
-              case 4: bubbleContent("Let’s try that again."); break;
-              case 5: bubbleContent("Let’s get you back on course. Try again."); break;
-              case 6: bubbleContent("Wait a tick, we can’t find any tax rates there."); break;
-              case 7: bubbleContent("That’s one rate we just can’t find."); break;
-              case 8: bubbleContent("You might be a little off course."); break;
-              case 9: bubbleContent("How about trying that again?"); break;
-              default: bubbleContent("Where you off to?");
+               case 0: bubbleContent("Toto, we’re not in Kansas anymore."); break;
+               case 1: bubbleContent("Searching for sunken treasure?"); break;
+               case 2: bubbleContent("Looking for Never Never Land?"); break;
+               case 3: bubbleContent("Know where you’re going?"); break;
+               case 4: bubbleContent("Let’s try that again."); break;
+               case 5: bubbleContent("Let’s get you back on course. Try again."); break;
+               case 6: bubbleContent("Wait a tick, we can’t find any tax rates there."); break;
+               case 7: bubbleContent("That’s one rate we just can’t find."); break;
+               case 8: bubbleContent("You might be a little off course."); break;
+               case 9: bubbleContent("How about trying that again?"); break;
+               default: bubbleContent("Where you off to?");
             }
          }
       });
@@ -216,12 +211,6 @@ $(function()
       resize();
    }
 
-   var emptyBubbleState = 
-      '<div class="infobubbletext"><div class="spinner" style="width:24px;height:16px;"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div></div>';
-
-   var emptyBubbleStateIE = 
-      '<div class="infobubbletext"><div class="spinner" style="width:24px;height:16px;">&nbsp;</div></div>';
-
    // given a (string) content and a style, changes the current value of the bubble/pin on the map
    var bubbleContent = function(content, style)
    {
@@ -236,7 +225,7 @@ $(function()
    {
       state.place = state.location = null;
       var position = new google.maps.LatLng(latitude, longitude);
-      var emptyBubble = $.browser.msie ? emptyBubbleStateIE : emptyBubbleState;
+      var emptyBubble = '<div class="infobubbletext"><div class="spinner" style="width:24px;height:16px;"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div></div>';
 
       if(ui.bubble)
       {
@@ -316,36 +305,40 @@ $(function()
       }
    }
 
-  var titlecase = function(s)
-  {
-    // See that little {3} gem? It's to prevent title casing of things like "US". Yeah, hack. And some more...wheeeee!
-    return s.replace(/\b(\w{3,})\b/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()}).replace(
+   //TODO: figure out a better way if at all possible cuz...wt...
+   var titlecase = function(s)
+   {
+      // See that little {3} gem? It's to prevent title casing of things like "US". Yeah, hack. And some more...wheeeee!
+      return s.replace(/\b(\w{3,})\b/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()}).replace(
       /\((\w+)\)/g, function(txt){return txt.toUpperCase()});
-  }
+   }
 
-  var precision = function(rate, minwidth, precision) {
-    var pad = ''; for (var i = 0; i < minwidth; i++) pad += '0';
-    var decimal;
+   //TODO: what is this any why?
+   var precision = function(rate, minwidth, precision) {
+      var pad = ''; for (var i = 0; i < minwidth; i++) pad += '0';
+      var decimal;
 
-    for (var i = 0; i < 2; i++) {
-      decimal = /(\d+)\.(\d+)/.exec(rate);
-      if (!decimal) return minwidth > 0 ? rate + '.' + pad : rate.toString();
-      if (parseFloat(decimal[2].substring(0,precision)) == 0) decimal[2] = '';
-      if (!(decimal[2].length || minwidth)) return decimal[1];
-      if (decimal[2].length <= minwidth)
-        return decimal[1] + '.' + decimal[2] + pad.substring(0, minwidth - decimal[2].length);
-      if (decimal[2].length <= precision) return rate.toString();
-      // round up to full precision for second try
-      rate += 5/Math.pow(10,precision + 1);
-    }
-    // we've a number that exceeds precision ... clip it
-    decimal[2] = decimal[2].substring(0,Math.min(precision, decimal[2].length));
-    // chew up zero's at the end
-    while (decimal[2][decimal[2].length - 1] == '0' && decimal[2].length > minwidth)
+      for (var i = 0; i < 2; i++) {
+         decimal = /(\d+)\.(\d+)/.exec(rate);
+         if (!decimal) return minwidth > 0 ? rate + '.' + pad : rate.toString();
+         if (parseFloat(decimal[2].substring(0,precision)) == 0) decimal[2] = '';
+         if (!(decimal[2].length || minwidth)) return decimal[1];
+         if (decimal[2].length <= minwidth)
+            return decimal[1] + '.' + decimal[2] + pad.substring(0, minwidth - decimal[2].length);
+         if (decimal[2].length <= precision) return rate.toString();
+         // round up to full precision for second try
+         rate += 5/Math.pow(10,precision + 1);
+      }
+
+      // we've a number that exceeds precision ... clip it
+      decimal[2] = decimal[2].substring(0,Math.min(precision, decimal[2].length));
+      
+      // chew up zero's at the end
+      while (decimal[2][decimal[2].length - 1] == '0' && decimal[2].length > minwidth)
       decimal[2] = decimal[2].substring(0, decimal[2].length - 1);
-    if (!decimal[2].length) return decimal[1];
-    return decimal[1] + '.' + decimal[2];
-  }
+      if (!decimal[2].length) return decimal[1];
+      return decimal[1] + '.' + decimal[2];
+   }
 
   var showInfo = function()
   {
@@ -365,7 +358,6 @@ $(function()
         $("#info-rate").html(precision(totalRate * 100, 4, 4));
         $("#info-details").html(details);
     }
-    ihateie()
   }
 
   // Zoom Map on the given location
@@ -412,16 +404,13 @@ $(function()
           },
           statusCode: {
             400:function() {
-              ihateie();
               bubbleContent("We’re having trouble with that one.");
             }
           },
           error:function(xhr,textStatus,e) {
-            ihateie();
             bubbleContent("Error...unable to retrieve rate at this time");
           }, 
           success:function(response) {
-            ihateie()
             state.place = response
             state.location = {latitude:address.latitude, longitude:address.longitude};
 
