@@ -15,6 +15,13 @@ disqus: 0
 
 The simplest <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a> in Communications REST v2 is a single <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> contained within a single <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoice</a>.
 
+<h4>Note</h4>
+Limits <b>per request</b>: 
+<ul class="dev-guide-list">
+  <li>1,000 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoices</a> (<code>inv</code>)</li>
+  <li>10,000 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line items</a> (<code>itms</code>)</li>
+</ul>
+
 <h3>Simple Request Example</h3>
 This is an example of a simple request containing an invoice and 1 line item.  All <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/required-fields/">required fields</a> are set, plus a charge (<code>chg</code>) of 100 and a lines count (<code>line</code>) of 10.
 
@@ -55,7 +62,7 @@ This is an example of a simple request containing an invoice and 1 line item.  A
 This transaction returns 3 taxes (<code>txs</code>), totalling 19.640015.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a data-toggle="collapse" href="#collapse1" class="dev-guide-link">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -195,7 +202,7 @@ This example contains one line item and some additional information, including:
 In this <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response">response</a>, 8 taxes (<code>txs</code>) are returned, totalling 38.100488.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a data-toggle="collapse" href="#collapse2" class="dev-guide-link">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}

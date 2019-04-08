@@ -18,6 +18,13 @@ An <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/i
 <h4>Note</h4>
 Multiple <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoices</a> (with multiple <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line items</a>) can be added to a transaction.  This page demonstrates multiple line items only.
 
+<h4>Note</h4>
+Limits <b>per request</b>: 
+<ul class="dev-guide-list">
+  <li>1,000 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoices</a> (<code>inv</code>)</li>
+  <li>10,000 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line items</a> (<code>itms</code>)</li>
+</ul>
+
 <h3>Simple Multi-line Invoice Example</h3>
 This invoice contains 3 simple <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line items</a>.
 
@@ -108,7 +115,7 @@ A few things are going on in this <a class="dev-guide-link" href="/communication
 </ul>
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a data-toggle="collapse" href="#collapse1" class="dev-guide-link">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -597,7 +604,7 @@ This example shows an <a class="dev-guide-link" href="/communications/dev-guide_
 Both the line item <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">detailed taxes</a> (<code>txs</code>) and the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">summarized taxes</a> (<code>summ</code>) are returned.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a data-toggle="collapse" href="#collapse2" class="dev-guide-link">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 <h4>Response</h4>

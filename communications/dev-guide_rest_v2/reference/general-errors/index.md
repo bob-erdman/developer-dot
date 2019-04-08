@@ -30,6 +30,11 @@ disqus: 0
         <td>The request has been denied</td>
       </tr>
       <tr>
+        <td>HTTP 500</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/general-errors/internal-server-error/">Internal Server Error</a></td>
+        <td>A problem has occurred with the service</td>
+      </tr>
+      <tr>
         <td>HTTP 503</td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/general-errors/service-unavailable/">Service Unavailable</a></td>
         <td>The service is unavailable</td>
