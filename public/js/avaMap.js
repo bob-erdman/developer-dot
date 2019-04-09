@@ -1,15 +1,12 @@
 $(function()
 {
-   // just a nice place to stash important urls that might change
+   // tile urls
    var url = 
    {
-     // tile servers
      tiles0: "https://0.tiles.avataxrates.com/tiles/", 
      tiles1: "https://1.tiles.avataxrates.com/tiles/", 
      tiles2: "https://2.tiles.avataxrates.com/tiles/", 
      tiles3: "https://3.tiles.avataxrates.com/tiles/",
-     // widget api for jurisdiction tax rates
-     widget: "https://www.avalara.com/taxrates/en/state-rates/api/getRateForAddress/"
    };
 
    // variable that maintains state of the overall app
@@ -21,13 +18,12 @@ $(function()
    // ui elements that need to be global
    var ui = 
    {
-      map:null, 
-      bubble:null
+      map: null, 
+      bubble: null
    };
 
    // http://msdn.microsoft.com/en-us/library/bb259689.aspx
    // quadkey algorithm function used to pull in tax tiling and map it ontop of google maps
-   // can be used by bing maps as well
    var quadkey = function(tileX, tileY, detail)
    {
       var key = "", range = Math.pow(2, detail);
@@ -125,25 +121,10 @@ $(function()
       });
    }
 
-   // hide the splash
-   var hideSplash = function()
-   {
-      $("#splash").css({opacity:0});
-      setTimeout(showMain, 800);
-   };
-
-   // show the map
-   var showMain = function()
-   {
-      $("#splash").hide();
-      resize();
-   }
-
    // given a (string) content and a style, changes the current value of the bubble/pin on the map
    var bubbleContent = function(content, style)
    {
-      ui.bubble.setValues( 
-      {
+      ui.bubble.setValues({
          content: "<div class='" + (style || 'infobubbletext') + "'>" + content + "</div>"
       });
    };
@@ -179,10 +160,10 @@ $(function()
          ui.bubble = new InfoBubble(options_bubble);
          ui.bubble.open();
          $(ui.bubble.getDiv()).on('mousedown', function(e) {
-            return false
+            return false;
          }).on('click', function(e) {
-            click(e)
-            return false
+            click(e);
+            return false;
          })
 
          // array of handler for the start/during/end drag of the bubble
@@ -193,7 +174,7 @@ $(function()
             {
               var point = ui.bubble.projection.fromLatLngToContainerPixel(ui.bubble.get('position'));
               drag.offset = {x:e.clientX - point.x, y:e.clientY - point.y};
-              $('.infobubble').css('cursor', 'move')
+              $('.infobubble').css('cursor', 'move');
             },
             stop: function(e)
             {
@@ -202,7 +183,7 @@ $(function()
                 ui.bubble.setPosition(point)
                 var address = {latitude: point.lat(), longitude: point.lng()};
                 findTaxRate(address);
-                $('.infobubble').css('cursor', 'pointer')
+                $('.infobubble').css('cursor', 'pointer');
             }
          };
 
@@ -249,31 +230,32 @@ $(function()
       return decimal[1] + '.' + decimal[2];
    }
 
-  var showInfo = function()
-  {
-    if(state.place && state.location)
-    {
-        var details = "";
-        var totalRate = 0;
+   //TODO: use to populate infobox thing
+   var showInfo = function()
+   {
+      if(state.place && state.location)
+      {
+         var details = "";
+         var totalRate = 0;
 
-        for(var i = 0; i < state.place.summary.length; i++)
-        {
-          var place = state.place.summary[i];
-          var rate  = precision(place.rate * 100, 4, 4);
-          totalRate += place.rate;
-          details += "<tr><td>" + titlecase(place.jurisName) + " (" + place.jurisType + ")</td><td style='text-align:right;'>" + rate + "%</td></tr>";
-        }
+         for(var i = 0; i < state.place.summary.length; i++)
+         {
+            var place = state.place.summary[i];
+            var rate  = precision(place.rate * 100, 4, 4);
+            totalRate += place.rate;
+            details += "<tr><td>" + titlecase(place.jurisName) + " (" + place.jurisType + ")</td><td style='text-align:right;'>" + rate + "%</td></tr>";
+         }
 
-        $("#info-rate").html(precision(totalRate * 100, 4, 4));
-        $("#info-details").html(details);
-    }
-  }
+         $("#info-rate").html(precision(totalRate * 100, 4, 4));
+         $("#info-details").html(details);
+      }
+   }
 
   // Zoom Map on the given location
    var zoomMap = function(longitude,latitude,on) {
       if( on == true ) {
-          ui.map.setCenter(new google.maps.LatLng(latitude, longitude));
-          ui.map.setZoom(12);
+         ui.map.setCenter(new google.maps.LatLng(latitude, longitude));
+         ui.map.setZoom(12);
       }   
   }
 
@@ -300,7 +282,7 @@ $(function()
       $.ajax({
          type: 'post',
          cache: true, 
-         url:url.widget,
+         url: "https://www.avalara.com/taxrates/en/state-rates/api/getRateForAddress/",
          data: {
             "latitude": latitude,
             "longitude": longitude,
@@ -335,15 +317,6 @@ $(function()
             }
          }
       });
-   }
-
-   //TODO: remove or make useful
-   // handler that is called when the window size has changed
-   var resize = function()
-   {
-      //   var left = $("#main-top-search");
-      //   var width = $("#main-top-right").offset().left - $("#main-top-avalara").width() - parseInt(left.css("padding-left"), 10) - parseInt(left.css("padding-right"), 10) - 4
-      //   left.width(width)
    }
 
    // handler that is called when the user wants the device GPS or location to be read and placed on the map
@@ -431,8 +404,6 @@ $(function()
 
       ui.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-      // hide the splash as soon as google maps is loaded
-      google.maps.event.addListenerOnce(ui.map, "tilesloaded", hideSplash);
       google.maps.event.addListener(ui.map, "click", findIt);
       google.maps.event.addListener(ui.map, "dblclick", function() { if(ui.bubble && ui.bubble.getDiv()) ui.bubble.close()});
 
@@ -478,14 +449,12 @@ $(function()
             $(this).toggleClass("on")
          })
       })
-      $(window).bind("resize", resize)
-      resize();
    }
 
    // handler that is called when app is initialized by some external trigger
    // phonegap triggers this event when the device is ready
    // webapp triggers this event when dom has loaded
-   $(window).on("avatax.initialize", function(options) { 
+   $(window).load(function(options) { 
       // if the state is not initialized, this is a first time
       if(!state.initialized)
       {
@@ -506,11 +475,6 @@ $(function()
          script.type = "text/javascript";
          document.getElementsByTagName("body")[0].appendChild(script);
          state.initialized = true;
-      }
-      // else we are probably coming back from some other state and everything was already initialized
-      else
-      {
-         hideSplash();
       }
    }).on("avatax.mapready", function() {
       loadMap();
