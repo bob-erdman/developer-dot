@@ -6,7 +6,7 @@ doctype: use_cases
 image: /public/images/avatax-demo-img.png 
 twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png 
 ---
-<body onload="" style="position:fixed;">
+<body onload="updateAddress()" style="position:fixed;">
     <link href="../../public/css/avatax.css" rel="stylesheet" type="text/css"/>
     <!-- demo container -->
     <div class="row">

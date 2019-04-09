@@ -763,7 +763,8 @@ function updateAddress() {
         srcLong = null;
     }
 
-    GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
+    //TODO: replace
+    // GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
     fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
