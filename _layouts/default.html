@@ -63,18 +63,15 @@
 
 <body id="top" data-product={{product_name}}>
     <header>
-        <div class="pageTitle">
-            <a href="/">
-                <img src="/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
-                <span>Developer</span>
-            </a>
-            <!-- TODO: works for avatax demo without need for hyphen -->
-            {% if product_name %}<span class="slash">/&nbsp;</span><a href="/{{product_name | downcase}}">{{product_name}}</a>{% endif %}
-        </div>
-        {%if page.layout != 'demoPage'%}
         <!-- TODO: combine and make look not horrible -->
         <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
-        <nav class="navbar navbar-default navbar-static">
+        <nav class="navbar navbar-static">
+            <div class="pageTitle" style="float: left">
+                <a href="/">
+                    <img src="/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
                 <span>Menu</span>
@@ -172,16 +169,7 @@
                             <li><a href="/tests/testing-your-integration/">Avalara Test Cases</a></li>
 
                         </ul>
-                    </li>                    <!-- removing until the link to the Self-Test is fugured out -->
-                    <!--
-                    <li class="tests dropdown dropdown-large hidden-xs">
-                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
-                            <li><a href="/tests/self-test">Avalara Self-Test Tool</a></li>
-                            <li><a href="/tests/testing-your-integration/">Avalara Test Cases</a></li>
-                        </ul>
-                    </li> -->
-
+                    </li>            
                     <li class="certification dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggel" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-large">
@@ -193,14 +181,14 @@
                     <li class="resources dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-large">
-                          <li><a href="/resources/conferences">Avalara CRUSH Conference</a></li>
-                          <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
-                          <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
-                          <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
-                          <li><a href="/resources/support">Developer Support Options</a></li>
-                          <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
-                          <li><a href="/resources/webinars">Webinars</a></li>
-                          <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                            <li><a href="/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="/resources/webinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
                         </ul>
                     </li>
                     <li class="resources visible-xs-block"><a href="/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
@@ -218,25 +206,8 @@
                 {% endif %}
             </div>
         </nav>
-        {%endif%}
     </header>
     <div class="container-fluid {{page.doctype}}">
-        {% if page.nav=="home" %}
-        <div class="recent-blog-posts" id="recentPosts">
-            <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
-            <h2>AvaTax Developer News</h2>
-            {% for post in site.posts limit:4 %}
-            <div class="col-md-3">
-                <div class="blog-preview recent-posts">
-                    <div class="gradient"></div>
-                    <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
-                    <h6>{{ post.subtitle }}</h6>
-                    <p class="byline">By {{post.author}} | {{ post.date | date: "%B %d, %Y"}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
         {%if page.nav == 'sdk' %} {% include sdk_breadcrumb.html %}
         <section class="row padding-sides half">
             <nav class="col-md-3">
