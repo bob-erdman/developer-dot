@@ -15,7 +15,6 @@ $(function()
    // variable that maintains state of the overall app
    var state = 
    {
-      pane: null,
       initialized: false
    };
 
@@ -56,77 +55,6 @@ $(function()
       }
 
       return key;
-   };
-
-   // only one pane can be open at a time
-   // panes are just the drop down page that shows up over the app
-   var paneOpen = function(pane,nohide)
-   {
-      if(!state.pane)
-      {
-         $("input[name=query]").trigger('close.suggest').blur()
-         state.pane = pane;
-
-         $("#main-top").one("click.pane-close", function(e) {return paneClose(e)})
-        
-         if (nohide)
-            $(".pane-off").not('#main-top-layers').not('#main-top-locate').hide()
-         else
-            $(".pane-off").hide()
-        
-         $(".pane-on").show();
-
-         var height = state.pane.css({visibility:"hidden"}).show().height();
-         state.pane.css({top:-height, visibility:"visible"
-         }).animate(
-            {top:0}, 
-            300
-         )
-      }
-      else if(state.pane.get(0) != pane.get(0))
-      {
-         state.pane.hide();
-         state.pane = null;
-
-         $(".pane-on").hide();
-         $(".pane-off").show();
-
-         paneOpen(pane,nohide)
-      }
-      return false;
-   };
-
-   // closes the pane if found to be active
-   var paneClose = function(e)
-   {
-      if(state.pane) {
-         // this is very intentional -- it's quite possible to have several
-         // pane close transitions going on simultaneously...
-         // such is the nature of async events. This may be a bit of a 
-         // cop-out though.
-         var pane = state.pane
-         state.pane = null
-         $("#main-top").off("click.pane-close")
-         $("#main-top-logo").off("click.pane-close")
-         $("#info").off("click.pane-close")
-         $("#register").off("click.pane-close")
-         $("#about").off("click.pane-close")
-         $(".pane-on").hide()
-         $(".pane-off").show()
-         $("input[name=query]").blur()
-         pane.animate(
-            {top:-pane.height()}, 
-            300,
-            function()
-            {
-               pane.hide();
-            }
-   )
-      }
-      else {
-        $("input[name=query]").blur()
-      }
-      return false;
    };
 
    /* Get the latitude and longitude and return the spcific address details
@@ -283,25 +211,6 @@ $(function()
            start:drag.start,
            stop:drag.stop
          })
-
-
-         // click handler for the bubble/pin
-         var click = function(e)
-         {
-            if(state.place && state.location)
-            {
-              // If the info display is up we'll close it
-               if ($('#info').css('display') != 'none') {
-                 paneClose(e)
-               }
-               else {
-                $("#info").one("click.pane-close", function(e) {return paneClose(e)})
-                paneOpen($("#info"), true)
-                showInfo()
-               }
-            }
-            return false;
-         }
       }
    }
 
@@ -388,12 +297,11 @@ $(function()
       console.warn('ADDRESS.long', typeof(address.longitude) === "undefined")
       console.warn('longitude', longitude)
 
-      $.ajax(
-        {
-          type: 'post',
-          cache: true, 
-          url:url.widget,
-          data: {
+      $.ajax({
+         type: 'post',
+         cache: true, 
+         url:url.widget,
+         data: {
             "latitude": latitude,
             "longitude": longitude,
             "line1": line1,
@@ -401,16 +309,16 @@ $(function()
             "region": region,
             "postalCode": postalCode,
             "country": country
-          },
-          statusCode: {
+         },
+         statusCode: {
             400:function() {
               bubbleContent("We’re having trouble with that one.");
             }
-          },
-          error:function(xhr,textStatus,e) {
+         },
+         error:function(xhr,textStatus,e) {
             bubbleContent("Error...unable to retrieve rate at this time");
-          }, 
-          success:function(response) {
+         }, 
+         success:function(response) {
             state.place = response
             state.location = {latitude:address.latitude, longitude:address.longitude};
 
@@ -418,19 +326,18 @@ $(function()
             if (!details) {
               bubbleContent("We’re having trouble with that one.");
             } else {
-                var rate = 0;
-                $.each(details, function(index, juris) {
+               var rate = 0;
+               $.each(details, function(index, juris) {
                   rate += juris.rate
-                });
-                bubbleContent(titlecase(details[details.length-1].jurisName) + ": " + precision(rate*100, 0, 4) + "%", "infobubbletext more");
-                showInfo();
+               });
+               bubbleContent(titlecase(details[details.length-1].jurisName) + ": " + precision(rate*100, 0, 4) + "%", "infobubbletext more");
+               showInfo();
             }
-          }
-        }
-    )
-  }
+         }
+      });
+   }
 
-
+   //TODO: remove or make useful
    // handler that is called when the window size has changed
    var resize = function()
    {
@@ -445,32 +352,31 @@ $(function()
       // Try W3C Geolocation (Preferred)
       if(navigator.geolocation) 
       {
-          navigator.geolocation.getCurrentPosition(
+         navigator.geolocation.getCurrentPosition(
             // success
-            function(position) 
-            {
-              var address = {longitude:position.coords.longitude, latitude: position.coords.latitude};
+            function(position) {
+              var address = {longitude: position.coords.longitude, latitude: position.coords.latitude};
               findTaxRate(address);
               zoomMap(address.longitude,address.latitude,true);
             }, 
             // error!
-            function(error) 
-            {
-                switch(error.code) {
+            function(error) {
+               switch(error.code) {
                   case error.PERMISSION_DENIED:
-                    alert("Location services have been disabled. Activate location services for this application and/or device and try again, or touch map on desired location");
-                    break;
+                     alert("Location services have been disabled. Activate location services for this application and/or device and try again, or touch map on desired location");
+                     break;
                   case error.POSITION_UNAVAILABLE:
-                    alert("Unable to determine location of this device, try again, or touch the map on desired location");
-                    break;
+                     alert("Unable to determine location of this device, try again, or touch the map on desired location");
+                     break;
                   case error.TIMEOUT:
-                    alert("Timeout while trying to determine location of this device, try again, or touch map on desired location");
-                    break;
+                     alert("Timeout while trying to determine location of this device, try again, or touch map on desired location");
+                     break;
                   default:
-                    alert("Unknown error encountered while trying to determine location of this device, try again, or touch map on desired location");
-                }
+                     alert("Unknown error encountered while trying to determine location of this device, try again, or touch map on desired location");
+               }
             }, 
-            {maximumAge:60000, timeout:5000, enableHighAccuracy:true});
+            {maximumAge:60000, timeout:5000, enableHighAccuracy:true}
+         );
       }
       // Browser doesn't support Geolocation
       else
@@ -516,13 +422,11 @@ $(function()
 
       var findIt = function(e)
       { 
-        $("input[name=query]").trigger('close.suggest').blur()
-        if ($('#info').css('display') == 'none')
-          paneClose()
-
-        var latlng = {lat: parseFloat(e.latLng.lat()), lng: parseFloat(e.latLng.lng())};
-        resolveAddress(latlng);
-        return false;
+         $("input[name=query]").trigger('close.suggest').blur()
+            
+         var latlng = {lat: parseFloat(e.latLng.lat()), lng: parseFloat(e.latLng.lng())};
+         resolveAddress(latlng);
+         return false;
       };
 
       ui.map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -543,28 +447,6 @@ $(function()
 
    var loadAvatax = function()
    {
-      //these functions basically attach handlers to elements on the page that can be activated by the user
-      
-      $("#main-top-avalara").on("click", function(e) {
-         $("#main-top-logo").one("click.pane-close", function(e) {return paneClose(e)})
-         $("#about").one("click.pane-close", function(e) {paneClose()})
-         return paneOpen($("#about"));
-      });
-
-      $("#main-top-close").on("click.main-top-close", function(e){
-        paneClose()
-      })
-
-      $("#main-top-layers").on("click", function(){
-        return paneOpen($("#layers"))}
-      )
-
-      $("#main-top-logo").on("click", function(){
-         $("#main-top-logo").one("click.pane-close", function(e) {return paneClose(e)})
-         $("#about").one("click.pane-close", function(e) {paneClose()})
-         return paneOpen($("#about"));
-      });
-
       // These UI components must wait for the map to be ready before handlers are attached to them
       $(window).on("avatax.mapready", function()
       {
@@ -580,8 +462,7 @@ $(function()
             {
                ui.map.setMapTypeId(google.maps.MapTypeId.HYBRID);
             }
-            $(this).toggleClass("on")
-            paneClose()
+            $(this).toggleClass("on");
          })
    
          $("#layer-avatax").on("click", function(e)
@@ -595,7 +476,6 @@ $(function()
                $(window).trigger("avatax.maptileson");
             }
             $(this).toggleClass("on")
-            paneClose()
          })
       })
       $(window).bind("resize", resize)
