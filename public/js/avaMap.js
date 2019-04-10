@@ -305,6 +305,7 @@ function findTaxRate(address) {
 
 // called when you are ready to load google maps
 function loadMap() {
+   initializeInfoBubble();
    // options to load the map with
    var mapOptions = 
    {
@@ -360,27 +361,47 @@ function loadMap() {
    window.mapLoaded = null;
 };
 
-$(function()
-{
-   // handler that is called when app is initialized by some external trigger
+// handler that is called when app is initialized by some external trigger
 // phonegap triggers this event when the device is ready
 // webapp triggers this event when dom has loaded
-$(window).load(function(options) { 
+// $(document).ready(function() { 
 
-   // function to prepare UI dependend on map
-   window.mapLoaded = function() {
-      // info bubble extends a google maps class, so can't initialize it till map apis are loaded
-      initializeInfoBubble();
-      $(window).trigger("avatax.mapready");
-      window.mapLoaded = null;
-   }
+//    // function to prepare UI dependend on map
+//    window.mapLoaded = function() {
+//       // info bubble extends a google maps class, so can't initialize it till map apis are loaded
+//       initializeInfoBubble();
+//       $(window).trigger("avatax.mapready");
+//       window.mapLoaded = null;
+//    }
 
-   // load google map apis asynchronously
-   var script = document.createElement("script");
-   script.src = "https://maps.googleapis.com/maps/api/js?key=&callback=mapLoaded";
-   script.type = "text/javascript";
-   document.getElementsByTagName("body")[0].appendChild(script);
-}).on("avatax.mapready", function() {
-   loadMap();
-})
+//    // load google map apis asynchronously
+//    var script = document.createElement("script");
+//    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAojNRMitfr99IyXQlMUjEq4Q1eQHpqWpk&callback=mapLoaded";
+//    script.type = "text/javascript";
+//    document.getElementsByTagName("body")[0].appendChild(script);
+// }).on("avatax.mapready", function() {
+//    loadMap();
+// })
+
+$(function()
+{
+   $(window).load(function() { 
+
+      // function to prepare UI dependend on map
+      // window.mapLoaded = function() {
+      //    // info bubble extends a google maps class, so can't initialize it till map apis are loaded
+      //    initializeInfoBubble();
+      //    $(window).trigger("avatax.mapready");
+      //    window.mapLoaded = null;
+      // }
+   
+      // load google map apis asynchronously
+      // var script = document.createElement("script");
+      // script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAojNRMitfr99IyXQlMUjEq4Q1eQHpqWpk&callback=loadMap";
+      // script.type = "text/javascript";
+      // document.getElementsByTagName("body")[0].appendChild(script);
+   })
+   // .on("avatax.mapready", function() {
+   //    loadMap();
+   // })
 })
