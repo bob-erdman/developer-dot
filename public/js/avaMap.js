@@ -9,12 +9,11 @@ $(function()
      tiles3: "https://3.tiles.avataxrates.com/tiles/",
    };
 
+   //TODO: why is this needed?
    // variable that maintains state of the overall app
-   var state = 
-   {
-      initialized: false
-   };
+   var state = {};
 
+   //TODO: why is this needed?
    // ui elements that need to be global
    var ui = 
    {
@@ -69,6 +68,8 @@ $(function()
             var address = {};
             var key = '';
             var address_components = results[0].address_components;
+            
+            // build address from google result
             $.each(address_components, function(index,address_type)
             {   
                key = '';
@@ -100,6 +101,8 @@ $(function()
 
             address.longitude = latlng.lng;
             address.latitude = latlng.lat;
+
+            // find the tax rate
             findTaxRate(address);
             
          } else {
@@ -140,9 +143,7 @@ $(function()
       {
          ui.bubble.setValues({content:emptyBubble, position:position});
          ui.bubble.open();
-      }
-      else
-      {
+      } else {
          var options_bubble = 
          {
             map: ui.map,
@@ -203,7 +204,7 @@ $(function()
       /\((\w+)\)/g, function(txt){return txt.toUpperCase()});
    }
 
-   //TODO: what is this any why?
+   //TODO: what is this any why?, doesn't seem to work consistently, some numbers have 4 decimal places
    var precision = function(rate, minwidth, precision) {
       var pad = ''; for (var i = 0; i < minwidth; i++) pad += '0';
       var decimal;
@@ -250,14 +251,6 @@ $(function()
          $("#info-details").html(details);
       }
    }
-
-  // Zoom Map on the given location
-   var zoomMap = function(longitude,latitude,on) {
-      if( on == true ) {
-         ui.map.setCenter(new google.maps.LatLng(latitude, longitude));
-         ui.map.setZoom(12);
-      }   
-  }
 
    // given a lat/lng, pops up a bubble on the map with the tax rate of that jurisdiction
    var findTaxRate = function(address)
@@ -319,45 +312,6 @@ $(function()
       });
    }
 
-   // handler that is called when the user wants the device GPS or location to be read and placed on the map
-   var findMe = function()
-   {
-      // Try W3C Geolocation (Preferred)
-      if(navigator.geolocation) 
-      {
-         navigator.geolocation.getCurrentPosition(
-            // success
-            function(position) {
-              var address = {longitude: position.coords.longitude, latitude: position.coords.latitude};
-              findTaxRate(address);
-              zoomMap(address.longitude,address.latitude,true);
-            }, 
-            // error!
-            function(error) {
-               switch(error.code) {
-                  case error.PERMISSION_DENIED:
-                     alert("Location services have been disabled. Activate location services for this application and/or device and try again, or touch map on desired location");
-                     break;
-                  case error.POSITION_UNAVAILABLE:
-                     alert("Unable to determine location of this device, try again, or touch the map on desired location");
-                     break;
-                  case error.TIMEOUT:
-                     alert("Timeout while trying to determine location of this device, try again, or touch map on desired location");
-                     break;
-                  default:
-                     alert("Unknown error encountered while trying to determine location of this device, try again, or touch map on desired location");
-               }
-            }, 
-            {maximumAge:60000, timeout:5000, enableHighAccuracy:true}
-         );
-      }
-      // Browser doesn't support Geolocation
-      else
-      {
-         alert("Your device does not support location services, touch map on desired location");
-      }
-   };
-
    // called when you are ready to load google maps
    var loadMap = function()
    {
@@ -416,66 +370,24 @@ $(function()
       window.mapLoaded = null;
    };
 
-   var loadAvatax = function()
-   {
-      // These UI components must wait for the map to be ready before handlers are attached to them
-      $(window).on("avatax.mapready", function()
-      {
-   
-         $("#main-top-locate").on("click", function(e){findMe()})
-   
-         $("#layer-satellite").on("click", function(e) {
-            if($(this).hasClass("on"))
-            {
-               ui.map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-            }
-            else
-            {
-               ui.map.setMapTypeId(google.maps.MapTypeId.HYBRID);
-            }
-            $(this).toggleClass("on");
-         })
-   
-         $("#layer-avatax").on("click", function(e)
-         {
-            if($(this).hasClass("on"))
-            {
-               $(window).trigger("avatax.maptilesoff");
-            }
-            else
-            {
-               $(window).trigger("avatax.maptileson");
-            }
-            $(this).toggleClass("on")
-         })
-      })
-   }
-
    // handler that is called when app is initialized by some external trigger
    // phonegap triggers this event when the device is ready
    // webapp triggers this event when dom has loaded
    $(window).load(function(options) { 
-      // if the state is not initialized, this is a first time
-      if(!state.initialized)
-      {
-         // prepare as much of the UI as possible
-         loadAvatax(); 
 
-         // function to prepare UI dependend on map
-         window.mapLoaded = function() {
-            // info bubble extends a google maps class, so can't initialize it till map apis are loaded
-            initializeInfoBubble();
-            $(window).trigger("avatax.mapready");
-            window.mapLoaded = null;
-         }
-
-         // load google map apis asynchronously
-         var script = document.createElement("script");
-         script.src = "https://maps.googleapis.com/maps/api/js?key=&callback=mapLoaded";
-         script.type = "text/javascript";
-         document.getElementsByTagName("body")[0].appendChild(script);
-         state.initialized = true;
+      // function to prepare UI dependend on map
+      window.mapLoaded = function() {
+         // info bubble extends a google maps class, so can't initialize it till map apis are loaded
+         initializeInfoBubble();
+         $(window).trigger("avatax.mapready");
+         window.mapLoaded = null;
       }
+
+      // load google map apis asynchronously
+      var script = document.createElement("script");
+      script.src = "https://maps.googleapis.com/maps/api/js?key=&callback=mapLoaded";
+      script.type = "text/javascript";
+      document.getElementsByTagName("body")[0].appendChild(script);
    }).on("avatax.mapready", function() {
       loadMap();
    })
