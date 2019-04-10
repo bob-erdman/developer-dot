@@ -87,3 +87,5 @@ jekyll-archives:
 url: "https://developer.avalara.com"
 plugins_dir:
   - jekyll-sitemap
+
+google_maps_token: <%=ENV['GOOGLE_MAPS_TOKEN']%>
