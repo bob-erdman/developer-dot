@@ -167,6 +167,6 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
     <!-- end demo container -->
     <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
-    <script src="/public/js/avaMap.js"></script>
+    <script src="/public/js/site.js"></script>
     <script src='https://maps.googleapis.com/maps/api/js?key=&callback=loadMap'></script>
 </body>
