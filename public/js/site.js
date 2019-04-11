@@ -765,30 +765,36 @@ function updateAddress() {
         srcLong = null;
     }
 
-    //TODO: cover when src == dest
+    //TODO: zooms properly on point(s)
+    // update destMarker position on map
     ui.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
 
-    if (ui.srcMarker == null && srcLat != null && srcLong != null) {
-        ui.srcMarker = new google.maps.Marker({
-            position: {lat: parseFloat(srcLat), lng: parseFloat(srcLong)},
-            map: ui.map
-        });
-    } else if (srcLat != null && srcLong != null) {
+    // set srcMarker on map
+    if (srcLat != null && srcLong != null) {
         ui.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
-    } else {
+        ui.srcMarker.setMap(ui.map);
+    } 
+    else {
         ui.srcMarker.setMap(null);
     }
 
+    //TODO: zooms properly on the line
     if(ui.flightPath == null) {
+        var lineSymbol = {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+        };
         ui.flightPath = new google.maps.Polyline({
             path: [
-                {lat: parseFloat(destLat), lng: parseFloat(destLong)}, 
+                {lat: parseFloat(destLat), lng: parseFloat(destLong)},
                 {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
             ],
-            geodesic: true,
-            strokeColor: 'orange',
+            strokeColor: 'black',
             strokeOpacity: 1.0,
-            strokeWeight: 5
+            strokeWeight: 3,
+            icons: [{
+                icon: lineSymbol,
+                offset: '100%'
+            }]
         });
         ui.flightPath.setMap(ui.map);
     } else {
@@ -798,11 +804,7 @@ function updateAddress() {
         ];
         ui.flightPath.setPath(path);
     }
-
-    
         
-    //TODO: replace
-    // GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
     fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
@@ -923,17 +925,24 @@ function loadMap() {
 
    ui.map = new google.maps.Map(document.getElementById("map"), mapOptions);
    
-   //TODO: make icon orange
-   ui.destMarker = new google.maps.Marker({
-      position: {lat: 33.6846603698176, lng: -117.850629887389},
-      map: ui.map
-    //   icon: {
-    //       url: "/public/images/mapMarker.png"
-    //     //   size: new google.maps.Size(20, 32),
-    //     //   origin: new google.maps.Point(0, 0),
-    //     //   anchor: new google.maps.Point(0, 16)
-    //   }
-   });
+    //TODO: make icon orange
+    // initialize destMarker
+    ui.destMarker = new google.maps.Marker({
+        position: {lat: 33.6846603698176, lng: -117.850629887389},
+        map: ui.map
+        // icon: {
+        //     url: "/public/images/mapMarker.png"
+        //     //   size: new google.maps.Size(20, 32),
+        //     //   origin: new google.maps.Point(0, 0),
+        //     //   anchor: new google.maps.Point(0, 16)
+        // }
+    });
+
+    // initialize srcMarker
+    ui.srcMarker = new google.maps.Marker({
+        position: null,
+        map: null
+    });
    
     ui.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
 };
