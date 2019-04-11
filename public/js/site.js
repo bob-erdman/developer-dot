@@ -1,3 +1,5 @@
+// import { utils } from "mocha";
+
 var isIntlTransaction = false;
 
 var fixApiRefNav = function() {
@@ -777,18 +779,27 @@ function updateAddress() {
         ui.srcMarker.setMap(null);
     }
 
-    var flightPath = new google.maps.Polyline({
-        path: [
+    if(ui.flightPath == null) {
+        ui.flightPath = new google.maps.Polyline({
+            path: [
+                {lat: parseFloat(destLat), lng: parseFloat(destLong)}, 
+                {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
+            ],
+            geodesic: true,
+            strokeColor: 'orange',
+            strokeOpacity: 1.0,
+            strokeWeight: 5
+        });
+        ui.flightPath.setMap(ui.map);
+    } else {
+        const path  = [
             {lat: parseFloat(destLat), lng: parseFloat(destLong)}, 
             {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
-        ],
-        geodesic: true,
-        strokeColor: 'orange',
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-    });
+        ];
+        ui.flightPath.setPath(path);
+    }
 
-    flightPath.setMap(ui.map);
+    
         
     //TODO: replace
     // GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
@@ -841,7 +852,8 @@ var ui =
 {
     map: null,
     destMarker: null,
-    srcMarker: null
+    srcMarker: null,
+    flightPath: null
 };
 
 // http://msdn.microsoft.com/en-us/library/bb259689.aspx
