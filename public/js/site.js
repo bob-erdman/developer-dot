@@ -763,11 +763,32 @@ function updateAddress() {
         srcLong = null;
     }
 
-    //TODO: find way to clear markers
-    clearMarkers();
+    //TODO: cover when src == dest
+    ui.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
 
-    //TODO: addDest and addSrc markers
-    addMarker({lat: parseFloat(destLat), lng: parseFloat(destLong)});
+    if (ui.srcMarker == null && srcLat != null && srcLong != null) {
+        ui.srcMarker = new google.maps.Marker({
+            position: {lat: parseFloat(srcLat), lng: parseFloat(srcLong)},
+            map: ui.map
+        });
+    } else if (srcLat != null && srcLong != null) {
+        ui.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
+    } else {
+        ui.srcMarker.setMap(null);
+    }
+
+    var flightPath = new google.maps.Polyline({
+        path: [
+            {lat: parseFloat(destLat), lng: parseFloat(destLong)}, 
+            {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
+        ],
+        geodesic: true,
+        strokeColor: 'orange',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    });
+
+    flightPath.setMap(ui.map);
         
     //TODO: replace
     // GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
@@ -819,8 +840,8 @@ var url =
 var ui = 
 {
     map: null,
-    //TODO: diff src and dest markers
-    markers: []
+    destMarker: null,
+    srcMarker: null
 };
 
 // http://msdn.microsoft.com/en-us/library/bb259689.aspx
@@ -852,20 +873,6 @@ function quadkey(tileX, tileY, detail) {
 
    return key;
 };
-
-function addMarker(location) {
-    var marker = new google.maps.Marker({
-      position: location,
-      map: ui.map
-    });
-    ui.markers.push(marker);
-}
-
-function clearMarkers() {
-    for (var i = 0; i < ui.markers.length; i++) {
-        ui.markers[i].setMap(ui.map);
-    }
-}
 
 // called when you are ready to load google maps
 function loadMap() {
@@ -904,10 +911,16 @@ function loadMap() {
 
    ui.map = new google.maps.Map(document.getElementById("map"), mapOptions);
    
-   var marker = new google.maps.Marker({
+   //TODO: make icon orange
+   ui.destMarker = new google.maps.Marker({
       position: {lat: 33.6846603698176, lng: -117.850629887389},
-      map: ui.map,
-      title: 'Hello World!'
+      map: ui.map
+    //   icon: {
+    //       url: "/public/images/mapMarker.png"
+    //     //   size: new google.maps.Size(20, 32),
+    //     //   origin: new google.maps.Point(0, 0),
+    //     //   anchor: new google.maps.Point(0, 16)
+    //   }
    });
    
     ui.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
