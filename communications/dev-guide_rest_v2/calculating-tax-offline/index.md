@@ -25,7 +25,7 @@ Types of connection issues:
 These types of outages have similar characteristics, so it’s straightforward to design a single process to handle all of them. Here is how we handle a broken connection:
 <ul class="dev-guide-list">
   <li>Detect the dropped connection and prevent a crash</li>
-  <li>Retry the transaction or fall back to cached tax data</li>
+  <li>Retry the transaction</li>
   <li>Recover data using the Commit/Uncommit functionality</li>
   <li>Reconcile transactions after the outage</li>
 </ul>
