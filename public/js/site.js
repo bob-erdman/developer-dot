@@ -767,23 +767,23 @@ function updateAddress() {
 
     //TODO: zooms properly on point(s)
     // update destMarker position on map
-    ui.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
+    mapInfo.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
 
     // set srcMarker on map
     if (srcLat != null && srcLong != null) {
-        ui.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
-        ui.srcMarker.setMap(ui.map);
+        mapInfo.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
+        mapInfo.srcMarker.setMap(mapInfo.map);
     } 
     else {
-        ui.srcMarker.setMap(null);
+        mapInfo.srcMarker.setMap(null);
     }
 
     //TODO: zooms properly on the line
-    if(ui.flightPath == null) {
+    if(mapInfo.flightPath == null) {
         var lineSymbol = {
             path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
         };
-        ui.flightPath = new google.maps.Polyline({
+        mapInfo.flightPath = new google.maps.Polyline({
             path: [
                 {lat: parseFloat(destLat), lng: parseFloat(destLong)},
                 {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
@@ -796,13 +796,13 @@ function updateAddress() {
                 offset: '100%'
             }]
         });
-        ui.flightPath.setMap(ui.map);
+        mapInfo.flightPath.setMap(mapInfo.map);
     } else {
         const path  = [
             {lat: parseFloat(destLat), lng: parseFloat(destLong)}, 
             {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
         ];
-        ui.flightPath.setPath(path);
+        mapInfo.flightPath.setPath(path);
     }
         
     fillWithSampleData();
@@ -842,15 +842,14 @@ $(document).ready(function() {
 // tile urls
 var url = 
 {
-  tiles0: "https://0.tiles.avataxrates.com/tiles/", 
-  tiles1: "https://1.tiles.avataxrates.com/tiles/", 
-  tiles2: "https://2.tiles.avataxrates.com/tiles/", 
-  tiles3: "https://3.tiles.avataxrates.com/tiles/",
+    tiles0: "https://0.tiles.avataxrates.com/tiles/", 
+    tiles1: "https://1.tiles.avataxrates.com/tiles/", 
+    tiles2: "https://2.tiles.avataxrates.com/tiles/", 
+    tiles3: "https://3.tiles.avataxrates.com/tiles/",
 };
 
-//TODO: just make map
-// ui elements that need to be global
-var ui = 
+// map elements that need to be global
+var mapInfo = 
 {
     map: null,
     destMarker: null,
@@ -861,31 +860,31 @@ var ui =
 // http://msdn.microsoft.com/en-us/library/bb259689.aspx
 // makes tax tiles layer
 function quadkey(tileX, tileY, detail) {
-   var key = "", range = Math.pow(2, detail);
+    var key = "", range = Math.pow(2, detail);
 
-   // adjust tile coordinates if they wrap around (too big or negative direction)
-   tileX = tileX >= 0 ? tileX % range : range - (Math.abs(tileX) % range);
-   tileY = tileY >= 0 ? tileY % range : range - (Math.abs(tileY) % range);
+    // adjust tile coordinates if they wrap around (too big or negative direction)
+    tileX = tileX >= 0 ? tileX % range : range - (Math.abs(tileX) % range);
+    tileY = tileY >= 0 ? tileY % range : range - (Math.abs(tileY) % range);
 
-   for(var i = detail; i > 0; i--)
-   {
-      var digit   = 0;
-      var mask    = 1 << (i - 1);
+    for(var i = detail; i > 0; i--)
+    {
+        var digit   = 0;
+        var mask    = 1 << (i - 1);
 
-      if((tileX & mask) !== 0)
-      {
-         digit++;
-      }
+        if((tileX & mask) !== 0)
+        {
+            digit++;
+        }
 
-      if((tileY & mask) !== 0)
-      {
-         digit += 2;
-      }
+        if((tileY & mask) !== 0)
+        {
+            digit += 2;
+        }
 
-      key += digit.toString();
-   }
+        key += digit.toString();
+    }
 
-   return key;
+    return key;
 };
 
 // called when you are ready to load google maps
@@ -894,57 +893,67 @@ function loadMap() {
    // options to load the map with
    var mapOptions = 
    {
-      minZoom:3, 
-      disableDefaultUI:true,
-      center: new google.maps.LatLng(39.50, -98.35),
-      zoom: 3,
-      zoomControl:true, 
-      draggable:true,
-      styles: [{featureType:'poi', stylers:[{visibility:'off'}]}],
-      zoomControlOptions:
-      {
-         position:google.maps.ControlPosition.RIGHT_BOTTOM,
-         style:google.maps.ZoomControlStyle.DEFAULT
-      },
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+        minZoom:3, 
+        disableDefaultUI:true,
+        center: new google.maps.LatLng(39.50, -98.35),
+        zoom: 3,
+        zoomControl:true, 
+        draggable:true,
+        styles: [{featureType:'poi', stylers:[{visibility:'off'}]}],
+        zoomControlOptions:
+        {
+        position:google.maps.ControlPosition.RIGHT_BOTTOM,
+        style:google.maps.ZoomControlStyle.DEFAULT
+        },
+        mapTypeId: google.maps.MapTypeId.ROADMAP
    };
 
    // custom map options that wires up to the avalara tax tile server
    var taxTiles =
    {
-      getTileUrl: function(coord, zoom)
-      {
-         var qkey = quadkey(coord.x, coord.y, zoom)
-         return url['tiles' + (qkey % 4)] + qkey
-      },
-      opacity:    0.4,
-      tileSize:   new google.maps.Size(256, 256),
-      name:       "AvaTaxMap",
-      alt:        "Avatax"
+        getTileUrl: function(coord, zoom)
+        {
+            var qkey = quadkey(coord.x, coord.y, zoom)
+            return url['tiles' + (qkey % 4)] + qkey
+        },
+        opacity:    0.4,
+        tileSize:   new google.maps.Size(256, 256),
+        name:       "AvaTaxMap",
+        alt:        "Avatax"
    };
 
-   ui.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    mapInfo.map = new google.maps.Map(document.getElementById("map"), mapOptions);
    
-    //TODO: make icon orange
+    // orange city marker
+    var icon = {
+        url: "/public/images/mapMarker.png", // url
+        scaledSize: new google.maps.Size(20, 32), // scaled size
+    };
+
+    // var icon2 = {
+    //     path: 'M1625 5914 c-492 -57 -898 -271 -1203 -632 -209 -248 -340 -522 -398 -837 -27 -141 -27 -510 -1 -639 27 -134 90 -315 156 -450 81 -164 283 -514 417 -721 491 -758 614 -964 786 -1323 181 -377 337 -820 419 -1187 26 -119 35 -141 43 -105 93 429 200 762 364 1125 185 411 334 672 778 1360 269 416 314 492 454 776 114 231 152 330 192 509 20 93 23 130 23 335 0 201 -3 244 -23 345 -44 218 -120 411 -231 590 -297 477 -775 778 -1351 849 -77 10 -354 13 -425 5z m402 -1149 c161 -51 300 -170 374 -320 51 -105 69 -180 69 -290 0 -110 -18 -185 -69 -290 -74 -149 -212 -268 -374 -321 -70 -24 -99 -28 -197 -28 -98 0 -127 4 -197 28 -162 53 -300 172 -374 321 -51 105 -69 180 -69 290 0 313 213 568 531 635 75 16 215 4 306 -25z',
+    //     fillColor: 'orange',
+    //     fillOpacity: 1.0,
+    //     scale: 1,
+    //     strokeColor: 'black',
+    //     strokeWeight: 1
+    // }
+
     // initialize destMarker
-    ui.destMarker = new google.maps.Marker({
+    mapInfo.destMarker = new google.maps.Marker({
         position: {lat: 33.6846603698176, lng: -117.850629887389},
-        map: ui.map
-        // icon: {
-        //     url: "/public/images/mapMarker.png"
-        //     //   size: new google.maps.Size(20, 32),
-        //     //   origin: new google.maps.Point(0, 0),
-        //     //   anchor: new google.maps.Point(0, 16)
-        // }
+        map: mapInfo.map,
+        icon: icon
     });
 
     // initialize srcMarker
-    ui.srcMarker = new google.maps.Marker({
+    mapInfo.srcMarker = new google.maps.Marker({
         position: null,
-        map: null
+        map: null, 
+        icon: icon
     });
    
-    ui.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
+    mapInfo.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
 };
 
 /***************** AVA MAP Functions *******************************/
