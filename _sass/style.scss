@@ -61,8 +61,7 @@ html {
 }
 
 .btn-signup {
-    float: right;
-    margin: 5px 20px 0 20px;
+    margin: 5px 20px 0 0px;
     background-color: $Ava-orange;
     border-color: white;
     color: white;
@@ -152,6 +151,21 @@ html {
         &:last-child:after, .no-separator, &:nth-child(3):after {
             content: "";
             padding: 0;
+        }
+    }
+}
+
+.noPipe {
+    padding: 10px 15px;
+    margin: 0;
+    li {
+        color: $Ava-blue;
+        list-style: none;
+        display: block;
+        white-space: nowrap;
+        a {
+            color: inherit;
+            white-space: inherit;
         }
     }
 }

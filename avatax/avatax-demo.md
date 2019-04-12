@@ -127,7 +127,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
                                     <i class="glyphicon glyphicon-list-alt" title="Docs"></i>
                                 </a>
                             </button>
-                            <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:block;">
+                            <button class="btn btn-signup" type="button" onClick="ApiRequest();" style="display:block;border-radius:4px">
                                 Submit
                             </button>
                         </div>

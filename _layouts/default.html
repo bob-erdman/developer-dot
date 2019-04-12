@@ -83,7 +83,7 @@
                     <li class="visible-xs-block"><a href="/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
                     <li class="apis dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
-                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 525px; padding-left: 10px;">
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 525px; padding: 10px 15px;">
                             <div class="row">
                                 <div class="col-md-12"><a href="/avalara-apis">APIs overview</a></div>
                             </div>
@@ -148,7 +148,7 @@
                     </li>
                     <li class="sdk dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
                             <li {% if page.url == "/avatax/signup" %}class="active"{% endif %}><a href="/avatax/signup">Get Started with AvaTax</a></li>
                             <br/>
                             <li><a href="/sdk/">The AvaTax SDK</a></li>
@@ -164,7 +164,7 @@
                     </li>
                     <li class="tests dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
                             <li><a href="/tests/communications-test">Avalara for Communications Test Cases</a></li>
                             <li><a href="/tests/testing-your-integration/">Avalara Test Cases</a></li>
 
@@ -172,7 +172,7 @@
                     </li>            
                     <li class="certification dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large" style="min-width: 230px">
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
                             <li><a href="/certification/">Overview</a></li>
                             <li><a href="/certification/excise/">Avalara Excise</a></li>
                             <li><a href="/certification/avatax/">Certification Badges</a></li>
@@ -180,7 +180,7 @@
                     </li>
                     <li class="resources dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
                             <li><a href="/resources/conferences">Avalara CRUSH Conference</a></li>
                             <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
                             <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
@@ -201,8 +201,12 @@
                     <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
                 </ul>
                 {% if page.title != "Thank You" %}
-                <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
-                <a href="/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                <div style="float: right;">
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                    {% if page.layout != "demoPage" %}
+                        <a href="/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    {% endif %}
+                </div>
                 {% endif %}
             </div>
         </nav>
