@@ -46,7 +46,7 @@
 - city: Brussels
   street: O.L.Vrouwstraat 6 
   countryZip: 1850 Grimbergen, Belgium
-  value: O.L.Vrouwstraat 6, Brussels, 1850 Grimbergen,BE
+  value: O.L.Vrouwstraat 6,Brussels,1850 Grimbergen,BE
   lat: 50.932458
   long: 4.372408
   type: international
