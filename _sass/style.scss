@@ -63,7 +63,15 @@ html {
 .btn-signup {
     float: right;
     margin: 5px 20px 0 20px;
+    background-color: $Ava-orange;
+    border-color: white;
+    color: white;
 
+    &:hover {
+        border-color: $Ava-orange;
+        color: $Ava-orange;
+        background-color: $Form-fill;
+    }
     @media(max-width:$screen-md-max) {
         margin: 5px 40px 5px 20px;
     }
@@ -72,13 +80,18 @@ html {
         float: left;
         margin: 0 0 10px 0;
     }
+}
 
-    /*@media(max-width: $screen-xs-min) {
-        float: left;
-        margin: 0 0 10px 0;
-    }*/
+.btn-demo {
+    border-color: $Ava-orange;
+    color: $Ava-orange;
+    background-color: $Form-fill;
 
-
+    &:hover {
+        background-color: $Ava-orange;
+        border-color: white;
+        color: white;
+    }
 }
 
 .bg-map {
