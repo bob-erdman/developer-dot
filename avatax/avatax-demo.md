@@ -95,8 +95,16 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
         <!-- map and api details container -->
         <div class="col-md-9">
             <!-- map row -->
-            <div class="row">
-                <div id="map" style="position: relative;z-index:2;top:0px;left:0px;right:0px;bottom:0px;min-height: 400px;"></div>
+            <div class="row" style="position: relative; height: 375px;">
+                <div class="demo-infobox">
+                    <h4 id="demo-infobox-header" style="display: inline;">Getting Started</h4>
+                    <i class="glyphicon glyphicon-remove" id="demo-infobox-icon" style="display: inline;float: right;padding-top:5px;" onClick="hideInfobox()"></i>
+                    <p id="demo-infobox-text" style="margin-bottom:0;">
+                        Calculating sales tax is time consuming and painful, but it doesn't have to be. Avalara's sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you're shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
+                    </p>
+                    <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
+                </div>
+                <div id="map" style="position: absolute;top:0px;left:0px;right:0px;bottom:0px;height: 375px;z-index:-1;"></div>
             </div>
             <!-- api details row -->
             <div class="row" id="demo-api-details">

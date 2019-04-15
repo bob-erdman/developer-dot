@@ -580,6 +580,13 @@ function fillWithSampleData() {
 /************************************************************************
 **   INFOBOX Functions: Build infobox on map
 ************************************************************************/
+let showInfobox = true;
+
+function hideInfobox() {
+    $(".demo-infobox").css('display', 'none');
+    $(".demo-infobox").addClass('hidden');
+    showInfobox = false
+}
 
 function buildInfoboxHTML(body) {
     const summaryArray = body.summary;
@@ -870,7 +877,7 @@ function loadMap() {
    {
         minZoom:3, 
         disableDefaultUI:true,
-        center: new google.maps.LatLng(39.50, -98.35),
+        center: new google.maps.LatLng(33.6846603698176, -117.850629887389),
         zoom: 3,
         zoomControl:true, 
         draggable:true,
@@ -918,23 +925,6 @@ function loadMap() {
         map: null, 
         icon: icon
     });
-
-    // const infoWindowTemplate = `
-    //     <div class="demo-infobox">
-    //         <h4 id="demo-infobox-header">Getting Started</h4>
-    //         <p id="demo-infobox-text" style="margin-bottom:0;">
-    //             Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
-    //         </p>
-    //         <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
-    //     </div>
-    // `;
-
-    // var infowindow = new google.maps.InfoWindow({
-    //     content: infoWindowTemplate
-    //     // position: google.maps.ControlPosition.TOP_LEFT
-    // });
-
-    // infowindow.open(mapInfo.map);
    
     mapInfo.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
 };
