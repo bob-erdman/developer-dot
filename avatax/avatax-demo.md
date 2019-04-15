@@ -110,7 +110,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
             <div class="row" id="demo-api-details">
                 <!-- request output -->
                 <div class="console-req-container api-console-output col-md-6" id="demo-console-req" >
-                    <div class="row" style="margin-top:15px;margin-left:10px;margin-right:10px;">
+                    <div class="row" style="margin-top:5px;margin-left:10px;margin-right:10px;">
                         <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
                             Request
                         </h5>
@@ -135,7 +135,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
                                     <i class="glyphicon glyphicon-list-alt" title="Docs"></i>
                                 </a>
                             </button>
-                            <button class="btn btn-signup" type="button" onClick="ApiRequest();" style="display:block;border-radius:4px">
+                            <button class="btn btn-signup" type="button" onClick="ApiRequest();" style="display:block;border-radius:4px;margin: 0;">
                                 Submit
                             </button>
                         </div>
@@ -146,7 +146,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
                 </div>
                 <!-- response output -->
                 <div class="col-md-6 console-res-container api-console-output" id="demo-console-res">
-                    <div class="row" style="margin-top:15px;margin-left:10px;margin-right:10px;">
+                    <div class="row" style="margin-top:5px;margin-left:10px;margin-right:10px;">
                         <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
                             Response
                         </h5>

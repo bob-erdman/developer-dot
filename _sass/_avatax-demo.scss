@@ -7,7 +7,7 @@
 }
 
 #demo-shortcuts {
-    max-height: 850px;
+    max-height: calc(100vh - 60px);
     padding-left:15px;
     overflow: auto;
     font-family: Arial, "source sans pro light";

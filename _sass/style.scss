@@ -63,7 +63,7 @@ html {
 .btn-signup {
     margin: 5px 20px 0 0px;
     background-color: $Ava-orange;
-    border-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
     color: white;
 
     &:hover, 
