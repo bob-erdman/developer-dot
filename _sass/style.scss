@@ -66,7 +66,8 @@ html {
     border-color: white;
     color: white;
 
-    &:hover {
+    &:hover, 
+    &:focus {
         border-color: $Ava-orange;
         color: $Ava-orange;
         background-color: $Form-fill;
@@ -86,7 +87,8 @@ html {
     color: $Ava-orange;
     background-color: $Form-fill;
 
-    &:hover {
+    &:hover, 
+    &:focus {
         background-color: $Ava-orange;
         border-color: white;
         color: white;

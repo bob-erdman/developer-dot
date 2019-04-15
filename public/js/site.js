@@ -581,15 +581,6 @@ function fillWithSampleData() {
 **   INFOBOX Functions: Build infobox on map
 ************************************************************************/
 
-// ...no other way to keep track of state...
-let showInfobox = true;
-
-function hideInfobox() {
-    $(".demo-infobox").css('display', 'none');
-    $(".demo-infobox").addClass('hidden');
-    showInfobox = false
-}
-
 function buildInfoboxHTML(body) {
     const summaryArray = body.summary;
 
@@ -747,24 +738,7 @@ function updateAddress() {
         srcLong = null;
     }
 
-    //TODO: zooms properly on point(s)
-    // update destMarker position on map
-    mapInfo.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
-
-    // set srcMarker on map
-    if (srcLat != null && srcLong != null) {
-        mapInfo.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
-        mapInfo.srcMarker.setMap(mapInfo.map);
-    } 
-    else {
-        mapInfo.srcMarker.setMap(null);
-    }
-
-    //TODO: zooms properly on the line
     if(mapInfo.flightPath == null) {
-        var lineSymbol = {
-            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
-        };
         mapInfo.flightPath = new google.maps.Polyline({
             path: [
                 {lat: parseFloat(destLat), lng: parseFloat(destLong)},
@@ -772,11 +746,7 @@ function updateAddress() {
             ],
             strokeColor: 'black',
             strokeOpacity: 1.0,
-            strokeWeight: 3,
-            icons: [{
-                icon: lineSymbol,
-                offset: '100%'
-            }]
+            strokeWeight: 2
         });
         mapInfo.flightPath.setMap(mapInfo.map);
     } else {
@@ -786,7 +756,23 @@ function updateAddress() {
         ];
         mapInfo.flightPath.setPath(path);
     }
-        
+
+    // update destMarker position on map
+    mapInfo.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
+
+    // set srcMarker on map
+    if (srcLat != null && srcLong != null) {
+        mapInfo.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
+        mapInfo.srcMarker.setMap(mapInfo.map);
+        // set zoom for path
+        zoomToObject(mapInfo.flightPath); 
+    } 
+    else {
+        mapInfo.srcMarker.setMap(null);
+        // zoom on destMarket if no srcMarker
+        mapInfo.map.setCenter({lat: parseFloat(destLat), lng: parseFloat(destLong)})
+    }
+
     fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
@@ -836,6 +822,15 @@ var mapInfo =
     srcMarker: null,
     flightPath: null
 };
+
+function zoomToObject(obj){
+    var bounds = new google.maps.LatLngBounds();
+    var points = obj.getPath().getArray();
+    for (var n = 0; n < points.length ; n++){
+        bounds.extend(points[n]);
+    }
+    mapInfo.map.fitBounds(bounds);
+}
 
 // http://msdn.microsoft.com/en-us/library/bb259689.aspx
 // makes tax tiles layer
@@ -903,7 +898,7 @@ function loadMap() {
    };
 
     mapInfo.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-   
+
     // orange city marker
     var icon = {
         url: "/public/images/mapMarker.png", // url
@@ -923,6 +918,23 @@ function loadMap() {
         map: null, 
         icon: icon
     });
+
+    // const infoWindowTemplate = `
+    //     <div class="demo-infobox">
+    //         <h4 id="demo-infobox-header">Getting Started</h4>
+    //         <p id="demo-infobox-text" style="margin-bottom:0;">
+    //             Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
+    //         </p>
+    //         <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
+    //     </div>
+    // `;
+
+    // var infowindow = new google.maps.InfoWindow({
+    //     content: infoWindowTemplate
+    //     // position: google.maps.ControlPosition.TOP_LEFT
+    // });
+
+    // infowindow.open(mapInfo.map);
    
     mapInfo.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
 };
