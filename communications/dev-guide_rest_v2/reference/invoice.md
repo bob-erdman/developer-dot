@@ -128,7 +128,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         </td>
       </tr>
       <tr>
-        <td><code>sum</code></td>
+        <td><code>summ</code></td>
         <td><code>[bool]</code> Return Summary
           <br/>
           Indicates if the summarized taxes for the invoice should be included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>
