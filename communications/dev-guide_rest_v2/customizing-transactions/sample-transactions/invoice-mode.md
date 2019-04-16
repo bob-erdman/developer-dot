@@ -24,10 +24,10 @@ While the maximum number of <code>LineItems</code> is 10,000, it is recommended 
 It is recommended to increase the timeout of your web API calls to 10 minutes although response times are expected to be much shorter even or the largest batches.
 
 <h3>Total Charge</h3>
-Total Charge (<code>tchg</code>) displays the summarized charge amounts applied to the tax item from Invoice processing (<code>invm</code> set to <code>true</code>).  Each entry in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">summarized tax results</a> (<code>sum</code>) has an individual total charge as it applies to the calculation of that specific summarized tax type and jurisdiction.
+Total Charge (<code>tchg</code>) displays the summarized charge amounts applied to the tax item from Invoice processing (<code>invm</code> set to <code>true</code>).  Each entry in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">summarized tax results</a> (<code>summ</code>) has an individual total charge as it applies to the calculation of that specific summarized tax type and jurisdiction.
 
 <h3>Invoice Mode Example</h3>
-In this example, the three line items are processed together as one invoice because Invoice Mode (<code>invm</code>) is set to <code>true</code>.  Also note that the tax calculation output is returned at both the line item detail level (<code>dtl</code> = <code>true</code>) and summary level (<code>sum</code> = <code>true</code>).
+In this example, the three line items are processed together as one invoice because Invoice Mode (<code>invm</code>) is set to <code>true</code>.  Also note that the tax calculation output is returned at both the line item detail level (<code>dtl</code> = <code>true</code>) and summary level (<code>summ</code> = <code>true</code>).
 
 {% highlight json %}
 {
