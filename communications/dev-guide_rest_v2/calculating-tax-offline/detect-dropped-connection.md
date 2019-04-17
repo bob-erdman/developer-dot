@@ -22,9 +22,9 @@ Errors related to offline tax calculation can be complex when the connection has
 
 A dropped connection produces a different kind of error - for example, AspNetCore produces a <code>WinHttpException</code> when a connection is dropped using HttpClient.  Your task is to identify how the operating system or programming language exposes a connection error. Once you have identified this error, your code must trap the exception, ensure that you can respond correctly, and prevent the exception from being exposed to the end user or calling system.
 <br/><br/>
-Set an appropriate timeout value for your needs within your application. We cannot tell you exactly what timeout value is best for you; but in our experience, interactive web applications tend to have a shorter timeout and desktop accounting programs tend to have a longer timeout. 
+Set an appropriate <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculating-tax-offline/retry-or-fallback#timeout">timeout value</a> for your needs within your application. We cannot tell you exactly what timeout value is best for you; but in our experience, interactive web applications tend to have a shorter timeout and desktop accounting programs tend to have a longer timeout. 
 <br/><br/>
-Now that you’ve prepared for a timeout in your application, the next step is to decide whether to retry your transaction or fall back to a cached tax data.
+Now that you’ve prepared for a timeout in your application, the next step is to retry your transaction.
 <br/>
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
