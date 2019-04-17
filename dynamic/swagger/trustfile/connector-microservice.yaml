@@ -1,48 +1,48 @@
 swagger: '2.0'
 info:
   version: 3.0.0
-  title: TrustFile Connector Management API
+  title: Extractor Management API (v3)
   description: |
     All custom integration / ETL ought to behave/operate in the exact same way. Adhering to this documentation will allow this
-
     #### Tokens:
-    * connectorToTFToken: identifies the connector and restricts access to environments / version of TF API the connector is certified for (see below for token usage in header)
-    * TFToConnectorToken: authorizes Trustfile to access operate the connector micro-service API
-    * connectionId: identifies and authorizes access to the TF company to push data into. Mapped to a UUID Company Token in database
-
+    * connector_2_tf_token: Now known as extractor_to_avalara_token, identifies the connector and restricts access to environments / version of TF API the connector is certified for (see below for token usage in header)
+    * trustfile_2_connector_token: Now known as avalara_to_extractor_token, authorizes Trustfile (and other consumers), and Blackhole to access operate the connector micro-service API
+    * connectionId: identifies and authorizes access to the Trustfile (or CUP) company to push data into. Mapped to a UUID Company Token in database
+    ### Blackhole
+     * Blackhole will be the source of truth for all connector tokens etc
+     * Disabling/updating an extractor will go through Blackhole
     #### Connector Management API responsibility
-     * Integrating with TF Items API
+     * Integrating with Blackhole Items API
      * Integrating with host system API, including authorization (typically something like oAuth)
      * ETL of sales/refunds/tax/shipping data into TrustFile data model
      * Basic management of user data sources:  CRUD, enable/disable/status
      * Scheduling and load balancing of users data synchronization
-     * Data integrity. It is the responsibility of the connector micro-service to know what data has been processed by TrustFile.
-
+     * Data integrity. It is the responsibility of the connector micro-service to know what data has been processed by Blackhole.
     #### Connector Management API is not responsible for
      * User experience
      * Branding of experience (aside from the popup for authentication with host system)
-
+    #### Provisioning of TFO by connectors - workflow
+     * Create a user in the connector db, enabled should be false, startDate should be null (connector should not be syncing)
+     * Call TFO signup: /v4/company/signup
+     * In TFO, a modal will pop up which will allow the user to set the startDate, which will call PUT /connections/{connectionId} with the following example body: { "enabled": true, "startDate": "2018-04-01" }
     #### Hosting / Language
     * All connectors will be hosted and operated from the Heroku PaaS
     * Language: choose between - Ruby/Node/Java
     * DB: Postgres (on heroku)
-
     #### Dates and Timestamps
     * Dates are in yyyy-mm-dd format
     * Timestamps are in the ISO format: 2015-07-06T22:26:28+00:00
     * Timestamps are in UTC +00:00 timezone
-
     #### Configs
     Put localization configs (specific to a given environment) into environment variables. Document the required variables in the README.md of the project. https://devcenter.heroku.com/articles/config-vars
-    
     #### Security:
     API requests except orangez/health are authorized with Header param
     ```
-    Authorization: Bearer TFToConnectorToken
+    Authorization: Bearer trustfile_2_connector_token
     ```
   contact:
     name: Trustfile API Support
-    url: trustfile.com
+    url: https://trustfile.com
     email: api@trustfile.com
 host: microservice.herokuapp.com
 basePath: /
@@ -50,7 +50,6 @@ produces:
   - application/json
 schemes:
   - http
-x-ApiType: SOAP
 securityDefinitions:
   Authorization:
     type: apiKey
@@ -62,7 +61,7 @@ paths:
     get:
       tags:
         - Connections
-      summary: Get List of Connections
+      summary: Get list of Connections
       description: "Returns list of connectionId's of the given enabled state"
       operationId: GetConnections
       parameters:
@@ -89,19 +88,17 @@ paths:
     post:
       tags:
         - Connections
-      summary: Create a Connection
+      summary: Creates a connection
       description: |
                    This will create a connection with the posted connectionId and startDate.
-                   
+                   The consumerSystem is used to identify which Avalara web service the connection is associated with. Note that the consumerSystem will be need to be saved to the user/connection.
                    The connectionId is used to identify the connection in the micro-service API. It's also used to authorize access to a company when posting data to Trustfile.
-                   
                    The connector will synchronize all the Sales / Tax data starting from the startDate into TrustFile; then the connector will periodically synchronize this connection at least once a day
-
       operationId: PostConnection
       parameters:
         - in: body
           name: body
-          description: Contains the connectionId and the startDate from which to begin syncing
+          description: Contains the consumerSystem, connectionId and the startDate from which to begin syncing
           required: true
           schema:
             $ref: '#/definitions/PostConnectionBody'
@@ -133,7 +130,7 @@ paths:
         - Authorization: []
   '/connections/{connectionId}':
     head:
-      summary: Determine if Connection Exists
+      summary: Determine if connection with connectionId exists
       tags:
         - Connections
       operationId: HeadConnectionDetail
@@ -153,7 +150,7 @@ paths:
       security:
         - Authorization: []
     get:
-      summary: Get a Connection
+      summary: Get information about connection
       description: |
         * Returns the status and other information about the connection
         identified by 'connectionId'
@@ -189,7 +186,7 @@ paths:
     put:
       tags:
         - Connections
-      summary: Update a Connection
+      summary: Update the connection with the given connectionId
       operationId: PutConnection
       parameters:
         - in: path
@@ -223,7 +220,7 @@ paths:
     delete:
       tags:
         - Connections
-      summary: Delete a Connection
+      summary: Delete a connection
       description: Deletes the connection from the database given the connectionId and stops syncing data from it
       operationId: DeleteConnection
       parameters:
@@ -254,7 +251,7 @@ paths:
     get:
       tags:
         - Connections
-      summary: Get Activity Logs for Connection
+      summary: Get activity logs for connection
       description: "Returns a log of all activities up to a max of 365 days. The activity logs should be sufficient to help the user understand what's going on synchronizing their account with Trustfile"
       operationId: GetConnectionActivities
       parameters:
@@ -305,7 +302,7 @@ paths:
     get:
       tags:
         - Connections
-      summary: Authenticate with Connection
+      summary: Authenticate with connection
       description: 'Redirects user to the connection authentication. Response will be rendered in a popup iframe to handle oAuth or other authentication mechanism. Once the user logs in or authorizes the connector, they will be redirected to the provided redirectUri, passing the TFToConnectorToken'
       operationId: GetConnectionAuthenticate
       parameters:
@@ -339,55 +336,11 @@ paths:
                 type: string
                 description: Reason for failure
                 example: Invalid query
-  # '/connections/{connectionId}/reauthentication':
-  #   get:
-  #     tags:
-  #       - Connections
-  #     summary: Re-authenticate with connection
-  #     description: 'This route serves to re-authenticate the user, e.g. if the user de-authorizes TrustFile from the connector side. Response will be rendered in a popup iframe to handle oAuth or other authentication mechanism. Once the user logs in or authorizes the connector, they will be redirected to the provided redirectUri, passing the TFToConnectorToken'
-  #     operationId: GetConnectionReauthenticate
-  #     parameters:
-  #       - in: path
-  #         name: connectionId
-  #         required: true
-  #         description: Used to identify the connection in the micro-service API
-  #         type: string
-  #       - in: query
-  #         name: redirectUri
-  #         required: true
-  #         description: "URI to redirect to after re-authentication. Will be app.trustfile.avalara.com/connectors/success followed by a stringified query param 'id', where 'id' is the TFToConnectorToken: app.trustfile.avalara.com/connectors/success?id=TFToConnectorToken (before uri-encoding)"
-  #         type: string
-  #     responses:
-  #       '200':
-  #         description: Successful response
-  #       '400':
-  #         description: Bad query response. e.g. if RedirectUri is not passed
-  #         schema:
-  #           $ref: '#/definitions/BadQueryError'
-  #       '401':
-  #         description: Authentication error response
-  #         schema:
-  #           $ref: '#/definitions/AuthError'
-  #       '404':
-  #         description: ConnectionId does not exist response
-  #       '500':
-  #         description: Error response
-  #         schema:
-  #           type: object
-  #           example:
-  #             message: Invalid query
-  #           properties:
-  #             message:
-  #               type: string
-  #               description: Reason for failure
-  #               example: Invalid query
-  #     security:
-  #       - Authorization: []
   /connector:
     get:
       tags:
         - Connector
-      summary: Get Status of a Connector
+      summary: Get status of the connector
       operationId: GetConnector
       responses:
         '200':
@@ -414,7 +367,7 @@ paths:
     put:
       tags:
         - Connector
-      summary: Enable/Disable Connector
+      summary: Enable/Disable connector
       description: "Based on the 'enabled' query param, disables or enables the connector. When the connector is disabled, it stops synchronizing data with TrustFile until it is reenabled"
       operationId: PutConnector
       parameters:
@@ -455,7 +408,7 @@ paths:
     get:
       tags:
         - Errors
-      summary: Get Connector Errors
+      summary: Get connector errors
       operationId: GetErrors
       parameters:
         - in: query
@@ -504,7 +457,7 @@ paths:
     get:
       tags:
         - BadItems
-      summary: Retrieve Bad Items
+      summary: Retrieve items that have errors or are malformed
       operationId: GetBadItems
       description: The connector should identify items that it receives that do not match the schema required by TrustFile. These items are stored and can be retrieved through GET to this route
       parameters:
@@ -560,7 +513,7 @@ paths:
     get:
       tags:
         - Health
-      summary: Get Connector Health
+      summary: Get health and availability of connector
       description: "* Health check for connector, used for monitoring\n* Monitors verify all statuses report OK, or the health check will fail.\n* Will return an array of statuses of the three types: \n  * connector\n  * hostSystem\n  * trustfile\n* Possible statuses are: \n  * OK - nominal\n  * FAIL - integration point is non-responsive or failing\n  * DEGRADED - functional, but not functioning at full capacity\n"
       operationId: GetConnectorHealth
       responses:
@@ -602,12 +555,17 @@ definitions:
         example: Unable to retrieve error logs
   ConnectionId:
     type: string
+    example: "b90c1a73-bc6c-4830-aa16-42b588bb011a"
     description: Used to identify the connection in the micro-service API
   StartDate:
     type: string
     format: date
     example: "5/1/10"
     description: The connector will synchronize all the Sales / Tax data starting from the startDate into TrustFile. Must be a Date parseable string
+  ConsumerSystem:
+    type: string
+    example: "trustfile"
+    description: Used to identify which Avalara web service the user is associated with (ie 'trustfile' or 'cup')
   ConnectionUpdate:
     type: object
     properties:
@@ -625,11 +583,14 @@ definitions:
     required:
     - connectionId
     - startDate
+    - consumerSystem
     properties:
       connectionId:
         $ref: '#/definitions/ConnectionId'
       startDate:
         $ref: '#/definitions/StartDate'
+      consumerSystem:
+        $ref: '#/definitions/ConsumerSystem'
   ConnectionSummary:
     type: object
     example:
@@ -887,5 +848,5 @@ definitions:
         items:
           $ref: '#/definitions/HealthObject'
     example:
-      statuses:
+      stasues:
         [{"type": "connector", "status": "OK", "description": "NOMINAL"},{"type": "hostSystem", "status": "OK", "description": "NOMINAL"},{"type": "trustfile", "status": "OK", "description": "NOMINAL"}]
