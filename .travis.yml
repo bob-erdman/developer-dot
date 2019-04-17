@@ -40,9 +40,9 @@ install:
   - npm i --progress=false --silent
 before_script:
   - uname -a
-  - export JAVA_OPTS="-Xmx1G"
+  - export JAVA_OPTS="-Xmx2G"
   - echo $JAVA_OPTS
-  - alias java="java -Xmx1G"
+  - alias java="java -Xmx2G"
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then bash ./scripts/staging-robots.sh; fi
 script:
   - npm run lint
