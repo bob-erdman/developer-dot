@@ -4,20 +4,15 @@ info:
   title: TrustFile API
   description: |
     API for posting sales / refunds / freight into TrustFile
-    
     #### Testing:
-
     * Test this endpoint @ https://stable-api.trustfile.avalara.com:443 
     * To test this endpoint, you'll need the connectorToTFToken
     * Contact apis@trustfile.com to signup as an integrator and schedule certification
-
     #### Tokens:
     * connectorToTFToken: identifies the connector and restricts access to environments / version of TrustFile API the connector is certified for
     * connectionId: identifies and authorizes access to the TF connection to push data into
-    
     #### Security:
     Authorization is done through header param
-    
     ```
     Authorization: Bearer connectorToTFToken
     ```
@@ -47,20 +42,13 @@ paths:
       summary: Post Items
       description: >
         * Creates new items or updates them if they already exist
-
         * Send sale items or refund items (the refund boolean of the item determines this)
-  
         * If refund is true, Taxes and Amounts are automatically made negative by TrustFile (negative amounts/taxes will remain negative)
-
         * Addresses are used to source the jurisdictions involved in the sale
-
         * Defaults are used for shipFromAddress if none provided or the address is
         invalid. The default shipFromAddress can be retrieved with the GET /connections/{<connectionID> route
-        
         * In some cases, review by the user may be required (e.g. if the service does not provide taxes or shipping data for refunds). When this occurs, reviewRequired should be set to true and reviewMessage should be a string with the reason for the review.
-        
         * Refunds should be pushed to TrustFile regardless of whether an original sale item exists
-        
         * Maximum of 1000 items may be posted at one time
       operationId: PostItems
       parameters:
@@ -79,12 +67,12 @@ paths:
         - Authorization: []
       responses:
         '200':
-          description: "Successful response"
+          description: 'Successful response'
           schema:
             type: object
             example:
               processed: 0,
-              dateTime: "2015-04-10T07:00:00.000Z"
+              dateTime: '2015-04-10T07:00:00.000Z'
             properties:
               processed:
                 type: integer
@@ -96,17 +84,17 @@ paths:
                 format: date-time
                 example: '2015-04-10T07:00:00.000Z'
         '400':
-          description: "Bad request response"
+          description: 'Bad request response'
           schema:
             type: object
             example:
               processed: 0,
-              dateTime: "2015-04-10T07:00:00.000Z"
-              errors: 
-              - keyword: maxItems
-                dataPath: .items
-                message: Should not have more than 1000 items
-                schema: 1000
+              dateTime: '2015-04-10T07:00:00.000Z'
+              errors:
+                - keyword: maxItems
+                  dataPath: .items
+                  message: Should not have more than 1000 items
+                  schema: 1000
             properties:
               processed:
                 type: integer
@@ -117,7 +105,7 @@ paths:
                 type: string
                 format: date-time
                 example: '2015-04-10T07:00:00.000Z'
-              errors: 
+              errors:
                 type: array
                 items:
                   $ref: '#/definitions/PostItemsError'
@@ -172,7 +160,7 @@ paths:
             properties:
               items:
                 type: array
-                items: 
+                items:
                   $ref: '#/definitions/Item'
                 description: Items in TrustFile matching this itemId for the passed connectionId. Will include both sales and refunds.
         '400':
@@ -180,7 +168,7 @@ paths:
           schema:
             type: object
             properties:
-              message: 
+              message:
                 type: string
                 description: Reason for failure
                 example: 'connectionId must be passed as query'
@@ -236,11 +224,11 @@ definitions:
     type: object
     description: Object containing the error details that occurred when processing items
     example:
-      "keyword": 'type'
-      "dataPath": '.items[0].shippingTax'
-      "message": 'should be number'
-      "schema": 'number'
-      "data": '.00'
+      'keyword': 'type'
+      'dataPath': '.items[0].shippingTax'
+      'message': 'should be number'
+      'schema': 'number'
+      'data': '.00'
     properties:
       keyword:
         type: string
@@ -268,50 +256,58 @@ definitions:
       items:
         type: array
         example:
-          [{"itemId": "3002987",
-            "transactionDate": "2014-12-09T09:53:59",
-            "shipToAddress": {
-              "line1": "4077 West Clinton Avenue",
-              "city": "Fresno",
-              "state": "CA",
-              "zip": "93722",
+          [
+            {
+              'itemId': '3002987',
+              'transactionDate': '2014-12-09T09:53:59',
+              'shipToAddress':
+                {
+                  'line1': '4077 West Clinton Avenue',
+                  'city': 'Fresno',
+                  'state': 'CA',
+                  'zip': '93722',
+                },
+              'shippingAmount': 30.00,
+              'shippingTax': 3.29,
+              'salesAmount': 514.99,
+              'salesTax': 42.36,
+              'description': 'Feenn Ruby Brooch',
+              'refund': false,
             },
-            "shippingAmount": 30.00,
-            "shippingTax": 3.29,
-            "salesAmount": 514.99,
-            "salesTax": 42.36,
-            "description": "Feenn Ruby Brooch",
-            "refund": false}, 
-            {"itemId": "3004342",
-            "transactionDate": "2014-11-09T09:53:59",
-            "shipToAddress": {
-              "line1": "4077 West Clinton Avenue",
-              "city": "Fresno",
-              "state": "CA",
-              "zip": "93722",
+            {
+              'itemId': '3004342',
+              'transactionDate': '2014-11-09T09:53:59',
+              'shipToAddress':
+                {
+                  'line1': '4077 West Clinton Avenue',
+                  'city': 'Fresno',
+                  'state': 'CA',
+                  'zip': '93722',
+                },
+              'shippingAmount': 20.00,
+              'shippingTax': 2.29,
+              'salesAmount': 420.99,
+              'salesTax': 38.36,
+              'description': 'Ruby necklace',
+              'refund': false,
             },
-            "shippingAmount": 20.00,
-            "shippingTax": 2.29,
-            "salesAmount": 420.99,
-            "salesTax": 38.36,
-            "description": "Ruby necklace",
-            "refund": false}]
+          ]
         items:
           $ref: '#/definitions/Item'
   Company:
     type: object
     properties:
-      name:	
+      name:
         type: string
-      syncDate:	
+      syncDate:
         type: string
-      phone:	
+      phone:
         type: string
-      fax:	
+      fax:
         type: string
-      createdAt:	
+      createdAt:
         type: string
-      updatedAt:	
+      updatedAt:
         type: string
       address:
         description: This address is used as the default shipFromAddress for an item if one is not provided
@@ -319,15 +315,15 @@ definitions:
   Address:
     type: object
     example:
-      "line1": '1000 W Main St'
-      "city": 'Seattle'
-      "state": 'WA'
-      "zip": '98101'
+      'line1': '1000 W Main St'
+      'city': 'Seattle'
+      'state': 'WA'
+      'zip': '98101'
     properties:
       line1:
         type: string
       line2:
-        type: string        
+        type: string
       line3:
         type: string
       city:
@@ -358,10 +354,10 @@ definitions:
       shipFromAddress:
         type: object
         example:
-          "line1": '1000 W Main St'
-          "city": 'Seattle'
-          "state": 'WA'
-          "zip": '98101'
+          'line1': '1000 W Main St'
+          'city': 'Seattle'
+          'state': 'WA'
+          'zip': '98101'
         properties:
           line1:
             type: string
@@ -374,13 +370,13 @@ definitions:
       shipToAddress:
         type: object
         required:
-        - state
-        - zip
+          - state
+          - zip
         example:
-          "line1": '1000 W Main St'
-          "city": 'Seattle'
-          "state": 'WA'
-          "zip": '98101'
+          'line1': '1000 W Main St'
+          'city': 'Seattle'
+          'state': 'WA'
+          'zip': '98101'
         properties:
           line1:
             type: string
@@ -420,4 +416,3 @@ definitions:
       reviewMessage:
         type: string
         description: Message to show the user as to what they should review
-        

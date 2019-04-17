@@ -4,13 +4,10 @@ info:
   title: Provisioning users
   description: |
     Signup endpoints for TrustFile.  Provision users via API to be called using connectors.
-
     #### Testing:
     Test this endpoint @ https://stable.trustfile.avalara.com
-
     #### Security:
     Authentication/Auth header is required for either endpoint
-
     #### CORS:
     Access-Control-Allow-Headers: X-Requested-With
   contact:
