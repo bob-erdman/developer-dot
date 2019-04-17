@@ -63,9 +63,8 @@
 
 <body id="top" data-product={{product_name}}>
     <header>
-        <!-- TODO: combine and make look not horrible -->
         <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
-        <nav class="navbar navbar-static">
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
             <div class="pageTitle" style="float: left">
                 <a href="/">
                     <img src="/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
@@ -202,7 +201,7 @@
                 </ul>
                 {% if page.title != "Thank You" %}
                 <div style="float: right;">
-                    {% if page.layout != "demoPage" %}
+                    {% if page.product != "Sales Tax API Demo" %}
                         <a href="/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
                     {% endif %}
                     <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
@@ -226,16 +225,8 @@
             </nav>
             <main class="col-md-9 small-no-padding">{{ content }}</main>
         </sectiion>
-
-<!-- removing this until we get approval on the self-test link -->
         {% elsif page.nav == 'tests' %}
         <section class="row padding-sides half">
-<!--
-            {% include tests_breadcrumb.html %}
-            <nav class="col-md-3">
-                {% include tests_navigation.html %}
-            </nav>
--->
             <main class="col-md-9 small-no-padding">{{ content }}</main>
         </section>
         {% elsif page.nav == 'apis' %} {%if page.doctype != 'overview' %} {% include api_breadcrumb.html %} {%endif%} {% if page.doctype == 'api_references' or page.doctype == 'use_cases' %}
@@ -263,7 +254,7 @@
         </section>
         {% endif %}
     </div>
-    {% if page.layout != 'demoPage' %}
+    {% if page.product != 'Sales Tax API Demo' %}
         <footer>
             <ul class="global">
                 <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>

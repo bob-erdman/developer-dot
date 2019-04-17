@@ -2,8 +2,6 @@ _site
 node_modules
 .idea
 
-/config.js
-
 api-reference/*
 
 !api-reference/signin-oidc
@@ -42,4 +40,3 @@ tmp
 package-lock.json
 
 .python-version
-
