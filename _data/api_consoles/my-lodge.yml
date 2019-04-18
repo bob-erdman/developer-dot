@@ -1,6 +1,3 @@
-nav_link:
-    title: MyLodge
-    path: /my-lodge
 nav_links:
   - title: Overview
     path: /my-lodge
