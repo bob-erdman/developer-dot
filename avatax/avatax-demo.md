@@ -176,5 +176,5 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
     <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
     <script src="/public/js/site.js"></script>
-    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCRBta8xeiP2U_3js2dNma-oyjnd_O0x2w&callback=loadMap'></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key={{site.google_maps_token}}&callback=loadMap'></script>
 </body>

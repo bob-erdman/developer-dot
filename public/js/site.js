@@ -875,17 +875,17 @@ function loadMap() {
    // options to load the map with
    var mapOptions = 
    {
-        minZoom:3, 
-        disableDefaultUI:true,
+        minZoom: 3, 
+        disableDefaultUI: true,
         center: new google.maps.LatLng(33.6846603698176, -117.850629887389),
         zoom: 3,
-        zoomControl:true, 
-        draggable:true,
+        zoomControl: true, 
+        draggable: true,
         styles: [{featureType:'poi', stylers:[{visibility:'off'}]}],
         zoomControlOptions:
         {
-        position:google.maps.ControlPosition.RIGHT_BOTTOM,
-        style:google.maps.ZoomControlStyle.DEFAULT
+            position:google.maps.ControlPosition.RIGHT_BOTTOM,
+            style:google.maps.ZoomControlStyle.DEFAULT
         },
         mapTypeId: google.maps.MapTypeId.ROADMAP
    };
