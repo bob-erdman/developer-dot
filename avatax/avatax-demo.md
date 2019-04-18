@@ -104,7 +104,7 @@ twitterImage: https://developer.avalara.com/public/images/avatax-demo-img.png
                     </p>
                     <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
                 </div>
-                <div id="map" style="position: absolute;top:0px;left:0px;right:0px;bottom:0px;height: 375px;z-index:-1;"></div>
+                <div id="map" style="position: absolute;top:0px;left:0px;right:0px;bottom:0px;height: 375px;z-index:2;"></div>
             </div>
             <!-- api details row -->
             <div class="row" id="demo-api-details">
