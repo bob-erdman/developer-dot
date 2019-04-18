@@ -63,31 +63,31 @@
 
 <body id="top" data-product={{product_name}}>
     <header>
-        <div class="pageTitle">
-            <a href="/">
-                <img src="/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
-                <span>Developer</span>
-            </a>
-            {% if product_name %}<span class="slash">/&nbsp;</span><a href="/{{product_name | downcase}}">{{product_name}}</a>{% endif %}
-        </div>
-        <nav class="navbar navbar-default navbar-static">
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/">
+                    <img src="/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
                 <span>Menu</span>
             </button>
             </div>
             <div class="collapse navbar-collapse js-navbar-collapse">
-                <ul class="nav navbar-nav {{page.nav}} {{layout.nav}}">
+                <ul class="nav navbar-nav {{page.nav}} {{layout.nav}}" style="padding-top: 8px">
                     <li class="apis visible-xs-block"><a href="/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
                     <li class="visible-xs-block"><a href="/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
                     <li class="apis dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
-                        <div class="dropdown-menu dropdown-menu-large">
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 525px; padding: 10px 15px;">
                             <div class="row">
                                 <div class="col-md-12"><a href="/avalara-apis">APIs overview</a></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <h2>Tax calculation</h2>
                                     {% if site.data.api_consoles.avatax11.nav_links %}
                                     <h4>Avalara AvaTax</h4>
@@ -115,7 +115,7 @@
                                     </ul>
                                     {% endif %}
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <h2>Compliance document management</h2>
                                     {% if site.data.api_consoles.certcapture.nav_links %}
                                     <h4>Avalara CertCapture</h4>
@@ -147,7 +147,7 @@
                     </li>
                     <li class="sdk dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
                             <li {% if page.url == "/avatax/signup" %}class="active"{% endif %}><a href="/avatax/signup">Get Started with AvaTax</a></li>
                             <br/>
                             <li><a href="/sdk/">The AvaTax SDK</a></li>
@@ -163,24 +163,15 @@
                     </li>
                     <li class="tests dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
                             <li><a href="/tests/communications-test">Avalara for Communications Test Cases</a></li>
                             <li><a href="/tests/testing-your-integration/">Avalara Test Cases</a></li>
 
                         </ul>
-                    </li>                    <!-- removing until the link to the Self-Test is fugured out -->
-                    <!--
-                    <li class="tests dropdown dropdown-large hidden-xs">
-                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
-                            <li><a href="/tests/self-test">Avalara Self-Test Tool</a></li>
-                            <li><a href="/tests/testing-your-integration/">Avalara Test Cases</a></li>
-                        </ul>
-                    </li> -->
-
+                    </li>            
                     <li class="certification dropdown dropdown-large hidden-xs">
-                        <a class="dropdown-toggel" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
                             <li><a href="/certification/">Overview</a></li>
                             <li><a href="/certification/excise/">Avalara Excise</a></li>
                             <li><a href="/certification/avatax/">Certification Badges</a></li>
@@ -188,15 +179,15 @@
                     </li>
                     <li class="resources dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-large">
-                          <li><a href="/resources/conferences">Avalara CRUSH Conference</a></li>
-                          <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
-                          <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
-                          <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
-                          <li><a href="/resources/support">Developer Support Options</a></li>
-                          <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
-                          <li><a href="/resources/webinars">Webinars</a></li>
-                          <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="/resources/webinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
                         </ul>
                     </li>
                     <li class="resources visible-xs-block"><a href="/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
@@ -209,29 +200,17 @@
                     <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
                 </ul>
                 {% if page.title != "Thank You" %}
-                <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-primary btn-signup">Free Trial</a>
-                <a href="/avatax/avatax-demo/" class="btn btn-primary btn-signup">Demo API</a>
+                <div style="float: right;">
+                    {% if page.product != "Sales Tax API Demo" %}
+                        <a href="/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    {% endif %}
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
                 {% endif %}
             </div>
         </nav>
     </header>
     <div class="container-fluid {{page.doctype}}">
-        {% if page.nav=="home" %}
-        <div class="recent-blog-posts" id="recentPosts">
-            <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
-            <h2>AvaTax Developer News</h2>
-            {% for post in site.posts limit:4 %}
-            <div class="col-md-3">
-                <div class="blog-preview recent-posts">
-                    <div class="gradient"></div>
-                    <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
-                    <h6>{{ post.subtitle }}</h6>
-                    <p class="byline">By {{post.author}} | {{ post.date | date: "%B %d, %Y"}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
         {%if page.nav == 'sdk' %} {% include sdk_breadcrumb.html %}
         <section class="row padding-sides half">
             <nav class="col-md-3">
@@ -246,16 +225,8 @@
             </nav>
             <main class="col-md-9 small-no-padding">{{ content }}</main>
         </sectiion>
-
-<!-- removing this until we get approval on the self-test link -->
         {% elsif page.nav == 'tests' %}
         <section class="row padding-sides half">
-<!--
-            {% include tests_breadcrumb.html %}
-            <nav class="col-md-3">
-                {% include tests_navigation.html %}
-            </nav>
--->
             <main class="col-md-9 small-no-padding">{{ content }}</main>
         </section>
         {% elsif page.nav == 'apis' %} {%if page.doctype != 'overview' %} {% include api_breadcrumb.html %} {%endif%} {% if page.doctype == 'api_references' or page.doctype == 'use_cases' %}
@@ -283,55 +254,57 @@
         </section>
         {% endif %}
     </div>
-    <footer>
-        <ul class="global">
-            <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
-            <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
-        </ul>
+    {% if page.product != 'Sales Tax API Demo' %}
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
 
 
-        <ul class="social">
-            <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
-            <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
-            <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
-            <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
-        </ul>
-        {% if page.api_console == 1 %}
-            {% for api_console_hash in site.data.api_consoles %}
-                {% assign api_console = api_console_hash[1] %}
-                {% assign api_console_path = api_console.nav_link.path | remove_first: '/' %}
-                {% if page.path contains api_console_path %}
-                    {% for config in site.data.SWAGGER_CONFIG %}
-                        {% if config[1].name == page.api_name %}
-                            {% assign swagger_path = config[0] %}
-                        {% endif %}
-                    {% endfor %}
-                    {% assign githubpath = swagger_path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/' %}
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            {% assign githubpath = page.path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/' %}
-        {% endif %}
-        {% unless githubpath contains '/blog/page' %}
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            {% if page.api_console == 1 %}
+                {% for api_console_hash in site.data.api_consoles %}
+                    {% assign api_console = api_console_hash[1] %}
+                    {% assign api_console_path = api_console.nav_link.path | remove_first: '/' %}
+                    {% if page.path contains api_console_path %}
+                        {% for config in site.data.SWAGGER_CONFIG %}
+                            {% if config[1].name == page.api_name %}
+                                {% assign swagger_path = config[0] %}
+                            {% endif %}
+                        {% endfor %}
+                        {% assign githubpath = swagger_path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/' %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% assign githubpath = page.path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/' %}
+            {% endif %}
+            {% unless githubpath contains '/blog/page' %}
 
-        {% endunless %}
+            {% endunless %}
 
 
-        <ul class="legal">
-            <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
-            <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
-            <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
-        </ul>
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
 
-        <ul class="github">
-            <li class="social github-icon"><a href="{{githubpath}}"><span>GH</span> Edit this page on GitHub</a></li>
+            <ul class="github">
+                <li class="social github-icon"><a href="{{githubpath}}"><span>GH</span> Edit this page on GitHub</a></li>
 
-        </ul>
-    </footer>
-
+            </ul>
+        </footer>
+    {% endif %}
     <script src="/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
     <script src="/public/js/vendor/bootstrap.min.js"></script>
-    <script src="/public/js/site.js"></script>
 
     {% comment %} Because the AWS JavaScript SDK is dumb and doesn't work with browserify, have to include it the ole' fashioned way. Custom build that just has S3 sdk included: {% endcomment %}
     <script src="/public/js/vendor/aws-sdk-2.5.3.min.js"></script>

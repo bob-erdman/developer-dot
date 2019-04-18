@@ -7,7 +7,7 @@
 }
 
 #demo-shortcuts {
-    max-height: 900px;
+    max-height: calc(100vh - 60px);
     padding-left:15px;
     overflow: auto;
     font-family: Arial, "source sans pro light";
@@ -54,6 +54,8 @@
     min-height: 275px;
     border-radius: 10px;
     padding: 5px 15px 15px 15px;
+    position: absolute;
+    z-index: 3;
     h4 {
         color: $Ava-orange;
     }

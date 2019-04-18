@@ -23,7 +23,7 @@
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $nav-link-hover-bg;
+        color: $Ava-orange;
       }
     }
 
@@ -46,7 +46,7 @@
     &,
     &:hover,
     &:focus {
-      background-color: $nav-link-hover-bg;
+      color: $Ava-orange;
       border-color: $link-color;
     }
   }
