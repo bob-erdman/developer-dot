@@ -112,6 +112,7 @@ info:
 
         
 host: mylodgetaxapi-sbx.avalara.net
+basePath: /
 schemes:
   - https
 definitions:
@@ -431,6 +432,7 @@ definitions:
 paths:
   /v1/partnerleads:
     post:
+      operationId: postPartnerLeads
       tags:
         - Onboarding
       summary: Creates a new partner lead with the given lead information and returns a
@@ -502,6 +504,7 @@ paths:
         - authorizer: []
   '/v1/country/{country}/stateprovinces':
     get:
+      operationId: getStateProvinces
       tags:
         - Onboarding
       summary: Returns a collection of supported states and provinces for the given
@@ -544,6 +547,7 @@ paths:
         - authorizer: []
   '/v1/customers/{customerid}/locations':
     get:
+      operationId: getCustomerLocations
       tags:
         - Customer Information
       summary: Provides access to location information for a given customer.
@@ -583,6 +587,7 @@ paths:
         - authorizer: []
   '/v1/locations/{locationid}/ownertaxsummaries':
     get:
+      operationId: ownerTaxSummaries
       tags:
         - Tax Rate
       summary: Provides summarized tax responsibilities for the owner of the given
@@ -654,6 +659,7 @@ paths:
         - authorizer: []
   '/v1/locations/{locationid}/ownertaxdetails':
     get:
+      operationId: ownerTaxDetails
       tags:
         - Tax Rate
       summary: Provides detailed tax responsibilities for the owner of the given
@@ -722,6 +728,7 @@ paths:
         - authorizer: []
   '/v1/locations/{locationid}/revenuetransactions/{transactionid}':
     put:
+      operationId: PutRevenueTransactions
       tags:
         - Revenue
       summary: Creates or updates revenue information for a given location, stored by 
@@ -876,6 +883,7 @@ paths:
       security:
         - authorizer: []
     get:
+      operationId: GetRevenueTransactions
       tags:
         - Revenue
       summary: Retrieves reported revenue information for a given location by  its
@@ -912,6 +920,7 @@ paths:
       security:
         - authorizer: []
     delete:
+      operationId: DeleteRevenueInformation
       tags:
         - Revenue
       summary: Deletes revenue information that was previously entered for the  given
