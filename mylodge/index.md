@@ -14,17 +14,16 @@ doctype: overview
 <div class="row border-top padding-top padding-bottom">
   <div class="col-md-8 col-md-offset-2 text-center">
     <h1 class="h1p " class="text-left">How does the API work?</h1>
-    <h4 class="text-left">This API taps into Avalara CertCapture, providing automated document management:
-       The API allows you to create, validate, and store sales tax exemption and reseller
-       certificates.
+    <h4 class="text-left">
+      Spicy jalapeno bacon ipsum dolor amet short ribs t-bone brisket shoulder. Kevin biltong bacon, drumstick chuck pork pig shankle ham tongue strip steak.
     </h4>
-     <h2 class="text-left">How does Avalara CertCapture benefit businesses?</h2>
-     <h4 class="text-left">An automated document management system limits audit exposure and ensures that every non-taxable transaction is tracked correctly. <a href="http://certcapture.avalara.com">Learn more</a></h4>
+     <h2 class="text-left"> Ham hock meatloaf drumstick</h2>
+     <h4 class="text-left">tenderloin short ribs sausage doner beef ribs t-bone. Pastrami doner hamburger chuck pork andouille strip steak swine spare ribs shankle ham <a href="http://certcapture.avalara.com">Bacon more</a></h4>
   </div>
 </div>
 <div class="row border-top padding-top padding-bottom">
   <div class="col-md-6 col-md-offset-3 text-center" >
-    <h1 class="h1p" class="padding-marginbottom">Get started learning about and using this API</h1>
+    <h1 class="h1p" class="padding-marginbottom">Shank ham alcatra swine shoulder picanha</h1>
     <div class="row">
         <!-- "1" -->
         <div class="col-md-6 card">
@@ -40,10 +39,8 @@ doctype: overview
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
-                <p class="text-left">RESTful APIs for CertCapture 6.X and beyond are
-                    designed so that error responses are easy to
-                    understand and are accompanied by an error
-                    code.
+                <p class="text-left">
+                  turducken burgdoggen capicola chuck short loin jowl pork loin. Flank sausage rump, sirloin tri-tip buffalo picanha.
                 </p>
             </div>
         </div>
@@ -61,9 +58,9 @@ doctype: overview
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-1 padding-top">
-                <p class="text-left">To access the Avalara Certcapture service
-                    and obtain an API key, contact your Avalara
-                    account manager or <a href="mailto:support@certcapture.com">email us</a>.
+                <p class="text-left">
+                  Strip steak tri-tip ham, short ribs beef shoulder frankfurter. 
+                  <a href="mailto:support@certcapture.com">email us</a>.
                 </p>
             </div>
         </div>
