@@ -126,15 +126,11 @@ definitions:
         $ref: '#/definitions/ArrayOfOnboardingLocations'
   Customer:
     type: object
-    description: >-
-      Represents a customer or potential customer.  When used as input, all
-      fields are required.
+    description: Represents a customer or potential customer.  When used as input, all fields are required.
     properties:
       customerId:
         type: string
-        description: >-
-          Unique, partner-specific identifier of the customer as defined in the
-          calling system
+        description: Unique, partner-specific identifier of the customer as defined in the calling system
       firstName:
         type: string
         description: Customer's first name (given name)
@@ -143,18 +139,14 @@ definitions:
         description: Customer's last name (surname)
       email:
         type: string
-        description: >-
-          Customer's email address; will be used for MyLodge account username
-          when signup is completed.
+        description: Customer's email address; will be used for MyLodge account username when signup is completed.
       phoneNumber:
         type: string
         description: Customer's phone number
       billingAddress:
         $ref: '#/definitions/Address'
   Address:
-    description: >-
-      Represents a physical address.  When used as input, all fields are
-      required -except- addressLine2
+    description: Represents a physical address.  When used as input, all fields are required -except- addressLine2
     type: object
     properties:
       addressLine1:
@@ -182,17 +174,12 @@ definitions:
       $ref: '#/definitions/OnboardingLocation'
   OnboardingLocation:
     type: object
-    description: >-
-      Represents a location being onboarded. When used as input, the address for
-      location must currently be in the United States (country: us), and the
-      stateProvince of the address must be one that matches list returned from
-      /v1/countries/us/stateprovinces response
+    description: "Represents a location being onboarded. When used as input, the address for location must currently be in the United States (country: us), and the
+      stateProvince of the address must be one that matches list returned from /v1/countries/us/stateprovinces response"
     properties:
       locationId:
         type: string
-        description: >-
-          Unique, partner-specific identifier of the location as defined in the
-          calling system
+        description: Unique, partner-specific identifier of the location as defined in the calling system
       nickname:
         type: string
         description: Short name of the location
@@ -207,30 +194,22 @@ definitions:
         type: string
   PostPartnerLeadsResponse:
     type: object
-    description: >-
-      Representation of a successful response from a POST /v1/partnerleads
-      operation
+    description: Representation of a successful response from a POST /v1/partnerleads operation
     properties:
       registerLink:
         type: string
   PostPartnerLeadsResponseErrorDataExists:
     type: object
-    description: >-
-      Error response returned when customer or location with given id already
-      exists.
+    description: Error response returned when customer or location with given id already exists.
     properties:
       message:
         type: string
       addPropertyLink:
         type: string
-        description: >-
-          Link to Avalara MyLodgeTax application page where user can create
-          additional properties in existing account.
+        description: Link to Avalara MyLodgeTax application page where user can create additional properties in existing account.
   GetStateProvincesResponse:
     type: object
-    description: >-
-      Representation of a successful response from a GET
-      /v1/countries/us/stateprovinces
+    description: Representation of a successful response from a GET /v1/countries/us/stateprovinces
     properties:
       stateProvinces:
         $ref: '#/definitions/ArrayOfStateProvinces'
@@ -249,9 +228,7 @@ definitions:
         type: string
   GetCustomerLocationsResponse:
     type: object
-    description: >-
-      Representation of a successful response from a GET
-      /v1/customers/{customerId}/locations
+    description: Representation of a successful response from a GET /v1/customers/{customerId}/locations
     properties:
       locations:
         $ref: '#/definitions/ArrayOfLocations'
@@ -277,9 +254,7 @@ definitions:
           - Cancelled
   GetOwnerTaxSummariesResponse:
     type: object
-    description: >-
-      Representation of a successful response from a GET
-      /v1/locations/{locationId}/ownertaxsummaries
+    description: Representation of a successful response from a GET /v1/locations/{locationId}/ownertaxsummaries
     properties:
       taxSummaries:
         $ref: '#/definitions/ArrayOfTaxSummaries'
@@ -314,9 +289,7 @@ definitions:
     properties:
       totalAmount:
         type: number
-        description: >-
-          Total fixed amount to collect in local currency, for the given unit of
-          measure
+        description: Total fixed amount to collect in local currency, for the given unit of measure
       unitOfMeasure:
         type: string
         enum:
@@ -324,9 +297,7 @@ definitions:
         description: Unit of measure for the fixed tax
   GetOwnerTaxDetailsResponse:
     type: object
-    description: >-
-      Representation of a successful response from a GET
-      /v1/locations/{locationId}/ownertaxdetails
+    description: Representation of a successful response from a GET /v1/locations/{locationId}/ownertaxdetails
     properties:
       taxSummaries:
         $ref: '#/definitions/ArrayOfTaxDetails'
@@ -398,16 +369,12 @@ definitions:
         description: Flag indicating whether this tax can be taxed by other taxes
   PutRevenueTransactionsRequest:
     type: object
-    description: >-
-      Request body definition for call to PUT 
-      /v1/locations/{locationid}/revenuetransactions/{transactionid}. The fields
+    description: Request body definition for call to PUT /v1/locations/{locationid}/revenuetransactions/{transactionid}. The fields 
       'memo' and 'sourceMarketplace' are optional.
     properties:
       transactionDate:
         type: string
-        description: >-
-          The date that the revenue is being reported for. Expected date format 
-          is 'YYYY-MM-DD'.
+        description: The date that the revenue is being reported for. Expected date format is 'YYYY-MM-DD'.
       totalRevenue:
         type: number
         description: The total revenue amount being reported.  Tax should not be included in this value.
@@ -425,26 +392,22 @@ definitions:
         description: Memo field that describes the transaction data.  This is what the customer will see in the Avalara MyLodgeTax application.  Although optional, partners are strongly encouraged to provide a meaningful description for the customer's reference.
       sourceMarketplace:
         type: string
-        description: >-
-          The marketplace that the transaction applies to (e.g. AirbnB, 
+        description: The marketplace that the transaction applies to (e.g. AirbnB, 
           HomeAway, etc). This field does not need to be supplied from partners who represent a single marketplace; sourceMarketplace will be inferred from your API key.
           
           For partners that list on multiple third-party marketplaces, this field is required, so that the correct customer-owed tax can be computed, based on the tax that the given marketplace is known to collect and remit.
   GetRevenueTransactionsResponse:
     type: object
-    description: >-
-      The transaction data that corresponds to the provided locationid and 
+    description: The transaction data that corresponds to the provided locationid and 
       transactionid.
     properties:
       id:
         type: string
-        description: >-
-          The unique identifier for the transaction data. Will always be the 
+        description: The unique identifier for the transaction data. Will always be the 
           same as what was input in the 'transactionid' field in the url.
       date:
         type: string
-        description: >-
-          The date that the revenue was reported for. Format will be 
+        description: The date that the revenue was reported for. Format will be 
           'YYYY-MM-DD'.
       totalRevenue:
         type: number
@@ -463,8 +426,7 @@ definitions:
         description: Block of text that describes the transaction data.
       sourceMarketplace:
         type: string
-        description: >-
-          The marketplace that the transaction applies to (e.g. AirBnB, 
+        description: The marketplace that the transaction applies to (e.g. AirBnB, 
           HomeAway, etc). If this revenue does not apply to a specific
           marketplace, it will be 'null'.
 paths:
@@ -472,12 +434,10 @@ paths:
     post:
       tags:
         - Onboarding
-      summary: >-
-        Creates a new partner lead with the given lead information and returns a
+      summary: Creates a new partner lead with the given lead information and returns a
         link where the lead can complete their Avalara MyLodgeTax account
         creation.
-      description: >-
-        The partnerleads endpoint receives information about the potential
+      description: The partnerleads endpoint receives information about the potential
         customer and one or more locations, and securely stores information
         received in this request.  **Unique** customer and location identifiers
         must be provided by the calling system in the request body. For leads
@@ -486,8 +446,6 @@ paths:
         uniquely identifies the given request.  The hyperlink can be used by the
         lead or calling application to display a webpage where the user can
         complete the Avalara MyLodgeTax account creation process.
-
-        >
 
         For leads that already exist in the Avalara MyLodgeTax system (based on
         email address), a link will be returned that will direct the existing
@@ -505,11 +463,10 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/PostPartnerLeadsResponse'
-          examples:
-            Register link for customer to complete signup: |-
+          examples: "Register link for customer to complete signup: 
               {
-                "registerLink": "https://cart.mylodgetax.avalara.com/home/partners/17fddba083a755760503fe938ce0z803f98ced4d5b9253da952adc90ec550ca4/"
-              }
+                \"registerLink\": \"https://cart.mylodgetax.avalara.com/home/partners/17fddba083a755760503fe938ce0z803f98ced4d5b9253da952adc90ec550ca4/\"
+              }"
         '400':
           description: 'Bad request: check response body message for details'
           schema:
@@ -519,25 +476,23 @@ paths:
           schema:
             $ref: '#/definitions/ErrorResponse'
         '409':
-          description: >-
-            Username (email) already associated with an Avalara MyLodgeTax
+          description: Username (email) already associated with an Avalara MyLodgeTax
             account, or locationId for calling partner has already been created.
           schema:
             $ref: '#/definitions/PostPartnerLeadsResponseErrorDataExists'
           examples:
-            Account exists: |-
+            "Account exists: 
               {
-                "message": "Account already exists",
-                "addPropertyLink" : "https://app.mylodgetax.avalara.com/properties/add"
+                \"message\": \"Account already exists\",
+                \"addPropertyLink\" : \"https://app.mylodgetax.avalara.com/properties/add\"
               }
-            Partner locationId exists: |-
+            Partner locationId exists:
               {
-                "message": "Location mapping already exists for partner"
-              }
+                \"message\": \"Location mapping already exists for partner\"
+              }"
         '422':
-          description: >-
-            Invalid message body contents: check response body message for
-            details
+          description: "Invalid message body contents: check response body message for
+            details"
           schema:
             $ref: '#/definitions/ErrorResponse'
         '429':
@@ -550,13 +505,11 @@ paths:
     get:
       tags:
         - Onboarding
-      summary: >-
-        Returns a collection of supported states and provinces for the given
+      summary: Returns a collection of supported states and provinces for the given
         country
       parameters:
         - name: country
-          description: >-
-            Country for which to return collection of supported states and
+          description: Country for which to return collection of supported states and
             provinces.  United States ('us') is the only country supported at
             this time.
           in: path
@@ -595,8 +548,7 @@ paths:
       tags:
         - Customer Information
       summary: Provides access to location information for a given customer.
-      description: >-
-        The locations endpoint returns status information about all locations
+      description: The locations endpoint returns status information about all locations
         defined for a customer.
       consumes:
         - application/json
@@ -605,8 +557,7 @@ paths:
           in: path
           required: true
           type: string
-          description: >-
-            Unique, partner-specific customer identifier assigned when posting a
+          description: Unique, partner-specific customer identifier assigned when posting a
             partnerLead (_customerId_).
       responses:
         '200':
@@ -635,11 +586,9 @@ paths:
     get:
       tags:
         - Tax Rate
-      summary: >-
-        Provides summarized tax responsibilities for the owner of the given
+      summary: Provides summarized tax responsibilities for the owner of the given
         location, by marketplace. Tax rate quotes are provided for today.
-      description: >-
-        The ownertaxsummaries endpoint returns summarized tax rate information
+      description: The ownertaxsummaries endpoint returns summarized tax rate information
         for taxes owed by the location (property) owner, based on the booking
         platform.  The Full tax rate responsibility for the owner is represented
         by the _direct_ marketplace.  Requesting rates for a specific booking
@@ -650,8 +599,6 @@ paths:
         the response will always contain data for the _direct_ marketplace, plus
         any rate information for marketplaces that differ from the full rate set
         represented by the _direct_ marketplace.
-
-        >
 
         The total percentage rate is returned as an effective rate.  Meaning, if
         any component percentage rate for the location is taxable, the
@@ -664,23 +611,20 @@ paths:
           in: path
           required: true
           type: string
-          description: >-
-            Unique location identifier assigned when posting a partnerLead
+          description: Unique location identifier assigned when posting a partnerLead
             (_locationId_).
         - name: effectivedate
           in: query
           required: true
           type: string
-          description: >-
-            Effective date for rate lookup.  Given date must be within +/- 1 day
+          description: Effective date for rate lookup.  Given date must be within +/- 1 day
             of current calendar date in U.S. Pacific time zone at the time the
             request is made.  Expected date format is 'YYYY-MM-DD'
         - name: marketplace
           in: query
           required: false
           type: string
-          description: >-
-            0...n marketplace parameters may be passed, which may include
+          description: 0...n marketplace parameters may be passed, which may include
             _direct_.
       responses:
         '200':
@@ -713,11 +657,9 @@ paths:
     get:
       tags:
         - Tax Rate
-      summary: >-
-        Provides detailed tax responsibilities for the owner of the given
+      summary: Provides detailed tax responsibilities for the owner of the given
         location, by marketplace. Tax rate quotes are provided for today.
-      description: >-
-        The ownertaxdetails endpoint returns detailed tax rate information for
+      description: The ownertaxdetails endpoint returns detailed tax rate information for
         taxes owed by the location (property) owner, based on the rental
         platform.  The Full tax rate responsibility for the owner is represented
         by the _direct_ marketplace.  Requesting rates for a specific
@@ -729,8 +671,6 @@ paths:
         rate information for marketplaces that differ from the full rate set
         represented by the _direct_ marketplace.
 
-        >
-
         Unlike _ownertaxsummaries_, this endpoint will not perform any
         calculations and therefore, will not compound taxable tax.
       consumes:
@@ -740,15 +680,13 @@ paths:
           in: path
           required: true
           type: string
-          description: >-
-            Unique location identifier assigned when posting a partnerLead
+          description: Unique location identifier assigned when posting a partnerLead
             (_locationId_).
         - name: effectivedate
           in: query
           required: true
           type: string
-          description: >-
-            Effective date for rate lookup.  Given date must be within +/- 1 day
+          description: Effective date for rate lookup.  Given date must be within +/- 1 day
             of current calendar date as defined in U.S. Pacific time zone. 
             Expected date format is 'YYYY-MM-DD'
         - name: marketplace
@@ -787,29 +725,18 @@ paths:
     put:
       tags:
         - Revenue
-      summary: >-
-        Creates or updates revenue information for a given location, stored by 
+      summary: Creates or updates revenue information for a given location, stored by 
         the provided transaction id.
-      description: >-
-        The PUT operation of the revenuetransactions endpoint allows for the 
+      description: "The PUT operation of the revenuetransactions endpoint allows for the 
         submittal of revenue information for a given location, to be stored 
         under the provided transaction id.
-
-        >
 
         If the provided transaction id already exists, this operation will 
         overwrite the previously submitted data.
         
-        >
-        
         Transaction dates will only be accepted for the current month, or for the previous calendar month, through 23:59:59 on the second day of the month, U.S. Pacific Time.  Tax returns are filed based on transaction date, and tax monies will be debited from the customer's account during the month the tax return will be filed.  See _API Receipt Start_ and _API Receipt Cutoff_ columns in sample schedules below.
-        
-        >
-        
-        
+             
         Customers with API-linked revenue will be able to confirm revenue via the Avalara MyLodgeTax application starting on the third day of the month at 01:00:00, U.S. Pacific Time. See _Customer Confirmation Start_ column in sample schedules below.
-        
-        >
         
         If a customer does not manually confirm revenue, revenue delivered via this API endpoint will be automatically confirmed after 16:00:00, U.S. Pacific Time, on:
         
@@ -897,7 +824,7 @@ paths:
         
         2019-11-**        | 2019-11-01        | 2019-12-02      | 2019-12-03                  | 2019-12-05 or 2019-12-10      | 2020-01-05 thru 2020-01-25
         
-        2019-12-**        | 2019-12-01        | 2020-01-02      | 2020-01-03                  | 2020-01-05 or 2020-01-10      | 2020-01-05 thru 2020-01-25
+        2019-12-**        | 2019-12-01        | 2020-01-02      | 2020-01-03                  | 2020-01-05 or 2020-01-10      | 2020-01-05 thru 2020-01-25"
         
       consumes:
         - application/json
@@ -906,8 +833,7 @@ paths:
           in: path
           required: true
           type: string
-          description: >-
-            Unique location identifier assigned when posting a partnerLead
+          description: Unique location identifier assigned when posting a partnerLead
             (_locationId_).
         - name: transactionid
           in: path
@@ -939,8 +865,7 @@ paths:
           schema:
             $ref: '#/definitions/ErrorResponse'
         '422':
-          description: >-
-            The provided location id is for an inactive location  -OR- the
+          description: The provided location id is for an inactive location  -OR- the
             transaction date in the request-body is outside the  current
             reporting-period.
           schema:
@@ -954,11 +879,9 @@ paths:
     get:
       tags:
         - Revenue
-      summary: >-
-        Retrieves reported revenue information for a given location by  its
+      summary: Retrieves reported revenue information for a given location by  its
         transaction id.
-      description: >-
-        Returns a revenue transaction for the specified location and transaction id. If there is no such transaction
+      description: Returns a revenue transaction for the specified location and transaction id. If there is no such transaction
         for the given location, a '(404) Not Found' error will be returned.
       consumes:
         - application/json
@@ -967,8 +890,7 @@ paths:
           in: path
           required: true
           type: string
-          description: >-
-            Unique location identifier assigned when posting a partnerLead
+          description: Unique location identifier assigned when posting a partnerLead
             (_locationId_).
         - name: transactionid
           in: path
@@ -993,14 +915,10 @@ paths:
     delete:
       tags:
         - Revenue
-      summary: >-
-        Deletes revenue information that was previously entered for the  given
+      summary: Deletes revenue information that was previously entered for the  given
         location and transaction id.
-      description: >-
-        Allows for the deletion of a revenue transaction that has previously been
+      description: Allows for the deletion of a revenue transaction that has previously been
         entered for a location.
-
-        >
 
         Note that revenue data that was reported in the prior reporting month (or earlier) 
         cannot be deleted.  For example, a transaction with a March transaction date cannot be deleted after April 2.
@@ -1011,8 +929,7 @@ paths:
           in: path
           required: true
           type: string
-          description: >-
-            Unique location identifier assigned when posting a partnerLead
+          description: Unique location identifier assigned when posting a partnerLead
             (_locationId_).
         - name: transactionid
           in: path
