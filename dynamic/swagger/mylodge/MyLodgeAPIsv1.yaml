@@ -3,8 +3,7 @@ info:
   version: v1.2
   title: Avalara MyLodgeTax API
   termsOfService: 'https://mylodgetax.avalara.com/legal'
-  description: >-
-    Welcome to the MyLodgeTax Public API page, supporting the Avalara MyLodgeTax
+  description: "Welcome to the MyLodgeTax Public API page, supporting the Avalara MyLodgeTax
     product, which provides sales and lodging tax compliance for short-term
     property rentals.  Find out more about the MyLodgeTax product here:
     http://www.mylodgetax.com
@@ -109,7 +108,7 @@ info:
     ## API Rate Limits
 
     All endpoints will be rate limited, allowing each partner to make up to 500
-    requests per minute across all endpoints.
+    requests per minute across all endpoints."
 
         
 host: mylodgetaxapi-sbx.avalara.net
@@ -228,7 +227,7 @@ definitions:
         type: string
   GetCustomerLocationsResponse:
     type: object
-    description: Representation of a successful response from a GET /v1/customers/{customerId}/locations
+    description: Representation of a successful response from a GET /v1/customers/&#123;customerId&#125;/locations
     properties:
       locations:
         $ref: '#/definitions/ArrayOfLocations'
@@ -254,7 +253,7 @@ definitions:
           - Cancelled
   GetOwnerTaxSummariesResponse:
     type: object
-    description: Representation of a successful response from a GET /v1/locations/{locationId}/ownertaxsummaries
+    description: Representation of a successful response from a GET /v1/locations/&#123;locationId&#125;/ownertaxsummaries
     properties:
       taxSummaries:
         $ref: '#/definitions/ArrayOfTaxSummaries'
@@ -297,7 +296,7 @@ definitions:
         description: Unit of measure for the fixed tax
   GetOwnerTaxDetailsResponse:
     type: object
-    description: Representation of a successful response from a GET /v1/locations/{locationId}/ownertaxdetails
+    description: Representation of a successful response from a GET /v1/locations/&#123;locationId&#125;/ownertaxdetails
     properties:
       taxSummaries:
         $ref: '#/definitions/ArrayOfTaxDetails'
@@ -369,7 +368,7 @@ definitions:
         description: Flag indicating whether this tax can be taxed by other taxes
   PutRevenueTransactionsRequest:
     type: object
-    description: Request body definition for call to PUT /v1/locations/{locationid}/revenuetransactions/{transactionid}. The fields 
+    description: Request body definition for call to PUT /v1/locations/&#123;locationid&#125;/revenuetransactions/&#123;transactionid&#125;. The fields 
       'memo' and 'sourceMarketplace' are optional.
     properties:
       transactionDate:

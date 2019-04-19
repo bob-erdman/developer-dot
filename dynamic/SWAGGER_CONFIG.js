@@ -44,7 +44,7 @@ export default {
         path: 'excise/api-reference/tax-determination/v5_22_0',
         product: 'excise'
     },
-    'mylodge/MyLodgeAPIsv1.yml': {
+    'mylodge/MyLodgeAPIsv1.yaml': {
         name: 'MyLodge API',
         path: 'api-reference/MyLodgeAPIsv1/',
         product: 'mylodge'
