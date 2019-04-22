@@ -728,12 +728,12 @@ paths:
         - authorizer: []
   '/v1/locations/{locationid}/revenuetransactions/{transactionid}':
     put:
-      operationId: PutRevenueTransactions
+      operationId: putRevenueTransactions
       tags:
         - Revenue
       summary: Creates or updates revenue information for a given location, stored by 
         the provided transaction id.
-      description: "The PUT operation of the revenuetransactions endpoint allows for the 
+      description: The PUT operation of the revenuetransactions endpoint allows for the 
         submittal of revenue information for a given location, to be stored 
         under the provided transaction id.
 
@@ -742,96 +742,220 @@ paths:
         
         Transaction dates will only be accepted for the current month, or for the previous calendar month, through 23:59:59 on the second day of the month, U.S. Pacific Time.  Tax returns are filed based on transaction date, and tax monies will be debited from the customer's account during the month the tax return will be filed.  See _API Receipt Start_ and _API Receipt Cutoff_ columns in sample schedules below.
              
-        Customers with API-linked revenue will be able to confirm revenue via the Avalara MyLodgeTax application starting on the third day of the month at 01:00:00, U.S. Pacific Time. See _Customer Confirmation Start_ column in sample schedules below.
+        Customers with API-linked revenue will be able to confirm revenue via the Avalara MyLodgeTax application starting on the third day of the month at 01:00:00, U.S. Pacific Time. See _Customer Confirmation Start_ column in sample schedules below. 
         
-        If a customer does not manually confirm revenue, revenue delivered via this API endpoint will be automatically confirmed after 16:00:00, U.S. Pacific Time, on:
+        If a customer does not manually confirm revenue, revenue delivered via this API endpoint will be automatically confirmed after 16:00:00, U.S. Pacific Time, on&#58;
         
         * the fifth day of the month if any of the customer's tax returns are due the tenth day of the month or earlier
         
         * the tenth day of the month if all of the customer's tax returns are due after the tenth day of the month
-        
-        See _Customer Confirmation Cutoff_ column in sample schedules below.
-        
-        >
-        
-        Customer bank accounts will be debited for net tax owed during the month that the tax return is due when revenue is confirmed.  Tax returns will be filed during the same month based on jurisdiction due dates.  See _Filing & Remittal Date_ column below.
-        
-        >
-        
-        Sample schedules are as follows:
-        
-        ===
-        
-        >
-        
-        Jurisdictions that require monthly filing & remittance
-        
-        ___
-        
-        Transaction Date  | API Receipt Start | API Receipt Cutoff | Customer Confirmation Start | Customer Confirmation Cutoff  | Filing & Remittal Date  
-        
-        ----------------  | ----------------- | ----------------------- | ---------------------  | ----------------------------  | ----------------------  
-        
-        2019-01-**        | 2019-01-01        | 2019-02-02      | 2019-02-03                  | 2019-02-05 or 2019-02-10      | 2019-02-05 thru 2019-02-25
-        
-        2019-02-**        | 2019-02-01        | 2019-03-02      | 2019-03-03                  | 2019-03-05 or 2019-03-10      | 2019-03-05 thru 2019-03-25
-        
-        ...               | ...               | ...             | ...                         | ...                              | ...
-        
-        2019-11-**        | 2019-11-01        | 2019-12-02      | 2019-12-03                  | 2019-12-05 or 2019-12-10      | 2019-12-05 thru 2019-12-25
-        
-        2019-12-**        | 2019-12-01        | 2020-01-02      | 2020-01-03                  | 2020-01-05 or 2020-01-10      | 2020-01-05 thru 2020-01-25
-        
-        >
-        
-        Jurisdictions that require quarterly filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)
-        
-        ___
-        
-        Transaction Date  | API Receipt Start | API Receipt Cutoff | Customer Confirmation Start | Customer Confirmation Cutoff  | Filing & Remittal Date  
-        
-        ----------------  | ----------------- | ----------------------- | ---------------------  | ----------------------------  | ----------------------  
-        
-        2019-01-**        | 2019-01-01        | 2019-02-02      | 2019-02-03                  | 2019-02-05 or 2019-02-10      | 2019-04-05 thru 2019-04-25
-        
-        2019-02-**        | 2019-02-01        | 2019-03-02      | 2019-03-03                  | 2019-03-05 or 2019-03-10      | 2019-04-05 thru 2019-04-25
-        
-        2019-03-**        | 2019-03-01        | 2019-04-02      | 2019-04-03                  | 2019-04-05 or 2019-04-10      | 2019-04-05 thru 2019-04-25
-        
-        2019-04-**        | 2019-04-01        | 2019-05-02      | 2019-05-03                  | 2019-05-05 or 2019-05-10      | 2019-07-05 thru 2019-07-25
-        
-        2019-05-**        | 2019-05-01        | 2019-06-02      | 2019-06-03                  | 2019-06-05 or 2019-06-10      | 2019-07-05 thru 2019-07-25
-        
-        2019-06-**        | 2019-06-01        | 2019-07-02      | 2019-07-03                  | 2019-07-05 or 2019-07-10      | 2019-07-05 thru 2019-07-25
-        
-        ...               | ...               | ...             | ...                         | ...                              | ...
-        
-        2019-10-**        | 2019-10-01        | 2019-11-02      | 2019-11-03                  | 2019-11-05 or 2019-11-10      | 2020-01-05 thru 2020-01-25
-        
-        2019-11-**        | 2019-11-01        | 2019-12-02      | 2019-12-03                  | 2019-12-05 or 2019-12-10      | 2020-01-05 thru 2020-01-25
-        
-        2019-12-**        | 2019-12-01        | 2020-01-02      | 2020-01-03                  | 2020-01-05 or 2020-01-10      | 2020-01-05 thru 2020-01-25
 
-        >
+        <p>See _Customer Confirmation Cutoff_ column in sample schedules below.</p>
+
+        <p>Customer bank accounts will be debited for net tax owed during the month that the tax return is due when revenue is confirmed.  Tax returns will be filed during the same month based on jurisdiction due dates.  See _Filing & Remittal Date_ column below.</p>
+
+        <div><h2>Sample schedules are as follows	&#58;</h2></div>
+
+        <p>Jurisdictions that require monthly filing & remittance</p>
         
-        Jurisdictions that require annual filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)
+        <table class="styled-table">
+          <tr>
+            <th>Transaction Date</th>
+            <th>API Receipt Start</th>
+            <th>API Receipt Cutoff</th>
+            <th>Customer Confirmation Start</th>
+            <th>Customer Confirmation Cutoff</th>
+            <th>Filing & Remittal Date</th>
+          </tr>
+          <tr>
+            <td>2019-01-**</td>
+            <td>2019-01-01</td>
+            <td>2019-02-02</td>
+            <td>2019-02-03</td>
+            <td>2019-02-05 or 2019-02-10</td>
+            <td>2019-02-05 thru 2019-02-25</td>
+          </tr>
+          <tr>
+            <td>2019-02-**</td>
+            <td>2019-02-01</td>
+            <td>2019-03-02</td>
+            <td>2019-03-03</td>
+            <td>2019-03-05 or 2019-03-10</td>
+            <td>2019-03-05 thru 2019-03-25</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>2019-11-**</td>
+            <td>2019-11-01</td>
+            <td>2019-12-02</td>
+            <td>2019-12-03</td>
+            <td>2019-12-05 or 2019-12-10</td>
+            <td>2019-12-05 thru 2019-12-25</td>
+          </tr>
+          <tr>
+            <td>2019-12-**</td>
+            <td>2019-12-01</td>
+            <td>2020-01-02</td>
+            <td>2020-01-03</td>
+            <td>2020-01-05 or 2020-01-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+        <table>
+    
+        <p>Jurisdictions that require quarterly filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
+
+        <table class="styled-table">
+          <tr>
+            <th>Transaction Date</th>
+            <th>API Receipt Start</th>
+            <th>API Receipt Cutoff</th>
+            <th>Customer Confirmation Start</th>
+            <th>Customer Confirmation Cutoff</th>
+            <th>Filing & Remittal Date</th>
+          </tr>
+          <tr>
+            <td>2019-01-**</td>
+            <td>2019-01-01</td>
+            <td>2019-02-02</td>
+            <td>2019-02-03</td>
+            <td>2019-02-05 or 2019-02-10</td>
+            <td>2020-04-05 thru 2020-04-25</td>
+          </tr>
+          <tr>
+            <td>2019-02-**</td>
+            <td>2019-02-01</td>
+            <td>2019-03-02</td>
+            <td>2019-03-03</td>
+            <td>2019-03-05 or 2019-03-10</td>
+            <td>2020-04-05 thru 2020-04-25</td>
+          </tr>
+          <tr>
+            <td>2019-03-**</td>
+            <td>2019-03-01</td>
+            <td>2020-04-02</td>
+            <td>2020-04-03</td>
+            <td>2020-04-05 or 2020-04-10</td>
+            <td>2020-04-05 thru 2020-04-25</td>
+          </tr>
+          <tr>
+            <td>2019-04-**</td>
+            <td>2019-04-01</td>
+            <td>2019-05-02</td>
+            <td>2019-05-03</td>
+            <td>2019-05-05 or 2019-05-10</td>
+            <td>2020-07-05 thru 2020-07-25</td>
+          </tr>
+          <tr>
+            <td>2019-05-**</td>
+            <td>2019-05-01</td>
+            <td>2020-06-02</td>
+            <td>2020-06-03</td>
+            <td>2020-06-05 or 2020-06-10</td>
+            <td>2020-07-05 thru 2020-07-25</td>
+          </tr>
+          <tr>
+            <td>2019-06-**</td>
+            <td>2019-06-01</td>
+            <td>2020-07-02</td>
+            <td>2020-07-03</td>
+            <td>2020-07-05 or 2020-07-10</td>
+            <td>2020-07-05 thru 2020-07-25</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>2019-10-**</td>
+            <td>2019-10-01</td>
+            <td>2020-11-02</td>
+            <td>2020-11-03</td>
+            <td>2020-11-05 or 2020-11-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+          <tr>
+            <td>2019-11-**</td>
+            <td>2019-11-01</td>
+            <td>2019-12-02</td>
+            <td>2020-12-03</td>
+            <td>2020-12-05 or 2020-12-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+          <tr>
+            <td>2019-12-**</td>
+            <td>2019-12-01</td>
+            <td>2020-01-02</td>
+            <td>2020-01-03</td>
+            <td>2020-01-05 or 2020-01-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+        <table>
+
+
+        <p>Jurisdictions that require annual filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
         
-        ___
-        
-        Transaction Date  | API Receipt Start | API Receipt Cutoff | Customer Confirmation Start | Customer Confirmation Cutoff  | Filing & Remittal Date  
-        
-        ----------------  | ----------------- | ----------------------- | ---------------------  | ----------------------------  | ----------------------  
-        
-        2019-01-**        | 2019-01-01        | 2019-02-02      | 2019-02-03                  | 2019-02-05 or 2019-02-10      | 2020-01-05 thru 2020-01-25
-        
-        2019-02-**        | 2019-02-01        | 2019-03-02      | 2019-03-03                  | 2019-03-05 or 2019-03-10      | 2020-01-05 thru 2020-01-25
-        
-        ...               | ...               | ...             | ...                         | ...                              | ...
-        
-        2019-11-**        | 2019-11-01        | 2019-12-02      | 2019-12-03                  | 2019-12-05 or 2019-12-10      | 2020-01-05 thru 2020-01-25
-        
-        2019-12-**        | 2019-12-01        | 2020-01-02      | 2020-01-03                  | 2020-01-05 or 2020-01-10      | 2020-01-05 thru 2020-01-25"
-        
+        <table class="styled-table">
+          <tr>
+            <th>Transaction Date</th>
+            <th>API Receipt Start</th>
+            <th>API Receipt Cutoff</th>
+            <th>Customer Confirmation Start</th>
+            <th>Customer Confirmation Cutoff</th>
+            <th>Filing & Remittal Date</th>
+          </tr>
+          <tr>
+            <td>2019-01-**</td>
+            <td>2019-01-01</td>
+            <td>2019-02-02</td>
+            <td>2019-02-03</td>
+            <td>2019-02-05 or 2019-02-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+          <tr>
+            <td>2019-02-**</td>
+            <td>2019-02-01</td>
+            <td>2019-03-02</td>
+            <td>2019-03-03</td>
+            <td>2019-03-05 or 2019-03-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>2019-11-**</td>
+            <td>2019-11-01</td>
+            <td>2019-12-02</td>
+            <td>2019-12-03</td>
+            <td>2019-12-05 or 2019-12-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+          <tr>
+            <td>2019-12-**</td>
+            <td>2019-12-01</td>
+            <td>2020-01-02</td>
+            <td>2020-01-03</td>
+            <td>2020-01-05 or 2020-01-10</td>
+            <td>2020-01-05 thru 2020-01-25</td>
+          </tr>
+        <table>
+  
       consumes:
         - application/json
       parameters:
@@ -883,7 +1007,7 @@ paths:
       security:
         - authorizer: []
     get:
-      operationId: GetRevenueTransactions
+      operationId: getRevenueTransactions
       tags:
         - Revenue
       summary: Retrieves reported revenue information for a given location by  its
@@ -920,7 +1044,7 @@ paths:
       security:
         - authorizer: []
     delete:
-      operationId: DeleteRevenueInformation
+      operationId: deleteRevenueInformation
       tags:
         - Revenue
       summary: Deletes revenue information that was previously entered for the  given
