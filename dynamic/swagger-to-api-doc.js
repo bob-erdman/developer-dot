@@ -179,7 +179,6 @@ export default (fileName, apiName, apiPath, product) => {
                         `["#${endpoint.operationId.replace(/\s/g, '')}", "${endpoint.name}"],\n` : '';
 
                     initialState.tagName = tagName;
-                    // console.warn("4 YO ")
 
 /* eslint-disable quotes */
                     return (
@@ -188,7 +187,7 @@ layout: default
 ${endpoint ?
 `
 title: "${endpoint.operationId} | ${apiName}"
-${endpoint && endpoint.name ? `ogdescription: "${(endpoint.name).replace(/"/g, "'")}"` : ''}
+${endpoint.name ? `ogdescription: "${(endpoint.name).replace(/"/g, "'")}"` : ''}
 ` :
 `title: "${apiName}"`
 }
