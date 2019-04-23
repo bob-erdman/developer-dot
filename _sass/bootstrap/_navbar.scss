@@ -9,11 +9,8 @@
 // other navbar variations.
 
 .navbar {
-  position: fixed;
-  width: 100%;
+  position: relative;
   min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  z-index: 500;
-  background-color: white;
   // Prevent floats from breaking the navbar
   @include clearfix;
 
