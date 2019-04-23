@@ -750,210 +750,223 @@ paths:
         
         * the tenth day of the month if all of the customer's tax returns are due after the tenth day of the month
 
-        <p>See _Customer Confirmation Cutoff_ column in sample schedules below.</p>
+        <p>See <span style="font-style&#58; italic;">Customer Confirmation Cutoff</span> column in sample schedules below.</p>
 
-        <p>Customer bank accounts will be debited for net tax owed during the month that the tax return is due when revenue is confirmed.  Tax returns will be filed during the same month based on jurisdiction due dates.  See _Filing & Remittal Date_ column below.</p>
+        <p>Customer bank accounts will be debited for net tax owed during the month that the tax return is due when revenue is confirmed.  Tax returns will be filed during the same month based on jurisdiction due dates.  See <span style="font-style&#58; italic;">Filing & Remittal Date<span> column below.</p>
 
         <div><h2>Sample schedules are as follows	&#58;</h2></div>
 
-        <p>Jurisdictions that require monthly filing & remittance</p>
+        <p style="padding-top&#58; 10px">Jurisdictions that require monthly filing & remittance</p>
         
         <table class="styled-table">
-          <tr>
-            <th>Transaction Date</th>
-            <th>API Receipt Start</th>
-            <th>API Receipt Cutoff</th>
-            <th>Customer Confirmation Start</th>
-            <th>Customer Confirmation Cutoff</th>
-            <th>Filing & Remittal Date</th>
-          </tr>
-          <tr>
-            <td>2019-01-**</td>
-            <td>2019-01-01</td>
-            <td>2019-02-02</td>
-            <td>2019-02-03</td>
-            <td>2019-02-05 or 2019-02-10</td>
-            <td>2019-02-05 thru 2019-02-25</td>
-          </tr>
-          <tr>
-            <td>2019-02-**</td>
-            <td>2019-02-01</td>
-            <td>2019-03-02</td>
-            <td>2019-03-03</td>
-            <td>2019-03-05 or 2019-03-10</td>
-            <td>2019-03-05 thru 2019-03-25</td>
-          </tr>
-          <tr>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <td>2019-11-**</td>
-            <td>2019-11-01</td>
-            <td>2019-12-02</td>
-            <td>2019-12-03</td>
-            <td>2019-12-05 or 2019-12-10</td>
-            <td>2019-12-05 thru 2019-12-25</td>
-          </tr>
-          <tr>
-            <td>2019-12-**</td>
-            <td>2019-12-01</td>
-            <td>2020-01-02</td>
-            <td>2020-01-03</td>
-            <td>2020-01-05 or 2020-01-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
+          <thead>
+            <tr>
+              <th style="white-space&#58; normal">Transaction Date</th>
+              <th style="white-space&#58; normal">API Receipt Start</th>
+              <th style="white-space&#58; normal">API Receipt Cutoff</th>
+              <th style="white-space&#58; normal">Customer Confirmation Start</th>
+              <th style="white-space&#58; normal">Customer Confirmation Cutoff</th>
+              <th style="white-space&#58; normal">Filing & Remittal Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-01-**</td>
+              <td>2019-01-01</td>
+              <td>2019-02-02</td>
+              <td>2019-02-03</td>
+              <td>2019-02-05 or 2019-02-10</td>
+              <td>2019-02-05 thru 2019-02-25</td>
+            </tr>
+            <tr>
+              <td>2019-02-**</td>
+              <td>2019-02-01</td>
+              <td>2019-03-02</td>
+              <td>2019-03-03</td>
+              <td>2019-03-05 or 2019-03-10</td>
+              <td>2019-03-05 thru 2019-03-25</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>2019-11-**</td>
+              <td>2019-11-01</td>
+              <td>2019-12-02</td>
+              <td>2019-12-03</td>
+              <td>2019-12-05 or 2019-12-10</td>
+              <td>2019-12-05 thru 2019-12-25</td>
+            </tr>
+            <tr>
+              <td>2019-12-**</td>
+              <td>2019-12-01</td>
+              <td>2020-01-02</td>
+              <td>2020-01-03</td>
+              <td>2020-01-05 or 2020-01-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+          </tbody>
         <table>
     
-        <p>Jurisdictions that require quarterly filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
+        <p style="padding-top&#58; 10px">Jurisdictions that require quarterly filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
 
         <table class="styled-table">
-          <tr>
-            <th>Transaction Date</th>
-            <th>API Receipt Start</th>
-            <th>API Receipt Cutoff</th>
-            <th>Customer Confirmation Start</th>
-            <th>Customer Confirmation Cutoff</th>
-            <th>Filing & Remittal Date</th>
-          </tr>
-          <tr>
-            <td>2019-01-**</td>
-            <td>2019-01-01</td>
-            <td>2019-02-02</td>
-            <td>2019-02-03</td>
-            <td>2019-02-05 or 2019-02-10</td>
-            <td>2020-04-05 thru 2020-04-25</td>
-          </tr>
-          <tr>
-            <td>2019-02-**</td>
-            <td>2019-02-01</td>
-            <td>2019-03-02</td>
-            <td>2019-03-03</td>
-            <td>2019-03-05 or 2019-03-10</td>
-            <td>2020-04-05 thru 2020-04-25</td>
-          </tr>
-          <tr>
-            <td>2019-03-**</td>
-            <td>2019-03-01</td>
-            <td>2020-04-02</td>
-            <td>2020-04-03</td>
-            <td>2020-04-05 or 2020-04-10</td>
-            <td>2020-04-05 thru 2020-04-25</td>
-          </tr>
-          <tr>
-            <td>2019-04-**</td>
-            <td>2019-04-01</td>
-            <td>2019-05-02</td>
-            <td>2019-05-03</td>
-            <td>2019-05-05 or 2019-05-10</td>
-            <td>2020-07-05 thru 2020-07-25</td>
-          </tr>
-          <tr>
-            <td>2019-05-**</td>
-            <td>2019-05-01</td>
-            <td>2020-06-02</td>
-            <td>2020-06-03</td>
-            <td>2020-06-05 or 2020-06-10</td>
-            <td>2020-07-05 thru 2020-07-25</td>
-          </tr>
-          <tr>
-            <td>2019-06-**</td>
-            <td>2019-06-01</td>
-            <td>2020-07-02</td>
-            <td>2020-07-03</td>
-            <td>2020-07-05 or 2020-07-10</td>
-            <td>2020-07-05 thru 2020-07-25</td>
-          </tr>
-          <tr>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <td>2019-10-**</td>
-            <td>2019-10-01</td>
-            <td>2020-11-02</td>
-            <td>2020-11-03</td>
-            <td>2020-11-05 or 2020-11-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
-          <tr>
-            <td>2019-11-**</td>
-            <td>2019-11-01</td>
-            <td>2019-12-02</td>
-            <td>2020-12-03</td>
-            <td>2020-12-05 or 2020-12-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
-          <tr>
-            <td>2019-12-**</td>
-            <td>2019-12-01</td>
-            <td>2020-01-02</td>
-            <td>2020-01-03</td>
-            <td>2020-01-05 or 2020-01-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
+          <thead>
+            <tr>
+              <th style="white-space&#58; normal">Transaction Date</th>
+              <th style="white-space&#58; normal">API Receipt Start</th>
+              <th style="white-space&#58; normal">API Receipt Cutoff</th>
+              <th style="white-space&#58; normal">Customer Confirmation Start</th>
+              <th style="white-space&#58; normal">Customer Confirmation Cutoff</th>
+              <th style="white-space&#58; normal">Filing & Remittal Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-01-**</td>
+              <td>2019-01-01</td>
+              <td>2019-02-02</td>
+              <td>2019-02-03</td>
+              <td>2019-02-05 or 2019-02-10</td>
+              <td>2020-04-05 thru 2020-04-25</td>
+            </tr>
+            <tr>
+              <td>2019-02-**</td>
+              <td>2019-02-01</td>
+              <td>2019-03-02</td>
+              <td>2019-03-03</td>
+              <td>2019-03-05 or 2019-03-10</td>
+              <td>2020-04-05 thru 2020-04-25</td>
+            </tr>
+            <tr>
+              <td>2019-03-**</td>
+              <td>2019-03-01</td>
+              <td>2020-04-02</td>
+              <td>2020-04-03</td>
+              <td>2020-04-05 or 2020-04-10</td>
+              <td>2020-04-05 thru 2020-04-25</td>
+            </tr>
+            <tr>
+              <td>2019-04-**</td>
+              <td>2019-04-01</td>
+              <td>2019-05-02</td>
+              <td>2019-05-03</td>
+              <td>2019-05-05 or 2019-05-10</td>
+              <td>2020-07-05 thru 2020-07-25</td>
+            </tr>
+            <tr>
+              <td>2019-05-**</td>
+              <td>2019-05-01</td>
+              <td>2020-06-02</td>
+              <td>2020-06-03</td>
+              <td>2020-06-05 or 2020-06-10</td>
+              <td>2020-07-05 thru 2020-07-25</td>
+            </tr>
+            <tr>
+              <td>2019-06-**</td>
+              <td>2019-06-01</td>
+              <td>2020-07-02</td>
+              <td>2020-07-03</td>
+              <td>2020-07-05 or 2020-07-10</td>
+              <td>2020-07-05 thru 2020-07-25</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>2019-10-**</td>
+              <td>2019-10-01</td>
+              <td>2020-11-02</td>
+              <td>2020-11-03</td>
+              <td>2020-11-05 or 2020-11-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-11-**</td>
+              <td>2019-11-01</td>
+              <td>2019-12-02</td>
+              <td>2020-12-03</td>
+              <td>2020-12-05 or 2020-12-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-12-**</td>
+              <td>2019-12-01</td>
+              <td>2020-01-02</td>
+              <td>2020-01-03</td>
+              <td>2020-01-05 or 2020-01-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+          </tbody>
         <table>
+        
 
 
-        <p>Jurisdictions that require annual filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
+        <p style="padding-top&#58; 10px">Jurisdictions that require annual filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
         
         <table class="styled-table">
-          <tr>
-            <th>Transaction Date</th>
-            <th>API Receipt Start</th>
-            <th>API Receipt Cutoff</th>
-            <th>Customer Confirmation Start</th>
-            <th>Customer Confirmation Cutoff</th>
-            <th>Filing & Remittal Date</th>
-          </tr>
-          <tr>
-            <td>2019-01-**</td>
-            <td>2019-01-01</td>
-            <td>2019-02-02</td>
-            <td>2019-02-03</td>
-            <td>2019-02-05 or 2019-02-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
-          <tr>
-            <td>2019-02-**</td>
-            <td>2019-02-01</td>
-            <td>2019-03-02</td>
-            <td>2019-03-03</td>
-            <td>2019-03-05 or 2019-03-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
-          <tr>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <td>2019-11-**</td>
-            <td>2019-11-01</td>
-            <td>2019-12-02</td>
-            <td>2019-12-03</td>
-            <td>2019-12-05 or 2019-12-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
-          <tr>
-            <td>2019-12-**</td>
-            <td>2019-12-01</td>
-            <td>2020-01-02</td>
-            <td>2020-01-03</td>
-            <td>2020-01-05 or 2020-01-10</td>
-            <td>2020-01-05 thru 2020-01-25</td>
-          </tr>
+          <thead>
+            <tr>
+              <th style="white-space&#58; normal">Transaction Date</th>
+              <th style="white-space&#58; normal">API Receipt Start</th>
+              <th style="white-space&#58; normal">API Receipt Cutoff</th>
+              <th style="white-space&#58; normal">Customer Confirmation Start</th>
+              <th style="white-space&#58; normal">Customer Confirmation Cutoff</th>
+              <th style="white-space&#58; normal">Filing & Remittal Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-01-**</td>
+              <td>2019-01-01</td>
+              <td>2019-02-02</td>
+              <td>2019-02-03</td>
+              <td>2019-02-05 or 2019-02-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-02-**</td>
+              <td>2019-02-01</td>
+              <td>2019-03-02</td>
+              <td>2019-03-03</td>
+              <td>2019-03-05 or 2019-03-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>2019-11-**</td>
+              <td>2019-11-01</td>
+              <td>2019-12-02</td>
+              <td>2019-12-03</td>
+              <td>2019-12-05 or 2019-12-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-12-**</td>
+              <td>2019-12-01</td>
+              <td>2020-01-02</td>
+              <td>2020-01-03</td>
+              <td>2020-01-05 or 2020-01-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+          </tbody>
         <table>
   
       consumes:
