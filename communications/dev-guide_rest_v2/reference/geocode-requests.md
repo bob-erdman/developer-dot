@@ -13,6 +13,12 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/geocode-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
+Use <a class="dev-guide-link" href="https://communications.avalara.net/AFC/GeoBatch">Geo Batch</a> for high-volume geocoding requests.
+<ul class="dev-guide-list">
+    <li>Upload a CSV containing your address or latitude/longitude geocoding requests</li>
+    <li>Download and export the results to your database</li>
+</ul>
+
 <h3>Geocode Requests</h3>
 
 The <code>geocodeRequests</code> object contains a list of <b>street addresses and/or latitude/longitude coordinate pairs</b> to geocode within the <code>GeocodeRequest</code> object.

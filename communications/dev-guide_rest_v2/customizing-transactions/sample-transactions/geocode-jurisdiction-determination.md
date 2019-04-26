@@ -18,6 +18,12 @@ The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-st
 <h4>Note</h4>
 The Geocode Jurisdiction Determination endpoint supports geocoding for US, Puerto Rico, and other US territories.  Addresses and coordinate pairs in foreign countries, including Canada and Mexico, are not supported and do not return results.
 
+Use <a class="dev-guide-link" href="https://communications.avalara.net/AFC/GeoBatch">Geo Batch</a> for high-volume geocoding requests.
+<ul class="dev-guide-list">
+    <li>Upload a CSV containing your address or latitude/longitude geocoding requests</li>
+    <li>Download and export the results to your database</li>
+</ul>
+
 <h3>Geocode Jurisdiction Determination</h3>
 The Geocode Jurisdiction Determination endpoint accepts a list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/geocode-requests/">Geocode Requests</a>.  Specify a list of <a class="dev-guide-link" href="#street">street addresses</a> or <a class="dev-guide-link" href="#lat_long">latitude/longitude coordinate pairs</a> to geocode.  Geocoded results are returned in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/geocode-result/">Geocode Result</a>.
 

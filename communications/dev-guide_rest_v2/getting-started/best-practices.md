@@ -42,6 +42,11 @@ Picking the correct jurisdiction is critical because taxes are location-specific
             <li>Only supports addresses in the United States and US Territories</li>
             <li>Supports street-level lookup</li>
         </ul>
+    <li>Use <a class="dev-guide-link" href="https://communications.avalara.net/AFC/GeoBatch">Geo Batch</a> for high-volume geocoding requests</li>
+<ul class="dev-guide-list">
+    <li>Upload a CSV containing your address or latitude/longitude geocoding requests</li>
+    <li>Download and export the results to your database</li>
+</ul>
     <li>Embed a geocode request within the transaction by setting <code>geo</code> = <code>true</code> within a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location">Location </a>
         <ul class="dev-guide-list">
             <li>Usage of the embedded <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">geocode lookup</a> is only to be used if you have very low transaction counts</li>
