@@ -587,7 +587,7 @@ paths:
         - authorizer: []
   '/v1/locations/{locationid}/ownertaxsummaries':
     get:
-      operationId: ownerTaxSummaries
+      operationId: getOwnerTaxSummaries
       tags:
         - Tax Rate
       summary: Provides summarized tax responsibilities for the owner of the given
@@ -659,7 +659,7 @@ paths:
         - authorizer: []
   '/v1/locations/{locationid}/ownertaxdetails':
     get:
-      operationId: ownerTaxDetails
+      operationId: getOwnerTaxDetails
       tags:
         - Tax Rate
       summary: Provides detailed tax responsibilities for the owner of the given
@@ -1057,7 +1057,7 @@ paths:
       security:
         - authorizer: []
     delete:
-      operationId: deleteRevenueInformation
+      operationId: deleteRevenueTransactions
       tags:
         - Revenue
       summary: Deletes revenue information that was previously entered for the  given
