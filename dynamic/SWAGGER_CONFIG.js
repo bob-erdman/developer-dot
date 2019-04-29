@@ -46,7 +46,12 @@ export default {
     },
     'mylodge/MyLodgeAPIsv1.yaml': {
         name: 'MyLodge API',
-        path: 'api-reference/MyLodgeAPIsv1/',
+        path: 'api-reference/MyLodgeAPI/',
+        product: 'mylodge'
+    },
+    'mylodge/onboarding/onboarding-mylodge.yaml': {
+        name: 'MyLodge API - Onboarding',
+        path: 'api-reference/MyLodgeAPI/Onboarding',
         product: 'mylodge'
     },
     'trustfile/api.yaml': {
