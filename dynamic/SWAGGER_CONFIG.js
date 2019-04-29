@@ -44,14 +44,19 @@ export default {
         path: 'excise/api-reference/tax-determination/v5_22_0',
         product: 'excise'
     },
-    'mylodge/MyLodgeAPIsv1.yaml': {
+    'myLodgeAPI/overview.yaml': {
         name: 'MyLodge API',
         path: 'api-reference/MyLodgeAPI/',
         product: 'mylodge'
     },
-    'mylodge/onboarding/onboarding-mylodge.yaml': {
+    'myLodgeAPI/onboarding.yaml': {
         name: 'MyLodge API - Onboarding',
-        path: 'api-reference/MyLodgeAPI/Onboarding',
+        path: 'api-reference/MyLodgeAPI/onboarding',
+        product: 'mylodge'
+    },
+    'myLodgeAPI/customer-info.yaml': {
+        name: 'MyLodge API - Customer Information',
+        path: 'api-reference/MyLodgeAPI/customer-info',
         product: 'mylodge'
     },
     'trustfile/api.yaml': {
