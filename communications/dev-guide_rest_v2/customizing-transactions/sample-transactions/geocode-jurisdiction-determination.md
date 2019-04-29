@@ -204,7 +204,7 @@ This example demonstrates a geocoding request for a street address.  The CASS va
 The street address is successfully geocoded with a score (<code>scr</code>) of 1.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -252,7 +252,7 @@ This example geocodes a latitude/longitude coordinate pair.
 The latitude/longitude coordinate pair is successfully geocoded with a score (<code>scr</code>) of 0.9999.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse2">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -302,7 +302,7 @@ This example shows how to send multiple geocode requests.  One request is a stre
 Two geocoded results are returned.  Use the Reference ID (<code>ref</code>) to match the result to the request. 
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse3">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse3">View the Response JSON</a>
   <div id="collapse3" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -367,7 +367,7 @@ This example demonstrates the Fallback process.  A valid city (<code>city</code>
 A Fallback result is returned, indicated by the score (<code>scr</code>) being 1.01.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse4">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse4">View the Response JSON</a>
   <div id="collapse4" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -412,7 +412,7 @@ This request contains a geocode request for an unincorporated address.
 The returned geocoded address is unincorporated (<code>inc</code> is <code>false</code>)
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse5">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse5">View the Response JSON</a>
   <div id="collapse5" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
