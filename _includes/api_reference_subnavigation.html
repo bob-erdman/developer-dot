@@ -7,6 +7,24 @@
 
             {% if main_tag == 'Models' %}
             <li><a style="color:#ff6600; overflow: hidden;" href="{{tag_href}}">{{main_tag}}</a></li>
+            {% elsif product == "mylodge" && main_tag != 'home' %}
+                <ul class="older-api">
+                    Onboarding
+                    {% if main_tag == 'postPartnerLeads' or main_tag == "getStateProvinces" %}
+                        <li><a style="overflow: hidden" href="{{tag_href}}">{{main_tag}}</a></li>
+                    {% endif %}
+                </ul>
+                <li class="older-api">
+                    Customer Information
+                    {% if main_tag == 'Models' %}
+                    {% endif %}
+                </li>
+                <li class="older-api">
+                    Revenue 
+                    {% if main_tag == 'Models' %}
+                    {% endif %}
+                </li>
+                <li><a style="overflow: hidden" href="{{tag_href}}">{{main_tag}}</a></li>
             {% elsif main_tag != 'home' %}
                 <li><a style="overflow: hidden" href="{{tag_href}}">{{main_tag}}</a></li>
                 {% if page.tag_name != blank and main_tag == page.tag_name and include.already_recursed != true %}
