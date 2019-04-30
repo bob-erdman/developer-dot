@@ -40,7 +40,7 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <p class="text-left">
-                  Are you ready to dive in? Do you want a more comprehensive overview of this powerful API? Read over the easy-to-follow documentation!
+                  Are you ready to dive in? Do you want a more comprehensive overview of this powerful API? Read over the easy-to-follow documentation! 
                 </p>
             </div>
         </div>
