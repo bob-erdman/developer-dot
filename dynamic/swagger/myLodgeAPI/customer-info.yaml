@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: v1.2
-  title: Avalara MyLodgeTax API
+  title: MyLodgeTax API - Customer Information
   termsOfService: 'https://mylodgetax.avalara.com/legal'
   description: "Customer information functionality is initiated via the _getCustomerLocations_ endpoint.
     This endpoint facilitates quick and easy retrieval of MyLodgeTax customer locations."

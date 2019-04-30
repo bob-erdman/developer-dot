@@ -45,17 +45,27 @@ export default {
         product: 'excise'
     },
     'myLodgeAPI/overview.yaml': {
-        name: 'MyLodge API',
+        name: 'MyLodgeTax API - Authorization and Overview',
         path: 'api-reference/MyLodgeAPI/',
         product: 'mylodge'
     },
     'myLodgeAPI/onboarding.yaml': {
-        name: 'MyLodge API - Onboarding',
+        name: 'MyLodgeTax API - Onboarding',
         path: 'api-reference/MyLodgeAPI/onboarding',
         product: 'mylodge'
     },
     'myLodgeAPI/customer-info.yaml': {
-        name: 'MyLodge API - Customer Information',
+        name: 'MyLodgeTax API - Customer Information',
+        path: 'api-reference/MyLodgeAPI/customer-info',
+        product: 'mylodge'
+    },
+    'myLodgeAPI/revenue.yaml': {
+        name: 'MyLodgeTax API - Revenue',
+        path: 'api-reference/MyLodgeAPI/customer-info',
+        product: 'mylodge'
+    },
+    'myLodgeAPI/tax.yaml': {
+        name: 'MyLodgeTax API - Tax',
         path: 'api-reference/MyLodgeAPI/customer-info',
         product: 'mylodge'
     },

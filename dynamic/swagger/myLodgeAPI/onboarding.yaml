@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: v1.2
-  title: MyLodgeTax Onboarding
+  title: MyLodgeTax API - Onboarding
   termsOfService: 'https://mylodgetax.avalara.com/legal'
   description: "Onboarding functionality is initiated via the _partnerleads_ endpoint. This
     endpoint facilitates quick and easy signup of potential MyLodgeTax customers
