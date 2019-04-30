@@ -1,9 +1,70 @@
 swagger: '2.0'
 info:
   version: v1.2
-  title: MyLodgeTax API - Onboarding
+  title: MyLodgeTax API - Overview and Onboarding
   termsOfService: 'https://mylodgetax.avalara.com/legal'
-  description: "Onboarding functionality is initiated via the _partnerleads_ endpoint. This
+  description: "Welcome to the MyLodgeTax Public API page, supporting the Avalara MyLodgeTax
+    product, which provides sales and lodging tax compliance for short-term
+    property rentals.  Find out more about the MyLodgeTax product here:
+    http://www.mylodgetax.com
+
+
+    The API defined here facilitates data exchange between Avalara MyLodgeTax
+    and third-party applications.  Contact MyLodgeTax for information on
+    becoming a MyLodgeTax partner:
+    https://www.avalara.com/mylodgetax/en/contact-us.html
+
+    # Authorization
+
+    The Authorization header must be provided to use any of the endpoints
+    defined in this document.  This header must be in the following format:
+
+
+    `Authorization: Bearer [apiKey]`
+
+
+    where
+
+    * _apiKey_ is a valid, active API key issued by the Avalara MyLodgeTax
+    Partner Manager application
+
+    # Functional Overview
+
+    In order to exchange tax data with the Avalara MyLodgeTax system, the caller
+    must initiate the onboarding process of a new customer.  This requires a
+    POST to the _partnerleads_ endpoint, with necessary information about the
+    customer and any _locations_ (rental properties) they wish to be managed by
+    Avalara MyLodgeTax.  On successful creation of the partnerLeads resource, a
+    link to a prefilled shopping cart page will be returned in the response. 
+    Upon navigating to this link via web browser, the customer will be presented
+    with a prefilled shopping cart that includes the information previously
+    posted to the _partnerleads_ endpoint.  To complete the signup process, the
+    customer will need to supply minimal information on this web page, including
+    a new account password and payment information for their new Avalara
+    MyLodgeTax account.
+
+
+    To determine whether a partnerLead has created an account using the
+    partnerLead link, along with the setup status of all _locations_ passed in
+    the body of the partnerleads POST, the calling system should periodically
+    examine the _Locations_ resource.  Customers and locations are referenced
+    via ids passed in the partnerleads request.  A **200** response indicates
+    that the customer has created a new Avalara MyLodgeTax account, while a
+    **404** response means the account has not yet been created by the
+    customer.  Further information can be read from the locations response body
+    to determine the setup status of each location provided in the partnerleads
+    request.
+
+
+    After a tax rate has been assigned to a location (location has a status of
+    _LicenseSetup_ or _Active_), tax rate information can be read for the
+    location.  High-level tax rate information for locations can be accessed via
+    the _ownertaxsummaries_ resource, while detailed tax rate information can be
+    accessed via the _ownertaxdetails_ resource.
+
+    ## Onboarding
+
+    Onboarding functionality is initiated via the _partnerleads_ endpoint. This
     endpoint facilitates quick and easy signup of potential MyLodgeTax customers
     (leads) by providing a link to a prefilled shopping cart page where the user
     can complete the signup process.  Partners referring leads that complete
@@ -12,7 +73,12 @@ info:
     this link to their customers after they have opted in to share their
     information with Avalara MyLodgeTax via this endpoint.  Avalara MyLodgeTax
     will also contact the customer via marketing emails and will include this
-    link for convenient signup."   
+    link for convenient signup.
+
+    ## API Rate Limits
+
+    All endpoints will be rate limited, allowing each partner to make up to 500
+    requests per minute across all endpoints."   
 host: mylodgetaxapi-sbx.avalara.net
 basePath: /
 schemes:
@@ -243,3 +309,8 @@ definitions:
         type: string
       shortName:
         type: string
+securityDefinitions:
+  authorizer:
+    type: apiKey
+    name: Authorization
+    in: header
