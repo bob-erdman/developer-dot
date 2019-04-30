@@ -35,7 +35,7 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <ul class="pipe">
-                    <li><a target="_blank" href="/api-reference/mylodge/MyLodgeAPIsv1/">Get started!</a></li>
+                    <li><a target="_blank" href="/api-reference/myLodgeAPI/overview-onboarding/">Get started!</a></li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
