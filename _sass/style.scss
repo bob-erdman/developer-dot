@@ -670,20 +670,6 @@ footer {
     }
 }
 
-.preferred-developers {
-    & > .col-md-3 {
-        margin-top: 30px;
-        background-color: $Form-fill;
-        border-bottom: 2px solid #d7d7d7
-    }
-    & > .col-md-9 {
-        margin-top: 30px;
-        h1 {
-            margin-top: 0;
-        }
-    }
-}
-
 .sm-section-nav {
     &.open {
         button {
