@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 linkurl: http://simplify.avalara.com/officehourswithavataxjune12/
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Office Hours with AvaTax – Ask our Engineers Anything!

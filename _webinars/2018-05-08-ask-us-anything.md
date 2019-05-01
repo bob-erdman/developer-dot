@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: "https://www.youtube.com/embed/xRtB-7JG-cI"
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Office Hours with AvaTax – Python SDK for AvaTax API
