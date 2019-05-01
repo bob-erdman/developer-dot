@@ -44,7 +44,7 @@ Avalara provides a variety of free and premium support options for customers and
 </div>
 
 <div class="support-option">
-  <h4><a href="https://developer.avalara.com/resources/webinars">Attend an Avalara Developer Webinar</a></h4>
+  <h4><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Attend an Avalara Developer Webinar</a></h4>
   <ul class="normal">
     <li>Avalara holds regular developer webinars that include discussion of development tips and tricks.</li>
     <li>Some webinar sessions may include time for open Q&A.</li>

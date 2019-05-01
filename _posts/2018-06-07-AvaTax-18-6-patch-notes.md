@@ -37,7 +37,7 @@ This article is about the June 2018 monthly update to the AvaTax API.
 
 <h3>Weekly Office Hours Webinar</h3>
 
-Want to discuss these patch notes with the developers who wrote them?  The AvaTax API team hosts a [weekly developer webinar](https://developer.avalara.com/resources/webinars/) where you can meet and talk to developers.  If you would like to ask questions about this release, please sign up and join us for a lively discussion of the AvaTax API.
+Want to discuss these patch notes with the developers who wrote them?  The AvaTax API team hosts a [weekly developer webinar](https://www.avalara.com/us/en/learn/webinars.html#developerwebinars) where you can meet and talk to developers.  If you would like to ask questions about this release, please sign up and join us for a lively discussion of the AvaTax API.
 
 <h3>Sandbox Testing Window</h3>
 
