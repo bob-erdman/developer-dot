@@ -261,7 +261,7 @@ function jsonSampleData() {
 
 function curlSampleData() {
     const json = JSON.stringify(jsonSampleData(), null, 2)
-    const sampleData = `-X POST \
+    const sampleData = `cURL -X POST \
 -H 'Accept: application/json' \
 -H 'Authorization: Basic aHR0cHdhdGNoOmY=' \
 -H 'Content-Type: application/json' \
