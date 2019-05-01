@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/_txibL9omD4
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 In the latest installment of Office Hours with AvaTax, Avalara Connector Program Manager India Anderson talks tips and tricks developers can use for accurately estimating tax.

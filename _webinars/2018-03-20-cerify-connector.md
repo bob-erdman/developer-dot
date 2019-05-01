@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/QWZM82TfuV4
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 In the latest installment of Office Hours with AvaTax, Avalara’s Bob Erdman discussed how developers can test their Connectors and the criteria Avalara employs to ensure a Connector will produce good results.

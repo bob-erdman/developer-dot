@@ -6,6 +6,7 @@ author: Ted Spence, Bob Erdman, Aaron Robles
 comments: true
 product: avatax
 doctype: webinar
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 *This webinar occurred on Dec 20, 2017.*
