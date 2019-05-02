@@ -34,4 +34,4 @@ A paremeter in the request has an unexpected unit of measurement type.
 
 Parameters related to units of measurement expect a certain measurement type. For example, some items will expect a measurement of inches while others will expect pounds (lbs). 
 
-To identify the right unit of measurement type for your paraments, look are your error description. Using the example error above, you can see that expected measurement type will be in position `-1-`. 
+To identify the right unit of measurement type for your parameters, look are your error description. Using the example error above, you can see that expected measurement type will be in position `-1-`.

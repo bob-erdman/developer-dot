@@ -49,7 +49,7 @@ nav: thankyou
 
 	<h3>More Support for Your Project</h3>
 
-	<p><a href="https://developer.avalara.com/resources/webinars/"><b>Signup</b></a> for a free developer webinar and open support office hours.  <span>Space is limited.  Sign up today!</span></p>
+	<p><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars"><b>Signup</b></a> for a free developer webinar and open support office hours.  <span>Space is limited.  Sign up today!</span></p>
 
 	<p><a href="https://community.avalara.com/avalara/category_sets/developers"><b>Join</b></a> our developer community to ask and answer questions.</p>
 	

@@ -42,6 +42,11 @@ Picking the correct jurisdiction is critical because taxes are location-specific
             <li>Only supports addresses in the United States and US Territories</li>
             <li>Supports street-level lookup</li>
         </ul>
+    <li>Use <a class="dev-guide-link" href="https://communications.avalara.net/AFC/GeoBatch">Geo Batch</a> for high-volume geocoding requests</li>
+<ul class="dev-guide-list">
+    <li>Upload a CSV containing your address or latitude/longitude geocoding requests</li>
+    <li>Download and export the results to your database</li>
+</ul>
     <li>Embed a geocode request within the transaction by setting <code>geo</code> = <code>true</code> within a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location">Location </a>
         <ul class="dev-guide-list">
             <li>Usage of the embedded <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">geocode lookup</a> is only to be used if you have very low transaction counts</li>
@@ -60,12 +65,20 @@ Picking the correct jurisdiction is critical because taxes are location-specific
 </ul>
 
 <h3>Customizing Transactions</h3>
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>:
 <ul class="dev-guide-list">
-    <li>Use <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles">client profiles</a> to define <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">account customizations</a></li>
-    <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases">Modify transactions</a> to meet your business needs</li>
+    <li>Observe the hard limits <b>per request</b>:
+    <ul class="dev-guide-list">
+        <li>1,000 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">invoices</a> (<code>inv</code>)</li>
+        <li>10,000 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line items</a> (<code>itms</code>)</li>
+    </ul>
+    </li>
+    <li>See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>:
+    <ul class="dev-guide-list">
+        <li>Use <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles">client profiles</a> to define <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">account customizations</a></li>
+        <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases">Modify transactions</a> to meet your business needs</li>
+    </ul>
+    </li>
 </ul>
-
 <h3>Increase Your Throughput</h3>
 <ul class="dev-guide-list">
     <li>Limit your <b>Line Item count</b> per transaction</li>

@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 linkurl: https://www.avalara.com/simplify/en/avatax/automate-sales-tax-api.html?CampaignID=7010b000001cRsQ
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Sales tax. Getting it right is crucial to your organization’s success. Unfortunately, it’s complicated, time consuming and painful. That’s the bad news.

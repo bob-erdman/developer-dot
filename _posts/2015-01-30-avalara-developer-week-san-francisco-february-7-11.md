@@ -8,6 +8,7 @@ categories: [older]
 product: blog
 doctype: blog
 imgsrc: /public/images/blog/Screen-Shot-2015-01-30-at-12.26.38-PM.png
+redirect_to: https://www.avalara.com/us/en/blog/2015/01/avalara-developer-week-san-francisco-february-7-11.html
 ---
 <img src="/public/images/blog/Screen-Shot-2015-01-30-at-12.26.38-PM.png" width="669" height="341" alt="DeveloperWeek &amp; Accelerate Hackathonk" />
 

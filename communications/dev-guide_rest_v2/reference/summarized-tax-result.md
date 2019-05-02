@@ -44,7 +44,7 @@ The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarize
             <td><code>tchg</code></td>
             <td><code>[double]</code> Total Charge
             <br/>
-            The total charge amount for the invoice
+            Summarized charge amounts applied to the tax item from Invoice processing.  Each entry in the summarized data has an individual total charge as it applies to the calculation of that specific summarized tax type and jurisdiction
             </td>
         </tr>
         <tr>
@@ -65,7 +65,11 @@ The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarize
         </tr>
         <tr>
             <td><code>cat</code></td>
-            <td><code>[string]</code> Tax Category Name</td>
+            <td><code>[string]</code> Tax Category Name 
+            <ul class="dev-guide-list">
+              <li>Max length: 50 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>cid</code></td>
@@ -73,7 +77,11 @@ The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarize
         </tr>
         <tr>
             <td><code>name</code></td>
-            <td><code>[string]</code> Tax Name</td>
+            <td><code>[string]</code> Tax Name 
+            <ul class="dev-guide-list">
+              <li>Max length: 50 bytes</li>
+            </ul>
+            </td>
         </tr>
         <tr>
             <td><code>exm</code></td>

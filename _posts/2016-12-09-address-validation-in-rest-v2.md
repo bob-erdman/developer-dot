@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/12/address-validation-in-rest-v2.html
 ---
 
 In addition to calculating tax, the AvaTax suite of products can also help you produce a robust user experience for your customers.  If your customer provides a partial or mistyped address, the *Address Validation* API can help determine the right address based on the partial information your customer provided.

@@ -11,6 +11,7 @@ doctype: blog
 disqus: 1
 customjs:
   - ../../../../../public/js/sdkTable.js
+redirect_to: https://www.avalara.com/us/en/blog/2017/02/the-avatax-release-schedule.html
 ---
 
 Many of you know that Avalara publishes updates to its world-leading AvaTax software suite for tax processing roughly once per month, but do you know how our process works?  For today's article, we'll give you a brief description of how we create new features, notify our customers about our plans, and eventually launch our software to production.

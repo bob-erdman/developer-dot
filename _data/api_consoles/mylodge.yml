@@ -1,0 +1,7 @@
+#MyLodge
+
+nav_links:
+  - title: Overview
+    path: /mylodge
+  - title: API reference
+    path: /api-reference/myLodgeAPI/overview-onboarding/

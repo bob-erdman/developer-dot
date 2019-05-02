@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/10/getting-started-with-avatax-rest-v2.html
 ---
 
 <h2>It's time to make taxing more relaxing!</h2>

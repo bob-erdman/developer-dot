@@ -11,6 +11,7 @@
 @import './avatax-demo';
 @import './cert-demo';
 
+
 html, body {
     overflow-x: hidden;
 }
@@ -60,9 +61,17 @@ html {
 }
 
 .btn-signup {
-    float: right;
-    margin: 5px 20px 0 20px;
+    margin: 5px 20px 0 0px;
+    background-color: $Ava-orange;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    color: white;
 
+    &:hover, 
+    &:focus {
+        border-color: $Ava-orange;
+        color: $Ava-orange;
+        background-color: $Form-fill;
+    }
     @media(max-width:$screen-md-max) {
         margin: 5px 40px 5px 20px;
     }
@@ -71,13 +80,19 @@ html {
         float: left;
         margin: 0 0 10px 0;
     }
+}
 
-    /*@media(max-width: $screen-xs-min) {
-        float: left;
-        margin: 0 0 10px 0;
-    }*/
+.btn-demo {
+    border-color: $Ava-orange;
+    color: $Ava-orange;
+    background-color: $Form-fill;
 
-
+    &:hover, 
+    &:focus {
+        background-color: $Ava-orange;
+        border-color: white;
+        color: white;
+    }
 }
 
 .bg-map {
@@ -138,6 +153,21 @@ html {
         &:last-child:after, .no-separator, &:nth-child(3):after {
             content: "";
             padding: 0;
+        }
+    }
+}
+
+.noPipe {
+    padding: 10px 15px;
+    margin: 0;
+    li {
+        color: $Ava-blue;
+        list-style: none;
+        display: block;
+        white-space: nowrap;
+        a {
+            color: inherit;
+            white-space: inherit;
         }
     }
 }
@@ -636,20 +666,6 @@ footer {
             margin-top: 0;
             padding-top: 20px;
 
-        }
-    }
-}
-
-.preferred-developers {
-    & > .col-md-3 {
-        margin-top: 30px;
-        background-color: $Form-fill;
-        border-bottom: 2px solid #d7d7d7
-    }
-    & > .col-md-9 {
-        margin-top: 30px;
-        h1 {
-            margin-top: 0;
         }
     }
 }

@@ -9,6 +9,7 @@ categories: avatax
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/11/using-include-with-createtransaction.html
 ---
 
 The CreateTransaction endpoint is one of our most used endpoints, so we’ve baked in a certain flexibility to allow our users to ensure they get the exact information they need. How did we do this? Our team built the `$include` parameter to help you pinpoint data you'll use in your calculations. Now the question is: how do you actually make use of this parameter?

@@ -9,6 +9,7 @@ categories: [avatax, community, crush]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/03/crush-conference.html
 ---
 
 Interested in learning more about Avalara's suite of tax products and services?  Come join us at [CRUSH AUSTIN 2017](http://www.crushaustin.com/), the premier conference for transactional tax compliance automation. Here, you’ll find the people, the time and the intimate setting to explore these issues in depth, with the best-of-the-best in our industry.

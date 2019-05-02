@@ -23,8 +23,13 @@
 }
 
 // Prevent the focus on the dropdown toggle when closing dropdowns
-.dropdown-toggle:focus {
-  outline: 0;
+.dropdown-toggle {
+  color: $Medium-grey;
+  background-color: $Form-fill;
+  &:hover, &:focus {
+    color: $Ava-orange;
+    background-color: $Form-fill;
+  }
 }
 
 // The dropdown menu (ul)

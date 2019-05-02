@@ -1,0 +1,293 @@
+swagger: '2.0'
+info:
+  version: v1.2
+  title: MyLodgeTax API - Tax Rates
+  termsOfService: 'https://mylodgetax.avalara.com/legal'
+  description: "Tax Rates are available to partners that have onboarded customers into the
+    Avalara MyLodgeTax system, after the customer has created an account.  After
+    a customer's location has been assigned a tax rate, and while the location
+    maintains an active subscription, daily tax rate information will be
+    available via the _ownertaxsummaries_ and _ownertaxdetails_ endpoints.  Tax
+    rate information returned from these endpoints represents the total tax rate
+    owed by the owner, for:
+
+      * _Direct_ listings (where the customer is responsible for collecting and remitting all taxes due to booking the location through their own means) 
+      * _Marketplace_ listings (where the customer is only responsible for taxes **not** collected and remitted by the marketplace responsible for the booking).
+
+
+    Tax rates for the following marketplaces are currently supported:
+
+
+    * Airbnb
+
+    * FlipKey
+
+    * HomeAway"
+host: mylodgetaxapi-sbx.avalara.net
+basePath: /
+schemes:
+  - https
+definitions:
+  ErrorResponse:
+    type: object
+    description: Generic response message containing error detail
+    properties:
+      message:
+        type: string
+  GetOwnerTaxSummariesResponse:
+    type: object
+    description: Representation of a successful response from a GET /v1/locations/&#123;locationId&#125;/ownertaxsummaries
+    properties:
+      taxSummaries:
+        $ref: '#/definitions/ArrayOfTaxSummaries'
+  ArrayOfTaxSummaries:
+    type: array
+    description: Array of Tax Summary objects
+    items:
+      $ref: '#/definitions/TaxSummary'
+  TaxSummary:
+    type: object
+    description: A tax summary for one marketplace (or a _direct_ marketplace)
+    properties:
+      marketplace:
+        type: string
+        enum:
+          - Direct
+          - Airbnb
+          - FlipKey
+          - HomeAway
+      percentEffectiveRate:
+        type: number
+      fixedTaxes:
+        $ref: '#/definitions/ArrayOfFixedTaxSummaries'
+  ArrayOfFixedTaxSummaries:
+    type: array
+    description: Array of Fixed Tax Summary objects
+    items:
+      $ref: '#/definitions/FixedTaxSummary'
+  FixedTaxSummary:
+    type: object
+    description: Total of fixed taxes for a given unit of measure (e.g. nightly taxes)
+    properties:
+      totalAmount:
+        type: number
+        description: Total fixed amount to collect in local currency, for the given unit of measure
+      unitOfMeasure:
+        type: string
+        enum:
+          - Nights
+        description: Unit of measure for the fixed tax
+  GetOwnerTaxDetailsResponse:
+    type: object
+    description: Representation of a successful response from a GET /v1/locations/&#123;locationId&#125;/ownertaxdetails
+    properties:
+      taxSummaries:
+        $ref: '#/definitions/ArrayOfTaxDetails'
+  ArrayOfTaxDetails:
+    type: array
+    description: Array of Tax Detail objects
+    items:
+      $ref: '#/definitions/TaxDetail'
+  TaxDetail:
+    type: object
+    description: A tax detail for one marketplace (or a _direct_ marketplace)
+    properties:
+      marketplace:
+        type: string
+        enum:
+          - Direct
+          - Airbnb
+          - FlipKey
+          - HomeAway
+      percentTaxes:
+        $ref: '#/definitions/ArrayOfPercentTaxDetails'
+      fixedTaxes:
+        $ref: '#/definitions/ArrayOfFixedTaxDetails'
+  ArrayOfPercentTaxDetails:
+    type: array
+    description: Array of Percent Tax Detail objects
+    items:
+      $ref: '#/definitions/PercentTaxDetail'
+  ArrayOfFixedTaxDetails:
+    type: array
+    description: Array of Percent Tax Detail objects
+    items:
+      $ref: '#/definitions/FixedTaxDetail'
+  PercentTaxDetail:
+    type: object
+    description: A tax detail representing percentage-based taxes
+    properties:
+      jurisdiction:
+        type: string
+        description: Name of taxing jurisdiction
+      name:
+        type: string
+        description: Name of tax rate
+      rate:
+        type: number
+        description: 'Percent rate, represented as a decimal'
+      taxable:
+        type: boolean
+        description: Flag indicating whether this tax rate can be taxed by other taxes
+  FixedTaxDetail:
+    type: object
+    description: 'A tax detail representing fixed taxes, collected in local currency'
+    properties:
+      jurisdiction:
+        type: string
+        description: Name of taxing jurisdiction
+      name:
+        type: string
+        description: Name of tax rate
+      unitOfMeasure:
+        type: string
+        enum:
+          - Nights
+      amount:
+        type: number
+        description: 'Tax amount to collect per unit, in local currency'
+      taxable:
+        type: boolean
+        description: Flag indicating whether this tax can be taxed by other taxes
+paths:
+  '/v1/locations/{locationid}/ownertaxsummaries':
+    get:
+      operationId: getOwnerTaxSummaries
+      tags:
+        - Tax Rate
+      summary: Provides summarized tax responsibilities for the owner of the given
+        location, by marketplace. Tax rate quotes are provided for today.
+      description: The ownertaxsummaries endpoint returns summarized tax rate information
+        for taxes owed by the location (property) owner, based on the booking
+        platform.  The Full tax rate responsibility for the owner is represented
+        by the _direct_ marketplace.  Requesting rates for a specific booking
+        marketplace will result in a response containing the balance of taxes
+        the owner is responsible to collect and remit.  This represents the
+        inverse of any taxes the booking marketplace has committed to collecting
+        and remitting.  If no marketplaces are specified in the query string,
+        the response will always contain data for the _direct_ marketplace, plus
+        any rate information for marketplaces that differ from the full rate set
+        represented by the _direct_ marketplace.
+
+        The total percentage rate is returned as an effective rate.  Meaning, if
+        any component percentage rate for the location is taxable, the
+        _percentEffectiveRate_ will represent a total that includes compounded
+        tax on top of any taxable base.
+      consumes:
+        - application/json
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          type: string
+          description: Unique location identifier assigned when posting a partnerLead
+            (_locationId_).
+        - name: effectivedate
+          in: query
+          required: true
+          type: string
+          description: Effective date for rate lookup.  Given date must be within +/- 1 day
+            of current calendar date in U.S. Pacific time zone at the time the
+            request is made.  Expected date format is 'YYYY-MM-DD'
+        - name: marketplace
+          in: query
+          required: false
+          type: string
+          description: 0...n marketplace parameters may be passed, which may include
+            _direct_.
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetOwnerTaxSummariesResponse'
+        '400':
+          description: 'Bad request: check response body message for details'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Invalid Effective Date or Location Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '422':
+          description: 'Tax rate not available for location, due to location status.'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []
+  '/v1/locations/{locationid}/ownertaxdetails':
+    get:
+      operationId: getOwnerTaxDetails
+      tags:
+        - Tax Rate
+      summary: Provides detailed tax responsibilities for the owner of the given
+        location, by marketplace. Tax rate quotes are provided for today.
+      description: The ownertaxdetails endpoint returns detailed tax rate information for
+        taxes owed by the location (property) owner, based on the rental
+        platform.  The Full tax rate responsibility for the owner is represented
+        by the _direct_ marketplace.  Requesting rates for a specific
+        marketplace will result in a response containing the balance of taxes
+        the owner is responsible to collect and remit.  This represents the
+        inverse of any taxes the marketplace has committed to collecting and
+        remitting.  If no marketplaces are specified in the query string, the
+        response will always contain data for the _direct_ marketplace, plus any
+        rate information for marketplaces that differ from the full rate set
+        represented by the _direct_ marketplace.
+
+        Unlike _ownertaxsummaries_, this endpoint will not perform any
+        calculations and therefore, will not compound taxable tax.
+      consumes:
+        - application/json
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          type: string
+          description: Unique location identifier assigned when posting a partnerLead
+            (_locationId_).
+        - name: effectivedate
+          in: query
+          required: true
+          type: string
+          description: Effective date for rate lookup.  Given date must be within +/- 1 day
+            of current calendar date as defined in U.S. Pacific time zone. 
+            Expected date format is 'YYYY-MM-DD'
+        - name: marketplace
+          in: query
+          required: false
+          type: string
+          description: 0...n marketplace parameters may be included.
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetOwnerTaxDetailsResponse'
+        '400':
+          description: 'Bad request: check response body message for details'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Location Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '422':
+          description: 'Tax rate not available for location, due to location status.'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []

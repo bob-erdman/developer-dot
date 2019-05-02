@@ -7,6 +7,7 @@ comments: true
 categories: [older]
 product: blog
 doctype: blog
+redirect_to: https://www.avalara.com/us/en/blog/2015/10/findevr-integrate-2015-presentations.html
 ---
 <iframe style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/key/CSNMpjQc5Ev5Yn" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"> </iframe>
 

@@ -9,6 +9,7 @@ product: blog
 doctype: blog
 disqus: 1
 imgsrc: /public/images/blog/nuget-avatax-client-library.png
+redirect_to: https://www.avalara.com/us/en/blog/2016/12/csharp-nuget-library.html
 ---
 
 For those Avalara customers using Microsoft's DotNet languages, Avalara has published an official <a href="https://www.nuget.org/packages/Avalara.AvaTax/">AvaTax client library on NuGet</a>, the official repository for open source code in the DotNet world!  This client library is already configured with all the code and logic you need to get started incorporating tax calculation into your application, and it can greatly speed up your development cycle.

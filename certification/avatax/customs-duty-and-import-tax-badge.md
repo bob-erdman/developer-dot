@@ -31,13 +31,6 @@ doctype: integration_checklists
 <h5>Pref program indicator - <em>Suggested</em></h5>
             <p class="badgerequirement">Only required if the customer knows that the item qualifies for a preference program. <strong>We currently only support preference program NAFTA</strong>. This indicator will tell our calculator to use the NAFTA preferred customs duty rate rather than the standard duty rate in the calculation.</p>
             
-<h5>Express ship method - <em>Suggested</em></h5>
-            <p class="badgerequirement">If shipment method selected is an express shipment, set flag true.<br>
-               <code> "name": "AvaTax.LandedCost.Express",<br>
-                "dataType": "Boolean",<br>
-                "description": "Is Shipping method."</code>
-            </p>
-            
 <h5>Messaging - <em>Required</em></h5>
             <p class="badgerequirement">Appropriate messages are displayed for de minimus.</p> 
 

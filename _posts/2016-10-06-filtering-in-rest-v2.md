@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/10/filtering-in-rest-v2.html
 ---
 
 <h2>I'm sure I left this somewhere...</h2>

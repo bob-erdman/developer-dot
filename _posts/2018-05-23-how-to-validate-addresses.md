@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/05/how-to-validate-addresses.html
 ---
 
 <h2>Calculating sales tax? Ditch the ZIPs and get rooftop-level accuracy with Avalara’s API!</h2>

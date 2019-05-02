@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/MDwFmyKU75M
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 In the latest installment of Office Hours with AvaTax, Avalara's Rohit Ghule, Avalara's Senior Director of Engineering, will discuss how Avalara's development team uses the AvaTax API and why Avalara selected the Microsoft REST API pattern.

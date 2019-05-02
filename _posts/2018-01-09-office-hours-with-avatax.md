@@ -9,6 +9,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/01/office-hours-with-avatax.html
 ---
 Avalara’s crack team of engineers receives dozens of questions every week from developers using our APIs, SDKs and documentation, and we want to answer as many as we can.
 
@@ -18,7 +19,7 @@ Have a question about how to get started using the AvaTax API? Want to know what
 
 The next installment of Office Hours with AvaTax is scheduled for 10 a.m. PT on Tuesday, Jan. 23, followed by another Office Hours at 10 a.m. PT on Tuesday, Feb. 6. New installments will occur every Tuesday at 10 a.m. PT from there on out.
 
-You can find a complete list of upcoming installments of Office Hours with AvaTax as well as information on our Monthly AvaTax Developer Webinar series in the Webinars section of the <a href="https://developer.avalara.com/resources/webinars/">Avalara Developer website</a>.
+You can find a complete list of upcoming installments of Office Hours with AvaTax as well as information on our Monthly AvaTax Developer Webinar series in the Webinars section of the <a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Avalara Developer website</a>.
 
 We’re looking forward to hearing your questions!
 

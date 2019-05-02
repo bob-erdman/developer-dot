@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/11/types-of-transactions.html
 ---
 
 AvaTax is a full service engine for calculating transactional taxes, including sales, use, VAT, and many other tax types.  In order to properly calculate taxes in these different circumstances, AvaTax must also support a wide variety of transaction types.  In today's article, I will walk you through the differences between these transactions and describe how to map them to your business processes.

@@ -1,21 +1,5 @@
 var isIntlTransaction = false;
 
-var fixApiRefNav = function() {
-    if ($('#the-nav li').length >= 22) {
-        $('#the-nav').data('offset-bottom', '160');
-    }
-};
-
-var fixDropDownMenuLargePosition = function() {
-    setTimeout(function() {
-        $('.dropdown-large').each(function() {
-            var left = $(this).position().left;
-
-            $(this).find('.dropdown-menu-large').css('left', left);
-        });
-    }, 100);
-};
-
 function getCompareDate() {
   var d = new Date(),
       month = '' + (d.getMonth() + 1),
@@ -127,9 +111,9 @@ function lineBuilder(reqType) {
             case 'C#':
                 lines += `new LineItemModel() 
         {
-            number = ${lineNum},
+            number = "${lineNum}",
             quantity = 1,
-            amount = ${amount},
+            amount = ${amount}m,
             taxCode = "${taxCode}"`;
                     lines += hsCode.length ? "," : "";
                     lines += hsCode.length ? `
@@ -209,8 +193,8 @@ function addressBuilder(reqType, addressName, prefix) {
             line1 = "${addressArray[0]}",
             city = "${addressArray[1]}",
             region = "${addressArray[2]}",
-            country = "${addressArray[4]}",
-            postalCode = "${addressArray[3]}"
+            country = "${addressArray[3]}",
+            postalCode = "${addressArray[4]}"
         }`;
             break;
         case 'PHP':
@@ -277,11 +261,11 @@ function jsonSampleData() {
 
 function curlSampleData() {
     const json = JSON.stringify(jsonSampleData(), null, 2)
-    const sampleData = `-X POST
--H 'Accept: application/json'
--H 'Authorization: Basic aHR0cHdhdGNoOmY='
--H 'Content-Type: application/json'
---data '${json}'
+    const sampleData = `cURL -X POST \
+-H 'Accept: application/json' \
+-H 'Authorization: Basic aHR0cHdhdGNoOmY=' \
+-H 'Content-Type: application/json' \
+--data '${json}' \
 https://sandbox-rest.avatax.com/api/v2/transactions/create`;
     
     return sampleData;
@@ -307,7 +291,9 @@ function cSharpSampleData() {
 
     // build sample data for c#
     const sampleData = `// Create AvaTaxClient
-var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
+var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
+    .WithSecurity("MyUsername", "MyPassword");
+
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -323,7 +309,8 @@ var createModel = new CreateTransactionModel()
     {
         ${address}
     }
-}
+};
+
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
@@ -346,14 +333,22 @@ function phpSampleData() {
     }
 
     // build sample data for PHP
-    const sampleData = `// Create a new client
+    const sampleData = `require __DIR__ . '/vendor/autoload.php';
+use Avalara\AvaTaxClient;
+    
+// Create a new clients
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
+
 // Create a simple transaction using the fluent transaction builder
-$tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
+$tb = new Avalara\TransactionBuilder($client, “DEMOPAGE", Avalara\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb${address}
     ${lines}
     ->create();
+
+// print results
+echo('<h2>Transaction #1</h2>');
+echo('<pre>' . json_encode($t, JSON_PRETTY_PRINT) . '</pre>');
     `;
 
     return sampleData
@@ -375,13 +370,17 @@ function pythonSampleData() {
         address = `'SingleLocation': ${shipToAddress}`;
     }
     
-    const sampleData = `#Create a new AvaTaxClient object
-    client = AvataxClient('my test app',
+    const sampleData = `from client import AvataxClient
+
+#Create a new AvaTaxClient object
+client = AvataxClient('my test app',
     'ver 0.0',
     'my test machine',
     'sandbox')
+
 #Add your credentials
 client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
+
 #Build your tax document
 tax_document = {
     'addresses': {
@@ -395,9 +394,10 @@ tax_document = {
     ],
     'type': 'SalesOrder'
 }
+
 #Create transaction
 transaction_response = client.create_transaction(tax_document)
-print(transaction_response.text())`;
+print(transaction_response.text)`;
     
     return sampleData;
 }
@@ -498,7 +498,9 @@ function javascriptSampleData() {
         machineName: "your-machine-name"
     };
 
-    const sampleData = `const config = ${JSON.stringify(config, null, 4)};
+    const sampleData = `var Avatax = require('avatax');
+
+const config = ${JSON.stringify(config, null, 4)};
     
 const creds = {
     username: "<your-username>",
@@ -509,7 +511,7 @@ var client = new Avatax(config).withSecurity(creds);
 const taxDocument = {
     type: "SalesOrder",
     companyCode: "abc123",
-    date: ${today.toISOString().split('T')[0]},
+    date: "${today.toISOString().split('T')[0]}",
     customerCode: "ABC", ${isIntlTransaction ? `\n    isSellerImporterOfRecord: "true",`:``}
     addresses: {
         ${address}
@@ -578,8 +580,6 @@ function fillWithSampleData() {
 /************************************************************************
 **   INFOBOX Functions: Build infobox on map
 ************************************************************************/
-
-// ...no other way to keep track of state...
 let showInfobox = true;
 
 function hideInfobox() {
@@ -745,14 +745,46 @@ function updateAddress() {
         srcLong = null;
     }
 
-    GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox);
+    if(mapInfo.flightPath == null) {
+        mapInfo.flightPath = new google.maps.Polyline({
+            path: [
+                {lat: parseFloat(destLat), lng: parseFloat(destLong)},
+                {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
+            ],
+            strokeColor: 'black',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        });
+        mapInfo.flightPath.setMap(mapInfo.map);
+    } else {
+        const path  = [
+            {lat: parseFloat(destLat), lng: parseFloat(destLong)}, 
+            {lat: parseFloat(srcLat), lng: parseFloat(srcLong)}
+        ];
+        mapInfo.flightPath.setPath(path);
+    }
+
+    // update destMarker position on map
+    mapInfo.destMarker.setPosition({lat: parseFloat(destLat), lng: parseFloat(destLong)});
+
+    // set srcMarker on map
+    if (srcLat != null && srcLong != null) {
+        mapInfo.srcMarker.setPosition({lat: parseFloat(srcLat), lng: parseFloat(srcLong)});
+        mapInfo.srcMarker.setMap(mapInfo.map);
+        // set zoom for path
+        zoomToObject(mapInfo.flightPath); 
+    } 
+    else {
+        mapInfo.srcMarker.setMap(null);
+        // zoom on destMarket if no srcMarker
+        mapInfo.map.setCenter({lat: parseFloat(destLat), lng: parseFloat(destLong)})
+    }
+
     fillWithSampleData();
 }
 /***************** END GENERAL Functions *******************************/
 
 $(document).ready(function() {
-    fixApiRefNav();
-    fixDropDownMenuLargePosition();
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -775,3 +807,126 @@ $(document).ready(function() {
         $('main').removeClass('section-nav-open');
     });
 });
+
+/************************************************************************
+**   AVA MAP Functions
+************************************************************************/
+
+// tile urls
+var url = 
+{
+    tiles0: "https://0.tiles.avataxrates.com/tiles/", 
+    tiles1: "https://1.tiles.avataxrates.com/tiles/", 
+    tiles2: "https://2.tiles.avataxrates.com/tiles/", 
+    tiles3: "https://3.tiles.avataxrates.com/tiles/",
+};
+
+// map elements that need to be global
+var mapInfo = 
+{
+    map: null,
+    destMarker: null,
+    srcMarker: null,
+    flightPath: null
+};
+
+function zoomToObject(obj){
+    var bounds = new google.maps.LatLngBounds();
+    var points = obj.getPath().getArray();
+    for (var n = 0; n < points.length ; n++){
+        bounds.extend(points[n]);
+    }
+    mapInfo.map.fitBounds(bounds);
+}
+
+// http://msdn.microsoft.com/en-us/library/bb259689.aspx
+// makes tax tiles layer
+function quadkey(tileX, tileY, detail) {
+    var key = "", range = Math.pow(2, detail);
+
+    // adjust tile coordinates if they wrap around (too big or negative direction)
+    tileX = tileX >= 0 ? tileX % range : range - (Math.abs(tileX) % range);
+    tileY = tileY >= 0 ? tileY % range : range - (Math.abs(tileY) % range);
+
+    for(var i = detail; i > 0; i--)
+    {
+        var digit   = 0;
+        var mask    = 1 << (i - 1);
+
+        if((tileX & mask) !== 0)
+        {
+            digit++;
+        }
+
+        if((tileY & mask) !== 0)
+        {
+            digit += 2;
+        }
+
+        key += digit.toString();
+    }
+
+    return key;
+};
+
+// called when you are ready to load google maps
+function loadMap() {
+
+   // options to load the map with
+   var mapOptions = 
+   {
+        minZoom: 3, 
+        disableDefaultUI: true,
+        center: new google.maps.LatLng(33.6846603698176, -117.850629887389),
+        zoom: 3,
+        zoomControl: true, 
+        draggable: true,
+        styles: [{featureType:'poi', stylers:[{visibility:'off'}]}],
+        zoomControlOptions:
+        {
+            position:google.maps.ControlPosition.RIGHT_BOTTOM,
+            style:google.maps.ZoomControlStyle.DEFAULT
+        },
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+   };
+
+   // custom map options that wires up to the avalara tax tile server
+   var taxTiles =
+   {
+        getTileUrl: function(coord, zoom)
+        {
+            var qkey = quadkey(coord.x, coord.y, zoom)
+            return url['tiles' + (qkey % 4)] + qkey
+        },
+        opacity:    0.4,
+        tileSize:   new google.maps.Size(256, 256),
+        name:       "AvaTaxMap",
+        alt:        "Avatax"
+   };
+
+    mapInfo.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    // orange city marker
+    var icon = {
+        url: "/public/images/mapMarker.png", // url
+        scaledSize: new google.maps.Size(20, 32), // scaled size
+    };
+
+    // initialize destMarker
+    mapInfo.destMarker = new google.maps.Marker({
+        position: {lat: 33.6846603698176, lng: -117.850629887389},
+        map: mapInfo.map,
+        icon: icon
+    });
+
+    // initialize srcMarker
+    mapInfo.srcMarker = new google.maps.Marker({
+        position: null,
+        map: null, 
+        icon: icon
+    });
+   
+    mapInfo.map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType(taxTiles));
+};
+
+/***************** AVA MAP Functions *******************************/

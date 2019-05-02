@@ -10,6 +10,7 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/05/avatax-18-5-patch-notes.html
 ---
 
 This article is about the May 2018 monthly update to the AvaTax API.
@@ -36,7 +37,7 @@ This article is about the May 2018 monthly update to the AvaTax API.
 
 <h3>Weekly Office Hours Webinar</h3>
 
-The AvaTax API team hosts a [weekly developer webinar](https://developer.avalara.com/resources/webinars/) where you can meet and talk to the developers directly.  If you would like to ask questions about this release, please sign up and join us for a lively discussion of the AvaTax API.
+The AvaTax API team hosts a [weekly developer webinar](https://www.avalara.com/us/en/learn/webinars.html#developerwebinars) where you can meet and talk to the developers directly.  If you would like to ask questions about this release, please sign up and join us for a lively discussion of the AvaTax API.
 
 <h3>Sandbox Testing Window</h3>
 

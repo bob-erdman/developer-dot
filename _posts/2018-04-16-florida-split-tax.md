@@ -8,6 +8,7 @@ categories: [avatax, tax rules]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/04/florida-split-tax.html
 ---
 
 <h2>Struggling with the Florida Discretionary Sales Tax over your multiple invoices? AvaTax can help!</h2>

@@ -9,6 +9,7 @@ categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/12/refundtransaction-vs-createtransaction.html
 ---
 
 When you find you need to refund a transaction, you have two options to create your return invoice:

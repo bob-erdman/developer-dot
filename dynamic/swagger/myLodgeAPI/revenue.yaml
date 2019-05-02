@@ -1,0 +1,459 @@
+swagger: '2.0'
+info:
+  version: v1.2
+  title: MyLodgeTax API - Revenue
+  termsOfService: 'https://mylodgetax.avalara.com/legal'
+  description: "The Revenue API provides an easy mechanism for the management
+    of a customer's revenue transactions without having to login directly
+    to the MyLodge website. In addition to allowing partners to directly report lodging sales for a customer's rental property, a revenue transaction can also be updated, deleted, and previously uploaded transaction details can be retrieved."
+
+host: mylodgetaxapi-sbx.avalara.net
+basePath: /
+schemes:
+  - https
+definitions:
+  ErrorResponse:
+    type: object
+    description: Generic response message containing error detail
+    properties:
+      message:
+        type: string
+  PutRevenueTransactionsRequest:
+    type: object
+    description: Request body definition for call to PUT /v1/locations/&#123;locationid&#125;/revenuetransactions/&#123;transactionid&#125;. The fields 
+      'memo' and 'sourceMarketplace' are optional.
+    properties:
+      transactionDate:
+        type: string
+        description: The date that the revenue is being reported for. Expected date format is 'YYYY-MM-DD'.
+      totalRevenue:
+        type: number
+        description: The total revenue amount being reported.  Tax should not be included in this value.
+      exemptRevenue:
+        type: number
+        description: The amount of the totalRevenue that is exempt from being taxed.
+      totalNights:
+        type: number
+        description: The number of nights that the revenue was collected for.
+      exemptNights:
+        type: number
+        description: The number of the totalNights that are exempt from being taxed.
+      memo:
+        type: string
+        description: Memo field that describes the transaction data.  This is what the customer will see in the Avalara MyLodgeTax application.  Although optional, partners are strongly encouraged to provide a meaningful description for the customer's reference.
+      sourceMarketplace:
+        type: string
+        description: The marketplace that the transaction applies to (e.g. AirbnB, 
+          HomeAway, etc). This field does not need to be supplied from partners who represent a single marketplace; sourceMarketplace will be inferred from your API key.
+          
+          For partners that list on multiple third-party marketplaces, this field is required, so that the correct customer-owed tax can be computed, based on the tax that the given marketplace is known to collect and remit.
+  GetRevenueTransactionsResponse:
+    type: object
+    description: The transaction data that corresponds to the provided locationid and 
+      transactionid.
+    properties:
+      id:
+        type: string
+        description: The unique identifier for the transaction data. Will always be the 
+          same as what was input in the 'transactionid' field in the url.
+      date:
+        type: string
+        description: The date that the revenue was reported for. Format will be 
+          'YYYY-MM-DD'.
+      totalRevenue:
+        type: number
+        description: The total revenue amount that was reported.
+      exemptRevenue:
+        type: number
+        description: The amount of the totalRevenue that is exempt from being taxed.
+      totalNights:
+        type: number
+        description: The number of nights that the revenue was collected to account for.
+      exemptNights:
+        type: number
+        description: The number of the totalNights that are exempt from being taxed.
+      memo:
+        type: string
+        description: Block of text that describes the transaction data.
+      sourceMarketplace:
+        type: string
+        description: The marketplace that the transaction applies to (e.g. AirBnB, 
+          HomeAway, etc). If this revenue does not apply to a specific
+          marketplace, it will be 'null'.
+paths:
+  '/v1/locations/{locationid}/revenuetransactions/{transactionid}':
+    put:
+      operationId: putRevenueTransactions
+      tags:
+        - Revenue
+      summary: Creates or updates revenue information for a given location, stored by 
+        the provided transaction id.
+      description: The PUT operation of the revenuetransactions endpoint allows for the 
+        submittal of revenue information for a given location, to be stored 
+        under the provided transaction id.
+
+        If the provided transaction id already exists, this operation will 
+        overwrite the previously submitted data.
+        
+        Transaction dates will only be accepted for the current month, or for the previous calendar month, through 23:59:59 on the second day of the month, U.S. Pacific Time.  Tax returns are filed based on transaction date, and tax monies will be debited from the customer's account during the month the tax return will be filed.  See _API Receipt Start_ and _API Receipt Cutoff_ columns in sample schedules below.
+             
+        Customers with API-linked revenue will be able to confirm revenue via the Avalara MyLodgeTax application starting on the third day of the month at 01:00:00, U.S. Pacific Time. See _Customer Confirmation Start_ column in sample schedules below. 
+        
+        If a customer does not manually confirm revenue, revenue delivered via this API endpoint will be automatically confirmed after 16:00:00, U.S. Pacific Time, on&#58;
+        
+        * the fifth day of the month if any of the customer's tax returns are due the tenth day of the month or earlier
+        
+        * the tenth day of the month if all of the customer's tax returns are due after the tenth day of the month
+
+        <p>See <span style="font-style&#58; italic;">Customer Confirmation Cutoff</span> column in sample schedules below.</p>
+
+        <p>Customer bank accounts will be debited for net tax owed during the month that the tax return is due when revenue is confirmed.  Tax returns will be filed during the same month based on jurisdiction due dates.  See <span style="font-style&#58; italic;">Filing & Remittal Date<span> column below.</p>
+
+        <div><h2>Sample schedules are as follows	&#58;</h2></div>
+
+        <p style="padding-top&#58; 10px">Jurisdictions that require monthly filing & remittance</p>
+        
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th style="white-space&#58; normal">Transaction Date</th>
+              <th style="white-space&#58; normal">API Receipt Start</th>
+              <th style="white-space&#58; normal">API Receipt Cutoff</th>
+              <th style="white-space&#58; normal">Customer Confirmation Start</th>
+              <th style="white-space&#58; normal">Customer Confirmation Cutoff</th>
+              <th style="white-space&#58; normal">Filing & Remittal Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-01-**</td>
+              <td>2019-01-01</td>
+              <td>2019-02-02</td>
+              <td>2019-02-03</td>
+              <td>2019-02-05 or 2019-02-10</td>
+              <td>2019-02-05 thru 2019-02-25</td>
+            </tr>
+            <tr>
+              <td>2019-02-**</td>
+              <td>2019-02-01</td>
+              <td>2019-03-02</td>
+              <td>2019-03-03</td>
+              <td>2019-03-05 or 2019-03-10</td>
+              <td>2019-03-05 thru 2019-03-25</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>2019-11-**</td>
+              <td>2019-11-01</td>
+              <td>2019-12-02</td>
+              <td>2019-12-03</td>
+              <td>2019-12-05 or 2019-12-10</td>
+              <td>2019-12-05 thru 2019-12-25</td>
+            </tr>
+            <tr>
+              <td>2019-12-**</td>
+              <td>2019-12-01</td>
+              <td>2020-01-02</td>
+              <td>2020-01-03</td>
+              <td>2020-01-05 or 2020-01-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+          </tbody>
+        <table>
+    
+        <p style="padding-top&#58; 10px">Jurisdictions that require quarterly filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th style="white-space&#58; normal">Transaction Date</th>
+              <th style="white-space&#58; normal">API Receipt Start</th>
+              <th style="white-space&#58; normal">API Receipt Cutoff</th>
+              <th style="white-space&#58; normal">Customer Confirmation Start</th>
+              <th style="white-space&#58; normal">Customer Confirmation Cutoff</th>
+              <th style="white-space&#58; normal">Filing & Remittal Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-01-**</td>
+              <td>2019-01-01</td>
+              <td>2019-02-02</td>
+              <td>2019-02-03</td>
+              <td>2019-02-05 or 2019-02-10</td>
+              <td>2020-04-05 thru 2020-04-25</td>
+            </tr>
+            <tr>
+              <td>2019-02-**</td>
+              <td>2019-02-01</td>
+              <td>2019-03-02</td>
+              <td>2019-03-03</td>
+              <td>2019-03-05 or 2019-03-10</td>
+              <td>2020-04-05 thru 2020-04-25</td>
+            </tr>
+            <tr>
+              <td>2019-03-**</td>
+              <td>2019-03-01</td>
+              <td>2020-04-02</td>
+              <td>2020-04-03</td>
+              <td>2020-04-05 or 2020-04-10</td>
+              <td>2020-04-05 thru 2020-04-25</td>
+            </tr>
+            <tr>
+              <td>2019-04-**</td>
+              <td>2019-04-01</td>
+              <td>2019-05-02</td>
+              <td>2019-05-03</td>
+              <td>2019-05-05 or 2019-05-10</td>
+              <td>2020-07-05 thru 2020-07-25</td>
+            </tr>
+            <tr>
+              <td>2019-05-**</td>
+              <td>2019-05-01</td>
+              <td>2020-06-02</td>
+              <td>2020-06-03</td>
+              <td>2020-06-05 or 2020-06-10</td>
+              <td>2020-07-05 thru 2020-07-25</td>
+            </tr>
+            <tr>
+              <td>2019-06-**</td>
+              <td>2019-06-01</td>
+              <td>2020-07-02</td>
+              <td>2020-07-03</td>
+              <td>2020-07-05 or 2020-07-10</td>
+              <td>2020-07-05 thru 2020-07-25</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>2019-10-**</td>
+              <td>2019-10-01</td>
+              <td>2020-11-02</td>
+              <td>2020-11-03</td>
+              <td>2020-11-05 or 2020-11-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-11-**</td>
+              <td>2019-11-01</td>
+              <td>2019-12-02</td>
+              <td>2020-12-03</td>
+              <td>2020-12-05 or 2020-12-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-12-**</td>
+              <td>2019-12-01</td>
+              <td>2020-01-02</td>
+              <td>2020-01-03</td>
+              <td>2020-01-05 or 2020-01-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+          </tbody>
+        <table>
+        
+
+
+        <p style="padding-top&#58; 10px">Jurisdictions that require annual filing & remittance (filing dates for sample jurisdiction fiscal year starting January 1; note that some jurisdictions' fiscal years do not start in January)</p>
+        
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th style="white-space&#58; normal">Transaction Date</th>
+              <th style="white-space&#58; normal">API Receipt Start</th>
+              <th style="white-space&#58; normal">API Receipt Cutoff</th>
+              <th style="white-space&#58; normal">Customer Confirmation Start</th>
+              <th style="white-space&#58; normal">Customer Confirmation Cutoff</th>
+              <th style="white-space&#58; normal">Filing & Remittal Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-01-**</td>
+              <td>2019-01-01</td>
+              <td>2019-02-02</td>
+              <td>2019-02-03</td>
+              <td>2019-02-05 or 2019-02-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-02-**</td>
+              <td>2019-02-01</td>
+              <td>2019-03-02</td>
+              <td>2019-03-03</td>
+              <td>2019-03-05 or 2019-03-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>2019-11-**</td>
+              <td>2019-11-01</td>
+              <td>2019-12-02</td>
+              <td>2019-12-03</td>
+              <td>2019-12-05 or 2019-12-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+            <tr>
+              <td>2019-12-**</td>
+              <td>2019-12-01</td>
+              <td>2020-01-02</td>
+              <td>2020-01-03</td>
+              <td>2020-01-05 or 2020-01-10</td>
+              <td>2020-01-05 thru 2020-01-25</td>
+            </tr>
+          </tbody>
+        <table>
+  
+      consumes:
+        - application/json
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          type: string
+          description: Unique location identifier assigned when posting a partnerLead
+            (_locationId_).
+        - name: transactionid
+          in: path
+          required: true
+          type: string
+          description: Partner-defined unique identifier for a revenue transaction.
+        - in: body
+          name: request
+          required: true
+          schema:
+            $ref: '#/definitions/PutRevenueTransactionsRequest'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: 'Bad request: check response body message for details'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Location Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '409':
+          description: The given transactionId is already associated with another property
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '422':
+          description: The provided location id is for an inactive location  -OR- the
+            transaction date in the request-body is outside the  current
+            reporting-period.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []
+    get:
+      operationId: getRevenueTransactions
+      tags:
+        - Revenue
+      summary: Retrieves reported revenue information for a given location by  its
+        transaction id.
+      description: Returns a revenue transaction for the specified location and transaction id. If there is no such transaction
+        for the given location, a '(404) Not Found' error will be returned.
+      consumes:
+        - application/json
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          type: string
+          description: Unique location identifier assigned when posting a partnerLead
+            (_locationId_).
+        - name: transactionid
+          in: path
+          required: true
+          type: string
+          description: Partner-defined unique identifier for a revenue transaction.
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetRevenueTransactionsResponse'
+        '400':
+          description: 'Bad request: check response body message for details'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Transaction data not found for the given location
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []
+    delete:
+      operationId: deleteRevenueTransactions
+      tags:
+        - Revenue
+      summary: Deletes revenue information that was previously entered for the  given
+        location and transaction id.
+      description: Allows for the deletion of a revenue transaction that has previously been
+        entered for a location.
+
+        Note that revenue data that was reported in the prior reporting month (or earlier) 
+        cannot be deleted.  For example, a transaction with a March transaction date cannot be deleted after April 2.
+      consumes:
+        - application/json
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          type: string
+          description: Unique location identifier assigned when posting a partnerLead
+            (_locationId_).
+        - name: transactionid
+          in: path
+          required: true
+          type: string
+          description: Partner-defined unique identifier for a revenue transaction.
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Location Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '422':
+          description: Requested transaction is for a prior reporting period.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: Unknown Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []

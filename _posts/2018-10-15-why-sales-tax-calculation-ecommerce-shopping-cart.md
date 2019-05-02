@@ -9,6 +9,7 @@ categories: avatax
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/10/why-sales-tax-calculation-ecommerce-shopping-cart.html
 ---
  Ecommerce rollouts can be complicated, with many moving parts. With all the demands businesses place on eCommerce systems, it can be easy to treat sales tax calculation as an afterthought. That’s a mistake. Sales tax calculation is a key component of any eCommerce site. Paying attention to putting the right sales tax solution in place upfront will save developers and their organizations a lot of headaches later.
 

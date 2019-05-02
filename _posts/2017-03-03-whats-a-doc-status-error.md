@@ -10,6 +10,7 @@ categories: [avatax, how to, troubleshooting]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2017/03/whats-a-doc-status-error.html
 ---
 
 So you're using the AvaTax API, and you attempt to create a transaction just like usual - but this time, you get a new error message: DocStatusError.  What does this error mean, and how should my code handle it?

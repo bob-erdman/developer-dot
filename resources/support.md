@@ -44,7 +44,7 @@ Avalara provides a variety of free and premium support options for customers and
 </div>
 
 <div class="support-option">
-  <h4><a href="https://developer.avalara.com/resources/webinars">Attend an Avalara Developer Webinar</a></h4>
+  <h4><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Attend an Avalara Developer Webinar</a></h4>
   <ul class="normal">
     <li>Avalara holds regular developer webinars that include discussion of development tips and tricks.</li>
     <li>Some webinar sessions may include time for open Q&A.</li>
@@ -53,9 +53,10 @@ Avalara provides a variety of free and premium support options for customers and
 </div>
 
 <div class="support-option">
-  <h4><a href="http://www.avalaracrush.com/events/crush-dc-2018/event-summary-67b6e698ed174ce7bb0b602320e448d3.aspx">Attend the Avalara CRUSH 2018 Conference</a></h4>
+  <h4><a href="https://www.avalaracrush.com/">Attend the Avalara CRUSH 2019 Conference</a></h4>
   <ul class="normal">
-    <li>Our annual CRUSH 2018 conference features direct access to key developers and senior staff members.</li>
+    <li>Our annual CRUSH 2019 conference features direct access to key developers and senior staff members.</li>
     <li>Come join us and learn about AvaTax and ways to handle complex tax compliance challenges.</li>
+    <li><a href="https://www.avalaracrush.com/events/crush19/custom-38-59f177212e274557855763b485fd8db9.aspx">Various tracks and agendas available to meet your specific AvaTax needs</a>.</li>
   </ul>
 </div>

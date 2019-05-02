@@ -10,6 +10,7 @@ categories: [avatax]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/01/negative-transactions.html
 ---
 
 This week I returned a doormat to Costco.  I love Costco's return policies; I was able to buy a mat to try it out, and when we discovered it wasn't a good fit for our garage I was able to return it and buy one that was a better fit.  In the world of sales, refunds are a natural thing - so how do we represent them?

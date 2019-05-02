@@ -8,6 +8,7 @@ categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/11/geocoding-in-rest-v2.html
 ---
 
 The tax on your transactions is heavily dependent on where the transactions occur.  In the US sales and use tax world, transactions are generally taxed based on either the "Origin" or "Destination" - but for most retail sales, these two addresses are almost always the same.  When you visit your local grocery store, they charge you a single rate based on product type and the location of the store; but if you place an order online, the tax you pay will be influenced by a number of factors including the origin location of the warehouse and the destination address where your order was shipped.

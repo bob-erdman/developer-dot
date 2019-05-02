@@ -9,7 +9,10 @@ services:
     container_name: selenium
 
   server:
-    image: jeremycraigmartinez/devdot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # image: jeremycraigmartinez/devdot
     command: [npm, run, test-web, --, --ci-test, --skip-initial-build,  --skip-npm-build]
     volumes:
       - ./:/app

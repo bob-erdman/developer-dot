@@ -10,6 +10,7 @@ categories: [avatax, sdk]
 product: avatax
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/09/hidden-cost-of-free-tax-tables.html
 ---
 
 In seeking a sales-tax compliance solution, many companies — especially younger, smaller ones — may turn to  free tax-rate tables, using them to manually figure out how much sales tax to charge customers. However, although these tables are "free," they may be costing your company more than you think — in time, resources and potential risk. 

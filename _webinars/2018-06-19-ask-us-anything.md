@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/uzL5LpwUfuQ
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Office Hours with AvaTax – Getting the Most out of the C# SDK for Avalara’s API

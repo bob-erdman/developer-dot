@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/cnwbzkqdJs4
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 What does every developer new to the Avalara platform need to know about the AvaTax API? In the latest installment of Office Hours with AvaTax, Avalara’s Angel Person walks developers through the basics of the AvaTax API and talk about what it means to “commit a transaction”.

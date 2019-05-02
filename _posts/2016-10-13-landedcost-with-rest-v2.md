@@ -8,6 +8,7 @@ categories: [avatax, landed cost]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/10/landedcost-with-rest-v2.html
 ---
 
 *Updated March 22, 2018 - AvaTax REST has a new syntax for making LandedCost calculations. This post is retained for historical purposes. You may read about the new LandedCost integration at <a href="/blog/2018/03/22/calculate-customs-duties-in-rest/" target="_blank">https://developer.avalara.com/blog/2018/03/22/calculate-customs-duties-in-rest/</a>.*

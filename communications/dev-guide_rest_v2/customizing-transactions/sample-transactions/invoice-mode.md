@@ -13,9 +13,9 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-Invoice Mode allows you to group multiple line items into a single invoice.  The AFC Tax Engine applies any tax brackets or limits per invoice rather than per line item when in Invoice Mode.
+Invoice Mode allows you to group multiple line items into a single invoice.  The AFC Tax Engine applies any caps, thresholds, tax brackets, and tiers per invoice as a whole when in Invoice Mode (<code>invm</code> set to <code>true</code>).  When  Invoice Mode is turned off (<code>invm</code> set to <code>false</code>), the line items (<code>itms</code>) in the invoice (<code>inv</code>) are considered unrelated and independent, meaning caps, thresholds, tax brackets, and tiers are applied individually to each line item (<code>itms</code>).
 
-REST v2 provides the ability to process up to 10,000 <code>LineItems</code> within an invoice in Invoice Mode. Tax calculation results are summarized by jurisdiction and tax type. Optionally, the individual taxes for each line item can also be returned in the output using the <b>Return Detail</b> flag (<code>dtl</code>), but be advised that the response size may be up to a couple megabytes and may take additional time to process depending on the number of transactions in the Invoice. 
+Communications REST v2 provides the ability to process up to 10,000 <code>LineItems</code> within an invoice in Invoice Mode. Tax calculation results are summarized by jurisdiction and tax type. Optionally, the individual taxes for each line item can also be returned in the output using the <b>Return Detail</b> flag (<code>dtl</code>), but be advised that the response size may be up to a couple megabytes and may take additional time to process depending on the number of transactions in the Invoice. 
 
 <h4>Note</h4>
 While the maximum number of <code>LineItems</code> is 10,000, it is recommended to keep the number of <code>LineItems</code> around <b>1,000</b> per invoice for optimal performance.
@@ -23,8 +23,11 @@ While the maximum number of <code>LineItems</code> is 10,000, it is recommended 
 <h4>Note</h4>
 It is recommended to increase the timeout of your web API calls to 10 minutes although response times are expected to be much shorter even or the largest batches.
 
+<h3>Total Charge</h3>
+Total Charge (<code>tchg</code>) displays the summarized charge amounts applied to the tax item from Invoice processing (<code>invm</code> set to <code>true</code>).  Each entry in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">summarized tax results</a> (<code>summ</code>) has an individual total charge as it applies to the calculation of that specific summarized tax type and jurisdiction.
+
 <h3>Invoice Mode Example</h3>
-In this example, the three line items are processed together as one invoice because Invoice Mode (<code>invm</code>) is set to <code>true</code>.  Also note that the tax calculation output is returned at both the line item detail level (<code>dtl</code> = <code>true</code>) and summary level (<code>sum</code> = <code>true</code>).
+In this example, the three line items are processed together as one invoice because Invoice Mode (<code>invm</code>) is set to <code>true</code>.  Also note that the tax calculation output is returned at both the line item detail level (<code>dtl</code> = <code>true</code>) and summary level (<code>summ</code> = <code>true</code>).
 
 {% highlight json %}
 {
@@ -104,7 +107,7 @@ In this example, the three line items are processed together as one invoice beca
 Detailed taxes (<code>txs</code>) per line and summarized taxes (<code>summ</code>) for the entire invoice are returned.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -605,7 +608,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
 Detailed taxes (<code>txs</code>) for each line item are returned.  However, no summarized taxes (<code>summ</code>) are returned since the line items are treated as individual requests not part of a larger invoice.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a class="dev-guide-link"  data-toggle="collapse" href="#collapse2">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 

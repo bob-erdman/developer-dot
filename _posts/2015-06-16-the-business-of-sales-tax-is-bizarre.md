@@ -8,6 +8,7 @@ categories: [older]
 product: avaTax
 doctype: blog
 imgsrc: /public/images/blog/12000-juris.jpg
+redirect_to: https://www.avalara.com/us/en/blog/2015/06/the-business-of-sales-tax-is-bizarre.html
 ---
 I'm not an economist, neither am I an accountant. The only exposure I have to the concept of accounting or economics were when we were forced to take these classes in college, but I've learned a ton while working for Avalara.
 

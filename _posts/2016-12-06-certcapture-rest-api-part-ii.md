@@ -9,6 +9,8 @@ product: blog
 doctype: blog
 disqus: 1
 imgsrc: /public/images/blog/DevDot_ValidationScreenWithMario.png
+
+redirect_to: https://www.avalara.com/us/en/blog/2016/12/certcapture-rest-api-part-ii.html
 ---
 
 # Creating a Certificate

@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/4haeGRupv5k
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Are you interested in how Avalara tracks tax information across different types of products? Check out the Jan. 23 installment of Office Hours with AvaTax to hear what Ron Paul, a manager on Avalara’s Content Team, had to say on how the AvaTax API allows you to access Avalara’s database of product tax codes to look up information calculate differing tax rates for differing jurisdictions.

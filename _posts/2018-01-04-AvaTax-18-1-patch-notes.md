@@ -9,6 +9,7 @@ categories: [avatax, patch notes]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2018/01/avatax-18-1-patch-notes.html
 ---
 
 This article is about the January 2018 monthly update to the AvaTax API.

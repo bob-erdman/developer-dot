@@ -8,6 +8,7 @@ categories: [certcapture]
 product: blog
 doctype: blog
 disqus: 1
+redirect_to: https://www.avalara.com/us/en/blog/2016/11/certcapture-rest-api-part-i.html
 ---
 # Relationships and Filtering
 

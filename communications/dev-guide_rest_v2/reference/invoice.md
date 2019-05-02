@@ -30,7 +30,10 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code>
+          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit or Uncommit</a> transactions.  It is required when Commit is <code>true</code> 
+          <ul class="dev-guide-list">
+            <li>Max length: 150 bytes</li>
+          </ul>
         </td>
       </tr>
       <tr>
@@ -97,6 +100,9 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>[LineItems]</code></a> <span class="t5">required</span> Line Items
           <br>
           A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-items/">Line Items</a> to process for this transaction
+          <ul class="dev-guide-list">
+            <li>Limit 10,000 line items per request</li>
+          </ul>
         </td>
       </tr>
       <tr>
@@ -105,8 +111,8 @@ The <code>Invoice</code> object contains information about one or more <b>transa
           <br/>
           Indicates if all line items within invoice should be processed in invoice mode
           <ul class="dev-guide-list">
-            <li><code>true</code>: Line Items are part of a single invoice</li>
-            <li><code>false</code>: Line Items are unrelated</li>
+            <li><code>true</code>: Line Items are part of a single invoice; caps, thresholds, tax brackets, and tiers applied per invoice as a whole</li>
+            <li><code>false</code>: Line Items are unrelated; caps, thresholds, tax brackets, and tiers applied per line item individually</li>
           </ul>
         </td>
       </tr>
@@ -122,7 +128,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         </td>
       </tr>
       <tr>
-        <td><code>sum</code></td>
+        <td><code>summ</code></td>
         <td><code>[bool]</code> Return Summary
           <br/>
           Indicates if the summarized taxes for the invoice should be included in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>
@@ -145,6 +151,9 @@ The <code>Invoice</code> object contains information about one or more <b>transa
   </table>
 </div>
 <br>
+
+<h4>Note</h4>
+Limited to 1,000 invoices per request.
 
 <h4>Note</h4>
 These fields can be overridden on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a>:

@@ -40,9 +40,9 @@ install:
   - npm i --progress=false --silent
 before_script:
   - uname -a
-  - export JAVA_OPTS="-Xmx1G"
+  - export JAVA_OPTS="-Xmx2G"
   - echo $JAVA_OPTS
-  - alias java="java -Xmx1G"
+  - alias java="java -Xmx2G"
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then bash ./scripts/staging-robots.sh; fi
 script:
   - npm run lint
@@ -52,7 +52,7 @@ script:
 after_success:
 
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ];
-      then cloudfront_distro=$prod_cloudfront; bucket_name=$prod_bucket s3_website push;
+      then cloudfront_distro=$prod_cloudfront; bucket_name=$prod_bucket _JAVA_OPTIONS=-Xmx2g s3_website push;
     fi
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "staging" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ];
       then cloudfront_distro=$staging_cloudfront; bucket_name=$staging_bucket s3_website push;

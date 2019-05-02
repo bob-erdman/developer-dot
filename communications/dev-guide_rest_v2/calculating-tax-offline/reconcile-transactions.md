@@ -10,10 +10,11 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/recover-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/geocode-offline/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>Reconcile Transactions</h3>
-If you used a fallback tax type and tax rate for a transaction, you must reconcile the transaction after your application comes back online. Temporary transactions such as uncommited tax estimates do not need to be reconciled.  Send all transactions that used cache tax data to REST v2 so that they are available in the <a class="dev-guide-link" href="https://communications.avalara.net/AFC/Reporting/Explorer">Customer Portal Data Explorer</a> and for compliance reports.
+Reconcile the transactions processed with <a class="dev-guide-link" href="https://communications.avalara.net/AFC/Reporting/Explorer">Customer Portal  Explorer</a> after your application comes back online. Temporary transactions such as uncommited tax estimates do not need to be reconciled.
 
 <h3>Duplicate Transactions</h3>
 Review all transactions processed during the time of the outage to confirm that a transaction is only accounted for once.  The transactions and related tax data can be reconciled by reviewing reports and tax data using the <a class="dev-guide-link" href="https://communications.avalara.net/AFC/Reporting/Explorer">Customer Portal Data Explorer</a>.
@@ -27,4 +28,5 @@ When a transaction is included more times than expected:
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/recover-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/calculating-tax-offline/geocode-offline/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
