@@ -261,11 +261,11 @@ function jsonSampleData() {
 
 function curlSampleData() {
     const json = JSON.stringify(jsonSampleData(), null, 2)
-    const sampleData = `-X POST
--H 'Accept: application/json'
--H 'Authorization: Basic aHR0cHdhdGNoOmY='
--H 'Content-Type: application/json'
---data '${json}'
+    const sampleData = `cURL -X POST \
+-H 'Accept: application/json' \
+-H 'Authorization: Basic aHR0cHdhdGNoOmY=' \
+-H 'Content-Type: application/json' \
+--data '${json}' \
 https://sandbox-rest.avatax.com/api/v2/transactions/create`;
     
     return sampleData;
