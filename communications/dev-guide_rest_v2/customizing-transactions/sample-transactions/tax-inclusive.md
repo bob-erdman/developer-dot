@@ -28,6 +28,13 @@ The desired total must be a positive value sufficiently large to cover any fixed
 
 The calculated base charge can be found for each LineItem in the BaseCharge (<code>base</code>) field in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes response</a>.
 
+<h4>Note</h4>
+Tax Inclusive functionality is not supported with these line items:
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Proration</a></li> 
+</ul>
+
 <h3>Tax Inclusive Example - Single Line Item</h3>
 In this example, Line Item 001 is designated as TaxInclusive (<code>incl</code> = <code>true</code>) with a desired total charge of 100 (<code>chg</code> = 100).
 

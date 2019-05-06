@@ -22,6 +22,9 @@ A few things to keep in mind:
     <li>If the proration is being used for an adjustment credit rather than a partial charge, the ratio of the percentage applied should reflect the portion of the month in which the service was not active.</li>
 </ul>
 
+<h4>Note</h4>
+Proration functionality is not supported on a Tax Inclusive (<code>incl</code> set to <code>true</code>) <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>.  
+
 <h3>Proration Example</h3>
 Proration (<code>pror</code>) is set to 50% for 10 lines (<code>line</code>).
 
