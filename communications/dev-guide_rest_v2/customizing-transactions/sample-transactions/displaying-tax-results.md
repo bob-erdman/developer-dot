@@ -50,6 +50,9 @@ Setting the ReturnDetail flag (<code>dtl</code>) displays or hides the detailed 
   </table>
 </div>
 
+<h5>Note about Bundle Files</h5>
+Bundled tax calculations return summarized <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result">detailed results</a> when more than one bundle item returns the same tax type.
+
 <h4>ReturnSummary</h4>
 Setting the ReturnSummary flag (<code>summ</code>) displays or hides the summary taxes object (<code>summ</code>) for the entire Invoice in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes response</a>.
 
@@ -172,7 +175,7 @@ This is the only combination of fields to return both the Detail and Summary tax
 Detailed taxes (<code>txs</code>) and Summarized taxes (<code>summ</code>) are both returned.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -679,7 +682,7 @@ The following additional scenarios return the same results:
 Only Detailed taxes (<code>txs</code>) are returned.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse2">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -992,7 +995,7 @@ This is the only combination of fields to return only Summary taxes.
 Only Summarized taxes (<code>summ</code>) are returned.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse3">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse3">View the Response JSON</a>
   <div id="collapse3" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}

@@ -157,6 +157,9 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
 </div>
 <br>
 
+<h4>Note about Bundle Files</h4>
+Bundled tax calculations return summarized <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result">detailed results</a> when more than one bundle item returns the same tax type.
+
 <h3>Example</h3>
 
 {% highlight json %}
