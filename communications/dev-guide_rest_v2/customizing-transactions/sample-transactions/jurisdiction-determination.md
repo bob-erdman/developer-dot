@@ -74,6 +74,23 @@ When specifying jurisdictions outside of the United States via country/state/cou
 
 See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> for more information.
 
+<h3>Zip-Only Fallback</h3>
+If the city or county name does not match and a postal code is provided, jurisdiction determination falls back to the Zip Code for transactions in the United States of America or Canada.
+<ul class="dev-guide-list">
+  <li>USA: 5 or 9 digit Zip Codes.  For example, 95054 or 95054-1234</li>  
+  <li>Canada: 6 byte Postal Code with or without a dash.  For example, T4X-1Y6 or T4X1Y6 </li>
+</ul>
+
+Full state and country names are also supported, along with the 2 character state abbreviation or 3 character ISO country code.
+<ul class="dev-guide-list">
+  <li>Alaska or AK</li>
+  <li>Quebec or QC</li>
+  <li>Switzerland or CHE</li>
+  <li>United State of America or USA</li>
+</ul>
+
+The fallback process ignores spacing and punctuation in the city and county names.  For example, “CURRY'S CORNER”, AK is treated the same as “CURRYS CORNER” and “CURRYSCORNER”.
+
 <h3 id="us_geo">United States Tax Request using Geocoding Example</h3>
 Geocoding functionality is being used in this example by setting <code>geo</code> to <code>true</code> and specifying an address (<code>addr</code>), city (<code>city</code>), state (<code>st</code>), postal code (<code>zip</code>), and country (<code>ctry</code>).
 
@@ -154,7 +171,7 @@ Geocoding functionality is being used in this example by setting <code>geo</code
 Federal, State, and County taxes are returned based upon the geocoding request.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 
@@ -617,7 +634,7 @@ This example sets the BillTo <a class="dev-guide-link" href="/communications/dev
 Taxes returned are for Quebec (tax level <code>lvl</code> 1) and Canada (tax level <code>lvl</code> 0).
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse2">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
