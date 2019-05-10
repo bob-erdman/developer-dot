@@ -20,10 +20,11 @@ A few things to keep in mind:
     <li>If prorating <b>is not</b> allowed on a tax, the full amount is taxed.</li>
     <li>If prorating <b>is</b> allowed on a tax, the fixed or per line tax applicable to the service will be returned, multiplied by the percentage supplied.</li>
     <li>If the proration is being used for an adjustment credit rather than a partial charge, the ratio of the percentage applied should reflect the portion of the month in which the service was not active.</li>
+    <li>Remove the Proration (<code>prop</code>) key from the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item"> line item</a> (<code>itms</code>) if you don't want to use Proration functionality.  Setting <code>prop</code> to 0 means 0% proration for pro-rateable fixed taxes.</li>
 </ul>
 
 <h4>Note</h4>
-Proration functionality is not supported on a Tax Inclusive (<code>incl</code> set to <code>true</code>) <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>.  
+Proration functionality is not supported on a Tax Inclusive (<code>incl</code> set to <code>true</code>) <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a> (<code>itms</code>).  
 
 <h3>Proration Example</h3>
 Proration (<code>pror</code>) is set to 50% for 10 lines (<code>line</code>).
@@ -68,7 +69,7 @@ Proration (<code>pror</code>) is set to 50% for 10 lines (<code>line</code>).
 The prorated tax amounts (<code>tax</code>) are seen on Tax Type IDs (<code>tid</code>) 6 and 23.
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
