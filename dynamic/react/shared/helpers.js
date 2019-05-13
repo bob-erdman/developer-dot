@@ -140,7 +140,7 @@ const buildCurl = (sampleAuthHeader, endpoint, staticValues = false) => {
 
     curl += `
     ${endpointPath}${endpoint.qsPath || ''}`;
-
+    console.warn("CURL return: ", curl);
     return curl;
 };
 
