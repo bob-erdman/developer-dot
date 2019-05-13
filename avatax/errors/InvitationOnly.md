@@ -20,8 +20,8 @@ You attempted to contact an API that is available by invitation only.
     {
       "code": "InvitationOnly",
       "number": 602,
-      "message": "The user is not whitelisted to use this API. This API is available by invitation only.",
-      "description": "You have attempted to contact an API that is available to specially invited partners and developers only.",
+      "message": "The user or host is not whitelisted to use this API",
+      "description": "This API is available to specially invited partners and developers only.  Please contact your business development representative.  Feature: -0- Action: -1-",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/InvitationOnly",
       "severity": "Error"

@@ -140,6 +140,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You attempted to change passwords for a user who is not permitted to change their password.</td>
 		</tr>		
         <tr>
+			<td>25</td>
+			<td><a href="ReadOnly">ReadOnly</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>26</td>
 			<td><a href="DateFormatError">DateFormatError</a></td>
 			<td>The date value you provided was incorrectly formatted.</td>
@@ -148,6 +153,16 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>27</td>
 			<td><a href="NoDefaultCompany">NoDefaultCompany</a></td>
 			<td>Your account does not currently have a default company.</td>
+		</tr>		
+        <tr>
+			<td>28</td>
+			<td><a href="AccountTypeNotSupported">AccountTypeNotSupported</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>29</td>
+			<td><a href="InvalidFirmClientOffer">InvalidFirmClientOffer</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>30</td>
@@ -245,6 +260,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>A field in your request has too many decimal places or too many digits over all.</td>
 		</tr>		
         <tr>
+			<td>49</td>
+			<td><a href="PermissionRequired">PermissionRequired</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>50</td>
 			<td><a href="UnhandledException">UnhandledException</a></td>
 			<td>The API you attempted to call resulted in an unhandled exception within Avalara AvaTax.</td>
@@ -253,6 +273,16 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>51</td>
 			<td><a href="InactiveAccount">InactiveAccount</a></td>
 			<td>The account is currently inactive.</td>
+		</tr>		
+        <tr>
+			<td>52</td>
+			<td><a href="LinkageNotAllowed">LinkageNotAllowed</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>53</td>
+			<td><a href="LinkageStatusUpdateNotSupported">LinkageStatusUpdateNotSupported</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>60</td>
@@ -273,6 +303,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>63</td>
 			<td><a href="MustAssignUserToCompany">MustAssignUserToCompany</a></td>
 			<td>Company level users must be assigned to a company within this account.</td>
+		</tr>		
+        <tr>
+			<td>64</td>
+			<td><a href="InvalidTaxTypeMapping">InvalidTaxTypeMapping</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>70</td>
@@ -905,6 +940,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The offer code has already been applied to this account.</td>
 		</tr>		
         <tr>
+			<td>611</td>
+			<td><a href="AccountAlreadyExists">AccountAlreadyExists</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>700</td>
 			<td><a href="InvalidDocumentStatusForRefund">InvalidDocumentStatusForRefund</a></td>
 			<td>The AvaTax Refund API is only available on committed documents.</td>
@@ -1048,11 +1088,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1206</td>
 			<td><a href="AddRelationshipsError">AddRelationshipsError</a></td>
 			<td>The certificate system could not link the two objects as requested.</td>
-		</tr>		
-        <tr>
-			<td>1207</td>
-			<td><a href="MissingExposureZone">MissingExposureZone</a></td>
-			<td>Avalara's Certificate service requires that all certificates have one exposure zone.</td>
 		</tr>		
         <tr>
 			<td>1208</td>
@@ -1260,16 +1295,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The AvaTax API encountered an internal error and could not continue.</td>
 		</tr>		
         <tr>
-			<td>1600</td>
-			<td><a href="AdvancedRuleBadScript">AdvancedRuleBadScript</a></td>
-			<td>Advanced Rule script provided contained errors.</td>
-		</tr>		
-        <tr>
-			<td>1601</td>
-			<td><a href="AdvancedRuleBadCsvTable">AdvancedRuleBadCsvTable</a></td>
-			<td>The advanced rule table did not contain valid CSV file.</td>
-		</tr>		
-        <tr>
 			<td>1602</td>
 			<td><a href="AdvancedRuleRequestRuleError">AdvancedRuleRequestRuleError</a></td>
 			<td>Advanced rule failed to execute.</td>
@@ -1280,9 +1305,9 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>Failed to execute the advanced rule script.</td>
 		</tr>		
         <tr>
-			<td>1604</td>
-			<td><a href="AdvancedRuleNotApproved">AdvancedRuleNotApproved</a></td>
-			<td>The advanced rule script has not been approved.</td>
+			<td>1605</td>
+			<td><a href="AdvancedRuleError">AdvancedRuleError</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1700</td>
@@ -1318,6 +1343,16 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1706</td>
 			<td><a href="CannotDismissGlobalNotification">CannotDismissGlobalNotification</a></td>
 			<td>This notification cannot be dismissed because it is a global notification.</td>
+		</tr>		
+        <tr>
+			<td>1707</td>
+			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1708</td>
+			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1800</td>
