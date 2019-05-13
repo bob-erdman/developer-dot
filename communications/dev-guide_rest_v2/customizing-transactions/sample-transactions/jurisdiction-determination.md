@@ -92,7 +92,7 @@ Full state and country names are also supported, along with the 2 character stat
 The fallback process ignores spacing and punctuation in the city and county names.  For example, “CURRY'S CORNER”, AK is treated the same as “CURRYS CORNER” and “CURRYSCORNER”.
 
 <h4>Pro Tip</h4>
-Specify a PCode for fallback when using the embedded Geocoding functionality (<code>geo</code> = <code>true</code> in a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location">location</a>).  If geocoding fails to find the location, the PCode is used in the zip-only fallback.
+Specify a PCode (<code>pcd</code>) for fallback when using the embedded Geocoding functionality (<code>geo</code> = <code>true</code> in a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location">location</a>).  If geocoding fails to find the location, the PCode (<code>pcd</code>) is used for the jurisdiction.
 
 <h3 id="us_geo">United States Tax Request using Geocoding Example</h3>
 Geocoding functionality is being used in this example by setting <code>geo</code> to <code>true</code> and specifying an address (<code>addr</code>), city (<code>city</code>), state (<code>st</code>), postal code (<code>zip</code>), and country (<code>ctry</code>).
