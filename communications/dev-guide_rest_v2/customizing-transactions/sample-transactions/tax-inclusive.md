@@ -88,7 +88,7 @@ In this example, Line Item 001 is designated as TaxInclusive (<code>incl</code> 
 The base sale amount (<code>base</code>) is set to 87.64509.  The desired total charge (100) = base sale amount (87.64509) + total taxes returned (12.35491).
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
@@ -313,7 +313,7 @@ In this example, Line Item 001 and Line Item 002 are designated as TaxInclusive 
 The base sale amount (<code>base</code>) is set for Line Item 001 and Line Item 002, but not for Line Item 003 (<code>incl</code> = <code>true</code>).
 
 <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse2">View the Response JSON</a>
   <div id="collapse2" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
