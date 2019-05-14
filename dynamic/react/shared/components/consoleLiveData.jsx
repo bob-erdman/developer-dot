@@ -66,7 +66,6 @@ const PostHelper = ({action, endpoint, onRequestChanged, request}) => {
             <div className={'code-snippet reqScroll'} id={'console_input'}><pre dangerouslySetInnerHTML={{__html: syntaxHighlight(request)}} /></div>
         );
     }
-    console.warn("CATZ", request.replace(/&/g, "&amp;"))
     return (
         <div className={'code-snippet code-snippet-code-text reqScroll'} dangerouslySetInnerHTML={{__html: request.replace(/&/g, "&amp;")}} />
     );
