@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A generic tax code was used for a company item.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Company items cannot use the generic taxcode, `P0000000`. To resolve this error, associate a specific taxcode to the item mentioned in the error's description. For more information on available tax codes, consult [this Tax Code article](https://help.avalara.com/000_Avalara_AvaTax/Select_Avalara_Tax_Codes) or search for codes using our [tax code tool](https://taxcode.avatax.avalara.com/).

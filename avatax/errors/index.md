@@ -18,7 +18,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>
 	</thead>
 	<tbody>
-		
         <tr>
 			<td>1</td>
 			<td><a href="ServerConfiguration">ServerConfiguration</a></td>
@@ -157,7 +156,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>28</td>
 			<td><a href="AccountTypeNotSupported">AccountTypeNotSupported</a></td>
-			<td>TBD</td>
+			<td>This account does not have access to this action or feature.</td>
 		</tr>		
         <tr>
 			<td>29</td>
@@ -942,7 +941,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>611</td>
 			<td><a href="AccountAlreadyExists">AccountAlreadyExists</a></td>
-			<td>TBD</td>
+			<td>This combination of the account name and company address already exists.</td>
 		</tr>		
         <tr>
 			<td>700</td>
@@ -1307,7 +1306,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1605</td>
 			<td><a href="AdvancedRuleError">AdvancedRuleError</a></td>
-			<td>TBD</td>
+			<td>There was an error when setting or applying an advanced tax rule.</td>
 		</tr>		
         <tr>
 			<td>1700</td>
@@ -1347,12 +1346,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1707</td>
 			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
-			<td>TBD</td>
+			<td>A generic tax code was used for a company item.</td>
 		</tr>		
         <tr>
 			<td>1708</td>
 			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
-			<td>TBD</td>
+			<td>One or more check for this company to be certified have failed</td>
 		</tr>		
         <tr>
 			<td>1800</td>

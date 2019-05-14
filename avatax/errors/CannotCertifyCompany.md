@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+One or more check for this company to be certified have failed.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Before a company can be certified, one or more checks must succeed. In the case of this error, the one or more checks have failed. Please check your error message for more details on which checks have failed.
