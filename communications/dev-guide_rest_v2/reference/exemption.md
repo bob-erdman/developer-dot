@@ -140,7 +140,7 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
     "cat": 0,
     "dom": 3,
     "scp": 1792,
-    "exnb": false,
+    "exnb": false
   }
 ]
 {% endhighlight %}

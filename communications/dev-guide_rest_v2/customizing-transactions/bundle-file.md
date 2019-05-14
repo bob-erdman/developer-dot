@@ -68,7 +68,7 @@ Version,3.0.0
 <h3>Using the Bundle file</h3>
 The Bundle file is applied to a <a class="dev-guide-link" href="#request">client profile</a>.  You must pass the associated <code>client_profile_id</code> as part of the header to use the Bundle file.
 <br/>
-Create a transaction using the Bundle Transaction ID and Bundle Service ID (<code>tran</code> is 20000 and <code>serv</code> is 20001 for this example) and specify the sale amount (<code>).
+Create a transaction using the Bundle Transaction ID and Bundle Service ID (<code>tran</code> is 20000 and <code>serv</code> is 20001 for this example) and specify the sale amount (<code>chg</code>).
 
 {% highlight json %}
 {
@@ -110,7 +110,10 @@ Create a transaction using the Bundle Transaction ID and Bundle Service ID (<cod
 }
 {% endhighlight %}
 
-<h4 id="request">Requesting a new client profile or changes to an existing client profile</h4>
+<h4>Note about Bundle File Results</h4>
+Bundled tax calculations return summarized <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result">detailed results</a> (<code>txs</code>) when more than one bundle item returns the same tax type.
+
+<h3 id="request">Requesting a new client profile or changes to an existing client profile</h3>
 Contact <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a>:
 <ol class="dev-guide-list">
   <li>Request the customization files and configurations.  Attach existing <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">customization files</a> to the email</li>
