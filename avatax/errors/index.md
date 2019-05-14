@@ -141,7 +141,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>25</td>
 			<td><a href="ReadOnly">ReadOnly</a></td>
-			<td>TBD</td>
+			<td>The field is read only.</td>
 		</tr>		
         <tr>
 			<td>26</td>
@@ -161,7 +161,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>29</td>
 			<td><a href="InvalidFirmClientOffer">InvalidFirmClientOffer</a></td>
-			<td>TBD</td>
+			<td>The offer is invalid for firm client accounts.</td>
 		</tr>		
         <tr>
 			<td>30</td>
@@ -261,7 +261,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>49</td>
 			<td><a href="PermissionRequired">PermissionRequired</a></td>
-			<td>TBD</td>
+			<td>The user does not have permission for the desired action.</td>
 		</tr>		
         <tr>
 			<td>50</td>
@@ -276,12 +276,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>52</td>
 			<td><a href="LinkageNotAllowed">LinkageNotAllowed</a></td>
-			<td>TBD</td>
+			<td>Linking the client account to the firm is not allowed.</td>
 		</tr>		
         <tr>
 			<td>53</td>
 			<td><a href="LinkageStatusUpdateNotSupported">LinkageStatusUpdateNotSupported</a></td>
-			<td>TBD</td>
+			<td>The status change attempted is not supported.</td>
 		</tr>		
         <tr>
 			<td>60</td>
@@ -306,7 +306,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>64</td>
 			<td><a href="InvalidTaxTypeMapping">InvalidTaxTypeMapping</a></td>
-			<td>TBD</td>
+			<td>An invalid tax type mapping was provided</td>
 		</tr>		
         <tr>
 			<td>70</td>

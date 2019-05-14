@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The status update attempted is not supported.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+The status cannot be updated to from the current state to the desired state, because the action is not supported. Check the description of your error and ensure the change from `-0-` to `-1-` follows the intended workflow. If you believe there is an issue with your account, please reach out to [Avalara's client support network](https://help.avalara.com/Directory/Contact_Avalara).

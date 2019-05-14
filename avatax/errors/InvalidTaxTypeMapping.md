@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+An invalid tax type mapping was provided
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Mapping to the correct tax type is important for calculating accurate taxes for your situation. If you are new to mapping tax types, take a look at this [overview of tax types](https://help.avalara.com/000_Avalara_AvaTax/About_Tax_Types) from Avalara's help center. If you want more information on choosing the correct tax type for your situation, use [our tax type table](https://help.avalara.com/001_Avalara_AvaTax/000_AvaTax_Update/Pick_the_Right_Tax_Type).

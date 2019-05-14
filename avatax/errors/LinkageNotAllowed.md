@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Linking the client account to the firm is not allowed.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+This client account and firm are not compatible and cannot be linked. Please check to ensure you've provided the corrent client and firm information in your request. If you believe there is an issue with either the client or firm account, please reach out to [Avalara's client support network](https://help.avalara.com/Directory/Contact_Avalara). 

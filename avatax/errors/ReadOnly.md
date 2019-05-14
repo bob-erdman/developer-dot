@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The field is read only. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+The field cannot be changed because it is read only. This 'read only' status may be due to the user's role and the associated permissions. 

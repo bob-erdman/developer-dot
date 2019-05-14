@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The user does not have permission for the desired action.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Different users and administrators have varying access to features such as updating account information or creating new tax rules. These permissions are based on the role of the user. The users role can be found in position `-1-` and the denied action is at position `-0-` of the error. 

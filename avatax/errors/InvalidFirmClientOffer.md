@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The offer is invalid for firm client accounts.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Avalara provides [3 different types of accounts](/api-reference/avatax/rest/v2/models/enums/AccountModel%20>%20accountTypeId/) with varying settings and action sets. For the firm client account type, some offers are not valid since a firm manages the account on behalf of the client. Offers supported for this type of account include ARA and ManagaedARA. 
