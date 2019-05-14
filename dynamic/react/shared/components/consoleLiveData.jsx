@@ -67,7 +67,7 @@ const PostHelper = ({action, endpoint, onRequestChanged, request}) => {
         );
     }
     return (
-        <div className={'code-snippet code-snippet-code-text reqScroll'} dangerouslySetInnerHTML={{__html: request}} />
+        <div className={'code-snippet code-snippet-code-text reqScroll'} dangerouslySetInnerHTML={{__html: request.replace(/&/g, '&amp;')}} />
     );
 };
 
