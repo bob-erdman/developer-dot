@@ -93,6 +93,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
                     <li>A transaction has two points: Point 'A' and Point 'Z'</li>
                     <li>A <code>plsp</code> of <code>0.25</code> means 25% of the taxes are attributed to Point 'A', the remaining 75% to Point 'Z'</li>
                 </ul>
+                Remove the key from the line item if you don't want to use the Private Line functionality.  Setting <code>plsp</code> to 0 means 0% for Point 'A' and 100% for Point 'Z'
             </td>
         </tr>
         <tr>
@@ -111,6 +112,8 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>[double]</code> Pro-rated Percentage
             <br>
             A percentage used for the pro-rated calculation of fixed taxes
+            <br/><br/>
+            Remove the key from the line item if you don't want to use Proration functionality.  Setting <code>prop</code> to 0 means 0% proration for pro-rateable fixed taxes.
             </td>
         </tr>
         <tr>
