@@ -55,7 +55,10 @@ const hasExcludedProperties = (postBodySchema) => {
 // Function that converts Map<string, {example, fieldType, required, value}>
 // to Map<string, string>. Recipes only store key-value string pairs for their path params and query strings
 // so use this when dealing with Get Started or Api Reference apps to reduce to that
-const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).reduce((accum, k) => ({...accum, [k]: params[k].value}), {});
+// TODO: NOTE: FIX ISSUE HERE, might have something to do with replaceStringPlaceholders
+// - getting ''null'' output in error for some reason
+// - haven't found where query is actually built yet...maybe not fix here?
+const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).reduce((accum, k) => ({...accum, [k]: (params[k].value) === '' ? null : params[k].value}), {});
 
 /* (String, HashMap<String, String>) -> String
  * Replaces {}-delimited placeholder values in a string with their equiv values
@@ -193,6 +196,12 @@ const submitProxiedRequest = (endpoint) => {
     /* eslint-enable no-undef */
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
     .then((bucketRes) => {
+        console.warn("PROXIED REQUEST route ", endpoint.proxy.route)
+        console.warn("PROXIED REQUEST path ", endpoint.path)
+        console.warn("PROXIED REQUEST queryString ", endpoint.queryString)
+        console.warn("PROXIED REQUEST pathParams ", endpoint.pathParams)
+
+
         return fetch(endpoint.proxy.route, {
             method: 'POST',
             headers: {
