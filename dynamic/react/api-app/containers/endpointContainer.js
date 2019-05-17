@@ -25,14 +25,9 @@ const mapDispatchToProps = (dispatch) => {
             * Otherwise, just use the path specified as `host` in Swagger file
             */
             // Api Reference has complex pathParam/queryString structure (example, fieldType, etc.)
-            console.warn("CONSOLE REQUEST endpoint", endpoint)
             if (endpoint.consoleError) {
-                console.warn("if (error) CONSOLE REQUEST")
-
                 dispatch(actions.consoleError(endpoint.id));
             } else {
-                console.warn("else CONSOLE REQUEST")
-
                 // create either a proxied or normal API request
                 let apiRequest;
 
@@ -47,31 +42,21 @@ const mapDispatchToProps = (dispatch) => {
                         pathParams: reduceParamsToKeyValuePair(endpoint.pathParams),
                         postBody: endpoint.postBody || {}
                     });
-                    // console.warn("CONSOLE REQUEST: IF, api request", apiRequest)
-                    console.warn("CONSOLE REQUEST: IF, queryString", endpoint.queryString)
-                    console.warn("CONSOLE REQUEST: IF, queryString reduced", reduceParamsToKeyValuePair(endpoint.queryString))
-                    console.warn("CONSOLE REQUEST: IF, pathParams", endpoint.pathParams)
-                    console.warn("CONSOLE REQUEST: IF, pathParams reduced", reduceParamsToKeyValuePair(endpoint.pathParams))
-
                 } else {
                     const url = (endpoint.pathParams ? replaceStringPlaceholders(endpoint.path, reduceParamsToKeyValuePair(endpoint.pathParams)) : endpoint.path) + (endpoint.qsPath || '');
                     const postBody = endpoint.postBody || null;
 
                     apiRequest = submitApiRequest.bind(null, url, endpoint.action, postBody, userProfile);
-                    console.warn("CONSOLE REQUEST: ELSE, api request", apiRequest)
                 }
                 // Show Animation here until promise or isLoading comes back or w/e
                 dispatch(actions.consoleLoadingAnimation(endpoint.id));
 
+                // apiRequest() === submitProxiedRequest()
                 apiRequest()
                     .then((apiResponse) => {
-                        console.warn("API REQUEST: dispatch")
-
                         dispatch(actions.submitConsoleRequest(endpoint.id, apiResponse.body, apiResponse.status, apiResponse.statusMessage));
                     })
                     .catch((err) => {
-                        console.warn("API REQUEST: error")
-
                         dispatch(actions.submitConsoleRequest(endpoint.id, err, err.message, err.message));
                     });
             }

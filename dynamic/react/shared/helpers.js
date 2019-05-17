@@ -58,7 +58,7 @@ const hasExcludedProperties = (postBodySchema) => {
 // TODO: NOTE: FIX ISSUE HERE, might have something to do with replaceStringPlaceholders
 // - getting ''null'' output in error for some reason
 // - haven't found where query is actually built yet...maybe not fix here?
-const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).reduce((accum, k) => ({...accum, [k]: (params[k].value) === '' ? null : params[k].value}), {});
+const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).filter(k => params[k].value != '').reduce((accum, k) => ({...accum, [k]: params[k].value}), {});
 
 /* (String, HashMap<String, String>) -> String
  * Replaces {}-delimited placeholder values in a string with their equiv values
@@ -143,6 +143,7 @@ const buildCurl = (sampleAuthHeader, endpoint, staticValues = false) => {
 
     curl += `
     ${endpointPath}${endpoint.qsPath || ''}`;
+
     return curl;
 };
 
@@ -196,12 +197,6 @@ const submitProxiedRequest = (endpoint) => {
     /* eslint-enable no-undef */
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
     .then((bucketRes) => {
-        console.warn("PROXIED REQUEST route ", endpoint.proxy.route)
-        console.warn("PROXIED REQUEST path ", endpoint.path)
-        console.warn("PROXIED REQUEST queryString ", endpoint.queryString)
-        console.warn("PROXIED REQUEST pathParams ", endpoint.pathParams)
-
-
         return fetch(endpoint.proxy.route, {
             method: 'POST',
             headers: {
