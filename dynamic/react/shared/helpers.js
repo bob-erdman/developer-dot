@@ -55,9 +55,6 @@ const hasExcludedProperties = (postBodySchema) => {
 // Function that converts Map<string, {example, fieldType, required, value}>
 // to Map<string, string>. Recipes only store key-value string pairs for their path params and query strings
 // so use this when dealing with Get Started or Api Reference apps to reduce to that
-// TODO: NOTE: FIX ISSUE HERE, might have something to do with replaceStringPlaceholders
-// - getting ''null'' output in error for some reason
-// - haven't found where query is actually built yet...maybe not fix here?
 const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).filter(k => params[k].value != '').reduce((accum, k) => ({...accum, [k]: params[k].value}), {});
 
 /* (String, HashMap<String, String>) -> String
