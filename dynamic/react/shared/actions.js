@@ -6,7 +6,7 @@ export default {
             type: actionTypes.ACCESS_TOKEN_EXPIRATION
         };
     },
-    submitConsoleRequest: (endpointId, responseBody, status, statusMessage) => {    
+    submitConsoleRequest: (endpointId, responseBody, status, statusMessage) => {
         return {
             type: actionTypes.SUBMIT_DONE,
             endpointId: endpointId,
