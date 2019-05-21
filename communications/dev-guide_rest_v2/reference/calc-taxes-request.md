@@ -86,7 +86,7 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
 }
 {% endhighlight %}
 
-<h4>Note</h4>
+<h4 id="note">Note</h4>
 We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profile</a> with an override file or configuration update included were possible.  Using a client profile results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
 <ul class="pager">

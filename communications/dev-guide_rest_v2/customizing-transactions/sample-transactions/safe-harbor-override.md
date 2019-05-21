@@ -131,7 +131,7 @@ The <b>VoIP</b> safe harbor type (<code>sh</code>) is being overridden from the 
 The result of the Safe Harbor override can be seen on Federal-level Tax Type IDs (<code>tid</code>) 162, 226:
 <ul class="dev-guide-list">
   <li>Total Charge (<code>tchg</code>) is 25 based on the requested 100 charge (Total Charge is 64.90 without the Safe Harbor override)</li>
-  <li>Exempt Sale Amount (<code>exm</code>) is 25 based on the requested 100 charge (Exempt Sale Amount is 35.10 without the Safe Harbor override)</li>
+  <li>Exempt Sale Amount (<code>exm</code>) is 75 based on the requested 100 charge (Exempt Sale Amount is 35.10 without the Safe Harbor override)</li>
 </ul>
 
 State taxes are automatically updated based on the Federal override.  The State TAM is 75% (1.0 - new Federal TAM) and can be seen on Tax Type IDs (<code>tid</code>) 161, 217, 450, 452, 453, 454:
