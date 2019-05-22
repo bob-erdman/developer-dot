@@ -2704,6 +2704,7 @@ describe('Shared Reducers', () => {
                     "name": "Get HS Code Details",
                     "description": "Allows for the traversal of classification system, harmonized codes, and duty rates, allowing the user to browse the available content",
                     "path": "http://sandbox.landedcost.api.avalara.com/v2/hscodes/{system}/{code}",
+                    "productionPath": "http://sandbox.landedcost.api.avalara.com/v2/hscodes/{system}/{code}",
                     "action": "get",
                     "isAuthenticated": false,
                     "showExcludedPostBodyFields": false,
@@ -2784,6 +2785,7 @@ describe('Shared Reducers', () => {
 
                 expectedState.curl = "curl\n    -X GET\n    -H 'Accept: application/json'\n    http://sandbox.landedcost.api.avalara.com/v2/hscodes/TARIC/010229?qsParam=qsValue";
                 expectedState.qsPath = '?qsParam=qsValue';
+                expectedState.path = "http://sandbox.landedcost.api.avalara.com/v2/hscodes/TARIC/010229?qsParam=qsValue";
                 expectedState.queryString.qsParam = {value: "qsValue"};
                 /* eslint-enable quote-props */
                 /* eslint-enable quotes */
@@ -2798,6 +2800,7 @@ describe('Shared Reducers', () => {
                     "name": "Get HS Code Trees",
                     "description": "Presents all of the available Harmonized Codes as a browesable tree. Each request specifies a parent node, and the response lists all child nodes of that parent. If no parent node is specified, all root-level nodes will be returned",
                     "path": "http://sandbox.landedcost.api.avalara.com/v2/browse",
+                    "productionPath": "http://sandbox.landedcost.api.avalara.com/v2/browse",
                     "action": "get",
                     "isAuthenticated": false,
                     "showExcludedPostBodyFields": false,
@@ -2869,6 +2872,7 @@ describe('Shared Reducers', () => {
 
                 expectedState.curl = "curl\n    -X GET\n    -H 'Accept: application/json'\n    http://sandbox.landedcost.api.avalara.com/v2/browse?parent=2&qsParam=qsValue";
                 expectedState.qsPath = '?parent=2&qsParam=qsValue';
+                expectedState.path = "http://sandbox.landedcost.api.avalara.com/v2/browse?parent=2&qsParam=qsValue";
                 expectedState.queryString.qsParam = {value: "qsValue"};
                 /* eslint-enable quote-props */
                 /* eslint-enable quotes */
@@ -2885,6 +2889,7 @@ describe('Shared Reducers', () => {
                     "name": "Get HS Code Details",
                     "description": "Allows for the traversal of classification system, harmonized codes, and duty rates, allowing the user to browse the available content",
                     "path": "http://sandbox.landedcost.api.avalara.com/v2/hscodes/{system}/{code}",
+                    "productionPath": "http://sandbox.landedcost.api.avalara.com/v2/hscodes/{system}/{code}",
                     "action": "get",
                     "isAuthenticated": false,
                     "showExcludedPostBodyFields": false,
@@ -2964,6 +2969,7 @@ describe('Shared Reducers', () => {
                 const expectedState = R.clone(state);
 
                 expectedState.curl = "curl\n    -X GET\n    -H 'Accept: application/json'\n    http://sandbox.landedcost.api.avalara.com/v2/hscodes/HTS/{code}";
+                expectedState.path = "http://sandbox.landedcost.api.avalara.com/v2/hscodes/HTS/{code}";
                 expectedState.pathParams.system.value = 'HTS';
                 /* eslint-enable quote-props */
                 /* eslint-enable quotes */
@@ -2978,6 +2984,7 @@ describe('Shared Reducers', () => {
                     "name": "Get HS Code Details",
                     "description": "Allows for the traversal of classification system, harmonized codes, and duty rates, allowing the user to browse the available content",
                     "path": "http://sandbox.landedcost.api.avalara.com/v2/hscodes/{system}/{code}",
+                    "productionPath": "http://sandbox.landedcost.api.avalara.com/v2/hscodes/{system}/{code}",
                     "action": "get",
                     "isAuthenticated": false,
                     "showExcludedPostBodyFields": false,
@@ -3057,6 +3064,7 @@ describe('Shared Reducers', () => {
                 const expectedState = R.clone(state);
 
                 expectedState.curl = "curl\n    -X GET\n    -H 'Accept: application/json'\n    http://sandbox.landedcost.api.avalara.com/v2/hscodes/CTCA/930700";
+                expectedState.path = "http://sandbox.landedcost.api.avalara.com/v2/hscodes/CTCA/930700";
                 expectedState.pathParams.code.value = '930700';
                 /* eslint-enable quote-props */
                 /* eslint-enable quotes */
