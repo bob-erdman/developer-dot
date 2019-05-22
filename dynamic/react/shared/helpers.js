@@ -77,7 +77,7 @@ const buildQueryString = (map = {}) => {
     return queryString ? `?${queryString}` : '';
 };
 
-/* ******* YONOTE: FILL SAMPLE DATA AND RESET API CONSOLE DATA HELPERS ******* */
+/* ******* FILL SAMPLE DATA AND RESET API CONSOLE DATA HELPERS ******* */
 const fillOrRemoveRequestParamSampleData = (params, remove) => {
     if (remove) {
         return Object.keys(params).reduce((accum, pName) => {
@@ -97,7 +97,7 @@ const fillOrRemoveRequestParamSampleData = (params, remove) => {
     }, {});
 };
 
-// YONOTE: Generates fills sample data in postBody given Post Body's schema
+// Generates fills sample data in postBody given Post Body's schema
 const fillPostBodySampleData = (body, showExcludedPostBodyFields) => {
     if (body === undefined || (body.isExcluded && !showExcludedPostBodyFields)) {
         return undefined;

@@ -143,12 +143,10 @@ export default (state, action) => {
         newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
         newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.productionPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.productionPath) + (newState.qsPath || '');
-        console.log('query NEW STATE', newState)
         break;
     case actionTypes.PATH_PARAM_CHANGED:
         newState.pathParams[action.paramName].value = action.newValue;
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
-        console.log('param NEW STATE', newState)
         newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.productionPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.productionPath) + (newState.qsPath || '');
         break;
     case actionTypes.POST_BODY_CHANGED:

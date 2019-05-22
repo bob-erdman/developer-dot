@@ -113,7 +113,6 @@ const ConsoleLiveData = ({action, consoleLoading, endpoint, onRequestChanged, on
                     </span> : null
                 }
             </h5>
-                {/* YONOTE: path is here */}
                 <div className={'code-snippet-plaintext'}>{path}</div>
                 <h5 className={'console-output-header'}>{'Method'}</h5>
                 <div className={'code-snippet-plaintext'}>{action.toUpperCase()}</div>

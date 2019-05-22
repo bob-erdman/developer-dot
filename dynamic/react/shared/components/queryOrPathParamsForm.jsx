@@ -20,7 +20,6 @@ const QueryOrPathParamsForm = ({endpoint, paramType, params, onInputChange, onSu
         }>
             <h4 className={'api-console-section-header'}>{paramType === PARAM_TYPES.QUERY_STRING ? 'Query String' : 'Path Parameters'}</h4>
             {Object.keys(params).map((key, i) => {
-                // YONOTE: need to put update func here somewhere
                 return (
                     <div className={'form-group'} key={i}>
                         <label className={'api-label-text'} htmlFor={`${endpoint.id}-qs-${i}`}>{key}</label>
