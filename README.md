@@ -18,7 +18,7 @@ then `npm run docker-run` to run the application on port 4000 and listen for any
 
 # How To Get Started with Avalaras Developer Blog
 
-To run the Avalara developer site locally requires the following software:
+To run the Avalara developer site locally requires the following software: 
 
 * [Ruby](https://www.ruby-lang.org/en/downloads/)  ( also available from [RubyInstaller](https://rubyinstaller.org/downloads/) )
 * [RubyGems](https://rubygems.org/pages/download)
