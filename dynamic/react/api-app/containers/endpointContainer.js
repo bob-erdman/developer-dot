@@ -43,11 +43,12 @@ const mapDispatchToProps = (dispatch) => {
                         postBody: endpoint.postBody || {}
                     });
                 } else {
+                    //YONOTE: this will update/fill the URL 
                     const url = (endpoint.pathParams ? replaceStringPlaceholders(endpoint.path, reduceParamsToKeyValuePair(endpoint.pathParams)) : endpoint.path) + (endpoint.qsPath || '');
                     const postBody = endpoint.postBody || null;
-
                     apiRequest = submitApiRequest.bind(null, url, endpoint.action, postBody, userProfile);
                 }
+
                 // Show Animation here until promise or isLoading comes back or w/e
                 dispatch(actions.consoleLoadingAnimation(endpoint.id));
 
@@ -70,6 +71,7 @@ const mapDispatchToProps = (dispatch) => {
         onResetConsole: (endpointId) => {
             dispatch(actions.resetConsole(endpointId));
         },
+        // YONOTE: param change functions
         onQueryParamChanged: (newValue, paramName, endpointId) => {
             dispatch(actions.queryParamChanged(newValue, paramName, endpointId));
         },

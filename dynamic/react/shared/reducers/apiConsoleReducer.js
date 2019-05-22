@@ -1,6 +1,6 @@
 import queryStringReducer from './queryStringReducer';
 import actionTypes from '../../shared/actionTypes';
-import {buildQueryString, reduceParamsToKeyValuePair, buildCurl, fillOrRemoveSampleData, buildInitialPostBodyData} from '../helpers';
+import {buildQueryString, reduceParamsToKeyValuePair, buildCurl, fillOrRemoveSampleData, buildInitialPostBodyData, replaceStringPlaceholders} from '../helpers';
 
 // Method traverses a `requestSchema` endpoint property by colon-separated name and returns the
 // innermost property described by the propertyPath
@@ -142,10 +142,14 @@ export default (state, action) => {
         newState = {...newState, queryString: queryStringReducer(newState.queryString, action)};
         newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
+        newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.productionPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.productionPath) + (newState.qsPath || '');
+        console.log('query NEW STATE', newState)
         break;
     case actionTypes.PATH_PARAM_CHANGED:
         newState.pathParams[action.paramName].value = action.newValue;
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
+        console.log('param NEW STATE', newState)
+        newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.productionPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.productionPath) + (newState.qsPath || '');
         break;
     case actionTypes.POST_BODY_CHANGED:
         // If any changed PostBodyForm input was an array item, need to access its `items`

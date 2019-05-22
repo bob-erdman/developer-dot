@@ -12,7 +12,7 @@ const ConsoleInputForm = ({endpoint, onFillConsoleSampleData, onSubmitConsoleReq
             <div>
                 <h3 style={{display: 'inline-block'}}>{'Input'}</h3>
                 {hasExampleData('QUERY_STRING', endpoint.queryString) || hasExampleData('POST_BODY', endpoint.requestSchema) || hasExampleData('PATH_PARAM', endpoint.pathParams) ?
-                // NOTE: sample data button
+                // YONOTE: sample data button
                 <span
                     className='m-l-1 clickable hdr-btn-adj-text fill-sample-data'
                     onClick={onFillConsoleSampleData.bind(null, endpoint.id)}
@@ -41,6 +41,7 @@ const ConsoleInputForm = ({endpoint, onFillConsoleSampleData, onSubmitConsoleReq
                     </span>
             </div>
             <div className={'consoleScroll'}>
+                {/* YONOTE: path paramas change */}
                 {endpoint.pathParams ? <QueryOrPathParamsForm endpoint={endpoint} onInputChange={onPathParamChanged} onSubmitConsoleRequest={onSubmitConsoleRequest} paramType={'PATH'} params={endpoint.pathParams}/> : null}
                 {endpoint.queryString ? <QueryOrPathParamsForm endpoint={endpoint} onInputChange={onQueryParamChanged} onSubmitConsoleRequest={onSubmitConsoleRequest} paramType={'QUERY_STRING'} params={endpoint.queryString}/> : null}
                 {endpoint.requestSchema ? <PostBodyForm endpoint={endpoint} name={endpoint.name.toLowerCase() + '_' + endpoint.action} onAddItemToPostbodyCollection={onAddItemToPostbodyCollection} onPostBodyInputChanged={onPostBodyInputChanged} onRemovePostbodyCollectionItem={onRemovePostbodyCollectionItem} onSubmitConsoleRequest={onSubmitConsoleRequest} onToggleShowExcludedPostBodyProps={onToggleShowExcludedPostBodyProps} /> : null}
