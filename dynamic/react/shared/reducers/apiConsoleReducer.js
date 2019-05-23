@@ -142,12 +142,12 @@ export default (state, action) => {
         newState = {...newState, queryString: queryStringReducer(newState.queryString, action)};
         newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
-        newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.productionPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.productionPath) + (newState.qsPath || '');
+        newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.sandboxPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.sandboxPath) + (newState.qsPath || '');
         break;
     case actionTypes.PATH_PARAM_CHANGED:
         newState.pathParams[action.paramName].value = action.newValue;
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
-        newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.productionPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.productionPath) + (newState.qsPath || '');
+        newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.sandboxPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.sandboxPath) + (newState.qsPath || '');
         break;
     case actionTypes.POST_BODY_CHANGED:
         // If any changed PostBodyForm input was an array item, need to access its `items`
