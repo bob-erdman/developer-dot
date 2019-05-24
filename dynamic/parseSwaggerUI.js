@@ -97,7 +97,7 @@ export default (api, apiWithRefs, rootPath) => {
 
     const scheme = api.schemes && api.schemes[0] ? api.schemes[0] : 'http';
     let root = rootPath;
-    
+
     if (scheme && api.host && api.basePath) {
         root = scheme + '://' + api.host + (api.basePath !== '/' ? api.basePath : '');
     } else if (api.servers) {
@@ -153,7 +153,7 @@ export default (api, apiWithRefs, rootPath) => {
 
                 if (api['x-production-host']) {
                     apiMethod.productionPath = (scheme && api.basePath) ? scheme + '://' + api['x-production-host'] + (api.basePath !== '/' ? api.basePath : '') + k : rootPath + k;
-                } 
+                }
                 // else if (api.servers) {
                 //     // if yaml in OA3 format, find index of prod URL
                 //     const index = api.servers.findIndex(server => {

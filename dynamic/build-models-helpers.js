@@ -43,7 +43,6 @@ function addMethodToAllDefs(endpoint, defs, useTags) {
 
     // If this API groups calls under tags (for now just v2), try appending
     // first tag name to method name
-    // TODO: Figure out why we have some undefined operationIds (this is a swagger violation smh)
     let methodName = endpoint.operationId ? endpoint.operationId.replace(/\s/g, '') : undefined;
 
     if (useTags && endpoint.tags && endpoint.tags.length) {
