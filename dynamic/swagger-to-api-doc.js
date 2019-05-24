@@ -170,16 +170,14 @@ export default (fileName, apiName, apiPath, product) => {
                     /* eslint-enable no-console */
                     throw new Error('Error parsing swaggerDoc');
                 }
-                const buildHtml = (tagName, initialState, disqus) => {                    
+                const buildHtml = (tagName, initialState, disqus) => {    
                     const endpoint = initialState.apiEndpoints.length ? initialState.apiEndpoints[0] : null;
-
                     const blog = buildBlogMap(endpoint);
 
                     const endpointLinks = endpoint ?
                         `["#${endpoint.operationId.replace(/\s/g, '')}", "${endpoint.name}"],\n` : '';
 
                     initialState.tagName = tagName;
-
 /* eslint-disable quotes */
                     return (
                         `---
@@ -215,7 +213,7 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
 /* eslint-enable quotes */
 
                 // Save our root documentation page, with Postman Collection download link,
-                // API name/description, and links to models and methods documentation!                
+                // API name/description, and links to models and methods documentation! 
                 saveStaticPage(null, apiPath, buildHtml, {...staticState, apiEndpoints: []}, {apiName, product}, false);
 
                 const tagMap = {...staticState.tagMap};
