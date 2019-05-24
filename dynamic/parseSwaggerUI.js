@@ -96,7 +96,18 @@ export default (api, apiWithRefs, rootPath) => {
     // Build base URL path (e.g. http://localhost:8082/v3)
 
     const scheme = api.schemes && api.schemes[0] ? api.schemes[0] : 'http';
-    const root = (scheme && api.host && api.basePath) ? scheme + '://' + api.host + (api.basePath !== '/' ? api.basePath : '') : rootPath;
+    let root = rootPath;
+    
+    if (scheme && api.host && api.basePath) {
+        root = scheme + '://' + api.host + (api.basePath !== '/' ? api.basePath : '');
+    } else if (api.servers) {
+        // if yaml in OA3 format, find index of sandbox URL
+        // const index = api.servers.findIndex(server => {
+        //     return server.description && server.description === 'sandbox';
+        // });
+        root = api.servers[0].url;
+    }
+
     const apiProxy = api['x-api-proxy'] || null;
 
     const swaggerData = {
@@ -141,7 +152,15 @@ export default (api, apiWithRefs, rootPath) => {
 
                 if (api['x-production-host']) {
                     apiMethod.productionPath = (scheme && api.basePath) ? scheme + '://' + api['x-production-host'] + (api.basePath !== '/' ? api.basePath : '') + k : rootPath + k;
-                }
+                } 
+                // else if (api.servers) {
+                //     // if yaml in OA3 format, find index of prod URL
+                //     const index = api.servers.findIndex(server => {
+                //         return server.description && server.description === 'production';
+                //     });
+
+                //     apiMethod.productionPath = index > -1 ? api.servers[index].url + k : '';
+                // }
 
                 // Update `tagMap` for this endpoint
                 if (swaggerData.tagMap && endpoint[action].tags && endpoint[action].tags.length) {

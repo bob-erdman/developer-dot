@@ -9,9 +9,7 @@ info:
     name: Avalara License
     url: http://www.avalara.com
 servers:
-  - url: https://api-s.wise24.com/
-    description: sandbox
-  - url: https://api.wise24.com/
+  - url: https://api.wise24.com
     description: production
 
 paths:
