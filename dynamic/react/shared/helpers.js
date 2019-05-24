@@ -96,6 +96,7 @@ const fillOrRemoveRequestParamSampleData = (params, remove) => {
         return newParams;
     }, {});
 };
+
 // Generates fills sample data in postBody given Post Body's schema
 const fillPostBodySampleData = (body, showExcludedPostBodyFields) => {
     if (body === undefined || (body.isExcluded && !showExcludedPostBodyFields)) {
