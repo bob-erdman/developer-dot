@@ -141,7 +141,7 @@ State taxes are automatically updated based on the Federal override.  The State 
 </ul>
 
  <div class="panel-group">
-  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response JSON</a>
   <div id="collapse1" class="panel-collapse collapse">
     <div class="panel-body">
 {% highlight json %}
