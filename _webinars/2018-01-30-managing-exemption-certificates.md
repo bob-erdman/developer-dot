@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/QdNUWwSZjoQ
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Are you a developer who needs to know how to manage exemption certificates in your tax compliance process? Avalara makes it easy with AvaTax Exemptions! Our new integrated API provides full support for information about customers, certificates, exposure zones and more.

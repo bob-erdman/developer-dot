@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/XKTT5fWlhPk
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 In the latest installment of the weekly Office Hours with AvaTax, Charlie Morrisette from Avalara's Support team will discuss methods for building the best user interface for your Connector, and how to ensure your Connector can handle unreliable Internet connections.

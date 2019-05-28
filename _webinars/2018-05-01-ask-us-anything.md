@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 youtube: https://www.youtube.com/embed/sM1xpalK3pk
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Office Hours with AvaTax – Using the TaxContent API

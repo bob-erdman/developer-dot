@@ -55,7 +55,7 @@ const hasExcludedProperties = (postBodySchema) => {
 // Function that converts Map<string, {example, fieldType, required, value}>
 // to Map<string, string>. Recipes only store key-value string pairs for their path params and query strings
 // so use this when dealing with Get Started or Api Reference apps to reduce to that
-const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).reduce((accum, k) => ({...accum, [k]: params[k].value}), {});
+const reduceParamsToKeyValuePair = (params = {}) => Object.keys(params).filter(k => params[k].value !== '').reduce((accum, k) => ({...accum, [k]: params[k].value}), {});
 
 /* (String, HashMap<String, String>) -> String
  * Replaces {}-delimited placeholder values in a string with their equiv values
@@ -96,6 +96,7 @@ const fillOrRemoveRequestParamSampleData = (params, remove) => {
         return newParams;
     }, {});
 };
+
 // Generates fills sample data in postBody given Post Body's schema
 const fillPostBodySampleData = (body, showExcludedPostBodyFields) => {
     if (body === undefined || (body.isExcluded && !showExcludedPostBodyFields)) {

@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 linkurl: https://offers.avalara.com/tarrifandcrossbordertaxes/?CampaignID=7010b00000193Qr
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 Monthly Developer Webinar: What Devs Need to Know and Why They Should Care About Tariffs and Cross-Border Taxes

@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 linkurl: https://www.meetup.com/seattle-api/events/254623048/?rv=ea1_v2&_xtd=gatlbWFpbF9jbGlja9oAJDVkZTdhZGNiLWMzOTctNDA1Ni04MDE5LThhNGY4OWY5OTE3Mg
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 In addition to webinars, the AvaTax API team will be presenting in-person at live events during October.

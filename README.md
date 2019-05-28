@@ -16,9 +16,9 @@ To develop on windows:
 * Once you have Docker installed, `git clone https://github.com/<YOUR_FORK>/developer-dot.git` to clone the repo, then open a command line in the root of the developer-dot directory. Run `npm run docker-build` to build the docker container, and
 then `npm run docker-run` to run the application on port 4000 and listen for any file changes.
 
-# How To Get Started with Avalaras Developer Blog
+# How To Get Started with Avalaras Developer Blog 
 
-To run the Avalara developer site locally requires the following software:
+To run the Avalara developer site locally requires the following software: 
 
 * [Ruby](https://www.ruby-lang.org/en/downloads/)  ( also available from [RubyInstaller](https://rubyinstaller.org/downloads/) )
 * [RubyGems](https://rubygems.org/pages/download)

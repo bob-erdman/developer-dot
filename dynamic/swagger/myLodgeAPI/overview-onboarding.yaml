@@ -1,0 +1,316 @@
+swagger: '2.0'
+info:
+  version: v1.2
+  title: MyLodgeTax API - Overview and Onboarding
+  termsOfService: 'https://mylodgetax.avalara.com/legal'
+  description: "Welcome to the MyLodgeTax Public API page, supporting the Avalara MyLodgeTax
+    product, which provides sales and lodging tax compliance for short-term
+    property rentals.  Find out more about the MyLodgeTax product here:
+    http://www.mylodgetax.com
+
+
+    The API defined here facilitates data exchange between Avalara MyLodgeTax
+    and third-party applications.  Contact MyLodgeTax for information on
+    becoming a MyLodgeTax partner:
+    https://www.avalara.com/mylodgetax/en/contact-us.html
+
+    # Authorization
+
+    The Authorization header must be provided to use any of the endpoints
+    defined in this document.  This header must be in the following format:
+
+
+    `Authorization: Bearer [apiKey]`
+
+
+    where
+
+    * _apiKey_ is a valid, active API key issued by the Avalara MyLodgeTax
+    Partner Manager application
+
+    # Functional Overview
+
+    In order to exchange tax data with the Avalara MyLodgeTax system, the caller
+    must initiate the onboarding process of a new customer.  This requires a
+    POST to the _partnerleads_ endpoint, with necessary information about the
+    customer and any _locations_ (rental properties) they wish to be managed by
+    Avalara MyLodgeTax.  On successful creation of the partnerLeads resource, a
+    link to a prefilled shopping cart page will be returned in the response. 
+    Upon navigating to this link via web browser, the customer will be presented
+    with a prefilled shopping cart that includes the information previously
+    posted to the _partnerleads_ endpoint.  To complete the signup process, the
+    customer will need to supply minimal information on this web page, including
+    a new account password and payment information for their new Avalara
+    MyLodgeTax account.
+
+
+    To determine whether a partnerLead has created an account using the
+    partnerLead link, along with the setup status of all _locations_ passed in
+    the body of the partnerleads POST, the calling system should periodically
+    examine the _Locations_ resource.  Customers and locations are referenced
+    via ids passed in the partnerleads request.  A **200** response indicates
+    that the customer has created a new Avalara MyLodgeTax account, while a
+    **404** response means the account has not yet been created by the
+    customer.  Further information can be read from the locations response body
+    to determine the setup status of each location provided in the partnerleads
+    request.
+
+
+    After a tax rate has been assigned to a location (location has a status of
+    _LicenseSetup_ or _Active_), tax rate information can be read for the
+    location.  High-level tax rate information for locations can be accessed via
+    the _ownertaxsummaries_ resource, while detailed tax rate information can be
+    accessed via the _ownertaxdetails_ resource.
+
+    ## Onboarding
+
+    Onboarding functionality is initiated via the _partnerleads_ endpoint. This
+    endpoint facilitates quick and easy signup of potential MyLodgeTax customers
+    (leads) by providing a link to a prefilled shopping cart page where the user
+    can complete the signup process.  Partners referring leads that complete
+    signup will automatically receive access to pull and push data from/to the
+    customer's Avalara MyLodgeTax account.  Partners are encouraged to present
+    this link to their customers after they have opted in to share their
+    information with Avalara MyLodgeTax via this endpoint.  Avalara MyLodgeTax
+    will also contact the customer via marketing emails and will include this
+    link for convenient signup.
+
+    ## API Rate Limits
+
+    All endpoints will be rate limited, allowing each partner to make up to 500
+    requests per minute across all endpoints."   
+host: mylodgetaxapi-sbx.avalara.net
+basePath: /
+schemes:
+  - https
+paths:
+  /v1/partnerleads:
+    post:
+      operationId: postPartnerLeads
+      tags:
+        - Onboarding
+      summary: Creates a new partner lead with the given lead information and returns a
+        link where the lead can complete their Avalara MyLodgeTax account
+        creation.
+      description: The partnerleads endpoint receives information about the potential
+        customer and one or more locations, and securely stores information
+        received in this request.  **Unique** customer and location identifiers
+        must be provided by the calling system in the request body. For leads
+        with an email address not already associated with an account in the
+        Avalara MyLodgeTax system, the response will contain a hyperlink that
+        uniquely identifies the given request.  The hyperlink can be used by the
+        lead or calling application to display a webpage where the user can
+        complete the Avalara MyLodgeTax account creation process.
+
+        For leads that already exist in the Avalara MyLodgeTax system (based on
+        email address), a link will be returned that will direct the existing
+        customer to create additional properties in the Avalara MyLodgeTax
+        application.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          schema:
+            $ref: '#/definitions/PostPartnerLeadsRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PostPartnerLeadsResponse'
+          examples: "Register link for customer to complete signup: 
+              {
+                \"registerLink\": \"https://cart.mylodgetax.avalara.com/home/partners/17fddba083a755760503fe938ce0z803f98ced4d5b9253da952adc90ec550ca4/\"
+              }"
+        '400':
+          description: 'Bad request: check response body message for details'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '409':
+          description: Username (email) already associated with an Avalara MyLodgeTax
+            account, or locationId for calling partner has already been created.
+          schema:
+            $ref: '#/definitions/PostPartnerLeadsResponseErrorDataExists'
+          examples:
+            "Account exists: 
+              {
+                \"message\": \"Account already exists\",
+                \"addPropertyLink\" : \"https://app.mylodgetax.avalara.com/properties/add\"
+              }
+            Partner locationId exists:
+              {
+                \"message\": \"Location mapping already exists for partner\"
+              }"
+        '422':
+          description: "Invalid message body contents: check response body message for
+            details"
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []
+  '/v1/country/{country}/stateprovinces':
+    get:
+      operationId: getStateProvinces
+      tags:
+        - Onboarding
+      summary: Returns a collection of supported states and provinces for the given
+        country
+      parameters:
+        - name: country
+          description: Country for which to return collection of supported states and
+            provinces.  United States ('us') is the only country supported at
+            this time.
+          in: path
+          required: true
+          type: string
+          enum:
+            - us
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetStateProvincesResponse'
+          examples:
+            application/json:
+              stateProvinces:
+                - name: Alabama
+                  shortName: AL
+                - name: Alaska
+                  shortName: AK
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Country code not supported
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []
+definitions:
+  PostPartnerLeadsRequest:
+    type: object
+    description: Request body definition for call to POST /v1/partnerleads
+    properties:
+      customer:
+        $ref: '#/definitions/Customer'
+      locations:
+        $ref: '#/definitions/ArrayOfOnboardingLocations'
+  ErrorResponse:
+    type: object
+    description: Generic response message containing error detail
+    properties:
+      message:
+        type: string
+  PostPartnerLeadsResponse:
+    type: object
+    description: Representation of a successful response from a POST /v1/partnerleads operation
+    properties:
+      registerLink:
+        type: string
+  PostPartnerLeadsResponseErrorDataExists:
+    type: object
+    description: Error response returned when customer or location with given id already exists.
+    properties:
+      message:
+        type: string
+      addPropertyLink:
+        type: string
+        description: Link to Avalara MyLodgeTax application page where user can create additional properties in existing account.
+  GetStateProvincesResponse:
+    type: object
+    description: Representation of a successful response from a GET /v1/countries/us/stateprovinces
+    properties:
+      stateProvinces:
+        $ref: '#/definitions/ArrayOfStateProvinces'
+  Customer:
+    type: object
+    description: Represents a customer or potential customer.  When used as input, all fields are required.
+    properties:
+      customerId:
+        type: string
+        description: Unique, partner-specific identifier of the customer as defined in the calling system
+      firstName:
+        type: string
+        description: Customer's first name (given name)
+      lastName:
+        type: string
+        description: Customer's last name (surname)
+      email:
+        type: string
+        description: Customer's email address; will be used for MyLodge account username when signup is completed.
+      phoneNumber:
+        type: string
+        description: Customer's phone number
+      billingAddress:
+        $ref: '#/definitions/Address'
+  Address:
+    description: Represents a physical address.  When used as input, all fields are required -except- addressLine2
+    type: object
+    properties:
+      addressLine1:
+        type: string
+        description: First line of a physical address
+      addressLine2:
+        type: string
+        description: Second line of a physical address
+      city:
+        type: string
+        description: City of a physical address
+      state:
+        type: string
+        description: State or province of a physical address
+      country:
+        type: string
+        description: Country of a physical address
+      postalCode:
+        type: string
+        description: Postal code of a physical address
+  ArrayOfOnboardingLocations:
+    type: array
+    description: Array of Location objects
+    items:
+      $ref: '#/definitions/OnboardingLocation'
+  OnboardingLocation:
+    type: object
+    description: "Represents a location being onboarded. When used as input, the address for location must currently be in the United States (country: us), and the
+      stateProvince of the address must be one that matches list returned from /v1/countries/us/stateprovinces response"
+    properties:
+      locationId:
+        type: string
+        description: Unique, partner-specific identifier of the location as defined in the calling system
+      nickname:
+        type: string
+        description: Short name of the location
+      address:
+        $ref: '#/definitions/Address'
+  ArrayOfStateProvinces:
+    type: array
+    description: Array of StateProvince objects
+    items:
+      $ref: '#/definitions/StateProvince'
+  StateProvince:
+    type: object
+    description: Representation of a state or province within a country
+    properties:
+      name:
+        type: string
+      shortName:
+        type: string
+securityDefinitions:
+  authorizer:
+    type: apiKey
+    name: Authorization
+    in: header

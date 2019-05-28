@@ -179,6 +179,7 @@ export default (fileName, apiName, apiPath, product) => {
                         `["#${endpoint.operationId.replace(/\s/g, '')}", "${endpoint.name}"],\n` : '';
 
                     initialState.tagName = tagName;
+
 /* eslint-disable quotes */
                     return (
                         `---

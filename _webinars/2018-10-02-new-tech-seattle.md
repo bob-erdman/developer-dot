@@ -7,6 +7,7 @@ comments: true
 product: avatax
 doctype: webinar
 linkurl: https://www.newtechnorthwest.com/new-tech-seattle-october-2-2018/
+redirect_to: https://www.avalara.com/us/en/learn/webinars.html#developerwebinars
 ---
 
 In addition to webinars, the AvaTax API team will be presenting in-person at live events during October.

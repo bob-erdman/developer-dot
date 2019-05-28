@@ -1,0 +1,86 @@
+swagger: '2.0'
+info:
+  version: v1.2
+  title: MyLodgeTax API - Customer Information
+  termsOfService: 'https://mylodgetax.avalara.com/legal'
+  description: "Customer information functionality is initiated via the _getCustomerLocations_ endpoint.
+    This endpoint facilitates quick and easy retrieval of MyLodgeTax customer locations."
+host: mylodgetaxapi-sbx.avalara.net
+basePath: /
+schemes:
+  - https
+definitions:
+  ErrorResponse:
+    type: object
+    description: Generic response message containing error detail
+    properties:
+      message:
+        type: string
+  GetCustomerLocationsResponse:
+    type: object
+    description: Representation of a successful response from a GET /v1/customers/&#123;customerId&#125;/locations
+    properties:
+      locations:
+        $ref: '#/definitions/ArrayOfLocations'
+  ArrayOfLocations:
+    type: array
+    description: Array of Location objects
+    items:
+      $ref: '#/definitions/Location'
+  Location:
+    type: object
+    description: Representation of a location
+    properties:
+      name:
+        type: string
+      id:
+        type: string
+      status:
+        type: string
+        enum:
+          - TaxSetup
+          - LicenseSetup
+          - Active
+          - Cancelled
+paths:
+  '/v1/customers/{customerid}/locations':
+    get:
+      operationId: getCustomerLocations
+      tags:
+        - Customer Information
+      summary: Provides access to location information for a given customer.
+      description: The locations endpoint returns status information about all locations
+        defined for a customer.
+      consumes:
+        - application/json
+      parameters:
+        - name: customerid
+          in: path
+          required: true
+          type: string
+          description: Unique, partner-specific customer identifier assigned when posting a
+            partnerLead (_customerId_).
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCustomerLocationsResponse'
+        '400':
+          description: 'Bad request: check response body message for details'
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Customer Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '429':
+          description: Exceeded API Rate Limits
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      security:
+        - authorizer: []
+  
