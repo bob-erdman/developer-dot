@@ -13,12 +13,10 @@ doctype: overview
 </div>
 <div class="row border-top padding-top padding-bottom">
   <div class="col-md-8 col-md-offset-2 text-center">
-    <h1 class="h1p " class="text-left">How does the API work?</h1>
+    <h2 class="text-left">How does the API work?</h2>
     <h4 class="text-left">
-      The Avalara MyLodgeTax product provides sales and lodging tax compliance for short-term property rentals. The API facilitates data exchange between Avalara MyLodgeTax and third-party applications.
+      This API provides the user with the capability to submit products for HS Classification and retrieve the HS Codes.
     </h4>
-     <h2 class="text-left">How does the Avalara MyLodgeTax solution benefit businesses?</h2>
-     <h4 class="text-left">MyLodgeTax prepares, files, and remits your lodging tax returns accurately every time - guaranteed. <a href="https://www.avalara.com/mylodgetax/en/index.html" target="_blank">Learn more</a></h4>
   </div>
 </div>
 <div class="row border-top padding-top padding-bottom">
@@ -35,12 +33,12 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <ul class="pipe">
-                    <li><a target="_blank" href="/api-reference/myLodgeAPI/overview-onboarding/">Get started!</a></li>
+                    <li><a target="_blank" href="/api-reference/item-classification/v2/">Get started!</a></li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <p class="text-left">
-                  Are you ready to dive in? Do you want a more comprehensive overview of this powerful API? Read over the easy-to-follow documentation! 
+                  Are you ready to get started? Are you looking for a more in-depth look at the API's endpoints and capabilities? Read over the easy-to-follow documentation! 
                 </p>
             </div>
         </div>
@@ -54,7 +52,7 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-1 padding-top">
                 <ul class="pipe">
-                    <li><a href="https://www.avalara.com/mylodgetax/en/contact-us.html" target="_blank">Contact us!</a></li>
+                    <li><a href="https://www.avalara.com/us/en/get-started.html" target="_blank">Contact us!</a></li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-1 padding-top">
