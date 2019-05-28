@@ -8,15 +8,17 @@ doctype: overview
 <div class="row bg-map padding-bottom">
   <div class="col-md-8 col-md-offset-2 text-center ">
     <h1 class="h1p">Item Classification API</h1>
-    <i class="glyphicon glyphicon-home" style="font-size: 72px"></i>
+    <img src="/public/images/devdot/item-classification.png" height="75" style="filter: grayscale(100%);" alt="item-classification" />
   </div>
 </div>
 <div class="row border-top padding-top padding-bottom">
   <div class="col-md-8 col-md-offset-2 text-center">
-    <h2 class="text-left">How does the API work?</h2>
+    <h1 class="text-left">How does the API work?</h1>
     <h4 class="text-left">
       This API provides the user with the capability to submit products for HS Classification and retrieve the HS Codes.
     </h4>
+    <h2 class="text-left">How does the Avalara MyLodgeTax solution benefit businesses?</h2>
+     <h4 class="text-left">With automation from Avalara, you can conquer the complexity of assigning products Harmonized System codes (also known as HS codes or tariff codes) — making it easier to comply with customs regulations anywhere in the world. <a href="https://www.avalara.com/us/en/products/global-commerce-offerings/item-classification.html" target="_blank">Learn more</a></h4>
   </div>
 </div>
 <div class="row border-top padding-top padding-bottom">
