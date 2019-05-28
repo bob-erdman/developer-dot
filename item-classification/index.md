@@ -7,7 +7,7 @@ doctype: overview
 ---
 <div class="row bg-map padding-bottom">
   <div class="col-md-8 col-md-offset-2 text-center ">
-    <h1 class="h1p">MyLodgeTax</h1>
+    <h1 class="h1p">Item Classification API</h1>
     <i class="glyphicon glyphicon-home" style="font-size: 72px"></i>
   </div>
 </div>
