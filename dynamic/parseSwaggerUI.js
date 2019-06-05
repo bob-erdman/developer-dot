@@ -12,7 +12,6 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
     }
 
     if (schema.hasOwnProperty('allOf')) {
-
         return schema.allOf.map((chunk) => (buildSchema(chunk))).reduce((accum, chunk) => {
             return Object.assign({}, accum, chunk);
         }, {});
@@ -20,7 +19,6 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
 
     if ((schema.type && schema.type === 'object' || schema.type === undefined) &&
         (schema !== parentSchema)) {
-
         const nestedSchemaProps = Object.keys(schema.properties).map((nestedPropName) => ({
             [nestedPropName]: buildSchema(schema.properties[nestedPropName], schema.required, schema['x-excludedProperties'], nestedPropName, schema)
         }));
@@ -30,7 +28,6 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
 
     if ((schema.type && schema.type === 'array') &&
         (schema.items !== parentSchema)) {
-
         const arraySchema = schema.items ? buildSchema(schema.items, schema.items.required, schema.items['x-excludedProperties']) : {};
 
         // items holds the schema definition of objects in our array, and value holds the actual objects of said schema...
@@ -198,11 +195,9 @@ export default (api, apiWithRefs, rootPath) => {
                 // console.log(`*** ${JSON.stringify(endpoint[action].responses)}`);
 
                 if (endpoint[action].responses[200] && endpoint[action].responses[200].schema) {
-
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[200].schema);
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[200];
                 } else if (endpoint[action].responses[204] && endpoint[action].responses[204].schema) {
-
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[204].schema);
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[204];
                 }
