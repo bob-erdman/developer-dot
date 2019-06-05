@@ -9,7 +9,7 @@ info:
     name: Avalara License
     url: http://www.avalara.com
 servers:
-  - url: https://api.wise24.com
+  - url: https://ftp.classification.avalara.net/
     description: production
 
 paths:

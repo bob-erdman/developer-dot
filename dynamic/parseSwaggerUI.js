@@ -12,6 +12,7 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
     }
 
     if (schema.hasOwnProperty('allOf')) {
+
         return schema.allOf.map((chunk) => (buildSchema(chunk))).reduce((accum, chunk) => {
             return Object.assign({}, accum, chunk);
         }, {});
@@ -19,6 +20,7 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
 
     if ((schema.type && schema.type === 'object' || schema.type === undefined) &&
         (schema !== parentSchema)) {
+
         const nestedSchemaProps = Object.keys(schema.properties).map((nestedPropName) => ({
             [nestedPropName]: buildSchema(schema.properties[nestedPropName], schema.required, schema['x-excludedProperties'], nestedPropName, schema)
         }));
@@ -28,7 +30,8 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
 
     if ((schema.type && schema.type === 'array') &&
         (schema.items !== parentSchema)) {
-        const arraySchema = buildSchema(schema.items, schema.items.required, schema.items['x-excludedProperties']);
+
+        const arraySchema = schema.items ? buildSchema(schema.items, schema.items.required, schema.items['x-excludedProperties']) : {};
 
         // items holds the schema definition of objects in our array, and value holds the actual objects of said schema...
         return {fieldType: schema.type, required: required.includes(propName), isExcluded: excludedProperties.includes(propName), items: arraySchema};
@@ -101,10 +104,6 @@ export default (api, apiWithRefs, rootPath) => {
     if (scheme && api.host && api.basePath) {
         root = scheme + '://' + api.host + (api.basePath !== '/' ? api.basePath : '');
     } else if (api.servers) {
-        // if yaml in OA3 format, find index of sandbox URL
-        // const index = api.servers.findIndex(server => {
-        //     return server.description && server.description === 'sandbox';
-        // });
         root = api.servers[0].url;
     }
 
@@ -154,14 +153,6 @@ export default (api, apiWithRefs, rootPath) => {
                 if (api['x-production-host']) {
                     apiMethod.productionPath = (scheme && api.basePath) ? scheme + '://' + api['x-production-host'] + (api.basePath !== '/' ? api.basePath : '') + k : rootPath + k;
                 }
-                // else if (api.servers) {
-                //     // if yaml in OA3 format, find index of prod URL
-                //     const index = api.servers.findIndex(server => {
-                //         return server.description && server.description === 'production';
-                //     });
-
-                //     apiMethod.productionPath = index > -1 ? api.servers[index].url + k : '';
-                // }
 
                 // Update `tagMap` for this endpoint
                 if (swaggerData.tagMap && endpoint[action].tags && endpoint[action].tags.length) {
@@ -207,9 +198,11 @@ export default (api, apiWithRefs, rootPath) => {
                 // console.log(`*** ${JSON.stringify(endpoint[action].responses)}`);
 
                 if (endpoint[action].responses[200] && endpoint[action].responses[200].schema) {
+
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[200].schema);
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[200];
                 } else if (endpoint[action].responses[204] && endpoint[action].responses[204].schema) {
+
                     apiMethod.responseSchema = buildSchema(endpoint[action].responses[204].schema);
                     apiMethod.responseSchemaWithRefs = endpointWithRefs[action].responses[204];
                 }
