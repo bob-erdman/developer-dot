@@ -25222,7 +25222,7 @@
         "remoteCalls": {
           "description": "Reserved for Avalara internal usage.",
           "uniqueItems": false,
-          "type": "array",
+          "type": "array"
         }
       },
       "example": {
@@ -29899,7 +29899,7 @@
         "shipTos": {
           "description": "A list of ship-to customer records that are connected to this bill-to customer.\r\n            \r\nCustomer records represent businesses or individuals who can provide exemption certificates.  Some customers\r\nmay have certificates that are linked to their shipping address or their billing address.  To group these\r\ncustomer records together, you may link multiple bill-to and ship-to addresses together to represent a single\r\nentity that has multiple different addresses of different kinds.",
           "uniqueItems": false,
-          "type": "array",
+          "type": "array"
         }
       },
       "example": {
