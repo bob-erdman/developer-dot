@@ -28,7 +28,7 @@ const buildSchema = (schema, required = [], excludedProperties = [], propName = 
 
     if ((schema.type && schema.type === 'array') &&
         (schema.items !== parentSchema)) {
-        const arraySchema = buildSchema(schema.items, schema.items.required, schema.items['x-excludedProperties']);
+        const arraySchema = schema.items ? buildSchema(schema.items, schema.items.required, schema.items['x-excludedProperties']) : {};
 
         // items holds the schema definition of objects in our array, and value holds the actual objects of said schema...
         return {fieldType: schema.type, required: required.includes(propName), isExcluded: excludedProperties.includes(propName), items: arraySchema};
@@ -96,7 +96,14 @@ export default (api, apiWithRefs, rootPath) => {
     // Build base URL path (e.g. http://localhost:8082/v3)
 
     const scheme = api.schemes && api.schemes[0] ? api.schemes[0] : 'http';
-    const root = (scheme && api.host && api.basePath) ? scheme + '://' + api.host + (api.basePath !== '/' ? api.basePath : '') : rootPath;
+    let root = rootPath;
+
+    if (scheme && api.host && api.basePath) {
+        root = scheme + '://' + api.host + (api.basePath !== '/' ? api.basePath : '');
+    } else if (api.servers) {
+        root = api.servers[0].url;
+    }
+
     const apiProxy = api['x-api-proxy'] || null;
 
     const swaggerData = {

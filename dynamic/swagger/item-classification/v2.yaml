@@ -1,0 +1,530 @@
+openapi: "3.0.2"
+info:
+  description: This API provides the user with the capability to submit products for HS Classification and retrieve the HS Codes.
+  version: 1.0.0
+  title: Avalara - HS Classification - API
+  contact:
+    email: support@avalara.com
+  license:
+    name: Avalara License
+    url: http://www.avalara.com
+servers:
+  - url: https://ftp.classification.avalara.net/
+    description: production
+
+paths:
+  /xboauth2server/oauth/token:
+    post:
+      tags:
+        - GetAuthenticationToken
+      summary: Obtain an access token
+      description: Obtain an access token
+      operationId: GetAuthenticationToken
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Set to Basic `credentials`, where `credentials` is the base 64 encoding of the client id and secret with a `:` character between them.
+          schema:
+            $ref: '#/components/schemas/Authorization'
+        - name: Content-Type
+          in: header
+          required: true
+          description: Content type must be application/json
+          example: application/json
+          schema:
+            $ref: '#/components/schemas/ContentType'
+      responses:
+        '200':
+          description: Successful request and will return a token to access the API.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OAuthResponse'
+
+  '/api/v2/companies/{companyId}/classifications/hs':
+    post:
+      tags:
+        - CreateHSClassificationRequest
+      summary: Create a request to HS classify an item for a certain country of destination.
+      description: Create a request to HS classify an item for a certain country of destination. Each product (item) must be uniquely identified by itemCode for a particular company. It’s recommended to use the SKU number.
+      operationId: CreateHSClassificationRequest
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          description: The ID of the company that owns this item.
+          schema:
+            $ref: '#/components/schemas/companyId'
+        - name: Authorization
+          in: header
+          required: true
+          description: Set to `Bearer <token>`. <token> being the authentication token.
+          schema:
+            $ref: '#/components/schemas/AccessToken'
+        - name: Content-Type
+          in: header
+          required: true
+          description: Content type must be application/json
+          schema:
+            $ref: '#/components/schemas/ContentType'
+      requestBody:
+        description: The details for the item which requires HS classification.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HSClassificationModel'
+      responses:
+        "201":
+          description: Successful create HS classification request response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HSClassificationModel'
+        "400":
+          description: Bad request. Can be caused by a malformed JSON request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+        "401":
+          description: Authentication required. Can be caused by a missing or expired token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: AuthorizationException
+                  target: HttpRequest
+                  details:
+                    -
+                      code: AuthorizationException
+                      number: 31
+                      message: Authorization failed.
+                      description: This service or operation is not authorized for this account or user.
+                      helpLink: http://developer.avalara.com/avatax/errors/AuthorizationException
+                      severity: Exception
+        "415":
+          description: Unsupported Media type. The `Content-type` header has to be `application/json`.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+        "422":
+          description: Request cannot be processed. The validation of the parameters provided in the request body failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: MaxStringLengthError
+                  target: HttpRequest
+                  details:
+                    -
+                      code: MaxStringLengthError
+                      number: 4
+                      message: XXXXXXX not found.
+                      description: The Classification Request with id 'XXXXXXX' was not found.
+                      helpLink: http://developer.avalara.com/avatax/errors/EntityNotFoundError
+                      severity: Error
+
+  '/api/v2/companies/{companyId}/classifications/hs/{hsClassificationId}':
+    put:
+      tags:
+        - UpdateHSClassificationRequest
+      summary: Update the details for an existing HS classification request.
+      description: Update the details for an existing HS classification request.
+      operationId: UpdateHSClassificationRequest
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          description: The ID of the company that owns this item.
+          schema:
+            $ref: '#/components/schemas/companyId'
+        - name: hsClassificationId
+          in: path
+          required: true
+          description: The hsClassificationId used to identify a request was returned in the response of the CreateHSClassificationRequest method.
+          schema:
+            $ref: '#/components/schemas/hsClassificationId'
+        - name: Authorization
+          in: header
+          required: true
+          description: Set to `Bearer <token>`. <token> being the authentication token.
+          schema:
+            $ref: '#/components/schemas/AccessToken'
+        - name: Content-Type
+          in: header
+          required: true
+          description: Content type must be application/json
+          schema:
+            $ref: '#/components/schemas/ContentType'
+      requestBody:
+        description: The details for the item information which requires modification.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HSClassificationModel'
+      responses:
+        "200":
+          description: Successful update an existing HS classification request response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HSClassificationModel'
+        "400":
+          description: Bad request. Can be caused by a malformed JSON request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+        "401":
+          description: Authentication required. Can be caused by a missing or expired token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: AuthorizationException
+                  target: HttpRequest
+                  details:
+                    -
+                      code: AuthorizationException
+                      number: 31
+                      message: Authorization failed.
+                      description: This service or operation is not authorized for this account or user.
+                      helpLink: http://developer.avalara.com/avatax/errors/AuthorizationException
+                      severity: Exception
+        "404":
+          description: The classification request id was not found in the system
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: EntityNotFoundError
+                  target: HttpRequest
+                  details:
+                    -
+                      code: EntityNotFoundError
+                      number: 4
+                      message: XXXXXXX not found.
+                      description: The Classification Request with id 'XXXXXXX' was not found.
+                      helpLink: http://developer.avalara.com/avatax/errors/EntityNotFoundError
+                      severity: Error
+        "415":
+          description: Unsupported Media type. The `Content-type` header must be `application/json`.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+        "422":
+          description: Request cannot be processed. The validation of the parameters provided in the request body failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: MaxStringLengthError
+                  target: HttpRequest
+                  details:
+                    -
+                      code: MaxStringLengthError
+                      number: 4
+                      message: XXXXXXX not found.
+                      description: The Classification Request with id 'XXXXXXX' was not found.
+                      helpLink: http://developer.avalara.com/avatax/errors/EntityNotFoundError
+                      severity: Error
+
+    get:
+      tags:
+        - GetHSClassification
+      summary: Returns the HS classification code. The status field reflects the actual state of the classification request.
+      description: Returns the HS classification code. The status field reflects the actual state of the classification request
+      operationId: GetHSClassification
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          description: The ID of the company that owns this item.
+          schema:
+            $ref: '#/components/schemas/companyId'
+        - name: hsClassificationId
+          in: path
+          required: true
+          description: The hsClassificationId used to identify a request was returned in the response of the CreateHSClassificationRequest method.
+          schema:
+            $ref: '#/components/schemas/hsClassificationId'
+        - name: Authorization
+          in: header
+          required: true
+          description: Set to `Bearer <token>`. <token> being the authentication token.
+          schema:
+            $ref: '#/components/schemas/AccessToken'
+        - name: Content-Type
+          in: header
+          required: true
+          description: Content type must be application/json
+          schema:
+            $ref: '#/components/schemas/ContentType'
+      responses:
+        "200":
+          description: Successful get HS classification request response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HSClassificationModel'
+        "401":
+          description: Authentication required. Can be caused by a missing or expired token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: AuthorizationException
+                  target: HttpRequest
+                  details:
+                    -
+                      code: AuthorizationException
+                      number: 31
+                      message: Authorization failed.
+                      description: This service or operation is not authorized for this account or user.
+                      helpLink: http://developer.avalara.com/avatax/errors/AuthorizationException
+                      severity: Exception
+        "404":
+          description: The classification request id was not found in the system
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              example:
+                error:
+                  code: EntityNotFoundError
+                  target: HttpRequest
+                  details:
+                    -
+                      code: EntityNotFoundError
+                      number: 4
+                      message: XXXXXXX not found.
+                      description: The Classification Request with id 'XXXXXXX' was not found.
+                      helpLink: http://developer.avalara.com/avatax/errors/EntityNotFoundError
+                      severity: Error
+
+        "415":
+          description: Unsupported Media type. The `Content-type` header must be `application/json`.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+
+
+components:
+  schemas:
+    HSClassificationModel:
+      required:
+        - item
+        - countryOfDestination
+      properties:
+        id:
+          type: string
+          readOnly: true
+          maxLength: 255
+          description: The id of the HS classification request. This id is created by CreateHSClassificationRequest and returned in the response.
+          example: 1234-SKU001-CA
+        hsCode:
+          type: string
+          readOnly: true
+          maxLength: 20
+          description: This is the HS classification result. It’ll be returned in the body for GetHSClassification method.
+          example: 320250
+        status:
+          type: string
+          readOnly: true
+          maxLength: 20
+          description: This value is returned by get HS Classification method. It’ll be ignored if it’s provided in the request.
+          example: CLASSIFIED
+          enum: [PENDING , CLASSIFIED, CANNOT_BE_CLASSIFIED]
+        resolution:
+          type: string
+          readOnly: true
+          maxLength: 1024
+          description: This value will be returned by getHSClassification method only if an item cannot be classified (status=CANNOT_BE_CLASSIFIED). It contains a detailed description of the issue. It’ll be ignored if it’s provided in the request.
+          example: Not enough details.
+        countryOfDestination:
+          type: string
+          maxLength: 2
+          description: Country of destination
+          example: CA
+        item:
+          $ref: '#/components/schemas/ItemModel'
+
+    ItemModel:
+      required:
+        - companyId
+        - itemCode
+        - description
+        - itemGroup
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          description: A unique id generated by Avalara Classification System
+          example: 56789
+        companyId:
+          type: integer
+          description: The unique ID number of the company that owns this item.
+          example: 3402
+        itemCode:
+          type: string
+          maxLength: 255
+          description: A unique code representing this item. It’s recommended to use the SKU number.
+          example: ABC
+        description:
+          type: string
+          maxLength: 255
+          description: A short description of the product. It’s also referred as product title or name.
+          example: Vera Wang Night Gown
+        summary:
+          type: string
+          description: A long description of the product.
+        itemGroup:
+          type: string
+          maxLength: 2000
+          description: Product category breadcrumbs. This is the full path to the category where item is included. Categories should be separated by ` > `.
+          example: Clothing > Women > Formal
+        createdDate:
+          type: string
+          format: date-time
+          readOnly: true
+          description: A long description of the product.
+        classificationParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemParameterModel'
+          example:
+            -
+              name: url
+              value: http://merchant_host.com/path_to_product/SKU001
+              unit: ''
+            -
+              name: price
+              value: '12.31'
+              unit: 'USD'
+
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemParameterModel'
+          example:
+            -
+              name: weight
+              value: '10.2'
+              unit: ''
+
+    ItemParameterModel:
+      required:
+        - name
+        - value
+      properties:
+        name:
+          type: string
+          maxLength: 255
+          description: The system has predefined list of parameter names that are known and processed accordingly`:` coo, description, image_url, url, material, price weight, height, length, width.
+          example: price
+          enum: [coo, description, image_url, url, material, price, weight, height, length, width]
+        value:
+          type: string
+          maxLength: 255
+          description: The parameter’s value.
+          example: 120.50
+        unit:
+          type: string
+          maxLength: 255
+          description: The unit of measurement code for the parameter. For price parameter the unit is required and must be currency code alpha ISO 4217. The only currency currently supported is “USD”.
+          example: USD
+    companyId:
+      type: integer
+      example: 3402
+      description: The ID of the company that owns this item.
+    hsClassificationId:
+      type: string
+      example: 24999- B07KCS725Y-CA
+      description: The hsClassificationId used to identify a request was returned in the response of the CreateHSClassificationRequest method.
+    Authorization:
+      type: string
+      example: Basic SGShUzE8fVU3o1UwZK8lrqF0+QkO5fdZQkIz9dG8UGIqA==
+      description: Set to Basic `credentials`, where `credentials` is the base 64 encoding of the client id and secret with a `:` character between them.
+    AccessToken:
+      type: string
+      example: Bearer SGShUzE8flrqF0+QkO5fdZQkIz9dG8UGIqA==
+      description: Set to `Bearer <token>`. <token> being the authentication token.
+
+    ContentType:
+      type: string
+      example: application/json
+      description: Content type must be always 'Content-Type'
+
+    OAuthResponse:
+      properties:
+        access_token:
+          type: string
+          description: Access token
+          example: dh1GJXXhykuvAc/fflHvG9m8Jqz2MipbfpTBWxdlSHQ==
+        token_type:
+          type: string
+          description: Token type
+          example: BearerToken
+        expires_in:
+          type: integer
+          description: Token expires in specified milliseconds time.
+          example: 600000
+
+    ErrorInfo:
+      properties:
+        code:
+          type: string
+          description: Name of the error. Refer to Error Codes section for a list of accepted values.
+        message:
+          type: string
+          description: Short one-line message to summarize what went wrong
+        target:
+          type: string
+          enum: [Unknown, HttpRequest, HttpRequestHeaders, IncorrectData]
+          description: What object or service caused the error? (Unknown, HttpRequest, HttpRequestHeaders, IncorrectData)
+          example: HttpRequest
+        details:
+          type: array
+          description: Array of detailed error messages
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+    ErrorDetail:
+      properties:
+        code:
+          type: string
+          description: Name of the error. Refer to Error Codes section for a list of accepted values.
+        number:
+          type: integer
+          description: Unique ID number referring to this error or message.
+        message:
+          type: string
+          description: Concise summary of the message, suitable for display in the caption of an alert box.
+        description:
+          type: string
+          description: A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
+        helpLink:
+          type: string
+          description: URL to help for this message
+        refersTo:
+          type: string
+          description: Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
+        severity:
+          type: string
+          enum: [Success, Warning, Error, Exception]
+          description: Severity of the message`:`  Success, Warning, Error and Exception.

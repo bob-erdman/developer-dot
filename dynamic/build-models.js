@@ -136,7 +136,10 @@ fs.symlink(swagPath, dataPath, function() {
         try {
             const filename = swagPath + '/' + key;
             const data = loadFile(filename);
-            const allDefinitions = buildDefinitions(data.definitions, data.paths, data['x-group-by-tags']);
+
+            // if not swagger2, then checks for definitions in  openApi3 format
+            const definitions = data.definitions ? data.definitions : data.components.schemas;
+            const allDefinitions = buildDefinitions(definitions, data.paths, data['x-group-by-tags']);
 
             const {name, product} = SWAGGER_CONFIG[key];
 
