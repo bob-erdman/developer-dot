@@ -25222,10 +25222,7 @@
         "remoteCalls": {
           "description": "Reserved for Avalara internal usage.",
           "uniqueItems": false,
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AuditModel"
-          }
+          "type": "array"
         }
       },
       "example": {
@@ -26246,9 +26243,6 @@
           "description": "Optional: A list of non reporting child companies associated with this company.  To fetch this list, add the query string `?$include=NonReportingChildren` to your URL.",
           "uniqueItems": false,
           "type": "array",
-          "items" : {
-            "$ref": "#/definitions/CompanyModel"
-          },
           "readOnly": true
         },
         "exemptCerts": {
@@ -29905,10 +29899,7 @@
         "shipTos": {
           "description": "A list of ship-to customer records that are connected to this bill-to customer.\r\n            \r\nCustomer records represent businesses or individuals who can provide exemption certificates.  Some customers\r\nmay have certificates that are linked to their shipping address or their billing address.  To group these\r\ncustomer records together, you may link multiple bill-to and ship-to addresses together to represent a single\r\nentity that has multiple different addresses of different kinds.",
           "uniqueItems": false,
-          "type": "array",
-          "items": {
-            "$ref" : "#/definitions/CustomerModel"
-          }
+          "type": "array"
         }
       },
       "example": {
