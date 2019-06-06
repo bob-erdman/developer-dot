@@ -1,7 +1,0 @@
-#Item Classification
-
-nav_links:
-  - title: Overview
-    path: /item-classification/
-  - title: API reference
-    path: /api-reference/item-classification/v2/

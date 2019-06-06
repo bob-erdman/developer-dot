@@ -64,11 +64,6 @@ export default {
         path: 'api-reference/MyLodgeAPI/customer-info',
         product: 'mylodge'
     },
-    'item-classification/v2.yaml': {
-        name: 'Item Classification API',
-        path: 'api-reference/item-classification/v2',
-        product: 'item-classification'
-    },
     'trustfile/api.yaml': {
         name: 'Trustfile - Core',
         path: 'trustfile/api-reference/core/v3',
