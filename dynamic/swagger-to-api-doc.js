@@ -141,6 +141,7 @@ ${(!methodSubsetName) ? 'homepage: true' : ''}
 const createEndpointUrl = (apiPath, operationId, tag) => `${apiPath}/methods/${tag ? tag + '/' : ''}${operationId.replace(/\s/g, '')}`;
 
 export default (fileName, apiName, apiPath, product) => {
+    
     if (!fileName || !apiName || !apiPath) {
         throw new Error('`filepath`, `apiName` and `apiPath` required!');
     }
@@ -162,6 +163,7 @@ export default (fileName, apiName, apiPath, product) => {
                 let staticState;
 
                 try {
+
                     staticState = parseSwaggerUi(...swaggerDocs, swaggerPath);
                     buildBlogMap(staticState.apiEndpoints);
                 } catch (e) {
@@ -215,10 +217,10 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                 // Save our root documentation page, with Postman Collection download link,
                 // API name/description, and links to models and methods documentation!
                 saveStaticPage(null, apiPath, buildHtml, {...staticState, apiEndpoints: []}, {apiName, product}, false);
-
                 const tagMap = {...staticState.tagMap};
 
                 if (tagMap && Object.keys(tagMap).length > 0) {
+
                     // Save off a configuration file detaling tag link name and its endpoints
                     mkdirp(path.join(__dirname, '..', '_data', 'api_tag_pages'), (err) => {
                         if (err) {
@@ -249,9 +251,7 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                         };
                     });
 
-
                     saveMethodsIndex(apiName, `${apiPath}/methods`, product, tagLinks);
-
                     // Want to save off pages for each tagin the API's endpoints
                     Object.keys(tagMap).forEach((tag) => {
                         const operationIdsForTag = tagMap[tag];
@@ -277,6 +277,7 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                         });
                     });
                 } else {
+
                     const apiEndpointLinks = staticState.apiEndpoints.map((ep) => {
                         return {
                             link: createEndpointUrl(apiPath, ep.operationId),
@@ -285,7 +286,6 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                             description: ep.description
                         };
                     });
-
                     saveMethodsIndex(apiName, `${apiPath}/methods`, product, apiEndpointLinks);
 
                     staticState.apiEndpoints.forEach((ep) => {

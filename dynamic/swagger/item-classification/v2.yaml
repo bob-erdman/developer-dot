@@ -1,4 +1,4 @@
-openapi: "3.0.2"
+swagger: "2.0"
 info:
   description: This API provides the user with the capability to submit products for HS Classification and retrieve the HS Codes.
   version: 1.0.0
@@ -8,12 +8,12 @@ info:
   license:
     name: Avalara License
     url: http://www.avalara.com
-servers:
-  - url: https://ftp.classification.avalara.net/
-    description: production
-
+host: ftp.classification.avalara.net/
+basePath: /
+schemes:
+  - https
 paths:
-  /xboauth2server/oauth/token:
+  '/xboauth2server/oauth/token':
     post:
       tags:
         - GetAuthenticationToken
@@ -24,23 +24,24 @@ paths:
         - name: Authorization
           in: header
           required: true
-          description: Set to Basic `credentials`, where `credentials` is the base 64 encoding of the client id and secret with a `:` character between them.
+          description: "Set to Basic `credentials`, where `credentials` is the base 64 encoding of the client id and secret with a `:` character between them."
+          type: string
           schema:
-            $ref: '#/components/schemas/Authorization'
+            $ref: '#/definitions/Authorization'
         - name: Content-Type
           in: header
           required: true
           description: Content type must be application/json
           example: application/json
           schema:
-            $ref: '#/components/schemas/ContentType'
+            $ref: '#/definitions/ContentType'
       responses:
         '200':
           description: Successful request and will return a token to access the API.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OAuthResponse'
+                $ref: '#/definitions/OAuthResponse'
 
   '/api/v2/companies/{companyId}/classifications/hs':
     post:
@@ -55,44 +56,44 @@ paths:
           required: true
           description: The ID of the company that owns this item.
           schema:
-            $ref: '#/components/schemas/companyId'
+            $ref: '#/definitions/companyId'
         - name: Authorization
           in: header
           required: true
           description: Set to `Bearer <token>`. <token> being the authentication token.
           schema:
-            $ref: '#/components/schemas/AccessToken'
+            $ref: '#/definitions/AccessToken'
         - name: Content-Type
           in: header
           required: true
           description: Content type must be application/json
           schema:
-            $ref: '#/components/schemas/ContentType'
+            $ref: '#/definitions/ContentType'
       requestBody:
         description: The details for the item which requires HS classification.
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HSClassificationModel'
+              $ref: '#/definitions/HSClassificationModel'
       responses:
-        "201":
+        '201':
           description: Successful create HS classification request response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HSClassificationModel'
-        "400":
+                $ref: '#/definitions/HSClassificationModel'
+        '400':
           description: Bad request. Can be caused by a malformed JSON request.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
-        "401":
+                $ref: '#/definitions/ErrorInfo'
+        '401':
           description: Authentication required. Can be caused by a missing or expired token.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: AuthorizationException
@@ -105,18 +106,18 @@ paths:
                       description: This service or operation is not authorized for this account or user.
                       helpLink: http://developer.avalara.com/avatax/errors/AuthorizationException
                       severity: Exception
-        "415":
+        '415':
           description: Unsupported Media type. The `Content-type` header has to be `application/json`.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
-        "422":
+                $ref: '#/definitions/ErrorInfo'
+        '422':
           description: Request cannot be processed. The validation of the parameters provided in the request body failed.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: MaxStringLengthError
@@ -143,50 +144,50 @@ paths:
           required: true
           description: The ID of the company that owns this item.
           schema:
-            $ref: '#/components/schemas/companyId'
+            $ref: '#/definitions/companyId'
         - name: hsClassificationId
           in: path
           required: true
           description: The hsClassificationId used to identify a request was returned in the response of the CreateHSClassificationRequest method.
           schema:
-            $ref: '#/components/schemas/hsClassificationId'
+            $ref: '#/definitions/hsClassificationId'
         - name: Authorization
           in: header
           required: true
           description: Set to `Bearer <token>`. <token> being the authentication token.
           schema:
-            $ref: '#/components/schemas/AccessToken'
+            $ref: '#/definitions/AccessToken'
         - name: Content-Type
           in: header
           required: true
           description: Content type must be application/json
           schema:
-            $ref: '#/components/schemas/ContentType'
+            $ref: '#/definitions/ContentType'
       requestBody:
         description: The details for the item information which requires modification.
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HSClassificationModel'
+              $ref: '#/definitions/HSClassificationModel'
       responses:
         "200":
           description: Successful update an existing HS classification request response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HSClassificationModel'
+                $ref: '#/definitions/HSClassificationModel'
         "400":
           description: Bad request. Can be caused by a malformed JSON request.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
         "401":
           description: Authentication required. Can be caused by a missing or expired token.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: AuthorizationException
@@ -204,7 +205,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: EntityNotFoundError
@@ -222,13 +223,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
         "422":
           description: Request cannot be processed. The validation of the parameters provided in the request body failed.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: MaxStringLengthError
@@ -254,38 +255,38 @@ paths:
           required: true
           description: The ID of the company that owns this item.
           schema:
-            $ref: '#/components/schemas/companyId'
+            $ref: '#/definitions/companyId'
         - name: hsClassificationId
           in: path
           required: true
           description: The hsClassificationId used to identify a request was returned in the response of the CreateHSClassificationRequest method.
           schema:
-            $ref: '#/components/schemas/hsClassificationId'
+            $ref: '#/definitions/hsClassificationId'
         - name: Authorization
           in: header
           required: true
           description: Set to `Bearer <token>`. <token> being the authentication token.
           schema:
-            $ref: '#/components/schemas/AccessToken'
+            $ref: '#/definitions/AccessToken'
         - name: Content-Type
           in: header
           required: true
           description: Content type must be application/json
           schema:
-            $ref: '#/components/schemas/ContentType'
+            $ref: '#/definitions/ContentType'
       responses:
         "200":
           description: Successful get HS classification request response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HSClassificationModel'
+                $ref: '#/definitions/HSClassificationModel'
         "401":
           description: Authentication required. Can be caused by a missing or expired token.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: AuthorizationException
@@ -303,7 +304,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
               example:
                 error:
                   code: EntityNotFoundError
@@ -322,11 +323,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorInfo'
+                $ref: '#/definitions/ErrorInfo'
 
 
-components:
-  schemas:
+definitions:
     HSClassificationModel:
       required:
         - item
@@ -363,7 +363,7 @@ components:
           description: Country of destination
           example: CA
         item:
-          $ref: '#/components/schemas/ItemModel'
+          $ref: '#/definitions/ItemModel'
 
     ItemModel:
       required:
@@ -407,7 +407,7 @@ components:
         classificationParameters:
           type: array
           items:
-            $ref: '#/components/schemas/ItemParameterModel'
+            $ref: '#/definitions/ItemParameterModel'
           example:
             -
               name: url
@@ -421,7 +421,7 @@ components:
         parameters:
           type: array
           items:
-            $ref: '#/components/schemas/ItemParameterModel'
+            $ref: '#/definitions/ItemParameterModel'
           example:
             -
               name: weight
@@ -503,7 +503,7 @@ components:
           type: array
           description: Array of detailed error messages
           items:
-            $ref: '#/components/schemas/ErrorDetail'
+            $ref: '#/definitions/ErrorDetail'
     ErrorDetail:
       properties:
         code:
