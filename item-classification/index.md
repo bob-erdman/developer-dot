@@ -8,7 +8,7 @@ doctype: overview
 <div class="row bg-map padding-bottom">
   <div class="col-md-8 col-md-offset-2 text-center ">
     <h1 class="h1p">Item Classification API</h1>
-    <img src="/public/images/devdot/item-classification.png" height="75" style="filter: grayscale(100%);" alt="item-classification" />
+    <img src="/public/images/devdot/item-class.png" height="75" style="filter: grayscale(100%);" alt="item-classification" />
   </div>
 </div>
 <div class="row border-top padding-top padding-bottom">
