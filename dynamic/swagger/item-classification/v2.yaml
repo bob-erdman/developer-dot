@@ -8,7 +8,7 @@ info:
   license:
     name: Avalara License
     url: http://www.avalara.com
-host: ftp.classification.avalara.net
+host: api.classification.avalara.net
 basePath: /
 schemes:
   - https
