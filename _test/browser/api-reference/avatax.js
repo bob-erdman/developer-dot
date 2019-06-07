@@ -28,7 +28,7 @@ module.exports = {
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v1/methods/getTax/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints)
-            .assert.elementNumTimes('.pathLink', 3, 'assert request and response model links')
+            .assert.elementNumTimes('.pathLink', 3, 'assert request and response model links');
 
         browser.page.endpointSummary()
             .navigateTo('#getTax-console')
