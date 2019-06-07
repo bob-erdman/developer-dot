@@ -140,6 +140,7 @@ export default (api, apiWithRefs, rootPath) => {
                     apiConsoleLoading: false,
                     requestInput: '{}'
                 };
+
                 if (api['x-production-host']) {
                     apiMethod.productionPath = (scheme && api.basePath) ? scheme + '://' + api['x-production-host'] + (api.basePath !== '/' ? api.basePath : '') + k : rootPath + k;
                 }
