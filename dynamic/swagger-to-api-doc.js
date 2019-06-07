@@ -174,12 +174,14 @@ export default (fileName, apiName, apiPath, product) => {
                 }
                 const buildHtml = (tagName, initialState, disqus) => {
                     const endpoint = initialState.apiEndpoints.length ? initialState.apiEndpoints[0] : null;
+
                     const blog = buildBlogMap(endpoint);
 
                     const endpointLinks = endpoint ?
                         `["#${endpoint.operationId.replace(/\s/g, '')}", "${endpoint.name}"],\n` : '';
 
                     initialState.tagName = tagName;
+
 /* eslint-disable quotes */
                     return (
                         `---
