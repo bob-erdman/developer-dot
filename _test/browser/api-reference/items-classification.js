@@ -21,8 +21,8 @@
 
 //         browser
 //             .initialize(browser.globals.baseURL + '/api-reference/item-classification/v2/models/')
-//             .assert.elementNumTimes('td > a', NUM_MODELS, 'model links');
-//             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
+//             .assert.elementNumTimes('.model-link', NUM_MODELS, 'model links')
+//             // .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
 //     },
 //     'API Reference: Item Classifcation: v2 (model page contents)': function(browser) {
 //         expectedNumberOfApiEndpoints = 6;
