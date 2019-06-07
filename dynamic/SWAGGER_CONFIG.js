@@ -78,5 +78,10 @@ export default {
         name: 'Trustfile - Connector',
         path: 'trustfile/api-reference/connector-management/v3',
         product: 'trustFile'
-    }
+    },
+    'item-classification/v2.yaml': {	
+        name: 'Item Classification API',	
+        path: 'api-reference/item-classification/v2',	
+        product: 'item-classification'	
+    },
 };
