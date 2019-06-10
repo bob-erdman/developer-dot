@@ -215,11 +215,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>Your AvaTax account has expired, or is not yet enabled.  You may need to contact your customer account manager for assistance.</td>
 		</tr>		
         <tr>
-			<td>40</td>
-			<td><a href="VisibilityError">VisibilityError</a></td>
-			<td>You attempted to request an object from AvaTax that you are not permitted to see.</td>
-		</tr>		
-        <tr>
 			<td>41</td>
 			<td><a href="BearerTokenNotSupported">BearerTokenNotSupported</a></td>
 			<td>Bearer Token authentication is not yet supported with this API.</td>
@@ -610,11 +605,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>Your password did not meet length requirements.</td>
 		</tr>		
         <tr>
-			<td>170</td>
-			<td><a href="LocalNexusConflict">LocalNexusConflict</a></td>
-			<td>Your nexus has invalid local nexus settings.</td>
-		</tr>		
-        <tr>
 			<td>171</td>
 			<td><a href="InvalidEcmsOverrideCode">InvalidEcmsOverrideCode</a></td>
 			<td>The EcmsOverrideCode value you supplied conflicts with a system-defined code.</td>
@@ -945,11 +935,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>TBD</td>
 		</tr>		
         <tr>
-			<td>700</td>
-			<td><a href="InvalidDocumentStatusForRefund">InvalidDocumentStatusForRefund</a></td>
-			<td>The AvaTax Refund API is only available on committed documents.</td>
-		</tr>		
-        <tr>
 			<td>701</td>
 			<td><a href="RefundTypeAndPercentageMismatch">RefundTypeAndPercentageMismatch</a></td>
 			<td>You specified a `Full` refund, but the percentage parameter was not null.</td>
@@ -1210,11 +1195,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The values in your verify call did not match the transaction.</td>
 		</tr>		
         <tr>
-			<td>1309</td>
-			<td><a href="InvalidDocumentStatusForCommit">InvalidDocumentStatusForCommit</a></td>
-			<td>Documents can only be committed from the `Saved` or `Posted` statuses.</td>
-		</tr>		
-        <tr>
 			<td>1310</td>
 			<td><a href="InvalidDocumentType">InvalidDocumentType</a></td>
 			<td>A document could not be found with the specified type.</td>
@@ -1228,6 +1208,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1313</td>
 			<td><a href="TransactionIsCommitted">TransactionIsCommitted</a></td>
 			<td>This API can only modify transactions that are not yet committed.</td>
+		</tr>		
+        <tr>
+			<td>1314</td>
+			<td><a href="InvalidDocumentStatus">InvalidDocumentStatus</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1400</td>
@@ -1310,11 +1295,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>TBD</td>
 		</tr>		
         <tr>
-			<td>1700</td>
-			<td><a href="InvalidDocumentStatusToAddOrDeleteLines">InvalidDocumentStatusToAddOrDeleteLines</a></td>
-			<td>This document is voided, cannot add or delete lines.</td>
-		</tr>		
-        <tr>
 			<td>1701</td>
 			<td><a href="TaxRuleRequiresNexus">TaxRuleRequiresNexus</a></td>
 			<td>Nexus is not declared in this region, therefore no tax rule can be created.</td>
@@ -1323,11 +1303,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1702</td>
 			<td><a href="UPCCodeNotUnique">UPCCodeNotUnique</a></td>
 			<td>A single UPC code can be defined only once for each company.</td>
-		</tr>		
-        <tr>
-			<td>1703</td>
-			<td><a href="CannotUpdateSourceOrInstance">CannotUpdateSourceOrInstance</a></td>
-			<td>The DataSource Source and Instance fields cannot be modified.</td>
 		</tr>		
         <tr>
 			<td>1704</td>
@@ -1352,6 +1327,36 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1708</td>
 			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1709</td>
+			<td><a href="NoVoidedDocuments">NoVoidedDocuments</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1710</td>
+			<td><a href="InadequateCommittedDocuments">InadequateCommittedDocuments</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1711</td>
+			<td><a href="DocumentCodeIsGuid">DocumentCodeIsGuid</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1712</td>
+			<td><a href="CustomerVendorCodeIsGuid">CustomerVendorCodeIsGuid</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1713</td>
+			<td><a href="CannotUpdateAccountTypeId">CannotUpdateAccountTypeId</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1714</td>
+			<td><a href="InadequateDocumentLineCount">InadequateDocumentLineCount</a></td>
 			<td>TBD</td>
 		</tr>		
         <tr>
@@ -1413,4 +1418,14 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>2104</td>
 			<td><a href="SubscriptionRequiredForParameter">SubscriptionRequiredForParameter</a></td>
 			<td>The account's subscription level doesn't include use of the parameter in your request.</td>
+		</tr>		
+        <tr>
+			<td>2105</td>
+			<td><a href="InvalidAccountType">InvalidAccountType</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>2208</td>
+			<td><a href="NoExemptionNoOrCustomerUsageType">NoExemptionNoOrCustomerUsageType</a></td>
+			<td>TBD</td>
 		</tr></tbody></table>
