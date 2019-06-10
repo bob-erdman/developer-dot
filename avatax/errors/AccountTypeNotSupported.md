@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+This account type cannot perform this operation.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Some operations and functions are limited based on the type of account being used. For more information, visit [our help center](https://help.avalara.com/).

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company's customer vendor code is a GUID.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+For companies to be certified, GUIDs cannot be used in document codes or the last 100 documents.

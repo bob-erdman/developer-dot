@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The account already exists.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+An account with the combination of account name and company address already exists. Please try a different combination of account name and company address. If you continue to have trouble, reach out to [our help center](https://help.avalara.com/Directory/Contact_Avalara).
