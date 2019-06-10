@@ -32,4 +32,4 @@ An error occured when using or applying Advanced Tax Rules.
 
 ## Explanation
 
-For more information regarding your specific error, read the message and description carefully. For more informatin on creating and managing Advanced Rules, read our help center [article on the topic](https://help.avalara.com/001_Avalara_AvaTax/000_AvaTax_Update/Create_and_Manage_Advanced_Tax_Rules).
+Advanced rules are complex tax rules applied to special tax cases. Check your error's message and description to locate the core issue at hand. For more information about creating and managing advanced tax rules, check out [our article on the topic](https://help.avalara.com/001_Avalara_AvaTax/000_AvaTax_Update/Create_and_Manage_Advanced_Tax_Rules).

@@ -32,4 +32,4 @@ This account type cannot perform this operation.
 
 ## Explanation
 
-Some operations and functions are limited based on the type of account being used. For more information, visit [our help center](https://help.avalara.com/).
+Avalara has [3 account types](/api-reference/avatax/rest/v2/models/enums/AccountModel%20>%20accountTypeId/) and each has its own capabilites, features and available actions. In the case of this error, the account type performing the action does not have the necessary support to complete the task. 

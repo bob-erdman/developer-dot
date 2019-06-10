@@ -126,10 +126,23 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
 </div>
 <br>
 
-<h3>Example</h3>
+<h3>Examples</h3>
+<a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/">Category exemptions</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/">tax type exemptions</a> can’t both be included within the same single exemption, but can be applied simultaneously within a list of exemptions.
 
 {% highlight json %}
 "exms": [
+  // Category Exemption
+  {
+    "frc": true,
+    "loc": {
+      // Location
+    },
+    "tpe": 0,
+    "lvl": 0,
+    "cat": 2,
+    "exnb": false
+  },
+  // Tax Type Exemption
   {
     "frc": true,
     "loc": {
@@ -138,9 +151,7 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
     "tpe": 1,
     "lvl": 0,
     "cat": 0,
-    "dom": 3,
-    "scp": 1792,
-    "exnb": false,
+    "exnb": false
   }
 ]
 {% endhighlight %}

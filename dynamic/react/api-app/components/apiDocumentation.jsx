@@ -51,7 +51,7 @@ const ApiDocumentation = ({endpoint}) => (
                 {endpoint.requestSchemaWithRefs ?
                     <tr>
                         <th>{'Request Body'}</th>
-                        <td>
+                        <td className='requestBodyUrl'>
                             <ApiDocModelLink refSchema={endpoint.requestSchemaWithRefs} />
                         </td>
                     </tr> :
@@ -59,7 +59,7 @@ const ApiDocumentation = ({endpoint}) => (
                 }
                 <tr>
                     <th>{'Response Body'}</th>
-                    <td>
+                    <td className='responseBodyUrl'>
                         <ApiDocModelLink refSchema={endpoint.responseSchemaWithRefs} />
                     </td>
                 </tr>

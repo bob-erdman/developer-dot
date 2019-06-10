@@ -32,4 +32,4 @@ The client account cannot be linked to the firm.
 
 ## Explanation
 
-The linking of the client account and firm is unsupported at this time.
+This client account and firm are not compatible and cannot be linked. Please check to ensure you've provided the corrent client and firm information in your request. If you believe there is an issue with either the client or firm account, please reach out to [Avalara's client support network](https://help.avalara.com/Directory/Contact_Avalara). 

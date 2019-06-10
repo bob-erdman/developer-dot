@@ -32,4 +32,4 @@ Offer is not valid for a firm client account.
 
 ## Explanation
 
-Some offers are limited to certain types of accounts. The offer used is not valid for the client account that firm needs to manage. Suuported offers for this account include ARA and ManagedARA.
+Avalara provides [3 different types of accounts](/api-reference/avatax/rest/v2/models/enums/AccountModel%20>%20accountTypeId/) with varying settings and action sets. For the firm client account type, some offers are not valid since a firm manages the account on behalf of the client. Offers supported for this type of account include ARA and ManagaedARA. 

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The account already exists.
+This combination of the account name and company address already exists. 
 
 ## Example
 
@@ -32,4 +32,6 @@ The account already exists.
 
 ## Explanation
 
-An account with the combination of account name and company address already exists. Please try a different combination of account name and company address. If you continue to have trouble, reach out to [our help center](https://help.avalara.com/Directory/Contact_Avalara).
+To create an account, the combination of account name and company address must be unique. In the case of this error, the user should ensure the account name and company address were inputed correctly. Additionally, check if you've already activated an account and try using the existing account. 
+
+If you haven't already created an account with the inputed account name and company address combination, reach out to [our support team](https://help.avalara.com/Directory/Contact_Avalara) for assistence. 

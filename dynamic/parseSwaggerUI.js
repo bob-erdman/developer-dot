@@ -121,6 +121,7 @@ export default (api, apiWithRefs, rootPath) => {
         const endpoint = api.paths[k];
         const endpointWithRefs = apiWithRefs.paths[k];
 
+
         // console.log(`!!! ${JSON.stringify(api.paths)}`);
 
         Object.keys(endpoint).forEach((action) => {
@@ -131,6 +132,7 @@ export default (api, apiWithRefs, rootPath) => {
                     name: endpoint[action].summary || endpoint[action].operationId,
                     description: endpoint[action].description,
                     path: root + k,
+                    sandboxPath: root + k,
                     action: action,
                     sampleAuthHeader: swaggerData.sampleAuthHeader,
                     // Determines whether or not we show API console input fields for params in the 'x-excludedProperties' array in Swagger

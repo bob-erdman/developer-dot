@@ -32,4 +32,4 @@ User doesn't have permission for action.
 
 ## Explanation
 
-There are multiple user roles such as Account Admin or Company User. Each role has it's own permissions and authorized actions. The user cannot complete the desired action because the role does not have the required permissions.
+Different users and administrators have varying access to features such as updating account information or creating new tax rules. These permissions are based on the role of the user. The users role can be found in position `-1-` and the denied action is at position `-0-` of the error. 

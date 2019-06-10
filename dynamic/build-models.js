@@ -55,7 +55,7 @@ endpoint_links: []
         if (!model.includes('FetchResult')) {
             table = `${table}
             <tr>
-                <td><a href="${encodeURIComponent(def)}">${def}</a></td>
+                <td><a class="model-link" href="${encodeURIComponent(def)}">${def}</a></td>
                 <td>{{"${(defs[def].description || '').replace(/"/g, "'")}" | markdownify}}</td>
             </tr>`;
         }

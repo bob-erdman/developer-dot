@@ -32,4 +32,4 @@ The tax type mapping provided is not valid.
 
 ## Explanation
 
-The combination of tax type group, tax type, tax subtype, rate type and country is invalid. See the error description for more information on the invaid portions of the provided tax type mapping.
+Mapping to the correct tax type is important for calculating accurate taxes for your situation. If you are new to mapping tax types, take a look at this [overview of tax types](https://help.avalara.com/000_Avalara_AvaTax/About_Tax_Types) from Avalara's help center. If you want more information on choosing the correct tax type for your situation, use [our tax type table](https://help.avalara.com/001_Avalara_AvaTax/000_AvaTax_Update/Pick_the_Right_Tax_Type).

@@ -10,7 +10,7 @@ doctype: certification
     </div>
     <div class="col-sm-10 padding-top">
       <h2>Avalara Awards Certification via Functional Badges</h2>
-      <h3>Below are the available badges. Click on a badge for requirements necessary to achieve certification.</h3>
+      <h4>Below are the available badges. Click on a badge for requirements necessary to achieve certification.</h4>
 		 <div class="row">
 		    <div class="col-sm-2">
 		      <a href="sales-tax-badge"><img src="/public/images/devdot/badges/SalesTax.png" class="img-responsive" alt="Sales Tax Badge"></a>
@@ -39,10 +39,12 @@ doctype: certification
 		       <a href="document-management-badge"><img src="/public/images/devdot/badges/DocumentManagement.png" class="img-responsive" alt="Document Management Badge"></a>
 		    </div>
 		  </div>
-
 		<div class="row padding-bottom">
 		    <div class="col-sm-2">
 		      <a href="communication-badge"><img src="/public/images/devdot/badges/Comms.png" class="img-responsive" alt="Communications Badge"></a>
+		    </div>
+			 <div class="col-sm-2">
+		      <a href="extractor-badge"><img src="/public/images/devdot/badges/Extractor.png" class="img-responsive" alt="Extractor Badge"></a>
 		    </div>
 		</div>
      </div>

@@ -32,4 +32,4 @@ Company item contains a generic taxcode.
 
 ## Explanation
 
-To certify a company, the generic tax code of P0000000 cannot be associated to any company item from the past month.
+Company items cannot use the generic taxcode, `P0000000`. To resolve this error, associate a specific taxcode to the item mentioned in the error's description. For more information on available tax codes, consult [this Tax Code article](https://help.avalara.com/000_Avalara_AvaTax/Select_Avalara_Tax_Codes) or search for codes using our [tax code tool](https://taxcode.avatax.avalara.com/).
