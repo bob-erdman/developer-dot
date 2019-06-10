@@ -1321,7 +1321,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1707</td>
 			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
-			<td>TBD</td>
+			<td>Company item contains a generic taxcode.</td>
 		</tr>		
         <tr>
 			<td>1708</td>
@@ -1336,17 +1336,17 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1710</td>
 			<td><a href="InadequateCommittedDocuments">InadequateCommittedDocuments</a></td>
-			<td>TBD</td>
+			<td>Company must have at least two committed documents.</td>
 		</tr>		
         <tr>
 			<td>1711</td>
 			<td><a href="DocumentCodeIsGuid">DocumentCodeIsGuid</a></td>
-			<td>TBD</td>
+			<td>Company has a document code which is a GUID.</td>
 		</tr>		
         <tr>
 			<td>1712</td>
 			<td><a href="CustomerVendorCodeIsGuid">CustomerVendorCodeIsGuid</a></td>
-			<td>TBD</td>
+			<td>Company's customer vendor code is a GUID.</td>
 		</tr>		
         <tr>
 			<td>1713</td>

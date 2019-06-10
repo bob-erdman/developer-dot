@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company must have at least two committed documents.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+In order for an integration to be certified, the company should have at least two committed documents in the past month or among the last 100 documents.

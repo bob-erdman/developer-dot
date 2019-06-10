@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company has inadequate document line count.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+In order for the company to be certified, there should be at least one document with more than one document line, in the past month or among the last 100 documents.

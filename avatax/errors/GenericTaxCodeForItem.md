@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company item contains a generic taxcode.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+To certify a company, the generic tax code of P0000000 cannot be associated to any company item from the past month.

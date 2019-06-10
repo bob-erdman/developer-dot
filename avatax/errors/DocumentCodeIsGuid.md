@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company has a document code which is a GUID.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+For companies to be certified, GUIDs cannot be used in document codes or the last 100 documents. To certify this company, the issue must be corrected.

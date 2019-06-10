@@ -32,4 +32,4 @@ Company's customer vendor code is a GUID.
 
 ## Explanation
 
-For companies to be certified, GUIDs cannot be used in document codes or the last 100 documents.
+For companies to be certified, GUIDs cannot be used as a customer vendor code. To certify this company, the issue must be corrected.
