@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The field is read-only.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+There are multiple user roles such as Account Admin or Company User. Each role has it's own permissions and authorized actions. The user does not have editing permissions for the field. 

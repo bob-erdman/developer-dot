@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The status cannot be updated. 
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Currently, the status change is not supported. Please see the error description for more information on which status cannot be updated.

@@ -141,7 +141,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>25</td>
 			<td><a href="ReadOnly">ReadOnly</a></td>
-			<td>TBD</td>
+			<td>The field is read-only.</td>
 		</tr>		
         <tr>
 			<td>26</td>
@@ -161,7 +161,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>29</td>
 			<td><a href="InvalidFirmClientOffer">InvalidFirmClientOffer</a></td>
-			<td>TBD</td>
+			<td>Offer is not valid for a firm client account.</td>
 		</tr>		
         <tr>
 			<td>30</td>
@@ -256,7 +256,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>49</td>
 			<td><a href="PermissionRequired">PermissionRequired</a></td>
-			<td>TBD</td>
+			<td>User doesn't have permission for action.</td>
 		</tr>		
         <tr>
 			<td>50</td>
@@ -271,12 +271,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>52</td>
 			<td><a href="LinkageNotAllowed">LinkageNotAllowed</a></td>
-			<td>TBD</td>
+			<td>The client account cannot be linked to the firm.</td>
 		</tr>		
         <tr>
 			<td>53</td>
 			<td><a href="LinkageStatusUpdateNotSupported">LinkageStatusUpdateNotSupported</a></td>
-			<td>TBD</td>
+			<td>The status cannot be updated.</td>
 		</tr>		
         <tr>
 			<td>60</td>
@@ -301,7 +301,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>64</td>
 			<td><a href="InvalidTaxTypeMapping">InvalidTaxTypeMapping</a></td>
-			<td>TBD</td>
+			<td>The tax type mapping provided is not valid.</td>
 		</tr>		
         <tr>
 			<td>70</td>
@@ -1211,7 +1211,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1314</td>
 			<td><a href="InvalidDocumentStatus">InvalidDocumentStatus</a></td>
-			<td>TBD</td>
+			<td>The document status is incorrect for this operation.</td>
 		</tr>		
         <tr>
 			<td>1400</td>
@@ -1331,7 +1331,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1709</td>
 			<td><a href="NoVoidedDocuments">NoVoidedDocuments</a></td>
-			<td>TBD</td>
+			<td>Company does not have any voided documents.</td>
 		</tr>		
         <tr>
 			<td>1710</td>
@@ -1356,7 +1356,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1714</td>
 			<td><a href="InadequateDocumentLineCount">InadequateDocumentLineCount</a></td>
-			<td>TBD</td>
+			<td>Company has inadequate document line count.</td>
 		</tr>		
         <tr>
 			<td>1800</td>
@@ -1421,10 +1421,10 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2105</td>
 			<td><a href="InvalidAccountType">InvalidAccountType</a></td>
-			<td>TBD</td>
+			<td>Account Type must be 'firm' for this action.</td>
 		</tr>		
         <tr>
 			<td>2208</td>
 			<td><a href="NoExemptionNoOrCustomerUsageType">NoExemptionNoOrCustomerUsageType</a></td>
-			<td>TBD</td>
+			<td>The exemption number or customer usage type is missing.</td>
 		</tr></tbody></table>

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The tax type mapping provided is not valid.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+The combination of tax type group, tax type, tax subtype, rate type and country is invalid. See the error description for more information on the invaid portions of the provided tax type mapping.

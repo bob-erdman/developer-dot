@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Account Type must be 'firm' for this action.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+For firm accounts, only FirmAdmin or a FirmUser can be added. 

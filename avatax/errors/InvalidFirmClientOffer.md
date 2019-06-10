@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Offer is not valid for a firm client account.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Some offers are limited to certain types of accounts. The offer used is not valid for the client account that firm needs to manage. Suuported offers for this account include ARA and ManagedARA.

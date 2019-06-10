@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The client account cannot be linked to the firm.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+The linking of the client account and firm is unsupported at this time.

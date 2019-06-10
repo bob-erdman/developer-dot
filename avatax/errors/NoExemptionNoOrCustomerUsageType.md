@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The exemption number or customer usage type is missing.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+In order for the company to be certified, there should be at least one 'ExemptNo' or 'CustomerUsageType' (or 'EntityUseCode') in the documents, in the past month or among the last 100 documents.

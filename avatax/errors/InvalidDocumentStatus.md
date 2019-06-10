@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The document status is incorrect for this operation.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Some document actions are dependant on the status of the document. To complete the desired action, make sure the document is in the proper status. 

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+User doesn't have permission for action.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+There are multiple user roles such as Account Admin or Company User. Each role has it's own permissions and authorized actions. The user cannot complete the desired action because the role does not have the required permissions.
