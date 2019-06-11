@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-Linking the client account to the firm is not allowed.
+The client account cannot be linked to the firm.
 
 ## Example
 

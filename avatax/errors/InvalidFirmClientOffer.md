@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The offer is invalid for firm client accounts.
+Offer is not valid for a firm client account.
 
 ## Example
 

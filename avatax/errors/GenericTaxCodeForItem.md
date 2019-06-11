@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-A generic tax code was used for a company item.
+Company item contains a generic taxcode.
 
 ## Example
 

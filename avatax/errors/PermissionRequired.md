@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The user does not have permission for the desired action.
+User doesn't have permission for action.
 
 ## Example
 

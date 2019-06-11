@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "\\public\\code",
+    "\\public\\code\\blog",
+    "\\public\\code\\blog\\avatax-connector-app",
+    "\\public\\code\\blog\\avatax-connector-app\\AvaTaxConnector",
+    "\\public\\code\\blog\\avatax-connector-app\\AvaTaxConnector\\App_Start",
+    "\\public\\code\\blog\\avatax-connector-app\\AvaTaxConnector\\Scripts"
+  ],
+  "PreviewInSolutionExplorer": false
+}
