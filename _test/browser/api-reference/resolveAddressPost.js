@@ -11,25 +11,25 @@ module.exports = {
         browser.end();
     },
 
-    // 'API Reference: AvaTax: REST v2 - API Console for ResolveAddressPost': function(browser) {
-    //     const expectedResponse = {address: {textCase: 'Upper', line1: '2000 Main Street', city: 'Irvine', region: 'CA', country: 'US', postalCode: '92614'}};
+    'API Reference: AvaTax: REST v2 - API Console for ResolveAddressPost': function(browser) {
+        const expectedResponse = {address: {textCase: 'Upper', line1: '2000 Main Street', city: 'Irvine', region: 'CA', country: 'US', postalCode: '92614'}};
 
-    //     browser
-    //         .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/');
+        browser
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/');
 
-    //     browser.page.endpointSummary()
-    //         .navigateTo('#ResolveAddressPost-console')
-    //         .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
-    //         .click('#ResolveAddressPost-console-body .submit')
+        browser.page.endpointSummary()
+            .navigateTo('#ResolveAddressPost-console')
+            .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
+            .click('#ResolveAddressPost-console-body .submit')
 
-    //         .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
-    //             browser.assert.ok(deepEqual(res.address, expectedResponse.address),
-    //                 "response for 'try it now' matches expected response");
-    //         });
-    // },
+            .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
+                browser.assert.ok(deepEqual(res.address, expectedResponse.address),
+                    "response for 'try it now' matches expected response");
+            });
+    },
 
     'API Reference: AvaTax: REST v2 - API Console for ResolveAddress': function(browser) {
-        // TODO: testing behavior on input
+        // testing behavior on input
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/')
             .navigateTo('#ResolveAddress-console')
@@ -41,7 +41,7 @@ module.exports = {
             .getText("#ResolveAddress-console-body .console-req-container .code-snippet", function(result) { 
                 browser.assert.ok(deepEqual(result.value, "curl -X GET -H 'Accept: application/json' -H 'Authorization: Basic aHR0cHdhdGNoOmY=' https://sandbox-rest.avatax.com/api/v2/addresses/resolve?line1=PO Box 1"), 'cURL populates properly');
             });
-        // TODO: testing behavior on reset
+        // testing behavior on reset
         browser
             .click('#ResolveAddress-console-body span[type=reset]')
             .getText(".code-snippet-plaintext", function(result) { 
@@ -52,7 +52,7 @@ module.exports = {
             })
             .setValue('input', 'PO Box 1')
         
-        // TODO: testing behavior on backspace
+        // testing behavior on backspace
         for (let index = 0; index < 'PO Box 1'.length; index++) {
             browser.keys(browser.Keys.BACK_SPACE);
         }

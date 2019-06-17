@@ -115,10 +115,11 @@ export default (state, action) => {
         case actionTypes.RESET_CONSOLE:
             newState = fillOrRemoveSampleData(newState, true);
             newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
-            newState.curl = buildCurl(newState.sampleAuthHeader, newState);
             newState.apiResponse = undefined;
             newState.requestInput = '{}';
             newState.consoleError = false;
+            newState.path = newState.sandboxPath;
+            newState.curl = buildCurl(newState.sampleAuthHeader, newState);
             break;
         case actionTypes.SUBMIT_STARTED:
             newState.apiConsoleLoading = true;
