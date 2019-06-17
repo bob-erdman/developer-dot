@@ -185,7 +185,6 @@ export default (api, apiWithRefs, rootPath) => {
                 }
 
                 apiMethod.curl = buildCurl(swaggerData.sampleAuthHeader, apiMethod);
-
                 // console.log(`*** ${JSON.stringify(endpoint[action].responses)}`);
 
                 if (endpoint[action].responses[200] && endpoint[action].responses[200].schema) {

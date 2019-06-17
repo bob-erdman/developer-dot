@@ -24,6 +24,9 @@ export default {
         };
     },
     queryParamChanged: (newValue, paramName, endpointId) => {
+        console.log("newValue", newValue)
+        console.log("paramName", paramName)
+
         return {
             type: actionTypes.QUERY_STRING_CHANGED,
             newValue: newValue,

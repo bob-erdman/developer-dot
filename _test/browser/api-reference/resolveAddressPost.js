@@ -29,6 +29,7 @@ module.exports = {
     // },
 
     'API Reference: AvaTax: REST v2 - API Console for ResolveAddress': function(browser) {
+        // TODO: testing behavior on input
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/')
             .navigateTo('#ResolveAddress-console')
@@ -36,25 +37,26 @@ module.exports = {
             .setValue('input', 'PO Box 1')
             .getText(".code-snippet-plaintext", function(result) { 
                 browser.assert.ok(deepEqual(result.value, 'https://sandbox-rest.avatax.com/api/v2/addresses/resolve?line1=PO Box 1'), 'API Endpoint populates properly');
+            })
+            .getText("#ResolveAddress-console-body .console-req-container .code-snippet", function(result) { 
+                browser.assert.ok(deepEqual(result.value, "curl -X GET -H 'Accept: application/json' -H 'Authorization: Basic aHR0cHdhdGNoOmY=' https://sandbox-rest.avatax.com/api/v2/addresses/resolve?line1=PO Box 1"), 'cURL populates properly');
             });
-            // .getText("#ResolveAddress-console-body .console-req-container .code-snippet", function(result) { 
-            //     browser.assert.ok(deepEqual(result.value, "curl -X GET -H 'Accept: application/json' -H 'Authorization: Basic aHR0cHdhdGNoOmY=' https://sandbox-rest.avatax.com/api/v2/addresses/resolve?line1=PO Box 1"), 'cURL populates properly');
-            // })
-        // browser
-            // .click('#ResolveAddress-console-body span[type=reset]')
-            // .getText(".code-snippet-plaintext", function(result) { 
-            //     console.log("___RESULT____", result)
-            //     browser.assert.ok(deepEqual(result.value, 'https://sandbox-rest.avatax.com/api/v2/addresses/resolve'), 'API Endpoint resets properly');
-            // })
-            // .getText("#ResolveAddress-console-body .console-req-container .code-snippet", function(result) { 
-            //     browser.assert.ok(deepEqual(result.value, "curl -X GET -H 'Accept: application/json' -H 'Authorization: Basic aHR0cHdhdGNoOmY=' https://sandbox-rest.avatax.com/api/v2/addresses/resolve"), 'cURL resets properly');
-            // })
-            //.setValue('input', 'PO Box 1')
+        // TODO: testing behavior on reset
+        browser
+            .click('#ResolveAddress-console-body span[type=reset]')
+            .getText(".code-snippet-plaintext", function(result) { 
+                browser.assert.ok(deepEqual(result.value, 'https://sandbox-rest.avatax.com/api/v2/addresses/resolve'), 'API Endpoint resets properly');
+            })
+            .getText("#ResolveAddress-console-body .console-req-container .code-snippet", function(result) { 
+                browser.assert.ok(deepEqual(result.value, "curl -X GET -H 'Accept: application/json' -H 'Authorization: Basic aHR0cHdhdGNoOmY=' https://sandbox-rest.avatax.com/api/v2/addresses/resolve"), 'cURL resets properly');
+            })
+            .setValue('input', 'PO Box 1')
+        
+        // TODO: testing behavior on backspace
         for (let index = 0; index < 'PO Box 1'.length; index++) {
-            console.log(index)
             browser.keys(browser.Keys.BACK_SPACE);
         }
-            
+        
         browser
             .getText(".code-snippet-plaintext", function(result) { 
                 browser.assert.ok(deepEqual(result.value, 'https://sandbox-rest.avatax.com/api/v2/addresses/resolve'), 'API Endpoint clears when input is cleared');

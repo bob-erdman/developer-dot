@@ -50,7 +50,7 @@ const PostHelper = ({action, endpoint, onRequestChanged, request}) => {
         return (
             <div className={'code-snippet reqScroll'}><textarea id={'console_input'} onChange={() => {
                 onRequestChanged(endpoint.id, document.getElementById('console_input').value);
-            }} onKeyDown ={(e) => {
+            }} onKeyUp ={(e) => {
                 if (e.keyCode === 9) {
                     e.preventDefault();
                     const text = document.getElementById('console_input');
