@@ -46,7 +46,6 @@ const QueryOrPathParamsForm = ({endpoint, paramType, params, onInputChange, onSu
                                 id={`${endpoint.id}-qs-${i}`}
                                 onChange={
                                     (e) => {
-                                        console.warn("INPUT CHANGE")
                                         onInputChange(e.target.value, key, endpoint.id);
                                     }
                                 }

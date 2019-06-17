@@ -110,7 +110,6 @@ export {
 
 export default (state, action) => {
     let newState = {...state};
-    console.warn("ACTION TYPE", action.type)
 
     switch (action.type) {
         case actionTypes.RESET_CONSOLE:
