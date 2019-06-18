@@ -1,7 +1,7 @@
 const deepEqual = require('../helpers/deepEqual');
 
 module.exports = {
-    // '@tags': ['SKIP'],
+    '@tags': ['SKIP'],
 
     'before': function(browser) {
         browser.maximizeWindow();
