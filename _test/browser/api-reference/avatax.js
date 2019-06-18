@@ -48,7 +48,7 @@ module.exports = {
     'API Reference: AvaTax: REST v2 (verify number of endpoints)': function(browser) {
         // NOTE: THESE NOW ALL EXIST ON SUB 'TAG' PAGES
 
-        expectedNumberOfApiEndpoints = 36;
+        expectedNumberOfApiEndpoints = 37;
         const expectedNumberOfSubTags = 7;
 
         const expectedRequest = {accountId: 123456789, confirmResetLicenseKey: true};
