@@ -14,6 +14,7 @@
     "test-web": "bash ./scripts/test-web.sh",
     "test-web-bstack": "_test/browser/nightwatch --config _test/browser/nightwatchBrowserStack.json --retries 1",
     "lint": "eslint --ext .js,.jsx ./dynamic ./_test",
+    "fix-lint": "eslint --fix --ext .js,.jsx ./dynamic ./_test",
     "clean": "rm -rf node_modules; npm i"
   },
   "devDependencies": {

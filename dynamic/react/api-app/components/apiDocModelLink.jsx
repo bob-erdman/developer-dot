@@ -12,7 +12,7 @@ const ApiDocModelLink = ({refSchema}) => {
         return (
             <span>
                 {'Array['}
-                <a className="pathLink" href={`/${window.modelsPath}/${encodeURI(schema.items.$ref.split('/').pop())}`}>
+                <a className='pathLink' href={`/${window.modelsPath}/${encodeURI(schema.items.$ref.split('/').pop())}`}>
                     {schema.items.$ref.split('/').pop()}
                 </a>
                 {']'}
@@ -20,7 +20,7 @@ const ApiDocModelLink = ({refSchema}) => {
         );
     } else if (schema.$ref) {
         return (
-            <a className="pathLink" href={`/${window.modelsPath}/${encodeURI(schema.$ref.split('/').pop())}`}>
+            <a className='pathLink' href={`/${window.modelsPath}/${encodeURI(schema.$ref.split('/').pop())}`}>
                 {schema.$ref.split('/').pop()}
             </a>
         );
