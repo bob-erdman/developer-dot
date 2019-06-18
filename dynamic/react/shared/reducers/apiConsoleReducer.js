@@ -111,6 +111,7 @@ export {
 export default (state, action) => {
     let newState = {...state};
 
+
     switch (action.type) {
         case actionTypes.RESET_CONSOLE:
             newState = fillOrRemoveSampleData(newState, true);

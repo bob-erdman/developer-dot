@@ -189,6 +189,7 @@ describe('Shared Reducers', () => {
                     "name": "Calculate Tax and Record a Document",
                     "description": "Calculates taxes on a document such as a sales order, sales invoice, purchase order, purchase invoice, or credit memo. To use an XML request/response, use the URL `/1.0/tax/get.xml`",
                     "path": "https://development.avalara.net/1.0/tax/get",
+                    "sandboxPath": "https://development.avalara.net/1.0/tax/get",
                     "action": "post",
                     "isAuthenticated": true,
                     "showExcludedPostBodyFields": false,
