@@ -23,7 +23,7 @@ Use <a class="dev-guide-link" href="https://communicationsua.avalara.net">Custom
     <li>Upcoming bill runs</li>
 </ul>
 
-<h3>Jurisdiction Determination</h3>
+<h3 id="jur_determine">Jurisdiction Determination</h3>
 Picking the correct jurisdiction is critical because taxes are location-specific.  REST v2 provides different ways to determine the jurisdiction:
 <ul class="dev-guide-list">
     <li>Populate a location on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice">Invoice</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item">Line Item</a></li>

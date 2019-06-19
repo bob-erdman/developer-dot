@@ -62,17 +62,30 @@ A jurisdiction is set with one of these jurisdiction types:
     <li><b>NPANXX</b> (<code>npa</code>): 6-digit numbers consisting of the area code and second 3 digits of a North American dialing plan phone number</li>
 </ul>
 
-Keep these points in mind if using the Geocoding functionality (<code>geo</code> = <code>true</code>):
-<ol class="dev-guide-list">
-  <li>The geocoding is slower, but provides a more accurate jurisdiction</li>
-  <li>If the geocoding process fails, the entire <code>CalcTaxes</code> request fails</li>
-  <li>PO Box addresses are not valid when using Geocoding</li>
-</ol>
-
 <h4>Note</h4>
 When specifying jurisdictions outside of the United States via country/state/county/city lookup, be sure to pass the Country ISO (<code>ctry</code>).  For example, use <code>CAN</code> for Canada or <code>IND</code> for India.  If the Country ISO is not set on a foreign country, errors are generated.
 
 See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> for more information.
+
+<h3>Embedded Geocode Request</h3>
+An address can be passed in a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a> and geocoded during the tax calculation by setting <code>geo</code> = <code>true</code>.  
+
+<img src="/public/images/comms/dev-guide_rest_v2/comms_dev_guide_embedded_geocode_request.png"/>
+
+Keep these points in mind if using the Geocoding functionality (<code>geo</code> = <code>true</code>):
+<ol class="dev-guide-list">
+  <li>The geocoding is slower, but provides a more accurate jurisdiction.</li>
+  <li>If the geocoding process fails the following fallback options are applied:
+  <ul class="dev-guide-list">
+    <li>If a PCode has been provided, the PCode is used.</li>
+    <li>If a PCode isn't provided, a fallback location lookup occurs on the Country/State/County/City/Zip provided.</li>
+    <li>If the fallback lookup fails, the transaction fails and an error is generated.  If the transaction is part of an invoice, the invoice also fails.</li>
+  </ul>
+  </li>
+  <li>PO Box addresses are not valid when using Geocoding.</li>
+</ol>
+
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/best-practices#jur_determine">Best Practices</a>.
 
 <h3>Zip-Only Fallback</h3>
 If the city or county name does not match and a postal code is provided, jurisdiction determination falls back to the Zip Code for transactions in the United States of America or Canada.
