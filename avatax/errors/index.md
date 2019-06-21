@@ -141,7 +141,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>25</td>
 			<td><a href="ReadOnly">ReadOnly</a></td>
-			<td>The field is read only.</td>
+			<td>The field is read-only.</td>
 		</tr>		
         <tr>
 			<td>26</td>
@@ -156,12 +156,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>28</td>
 			<td><a href="AccountTypeNotSupported">AccountTypeNotSupported</a></td>
-			<td>This account does not have access to this action or feature.</td>
+			<td>This account type cannot perform this operation.</td>
 		</tr>		
         <tr>
 			<td>29</td>
 			<td><a href="InvalidFirmClientOffer">InvalidFirmClientOffer</a></td>
-			<td>The offer is invalid for firm client accounts.</td>
+			<td>Offer is not valid for a firm client account.</td>
 		</tr>		
         <tr>
 			<td>30</td>
@@ -214,11 +214,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>Your AvaTax account has expired, or is not yet enabled.  You may need to contact your customer account manager for assistance.</td>
 		</tr>		
         <tr>
-			<td>40</td>
-			<td><a href="VisibilityError">VisibilityError</a></td>
-			<td>You attempted to request an object from AvaTax that you are not permitted to see.</td>
-		</tr>		
-        <tr>
 			<td>41</td>
 			<td><a href="BearerTokenNotSupported">BearerTokenNotSupported</a></td>
 			<td>Bearer Token authentication is not yet supported with this API.</td>
@@ -261,7 +256,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>49</td>
 			<td><a href="PermissionRequired">PermissionRequired</a></td>
-			<td>The user does not have permission for the desired action.</td>
+			<td>User doesn't have permission for action.</td>
 		</tr>		
         <tr>
 			<td>50</td>
@@ -276,12 +271,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>52</td>
 			<td><a href="LinkageNotAllowed">LinkageNotAllowed</a></td>
-			<td>Linking the client account to the firm is not allowed.</td>
+			<td>The client account cannot be linked to the firm.</td>
 		</tr>		
         <tr>
 			<td>53</td>
 			<td><a href="LinkageStatusUpdateNotSupported">LinkageStatusUpdateNotSupported</a></td>
-			<td>The status change attempted is not supported.</td>
+			<td>The status cannot be updated.</td>
 		</tr>		
         <tr>
 			<td>60</td>
@@ -306,7 +301,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>64</td>
 			<td><a href="InvalidTaxTypeMapping">InvalidTaxTypeMapping</a></td>
-			<td>An invalid tax type mapping was provided</td>
+			<td>The tax type mapping provided is not valid.</td>
 		</tr>		
         <tr>
 			<td>70</td>
@@ -607,11 +602,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>169</td>
 			<td><a href="PasswordLengthInvalid">PasswordLengthInvalid</a></td>
 			<td>Your password did not meet length requirements.</td>
-		</tr>		
-        <tr>
-			<td>170</td>
-			<td><a href="LocalNexusConflict">LocalNexusConflict</a></td>
-			<td>Your nexus has invalid local nexus settings.</td>
 		</tr>		
         <tr>
 			<td>171</td>
@@ -941,12 +931,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>611</td>
 			<td><a href="AccountAlreadyExists">AccountAlreadyExists</a></td>
-			<td>This combination of the account name and company address already exists.</td>
-		</tr>		
-        <tr>
-			<td>700</td>
-			<td><a href="InvalidDocumentStatusForRefund">InvalidDocumentStatusForRefund</a></td>
-			<td>The AvaTax Refund API is only available on committed documents.</td>
+			<td>The account already exists.</td>
 		</tr>		
         <tr>
 			<td>701</td>
@@ -1209,11 +1194,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The values in your verify call did not match the transaction.</td>
 		</tr>		
         <tr>
-			<td>1309</td>
-			<td><a href="InvalidDocumentStatusForCommit">InvalidDocumentStatusForCommit</a></td>
-			<td>Documents can only be committed from the `Saved` or `Posted` statuses.</td>
-		</tr>		
-        <tr>
 			<td>1310</td>
 			<td><a href="InvalidDocumentType">InvalidDocumentType</a></td>
 			<td>A document could not be found with the specified type.</td>
@@ -1227,6 +1207,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1313</td>
 			<td><a href="TransactionIsCommitted">TransactionIsCommitted</a></td>
 			<td>This API can only modify transactions that are not yet committed.</td>
+		</tr>		
+        <tr>
+			<td>1314</td>
+			<td><a href="InvalidDocumentStatus">InvalidDocumentStatus</a></td>
+			<td>The document status is incorrect for this operation.</td>
 		</tr>		
         <tr>
 			<td>1400</td>
@@ -1306,12 +1291,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1605</td>
 			<td><a href="AdvancedRuleError">AdvancedRuleError</a></td>
-			<td>There was an error when setting or applying an advanced tax rule.</td>
-		</tr>		
-        <tr>
-			<td>1700</td>
-			<td><a href="InvalidDocumentStatusToAddOrDeleteLines">InvalidDocumentStatusToAddOrDeleteLines</a></td>
-			<td>This document is voided, cannot add or delete lines.</td>
+			<td>An error occured when using or applying Advanced Tax Rules.</td>
 		</tr>		
         <tr>
 			<td>1701</td>
@@ -1322,11 +1302,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1702</td>
 			<td><a href="UPCCodeNotUnique">UPCCodeNotUnique</a></td>
 			<td>A single UPC code can be defined only once for each company.</td>
-		</tr>		
-        <tr>
-			<td>1703</td>
-			<td><a href="CannotUpdateSourceOrInstance">CannotUpdateSourceOrInstance</a></td>
-			<td>The DataSource Source and Instance fields cannot be modified.</td>
 		</tr>		
         <tr>
 			<td>1704</td>
@@ -1346,12 +1321,42 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1707</td>
 			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
-			<td>A generic tax code was used for a company item.</td>
+			<td>Company item contains a generic taxcode.</td>
 		</tr>		
         <tr>
 			<td>1708</td>
 			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
-			<td>One or more check for this company to be certified have failed</td>
+			<td>Company cannot be certified.</td>
+		</tr>		
+        <tr>
+			<td>1709</td>
+			<td><a href="NoVoidedDocuments">NoVoidedDocuments</a></td>
+			<td>Company does not have any voided documents.</td>
+		</tr>		
+        <tr>
+			<td>1710</td>
+			<td><a href="InadequateCommittedDocuments">InadequateCommittedDocuments</a></td>
+			<td>Company must have at least two committed documents.</td>
+		</tr>		
+        <tr>
+			<td>1711</td>
+			<td><a href="DocumentCodeIsGuid">DocumentCodeIsGuid</a></td>
+			<td>Company has a document code which is a GUID.</td>
+		</tr>		
+        <tr>
+			<td>1712</td>
+			<td><a href="CustomerVendorCodeIsGuid">CustomerVendorCodeIsGuid</a></td>
+			<td>Company's customer vendor code is a GUID.</td>
+		</tr>		
+        <tr>
+			<td>1713</td>
+			<td><a href="CannotUpdateAccountTypeId">CannotUpdateAccountTypeId</a></td>
+			<td>Cannot update AccountTypeId.</td>
+		</tr>		
+        <tr>
+			<td>1714</td>
+			<td><a href="InadequateDocumentLineCount">InadequateDocumentLineCount</a></td>
+			<td>Company has inadequate document line count.</td>
 		</tr>		
         <tr>
 			<td>1800</td>
@@ -1412,4 +1417,14 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>2104</td>
 			<td><a href="SubscriptionRequiredForParameter">SubscriptionRequiredForParameter</a></td>
 			<td>The account's subscription level doesn't include use of the parameter in your request.</td>
+		</tr>		
+        <tr>
+			<td>2105</td>
+			<td><a href="InvalidAccountType">InvalidAccountType</a></td>
+			<td>Account Type must be 'firm' for this action.</td>
+		</tr>		
+        <tr>
+			<td>2208</td>
+			<td><a href="NoExemptionNoOrCustomerUsageType">NoExemptionNoOrCustomerUsageType</a></td>
+			<td>The exemption number or customer usage type is missing.</td>
 		</tr></tbody></table>

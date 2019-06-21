@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-An invalid tax type mapping was provided
+The tax type mapping provided is not valid.
 
 ## Example
 

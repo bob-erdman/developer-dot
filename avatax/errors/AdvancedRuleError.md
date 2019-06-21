@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-There was an error when setting or applying an advanced tax rule.
+An error occured when using or applying Advanced Tax Rules.
 
 ## Example
 

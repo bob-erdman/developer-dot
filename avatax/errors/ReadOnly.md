@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The field is read only. 
+The field is read-only.
 
 ## Example
 
