@@ -142,8 +142,8 @@ export default (state, action) => {
         break;
     case actionTypes.QUERY_STRING_CHANGED:
         newState = {...newState, queryString: queryStringReducer(newState.queryString, action)};
-        newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
-        newState.path = encodeURI(newState.sandboxPath + newState.qsPath);
+        newState.qsPath = encodeURI(buildQueryString(reduceParamsToKeyValuePair(newState.queryString)));
+        newState.path = newState.sandboxPath + newState.qsPath;
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
         newState.path = (newState.pathParams ? replaceStringPlaceholders(newState.sandboxPath, reduceParamsToKeyValuePair(newState.pathParams)) : newState.sandboxPath) + (newState.qsPath || '');
         break;
