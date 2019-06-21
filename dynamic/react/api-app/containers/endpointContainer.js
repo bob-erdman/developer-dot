@@ -42,10 +42,6 @@ const mapDispatchToProps = (dispatch) => {
                         pathParams: reduceParamsToKeyValuePair(endpoint.pathParams),
                         postBody: endpoint.postBody || {}
                     });
-                    console.log("endpoint", endpoint)
-                    console.log("pathParams", reduceParamsToKeyValuePair(endpoint.pathParams))
-                    console.log("queryString", reduceParamsToKeyValuePair(endpoint.queryString))
-
 
                 } else {
                     const url = (endpoint.pathParams ? replaceStringPlaceholders(endpoint.path, reduceParamsToKeyValuePair(endpoint.pathParams)) : endpoint.path) + (endpoint.qsPath || '');
