@@ -52,7 +52,7 @@ module.exports = {
             .setValue('input', 'PO Box 1')
             .getText('.code-snippet-plaintext', function(result) {
                 browser.assert.ok(deepEqual(result.value, 'https://sandbox-rest.avatax.com/api/v2/addresses/resolve?line1=PO%20Box%201', 'API Endpoint populates properly'));
-            })
+            });
 
         // testing behavior on backspace
         for (let index = 0; index < 'PO Box 1'.length; index++) {
@@ -122,10 +122,10 @@ module.exports = {
     //         .navigateTo('#ResolveAddress-console-body')
     //         .setValue('input[name=line1]', 'PO Box 1')
     //         .setValue('input[name=city]', 'Seattle')
-    //         .setValue('input[name=region]', 'Washington') // no abbreviation 
+    //         .setValue('input[name=region]', 'Washington') // no abbreviation
     //         .setValue('input[name=postalCode]', '98122')
     //         .navigateTo('input[name=country]')
-    //         .setValue('input[name=country]', 'United States') // no abbreviation 
+    //         .setValue('input[name=country]', 'United States') // no abbreviation
     //         .click('#ResolveAddress-console-body .submit')
     //         .getText('.console-res-container .code-snippet', function(result) {
     //             browser.assert.ok(deepEqual(result.value, expectedResponse), 'Submission without abbreviations is successful');
@@ -194,6 +194,6 @@ module.exports = {
     //         .click('#ResolveAddress-console-body .submit')
     //         .getText('.console-res-container .code-snippet', function(result) {
     //             browser.assert.ok(deepEqual(result.value, expectedResponse), 'Submission with abbreviations is successful');
-    //         });   
+    //         });
     // }
 };

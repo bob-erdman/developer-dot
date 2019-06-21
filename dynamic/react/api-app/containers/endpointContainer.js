@@ -42,7 +42,6 @@ const mapDispatchToProps = (dispatch) => {
                         pathParams: reduceParamsToKeyValuePair(endpoint.pathParams),
                         postBody: endpoint.postBody || {}
                     });
-
                 } else {
                     const url = (endpoint.pathParams ? replaceStringPlaceholders(endpoint.path, reduceParamsToKeyValuePair(endpoint.pathParams)) : endpoint.path) + (endpoint.qsPath || '');
                     const postBody = endpoint.postBody || null;
