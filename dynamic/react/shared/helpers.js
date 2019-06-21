@@ -194,17 +194,7 @@ const submitProxiedRequest = (endpoint) => {
 
     /* eslint-enable no-undef */
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
-    .then((bucketRes) => {
-        console.warn("body obj", {
-            apiKey: bucketRes.Body.toString(),
-            method: endpoint.action,
-            route: endpoint.path,
-            queryString: endpoint.queryString || {},
-            pathParams: endpoint.pathParams || {},
-            postBody: endpoint.postBody
-        })
-        console.warn("bucketRes", bucketRes);
-        
+    .then((bucketRes) => {      
         return fetch(endpoint.proxy.route, {
             method: 'POST',
             headers: {
@@ -221,11 +211,7 @@ const submitProxiedRequest = (endpoint) => {
         });
     })
     .then((rawApiRes) => {
-        console.warn("rawApiRes", rawApiRes);
-
-        return rawApiRes.json().then((body) => {
-            console.warn("response body", body);
-            
+        return rawApiRes.json().then((body) => {            
             return {
                 status: rawApiRes.status.toString(),
                 statusMessage: rawApiRes.statusText,
@@ -240,9 +226,7 @@ const submitProxiedRequest = (endpoint) => {
  * Given the above inputs, determines if an AWS proxy key is needed to auth the API request
  * The correct key is requested if so, and returns a promise which will yield the API request results
  */
-const submitApiRequest = (url, action, postBody = null, userProfile = null) => {
-    console.warn("submitApiRequest");
-    
+const submitApiRequest = (url, action, postBody = null, userProfile = null) => {    
     const req = {
         method: action,
         headers: {}
