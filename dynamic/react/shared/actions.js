@@ -7,7 +7,6 @@ export default {
         };
     },
     submitConsoleRequest: (endpointId, responseBody, status, statusMessage) => {
-        console.log("responseBody", responseBody)
         return {
             type: actionTypes.SUBMIT_DONE,
             endpointId: endpointId,
