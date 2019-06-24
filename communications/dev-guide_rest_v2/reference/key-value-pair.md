@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.13 - Key Value Pair
+title:  Chapter 5.1.11 - Key Value Pair
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/bridge-participant/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/tax-bracket/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -63,6 +63,6 @@ The <code>KeyValuePair</code> object allows the user to specify a list of <b>key
 {% endhighlight %}
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/bridge-participant/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/tax-bracket/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

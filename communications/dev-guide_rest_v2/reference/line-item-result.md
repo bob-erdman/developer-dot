@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.17 - Line Item Result
+title:  Chapter 5.1.15 - Line Item Result
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -45,13 +45,6 @@ The <code>LineItemResult</code> object contains the <b>individual tax calculatio
             Contains the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">detailed tax results</a> generated for each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>
             </td>
       </tr>
-            <tr>
-            <td><code>brdg</code></td>
-            <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant-result/"><code>[BridgeParticipantResult]</code></a> Bridge Participant Results
-            <br>
-            Contains the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant/">conference bridge participant</a> tax calculation results
-            </td>
-        </tr>
         <tr>
             <td><code>err</code></td>
             <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/error-response/"><code>[Error]</code></a> Error
@@ -74,11 +67,6 @@ The <code>LineItemResult</code> object contains the <b>individual tax calculatio
     "txs": [
       {
         // Detailed Tax
-      }
-    ],
-    "brdg": [
-      {
-        // Bridge Participant Result
       }
     ],
     "err": [

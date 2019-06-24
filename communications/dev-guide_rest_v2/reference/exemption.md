@@ -138,7 +138,7 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
       // Location
     },
     "tpe": 0,
-    "lvl": 0,
+    "dom": 1,
     "cat": 2,
     "exnb": false
   },
@@ -149,7 +149,7 @@ The <code>Exemption</code> object allows you to specify <b>exemptions</b> for th
       // Location
     },
     "tpe": 1,
-    "lvl": 0,
+    "dom": 1,
     "cat": 0,
     "exnb": false
   }
