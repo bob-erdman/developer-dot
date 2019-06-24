@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/exemption/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/bridge-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>Tax Bracket</h3>
@@ -58,5 +58,5 @@ The <code>TaxBracket</code> object allows the user to specify a list of <b>tax b
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/exemption/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/bridge-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

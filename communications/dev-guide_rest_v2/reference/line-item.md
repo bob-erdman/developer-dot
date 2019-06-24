@@ -111,16 +111,21 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>pror</code></td>
             <td><code>[double]</code> Pro-rated Percentage
             <br>
-            A percentage used for the pro-rated calculation of fixed taxes
-            <br/><br/>
-            Remove the key from the line item if you don't want to use Proration functionality.  Setting <code>prop</code> to 0 means 0% proration for pro-rateable fixed taxes.
+            A percentage used for the pro-rated calculation of fixed taxes 
+            <br>
+            Remove the key from the line item if you don't want to use Proration functionality. Setting <code>prop</code> to 0 means 0% proration for pro-rateable fixed taxes.
             </td>
         </tr>
         <tr>
-            <td><code>brdg</code></td>
-            <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-data/"><code>[BridgeData]</code></a> Conference Bridge Data
+            <td><code>proadj</code></td>
+            <td><code>[int]</code> Pro-Rated Adjustment Type
             <br>
-            A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-data/">Bridge Conference</a> specific settings to apply to the line item
+             Defines the adjustment type for pro-rated credit or adjustment calculations.
+            <ul class="dev-guide-list">
+              <li><code>0</code> Default</li>
+              <li><code>1</code> Don't return non-proratable fixed taxes in the response</li>
+              <li><code>2</code> Return non-proratable fixed taxes in the response</li>
+            </ul>
             </td>
         </tr>
         <tr>
@@ -241,6 +246,23 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
           For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, the tax engine uses the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information
         </td>
       </tr>
+      <tr>
+        <td><code>qty</code></td>
+        <td><code>[int]</code> Quantity
+          <br>
+          Quantity to be applied to the line item - taxation is equivalent to repeating the item the number of times of the quantity.  The field must be a positive integer greater than or equal to 1.  Quantity is not supported on Tax Inclusive or Prorated line transactions
+        </td>
+      </tr>
+      <tr>
+        <td><code>glref</code></td>
+        <td><code>[string]</code> General Ledger Reference
+          <br>
+          General Ledger Reference field for use in reporting
+          <ul class="dev-guide-list">
+              <li>Max length: 150 bytes</li>
+            </ul>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -277,9 +299,7 @@ These fields override the same fields set on the <a class="dev-guide-link" href=
     "plsp": 0,
     "incl": false,
     "pror": 0,
-    "brdg": {
-      // Bridge Data
-    },
+    "proadj": 0,
     "tran": 19,
     "serv": 6,
     "dbt": false,
@@ -297,7 +317,9 @@ These fields override the same fields set on the <a class="dev-guide-link" href=
     },
     "cust": 0,
     "lfln": false,
-    "date": "2018-09-23T20:31:53.452Z"
+    "date": "2018-09-23T20:31:53.452Z",
+    "qty": 1,
+    "glref": "General Ledger Reference"
   }
 ]
 {% endhighlight %}

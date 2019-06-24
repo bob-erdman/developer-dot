@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.18 - Detailed Tax Result
+title:  Chapter 5.1.16 - Detailed Tax Result
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/line-item-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/bridge-participant-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>Detailed Tax Result</h3>
@@ -187,5 +187,5 @@ Bundled tax calculations return summarized <a class="dev-guide-link" href="/comm
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/line-item-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/bridge-participant-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
