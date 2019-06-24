@@ -4,7 +4,7 @@ import actionTypes from '../../shared/actionTypes';
 export default (state = {}, action) => {
     switch (action.type) {
     case actionTypes.AUTH_KEY_CHANGED:
-        // Update auth header for each request in pmCollection:
+            // Update auth header for each request in pmCollection:
         const params = {...state.auth.params, [action.keyName]: action.inputVal};
         const auth = {...state.auth, params: params};
 
@@ -12,9 +12,9 @@ export default (state = {}, action) => {
         let authHeader = 'test';
 
         if (process.env.NODE_ENV !== 'test') {
-            /* eslint-disable no-eval */
+                /* eslint-disable no-eval */
             authHeader = eval(authHeaderWithoutPlaceholders);
-            /* eslint-enable no-eval */
+                /* eslint-enable no-eval */
         }
 
         state.postmanCollection.item = state.postmanCollection.item.map((req) => {

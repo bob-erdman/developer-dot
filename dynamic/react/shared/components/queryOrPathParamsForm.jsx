@@ -44,6 +44,7 @@ const QueryOrPathParamsForm = ({endpoint, paramType, params, onInputChange, onSu
                             <input
                                 className={'form-control'}
                                 id={`${endpoint.id}-qs-${i}`}
+                                name={key}
                                 onChange={
                                     (e) => {
                                         onInputChange(e.target.value, key, endpoint.id);
