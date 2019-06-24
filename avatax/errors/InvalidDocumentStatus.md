@@ -32,4 +32,4 @@ The document status is incorrect for this operation.
 
 ## Explanation
 
-Some document actions are dependant on the status of the document. To complete the desired action, make sure the document is in the proper status. 
+Some document actions are dependant on the status of the document. To complete the desired action, make sure the document is in the proper status.

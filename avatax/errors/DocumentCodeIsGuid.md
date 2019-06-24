@@ -1,7 +1,7 @@
 ---
 layout: page
 title: DocumentCodeIsGuid
-number: 1711
+number: 2204
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,9 +19,9 @@ Company has a document code which is a GUID.
   "details": [
     {
       "code": "DocumentCodeIsGuid",
-      "number": 1711,
+      "number": 2204,
       "message": "Company has a document code which is a GUID.",
-      "description": "Document '-0-' has a GUID as the document code. In order for the company to be certified, there shouldn't be any GUID in the document code in the past month or among the last 100 documents. ",
+      "description": "Document '-0-' has a GUID as the document code. In order for the company to be certified, there shouldn't be any GUID in the document code in the past month or among the last 100 documents.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/DocumentCodeIsGuid",
       "severity": "Error"

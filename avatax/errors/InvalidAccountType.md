@@ -32,4 +32,4 @@ Account Type must be 'firm' for this action.
 
 ## Explanation
 
-For firm accounts, only FirmAdmin or a FirmUser can be added. 
+For firm accounts, only FirmAdmin or a FirmUser can be added.

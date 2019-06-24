@@ -32,4 +32,4 @@ Cannot update AccountTypeId.
 
 ## Explanation
 
-For Firm Clients, the AccountTypeId can only be created during account creation. It is not possible to update this value after account creation. 
+For Firm Clients, the AccountTypeId can only be created during account creation. It is not possible to update this value after account creation.
