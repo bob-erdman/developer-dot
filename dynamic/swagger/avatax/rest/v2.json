@@ -2858,6 +2858,58 @@
         ]
       }
     },
+    "/api/v2/companies/{id}/certify": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "summary": "Checks whether the integration being used to set up this company and run transactions onto this company is compliant to all requirements.",
+        "description": "Examines the most recent 100 transactions or data from the last month when verifying transaction-related integrations.\r\nFor partners who write integrations against AvaTax for many clients, this API is a way to do a quick self testing to verify whether the\r\nwritten integrations for a company are sufficient enough to be delivered to the respective customers to start using it.\r\n            \r\nThis API provides messages specific enough (through predefined checks) to guide the partner on what integrations are still missing from the company to get fully certified.\r\nThe API makes the following checks to conclude if the company is NOT fully certified:\r\n1. Any past month items contains generic tax code of P0000000.\r\n2. All the companies on the requesting account are test companies.\r\n3. No Voided/Cancelled documents in the past 30 days.\r\n4. There are less than 2 committed documents.\r\n5. Any documentCode is a generic GUID string.\r\n6. Any customerCode on document is a generic GUID string.\r\n7. No document has more than 1 documentLine.\r\n8. All of the documents have missing exemptionNo, customerUsageType, taxDateOverride or negative amount.\r\n9. Any document quantity is a negative number.\r\n10. Any document have repeated lines.\r\n11. No document has shipping charge.\r\n12. All documents have same ItemCodes, descriptions and taxCodes.\r\n13. Less than 2 addresses used across all documents.\r\n14. Whether locationCode was used in documents.\r\n15. Account with AvaGlobal subscription and no documents have VATBuyerId.\r\n16. Any document has currencyCode not being USD for accounts with AvaGlobal subscription.\r\n17. All documents have countryCode used for accounts with AvaGlobal subscription.",
+        "operationId": "CertifyIntegration",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the company to check if its integration is certified.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "X-Avalara-Client",
+            "in": "header",
+            "description": "Identifies the software you are using to call this API.  For more information on the client header, see [Client Headers](https://developer.avalara.com/avatax/client-headers/) .",
+            "required": false,
+            "type": "string",
+            "default": "Swagger UI; 19.6.0; Custom; 1.0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": "BadRequest"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "UserSecurity": [],
+            "OauthSecurity": []
+          }
+        ]
+      }
+    },
     "/api/v2/companies/{id}/configuration": {
       "get": {
         "tags": [
@@ -22501,7 +22553,7 @@
           "format": "date-time",
           "description": "The earliest date on which this account may be used.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "endDate": {
           "format": "date-time",
@@ -22620,7 +22672,7 @@
       "example": {
         "id": 12345,
         "name": "Test Account",
-        "effectiveDate": "2019-06-18T00:00:00+00:00",
+        "effectiveDate": "2019-06-24T00:00:00+00:00",
         "accountStatusId": "Test",
         "accountTypeId": "Regular"
       }
@@ -25359,7 +25411,7 @@
         "serverVersion": "12.3.0.0",
         "referenceId": 0,
         "severityLevelId": 0,
-        "serverTimestamp": "2019-06-18T16:29:33.1746134Z",
+        "serverTimestamp": "2019-06-24T20:47:27.1914751Z",
         "serverDuration": 12345,
         "serviceName": "AccountSvcJson",
         "operation": "QueryCompanies",
@@ -26025,7 +26077,7 @@
         "ruleId": {
           "description": "Unique identifier for a rule",
           "type": "string",
-          "example": "79f85a0c7c8142ce81adfecdddcf862b"
+          "example": "ca252c8eace24ecdb2cf042b718fd5aa"
         },
         "name": {
           "description": "Rule name",
@@ -26044,7 +26096,7 @@
         "isVisibleInCUP": false,
         "isTest": true,
         "version": 0,
-        "ruleId": "79f85a0c7c8142ce81adfecdddcf862b",
+        "ruleId": "ca252c8eace24ecdb2cf042b718fd5aa",
         "name": "Generic replace rule",
         "description": "This is just an example"
       }
@@ -26075,7 +26127,7 @@
         "ruleId": {
           "description": "Unique identifier for the rule",
           "type": "string",
-          "example": "9c3cc0b40aae4d7d8a2ebb5e968682b2"
+          "example": "821ae471e2644de798e3777b4b718a9a"
         },
         "customerDataSchema": {
           "description": "Customer data schema",
@@ -26083,7 +26135,7 @@
         }
       },
       "example": {
-        "ruleId": "9c3cc0b40aae4d7d8a2ebb5e968682b2"
+        "ruleId": "821ae471e2644de798e3777b4b718a9a"
       }
     },
     "FetchResult[CompanyModel]": {
@@ -26456,7 +26508,7 @@
           "maxLength": 25,
           "minLength": 0,
           "type": "string",
-          "example": "TestContact59f4854edfa64b"
+          "example": "TestContactc7356131ca2442"
         },
         "firstName": {
           "description": "The first or given name of this contact.",
@@ -26582,7 +26634,7 @@
       "example": {
         "id": 56789,
         "companyId": 12345,
-        "contactCode": "TestContact59f4854edfa64b",
+        "contactCode": "TestContactc7356131ca2442",
         "firstName": "Bob",
         "lastName": "McExample",
         "title": "Owner",
@@ -27238,9 +27290,9 @@
         "sourcing": {
           "description": "Indicates whether this nexus is defined as origin or destination nexus.\r\n            \r\nThis field is defined by Avalara.  All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.",
           "enum": [
-            "Mixed",
+            "Origin",
             "Destination",
-            "Origin"
+            "Mixed"
           ],
           "type": "string",
           "example": "Destination",
@@ -27738,22 +27790,22 @@
         "taxTypeId": {
           "description": "Some tax type groups contain multiple different types of tax.  To create a rule that affects only one\r\ntype of tax within a tax type group, set this value to the code matching the specific tax type within\r\nthat group.  The custom tax rule will then only apply to taxes calculated for that specific type.\r\n            \r\nFor rules that affect all tax types, use the value `A` to match `All` tax types within that group.",
           "enum": [
-            "E",
-            "Lodging",
-            "Bottle",
-            "RentToOwn",
             "All",
             "BothSalesAndUseTax",
             "ConsumerUseTax",
-            "ConsumersUseAndSellersUseTax",
-            "ConsumerUseAndSalesTax",
-            "Fee",
+            "SalesTax",
+            "UseTax",
+            "VATOutputTax",
             "VATInputTax",
             "VATNonrecoverableInputTax",
-            "VATOutputTax",
+            "Fee",
             "Rental",
-            "SalesTax",
-            "UseTax"
+            "ConsumerUseAndSalesTax",
+            "ConsumersUseAndSellersUseTax",
+            "E",
+            "Lodging",
+            "Bottle",
+            "RentToOwn"
           ],
           "type": "string",
           "example": "BothSalesAndUseTax",
@@ -28011,7 +28063,7 @@
           "format": "date",
           "description": "The first date at which this rule applies.  If `null`, this rule will apply to all dates prior to the end date.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "endDate": {
           "format": "date",
@@ -28054,9 +28106,9 @@
         "sourcing": {
           "description": "The sourcing types to which this rule applies.",
           "enum": [
-            "Mixed",
+            "Origin",
             "Destination",
-            "Origin"
+            "Mixed"
           ],
           "type": "string",
           "x-enum-metadata": {
@@ -28153,7 +28205,7 @@
         "value": 0,
         "cap": 0,
         "threshold": 0,
-        "effectiveDate": "2019-06-18",
+        "effectiveDate": "2019-06-24",
         "description": "Freight",
         "countyFIPS": "013",
         "country": "US",
@@ -28695,7 +28747,7 @@
           "format": "date-time",
           "description": "End date of this exempt certificate",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "idType": {
           "description": "The type of idNo (tax_number) associated with a certificate.\r\nExample: Driver's Licence Number, Permit Number.",
@@ -28725,7 +28777,7 @@
         "stateFips": "AAA",
         "region": "WA",
         "country": "US",
-        "endDate": "2019-06-18T00:00:00+00:00",
+        "endDate": "2019-06-24T00:00:00+00:00",
         "idType": "TIN",
         "isTaxCodeListExclusionList": 0
       }
@@ -28804,7 +28856,7 @@
           "description": "Rule execution unique identifier",
           "type": "string",
           "readOnly": true,
-          "example": "21527a2f5a5e4a7b8de579aa5eba3074"
+          "example": "ea9412533f3448dca0fed641526a214c"
         },
         "name": {
           "description": "Name of rule execution",
@@ -28814,7 +28866,7 @@
           "format": "date-time",
           "description": "Date rule execution starts",
           "type": "string",
-          "example": "2019-06-18T00:00:00Z"
+          "example": "2019-06-24T00:00:00Z"
         },
         "endDate": {
           "format": "date-time",
@@ -28830,14 +28882,14 @@
         "ruleId": {
           "description": "Unique identifier of rule to execute",
           "type": "string",
-          "example": "d820bf35d6e94a62b5b81da1791470e0"
+          "example": "9bdad26155834e4c983571701f08d6a5"
         },
         "rule": {
           "$ref": "#/definitions/AdvancedRuleModel",
           "description": "Advanced rule to execute",
           "readOnly": true,
           "example": {
-            "ruleId": "325899160d1042f28ecf193dff6c83ed",
+            "ruleId": "6b1aeef17b014a299267735129d96fea",
             "name": "Generic replace rule",
             "description": "Replaces a target value on the transaction with a replacement value"
           }
@@ -28850,21 +28902,21 @@
           "description": "Unique identifier of customer data used in rule execution",
           "type": "string",
           "readOnly": true,
-          "example": "d2f451e50a544ce4b1eafc25b5c09988"
+          "example": "3ee19b6ac0364393a7f7f33b20590d83"
         }
       },
       "example": {
-        "ruleExecutionId": "21527a2f5a5e4a7b8de579aa5eba3074",
-        "startDate": "2019-06-18T00:00:00Z",
+        "ruleExecutionId": "ea9412533f3448dca0fed641526a214c",
+        "startDate": "2019-06-24T00:00:00Z",
         "endDate": "9999-12-31T00:00:00",
         "enabled": true,
-        "ruleId": "d820bf35d6e94a62b5b81da1791470e0",
+        "ruleId": "9bdad26155834e4c983571701f08d6a5",
         "rule": {
-          "ruleId": "325899160d1042f28ecf193dff6c83ed",
+          "ruleId": "6b1aeef17b014a299267735129d96fea",
           "name": "Generic replace rule",
           "description": "Replaces a target value on the transaction with a replacement value"
         },
-        "customerDataId": "d2f451e50a544ce4b1eafc25b5c09988"
+        "customerDataId": "3ee19b6ac0364393a7f7f33b20590d83"
       }
     },
     "AdvancedRuleModel": {
@@ -28877,7 +28929,7 @@
         "ruleId": {
           "description": "Unique identifier for a rule",
           "type": "string",
-          "example": "b75ec81fd7a34f57992bddbb0765142f"
+          "example": "898b9b6d4f814c7d8db8eb993416a40d"
         },
         "name": {
           "description": "Rule name",
@@ -28891,7 +28943,7 @@
         }
       },
       "example": {
-        "ruleId": "b75ec81fd7a34f57992bddbb0765142f",
+        "ruleId": "898b9b6d4f814c7d8db8eb993416a40d",
         "name": "Generic replace rule",
         "description": "Replaces a target value on the transaction with a replacement value"
       }
@@ -28911,15 +28963,15 @@
             "type": "string"
           },
           "example": [
-            "91c57db99a4b4a7fb54a7074827a76cf",
-            "584c6c1c9c7b41be9c7748853ba79927"
+            "a30cd9d970b142018fd4c92463da2cb6",
+            "b6e332f32b534dd4ab3ab42e09cd4412"
           ]
         }
       },
       "example": {
         "ruleExecutionIds": [
-          "91c57db99a4b4a7fb54a7074827a76cf",
-          "584c6c1c9c7b41be9c7748853ba79927"
+          "a30cd9d970b142018fd4c92463da2cb6",
+          "b6e332f32b534dd4ab3ab42e09cd4412"
         ]
       }
     },
@@ -29921,7 +29973,7 @@
         "customerCode": {
           "description": "The unique code identifying this customer.  Must be unique within your company.\r\n            \r\nThis code should be used in the `customerCode` field of any call that creates or adjusts a transaction\r\nin order to ensure that all exemptions that apply to this customer are correctly considered.\r\n            \r\nNote: This field is case sensitive.",
           "type": "string",
-          "example": "59a34222-3368-46db-bcc9-d20c478caff6"
+          "example": "ff7fcc38-8b5a-42b5-9bbb-a9f072e90317"
         },
         "alternateId": {
           "description": "A customer-configurable alternate ID number for this customer.  You may set this value to match any\r\nother system that would like to reference this customer record.",
@@ -30060,7 +30112,7 @@
       },
       "example": {
         "companyId": 0,
-        "customerCode": "59a34222-3368-46db-bcc9-d20c478caff6",
+        "customerCode": "ff7fcc38-8b5a-42b5-9bbb-a9f072e90317",
         "alternateId": "987654321",
         "name": "Dr. Bob Example",
         "attnName": "Attn: Receiving",
@@ -30191,7 +30243,7 @@
         "filename": {
           "description": "File name for the image of this certificate.\r\n            \r\nWhen creating a certificate, if you do not upload a PDF or JPG image, you must specify the filename\r\nof the certificate as it is tracked in your repository.\r\n            \r\nTo create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,\r\nor an array of JPG `pages`.  The API will return an error if you omit these fields or if you attempt to\r\nput values in more than one of them.",
           "type": "string",
-          "example": "37f8dfea-fe3f-4b88-8525-e9c283454efb"
+          "example": "69be0111-1e57-4658-b0d8-8676cb944afe"
         },
         "valid": {
           "description": "True if this certificate is marked as valid.  A valid certificate can be considered for exemption purposes.\r\nWhen a certificate is marked invalid, it will no longer be considered when calculating exemption for\r\na customer.",
@@ -30236,13 +30288,13 @@
           "format": "date-time",
           "description": "The date/time when this record was created.",
           "type": "string",
-          "example": "2019-06-18T16:29:34.7511612Z"
+          "example": "2019-06-24T20:47:28.6635355Z"
         },
         "modifiedDate": {
           "format": "date",
           "description": "The date/time when this record was last modified.",
           "type": "string",
-          "example": "2019-06-18T16:29:34.7511612Z"
+          "example": "2019-06-24T20:47:28.6635351Z"
         },
         "pageCount": {
           "format": "int32",
@@ -30259,7 +30311,7 @@
           "example": [
             {
               "companyId": 0,
-              "customerCode": "3dc06445-a836-4f54-9efa-248de84c6f18",
+              "customerCode": "00559172-1e52-429d-95af-23d536c54553",
               "alternateId": "987654321",
               "name": "Dr. Bob Example",
               "attnName": "Attn: Receiving",
@@ -30281,7 +30333,7 @@
             },
             {
               "companyId": 0,
-              "customerCode": "e390a323-0cc8-4716-b32f-fc6171c6c647",
+              "customerCode": "5889550f-d525-45fa-9ef6-6d17a36e40a2",
               "alternateId": "987654321",
               "name": "Dr. Bob Example",
               "attnName": "Attn: Receiving",
@@ -30343,7 +30395,7 @@
         "id": 0,
         "signedDate": "2016-02-01",
         "expirationDate": "2020-12-31",
-        "filename": "37f8dfea-fe3f-4b88-8525-e9c283454efb",
+        "filename": "69be0111-1e57-4658-b0d8-8676cb944afe",
         "valid": true,
         "verified": false,
         "exemptPercentage": 0,
@@ -30351,13 +30403,13 @@
         "exemptionReason": {
           "name": "RESALE"
         },
-        "createdDate": "2019-06-18T16:29:34.7511612Z",
-        "modifiedDate": "2019-06-18",
+        "createdDate": "2019-06-24T20:47:28.6635355Z",
+        "modifiedDate": "2019-06-24",
         "pageCount": 0,
         "customers": [
           {
             "companyId": 0,
-            "customerCode": "3dc06445-a836-4f54-9efa-248de84c6f18",
+            "customerCode": "00559172-1e52-429d-95af-23d536c54553",
             "alternateId": "987654321",
             "name": "Dr. Bob Example",
             "attnName": "Attn: Receiving",
@@ -30379,7 +30431,7 @@
           },
           {
             "companyId": 0,
-            "customerCode": "e390a323-0cc8-4716-b32f-fc6171c6c647",
+            "customerCode": "5889550f-d525-45fa-9ef6-6d17a36e40a2",
             "alternateId": "987654321",
             "name": "Dr. Bob Example",
             "attnName": "Attn: Receiving",
@@ -31089,7 +31141,7 @@
           "format": "date-time",
           "description": "LastPolled",
           "type": "string",
-          "example": "2019-06-18T16:29:35.0468713Z"
+          "example": "2019-06-24T20:47:28.9440528Z"
         }
       },
       "example": {
@@ -31098,7 +31150,7 @@
         "currency": "USD",
         "isFundingSetup": true,
         "fundingMethod": "ACH Pull",
-        "lastUpdated": "2019-06-18T16:29:35.0468713Z"
+        "lastUpdated": "2019-06-24T20:47:28.9440528Z"
       }
     },
     "FundingInitiateModel": {
@@ -31880,7 +31932,7 @@
           "description": "A unique customer-provided code identifying this transaction.",
           "type": "string",
           "readOnly": true,
-          "example": "e39f43e7-af60-4251-914b-f30f1c1ba884"
+          "example": "aad4297c-846f-4732-8f6d-9d0dbdfae414"
         },
         "companyId": {
           "format": "int32",
@@ -31892,7 +31944,7 @@
           "format": "date",
           "description": "The date on which this transaction occurred.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "paymentDate": {
           "format": "date",
@@ -32383,7 +32435,7 @@
           "description": "Tax date for this transaction",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "lines": {
           "description": "A list of line items in this transaction.  To fetch this list, add the query string `?$include=Lines` or `?$include=Details` to your URL.",
@@ -32413,14 +32465,14 @@
               "lineAmount": 1000,
               "quantity": 1,
               "ref1": "Note: Deliver to Bob",
-              "reportingDate": "2019-06-18",
+              "reportingDate": "2019-06-24",
               "revAccount": "",
               "sourcing": "Destination",
               "tax": 62.5,
               "taxableAmount": 1000,
               "taxCalculated": 62.5,
               "taxCode": "PS081282",
-              "taxDate": "2019-06-18",
+              "taxDate": "2019-06-24",
               "taxEngine": "",
               "taxOverrideType": "None",
               "taxOverrideAmount": 0,
@@ -32548,9 +32600,9 @@
       },
       "example": {
         "id": 123456789,
-        "code": "e39f43e7-af60-4251-914b-f30f1c1ba884",
+        "code": "aad4297c-846f-4732-8f6d-9d0dbdfae414",
         "companyId": 12345,
-        "date": "2019-06-18",
+        "date": "2019-06-24",
         "status": "Committed",
         "type": "SalesInvoice",
         "currencyCode": "USD",
@@ -32580,7 +32632,7 @@
         "destinationAddressId": 123456789,
         "isSellerImporterOfRecord": false,
         "description": "Yarn",
-        "taxDate": "2019-06-18T00:00:00+00:00",
+        "taxDate": "2019-06-24T00:00:00+00:00",
         "lines": [
           {
             "id": 123456789,
@@ -32602,14 +32654,14 @@
             "lineAmount": 1000,
             "quantity": 1,
             "ref1": "Note: Deliver to Bob",
-            "reportingDate": "2019-06-18",
+            "reportingDate": "2019-06-24",
             "revAccount": "",
             "sourcing": "Destination",
             "tax": 62.5,
             "taxableAmount": 1000,
             "taxCalculated": 62.5,
             "taxCode": "PS081282",
-            "taxDate": "2019-06-18",
+            "taxDate": "2019-06-24",
             "taxEngine": "",
             "taxOverrideType": "None",
             "taxOverrideAmount": 0,
@@ -32811,7 +32863,7 @@
           "format": "date",
           "description": "The date when this transaction should be reported.  By default, all transactions are reported on the date when the actual transaction took place.\r\nIn some cases, line items may be reported later due to delayed shipments or other business reasons.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "revAccount": {
           "description": "The revenue account number for this line item.",
@@ -32821,9 +32873,9 @@
         "sourcing": {
           "description": "Indicates whether this line item was taxed according to the origin or destination.",
           "enum": [
-            "Mixed",
+            "Origin",
             "Destination",
-            "Origin"
+            "Mixed"
           ],
           "type": "string",
           "example": "Destination",
@@ -32881,7 +32933,7 @@
           "format": "date",
           "description": "The date that was used for calculating tax amounts for this line item.  By default, this date should be the same as the document date.\r\nIn some cases, for example when a consumer returns a product purchased previously, line items may be calculated using a tax date in the past\r\nso that the consumer can receive a refund for the correct tax amount that was charged when the item was originally purchased.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "taxEngine": {
           "description": "The tax engine identifier that was used to calculate this line item.",
@@ -33066,14 +33118,14 @@
         "lineAmount": 1000,
         "quantity": 1,
         "ref1": "Note: Deliver to Bob",
-        "reportingDate": "2019-06-18",
+        "reportingDate": "2019-06-24",
         "revAccount": "",
         "sourcing": "Destination",
         "tax": 62.5,
         "taxableAmount": 1000,
         "taxCalculated": 62.5,
         "taxCode": "PS081282",
-        "taxDate": "2019-06-18",
+        "taxDate": "2019-06-24",
         "taxEngine": "",
         "taxOverrideType": "None",
         "taxOverrideAmount": 0,
@@ -33976,9 +34028,9 @@
         "sourcing": {
           "description": "Indicates whether this tax detail applies to the origin or destination of the transaction.",
           "enum": [
-            "Mixed",
+            "Origin",
             "Destination",
-            "Origin"
+            "Mixed"
           ],
           "type": "string",
           "example": "Destination",
@@ -34462,7 +34514,7 @@
             "id": 0,
             "signedDate": "2016-02-01",
             "expirationDate": "2020-12-31",
-            "filename": "fdc8b29a-e457-4c3d-982b-19aaf58e2c10",
+            "filename": "9ef5b578-927b-49ae-acc7-fd5eb01e2555",
             "valid": true,
             "verified": false,
             "exemptPercentage": 0,
@@ -34470,13 +34522,13 @@
             "exemptionReason": {
               "name": "RESALE"
             },
-            "createdDate": "2019-06-18T16:29:36.1029068Z",
-            "modifiedDate": "2019-06-18",
+            "createdDate": "2019-06-24T20:47:29.9499849Z",
+            "modifiedDate": "2019-06-24",
             "pageCount": 0,
             "customers": [
               {
                 "companyId": 0,
-                "customerCode": "564fd7b7-826e-4c3b-b580-493ca58668c0",
+                "customerCode": "85f584f8-70ad-4197-947d-0fb6d49bc86c",
                 "alternateId": "987654321",
                 "name": "Dr. Bob Example",
                 "attnName": "Attn: Receiving",
@@ -34498,7 +34550,7 @@
               },
               {
                 "companyId": 0,
-                "customerCode": "e9b2816f-de27-41c0-a7bf-1de98a2251c7",
+                "customerCode": "dfcae8e6-3c4b-42ca-8638-a3995ce9d97d",
                 "alternateId": "987654321",
                 "name": "Dr. Bob Example",
                 "attnName": "Attn: Receiving",
@@ -34531,7 +34583,7 @@
           "id": 0,
           "signedDate": "2016-02-01",
           "expirationDate": "2020-12-31",
-          "filename": "fdc8b29a-e457-4c3d-982b-19aaf58e2c10",
+          "filename": "9ef5b578-927b-49ae-acc7-fd5eb01e2555",
           "valid": true,
           "verified": false,
           "exemptPercentage": 0,
@@ -34539,13 +34591,13 @@
           "exemptionReason": {
             "name": "RESALE"
           },
-          "createdDate": "2019-06-18T16:29:36.1029068Z",
-          "modifiedDate": "2019-06-18",
+          "createdDate": "2019-06-24T20:47:29.9499849Z",
+          "modifiedDate": "2019-06-24",
           "pageCount": 0,
           "customers": [
             {
               "companyId": 0,
-              "customerCode": "564fd7b7-826e-4c3b-b580-493ca58668c0",
+              "customerCode": "85f584f8-70ad-4197-947d-0fb6d49bc86c",
               "alternateId": "987654321",
               "name": "Dr. Bob Example",
               "attnName": "Attn: Receiving",
@@ -34567,7 +34619,7 @@
             },
             {
               "companyId": 0,
-              "customerCode": "e9b2816f-de27-41c0-a7bf-1de98a2251c7",
+              "customerCode": "dfcae8e6-3c4b-42ca-8638-a3995ce9d97d",
               "alternateId": "987654321",
               "name": "Dr. Bob Example",
               "attnName": "Attn: Receiving",
@@ -34625,7 +34677,7 @@
           "description": "The unique ID number of this connection.",
           "type": "string",
           "readOnly": true,
-          "example": "10bf271f-5a42-4cb3-bf78-e7dc2dada01c"
+          "example": "8ebd77a9-eb4f-4e7f-99d8-09f7c7b7e8de"
         },
         "isEnabled": {
           "description": "The connection using the connection_id is enabled. The customer is responsible to enable or disable.",
@@ -34659,7 +34711,7 @@
           "description": "The date when this record was created.",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "modifiedUserId": {
           "format": "int32",
@@ -34673,7 +34725,7 @@
           "description": "The date/time when this record was last modified.",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "deletedDate": {
           "format": "date-time",
@@ -34690,14 +34742,14 @@
         "id": 1,
         "companyId": 12345,
         "source": "Amazon v2 Extractor",
-        "instance": "10bf271f-5a42-4cb3-bf78-e7dc2dada01c",
+        "instance": "8ebd77a9-eb4f-4e7f-99d8-09f7c7b7e8de",
         "isEnabled": false,
         "isSynced": false,
         "isAuthorized": false,
         "createdUserId": 123,
-        "createdDate": "2019-06-18T00:00:00+00:00",
+        "createdDate": "2019-06-24T00:00:00+00:00",
         "modifiedUserId": 12,
-        "modifiedDate": "2019-06-18T00:00:00+00:00"
+        "modifiedDate": "2019-06-24T00:00:00+00:00"
       }
     },
     "FetchResult[DataSourceModel]": {
@@ -35881,7 +35933,7 @@
           "format": "date-time",
           "description": "DateTime as EffDate for SystemCountry",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "endDate": {
           "format": "date-time",
@@ -35894,7 +35946,7 @@
         "systemCountryId": 1,
         "systemId": 1,
         "country": "US",
-        "effDate": "2019-06-18T00:00:00+00:00",
+        "effDate": "2019-06-24T00:00:00+00:00",
         "endDate": "9999-12-31T00:00:00"
       }
     },
@@ -38754,22 +38806,22 @@
         "taxTypeId": {
           "description": "The type of tax to report on this return.",
           "enum": [
-            "E",
-            "Lodging",
-            "Bottle",
-            "RentToOwn",
             "All",
             "BothSalesAndUseTax",
             "ConsumerUseTax",
-            "ConsumersUseAndSellersUseTax",
-            "ConsumerUseAndSalesTax",
-            "Fee",
+            "SalesTax",
+            "UseTax",
+            "VATOutputTax",
             "VATInputTax",
             "VATNonrecoverableInputTax",
-            "VATOutputTax",
+            "Fee",
             "Rental",
-            "SalesTax",
-            "UseTax"
+            "ConsumerUseAndSalesTax",
+            "ConsumersUseAndSellersUseTax",
+            "E",
+            "Lodging",
+            "Bottle",
+            "RentToOwn"
           ],
           "type": "string",
           "example": "All",
@@ -39730,22 +39782,22 @@
         "taxTypeId": {
           "description": "The type of tax to report on this return.",
           "enum": [
-            "E",
-            "Lodging",
-            "Bottle",
-            "RentToOwn",
             "All",
             "BothSalesAndUseTax",
             "ConsumerUseTax",
-            "ConsumersUseAndSellersUseTax",
-            "ConsumerUseAndSalesTax",
-            "Fee",
+            "SalesTax",
+            "UseTax",
+            "VATOutputTax",
             "VATInputTax",
             "VATNonrecoverableInputTax",
-            "VATOutputTax",
+            "Fee",
             "Rental",
-            "SalesTax",
-            "UseTax"
+            "ConsumerUseAndSalesTax",
+            "ConsumersUseAndSellersUseTax",
+            "E",
+            "Lodging",
+            "Bottle",
+            "RentToOwn"
           ],
           "type": "string",
           "example": "SalesTax",
@@ -43708,7 +43760,7 @@
           "format": "date-time",
           "description": "Created date of the linkage",
           "type": "string",
-          "example": "2019-06-18T16:29:39.546156+00:00"
+          "example": "2019-06-24T20:47:33.1571813+00:00"
         },
         "createdUserId": {
           "format": "int32",
@@ -43720,7 +43772,7 @@
           "format": "date-time",
           "description": "Modified date of the linkage",
           "type": "string",
-          "example": "2019-06-18T16:29:39.5461572+00:00"
+          "example": "2019-06-24T20:47:33.1571817+00:00"
         },
         "modifiedUserId": {
           "format": "int32",
@@ -43778,9 +43830,9 @@
         "clientAccountId": 24958289,
         "clientAccountName": "Client Account",
         "offer": "ARA",
-        "createdDate": "2019-06-18T16:29:39.546156+00:00",
+        "createdDate": "2019-06-24T20:47:33.1571813+00:00",
         "createdUserId": 213,
-        "modifiedDate": "2019-06-18T16:29:39.5461572+00:00",
+        "modifiedDate": "2019-06-24T20:47:33.1571817+00:00",
         "modifiedUserId": 213,
         "status": "Requested",
         "isDeleted": false
@@ -45863,7 +45915,7 @@
         "code": {
           "description": "Represents the unique code of this MultiDocument transaction.\r\n            \r\nA MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.        ///",
           "type": "string",
-          "example": "b797413d-f7b6-4be2-8cb2-ddb6e6044363"
+          "example": "5f2dff84-707c-45e6-8625-436e8d8338f2"
         },
         "type": {
           "description": "Represents the document type of this MultiDocument transaction.  For more information about\r\ndocument types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).\r\n            \r\nA MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.",
@@ -45951,7 +46003,7 @@
         }
       },
       "example": {
-        "code": "b797413d-f7b6-4be2-8cb2-ddb6e6044363",
+        "code": "5f2dff84-707c-45e6-8625-436e8d8338f2",
         "type": "SalesInvoice",
         "commit": true
       }
@@ -45976,7 +46028,7 @@
         "code": {
           "description": "The transaction code of the MultiDocument transaction.\r\n            \r\nAll individual transactions within this MultiDocument object will have this code as a prefix.",
           "type": "string",
-          "example": "92995387-bddc-400f-beaa-3c0d695e53ca"
+          "example": "3e3c35c4-42d6-464f-8bfa-9ec3ea67ee5c"
         },
         "type": {
           "description": "Indicates the type of MultiDocument transaction.  Common values are:\r\n            \r\n* SalesOrder - An estimate that is not permanently recorded\r\n* SalesInvoice - An invoice that can be reported on a tax return\r\n            \r\nFor more information about document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/)",
@@ -46069,14 +46121,14 @@
           "description": "The date/time when this record was created.",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "modifiedDate": {
           "format": "date-time",
           "description": "The date/time when this record was last modified.",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "modifiedUserId": {
           "format": "int32",
@@ -46096,9 +46148,9 @@
           "example": [
             {
               "id": 123456789,
-              "code": "43021143-e339-472c-b0ec-cad47a41b004",
+              "code": "4e58994d-20bd-494b-aac4-209d057b37e0",
               "companyId": 12345,
-              "date": "2019-06-18",
+              "date": "2019-06-24",
               "status": "Committed",
               "type": "SalesInvoice",
               "currencyCode": "USD",
@@ -46128,7 +46180,7 @@
               "destinationAddressId": 123456789,
               "isSellerImporterOfRecord": false,
               "description": "Yarn",
-              "taxDate": "2019-06-18T00:00:00+00:00",
+              "taxDate": "2019-06-24T00:00:00+00:00",
               "lines": [
                 {
                   "id": 123456789,
@@ -46150,14 +46202,14 @@
                   "lineAmount": 1000,
                   "quantity": 1,
                   "ref1": "Note: Deliver to Bob",
-                  "reportingDate": "2019-06-18",
+                  "reportingDate": "2019-06-24",
                   "revAccount": "",
                   "sourcing": "Destination",
                   "tax": 62.5,
                   "taxableAmount": 1000,
                   "taxCalculated": 62.5,
                   "taxCode": "PS081282",
-                  "taxDate": "2019-06-18",
+                  "taxDate": "2019-06-24",
                   "taxEngine": "",
                   "taxOverrideType": "None",
                   "taxOverrideAmount": 0,
@@ -46232,18 +46284,18 @@
       "example": {
         "id": 12,
         "accountId": 123456,
-        "code": "92995387-bddc-400f-beaa-3c0d695e53ca",
+        "code": "3e3c35c4-42d6-464f-8bfa-9ec3ea67ee5c",
         "type": "SalesInvoice",
         "createdUserId": 87954,
-        "createdDate": "2019-06-18T00:00:00+00:00",
-        "modifiedDate": "2019-06-18T00:00:00+00:00",
+        "createdDate": "2019-06-24T00:00:00+00:00",
+        "modifiedDate": "2019-06-24T00:00:00+00:00",
         "modifiedUserId": 66783,
         "documents": [
           {
             "id": 123456789,
-            "code": "43021143-e339-472c-b0ec-cad47a41b004",
+            "code": "4e58994d-20bd-494b-aac4-209d057b37e0",
             "companyId": 12345,
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "status": "Committed",
             "type": "SalesInvoice",
             "currencyCode": "USD",
@@ -46273,7 +46325,7 @@
             "destinationAddressId": 123456789,
             "isSellerImporterOfRecord": false,
             "description": "Yarn",
-            "taxDate": "2019-06-18T00:00:00+00:00",
+            "taxDate": "2019-06-24T00:00:00+00:00",
             "lines": [
               {
                 "id": 123456789,
@@ -46295,14 +46347,14 @@
                 "lineAmount": 1000,
                 "quantity": 1,
                 "ref1": "Note: Deliver to Bob",
-                "reportingDate": "2019-06-18",
+                "reportingDate": "2019-06-24",
                 "revAccount": "",
                 "sourcing": "Destination",
                 "tax": 62.5,
                 "taxableAmount": 1000,
                 "taxCalculated": 62.5,
                 "taxCode": "PS081282",
-                "taxDate": "2019-06-18",
+                "taxDate": "2019-06-24",
                 "taxEngine": "",
                 "taxOverrideType": "None",
                 "taxOverrideAmount": 0,
@@ -46386,13 +46438,13 @@
           "maxLength": 50,
           "minLength": 0,
           "type": "string",
-          "example": "a1cbc6b2-68ee-4f18-8801-b55f64122d9f"
+          "example": "ae1897c1-487a-4347-9916-2664b27a01c5"
         },
         "refundDate": {
           "format": "date",
           "description": "The date of the refund.  For customers using Avalara's Managed Returns Service, this date controls the month in which the refund\r\ntransaction will be reported on a tax filing.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "refundType": {
           "description": "Type of this refund.\r\n            \r\nTo submit a full refund, specify `Full`.\r\n            \r\nTo refund only specific lines from the transaction, specify `Partial` and indicate the lines you wish to apply in the `refundLines` field.\r\n            \r\nTo refund the tax that was paid in the previous transaction, specify `TaxOnly`.\r\n            \r\nTo issue a percentage-based discount, specify `Percentage`.",
@@ -46451,8 +46503,8 @@
         }
       },
       "example": {
-        "refundTransactionCode": "a1cbc6b2-68ee-4f18-8801-b55f64122d9f",
-        "refundDate": "2019-06-18",
+        "refundTransactionCode": "ae1897c1-487a-4347-9916-2664b27a01c5",
+        "refundDate": "2019-06-24",
         "refundType": "Full",
         "referenceCode": "Refund for a committed transaction"
       }
@@ -46586,7 +46638,7 @@
           "format": "date",
           "description": "Transaction Date - The date on the invoice, purchase order, etc.\r\n            \r\nBy default, this date will be used to calculate the tax rates for the transaction.  If you wish to use a\r\ndifferent date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "salespersonCode": {
           "description": "Salesperson Code - The client application salesperson reference code.",
@@ -46628,7 +46680,7 @@
           "maxLength": 50,
           "minLength": 0,
           "type": "string",
-          "example": "2019-06-18-001"
+          "example": "2019-06-24-001"
         },
         "exemptionNo": {
           "description": "Exemption Number for this document.\r\n            \r\nIf you specify an exemption number for this document, this document will be considered exempt, and you\r\nmay be asked to provide proof of this exemption certificate in the event that you are asked by an auditor\r\nto verify your exemptions.\r\nNote: This is same as 'exemptNo' in TransactionModel.",
@@ -46800,9 +46852,9 @@
         ],
         "type": "SalesInvoice",
         "companyCode": "DEFAULT",
-        "date": "2019-06-18",
+        "date": "2019-06-24",
         "customerCode": "ABC",
-        "purchaseOrderNo": "2019-06-18-001",
+        "purchaseOrderNo": "2019-06-24-001",
         "addresses": {
           "singleLocation": {
             "line1": "2000 Main Street",
@@ -47066,7 +47118,7 @@
           "format": "date",
           "description": "The override tax date to use\r\n            \r\nThis is used when the tax has been previously calculated\r\nas in the case of a layaway, return or other reason indicated by the Reason element.\r\nIf the date is not overridden, then it should be set to the same as the DocDate.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "reason": {
           "description": "This provides the reason for a tax override for audit purposes.  It is required for types 2-4.\r\n            \r\nTypical reasons include:\r\n\"Return\"\r\n\"Layaway\"",
@@ -47077,7 +47129,7 @@
       "example": {
         "type": "TaxAmount",
         "taxAmount": 6.25,
-        "taxDate": "2019-06-18",
+        "taxDate": "2019-06-24",
         "reason": "Precalculated Tax"
       }
     },
@@ -47274,9 +47326,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -47310,9 +47362,9 @@
           ],
           "type": "SalesInvoice",
           "companyCode": "DEFAULT",
-          "date": "2019-06-18",
+          "date": "2019-06-24",
           "customerCode": "ABC",
-          "purchaseOrderNo": "2019-06-18-001",
+          "purchaseOrderNo": "2019-06-24-001",
           "addresses": {
             "singleLocation": {
               "line1": "2000 Main Street",
@@ -47406,9 +47458,9 @@
               ],
               "type": "SalesInvoice",
               "companyCode": "DEFAULT",
-              "date": "2019-06-18",
+              "date": "2019-06-24",
               "customerCode": "ABC",
-              "purchaseOrderNo": "2019-06-18-001",
+              "purchaseOrderNo": "2019-06-24-001",
               "addresses": {
                 "singleLocation": {
                   "line1": "2000 Main Street",
@@ -47511,7 +47563,7 @@
           "format": "date-time",
           "description": "Server timestamp, in UTC, of the date/time when the original transaction was created",
           "type": "string",
-          "example": "2019-06-18T16:29:40.4510606Z"
+          "example": "2019-06-24T20:47:33.9798133Z"
         },
         "serverDuration": {
           "format": "date-time",
@@ -47571,9 +47623,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -47589,7 +47641,7 @@
           }
         },
         "type": "SalesOrder",
-        "serverTimestamp": "2019-06-18T16:29:40.4510606Z",
+        "serverTimestamp": "2019-06-24T20:47:33.9798133Z",
         "apiCallStatus": "ReconstructedApiCallAvailable"
       }
     },
@@ -47615,9 +47667,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -47649,9 +47701,9 @@
           ],
           "type": "SalesInvoice",
           "companyCode": "DEFAULT",
-          "date": "2019-06-18",
+          "date": "2019-06-24",
           "customerCode": "ABC",
-          "purchaseOrderNo": "2019-06-18-001",
+          "purchaseOrderNo": "2019-06-24-001",
           "addresses": {
             "singleLocation": {
               "line1": "2000 Main Street",
@@ -47687,9 +47739,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -47709,9 +47761,9 @@
           "description": "API response",
           "example": {
             "id": 123456789,
-            "code": "6cc8e50f-1fb7-49b0-89ce-fd96dc616656",
+            "code": "f2d46e8d-3238-4012-b909-9d394571a25e",
             "companyId": 12345,
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "status": "Committed",
             "type": "SalesInvoice",
             "currencyCode": "USD",
@@ -47741,7 +47793,7 @@
             "destinationAddressId": 123456789,
             "isSellerImporterOfRecord": false,
             "description": "Yarn",
-            "taxDate": "2019-06-18T00:00:00+00:00",
+            "taxDate": "2019-06-24T00:00:00+00:00",
             "lines": [
               {
                 "id": 123456789,
@@ -47763,14 +47815,14 @@
                 "lineAmount": 1000,
                 "quantity": 1,
                 "ref1": "Note: Deliver to Bob",
-                "reportingDate": "2019-06-18",
+                "reportingDate": "2019-06-24",
                 "revAccount": "",
                 "sourcing": "Destination",
                 "tax": 62.5,
                 "taxableAmount": 1000,
                 "taxCalculated": 62.5,
                 "taxCode": "PS081282",
-                "taxDate": "2019-06-18",
+                "taxDate": "2019-06-24",
                 "taxEngine": "",
                 "taxOverrideType": "None",
                 "taxOverrideAmount": 0,
@@ -47855,9 +47907,9 @@
           ],
           "type": "SalesInvoice",
           "companyCode": "DEFAULT",
-          "date": "2019-06-18",
+          "date": "2019-06-24",
           "customerCode": "ABC",
-          "purchaseOrderNo": "2019-06-18-001",
+          "purchaseOrderNo": "2019-06-24-001",
           "addresses": {
             "singleLocation": {
               "line1": "2000 Main Street",
@@ -47873,9 +47925,9 @@
         },
         "response": {
           "id": 123456789,
-          "code": "6cc8e50f-1fb7-49b0-89ce-fd96dc616656",
+          "code": "f2d46e8d-3238-4012-b909-9d394571a25e",
           "companyId": 12345,
-          "date": "2019-06-18",
+          "date": "2019-06-24",
           "status": "Committed",
           "type": "SalesInvoice",
           "currencyCode": "USD",
@@ -47905,7 +47957,7 @@
           "destinationAddressId": 123456789,
           "isSellerImporterOfRecord": false,
           "description": "Yarn",
-          "taxDate": "2019-06-18T00:00:00+00:00",
+          "taxDate": "2019-06-24T00:00:00+00:00",
           "lines": [
             {
               "id": 123456789,
@@ -47927,14 +47979,14 @@
               "lineAmount": 1000,
               "quantity": 1,
               "ref1": "Note: Deliver to Bob",
-              "reportingDate": "2019-06-18",
+              "reportingDate": "2019-06-24",
               "revAccount": "",
               "sourcing": "Destination",
               "tax": 62.5,
               "taxableAmount": 1000,
               "taxCalculated": 62.5,
               "taxCode": "PS081282",
-              "taxDate": "2019-06-18",
+              "taxDate": "2019-06-24",
               "taxEngine": "",
               "taxOverrideType": "None",
               "taxOverrideAmount": 0,
@@ -48128,7 +48180,7 @@
           "format": "date",
           "description": "Transaction Date - The date on the invoice, purchase order, etc.\r\n            \r\nBy default, this date will be used to calculate the tax rates for the transaction.  If you wish to use a\r\ndifferent date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "salespersonCode": {
           "description": "Salesperson Code - The client application salesperson reference code.",
@@ -48170,7 +48222,7 @@
           "maxLength": 50,
           "minLength": 0,
           "type": "string",
-          "example": "2019-06-18-001"
+          "example": "2019-06-24-001"
         },
         "exemptionNo": {
           "description": "Exemption Number for this document.\r\n            \r\nIf you specify an exemption number for this document, this document will be considered exempt, and you\r\nmay be asked to provide proof of this exemption certificate in the event that you are asked by an auditor\r\nto verify your exemptions.\r\nNote: This is same as 'exemptNo' in TransactionModel.",
@@ -48340,9 +48392,9 @@
         ],
         "type": "SalesInvoice",
         "companyCode": "DEFAULT",
-        "date": "2019-06-18",
+        "date": "2019-06-24",
         "customerCode": "ABC",
-        "purchaseOrderNo": "2019-06-18-001",
+        "purchaseOrderNo": "2019-06-24-001",
         "addresses": {
           "singleLocation": {
             "line1": "2000 Main Street",
@@ -48904,13 +48956,13 @@
           "format": "date-time",
           "description": "The received date of the notice",
           "type": "string",
-          "example": "2019-06-18T16:29:40.8321275Z"
+          "example": "2019-06-24T20:47:34.3413588Z"
         },
         "closedDate": {
           "format": "date-time",
           "description": "The closed date of the notice",
           "type": "string",
-          "example": "2019-07-08T16:29:40.832128Z"
+          "example": "2019-07-14T20:47:34.3413588Z"
         },
         "totalRemit": {
           "format": "double",
@@ -49247,7 +49299,7 @@
           "format": "date-time",
           "description": "Expected resolution date of the notice",
           "type": "string",
-          "example": "2019-07-03T16:29:40.8321284Z"
+          "example": "2019-07-09T20:47:34.3413592Z"
         },
         "showResolutionDateToCustomer": {
           "description": "Indicator to show customer this resolution date",
@@ -49326,7 +49378,7 @@
             {
               "id": 3,
               "noticeId": 3878,
-              "date": "2019-06-18T16:29:40.8321206Z",
+              "date": "2019-06-24T20:47:34.3413539Z",
               "comment": "spoke to Chris payment not received need copy of check.VW",
               "commentUserId": 1,
               "commentUserName": "user@compliance.com",
@@ -49346,7 +49398,7 @@
             {
               "id": 3,
               "noticeId": 0,
-              "noticeDate": "2019-06-18T16:29:40.8321247Z",
+              "noticeDate": "2019-06-24T20:47:34.3413559Z",
               "taxDue": 6.66,
               "penalty": 0.67,
               "interest": 0.19,
@@ -49376,7 +49428,7 @@
           "description": "The date when this record was created.",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-13T16:29:40.8321284Z"
+          "example": "2019-06-19T20:47:34.3413592Z"
         },
         "createdUserId": {
           "format": "int32",
@@ -49390,7 +49442,7 @@
           "description": "The date/time when this record was last modified.",
           "type": "string",
           "readOnly": true,
-          "example": "2019-06-18T16:29:40.8321288Z"
+          "example": "2019-06-24T20:47:34.3413592Z"
         },
         "modifiedUserId": {
           "format": "int32",
@@ -49405,8 +49457,8 @@
         "companyId": 5714,
         "statusId": 4,
         "status": "Closed - Paid",
-        "receivedDate": "2019-06-18T16:29:40.8321275Z",
-        "closedDate": "2019-07-08T16:29:40.832128Z",
+        "receivedDate": "2019-06-24T20:47:34.3413588Z",
+        "closedDate": "2019-07-14T20:47:34.3413588Z",
         "totalRemit": 0,
         "customerTypeId": "AvaTaxReturns",
         "country": "US",
@@ -49426,7 +49478,7 @@
         "priorityId": "ImmediateAttentionRequired",
         "customerComment": "comments",
         "hideFromCustomer": false,
-        "expectedResolutionDate": "2019-07-03T16:29:40.8321284Z",
+        "expectedResolutionDate": "2019-07-09T20:47:34.3413592Z",
         "showResolutionDateToCustomer": false,
         "closedByUserId": 1,
         "createdByUserName": "user@compliance.com",
@@ -49441,7 +49493,7 @@
           {
             "id": 3,
             "noticeId": 3878,
-            "date": "2019-06-18T16:29:40.8321206Z",
+            "date": "2019-06-24T20:47:34.3413539Z",
             "comment": "spoke to Chris payment not received need copy of check.VW",
             "commentUserId": 1,
             "commentUserName": "user@compliance.com",
@@ -49453,7 +49505,7 @@
           {
             "id": 3,
             "noticeId": 0,
-            "noticeDate": "2019-06-18T16:29:40.8321247Z",
+            "noticeDate": "2019-06-24T20:47:34.3413559Z",
             "taxDue": 6.66,
             "penalty": 0.67,
             "interest": 0.19,
@@ -49461,9 +49513,9 @@
             "taxAbated": 0
           }
         ],
-        "createdDate": "2019-06-13T16:29:40.8321284Z",
+        "createdDate": "2019-06-19T20:47:34.3413592Z",
         "createdUserId": 1,
-        "modifiedDate": "2019-06-18T16:29:40.8321288Z",
+        "modifiedDate": "2019-06-24T20:47:34.3413592Z",
         "modifiedUserId": 222
       }
     },
@@ -49492,7 +49544,7 @@
           "format": "date-time",
           "description": "The date this comment was entered",
           "type": "string",
-          "example": "2019-06-18T16:29:40.9024997Z"
+          "example": "2019-06-24T20:47:34.4129606Z"
         },
         "comment": {
           "description": "TaxNoticeComment",
@@ -49588,7 +49640,7 @@
       "example": {
         "id": 1123,
         "noticeId": 12345,
-        "date": "2019-06-18T16:29:40.9024997Z",
+        "date": "2019-06-24T20:47:34.4129606Z",
         "comment": "comment",
         "commentUserId": 0,
         "commentUserName": "complianceUser",
@@ -49627,13 +49679,13 @@
           "format": "date-time",
           "description": "The date of the notice",
           "type": "string",
-          "example": "2019-06-18T16:29:40.9584204Z"
+          "example": "2019-06-24T20:47:34.4710035Z"
         },
         "dueDate": {
           "format": "date-time",
           "description": "The due date of the notice",
           "type": "string",
-          "example": "2019-07-02T16:29:40.9584204Z"
+          "example": "2019-07-08T20:47:34.4710035Z"
         },
         "noticeNumber": {
           "description": "The sequential number of the notice",
@@ -49738,8 +49790,8 @@
       "example": {
         "id": 0,
         "noticeId": 12345,
-        "noticeDate": "2019-06-18T16:29:40.9584204Z",
-        "dueDate": "2019-07-02T16:29:40.9584204Z",
+        "noticeDate": "2019-06-24T20:47:34.4710035Z",
+        "dueDate": "2019-07-08T20:47:34.4710035Z",
         "noticeNumber": "3x3215",
         "taxDue": 99.98,
         "penalty": 56.98,
@@ -50160,7 +50212,7 @@
           "format": "date-time",
           "description": "If this notification is time sensitive, this is the latest date when the notification should be\r\ndisplayed to the user.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "createdUserId": {
           "format": "int32",
@@ -50200,7 +50252,7 @@
         "actionName": "Certificate Renewal",
         "actionLink": "www.xyz.com",
         "dismissed": false,
-        "expireDate": "2019-06-18T00:00:00+00:00",
+        "expireDate": "2019-06-24T00:00:00+00:00",
         "createdUserId": 442323,
         "createdDate": "2018-05-05T00:00:00",
         "modifiedUserId": 442323,
@@ -50302,13 +50354,13 @@
           "format": "date-time",
           "description": "The start date filter for report execution. If no date provided, same date of last month will be used as the startDate.",
           "type": "string",
-          "example": "2019-05-18T00:00:00+00:00"
+          "example": "2019-05-24T00:00:00+00:00"
         },
         "endDate": {
           "format": "date-time",
           "description": "The end date filter for report execution. If no date provided, today's date will be used as the endDate.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "country": {
           "description": "The transactions in the country you wish to run a report:\r\nuse \"ALL\" for all countries\r\nuse \"ALL Non-US\" for all international countries\r\nor use a single 2-char ISO country code",
@@ -50400,8 +50452,8 @@
       },
       "example": {
         "format": "CSV",
-        "startDate": "2019-05-18T00:00:00+00:00",
-        "endDate": "2019-06-18T00:00:00+00:00",
+        "startDate": "2019-05-24T00:00:00+00:00",
+        "endDate": "2019-06-24T00:00:00+00:00",
         "country": "US",
         "state": "All",
         "dateFilter": "DocumentDate",
@@ -50442,8 +50494,8 @@
           "$ref": "#/definitions/ReportParametersModel",
           "description": "The parametes used to build the report",
           "example": {
-            "startDate": "2019-05-18T00:00:00+00:00",
-            "endDate": "2019-06-18T00:00:00+00:00",
+            "startDate": "2019-05-24T00:00:00+00:00",
+            "endDate": "2019-06-24T00:00:00+00:00",
             "country": "US",
             "state": "All",
             "dateFilter": "DD",
@@ -50477,7 +50529,7 @@
           "format": "date-time",
           "description": "The time when the report task was initiated",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "createdUserId": {
           "format": "int32",
@@ -50501,8 +50553,8 @@
         "companyId": 2087654354,
         "reportType": "ExportDocumentLine",
         "parameters": {
-          "startDate": "2019-05-18T00:00:00+00:00",
-          "endDate": "2019-06-18T00:00:00+00:00",
+          "startDate": "2019-05-24T00:00:00+00:00",
+          "endDate": "2019-06-24T00:00:00+00:00",
           "country": "US",
           "state": "All",
           "dateFilter": "DD",
@@ -50514,7 +50566,7 @@
         "status": "InQueue",
         "format": "CSV",
         "file": "2087654354_2087654354_1_ExportDocumentLine.CSV",
-        "createdDate": "2019-06-18T00:00:00+00:00",
+        "createdDate": "2019-06-24T00:00:00+00:00",
         "createdUserId": 0
       }
     },
@@ -50526,13 +50578,13 @@
           "format": "date-time",
           "description": "The start date filter used for your report",
           "type": "string",
-          "example": "2019-05-18T00:00:00+00:00"
+          "example": "2019-05-24T00:00:00+00:00"
         },
         "endDate": {
           "format": "date-time",
           "description": "The end date filter used for your report",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "country": {
           "description": "The country filter used for your report",
@@ -50571,8 +50623,8 @@
         }
       },
       "example": {
-        "startDate": "2019-05-18T00:00:00+00:00",
-        "endDate": "2019-06-18T00:00:00+00:00",
+        "startDate": "2019-05-24T00:00:00+00:00",
+        "endDate": "2019-06-24T00:00:00+00:00",
         "country": "US",
         "state": "All",
         "dateFilter": "DD",
@@ -50655,7 +50707,7 @@
           "format": "date",
           "description": "The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "responseType": {
           "description": "The format of your response. Formats include JSON, CSV, and XML.",
@@ -50750,7 +50802,7 @@
       },
       "example": {
         "companyCode": "DEFAULT",
-        "documentDate": "2019-06-18",
+        "documentDate": "2019-06-24",
         "responseType": "Json",
         "taxCodes": [
           "P0000000"
@@ -50987,9 +51039,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -51021,9 +51073,9 @@
           ],
           "type": "SalesInvoice",
           "companyCode": "DEFAULT",
-          "date": "2019-06-18",
+          "date": "2019-06-24",
           "customerCode": "ABC",
-          "purchaseOrderNo": "2019-06-18-001",
+          "purchaseOrderNo": "2019-06-24-001",
           "addresses": {
             "singleLocation": {
               "line1": "2000 Main Street",
@@ -51047,7 +51099,7 @@
           "$ref": "#/definitions/VerifyTransactionModel",
           "description": "To verify this transaction, you may provide information in this field.\r\n            \r\nIf you leave this field null, the transaction will not be verified.",
           "example": {
-            "verifyTransactionDate": "2019-06-18T00:00:00+00:00",
+            "verifyTransactionDate": "2019-06-24T00:00:00+00:00",
             "verifyTotalAmount": 100,
             "verifyTotalTax": 6.25
           }
@@ -51056,7 +51108,7 @@
           "$ref": "#/definitions/ChangeTransactionCodeModel",
           "description": "To change the code for this transaction, you may provide information in this field.\r\n            \r\nIf you leave this field null, the transaction's code will not be changed.",
           "example": {
-            "newCode": "b27ae951-7f2c-44b9-8ab9-d0d1eeb8fe77"
+            "newCode": "525902b4-a210-4a66-8109-32843d1679c1"
           }
         },
         "commit": {
@@ -51069,12 +51121,12 @@
       },
       "example": {
         "verify": {
-          "verifyTransactionDate": "2019-06-18T00:00:00+00:00",
+          "verifyTransactionDate": "2019-06-24T00:00:00+00:00",
           "verifyTotalAmount": 100,
           "verifyTotalTax": 6.25
         },
         "changeCode": {
-          "newCode": "b27ae951-7f2c-44b9-8ab9-d0d1eeb8fe77"
+          "newCode": "525902b4-a210-4a66-8109-32843d1679c1"
         },
         "commit": {
           "commit": true
@@ -51089,7 +51141,7 @@
           "format": "date-time",
           "description": "Set this value if you wish to verify a match between `verifyTransactionDate` and\r\nthe `documentDate` value on the transaction recorded in AvaTax.\r\n            \r\nIf you leave this field empty, we will skip verification for this field.",
           "type": "string",
-          "example": "2019-06-18T00:00:00+00:00"
+          "example": "2019-06-24T00:00:00+00:00"
         },
         "verifyTotalAmount": {
           "format": "double",
@@ -51105,7 +51157,7 @@
         }
       },
       "example": {
-        "verifyTransactionDate": "2019-06-18T00:00:00+00:00",
+        "verifyTransactionDate": "2019-06-24T00:00:00+00:00",
         "verifyTotalAmount": 100,
         "verifyTotalTax": 6.25
       }
@@ -51122,11 +51174,11 @@
           "maxLength": 50,
           "minLength": 0,
           "type": "string",
-          "example": "4bace6e4-e381-417b-8b0d-7c16df87d67b"
+          "example": "e8920e96-2d7b-4344-a173-1754c20b9a4c"
         }
       },
       "example": {
-        "newCode": "4bace6e4-e381-417b-8b0d-7c16df87d67b"
+        "newCode": "e8920e96-2d7b-4344-a173-1754c20b9a4c"
       }
     },
     "CommitTransactionModel": {
@@ -51241,9 +51293,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -51273,9 +51325,9 @@
           ],
           "type": "SalesInvoice",
           "companyCode": "DEFAULT",
-          "date": "2019-06-18",
+          "date": "2019-06-24",
           "customerCode": "ABC",
-          "purchaseOrderNo": "2019-06-18-001",
+          "purchaseOrderNo": "2019-06-24-001",
           "addresses": {
             "singleLocation": {
               "line1": "2000 Main Street",
@@ -51318,9 +51370,9 @@
               ],
               "type": "SalesInvoice",
               "companyCode": "DEFAULT",
-              "date": "2019-06-18",
+              "date": "2019-06-24",
               "customerCode": "ABC",
-              "purchaseOrderNo": "2019-06-18-001",
+              "purchaseOrderNo": "2019-06-24-001",
               "addresses": {
                 "singleLocation": {
                   "line1": "2000 Main Street",
@@ -51340,7 +51392,7 @@
           "format": "date-time",
           "description": "Server timestamp, in UTC, of the date/time when the original transaction was created",
           "type": "string",
-          "example": "2019-06-18T16:29:41.7267719Z"
+          "example": "2019-06-24T20:47:35.1888336Z"
         },
         "serverDuration": {
           "format": "date-time",
@@ -51399,9 +51451,9 @@
             ],
             "type": "SalesInvoice",
             "companyCode": "DEFAULT",
-            "date": "2019-06-18",
+            "date": "2019-06-24",
             "customerCode": "ABC",
-            "purchaseOrderNo": "2019-06-18-001",
+            "purchaseOrderNo": "2019-06-24-001",
             "addresses": {
               "singleLocation": {
                 "line1": "2000 Main Street",
@@ -51416,7 +51468,7 @@
             "description": "Yarn"
           }
         },
-        "serverTimestamp": "2019-06-18T16:29:41.7267719Z",
+        "serverTimestamp": "2019-06-24T20:47:35.1888336Z",
         "apiCallStatus": "ReconstructedApiCallAvailable"
       }
     },
@@ -52008,6 +52060,7 @@
     "key": {
       "name": "api-key",
       "location": "v2-devdot-keys/devdot-proxy-key"
+  
     }
   }
 }
