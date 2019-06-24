@@ -1446,7 +1446,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2210</td>
 			<td><a href="ItemCodesAreAllSame">ItemCodesAreAllSame</a></td>
-			<td>TBD</td>
+			<td>All item codes for the document are the same.</td>
 		</tr>		
         <tr>
 			<td>2211</td>
@@ -1456,7 +1456,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2213</td>
 			<td><a href="RepeatedLinesInDocument">RepeatedLinesInDocument</a></td>
-			<td>TBD</td>
+			<td>Company has repeated lines in a document.</td>
 		</tr>		
         <tr>
 			<td>2214</td>
@@ -1471,5 +1471,5 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2218</td>
 			<td><a href="NoDocumentsToTest">NoDocumentsToTest</a></td>
-			<td>TBD</td>
+			<td>This company doesn't have documents.</td>
 		</tr></tbody></table>

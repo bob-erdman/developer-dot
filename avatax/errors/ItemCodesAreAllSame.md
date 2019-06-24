@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+All item codes for the document are the same.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+For company certification, ItemCodes in recent documnets must be different. Recent documents include all those in the past month or the last 100 documents. Please update your ItemCodes (if applicable) to attain company certification. 

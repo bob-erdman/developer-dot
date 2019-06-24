@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+This company doesn't have documents.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+In order to self test integrations, the company needs to have documents to start the testing process. Please add documents to resolve the issue.

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company has repeated lines in a document.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+In order for the company to be certified, there should be no repeated lines in the same document. Repeated lines might include same itemCode, ExemptNo and same address. Check the fields of your documents for repeated lines and update them where applicable. Be sure to check all recent documents which include those from the past month or the last 100 documents. 
