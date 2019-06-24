@@ -18,7 +18,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>
 	</thead>
 	<tbody>
-		
         <tr>
 			<td>1</td>
 			<td><a href="ServerConfiguration">ServerConfiguration</a></td>
@@ -1282,7 +1281,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1503</td>
 			<td><a href="CannotModifySstNexus">CannotModifySstNexus</a></td>
-			<td>TBD</td>
+			<td>SST nexuses cannot be modified by user.</td>
 		</tr>		
         <tr>
 			<td>1602</td>
@@ -1442,7 +1441,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2209</td>
 			<td><a href="InadequateUniqueAddresses">InadequateUniqueAddresses</a></td>
-			<td>TBD</td>
+			<td>Recent documents do not show at least 2 unique addresses.</td>
 		</tr>		
         <tr>
 			<td>2210</td>
@@ -1467,7 +1466,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2215</td>
 			<td><a href="AllUSDCurrencyCodes">AllUSDCurrencyCodes</a></td>
-			<td>TBD</td>
+			<td>All recent documents have USD currency codes.</td>
 		</tr>		
         <tr>
 			<td>2218</td>

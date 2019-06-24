@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+SST nexuses cannot be modified by user.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Regions managed by Avalara's SST program must be updated through Avalara Support. Our support team is reachable through a number of means, so visit [our support page](https://help.avalara.com/001_Avalara_AvaTax/Contact_Avalara) to get connected update your nexus. 
