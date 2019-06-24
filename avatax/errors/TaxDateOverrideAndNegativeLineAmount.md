@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Company has tax DateOverride and negative LineAmount.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+In order for the company to be certified, recent documents cannot have a tax DateOverride and negative LineAmount. Recent documents include those from the past month or the last 100 documents. 

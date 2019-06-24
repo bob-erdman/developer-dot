@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+All tax codes for the documents are the same.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+For company certification, recent documents cannot have the same taxcodes. Recent documents include those from the past month or the last 100 documents. Update your taxcodes where applicable. 

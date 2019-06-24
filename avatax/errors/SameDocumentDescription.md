@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+All documents have same description.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Recent documents for the company all have the same description. For company certification, the recent documents cannot have the same description. Recent documnets include the past 100 documents or those from the past month. 

@@ -1431,7 +1431,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2207</td>
 			<td><a href="SameDocumentDescription">SameDocumentDescription</a></td>
-			<td>TBD</td>
+			<td>All documents have same description.</td>
 		</tr>		
         <tr>
 			<td>2208</td>
@@ -1451,7 +1451,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2211</td>
 			<td><a href="TaxCodesAreAllSame">TaxCodesAreAllSame</a></td>
-			<td>TBD</td>
+			<td>All tax codes for the documents are the same.</td>
 		</tr>		
         <tr>
 			<td>2213</td>
@@ -1461,7 +1461,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>2214</td>
 			<td><a href="TaxDateOverrideAndNegativeLineAmount">TaxDateOverrideAndNegativeLineAmount</a></td>
-			<td>TBD</td>
+			<td>Company has tax DateOverride and negative LineAmount.</td>
 		</tr>		
         <tr>
 			<td>2215</td>
