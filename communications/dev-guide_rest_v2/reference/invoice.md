@@ -147,63 +147,6 @@ The <code>Invoice</code> object contains information about one or more <b>transa
           A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional Fields</a> to apply to this invoice
         </td>
       </tr>
-      <tr>
-        <td><code>acct</code></td>
-        <td><code>[string]</code> Account Reference
-        <br/>
-        Account Reference field for use in reporting
-        <ul class="dev-guide-list">
-          <li>Max length: 150 bytes</li>
-        </ul>
-        </td>
-      </tr>
-      <tr>
-        <td><code>custref</code></td>
-        <td><code>[string]</code> Customer Reference
-        <br/>
-        Customer Reference field for use in reporting
-        <ul class="dev-guide-list">
-          <li>Max length: 150 bytes</li>
-        </ul>
-        </td>
-      </tr>
-      <tr>
-        <td><code>invn</code></td>
-        <td><code>[string]</code> Invoice Number Reference
-        <br/>
-        Invoice Number Reference field for use in reporting
-        <ul class="dev-guide-list">
-          <li>Max length: 150 bytes</li>
-        </ul>
-        </td>
-      </tr>
-      <tr>
-        <td><code>bcyc</code></td>
-        <td><code>[string]</code> Bill Cycle Reference
-        <br/>
-        Bill Cycle Reference field for use in reporting
-        <ul class="dev-guide-list">
-          <li>Max length: 150 bytes</li>
-        </ul>
-        </td>
-      </tr>
-      <tr>
-        <td><code>bpd</code></td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/billing-period/"><code>[BillingPeriod]</code></a> Billing Period
-          <br>
-          The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/billing-period/">Billing Period</a> for the invoice
-        </td>
-      </tr>
-      <tr>
-        <td><code>ccycd</code></td>
-        <td><code>[string]</code> Currency Code
-        <br/>
-        Currency code for the invoice.  Example: use CAD for Canadian Dollar
-        <ul class="dev-guide-list">
-          <li>Max length: 150 bytes</li>
-        </ul>
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
@@ -251,15 +194,7 @@ These fields can be overridden on the <a class="dev-guide-link" href="/communica
       {
         // Key Value Pair
       }
-    ],
-    "acct": "Account Reference",
-    "custref": "Customer Reference",
-    "invn": "Invoice Number Reference",
-    "bcyc": "Bill Cycle Reference",
-    "bpd": {
-      // Billing Period
-    },
-    "ccycd": "USD"
+    ]
   }
 ]
 {% endhighlight %}

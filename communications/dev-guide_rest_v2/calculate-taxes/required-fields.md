@@ -305,6 +305,7 @@ For more information, see <a class="dev-guide-link" href="/communications/dev-gu
   <li>BillTo (<code>bill</code>) in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">Company Data</a></li>
   <li>Location (<code>loc</code>) in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemptions</a></li>
   <li>From (<code>from</code>) and To (<code>to</code>) in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a></li>
+  <li>Location (<code>loc</code>) in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/bridge-participant/">Bridge Participant</a></li>
   <li>Location (<code>loc</code>) in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">Tax Override</a></li>
 </ul>
 
