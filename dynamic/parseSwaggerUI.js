@@ -121,6 +121,7 @@ export default (api, apiWithRefs, rootPath) => {
         const endpoint = api.paths[k];
         const endpointWithRefs = apiWithRefs.paths[k];
 
+
         // console.log(`!!! ${JSON.stringify(api.paths)}`);
 
         Object.keys(endpoint).forEach((action) => {

@@ -27,7 +27,8 @@ module.exports = {
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v1/methods/getTax/')
-            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints)
+            .assert.elementNumTimes('.pathLink', 3, 'assert request and response model links');
 
         browser.page.endpointSummary()
             .navigateTo('#getTax-console')
@@ -47,7 +48,7 @@ module.exports = {
     'API Reference: AvaTax: REST v2 (verify number of endpoints)': function(browser) {
         // NOTE: THESE NOW ALL EXIST ON SUB 'TAG' PAGES
 
-        expectedNumberOfApiEndpoints = 36;
+        expectedNumberOfApiEndpoints = 37;
         const expectedNumberOfSubTags = 7;
 
         const expectedRequest = {accountId: 123456789, confirmResetLicenseKey: true};

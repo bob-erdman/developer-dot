@@ -217,7 +217,6 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                 // Save our root documentation page, with Postman Collection download link,
                 // API name/description, and links to models and methods documentation!
                 saveStaticPage(null, apiPath, buildHtml, {...staticState, apiEndpoints: []}, {apiName, product}, false);
-
                 const tagMap = {...staticState.tagMap};
 
                 if (tagMap && Object.keys(tagMap).length > 0) {
@@ -251,9 +250,7 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                         };
                     });
 
-
                     saveMethodsIndex(apiName, `${apiPath}/methods`, product, tagLinks);
-
                     // Want to save off pages for each tagin the API's endpoints
                     Object.keys(tagMap).forEach((tag) => {
                         const operationIdsForTag = tagMap[tag];

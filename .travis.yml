@@ -18,7 +18,7 @@ cache:
 
 before_install:
   - nvm install 6.0
-  # docker specific update and install
+  # docker specific update and install 
   - sudo apt-get update
   - sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -29,7 +29,7 @@ before_install:
   - sudo rm /usr/local/bin/docker-compose
   - sudo curl -L curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-Linux-x86_64 > ./docker-compose
   - chmod +x docker-compose
-  # without overwriting here docker-compose will be v1.8.1
+  # without overwriting here docker-compose will be v1.8.1 
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -v
   - docker -v

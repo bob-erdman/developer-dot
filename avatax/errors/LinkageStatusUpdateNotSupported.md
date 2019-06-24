@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The status update attempted is not supported.
+The status cannot be updated. 
 
 ## Example
 

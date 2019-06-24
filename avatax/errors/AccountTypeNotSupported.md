@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-This account does not have access to this action or feature.
+This account type cannot perform this operation.
 
 ## Example
 
