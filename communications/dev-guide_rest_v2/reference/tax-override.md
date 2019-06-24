@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.6 - Tax Override
+title:  Chapter 5.1.7 - Tax Override
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/line-item/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/billing-period/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -114,6 +114,6 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
 {% endhighlight %}
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/line-item/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/billing-period/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
