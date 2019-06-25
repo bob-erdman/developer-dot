@@ -97,9 +97,9 @@ The <code>Invoice</code> object contains information about one or more <b>transa
       </tr>
       <tr>
         <td><code>itms</code></td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>[LineItems]</code></a> <span class="t5">required</span> Line Items
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>[LineItem]</code></a> <span class="t5">required</span> Line Items
           <br>
-          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-items/">Line Items</a> to process for this transaction
+          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Items</a> to process for this transaction
           <ul class="dev-guide-list">
             <li>Limit 10,000 line items per request</li>
           </ul>
