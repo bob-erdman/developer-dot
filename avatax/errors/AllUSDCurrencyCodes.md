@@ -32,4 +32,6 @@ All recent documents have USD currency codes.
 
 ## Explanation
 
-In order for the company with AvaGlobal subscription to be certified, there should be document/documents with non-USD currency codes, in the past month or among the last 100 documents. To certify your AvaGlobal subscription, update current documents with non-USD currency codes wherever applicable or add new documents with non-USD currency codes.
+In order for the company with AvaGlobal subscription to be certified, there should be recent document/documents with non-USD currency codes, Recent documents include those from the past month or the last 100 documents. 
+
+To certify your AvaGlobal subscription, update current documents with non-USD currency codes wherever applicable or add new documents with non-USD currency codes.
