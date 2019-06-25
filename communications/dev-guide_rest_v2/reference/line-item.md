@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/location/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/tax-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/billing-period/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>Line Item</h3>
@@ -28,7 +28,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
     <tbody>
         <tr>
             <td><code>ref</code></td>
-            <td><code>[string]</code>Reference code
+            <td><code>[string]</code> Reference code
             <br/>
             Reference ID for line item 
             <ul class="dev-guide-list">
@@ -326,5 +326,5 @@ These fields override the same fields set on the <a class="dev-guide-link" href=
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/location/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/tax-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/billing-period/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
