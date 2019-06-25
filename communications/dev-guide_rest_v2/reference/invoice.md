@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.3 - Invoice
+title:  Chapter 5.1.4 - Invoice
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -99,7 +99,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>itms</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>[LineItems]</code></a> <span class="t5">required</span> Line Items
           <br>
-          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-items/">Line Items</a> to process for this transaction
+          A list of <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Items</a> to process for this transaction
           <ul class="dev-guide-list">
             <li>Limit 10,000 line items per request</li>
           </ul>
@@ -198,7 +198,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>ccycd</code></td>
         <td><code>[string]</code> Currency Code
         <br/>
-        Currency code for the invoice.  Example: use CAD for Canadian Dollar
+        Currency code for the invoice.  Example: use USD for United States Dollar
         <ul class="dev-guide-list">
           <li>Max length: 150 bytes</li>
         </ul>

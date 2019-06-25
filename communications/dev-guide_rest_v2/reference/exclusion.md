@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.9 - Exclusion
+title:  Chapter 5.1.10 - Exclusion
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
