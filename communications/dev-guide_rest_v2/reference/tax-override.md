@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.7 - Tax Override
+title:  Chapter 5.1.8 - Tax Override
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference

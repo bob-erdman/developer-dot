@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/request-config/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <h3>The CalcTaxes Request</h3>
@@ -28,6 +28,12 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><code>cfg</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/"><code>[RequestConfig]</code></a> Request Configuration
+        <br>
+        Request configuration option properties</td>
+      </tr>
       <tr>
         <td><code>cmpn</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/"><code>[CompanyData]</code></a> Company Data
@@ -65,6 +71,9 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
 
 {% highlight json %}
 {
+  "cfg":{
+    // Request Config
+  }
   "cmpn": {
     // Company Data 
   },
@@ -91,5 +100,5 @@ We recommend using a <a class="dev-guide-link" href="/communications/dev-guide_r
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide_rest_v2/reference/request-config/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
