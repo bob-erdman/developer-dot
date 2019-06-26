@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/reporting-information/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/commit-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -71,6 +71,6 @@ The <code>CommitRequest</code> object contains the <b>Document Code</b> and <b>o
 {% endhighlight %}
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/reporting-information/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/commit-response/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

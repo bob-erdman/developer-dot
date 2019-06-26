@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.2 - Company Data
+title:  Chapter 5.1.3 - Company Data
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -9,7 +9,7 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/request-config/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/invoice/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -117,6 +117,6 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
 {% endhighlight %}
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide_rest_v2/reference/request-config/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide_rest_v2/reference/invoice/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

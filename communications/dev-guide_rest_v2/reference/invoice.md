@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.3 - Invoice
+title:  Chapter 5.1.4 - Invoice
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -51,7 +51,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>bill</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Bill To Location
           <br>
-          There are several ways to input location information. FOr more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
+          There are several ways to input location information. For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>
         </td>
       </tr>
       <tr>
@@ -198,7 +198,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>ccycd</code></td>
         <td><code>[string]</code> Currency Code
         <br/>
-        Currency code for the invoice.  Example: use CAD for Canadian Dollar
+        Currency code for the invoice.  Example: use USD for United States Dollar
         <ul class="dev-guide-list">
           <li>Max length: 150 bytes</li>
         </ul>

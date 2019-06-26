@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.6 - Billing Period
+title:  Chapter 5.1.7 - Billing Period
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference

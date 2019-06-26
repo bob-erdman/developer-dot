@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.14 - Invoice Result
+title:  Chapter 5.1.15 - Invoice Result
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -57,6 +57,13 @@ The <code>InvoiceResult</code> object contains the <b>tax calculation results</b
         Contains information about any errors returned (as applicable)
         </td>
       </tr>
+      <tr>
+        <td><code>incrf</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/reporting-information/"><code>[ReportingInformation]</code></a> Reporting Information
+        <br>
+        Contains reporting information.  Returned when <code>incrf</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -82,7 +89,10 @@ The <code>InvoiceResult</code> object contains the <b>tax calculation results</b
       {
         // Error
       }
-    ]
+    ],
+    "incrf": {
+      // Reporting Information
+    }
   }
 ]
 {% endhighlight %}

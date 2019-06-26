@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.1.17 - Detailed Tax Result
+title:  Chapter 5.1.18 - Detailed Tax Result
 product: communications
 doctype: comms_rest_v2_dev_guide
 chapter: reference
@@ -111,7 +111,15 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
         </tr>
         <tr>
             <td><code>pcd</code></td>
-            <td><code>[int]</code> PCode representing reporting tax jurisdiction</td>
+            <td><code>[int]</code> Reporting PCode
+            <br/>
+            PCode representing reporting tax jurisdiction</td>
+        </tr>
+        <tr>
+            <td><code>taxpcd</code></td>
+            <td><code>[int]</code> Taxing PCode
+            <br/>
+            PCode representing taxing jurisdiction.   Only returned when <code>retext</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
         </tr>
         <tr>
             <td><code>rate</code></td>
@@ -152,6 +160,51 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
             <td><code>tid</code></td>
             <td><code>[int]</code> Tax Type ID</td>
         </tr>
+        <tr>
+            <td><code>usexm</code></td>
+            <td><code>[bool]</code> User Exempt
+            <br/>
+            Flag indicating if the tax has been exempted by the user via <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemptions</a> (<code>exms</code>)
+            <ul class="dev-guide-list">
+                <li><code>true</code>: Tax has been exempted by the user</li>
+                <li><code>false</code>: Tax hasn't been exempted by the user</li>
+            </ul>
+            Only returned when <code>retext</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>notax</code></td>
+            <td><code>[bool]</code> Is No Tax Transaction
+            <br/>
+            Flag indicating that the transaction processed successfully but returned no taxes.  If no taxes are generated, the taxing jurisdiction used in the response is returned.
+            <ul class="dev-guide-list">
+                <li><code>true</code>: Item is a no tax entry</li>
+                <li><code>false</code>: Item returned taxes</li>
+            </ul>
+            Only returned when <code>retext</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>trans</code></td>
+            <td><code>[int]</code> Transaction Type
+            <br/>
+            Transaction type use to calculate tax.  For bundles, this field shows the specific bundled item transaction type.  Only returned when <code>retext</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>svc</code></td>
+            <td><code>[int]</code> Service Type
+            <br/>
+            Service type use to calculate tax.  For bundles, this field shows the specific bundled item transaction type.  Only returned when <code>retext</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>chg</code></td>
+            <td><code>[double]</code> Charge
+            <br/>
+            Charge used to calculate tax.  
+            <ul class="dev-guide-list">
+                <li>For bundles, this field shows the percentage of the charge applied to the bundled item</li>
+                <li>For tax inclusive calls, this field shows the calculated charge</li>
+            </ul>
+            Only returned when <code>retext</code> in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
     </tbody>
   </table>
 </div>
@@ -176,11 +229,17 @@ Bundled tax calculations return summarized <a class="dev-guide-link" href="/comm
     "lns": 0,
     "min": 0,
     "pcd": 253500,
+    "taxpcd": 2533500,
     "rate": 0.0475,
     "sur": true,
     "tax": 1.6672499999999997,
     "lvl": 1,
-    "tid": 454
+    "tid": 454,
+    "usexm": false,
+    "notax": false,
+    "trans": 19,
+    "svc": 6,
+    "chg": 100
   }
 ]
 {% endhighlight %}
