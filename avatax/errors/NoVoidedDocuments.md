@@ -1,7 +1,7 @@
 ---
 layout: page
 title: NoVoidedDocuments
-number: 1709
+number: 2202
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,7 +19,7 @@ Company does not have any voided documents.
   "details": [
     {
       "code": "NoVoidedDocuments",
-      "number": 1709,
+      "number": 2202,
       "message": "Company does not have any voided documents.",
       "description": "In order for an integration to be certified, the company should have at least one voided document in the past month or among the last 100 documents.",
       "faultCode": "Client",

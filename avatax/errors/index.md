@@ -931,7 +931,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>611</td>
 			<td><a href="AccountAlreadyExists">AccountAlreadyExists</a></td>
-			<td>The account already exists.</td>
+			<td>This combination of the account name and company address already exists.</td>
 		</tr>		
         <tr>
 			<td>701</td>
@@ -1279,6 +1279,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The AvaTax API encountered an internal error and could not continue.</td>
 		</tr>		
         <tr>
+			<td>1503</td>
+			<td><a href="CannotModifySstNexus">CannotModifySstNexus</a></td>
+			<td>SST nexuses cannot be modified by user.</td>
+		</tr>		
+        <tr>
 			<td>1602</td>
 			<td><a href="AdvancedRuleRequestRuleError">AdvancedRuleRequestRuleError</a></td>
 			<td>Advanced rule failed to execute.</td>
@@ -1319,44 +1324,9 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>This notification cannot be dismissed because it is a global notification.</td>
 		</tr>		
         <tr>
-			<td>1707</td>
-			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
-			<td>Company item contains a generic taxcode.</td>
-		</tr>		
-        <tr>
-			<td>1708</td>
-			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
-			<td>Company cannot be certified.</td>
-		</tr>		
-        <tr>
-			<td>1709</td>
-			<td><a href="NoVoidedDocuments">NoVoidedDocuments</a></td>
-			<td>Company does not have any voided documents.</td>
-		</tr>		
-        <tr>
-			<td>1710</td>
-			<td><a href="InadequateCommittedDocuments">InadequateCommittedDocuments</a></td>
-			<td>Company must have at least two committed documents.</td>
-		</tr>		
-        <tr>
-			<td>1711</td>
-			<td><a href="DocumentCodeIsGuid">DocumentCodeIsGuid</a></td>
-			<td>Company has a document code which is a GUID.</td>
-		</tr>		
-        <tr>
-			<td>1712</td>
-			<td><a href="CustomerVendorCodeIsGuid">CustomerVendorCodeIsGuid</a></td>
-			<td>Company's customer vendor code is a GUID.</td>
-		</tr>		
-        <tr>
 			<td>1713</td>
 			<td><a href="CannotUpdateAccountTypeId">CannotUpdateAccountTypeId</a></td>
 			<td>Cannot update AccountTypeId.</td>
-		</tr>		
-        <tr>
-			<td>1714</td>
-			<td><a href="InadequateDocumentLineCount">InadequateDocumentLineCount</a></td>
-			<td>Company has inadequate document line count.</td>
 		</tr>		
         <tr>
 			<td>1800</td>
@@ -1424,7 +1394,82 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>Account Type must be 'firm' for this action.</td>
 		</tr>		
         <tr>
+			<td>2200</td>
+			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
+			<td>Company item contains a generic taxcode.</td>
+		</tr>		
+        <tr>
+			<td>2201</td>
+			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
+			<td>Company cannot be certified.</td>
+		</tr>		
+        <tr>
+			<td>2202</td>
+			<td><a href="NoVoidedDocuments">NoVoidedDocuments</a></td>
+			<td>Company does not have any voided documents.</td>
+		</tr>		
+        <tr>
+			<td>2203</td>
+			<td><a href="InadequateCommittedDocuments">InadequateCommittedDocuments</a></td>
+			<td>Company must have at least two committed documents.</td>
+		</tr>		
+        <tr>
+			<td>2204</td>
+			<td><a href="DocumentCodeIsGuid">DocumentCodeIsGuid</a></td>
+			<td>Company has a document code which is a GUID.</td>
+		</tr>		
+        <tr>
+			<td>2205</td>
+			<td><a href="CustomerVendorCodeIsGuid">CustomerVendorCodeIsGuid</a></td>
+			<td>Company's customer vendor code is a GUID.</td>
+		</tr>		
+        <tr>
+			<td>2206</td>
+			<td><a href="InadequateDocumentLineCount">InadequateDocumentLineCount</a></td>
+			<td>Company has inadequate document line count.</td>
+		</tr>		
+        <tr>
+			<td>2207</td>
+			<td><a href="SameDocumentDescription">SameDocumentDescription</a></td>
+			<td>All documents have same description.</td>
+		</tr>		
+        <tr>
 			<td>2208</td>
 			<td><a href="NoExemptionNoOrCustomerUsageType">NoExemptionNoOrCustomerUsageType</a></td>
 			<td>The exemption number or customer usage type is missing.</td>
+		</tr>		
+        <tr>
+			<td>2209</td>
+			<td><a href="InadequateUniqueAddresses">InadequateUniqueAddresses</a></td>
+			<td>Recent documents do not show at least 2 unique addresses.</td>
+		</tr>		
+        <tr>
+			<td>2210</td>
+			<td><a href="ItemCodesAreAllSame">ItemCodesAreAllSame</a></td>
+			<td>All item codes for the document are the same.</td>
+		</tr>		
+        <tr>
+			<td>2211</td>
+			<td><a href="TaxCodesAreAllSame">TaxCodesAreAllSame</a></td>
+			<td>All tax codes for the documents are the same.</td>
+		</tr>		
+        <tr>
+			<td>2213</td>
+			<td><a href="RepeatedLinesInDocument">RepeatedLinesInDocument</a></td>
+			<td>Company has repeated lines in a document.</td>
+		</tr>		
+        <tr>
+			<td>2214</td>
+			<td><a href="TaxDateOverrideAndNegativeLineAmount">TaxDateOverrideAndNegativeLineAmount</a></td>
+			<td>Company has tax DateOverride and negative LineAmount.</td>
+		</tr>		
+        <tr>
+			<td>2215</td>
+			<td><a href="AllUSDCurrencyCodes">AllUSDCurrencyCodes</a></td>
+			<td>All recent documents have USD currency codes.</td>
+		</tr>		
+        <tr>
+			<td>2218</td>
+			<td><a href="NoDocumentsToTest">NoDocumentsToTest</a></td>
+			<td>This company doesn't have documents.</td>
 		</tr></tbody></table>

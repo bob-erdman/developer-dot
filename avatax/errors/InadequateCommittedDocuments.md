@@ -1,7 +1,7 @@
 ---
 layout: page
 title: InadequateCommittedDocuments
-number: 1710
+number: 2203
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,7 +19,7 @@ Company must have at least two committed documents.
   "details": [
     {
       "code": "InadequateCommittedDocuments",
-      "number": 1710,
+      "number": 2203,
       "message": "Company must have at least two committed documents.",
       "description": "In order for an integration to be certified, the company should have at least two committed documents in the past month or among the last 100 documents.",
       "faultCode": "Client",

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: GenericTaxCodeForItem
-number: 1707
+number: 2200
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,7 +19,7 @@ Company item contains a generic taxcode.
   "details": [
     {
       "code": "GenericTaxCodeForItem",
-      "number": 1707,
+      "number": 2200,
       "message": "Item -0- of this company contains a generic taxcode",
       "description": "TaxCode of P0000000 cannot be associated to any company item.",
       "faultCode": "Client",

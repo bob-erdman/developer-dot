@@ -198,7 +198,7 @@ paths:
           schema:
             $ref: '#/definitions/ErrorResponse'
       security:
-        - authorizer: []
+        - authorizer: [] 
 definitions:
   PostPartnerLeadsRequest:
     type: object

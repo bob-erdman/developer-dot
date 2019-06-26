@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The status cannot be updated. 
+The status cannot be updated.
 
 ## Example
 

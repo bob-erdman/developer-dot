@@ -32,4 +32,4 @@ User doesn't have permission for action.
 
 ## Explanation
 
-Different users and administrators have varying access to features such as updating account information or creating new tax rules. These permissions are based on the role of the user. The users role can be found in position `-1-` and the denied action is at position `-0-` of the error. 
+Different users and administrators have varying access to features such as updating account information or creating new tax rules. These permissions are based on the role of the user. The user's role can be found in position `-1-` and the denied action is at position `-0-` of the error.
