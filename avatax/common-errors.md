@@ -65,6 +65,11 @@ Also see [REST Error Codes](/avatax/errors) for errors in the REST v2 API.
 				<td valign="top" width="195">A document was posted in which the specified TotalAmount or TaxAmount did not match the saved document. This is just a warning. The document was posted.</td>
 			</tr>
 			<tr>
+				<td valign="top" width="168"><strong>ZipNotValidError </strong></td>
+				<td valign="top" width="245">Tax calculation cannot be determined. Zip is not valid for the state.</td>
+				<td valign="top" width="195">Tax calculation cannot be determined. Zip is not valid for the state.</td>
+			</tr>
+						<tr>
 				<td valign="top" width="168"><strong>JurisdictionNotFoundError </strong></td>
 				<td valign="top" width="245">Unable to determine the taxing jurisdictions.</td>
 				<td valign="top" width="195">Unable to determine the taxing jurisdictions.</td>
