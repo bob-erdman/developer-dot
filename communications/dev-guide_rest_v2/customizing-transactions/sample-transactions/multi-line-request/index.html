@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4.3.2 - Multi-line Request | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">
+
+    
+    <meta property="og:title" content="Chapter 4.3.2 - Multi-line Request | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="Chapter 4.3.2 - Multi-line Request">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=communications>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid comms_rest_v2_dev_guide">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/communications">Avalara communications</a></li>
+            <li class="text-uppercase">comms rest v2 dev guide</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row">
+            <main class="col-md-12">
+  
+    <div class="row padding-sides half">
+      <nav class="col-md-3">
+        <div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
+    <h3>Chapters</h3>
+    <ol>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/getting-started/">Getting Started</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculate-taxes/">Calculate Taxes</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/commit-uncommit/">Commit/Uncommit</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>
+            
+            <ol>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profiles</a></li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">Account Customizations</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Bundle File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/exclusion-file/">Exclusion File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/override-file/">Override File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/">Nexus File</a></li>
+                    </ol>
+                </li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/">Transaction Use Cases</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/">Simple Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">Multi-line Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a>
+                        <ol>
+                            <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/">Category Exemptions</a></li>
+                            <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/">Tax Type Exemptions</a></li>
+                        </ol>
+                        </li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/inter-intrastate/">Interstate/Intrastate Determination</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a>
+                            <ol>
+                                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">SAU Attributes and Properties</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Proration</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/transaction-information/">Transaction Information</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Transaction-Level Commit/Uncommit</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustments</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Displaying Tax Results</a></li>
+                    </ol>
+                </li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/jurisdiction-determination-use-cases/">Jurisdiction Determination Use Cases</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/">PCode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/geocode-jurisdiction-determination/">Geocode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/all_adr-jurisdiction-determination/">all_adr File</a></li>
+                    </ol>
+                </li>
+            </ol>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/reference/">Reference</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculating-tax-offline/">Calculating Tax Offline</a>
+            
+        </li>
+    </ol>
+</div>
+      </nav>
+      <main class="col-md-9 small-no-padding">
+        <h1>
+            Chapter 4.3.2 - Multi-line Request
+            
+        </h1>
+        <ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+<p>An <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">invoice</a> can contain many <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">line items</a>.</p>
+
+<h4>Note</h4>
+<p>Multiple <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">invoices</a> (with multiple <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">line items</a>) can be added to a transaction.  This page demonstrates multiple line items only.</p>
+
+<h4>Note</h4>
+<p>Limits <b>per request</b>:</p>
+<ul class="dev-guide-list">
+  <li>1,000 <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">invoices</a> (<code>inv</code>)</li>
+  <li>10,000 <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">line items</a> (<code>itms</code>)</li>
+</ul>
+
+<h3>Simple Multi-line Invoice Example</h3>
+<p>This invoice contains 3 simple <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">line items</a>.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"cmpn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"bscl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"svcl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fclt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"frch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reg"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inv"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"doc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-VOIP INVOICE 2017.12.26:12.02 AVA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cmmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cnty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ctry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"int"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"st"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94102"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"cust"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lfln"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"itms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 001 - VoIP/Access Charge"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"incl"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tran"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"serv"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dbt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"adj"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 002 - VoIP/Lines"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"incl"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tran"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"serv"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dbt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"adj"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 003 - VoIP/Equip Rental"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"incl"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tran"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"serv"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dbt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"adj"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"invm"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dtl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"summ"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VoIP Sample Line Items Invoice ABC-ZZZ"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>A few things are going on in this <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/calc-taxes-response/">response</a>:</p>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed taxes</a> (<code>txs</code>) for the three line items are displayed</li>
+    <ul class="dev-guide-list">
+      <li>Line Item 001 returns 7 taxes totalling 14.096528</li>
+      <li>Line Item 002 returns 1 tax totalling 32.7</li>
+      <li>Line Item 003 returns 3 taxes totalling 2.125</li>
+    </ul>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized taxes</a> (<code>summ</code>) for the entire <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">invoice</a> are displayed - 11 taxes returned totalling 48.921528</li>
+</ul>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1" class="dev-guide-link">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"inv"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"doc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-VOIP INVOICE 2017.12.26:12.02 AVA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"itms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 001 - VoIP/Access Charge"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"txs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Universal Lifeline Telephone Service Charge (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0475</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6672499999999997</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">454</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA Teleconnect Fund (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0108</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.37908</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">452</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA High Cost Fund A (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0035</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12284999999999999</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRS (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.17549999999999996</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">217</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-911 CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E911 (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0075</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.26324999999999993</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">161</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUSF (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.174</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2926</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">162</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGULATORY CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FCC Regulatory Fee (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00302</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.19599800000000003</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 002 - VoIP/Lines"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"txs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-911 CHARGES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco Access line Tax (VoIP)"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.27</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">32.7</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 003 - VoIP/Equip Rental"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"txs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"District Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"summ"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Universal Lifeline Telephone Service Charge (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0475</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6672499999999997</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">454</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA Teleconnect Fund (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0108</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.37908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">452</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA High Cost Fund A (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0035</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12284999999999999</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRS (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.17549999999999996</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">217</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-911 CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E911 (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">253500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0075</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.26324999999999993</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">161</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONNECTIVITY CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUSF (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.174</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2926</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">162</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGULATORY CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FCC Regulatory Fee (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.099999999999994</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00302</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.19599800000000003</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-911 CHARGES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco Access line Tax (VoIP)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.27</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">32.7</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"District Tax"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>Texas Internet Tax Multi-line Invoice Example</h3>
+<p>This example shows an <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">invoice</a> with 2 <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item">line items</a> processed in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a> (<code>invm</code> is <code>true</code>).</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"cmpn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"bscl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"svcl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fclt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"frch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reg"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inv"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"doc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-VOIP INVOICE 2018.06.05:12.02 AVA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cmmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cnty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harris"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ctry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"int"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Houston"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"st"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77003"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"cust"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lfln"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"itms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 001 - Internet/Access Charge"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"incl"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tran"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"serv"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dbt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"adj"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 002 - Internet/Access Line"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"incl"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tran"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"serv"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dbt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"adj"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"invm"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dtl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"summ"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internet $25 exemption invoice example"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>Both the line item <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/detailed-tax-result/">detailed taxes</a> (<code>txs</code>) and the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/summarized-tax-result/">summarized taxes</a> (<code>summ</code>) are returned.</p>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2" class="dev-guide-link">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+<h4>Response</h4>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"inv"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"doc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-VOIP INVOICE 2018.06.05:12.02 AVA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"itms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 001 - Internet/Access Charge"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"txs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transit Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0625</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Line Item 002 - Internet/Access Line"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"txs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transit Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cmpl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tm"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0625</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"summ"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transit Tax"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3775200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0625</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/calc-taxes-response/"><code>CalcTaxes</code> response</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed tax results</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized tax results</a></li>
+</ul>
+
+<ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+      </main>
+    </div>
+    
+
+
+
+
+
+
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Avalara Developer</title>
+    <description></description>
+    <link>https://developer.avalara.com/</link>
+    <atom:link href="https://developer.avalara.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>AvaTax API 19.1 Patch Notes</title>
+        <description>
+</description>
+        <pubDate>Tue, 15 Jan 2019 17:00:00 +0000</pubDate>
+        <link>/blog/2019/01/15/AvaTax-19-1-patch-notes/</link>
+        <guid isPermaLink="true">/blog/2019/01/15/AvaTax-19-1-patch-notes/</guid>
+        
+        
+        <category>avatax</category>
+        
+        <category>patch notes</category>
+        
+      </item>
+    
+      <item>
+        <title>AvaTax API 18.12 Patch Notes</title>
+        <description>
+</description>
+        <pubDate>Thu, 13 Dec 2018 16:00:00 +0000</pubDate>
+        <link>/blog/2018/12/13/AvaTax-18-12-patch-notes/</link>
+        <guid isPermaLink="true">/blog/2018/12/13/AvaTax-18-12-patch-notes/</guid>
+        
+        
+        <category>avatax</category>
+        
+        <category>patch notes</category>
+        
+      </item>
+    
+      <item>
+        <title>RefundTransaction vs ReturnInvoice</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Dec 2018 12:00:00 +0000</pubDate>
+        <link>/blog/2018/12/07/refundTransaction-vs-CreateTransaction/</link>
+        <guid isPermaLink="true">/blog/2018/12/07/refundTransaction-vs-CreateTransaction/</guid>
+        
+        
+        <category>avatax</category>
+        
+        <category>how to</category>
+        
+      </item>
+    
+      <item>
+        <title>General Delivery in AvaTax</title>
+        <description>
+</description>
+        <pubDate>Mon, 26 Nov 2018 16:00:00 +0000</pubDate>
+        <link>/blog/2018/11/26/general-delivery-avatax/</link>
+        <guid isPermaLink="true">/blog/2018/11/26/general-delivery-avatax/</guid>
+        
+        
+        <category>avatax</category>
+        
+      </item>
+    
+      <item>
+        <title>Using $include with CreateTransaction</title>
+        <description>
+</description>
+        <pubDate>Thu, 15 Nov 2018 12:00:00 +0000</pubDate>
+        <link>/blog/2018/11/15/using-include-with-createTransaction/</link>
+        <guid isPermaLink="true">/blog/2018/11/15/using-include-with-createTransaction/</guid>
+        
+        
+        <category>avatax</category>
+        
+      </item>
+    
+      <item>
+        <title>Tax Rates for Lines and Documents</title>
+        <description>
+</description>
+        <pubDate>Tue, 06 Nov 2018 12:00:00 +0000</pubDate>
+        <link>/blog/2018/11/06/tax-rate-by-line/</link>
+        <guid isPermaLink="true">/blog/2018/11/06/tax-rate-by-line/</guid>
+        
+        
+        <category>avatax</category>
+        
+      </item>
+    
+      <item>
+        <title>Custom HTML Tags</title>
+        <description>
+</description>
+        <pubDate>Thu, 25 Oct 2018 12:00:00 +0000</pubDate>
+        <link>/blog/2018/10/25/better-ui-components/</link>
+        <guid isPermaLink="true">/blog/2018/10/25/better-ui-components/</guid>
+        
+        
+        <category>ui</category>
+        
+        <category>web</category>
+        
+      </item>
+    
+      <item>
+        <title>Why Sales Tax Calculation Is Crucial For Your Ecommerce Shopping Cart</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Oct 2018 10:00:00 +0000</pubDate>
+        <link>/blog/2018/10/15/why-sales-tax-calculation-ecommerce-shopping-cart/</link>
+        <guid isPermaLink="true">/blog/2018/10/15/why-sales-tax-calculation-ecommerce-shopping-cart/</guid>
+        
+        
+        <category>avatax</category>
+        
+      </item>
+    
+      <item>
+        <title>AvaTax API 18.10 Patch Notes</title>
+        <description>
+</description>
+        <pubDate>Thu, 04 Oct 2018 16:00:00 +0000</pubDate>
+        <link>/blog/2018/10/04/AvaTax-18-10-patch-notes/</link>
+        <guid isPermaLink="true">/blog/2018/10/04/AvaTax-18-10-patch-notes/</guid>
+        
+        
+        <category>avatax</category>
+        
+        <category>patch notes</category>
+        
+      </item>
+    
+      <item>
+        <title>The Hidden Cost of &quot;Free&quot; Tax Tables</title>
+        <description>
+</description>
+        <pubDate>Thu, 27 Sep 2018 10:00:00 +0000</pubDate>
+        <link>/blog/2018/09/27/hidden-cost-of-free-tax-tables/</link>
+        <guid isPermaLink="true">/blog/2018/09/27/hidden-cost-of-free-tax-tables/</guid>
+        
+        
+        <category>avatax</category>
+        
+        <category>sdk</category>
+        
+      </item>
+    
+  </channel>
+</rss>

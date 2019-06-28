@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/avatax/avatax-demo/">
+
+    
+    <meta property="og:title" content="Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/avatax-demo-img.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/avatax-demo-img.png "/>
+    <meta name="twitter:title" content="Avalara Developer">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=Sales Tax API Demo>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav  " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid use_cases">
+        
+        <section class="row padding-sides">
+            <main class="col-md-12"><body onload="updateAddress()" style="position:fixed;">
+    <link href="../../public/css/avatax.css" rel="stylesheet" type="text/css" />
+    <!-- demo container -->
+    <div class="row">
+        <!-- shortcuts container -->
+        <div class="col-md-3">
+            <!-- page header -->
+            <div id="demo-shortcuts">
+                <!-- steps to submit -->
+                <div class="row">
+                    <!-- step 1 / ship to -->
+                    <p class="demo-step">Step 1: Where are you shipping to?</p>
+                    <div class="demo-option">
+                        <p>Choose a pre-selected address</p>
+                        <form id="dest-addresses" onchange="updateAddress();" class="demo-form">
+                            <!-- loop thru addresses -->
+                            
+                                <label class="demo-label-container">
+                                    <input id="Irvine" name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-radio" city="Irvine" addresstype="national" checked="" />
+                                    <span class="demo-label"> Irvine</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    2000 Main Street
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Irvine, CA 92614</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input id="Seattle" name="address" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206" class="demo-radio" city="Seattle" addresstype="national" />
+                                    <span class="demo-label"> Seattle</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    255 S. King Street
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Seattle, WA, 98104</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input id="Durham" name="address" type="radio" value="512 S Mangum Street,Durham,NC,US,27701" lat="35.991727" long="-78.902647" class="demo-radio" city="Durham" addresstype="national" />
+                                    <span class="demo-label"> Durham</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    512 S Mangum Street
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Durham, NC 27701</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input id="Brighton" name="address" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584" class="demo-radio" city="Brighton" addresstype="international" />
+                                    <span class="demo-label"> Brighton</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    3rd Floor Trafalgar Place
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Brighton, UK BN1 4FU</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input id="Toronto" name="address" type="radio" value="317 Adelaide St W,Toronto,Ontario,CA,M5V 1P9" lat="43.647409" long="-79.392299" class="demo-radio" city="Toronto" addresstype="international" />
+                                    <span class="demo-label"> Toronto</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    317 Adelaide St W
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Toronto, Ontario, CA M5V 1P9</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input id="Brussels" name="address" type="radio" value="O.L.Vrouwstraat 6,Brussels,1850 Grimbergen,BE" lat="50.932458" long="4.372408" class="demo-radio" city="Brussels" addresstype="international" />
+                                    <span class="demo-label"> Brussels</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    O.L.Vrouwstraat 6
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">1850 Grimbergen, Belgium</span>
+                                </label>
+                                <br />
+                            
+                        </form>
+                    </div>
+                    <hr />
+                    <!-- step 2 / products -->
+                    <p class="demo-step">Step 2: What's being taxed?</p>
+                    <div class="demo-option">
+                        <p>Choose a common product or service to calculate tax</p>
+                        <form id="products" onchange="fillWithSampleData();" class="demo-form">
+                            <!-- loop thru products -->
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="PF050099" name="product" id="p1c" type="checkbox" description="Chocolate" class="demo-radio" />
+                                    <!-- amount input -->
+                                    <input value="900.0" type="text" id="p1c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> Chocolate </span>
+                                    
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="PF160024" name="product" id="p2c" type="checkbox" description="Pre-packaged Sushi" class="demo-radio" />
+                                    <!-- amount input -->
+                                    <input value="15.99" type="text" id="p2c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> Pre-packaged Sushi </span>
+                                    
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="DM040200" name="product" id="p3c" type="checkbox" description="MP3 download" class="demo-radio" />
+                                    <!-- amount input -->
+                                    <input value="0.99" type="text" id="p3c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> MP3 download </span>
+                                    
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="PC040400" name="product" id="p4c" type="checkbox" description="Baseball Bat" class="demo-radio" checked="" />
+                                    <!-- amount input -->
+                                    <input value="40.21" type="text" id="p4c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> Baseball Bat </span>
+                                    
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="PC070400" name="product" id="p5c" type="checkbox" description="Color Laser Printer" class="demo-radio" />
+                                    <!-- amount input -->
+                                    <input value="199.0" type="text" id="p5c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> Color Laser Printer </span>
+                                    
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="SA090700" name="product" id="p6c" type="checkbox" description="Oil change service (with synthetic oil)" class="demo-radio" />
+                                    <!-- amount input -->
+                                    <input value="89.99" type="text" id="p6c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> Oil change service (with synthetic oil) </span>
+                                    
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <!-- radio input -->
+                                    <input value="FR010000" name="product" id="p7c" type="checkbox" description="Shipping" class="demo-radio" />
+                                    <!-- amount input -->
+                                    <input value="19.99" type="text" id="p7c-amount" hscode="" style="width: 50px;" />
+                                    <!-- label and sublabel -->
+                                    <span class="demo-label"> Shipping </span>
+                                    
+                                </label>
+                                <br />
+                            
+                        </form>
+                    </div>
+                    <hr />
+                    <!-- step 3 / ship from -->
+                    <p class="demo-step">Step 3: Where are you shipping from? (optional) </p>
+                    <div class="demo-option">
+                        <p>Choose a pre-selected address</p>
+                        <form id="src-addresses" onchange="updateAddress();" class="demo-form">
+                            <!-- loop thru addresses -->
+                            
+                                <label class="demo-label-container">
+                                    <input name="srcAddress" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-radio" addresstype="national" />
+                                    <span class="demo-label"> Irvine</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    2000 Main Street
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Irvine, CA 92614</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input name="srcAddress" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206" class="demo-radio" addresstype="national" />
+                                    <span class="demo-label"> Seattle</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    255 S. King Street
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Seattle, WA, 98104</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input name="srcAddress" type="radio" value="512 S Mangum Street,Durham,NC,US,27701" lat="35.991727" long="-78.902647" class="demo-radio" addresstype="national" />
+                                    <span class="demo-label"> Durham</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    512 S Mangum Street
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Durham, NC 27701</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584" class="demo-radio" addresstype="international" />
+                                    <span class="demo-label"> Brighton</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    3rd Floor Trafalgar Place
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Brighton, UK BN1 4FU</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input name="srcAddress" type="radio" value="317 Adelaide St W,Toronto,Ontario,CA,M5V 1P9" lat="43.647409" long="-79.392299" class="demo-radio" addresstype="international" />
+                                    <span class="demo-label"> Toronto</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    317 Adelaide St W
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">Toronto, Ontario, CA M5V 1P9</span>
+                                </label>
+                                <br />
+                            
+                                <label class="demo-label-container">
+                                    <input name="srcAddress" type="radio" value="O.L.Vrouwstraat 6,Brussels,1850 Grimbergen,BE" lat="50.932458" long="4.372408" class="demo-radio" addresstype="international" />
+                                    <span class="demo-label"> Brussels</span>
+                                    <br />
+                                    <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                    O.L.Vrouwstraat 6
+                                    <br />
+                                    
+                                    <span class="demo-city-zip">1850 Grimbergen, Belgium</span>
+                                </label>
+                                <br />
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end shortcuts -->
+        </div>
+        <!-- map and api details container -->
+        <div class="col-md-9">
+            <!-- map row -->
+            <div class="row" style="position: relative; height: 375px;">
+                <div class="demo-infobox">
+                    <h4 id="demo-infobox-header" style="display: inline;">Getting Started</h4>
+                    <i class="glyphicon glyphicon-remove" id="demo-infobox-icon" style="display: inline;float: right;padding-top:5px;" onclick="hideInfobox()"></i>
+                    <p id="demo-infobox-text" style="margin-bottom:0;">
+                        Calculating sales tax is time consuming and painful, but it doesn't have to be. Avalara's sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you're shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
+                    </p>
+                    <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
+                </div>
+                <div id="map" style="position: absolute;top:0px;left:0px;right:0px;bottom:0px;height: 375px;z-index:2;"></div>
+            </div>
+            <!-- api details row -->
+            <div class="row" id="demo-api-details">
+                <!-- request output -->
+                <div class="console-req-container api-console-output col-md-6" id="demo-console-req">
+                    <div class="row" style="margin-top:5px;margin-left:10px;margin-right:10px;">
+                        <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
+                            Request
+                        </h5>
+                        <div class="form-group" style="display: inline;" onchange="fillWithSampleData();">
+                            <select class="form-control" id="req-type" style="display: inline;width: 100px;">
+                                <option value="JSON">JSON</option>
+                                <option value="cURL">cURL</option>
+                                <option value="C#">C# SDK</option>
+                                <option value="PHP">PHP SDK</option>
+                                <option value="Python">Python SDK</option>
+                                <option value="Ruby">Ruby SDK</option>
+                                <option value="Java">Java SDK</option>
+                                <option value="JS">JS SDK</option>
+                            </select>
+                        </div>
+                        <div style="display:inline-block;float:right;" class="btn-group">
+                            <button class="btn btn-link demo-console-btn copy-btn" type="submit" onclick="copyToClipboard('#demo-console-input');">
+                                <i class="glyphicon glyphicon-copy" title="Copy"></i>
+                            </button>
+                            <button class="btn btn-link demo-console-btn">
+                                <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" target="_blank">
+                                    <i class="glyphicon glyphicon-list-alt" title="Docs"></i>
+                                </a>
+                            </button>
+                            <button class="btn btn-signup" type="button" onclick="ApiRequest();" style="display:block;border-radius:4px;margin: 0;">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                    <div class="code-snippet reqScroll" id="demo-console-req" style="height:400px;">
+                        <pre id="demo-console-input">{ }</pre>
+                    </div>
+                </div>
+                <!-- response output -->
+                <div class="col-md-6 console-res-container api-console-output" id="demo-console-res">
+                    <div class="row" style="margin-top:5px;margin-left:10px;margin-right:10px;">
+                        <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
+                            Response
+                        </h5>
+                        <div style="display:inline-block;float:right;" class="btn-group">
+                            <button class="btn btn-link demo-console-btn copy-btn" type="submit" onclick="copyToClipboard('#demo-console-output');">
+                                <i class="glyphicon glyphicon-copy"></i>
+                            </button>
+                            <button class="btn btn-link demo-console-btn">
+                                <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" target="_blank">
+                                    <i class="glyphicon glyphicon-list-alt"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="code-snippet respScroll" style="height:400px;">
+                        <div class="loading-pulse" style="display: none;"></div>
+                        <pre id="demo-console-output">{ }</pre>
+                    </div>
+                </div>
+                <!-- end response output -->
+            </div>
+            <!-- end api details row-->
+        </div>
+        <!-- end map & api details container-->
+    </div>
+    <!-- end demo container -->
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+    <script src="/developer-dot/public/js/site.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAESHsnaQTPrDPvy5VXL4nLJPlZA_JLro4&amp;callback=loadMap"></script>
+</body>
+</main>
+        </section>
+         
+    </div>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

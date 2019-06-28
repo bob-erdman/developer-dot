@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3.4 - Special Tax Jurisdictions | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/special-tax-jurisdiction/">
+
+    
+    <meta property="og:title" content="Chapter 3.4 - Special Tax Jurisdictions | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="Chapter 3.4 - Special Tax Jurisdictions">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=communications>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid comms_geo_soap_dev_guide">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/communications">Avalara communications</a></li>
+            <li class="text-uppercase">comms geo soap dev guide</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row">
+            <main class="col-md-12">
+  
+    <div class="row padding-sides half">
+      <nav class="col-md-3">
+        <div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
+    <h3>Chapters</h3>
+    <ol>
+        <li ><a href="/developer-dot/communications/dev-guide_geo_soap/getting-started/">Getting Started</a>
+            
+        </li>
+      <li ><a href="/developer-dot/communications/dev-guide_geo_soap/geocode/">Geocode</a>
+            
+        </li>
+          <li ><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/">Customizing Geocoding Requests</a>
+            
+            <ol>
+               <li><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/geocode-address">Geocode Address</a></li>
+               <li><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/geocode-all-matches">Geocode All Matches</a></li>
+               <li><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/geocode-lat-long">Geocode Lat Long</a></li>
+               <li><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/special-tax-jurisdiction">Special Tax Jurisdictions</a></li>
+               <li><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/florida-certified">Florida Certified</a></li>
+            </ol>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_geo_soap/reference/">Reference</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_geo_soap/geocode-offline/">Geocode Offline</a>
+            
+        </li>
+    </ol>
+</div>
+      </nav>
+      <main class="col-md-9 small-no-padding">
+        <h1>
+            Chapter 3.4 - Special Tax Jurisdictions
+            
+        </h1>
+        <ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/geocode-lat-long"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/florida-certified">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+<p><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special Tax Jurisdiction</a> information is returned along with the primary jurisdiction results if the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/options/">Options</a> (<code>Options</code>) bitwise value includes 16.</p>
+
+<h3 id="example1">Special Tax Jurisdiction Example 1 - Address</h3>
+<p>This request includes the Return Special Tax Jurisdictions <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/options/">Options</a> (<code>Options</code>) bitwise value of 16, indicating that we want to get Special Tax Jurisdictions back.  The input for this request is an address, and we are using the GeocodeAddress <code>GeocodeAddress</code> <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a>.  The same information can be passed to the <code>GeocodeAllMatches</code> <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a> with the same results.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;s:Envelope</span> <span class="na">xmlns:s=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="na">xmlns:tem=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;s:Header&gt;</span>
+      <span class="nt">&lt;o:Security</span> <span class="na">s:mustUnderstand=</span><span class="s">"1"</span> <span class="na">xmlns:o=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;o:UsernameToken&gt;</span>
+            <span class="nt">&lt;o:Username&gt;</span>USERNAME<span class="nt">&lt;/o:Username&gt;</span>
+            <span class="nt">&lt;o:Password&gt;</span>PASSWORD<span class="nt">&lt;/o:Password&gt;</span>
+         <span class="nt">&lt;/o:UsernameToken&gt;</span>
+      <span class="nt">&lt;/o:Security&gt;</span>
+   <span class="nt">&lt;/s:Header&gt;</span>
+   <span class="nt">&lt;s:Body&gt;</span>
+      <span class="nt">&lt;GeocodeAddress</span> <span class="na">xmlns=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;inputAddress</span> <span class="na">xmlns:a=</span><span class="s">"http://schemas.datacontract.org/2004/07/EZGeoSaaS"</span> <span class="na">xmlns:i=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a:CassCertify&gt;</span>false<span class="nt">&lt;/a:CassCertify&gt;</span>
+            <span class="nt">&lt;a:City&gt;</span>New York<span class="nt">&lt;/a:City&gt;</span>
+            <span class="nt">&lt;a:CityStateZip/&gt;</span>
+            <span class="nt">&lt;a:MinimumScore&gt;</span>0.7<span class="nt">&lt;/a:MinimumScore&gt;</span>
+            <span class="nt">&lt;a:Offset&gt;</span>3<span class="nt">&lt;/a:Offset&gt;</span>
+            <span class="nt">&lt;a:Options&gt;</span>312<span class="nt">&lt;/a:Options&gt;</span>
+            <span class="nt">&lt;a:SecondaryUnit/&gt;</span>
+            <span class="nt">&lt;a:Source/&gt;</span>
+            <span class="nt">&lt;a:State&gt;</span>NY<span class="nt">&lt;/a:State&gt;</span>
+            <span class="nt">&lt;a:StreetAddress&gt;</span>1260 6th Ave<span class="nt">&lt;/a:StreetAddress&gt;</span>
+            <span class="nt">&lt;a:Zip&gt;</span>10020<span class="nt">&lt;/a:Zip&gt;</span>
+         <span class="nt">&lt;/inputAddress&gt;</span>
+      <span class="nt">&lt;/GeocodeAddress&gt;</span>
+   <span class="nt">&lt;/s:Body&gt;</span>
+<span class="nt">&lt;/s:Envelope&gt;</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>Special Tax Jurisdiction information is returned:</p>
+<ul class="dev-guide-list">
+   <li><code>SpecialTaxDistrictName</code> is the Special Tax Jurisdiction Name</li>
+   <li><code>SpecialTaxDistrictPCode</code> contains the PCode for the Special Tax Jurisdiction</li>
+   <li><code>PCode</code> returns the PCode that should be used for taxation - in this case, the Special Tax Jurisdiction PCode</li>
+</ul>
+
+<p>The underlying primary jurisdiction is also returned:</p>
+<ul class="dev-guide-list">
+   <li><code>PrimaryJurisdictionName</code> is the name of the underlying primary jurisdiction that is returned if Special Tax Jurisdictions are not turned on</li>
+   <li><code>PrimaryJurisdictionPCode</code> provides the PCode for the underlying primary jurisdiction</li>
+</ul>
+
+<div class="panel-group">
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse1">View the Response XML</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;s:Envelope</span> <span class="na">xmlns:s=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="na">xmlns:u=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;s:Header&gt;</span>
+      <span class="nt">&lt;o:Security</span> <span class="na">s:mustUnderstand=</span><span class="s">"1"</span> <span class="na">xmlns:o=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;u:Timestamp</span> <span class="na">u:Id=</span><span class="s">"_0"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;u:Created&gt;</span>2019-02-07T17:39:59.044Z<span class="nt">&lt;/u:Created&gt;</span>
+            <span class="nt">&lt;u:Expires&gt;</span>2019-02-07T17:44:59.044Z<span class="nt">&lt;/u:Expires&gt;</span>
+         <span class="nt">&lt;/u:Timestamp&gt;</span>
+      <span class="nt">&lt;/o:Security&gt;</span>
+   <span class="nt">&lt;/s:Header&gt;</span>
+   <span class="nt">&lt;s:Body&gt;</span>
+      <span class="nt">&lt;GeocodeAddressResponse</span> <span class="na">xmlns=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;GeocodeAddressResult</span> <span class="na">xmlns:a=</span><span class="s">"http://schemas.datacontract.org/2004/07/EZGeoSaaS"</span> <span class="na">xmlns:i=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a:Alternate&gt;</span>0<span class="nt">&lt;/a:Alternate&gt;</span>
+            <span class="nt">&lt;a:CassAddress</span> <span class="na">i:nil=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;a:CensusBlockGroup&gt;</span>1005<span class="nt">&lt;/a:CensusBlockGroup&gt;</span>
+            <span class="nt">&lt;a:CensusTract&gt;</span>10400<span class="nt">&lt;/a:CensusTract&gt;</span>
+            <span class="nt">&lt;a:CityName&gt;</span>NEW YORK CITY<span class="nt">&lt;/a:CityName&gt;</span>
+            <span class="nt">&lt;a:Country&gt;</span>USA<span class="nt">&lt;/a:Country&gt;</span>
+            <span class="nt">&lt;a:County&gt;</span>NEW YORK<span class="nt">&lt;/a:County&gt;</span>
+            <span class="nt">&lt;a:ErrorMessage/&gt;</span>
+            <span class="nt">&lt;a:FeatureID&gt;</span>2395220<span class="nt">&lt;/a:FeatureID&gt;</span>
+            <span class="nt">&lt;a:FipsCode&gt;</span>9902604301<span class="nt">&lt;/a:FipsCode&gt;</span>
+            <span class="nt">&lt;a:FipsPlaceName&gt;</span>NYC<span class="nt">&lt;/a:FipsPlaceName&gt;</span>
+            <span class="nt">&lt;a:Incorporated&gt;</span>true<span class="nt">&lt;/a:Incorporated&gt;</span>
+            <span class="nt">&lt;a:InputAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;b:string&gt;</span>1260 6TH AVE<span class="nt">&lt;/b:string&gt;</span>
+               <span class="nt">&lt;b:string&gt;</span>NEW YORK, NY 10020<span class="nt">&lt;/b:string&gt;</span>
+            <span class="nt">&lt;/a:InputAddress&gt;</span>
+            <span class="nt">&lt;a:Latitude&gt;</span>40.759881426441147<span class="nt">&lt;/a:Latitude&gt;</span>
+            <span class="nt">&lt;a:Longitude&gt;</span>-73.9803850946123<span class="nt">&lt;/a:Longitude&gt;</span>
+            <span class="nt">&lt;a:NetworkID&gt;</span>nt<span class="nt">&lt;/a:NetworkID&gt;</span>
+            <span class="nt">&lt;a:PCode&gt;</span>2604301<span class="nt">&lt;/a:PCode&gt;</span>
+            <span class="nt">&lt;a:PostalCode&gt;</span>10020<span class="nt">&lt;/a:PostalCode&gt;</span>
+            <span class="nt">&lt;a:PostalCodeExtension/&gt;</span>
+            <span class="nt">&lt;a:PrimaryJurisdictionName&gt;</span>NEW YORK<span class="nt">&lt;/a:PrimaryJurisdictionName&gt;</span>
+            <span class="nt">&lt;a:PrimaryJurisdictionPCode&gt;</span>2604100<span class="nt">&lt;/a:PrimaryJurisdictionPCode&gt;</span>
+            <span class="nt">&lt;a:Score&gt;</span>0.98<span class="nt">&lt;/a:Score&gt;</span>
+            <span class="nt">&lt;a:SecondaryUnit/&gt;</span>
+            <span class="nt">&lt;a:SpecialTaxDistrictName&gt;</span>NEW YORK SOUTH MANHATTAN<span class="nt">&lt;/a:SpecialTaxDistrictName&gt;</span>
+            <span class="nt">&lt;a:SpecialTaxDistrictPCode&gt;</span>2604301<span class="nt">&lt;/a:SpecialTaxDistrictPCode&gt;</span>
+            <span class="nt">&lt;a:StandardizedAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;b:string&gt;</span>1260 6TH AVE<span class="nt">&lt;/b:string&gt;</span>
+               <span class="nt">&lt;b:string&gt;</span>NEW YORK CITY,NY 10020<span class="nt">&lt;/b:string&gt;</span>
+            <span class="nt">&lt;/a:StandardizedAddress&gt;</span>
+            <span class="nt">&lt;a:StateName&gt;</span>NY<span class="nt">&lt;/a:StateName&gt;</span>
+            <span class="nt">&lt;a:StreetName&gt;</span>6TH AVE<span class="nt">&lt;/a:StreetName&gt;</span>
+            <span class="nt">&lt;a:StreetNumber&gt;</span>1260<span class="nt">&lt;/a:StreetNumber&gt;</span>
+            <span class="nt">&lt;a:TaxJurisdictionName&gt;</span>NEW YORK SOUTH MANHATTAN<span class="nt">&lt;/a:TaxJurisdictionName&gt;</span>
+            <span class="nt">&lt;a:TimeZone/&gt;</span>
+            <span class="nt">&lt;a:UnderlyingFipsCode&gt;</span>3606151000<span class="nt">&lt;/a:UnderlyingFipsCode&gt;</span>
+         <span class="nt">&lt;/GeocodeAddressResult&gt;</span>
+      <span class="nt">&lt;/GeocodeAddressResponse&gt;</span>
+   <span class="nt">&lt;/s:Body&gt;</span>
+<span class="nt">&lt;/s:Envelope&gt;</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>Special Tax Jurisdictions Example 2 - Latitude/Longitude</h3>
+<p>This request is the same request as <a class="dev-guide-link" href="#example1">Example 1</a>, but using the latitude and longitude of the location instead of an address.  The <code>GeocodeLatLong</code> <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a> does not use the  <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/options/">Options</a> (<code>Options</code>) bitwise field, but <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special Tax Jurisdictions</a> are returned if one exists for the location provided.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;s:Envelope</span> <span class="na">xmlns:s=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="na">xmlns:tem=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;s:Header&gt;</span>
+      <span class="nt">&lt;o:Security</span> <span class="na">s:mustUnderstand=</span><span class="s">"1"</span> <span class="na">xmlns:o=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;o:UsernameToken&gt;</span>
+            <span class="nt">&lt;o:Username&gt;</span>USERNAME<span class="nt">&lt;/o:Username&gt;</span>
+            <span class="nt">&lt;o:Password&gt;</span>PASSWORD<span class="nt">&lt;/o:Password&gt;</span>
+         <span class="nt">&lt;/o:UsernameToken&gt;</span>
+      <span class="nt">&lt;/o:Security&gt;</span>
+   <span class="nt">&lt;/s:Header&gt;</span>
+   <span class="nt">&lt;s:Body&gt;</span>
+      <span class="nt">&lt;tem:GeocodeLatLong&gt;</span>
+         <span class="nt">&lt;tem:latitude&gt;</span>40.759881426441147<span class="nt">&lt;/tem:latitude&gt;</span>
+         <span class="nt">&lt;tem:longitude&gt;</span>-73.9803850946123<span class="nt">&lt;/tem:longitude&gt;</span>
+         <span class="nt">&lt;tem:Source/&gt;</span>
+      <span class="nt">&lt;/tem:GeocodeLatLong&gt;</span>
+   <span class="nt">&lt;/s:Body&gt;</span>
+<span class="nt">&lt;/s:Envelope&gt;</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>The geocoding result contains the same Special Tax Jurisdiction, PCode, and Primary Jurisdiction information as the address input. 
+<br /></p>
+<div class="panel-group">
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse2">View the Response XML</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;s:Envelope</span> <span class="na">xmlns:s=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="na">xmlns:u=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;s:Header&gt;</span>
+      <span class="nt">&lt;o:Security</span> <span class="na">s:mustUnderstand=</span><span class="s">"1"</span> <span class="na">xmlns:o=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;u:Timestamp</span> <span class="na">u:Id=</span><span class="s">"_0"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;u:Created&gt;</span>2019-02-07T17:41:00.946Z<span class="nt">&lt;/u:Created&gt;</span>
+            <span class="nt">&lt;u:Expires&gt;</span>2019-02-07T17:46:00.946Z<span class="nt">&lt;/u:Expires&gt;</span>
+         <span class="nt">&lt;/u:Timestamp&gt;</span>
+      <span class="nt">&lt;/o:Security&gt;</span>
+   <span class="nt">&lt;/s:Header&gt;</span>
+   <span class="nt">&lt;s:Body&gt;</span>
+      <span class="nt">&lt;GeocodeLatLongResponse</span> <span class="na">xmlns=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;GeocodeLatLongResult</span> <span class="na">xmlns:a=</span><span class="s">"http://schemas.datacontract.org/2004/07/EZGeoSaaS"</span> <span class="na">xmlns:i=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a:Alternate&gt;</span>0<span class="nt">&lt;/a:Alternate&gt;</span>
+            <span class="nt">&lt;a:CassAddress</span> <span class="na">i:nil=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;a:CensusBlockGroup&gt;</span>0<span class="nt">&lt;/a:CensusBlockGroup&gt;</span>
+            <span class="nt">&lt;a:CensusTract&gt;</span>0<span class="nt">&lt;/a:CensusTract&gt;</span>
+            <span class="nt">&lt;a:CityName&gt;</span>NEW YORK CITY<span class="nt">&lt;/a:CityName&gt;</span>
+            <span class="nt">&lt;a:Country&gt;</span>USA<span class="nt">&lt;/a:Country&gt;</span>
+            <span class="nt">&lt;a:County&gt;</span>NEW YORK<span class="nt">&lt;/a:County&gt;</span>
+            <span class="nt">&lt;a:ErrorMessage/&gt;</span>
+            <span class="nt">&lt;a:FeatureID&gt;</span>2395220<span class="nt">&lt;/a:FeatureID&gt;</span>
+            <span class="nt">&lt;a:FipsCode&gt;</span>9902604301<span class="nt">&lt;/a:FipsCode&gt;</span>
+            <span class="nt">&lt;a:FipsPlaceName&gt;</span>NYC<span class="nt">&lt;/a:FipsPlaceName&gt;</span>
+            <span class="nt">&lt;a:Incorporated&gt;</span>true<span class="nt">&lt;/a:Incorporated&gt;</span>
+            <span class="nt">&lt;a:InputAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;b:string/&gt;</span>
+               <span class="nt">&lt;b:string/&gt;</span>
+            <span class="nt">&lt;/a:InputAddress&gt;</span>
+            <span class="nt">&lt;a:Latitude&gt;</span>40.759881426441147<span class="nt">&lt;/a:Latitude&gt;</span>
+            <span class="nt">&lt;a:Longitude&gt;</span>-73.9803850946123<span class="nt">&lt;/a:Longitude&gt;</span>
+            <span class="nt">&lt;a:NetworkID&gt;</span>nt<span class="nt">&lt;/a:NetworkID&gt;</span>
+            <span class="nt">&lt;a:PCode&gt;</span>2604301<span class="nt">&lt;/a:PCode&gt;</span>
+            <span class="nt">&lt;a:PostalCode/&gt;</span>
+            <span class="nt">&lt;a:PostalCodeExtension/&gt;</span>
+            <span class="nt">&lt;a:PrimaryJurisdictionName&gt;</span>NEW YORK<span class="nt">&lt;/a:PrimaryJurisdictionName&gt;</span>
+            <span class="nt">&lt;a:PrimaryJurisdictionPCode&gt;</span>2604100<span class="nt">&lt;/a:PrimaryJurisdictionPCode&gt;</span>
+            <span class="nt">&lt;a:Score&gt;</span>0.99999370111861319<span class="nt">&lt;/a:Score&gt;</span>
+            <span class="nt">&lt;a:SecondaryUnit/&gt;</span>
+            <span class="nt">&lt;a:SpecialTaxDistrictName&gt;</span>NEW YORK SOUTH MANHATTAN<span class="nt">&lt;/a:SpecialTaxDistrictName&gt;</span>
+            <span class="nt">&lt;a:SpecialTaxDistrictPCode&gt;</span>2604301<span class="nt">&lt;/a:SpecialTaxDistrictPCode&gt;</span>
+            <span class="nt">&lt;a:StandardizedAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;b:string&gt;&lt;/b:string&gt;</span>
+               <span class="nt">&lt;b:string&gt;</span>NEW YORK CITY,NY null<span class="nt">&lt;/b:string&gt;</span>
+            <span class="nt">&lt;/a:StandardizedAddress&gt;</span>
+            <span class="nt">&lt;a:StateName&gt;</span>NY<span class="nt">&lt;/a:StateName&gt;</span>
+            <span class="nt">&lt;a:StreetName/&gt;</span>
+            <span class="nt">&lt;a:StreetNumber/&gt;</span>
+            <span class="nt">&lt;a:TaxJurisdictionName&gt;</span>NEW YORK SOUTH MANHATTAN<span class="nt">&lt;/a:TaxJurisdictionName&gt;</span>
+            <span class="nt">&lt;a:TimeZone/&gt;</span>
+            <span class="nt">&lt;a:UnderlyingFipsCode&gt;</span>3606151000<span class="nt">&lt;/a:UnderlyingFipsCode&gt;</span>
+         <span class="nt">&lt;/GeocodeLatLongResult&gt;</span>
+      <span class="nt">&lt;/GeocodeLatLongResponse&gt;</span>
+   <span class="nt">&lt;/s:Body&gt;</span>
+<span class="nt">&lt;/s:Envelope&gt;</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>Special Tax Jurisdiction Example 3 - Turn Off Return of Special Tax Jurisdiction</h3>
+<p>This is the same address as <a class="dev-guide-link" href="#example1">Example 1</a>, but this time the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/options/">Options</a> (<code>Options</code>) bitwise value does not include 16 (Return Special Tax Jurisdictions), turning off the return of the Special Tax Jurisdiction information.  This example uses the <code>GeocodeAllMatches</code> <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/getting-started/endpoints-methods#methods">method</a>.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;s:Envelope</span> <span class="na">xmlns:s=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="na">xmlns:tem=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;s:Header&gt;</span>
+      <span class="nt">&lt;o:Security</span> <span class="na">s:mustUnderstand=</span><span class="s">"1"</span> <span class="na">xmlns:o=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;o:UsernameToken&gt;</span>
+            <span class="nt">&lt;o:Username&gt;</span>USERNAME<span class="nt">&lt;/o:Username&gt;</span>
+            <span class="nt">&lt;o:Password&gt;</span>PASSWORD<span class="nt">&lt;/o:Password&gt;</span>
+         <span class="nt">&lt;/o:UsernameToken&gt;</span>
+      <span class="nt">&lt;/o:Security&gt;</span>
+   <span class="nt">&lt;/s:Header&gt;</span>
+   <span class="nt">&lt;s:Body&gt;</span>
+      <span class="nt">&lt;tem:GeocodeAllMatches&gt;</span>
+         <span class="nt">&lt;tem:inputAddress</span> <span class="na">xmlns:a=</span><span class="s">"http://schemas.datacontract.org/2004/07/EZGeoSaaS"</span> <span class="na">xmlns:i=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a:CassCertify&gt;</span>false<span class="nt">&lt;/a:CassCertify&gt;</span>
+            <span class="nt">&lt;a:City&gt;</span>New York<span class="nt">&lt;/a:City&gt;</span>
+            <span class="nt">&lt;a:CityStateZip/&gt;</span>
+            <span class="nt">&lt;a:MinimumScore&gt;</span>0.7<span class="nt">&lt;/a:MinimumScore&gt;</span>
+            <span class="nt">&lt;a:Offset&gt;</span>3<span class="nt">&lt;/a:Offset&gt;</span>
+            <span class="nt">&lt;a:Options&gt;</span>296<span class="nt">&lt;/a:Options&gt;</span>
+            <span class="nt">&lt;a:SecondaryUnit/&gt;</span>
+            <span class="nt">&lt;a:Source/&gt;</span>
+            <span class="nt">&lt;a:State&gt;</span>NY<span class="nt">&lt;/a:State&gt;</span>
+            <span class="nt">&lt;a:StreetAddress&gt;</span>1260 6th Ave<span class="nt">&lt;/a:StreetAddress&gt;</span>
+            <span class="nt">&lt;a:Zip&gt;</span>10020<span class="nt">&lt;/a:Zip&gt;</span>
+         <span class="nt">&lt;/tem:inputAddress&gt;</span>
+         <span class="nt">&lt;tem:matchCount&gt;</span>10<span class="nt">&lt;/tem:matchCount&gt;</span>
+      <span class="nt">&lt;/tem:GeocodeAllMatches&gt;</span>
+   <span class="nt">&lt;/s:Body&gt;</span>
+<span class="nt">&lt;/s:Envelope&gt;</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>The Special Tax Jurisdiction fields (<code>SpecialTaxDistrictName</code> and <code>SpecialTaxDistrictPCode</code>) are included in <code>GeocodeAllMatchesResponse</code>, but are set as:</p>
+<ul class="dev-guide-list">
+   <li><code>SpecialTaxDistrictName</code> set to <code>nil</code></li>
+   <li><code>SpecialTaxDistrictPCode</code> is <code>-1</code>, indicating that no Special Tax Jurisdiction has been returned</li>
+</ul>
+
+<p>The underlying primary jurisdiction is still returned, but is now the jurisdiction that should be used:</p>
+<ul class="dev-guide-list">
+   <li><code>PCode</code> returns the PCode that should be used for taxation - this matches <code>PrimaryJurisdictionPCode</code></li>
+   <li><code>PrimaryJurisdictionName</code> is the name of the underlying primary jurisdiction that is returned if Special Tax Jurisdictions are not turned on</li>
+   <li><code>PrimaryJurisdictionPCode</code> provides the PCode for the underlying primary jurisdiction</li>
+</ul>
+
+<div class="panel-group">
+  <a class="dev-guide-link" data-toggle="collapse" href="#collapse3">View the Response XML</a>
+  <div id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;s:Envelope</span> <span class="na">xmlns:s=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="na">xmlns:u=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;s:Header&gt;</span>
+      <span class="nt">&lt;o:Security</span> <span class="na">s:mustUnderstand=</span><span class="s">"1"</span> <span class="na">xmlns:o=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;u:Timestamp</span> <span class="na">u:Id=</span><span class="s">"_0"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;u:Created&gt;</span>2019-02-07T20:02:43.569Z<span class="nt">&lt;/u:Created&gt;</span>
+            <span class="nt">&lt;u:Expires&gt;</span>2019-02-07T20:07:43.569Z<span class="nt">&lt;/u:Expires&gt;</span>
+         <span class="nt">&lt;/u:Timestamp&gt;</span>
+      <span class="nt">&lt;/o:Security&gt;</span>
+   <span class="nt">&lt;/s:Header&gt;</span>
+   <span class="nt">&lt;s:Body&gt;</span>
+      <span class="nt">&lt;GeocodeAllMatchesResponse</span> <span class="na">xmlns=</span><span class="s">"http://tempuri.org/"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;GeocodeAllMatchesResult</span> <span class="na">xmlns:a=</span><span class="s">"http://schemas.datacontract.org/2004/07/EZGeoSaaS"</span> <span class="na">xmlns:i=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a:AddressLocation&gt;</span>
+               <span class="nt">&lt;a:Alternate&gt;</span>0<span class="nt">&lt;/a:Alternate&gt;</span>
+               <span class="nt">&lt;a:CassAddress</span> <span class="na">i:nil=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;a:CensusBlockGroup&gt;</span>1005<span class="nt">&lt;/a:CensusBlockGroup&gt;</span>
+               <span class="nt">&lt;a:CensusTract&gt;</span>10400<span class="nt">&lt;/a:CensusTract&gt;</span>
+               <span class="nt">&lt;a:CityName&gt;</span>NEW YORK CITY<span class="nt">&lt;/a:CityName&gt;</span>
+               <span class="nt">&lt;a:Country&gt;</span>USA<span class="nt">&lt;/a:Country&gt;</span>
+               <span class="nt">&lt;a:County&gt;</span>NEW YORK<span class="nt">&lt;/a:County&gt;</span>
+               <span class="nt">&lt;a:ErrorMessage/&gt;</span>
+               <span class="nt">&lt;a:FeatureID&gt;</span>2395220<span class="nt">&lt;/a:FeatureID&gt;</span>
+               <span class="nt">&lt;a:FipsCode&gt;</span>3606151000<span class="nt">&lt;/a:FipsCode&gt;</span>
+               <span class="nt">&lt;a:FipsPlaceName&gt;</span>NYC<span class="nt">&lt;/a:FipsPlaceName&gt;</span>
+               <span class="nt">&lt;a:Incorporated&gt;</span>true<span class="nt">&lt;/a:Incorporated&gt;</span>
+               <span class="nt">&lt;a:InputAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>1260 6TH AVE<span class="nt">&lt;/b:string&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>NEW YORK, NY 10020<span class="nt">&lt;/b:string&gt;</span>
+               <span class="nt">&lt;/a:InputAddress&gt;</span>
+               <span class="nt">&lt;a:Latitude&gt;</span>40.759881426441147<span class="nt">&lt;/a:Latitude&gt;</span>
+               <span class="nt">&lt;a:Longitude&gt;</span>-73.9803850946123<span class="nt">&lt;/a:Longitude&gt;</span>
+               <span class="nt">&lt;a:NetworkID&gt;</span>nt<span class="nt">&lt;/a:NetworkID&gt;</span>
+               <span class="nt">&lt;a:PCode&gt;</span>2604100<span class="nt">&lt;/a:PCode&gt;</span>
+               <span class="nt">&lt;a:PostalCode&gt;</span>10020<span class="nt">&lt;/a:PostalCode&gt;</span>
+               <span class="nt">&lt;a:PostalCodeExtension/&gt;</span>
+               <span class="nt">&lt;a:PrimaryJurisdictionName&gt;</span>NEW YORK<span class="nt">&lt;/a:PrimaryJurisdictionName&gt;</span>
+               <span class="nt">&lt;a:PrimaryJurisdictionPCode&gt;</span>2604100<span class="nt">&lt;/a:PrimaryJurisdictionPCode&gt;</span>
+               <span class="nt">&lt;a:Score&gt;</span>0.98<span class="nt">&lt;/a:Score&gt;</span>
+               <span class="nt">&lt;a:SecondaryUnit/&gt;</span>
+               <span class="nt">&lt;a:SpecialTaxDistrictName</span> <span class="na">i:nil=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;a:SpecialTaxDistrictPCode&gt;</span>-1<span class="nt">&lt;/a:SpecialTaxDistrictPCode&gt;</span>
+               <span class="nt">&lt;a:StandardizedAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>1260 6TH AVE<span class="nt">&lt;/b:string&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>NEW YORK CITY,NY 10020<span class="nt">&lt;/b:string&gt;</span>
+               <span class="nt">&lt;/a:StandardizedAddress&gt;</span>
+               <span class="nt">&lt;a:StateName&gt;</span>NY<span class="nt">&lt;/a:StateName&gt;</span>
+               <span class="nt">&lt;a:StreetName&gt;</span>6TH AVE<span class="nt">&lt;/a:StreetName&gt;</span>
+               <span class="nt">&lt;a:StreetNumber&gt;</span>1260<span class="nt">&lt;/a:StreetNumber&gt;</span>
+               <span class="nt">&lt;a:TaxJurisdictionName&gt;</span>NEW YORK<span class="nt">&lt;/a:TaxJurisdictionName&gt;</span>
+               <span class="nt">&lt;a:TimeZone/&gt;</span>
+               <span class="nt">&lt;a:UnderlyingFipsCode&gt;</span>3606151000<span class="nt">&lt;/a:UnderlyingFipsCode&gt;</span>
+            <span class="nt">&lt;/a:AddressLocation&gt;</span>
+            <span class="nt">&lt;a:AddressLocation&gt;</span>
+               <span class="nt">&lt;a:Alternate&gt;</span>0<span class="nt">&lt;/a:Alternate&gt;</span>
+               <span class="nt">&lt;a:CassAddress</span> <span class="na">i:nil=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;a:CensusBlockGroup&gt;</span>1005<span class="nt">&lt;/a:CensusBlockGroup&gt;</span>
+               <span class="nt">&lt;a:CensusTract&gt;</span>10400<span class="nt">&lt;/a:CensusTract&gt;</span>
+               <span class="nt">&lt;a:CityName&gt;</span>NEW YORK<span class="nt">&lt;/a:CityName&gt;</span>
+               <span class="nt">&lt;a:Country&gt;</span>USA<span class="nt">&lt;/a:Country&gt;</span>
+               <span class="nt">&lt;a:County&gt;</span>New York<span class="nt">&lt;/a:County&gt;</span>
+               <span class="nt">&lt;a:ErrorMessage/&gt;</span>
+               <span class="nt">&lt;a:FeatureID&gt;</span>2395220<span class="nt">&lt;/a:FeatureID&gt;</span>
+               <span class="nt">&lt;a:FipsCode&gt;</span>3606151000<span class="nt">&lt;/a:FipsCode&gt;</span>
+               <span class="nt">&lt;a:FipsPlaceName&gt;</span>New York<span class="nt">&lt;/a:FipsPlaceName&gt;</span>
+               <span class="nt">&lt;a:Incorporated&gt;</span>true<span class="nt">&lt;/a:Incorporated&gt;</span>
+               <span class="nt">&lt;a:InputAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>1260 6TH AVE<span class="nt">&lt;/b:string&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>NEW YORK, NY 10020<span class="nt">&lt;/b:string&gt;</span>
+               <span class="nt">&lt;/a:InputAddress&gt;</span>
+               <span class="nt">&lt;a:Latitude&gt;</span>40.759905548859038<span class="nt">&lt;/a:Latitude&gt;</span>
+               <span class="nt">&lt;a:Longitude&gt;</span>-73.980394003783886<span class="nt">&lt;/a:Longitude&gt;</span>
+               <span class="nt">&lt;a:NetworkID&gt;</span>ta<span class="nt">&lt;/a:NetworkID&gt;</span>
+               <span class="nt">&lt;a:PCode&gt;</span>2604100<span class="nt">&lt;/a:PCode&gt;</span>
+               <span class="nt">&lt;a:PostalCode&gt;</span>10020<span class="nt">&lt;/a:PostalCode&gt;</span>
+               <span class="nt">&lt;a:PostalCodeExtension&gt;</span>1797<span class="nt">&lt;/a:PostalCodeExtension&gt;</span>
+               <span class="nt">&lt;a:PrimaryJurisdictionName&gt;</span>NEW YORK<span class="nt">&lt;/a:PrimaryJurisdictionName&gt;</span>
+               <span class="nt">&lt;a:PrimaryJurisdictionPCode&gt;</span>2604100<span class="nt">&lt;/a:PrimaryJurisdictionPCode&gt;</span>
+               <span class="nt">&lt;a:Score&gt;</span>0.96<span class="nt">&lt;/a:Score&gt;</span>
+               <span class="nt">&lt;a:SecondaryUnit/&gt;</span>
+               <span class="nt">&lt;a:SpecialTaxDistrictName</span> <span class="na">i:nil=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;a:SpecialTaxDistrictPCode&gt;</span>-1<span class="nt">&lt;/a:SpecialTaxDistrictPCode&gt;</span>
+               <span class="nt">&lt;a:StandardizedAddress</span> <span class="na">xmlns:b=</span><span class="s">"http://schemas.microsoft.com/2003/10/Serialization/Arrays"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>1260 6th Ave<span class="nt">&lt;/b:string&gt;</span>
+                  <span class="nt">&lt;b:string&gt;</span>NEW YORK,NY 10020-1797<span class="nt">&lt;/b:string&gt;</span>
+               <span class="nt">&lt;/a:StandardizedAddress&gt;</span>
+               <span class="nt">&lt;a:StateName&gt;</span>NY<span class="nt">&lt;/a:StateName&gt;</span>
+               <span class="nt">&lt;a:StreetName&gt;</span>6th Ave<span class="nt">&lt;/a:StreetName&gt;</span>
+               <span class="nt">&lt;a:StreetNumber&gt;</span>1260<span class="nt">&lt;/a:StreetNumber&gt;</span>
+               <span class="nt">&lt;a:TaxJurisdictionName&gt;</span>NEW YORK<span class="nt">&lt;/a:TaxJurisdictionName&gt;</span>
+               <span class="nt">&lt;a:TimeZone/&gt;</span>
+               <span class="nt">&lt;a:UnderlyingFipsCode&gt;</span>3606151000<span class="nt">&lt;/a:UnderlyingFipsCode&gt;</span>
+            <span class="nt">&lt;/a:AddressLocation&gt;</span>
+         <span class="nt">&lt;/GeocodeAllMatchesResult&gt;</span>
+      <span class="nt">&lt;/GeocodeAllMatchesResponse&gt;</span>
+   <span class="nt">&lt;/s:Body&gt;</span>
+<span class="nt">&lt;/s:Envelope&gt;</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>See Also</h3>
+<h4>Input</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/geocode-address/">Geocode Address</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/geocode-all-matches/">Geocode All Matches</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/geocode-lat-long/">Geocode Lat Long</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/input-address/">Input Address</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/options/">Options</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/geocode/special-tax-jurisdictions/">Special Tax Jurisdictions</a></li>
+</ul>
+
+<h4>Results</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/geocode-address-response/">Geocode Address Response</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/geocode-all-matches-response/">Geocode All Matches Response</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/geocode-lat-long-response/">Geocode Lat Long Response</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_geo_soap/reference/address-location/">Address Location</a></li>
+</ul>
+
+<ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/geocode-lat-long"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/florida-certified">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+      </main>
+    </div>
+    
+
+
+
+
+
+
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/communications/dev-guide_geo_soap/customizing-geocoding-requests/sample-requests/special-tax-jurisdiction.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

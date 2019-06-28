@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4.3.11 - Transaction Information | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/transaction-information/">
+
+    
+    <meta property="og:title" content="Chapter 4.3.11 - Transaction Information | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="Chapter 4.3.11 - Transaction Information">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=communications>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid comms_rest_v2_dev_guide">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/communications">Avalara communications</a></li>
+            <li class="text-uppercase">comms rest v2 dev guide</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row">
+            <main class="col-md-12">
+  
+    <div class="row padding-sides half">
+      <nav class="col-md-3">
+        <div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
+    <h3>Chapters</h3>
+    <ol>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/getting-started/">Getting Started</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculate-taxes/">Calculate Taxes</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/commit-uncommit/">Commit/Uncommit</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>
+            
+            <ol>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profiles</a></li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">Account Customizations</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Bundle File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/exclusion-file/">Exclusion File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/override-file/">Override File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/">Nexus File</a></li>
+                    </ol>
+                </li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/">Transaction Use Cases</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/">Simple Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">Multi-line Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a>
+                        <ol>
+                            <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/">Category Exemptions</a></li>
+                            <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/">Tax Type Exemptions</a></li>
+                        </ol>
+                        </li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/inter-intrastate/">Interstate/Intrastate Determination</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a>
+                            <ol>
+                                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">SAU Attributes and Properties</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Proration</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/transaction-information/">Transaction Information</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Transaction-Level Commit/Uncommit</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustments</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Displaying Tax Results</a></li>
+                    </ol>
+                </li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/jurisdiction-determination-use-cases/">Jurisdiction Determination Use Cases</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/">PCode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/geocode-jurisdiction-determination/">Geocode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/all_adr-jurisdiction-determination/">all_adr File</a></li>
+                    </ol>
+                </li>
+            </ol>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/reference/">Reference</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculating-tax-offline/">Calculating Tax Offline</a>
+            
+        </li>
+    </ol>
+</div>
+      </nav>
+      <main class="col-md-9 small-no-padding">
+        <h1>
+            Chapter 4.3.11 - Transaction Information
+            
+        </h1>
+        <ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+<p>Communications REST v2 takes the transaction as a whole and returns taxes based on the information provided.</p>
+
+<p>Each transaction contains:</p>
+<ul class="dev-guide-list">
+    <li><a class="dev-guide-link" href="#company">Company (Seller) Data</a></li>
+    <li><a class="dev-guide-link" href="#customer">Customer (Buyer) Data</a></li>
+    <li><a class="dev-guide-link" href="#transaction">Transaction (Invoice and Line Item) Data</a></li>
+</ul>
+
+<p>A product (defined by the Transaction/Service pair) can return different taxes, or no taxes, depending on the selections made.  For example, setting these details on a transaction returns 0 taxes:</p>
+<ul class="dev-guide-list">
+    <li><b>Customer Type</b> (<code>cust</code>): Residential (<code>0</code>)</li>
+    <li><b>Jurisdiction</b> (<code>bill</code>): Richmond, OH</li>
+    <li><b>Transaction/Service Pair</b> (<code>tran</code> and <code>serv</code>): Internet/WEB Hosting (5/29)</li>
+</ul>
+
+<p>But by changing <b>Customer Type</b> to <b>Business</b> (<code>cust</code> to <code>1</code>), State and Country Sales Tax is returned.  It is <b>imperative</b> that the transaction information is set correctly to get the proper taxes back.</p>
+
+<h3 id="company">Company (Seller) Data</h3>
+<p>Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in <code>CompanyData</code>.</p>
+
+<p>For more information, see <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/company-data/"><code>CompanyData</code></a>.</p>
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Key</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Business Class</td>
+        <td><code>bscl</code></td>
+        <td>Specifies whether the business making the transaction is an Incumbent Local Exchange Company (ILEC) or not an ILEC
+        <br /><br />
+        Only impacts Communications transactions in certain jurisdictions, such as Oregon
+            <br />
+            <br />
+            <div class="mobile-table">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Value</th>
+                    <th>Option</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>0</code></td>
+                    <td>ILEC</td>
+                    <td>Engaged in selling services over company-owned lines and equipment</td>
+                  </tr>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>Not an ILEC</td>
+                    <td>Engaged in selling services competing with an incumbent provider
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br />
+            Use <b>Not an ILEC</b> if neither class applies
+          </td>
+      </tr>
+      <tr>
+        <td>Service Class</td>
+        <td><code>svcl</code></td>
+        <td>Delineates the primary activity of an organization as Local Service or Long Distance
+        <br /><br />
+        Only impacts Communications transactions in certain jurisdictions, such as New York
+          <br />
+          <br />
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>Primary Local</td>
+                  <td>Carriers vending their services with over 50% of the gross business activities in Local Service revenue</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Primary Long Distance</td>
+                  <td>Carriers vending their services with over 50% of the gross business activities in Long Distance revenue</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Facilities</td>
+        <td><code>fclt</code></td>
+        <td>Specifies whether the transaction is sold over tangible facilities controlled by the seller.  In some jurisdictions, tax outcomes vary depending on whether the service is delivered over infrastructure controlled by the seller
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Facilities Based</td>
+                  <td>Seller delivering the service owns or controls the facilities used to provide the service</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Non-Facilities Based</td>
+                  <td>Carrier does not own the facilities</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Franchise</td>
+        <td><code>frch</code></td>
+        <td>Indicates that the seller provides services sold pursuant to a franchise agreement between the carrier and the jurisdiction
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Franchise</td>
+                  <td>Seller has a franchise agreement with the jurisdiction</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not a Franchise</td>
+                  <td>Franchise fees and taxes do not apply to seller</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Regulated</td>
+        <td><code>reg</code></td>
+        <td>Specifies if the company and its services are regulated by the regulatory commission in the state of the service
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Regulated</td>
+                  <td>Company is rate-regulated</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Regulated</td>
+                  <td>Company is not rate-regulated</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          All transactions should be set to <code>false</code> unless the seller is registered with the state regulatory commission as a rate-regulated, incumbent provider 
+        </td>
+      </tr>
+      <tr>
+        <td>Company Identifier</td>
+        <td><code>idnt</code></td>
+        <td>Used for reporting purposes and does not impact taxation.  
+        <br />
+        The typical use for this field is to distinguish transactions for different companies or other delineations</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a></td>
+        <td><code>excl</code></td>
+        <td>The <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a> object allows you to specify the exclusions that apply to the transaction</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id="customer">Customer (Buyer) Data</h3>
+<p>Customer data defines the <b>customer</b> or <b>buyer</b>.  Set these keys in:</p>
+<ul class="dev-guide-list"> 
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code></a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/location/"><code>Location</code></a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code></a></li>
+</ul>
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Key</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customer Type</td>
+        <td><code>cust</code></td>
+        <td>Specifies the type of customer involved in the transaction 
+        <br /><br />
+        Set on the invoice but can be overridden on a line item
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>Residential</td>
+                  <td>Transactions made by the customer for home use</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Business</td>
+                  <td>Transactions made at a place of business</td>
+                </tr>
+                <tr>
+                  <td><code>2</code></td>
+                  <td>Senior Citizen</td>
+                  <td>Transactions made by the customer who meets the jurisdiction requirements to be considered a senior citizen and qualify for senior citizen tax breaks</td>
+                </tr>
+                <tr>
+                  <td><code>3</code></td>
+                  <td>Industrial</td>
+                  <td>Transactions made at an industrial business</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Lifeline</td>
+        <td><code>lfln</code></td>
+        <td>Indicates if the customer is a Lifeline participant
+        <br /><br />
+        Set on the invoice but can be overridden on the line item
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Lifeline Participant</td>
+                  <td>Turns off the calculation of taxes that are not collected from Lifeline recipients</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not a Lifeline Participant</td>
+                  <td>Collects all taxes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Incorporated</td>
+        <td><code>int</code></td>
+        <td>Specifies whether the customer is involved in this transaction inside or outside of the Local level of the jurisdiction
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Incorporated</td>
+                  <td>Jurisdiction is inside an incorporated location</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Unincorporated</td>
+                  <td>Jurisdiction is outside an incorporated location.  This option usually results in no local taxes returned</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          Use <code>true</code> if unsure
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a></td>
+        <td><code>exms</code></td>
+        <td>The <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a> object allows you to specify the exemptions that apply to the transaction</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id="transaction">Transaction Data</h3>
+<p>Transaction data defines the <b>transaction</b>:</p>
+<ul class="dev-guide-list">
+  <li>Where the transaction takes place</li>
+  <li>What is being be taxed</li>
+  <li>How to process the transaction (is the transaction an adjustment?)</li>
+  <li>Other details, such as how the results are to be returned</li>
+</ul>
+
+<p>Set these keys in <a class="dev-guide-link" href="#invoice"><code>Invoice</code></a> or <a class="dev-guide-link" href="#lineitem"><code>LineItem</code></a>.</p>
+
+<p>Transactions can also be customized through <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Overrides</a> and <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Overrides</a>.</p>
+
+<h4 id="invoice">Invoice Keys</h4>
+<p>For more information, see <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code></a>.</p>
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Key</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Document Code</a></td>
+        <td><code>doc</code></td>
+        <td>Identifies a single or group of transactions, quotes, or invoices in the calling system. This is a user-defined field limited to 150 characters
+        <br /><br />
+        Document Code must be set if <b>Commit</b> is <code>true</code>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Commit</a></td>
+        <td><code>cmmt</code></td>
+        <td>Specifies if the Document Code should be committed as soon as the tax calculation is processed
+            <ul class="dev-guide-list">
+                <li>If <b>Document Code</b> is provided but <b>Commit</b> is <code>null</code>, <b>Commit</b> is set to <code>false</code></li>
+                <li>If <b>Commit</b> is <code>true</code>, <b>Document Code</b> must be set</li>
+            </ul>
+          <br />
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Committed</td>
+                  <td>Document Code is committed</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Uncommitted</td>
+                  <td>Document Code is not committed or is uncommitted if previously committed and still within the current reporting period</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">BillTo Jurisdiction</a></td>
+        <td><code>bill</code></td>
+        <td>Identifies the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/location/">location</a> to be billed.  BillTo is set on the invoice but can be overridden on the line item</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></td>
+        <td><code>date</code></td>
+        <td>Date applied to the transaction or invoice.  Normally set to the bill date, invoice date, or call date (as applicable)
+        <br /><br />
+        Set on the invoice but can be overridden on the line item</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></td>
+        <td><code>invm</code></td>
+        <td>Indicates if all line items within an invoice should be processed individually or as one invoice
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Invoice Mode</td>
+                  <td>Line items are part of a single invoice</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Invoice Mode</td>
+                  <td>Line items are unrelated</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Return Detail</a></td>
+        <td><code>dtl</code></td>
+        <td>Indicates if individual line item taxes should be included in response
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Return Detailed Taxes</td>
+                  <td>Return line item level tax results</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Don't Return Detailed Taxes</td>
+                  <td>Don't return line item level tax results</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          ReturnDetail, ReturnSummary, or both must be set to <code>true</code>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Return Summary</a></td>
+        <td><code>summ</code></td>
+        <td>Indicates if the summarized taxes for the invoice should be included in the response
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Return Summary Taxes</td>
+                  <td>Return summarized tax results when InvoiceMode (<code>invm</code> is <code>true</code></td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Don't Return Summary Taxes</td>
+                  <td>Don't return summarized tax results</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          ReturnDetail, ReturnSummary, or both must be set to <code>true</code>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></td>
+        <td><code>opt</code></td>
+        <td>Optional reporting fields useful in reporting.  <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a> do not impact taxation</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 id="lineitem">LineItem Keys</h4>
+<p>For more information, see <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code></a>.</p>
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Key</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Reference Code</td>
+        <td><code>ref</code></td>
+        <td>Reference ID for the line item</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Origination/Ship From Jurisdiction</a></td>
+        <td><code>from</code></td>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/location/">Location</a> for the origination point. If <code>null</code>, the BillTo location is used</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Termination/Ship To Jurisdiction</a></td>
+        <td><code>to</code></td>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/location/">Location</a> for the destination point. If <code>null</code>, the BillTo location is used</td>
+      </tr>
+      <tr>
+        <td>Charge</td>
+        <td><code>chg</code></td>
+        <td>Specifies the amount of the transaction to be taxed.  For <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a> transactions, Charge specifies the desired total (base charge + taxes)
+        <br /><br />
+        Defaults to <code>0</code> if not set
+        </td>
+      </tr>
+      <tr>
+        <td>Lines</td>
+        <td><code>line</code></td>
+        <td>Specifies the line count
+            <br /><br />
+            When local service is provided, Lines should be populated with the number of lines the customer subscribes to.  This information is used to generate per-line taxes usually associated with local E911 charges, local telecommunications relay service taxes, and other assorted taxes
+            <br /><br />
+            Defaults to <code>0</code> if not set
+        </td>
+      </tr>
+      <tr>
+        <td>Locations</td>
+        <td><code>loc</code></td>
+        <td>Specifies the number of customer locations
+        <br /><br />
+        Defaults to <code>0</code> if not set</td>
+      </tr>
+      <tr>
+        <td>Minutes</td>
+        <td><code>min</code></td>
+        <td>Specifies the length of a phone call
+            <br /><br />
+            Used in the generation of taxes that are specified as per-minute flat fees in some taxing jurisdictions. Minutes is a double so any seconds added should be in decimal format.  For example, use <code>20.5</code> for 20 minutes and 30 seconds
+            <br /><br />
+            Defaults to <code>0</code> if not set
+        </td>
+      </tr>
+      <tr>
+        <td>Sale Type</td>
+        <td><code>sale</code></td>
+        <td>Indicates if the transaction retail or wholesale
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>Wholesale</td>
+                  <td>Specifies that the transaction is a sale to another company that will resell the product or service to a consumer</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Retail</td>
+                  <td>Specifies that the transaction is a sale to an end user</td>
+                </tr>
+                <tr>
+                  <td><code>2</code></td>
+                  <td>Consumed</td>
+                  <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> only  
+                  <br />
+                  Specifies that the transaction is for an item that is consumed directly</td>
+                </tr>
+                <tr>
+                  <td><code>3</code></td>
+                  <td>Vendor Use</td>
+                  <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> only
+                  <br />
+                  Specifies that the transaction is for an item that is subject to vendor use tax</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line Split</a></td>
+        <td><code>plsp</code></td>
+        <td>Percentage split for a private line transaction
+        <br /><br />
+        Set as a decimal and defaults to <code>0</code> if not set</td>
+      </tr>
+      <tr>
+        <td>Tax Inclusive</td>
+        <td><code>incl</code></td>
+        <td>Indicates if the charge for the line item includes tax
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Tax Inclusive</td>
+                  <td>Taxes are included in the Line Item charge</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Tax Inclusive</td>
+                  <td>Taxes not included in the Line Item charge</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Proration</a></td>
+        <td><code>pror</code></td>
+        <td>Percentage allocation for a pro-rated calculation of fixed taxes
+        <br /><br />
+        Set as a decimal and defaults to <code>0</code> if not set</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/bridge-conferencing/">Bridge Conferencing</a></td>
+        <td><code>brdg</code></td>
+        <td>Data for conference bridge transactions</td>
+      </tr>
+      <tr>
+        <td>Transaction Type</td>
+        <td><code>tran</code></td>
+        <td>Transaction Type ID of the service being taxed
+        <br /><br />
+        Use the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> Lookups endpoint</a> for a list of transaction type IDs</td>
+      </tr>
+      <tr>
+        <td>Service Type</td>
+        <td><code>serv</code></td>
+        <td>Service Type ID of the service being taxed
+        <br /><br />
+        Use the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups"><code>/api/v2/afc/tspairs</code> Lookups endpoint</a> for a list of service type IDs</td>
+      </tr>
+      <tr>
+        <td>Debit</td>
+        <td><code>dbt</code></td>
+        <td>Indicates if the transaction is prepaid
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Debit</td>
+                  <td>Perform a debit call tax calculation</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Debit</td>
+                  <td>Debit does not apply</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          Set Debit to <code>true</code> <i>only</i> if you are a prepaid seller
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustment</a></td>
+        <td><code>adj</code></td>
+        <td>Indicates if this line item is a credit or adjustment
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Adjustment</td>
+                  <td>Is a credit/adjustment</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not an Adjustment</td>
+                  <td>Not a credit or adjustment</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustment Method</a></td>
+        <td><code>adjm</code></td>
+        <td>Always set to <code>0</code>.  The use of this field has been <b>deprecated</b></td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Discount Type</a></td>
+        <td><code>disc</code></td>
+        <td>Identifies the discount type for an adjustment
+          <br />
+          <br />  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>None</td>
+                  <td>Discount Type not applicable</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Retail Product</td>
+                  <td>An amount subtracted from the original price to arrive at a lower price</td>
+                </tr>
+                <tr>
+                  <td><code>2</code></td>
+                  <td>Manufacturer Product</td>
+                  <td>A credit applied to the total amount reimbursed to either the retailer or the customer by the manufacturer</td>
+                </tr>
+                <tr>
+                  <td><code>3</code></td>
+                  <td>Account Level</td>
+                  <td>A stand-alone discount that is not applied against any service but instead as a stand-alone product</td>
+                </tr>
+                <tr>
+                  <td><code>4</code></td>
+                  <td>Subsidized</td>
+                  <td>A credit for telephone service where the telephone provider provides a service to a lifeline eligible customer. The credit is applied to the subscriber line charge</td>
+                </tr>
+                <tr>
+                  <td><code>5</code></td>
+                  <td>Goodwill</td>
+                  <td>A credit applied to customer invoices for the purpose of engendering customer goodwill. For example, compensation for a service outage</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></td>
+        <td><code>opt</code></td>
+        <td>Optional reporting fields useful in reporting.  Optional fields do not impact taxation</td>
+      </tr>
+      <tr>
+        <td><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Attribute Property</a></td>
+        <td><code>prop</code></td>
+        <td>Attribute/property value for <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> Transaction/Service pairs</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>CalcTaxes</code> request</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/company-data/">Company data</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/location/">Location</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">Line item</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/key-value-pair/">Optional fields</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/tax-override/">Tax override</a></li>
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe harbor override</a></li>
+</ul>
+
+<h4>Helpful Pages</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/getting-started/environments-endpoints#lookups">Lookups endpoints</a></li>
+</ul>
+
+<ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+      </main>
+    </div>
+    
+
+
+
+
+
+
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/transaction-information.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

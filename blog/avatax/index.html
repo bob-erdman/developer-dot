@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avatax | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/blog/avatax/">
+
+    
+    <meta property="og:title" content="avatax | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="avatax">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=blog>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav  resources" style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid ">
+        
+        <section class="row padding-sides">
+            <main class="col-md-12"><div class="breadcrumbs blog">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li class="text-uppercase">Resources</li>
+            <li class="text-uppercase"><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+            
+        </ul>
+    </div>
+</div>
+<br />
+
+<section class="row padding-sides half">
+    <nav class="col-md-3">
+       <ul class = "api-ref-side-nav nav nav-pills nav-stacked hidden-xs hidden-sm">
+    <h4>Categories</h4>
+    <h5>
+        <li >
+            <a class="capitalize" href="/developer-dot/blog/">All</a>
+        </li>
+        
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/announcements/">announcements</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li class="active" >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/avatax/">avatax</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/batches/">batches</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/c#/">c#</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/certcapture/">certcapture</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/community/">community</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/conference/">conference</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                     <a class="text-uppercase" href="/developer-dot/blog/crush/">crush</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/exemptions/">exemptions</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/free-tax-rates/">free tax rates</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/how-to/">how to</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/landed-cost/">landed cost</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/patch-notes/">patch notes</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                     <a class="text-uppercase" href="/developer-dot/blog/sdk/">sdk</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/shipping/">shipping</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/tax-content/">tax content</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/tax-rules/">tax rules</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/troubleshooting/">troubleshooting</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                     <a class="text-uppercase" href="/developer-dot/blog/ui/">ui</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/web/">web</a> 
+                
+                </li>
+                    
+        
+
+        <li >
+            <a class="capitalize" href="/developer-dot/blog/older">Older</a>
+        </li>
+    </h5>
+</ul>
+<div class="sm-section-nav dropdown visible-xs-block visible-sm-block">
+    <button id="use-case-nav" type="button" data-toggle="dropdown">Categories</button>
+    <ul class="dropdown-menu" aria-labelledby="use-case-nav">
+        <li ><a class="capitalize" href="/developer-dot/blog/">All</a></li>
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/older/">older</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li class="active" >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/avatax/">avatax</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/how-to/">how to</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/announcements/">announcements</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/landed-cost/">landed cost</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/patch-notes/">patch notes</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/tax-content/">tax content</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/certcapture/">certcapture</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="text-uppercase" href="/developer-dot/blog/sdk/">sdk</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/free-tax-rates/">free tax rates</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/troubleshooting/">troubleshooting</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/exemptions/">exemptions</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/community/">community</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/crush/">crush</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/shipping/">shipping</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/conference/">conference</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/c#/">c#</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/batches/">batches</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/tax-rules/">tax rules</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="text-uppercase" href="/developer-dot/blog/ui/">ui</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/web/">web</a>
+                    
+
+                </li>
+            
+        
+    </ul>
+</div>
+
+    </nav>
+    <main class="col-md-9 small-no-padding">
+        
+            <h4><span class="capitalize">avatax </span>Posts</h4>
+        
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2019/01/15/AvaTax-19-1-patch-notes/">AvaTax API 19.1 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Qijing Yu | January 15, 2019</p>
+                        
+                        <p class="blog-excerpt">This article is about the January 2019 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2019-01-21 Production https://rest.avatax.com 2019-01-30 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. AVATAXCODE as a classification system In addition to globally recognized classification systems, as TARIC, HTS, etc., Avalara maintains our own classification system, called...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2019/01/15/AvaTax-19-1-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/12/13/AvaTax-18-12-patch-notes/">AvaTax API 18.12 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Qijing Yu | December 13, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the December 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-12-26 Production https://rest.avatax.com 2019-01-07 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. Advanced Items Setup In addition to existing basic configurations for Items, we are now allowing more advanced settings, including: Items can be tagged...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/12/13/AvaTax-18-12-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/12/07/refundTransaction-vs-CreateTransaction/">RefundTransaction vs ReturnInvoice</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Genevieve Conty | December 07, 2018</p>
+                        
+                        <p class="blog-excerpt">When you find you need to refund a transaction, you have two options to create your return invoice: Use the RefundTransaction API endpoint Use the CreateTransaction API endpoint with `type = ReturnInvoice` What’s the difference? The RefundTransaction endpoint is a shortcut for creating return invoices that requires fewer inputs and user information. On the other hand, the CreateTransaction endpoint is useful in situations where refunds are especially complex, like when you want to refund partial quantities or partial lines. When do you use Refund Transaction Endpoint? For most refunds, the RefundTransaction endpoint can do everything you need. The endpoint sets...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/12/07/refundTransaction-vs-CreateTransaction/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/11/26/general-delivery-avatax/">General Delivery in AvaTax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | November 26, 2018</p>
+                        
+                        <p class="blog-excerpt">What is General Delivery? General Delivery is a United States Postal System means to temporarily route mail for customers who lack a permanent location. Examples of this might be: • customers who want PO Box service when there are no boxes available • touring cyclists who need parts and supplies delivered along their route • some retailers may not ship to a PO Box, but will ship to General Delivery There are other applications and USPS use cases for General Delivery. You can read more about those uses at the USPS site. When using General Delivery, the USPS delivers mail...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/11/26/general-delivery-avatax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/11/15/using-include-with-createTransaction/">Using $include with CreateTransaction</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Genevieve Conty | November 15, 2018</p>
+                        
+                        <p class="blog-excerpt">The CreateTransaction endpoint is one of our most used endpoints, so we’ve baked in a certain flexibility to allow our users to ensure they get the exact information they need. How did we do this? Our team built the $include parameter to help you pinpoint data you’ll use in your calculations. Now the question is: how do you actually make use of this parameter? First, let’s start with an example of an unedited response from the CreateTransaction endpoint: Click here to view a CreateTransaction response { "id": 6783815606, "code": "ec52444f-1eda-4df4-b6ff-279efe984160", "companyId": 474615, "date": "2018-10-23", "status": "Committed", "type": "SalesInvoice", "batchCode": "",...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/11/15/using-include-with-createTransaction/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/11/06/tax-rate-by-line/">Tax Rates for Lines and Documents</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | November 06, 2018</p>
+                        
+                        <p class="blog-excerpt">The Avalara engineering team built AvaTax so it can solve tax problems for you and make your life easier. We solve compliance problems of all shapes and sizes; and our software must be both accurate and usable. So what happens when accuracy and usability come into conflict? Let’s talk about tax rates. Documents and Lines When you visit your local grocery store or market, you receive a receipt that lists all the items you purchase, your total, and the amount of tax charged. You can verify the total sums up correctly, but you’ll notice something interesting. Most grocery receipts display...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/11/06/tax-rate-by-line/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/10/15/why-sales-tax-calculation-ecommerce-shopping-cart/">Why Sales Tax Calculation Is Crucial For Your Ecommerce Shopping Cart</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | October 15, 2018</p>
+                        
+                        <p class="blog-excerpt">Ecommerce rollouts can be complicated, with many moving parts. With all the demands businesses place on eCommerce systems, it can be easy to treat sales tax calculation as an afterthought. That’s a mistake. Sales tax calculation is a key component of any eCommerce site. Paying attention to putting the right sales tax solution in place upfront will save developers and their organizations a lot of headaches later. The fact is, sales tax is complex and it’s not getting any simpler anytime soon. For any given tax jurisdiction, there are a dizzying array of sales-tax rules and rates — and they...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/10/15/why-sales-tax-calculation-ecommerce-shopping-cart/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/10/04/AvaTax-18-10-patch-notes/">AvaTax API 18.10 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 04, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the September 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-10-04 Production https://rest.avatax.com 2018-10-18 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. Case Insensitive Tax Code Search The ListTaxCodes API now supports case insensitive search. This means that the following searches will all be able...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/10/04/AvaTax-18-10-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/09/27/hidden-cost-of-free-tax-tables/">The Hidden Cost of "Free" Tax Tables</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | September 27, 2018</p>
+                        
+                        <p class="blog-excerpt">In seeking a sales-tax compliance solution, many companies — especially younger, smaller ones — may turn to free tax-rate tables, using them to manually figure out how much sales tax to charge customers. However, although these tables are “free,” they may be costing your company more than you think — in time, resources and potential risk. First of all, manual sales tax compliance – including tax calculation, tax exemptions certificates and sales tax returns – takes up a lot of time and staff resources — and the resources needed are growing. Nearly two-thirds of companies have hired additional staff to...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/09/27/hidden-cost-of-free-tax-tables/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/09/26/Best-Public-API-2018-Nomination/">AvaTax nominated for Best Public API of 2018</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | September 26, 2018</p>
+                        
+                        <p class="blog-excerpt">Avalara nominated for Nordic APIs Best Public API of 2018 – Voting starts today! Avalara has been nominated for Nordic APIs’ Best Public API of 2018 award! Nordic APIs is a prestigious, global community of API developers, and we’ve been nominated alongside the likes of NASA (the guys who put people on the moon) and Orange, a global telecom giant. Vote for Avalara between today and Oct. 24. The nomination, which was anonymous, is for the suite of REST APIs that interface with Avalara AvaTax. From the Nordic APIs website: “The level of confidence and security with their API is...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/09/26/Best-Public-API-2018-Nomination/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/09/22/AvaTax-API-October-Events/">October API Developer Events in Seattle</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Jeff Meisner | September 22, 2018</p>
+                        
+                        <p class="blog-excerpt">The Avalara Developer Relations Team is excited to announce it will have a presence at two upcoming events in the local developer community. Ted Spence, Director of the AvaTax API Team, will make a short presentation on the effectiveness of cached data in a SaaS platform at New Tech Northwest’s next Seattle event, which takes place from 5:30 p.m. to 8 p.m. PT on Oct. 2 at ThinkSpace, located at 1700 Westlake Ave. N., Suite 200 in Seattle. Ted will also give an in-depth presentation on how he and the AvaTax API Team created the documentation for Avalara’s sales tax...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/09/22/AvaTax-API-October-Events/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/09/20/how-to-calculate-ewaste-tax-in-california/">How to Calculate E-Waste Tax in California</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Genevieve Conty | September 20, 2018</p>
+                        
+                        <p class="blog-excerpt">In this post, we will demonstrate how to calculate e-waste tax in California. First, we need to understand unit-based rates and their implementation. Many tax rates and tariffs are ad valorem, which means tax is calculated based on the monetary value of the goods sold or shipped. Rates can also be unit-based. Unit-based rates depend on how much of an item is sold or shipped, for example volume, mass, size, or quantity. Unit-based rates apply to many goods such as sugar, e-waste and recycling fees for electronics, lodging, and bottles. These rates have a unit of measurement and quantity. Throughout...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/09/20/how-to-calculate-ewaste-tax-in-california/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/09/10/AvaTax-18-9-patch-notes/">AvaTax API 18.9 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | September 10, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the September 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-09-11 Production https://rest.avatax.com 2018-09-25 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. Pagination Improvements The AvaTax API presents a standard method for pagination using the pattern set out in the Microsoft REST API Guidelines. This...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/09/10/AvaTax-18-9-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/08/10/AvaTax-18-8-patch-notes/">AvaTax API 18.8 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | August 10, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the August 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-08-15 Production https://rest.avatax.com 2018-08-29 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. API Documentation Updates Avalara has updated to the latest revision of Swagger / OpenAPI. For customers who make use of our automated swagger...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/08/10/AvaTax-18-8-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/07/06/AvaTax-18-7-patch-notes/">AvaTax API 18.7 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | July 06, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the July 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-07-11 Production https://rest.avatax.com 2018-07-25 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. API Usage Logs Starting with the July 2018 release, the AvaTax REST API will capture and make available logs with information about your...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/07/06/AvaTax-18-7-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/06/07/AvaTax-18-6-patch-notes/">AvaTax API 18.6 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | June 07, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the June 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-06-12 Production https://rest.avatax.com 2018-06-26 Weekly Office Hours Webinar Want to discuss these patch notes with the developers who wrote them? The AvaTax API team hosts a weekly developer webinar where you can meet and talk to developers. If you would like to ask questions about this release, please sign up and join us for a lively discussion of the AvaTax API. Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/06/07/AvaTax-18-6-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/06/05/nexus/">Nexus</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | June 05, 2018</p>
+                        
+                        <p class="blog-excerpt">VIDEO: Nexus
+
+
+
+In an earlier video, we covered how your organization’s tax profile is determined. Now, let’s explore the concept of nexus. What exactly is nexus, you may ask?
+
+Nexus is most simply defined as the areas where your organization is required to collect sales tax. To better understand this core tax concept, watch the video above. We guarantee you’ll be a nexus expert in no time!
+
+</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/06/05/nexus/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/06/05/whats-my-tax-profile/">What's My Tax Profile?</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | June 05, 2018</p>
+                        
+                        <p class="blog-excerpt">VIDEO: What’s My Tax Profile?
+
+
+
+Before using the AvaTax API, there are a few basic sales tax principles you need to understand. First and foremost is your organization’s tax profile, which is comprised of three key components:
+
+    Where your organization is required to collect sales tax, a principle known as nexus
+    The customers your organization exempts from sales tax
+    The specific tax rates for the products and services your organization sells
+
+Watch the short video above to get a quick, basic understanding of how your organization’s tax profile is determined.
+</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/06/05/whats-my-tax-profile/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/05/29/sales-tax-is-complicated/">Sales Tax Got You Down? Avalara’s API Is the Answer.</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | May 29, 2018</p>
+                        
+                        <p class="blog-excerpt">Sales tax is complex and getting more complex. For example - when is a bagel taxable or tax-free? What is the threshold for taxing clothing and in what jurisdictions is it subject to tax? How do you keep up with all the changes occurring to sales tax laws? What’s the best way to handle that complexity and save your organization from expensive and damaging tax audits? Our answer? The Avalara API. The API provides comprehensive tax coverage, fast performance, strong developer support and is highly customizable. To learn more about why you should use a sales tax API, download our...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/05/29/sales-tax-is-complicated/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/05/23/how-to-validate-addresses/">How to Validate Addresses</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | May 23, 2018</p>
+                        
+                        <p class="blog-excerpt">Calculating sales tax? Ditch the ZIPs and get rooftop-level accuracy with Avalara’s API! Valid addresses are a critical component of accurate tax calculation. I know what you’re thinking – I have the ZIP code, isn’t that enough? Not really. Why? ZIP codes are generally too broad for tax determination because zones are set at the federal level for mail delivery. State and local tax authorities often use other criteria for bounding their tax jurisdictions, such as a special stadium or restaurant tax district. So, what’s the best way to ensure your organization has up-to-date, roof-top accurate addresses? An API. The...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/05/23/how-to-validate-addresses/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/05/22/how-to-get-tax-with-AvaTax/">How to Get Tax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | May 22, 2018</p>
+                        
+                        <p class="blog-excerpt">Boots, belts and bagels — which ones are tax-free? Here’s how to find out using Avalara’s sales tax API! You need to calculate sales tax, but it’s complicated stuff. In Indiana, marshmallows are taxed but marshmallow cream is not. In Texas, boots, belts, and hats are tax-free, but belt buckles are taxed. And in New York, bagels are tax-free, unless, of course, they are sliced. Oh, but it gets worse. Adding to the already insane complexity, the same address can be subject to multiple tax jurisdictions with different rates for different items in your shipment. Calculating sales tax accurately is...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/05/22/how-to-get-tax-with-AvaTax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/05/08/AvaTax-18-5-patch-notes/">AvaTax API 18.5 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | May 08, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the May 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-05-15 Production https://rest.avatax.com 2018-05-29 Weekly Office Hours Webinar The AvaTax API team hosts a weekly developer webinar where you can meet and talk to the developers directly. If you would like to ask questions about this release, please sign up and join us for a lively discussion of the AvaTax API. Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/05/08/AvaTax-18-5-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/04/19/introducing-the-new-python-sdk/">AvaTax Python SDK now available!</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Han Bao | April 19, 2018</p>
+                        <p><img src="/developer-dot/public/images/blog/python.png" class="blog-preview-image" alt="blog preview image"/></p>
+                        <p class="blog-excerpt">Python is said to be the “fastest-growing” programming language, and it is constantly growing in areas such as machine learning and data analysis. For those Avalara REST V2 customers using Python, we have published an official AvaTax SDK on PyPI, the official platform for open source Python project! This SDK is already configured with all the code and logic you need to get started incorporating tax calculation into your application, and it can greatly speed up your development cycle. For today’s article, I’ll walk you through the process of adding our Python SDK to your python project. Installing the SDK...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/04/19/introducing-the-new-python-sdk/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/04/16/florida-split-tax/">Florida Split Tax Feature for Discretionary SurTax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By John Horsley | April 16, 2018</p>
+                        
+                        <p class="blog-excerpt">Struggling with the Florida Discretionary Sales Tax over your multiple invoices? AvaTax can help! We all know tax is complicated, but when you add in the Florida Discretionary Sales Surtax, it becomes even more complex. Add in needing to have this surtax split over multiple invoices and you’ve got a real headache on your hands. Let us help you with that! With AvaTax Florida Split Tax Feature, you can utilize the purchaseOrderNo field to accomplish this. To make this work you will need to import a set of custom rules into your account that allows this logic to work. If...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/04/16/florida-split-tax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/04/09/when-to-use-batches/">When to use batches</a></h4>
+                        <h5></h5>
+                        <p class="byline">By John Horsley | April 09, 2018</p>
+                        
+                        <p class="blog-excerpt">Process transactions in bulk - is it right for your organization? Avalara offers two options for processing your organization’s transactions – one at a time through the CreateTransaction end point or in bulk through the CreateBatches end point. Which option is the best fit for your organization? Let’s talk about what each of them and what they mean! CreateBatches End Point When you use the CreateBatches end point you can send us one large file of transations for our tax engine to process for you. While this will not give you real time tax information on your invoices, this will...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/04/09/when-to-use-batches/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/04/06/AvaTax-18-4-patch-notes/">AvaTax API 18.4 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | April 06, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the April 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-04-16 (revised) Production https://rest.avatax.com 2018-04-25 UPDATED 2018-04-12: The sandbox release date has been adjusted to April 16, 2018. Patch Notes Webinar The AvaTax April release will launch to the Sandbox environment two weeks before production. If your engineering team would like a sandbox account for testing purposes, please contact your account manager or open a support ticket. The AvaTax API team hosts a weekly developer webinar where you can meet and talk to the developers directly. If you would like to...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/04/06/AvaTax-18-4-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/03/22/calculate-customs-duties-in-rest/">How to Calculate Customs Duties in REST</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | March 22, 2018</p>
+                        
+                        <p class="blog-excerpt">We are excited about our updated customs duty calculation functionality in REST. If you previously used the customs duty calculator in REST, your requests will still work. If you are just starting out or would like to make use of the full functionality of CrossBorder in REST, this post is for you. What Are We Shipping? For every product you ship across a country border, you first need to know the Harmonized System Code (HS code). While many codes may look alike, the HS code is specific to the destination country and the type of item. You can learn about...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/03/22/calculate-customs-duties-in-rest/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/03/13/hs-code-search-in-rest/">HS Code Search in REST</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | March 13, 2018</p>
+                        
+                        <p class="blog-excerpt">How Do I Know Which HS Code to Use? In this post, we will discuss how customers can use our REST API to find the appropriate Harmonized System (HS) Code for items shipped across country borders. For this example, we will search for knitted scarves shipped to Spain. Let’s walk through the process of browsing and searching for HS Codes using the new REST CrossBorder endpoints. Wait, What Are HS Codes? The Harmonized System is an internationally standardized system of names and numbers to classify physical, traded products. HS Codes are a hierarchically organized taxonomy of product types, based on...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/03/13/hs-code-search-in-rest/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/03/12/AvaTax-c-sharp-sdk-update/">AvaTax C# SDK Upgrade 18.2.1.168</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Wayne Myer | March 12, 2018</p>
+                        
+                        <p class="blog-excerpt">Avalara was advised of an issue affecting some users of the AvaTax C# SDK. In some environments, the C# SDK submitted HTTP verbs in lowercase, which is not always permitted by firewall and router rules. Avalara is publishing a revision of the C# SDK 18.2.1.168 to correct this issue. We advise all customers using the C# SDK to upgrade to the latest revision. Does This Affect Me? Customers known to be affected are running the combination of: Visual Studio 2017 on Mac OS X with AvaTax C# SDK 18.2.0.167 or earlier Our testing team has evaluated this issue, and will...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/03/12/AvaTax-c-sharp-sdk-update/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/03/12/AvaTax-18-3-patch-notes/">AvaTax API 18.3 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | March 12, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the March 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-03-14 Production https://rest.avatax.com 2018-03-28 Patch Notes Webinar The AvaTax March release will provide a two-week period where the March release of AvaTax will be available for integration testing into the Sandbox environment. If your engineering team would like a sandbox account for testing purposes, please contact your account manager or open a support ticket. The AvaTax API team will host a developer webinar to discuss the March release on Monday, March 19th, 2018, at 10:00 AM Pacific time. If you would...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/03/12/AvaTax-18-3-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/02/28/Avalara-CRUSH-conference/">The CRUSH DC Business Case</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Tela Andrews | February 28, 2018</p>
+                        
+                        <p class="blog-excerpt">If you’re a developer working on building tax compliance solutions, then we hope you’ll consider coming to CRUSH DC, the premier event for transaction tax professionals. The event is from May 9-11 in Washington, D.C. We have an entire developer track with sessions covering everything from the basics of calculating tax using AvaTax to building connectors for enterprise-level organizations. Not only that, we’ll have tech demos, learning labs, knowledge sharing from experts and fellow partners, and plenty of networking. Of course, we realize booking a trip for a three-day event is a big commitment of time and resources, so the...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/02/28/Avalara-CRUSH-conference/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/02/05/AvaTax-18-2-patch-notes/">AvaTax API 18.2 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | February 05, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the February 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-02-12 Production https://rest.avatax.com 2018-02-26 Release Schedule Extended Each month, Avalara publishes the latest release of AvaTax to the Sandbox environment first so that customers who wish to test the new release can spend time running regression tests against AvaTax. In response to customer feedback, we are extending the length of time to a minimum of two weeks in sandbox prior to the production deployment window. This month’s release will deploy to sandbox on Monday, February 12th, and be available for testing...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/02/05/AvaTax-18-2-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/01/29/negative-transactions/">Negative Transactions</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | January 29, 2018</p>
+                        
+                        <p class="blog-excerpt">This week I returned a doormat to Costco. I love Costco’s return policies; I was able to buy a mat to try it out, and when we discovered it wasn’t a good fit for our garage I was able to return it and buy one that was a better fit. In the world of sales, refunds are a natural thing - so how do we represent them? Defining the Two Parties In virtually all tax laws, a transaction involves exactly two parties: a buyer and a seller. However, the AvaTax API can’t just use the words “buyer” and “seller” because...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/01/29/negative-transactions/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/01/09/office-hours-with-avatax/">Office Hours with AvaTax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | January 09, 2018</p>
+                        
+                        <p class="blog-excerpt">Avalara’s crack team of engineers receives dozens of questions every week from developers using our APIs, SDKs and documentation, and we want to answer as many as we can. To that end, we’re excited to announce a new weekly, 30-minute series of webinars that we’re calling Office Hours with AvaTax. Here’s how it will work: Every Tuesday, we’ll spend the first 15 minutes of the webinar covering a specific topic such as reconciling tax transactions, how to find specific tax code information in AvaTax and the like. Then, the last 15 minutes will be reserved as an open Q&amp;A format....</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/01/09/office-hours-with-avatax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2018/01/04/AvaTax-18-1-patch-notes/">AvaTax API 18.1 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | January 04, 2018</p>
+                        
+                        <p class="blog-excerpt">This article is about the January 2018 monthly update to the AvaTax API. UPDATED 2018-01-12 - More information about importer of record added. UPDATED 2018-01-23 - Updated release date. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-01-17 Production https://rest.avatax.com 2018-01-29 (UPDATED) Changes in Cross-Border Customs and Duty Taxes Avalara is updating the Landed Cost tax calculation engine with new features and capabilities. Among the changes are key features including: Ability to designate seller/importer of record on a country-by-country configuration basis Each custom or duty tax contains information about whether it may be charged to the buyer New definitions API for browsing...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2018/01/04/AvaTax-18-1-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/12/27/reconciling-transactions/">Reconciling Transactions</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Mark Withers | December 27, 2017</p>
+                        
+                        <p class="blog-excerpt">Your host system integration is successfully recording and committing transactions in AvaTax - but what about your audit requirement to ensure all the data in AvaTax matches the host system exactly? You don’t have to run Excel mashup reports anymore - AvaTax offers a variety of ways to reconcile your transactions and spot discrepancies in an automated fashion. Listing Transactions via the API The first place to start is the ListTransactionsByCompany API call in the AvaTax REST namespace. With this API call, you are able to retrieve all the recorded data in AvaTax and compare with posted host system data...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/12/27/reconciling-transactions/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/12/21/office-hours-with-avatax/">Office Hours with AvaTax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | December 21, 2017</p>
+                        
+                        <p class="blog-excerpt">Avalara’s crack team of engineers receives dozens of questions every week from developers using our APIs, SDKs and documentation, and we want to answer as many as we can. To that end, we’re excited to announce a new twice-weekly, 30-minute series of webinars that we’re calling Office Hours with AvaTax. This is your opportunity to ask our expert team of engineers and developers any questions that may be top of your mind about the AvaTax platform in an open Q&amp;A format. The new Office Hours with AvaTax series kicks off at 10 a.m. PT on Tuesday, Jan. 2 and at...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/12/21/office-hours-with-avatax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/12/06/CRUSH-DC-2018/">Developer Track at CRUSH 2018 Conference</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Mark Wilhelm | December 06, 2017</p>
+                        
+                        <p class="blog-excerpt">Need to build fast, easy tax compliance solutions? Come to CRUSH DC 2018 and find out how! Are you a developer looking to build solutions that make tax compliance fast, easy and, most important of all, accurate? Are you already connected to Avalara’s AvaTax platform and looking to get the scoop on the latest features and capabilities it has to offer? If so, then be sure to sign up for CRUSH DC 2018, Avalara’s annual conference for all things tax compliance. This year’s event, which will be held from May 9-11 in Washington, D.C., will feature a robust developer-focused track...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/12/06/CRUSH-DC-2018/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/11/27/AvaTax-17-12-patch-notes/">AvaTax API 17.12 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | November 27, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the December 2017 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-12-11 Production https://rest.avatax.com 2017-12-14 Performance Tuning During the months since the 17.9 Patch Notes, our team has been hard at work tuning the performance of AvaTax for the once-a-year sales events that happen in November. Here’s a summary of the improvements that have been made since the September release: Reduced the impact of calling the GetTransactionByCode API and GetTransactionByTypeAndCode API. This change improved performance for customers whose products used a mix of calls to these APIs alongside creating new transactions. Eliminated...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/11/27/AvaTax-17-12-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/09/29/Avatax-Developer-Guide/">AvaTax Developer Guide</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Julia King | September 29, 2017</p>
+                        
+                        <p class="blog-excerpt">If including tax calculation and remittance capabilities into your application has been daunting, tiresome, and therefore easy to put on the back burner, we understand. Your users need these capabilities to keep the tax auditors at bay, but you don’t have time to wade through pages of documentation to try to understand the complexities of sales and use tax. We want to help you deliver that huge operational efficiency and tax protection to your users quickly and easily. Introducing the AvaTax Developer Guide. We’ve condensed and simplified our documentation into a fun-to-read chapter format to help you successfully build your...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/09/29/Avatax-Developer-Guide/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/09/22/AvaTax-17-9-patch-notes/">AvaTax API 17.9 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | September 22, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the September 2017 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-09-26 Production https://rest.avatax.com 2017-09-28 License Key Authentication Update Avalara customers are requested to read the Avalara terms and conditions by visiting the AvaTax website for production or the AvaTax website for Sandbox. The AccountResetLicenseKey API will now return an AccountInNewStatusException error if your account has not yet been activated by reading terms and conditions on the AvaTax website. Please note that resetting your license key will invalidate all previous license keys for your account. AvaTax will send an email to all...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/09/22/AvaTax-17-9-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/09/05/AvaTax-17-8-patch-notes/">AvaTax API 17.8 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | September 05, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the August 2017 monthly update to the AvaTax REST v2 API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-09-06 Production https://rest.avatax.com 2017-09-07 Exemption Certificates in AvaTax The August release of AvaTax will include a major improvement - exemption certificate functionality is now fully built into AvaTax! Developers are now free to create customers, record exemption certificates, download preview images, present customers with a custom web-based certificate data entry page, and check a customer’s exemption status before processing a transaction. This functionality takes up too much space to cover in the patch notes - please be on the...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/09/05/AvaTax-17-8-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/07/25/AvaTax-17-7-patch-notes/">AvaTax API 17.7 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | July 25, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the July 2017 monthly update to the AvaTax REST v2 API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-07-31 Production https://rest.avatax.com 2017-08-02 UPDATE 2017-07-31 - An additional feature was added to this release and the date was adjusted to 2017-08-02. New "SummaryOnly" Option for CreateTransaction The CreateTransaction API returns all tax and metadata about a transaction - which can be daunting when you only want to put the correct tax amount on a receipt. In order to help customers manage a smaller data set, we have introduced a new option: $include=SummaryOnly. When you add this new option...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/07/25/AvaTax-17-7-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/07/03/developer-api-reference/">New Developer API Reference</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | July 03, 2017</p>
+                        
+                        <p class="blog-excerpt">As part of our commitment to the Open API initiative, Avalara’s development team knows that the quality of the documentation we use matters. Our customers rely on us to make tax simple: our documentation can help you to learn how to properly design your software so you can charge the correct amount of tax every time. That’s why Avalara spends so much time updating our developer documentation, and why we’ve introduced a new layout to our API reference pages. Single Page Per Method Our new site layout features one web page for each API method in our documentation. This makes...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/07/03/developer-api-reference/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/06/14/AvaTax-17-6-patch-notes/">AvaTax API 17.6 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | June 14, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the June 2017 monthly update to the AvaTax REST v2 API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-06-22 Production https://rest.avatax.com 2017-06-27 New Tax Type Supported: Telecommunications Taxes Avalara is proud to announce the preview release of integrated telecommunications tax calculation for customers using AvaTax. The telecommunications tax domain handles a wide variety of taxes and fees for customers selling phones, conference calling services, internet access, and many other product and service types. Customers interested in developing communications tax connectors or working with Avalara for communications tax calculation should contact their customer account manager for more details....</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/06/14/AvaTax-17-6-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/05/26/how-to-handle-freight-and-handling-charges/">How to Handle Freight & Handling Charges</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Bob Erdman | May 26, 2017</p>
+                        
+                        <p class="blog-excerpt">Wait, I need to include a shipping charge in my transaction? Often relegated to a single notation on an invoice, shipping and handling charges play an important role in the tax calculation of a document. So, how should you include the shipping/handling charge in a tax request? The answer may surprise you, shipping/handling is treated just like any other line item on an invoice. I thought shipping charges were exempt from tax? The taxability of freight/shipping will vary from jurisdiction to jurisdiction. Additionally, how you ship will also impact the taxability. Shipping your goods via common carrier (UPS, USPS or...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/05/26/how-to-handle-freight-and-handling-charges/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/05/15/troubleshooting-connectivity-problems/">Troubleshooting Connectivity Problems</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Charlie Morrisette | May 15, 2017</p>
+                        
+                        <p class="blog-excerpt">Getting started with any new piece of software can take a bit of time. AvaTax is in use today by tens of thousands of customers processing billions of transactions per year – but they all had to start first by connecting to the software. For today’s article, let’s look at the common challenges you can face when first getting started. Can I contact the AvaTax API servers? First, let’s get the correct URL for AvaTax and verify that we can contact it. AvaTax has four different servers available to choose from: Environment URL Notes Production - REST https://rest.avatax.com For live...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/05/15/troubleshooting-connectivity-problems/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/04/25/AvaTax-17-5-patch-notes/">AvaTax API 17.5 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | April 25, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the May 2017 monthly update to the AvaTax REST v2 API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-05-02 Production https://rest.avatax.com 2017-05-08 API Updates: New Tax Types As part of our ongoing expansion, we are proud to announce the introduction of Tax Type Groups. This new feature allows the AvaTax API to support new tax types and to correctly distinguish between different tax domains that have different rules. Our first expansion includes information about a variety of tax domains including VAT input and output, excise, lodging, and bottle tax. During the rollout period, Avalara will be working...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/04/25/AvaTax-17-5-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/04/19/performance-tuning-with-avatax/">Performance Tuning with AvaTax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | April 19, 2017</p>
+                        
+                        <p class="blog-excerpt">After more than a decade of offering the world-leading AvaTax software suite, we’ve learned a bit about providing high performance software for our thousands of customers worldwide. Our high performance API provides tax calculation answers faster than the blink of an eye - but we will always keep challenging ourselves to improve the AvaTax experience. We won’t rest until everyone can calculate tax effortlessly. For today’s article, let’s look at how we measure the performance of AvaTax and improve the response time of our software. Performance Measurement If we set out to measure the latency of an AvaTax API call,...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/04/19/performance-tuning-with-avatax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/03/30/rest-v2-17-4-patch-notes/">REST v2.17.4 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | March 30, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the April 2017 monthly update to the AvaTax REST v2 API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-04-03 Production https://rest.avatax.com 2017-04-06 Returns Features Improvements to the Returns functionality of REST v2 in this release: Updated field names for improved consistency New data field for summed remit amount per region Trigger calculate amounts anytime an adjustment or augmentation is saved Fixed bug when rebuilding worksheets on FQA due to data mismatches Fixed skyscraper error when calling with an unknown form or when calling a form with a null expected response time Cycle Safe APIs use the FilingFrequencyId...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/03/30/rest-v2-17-4-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/03/25/crush-conference/">CRUSH! Austin 2017</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | March 25, 2017</p>
+                        
+                        <p class="blog-excerpt">Interested in learning more about Avalara’s suite of tax products and services? Come join us at CRUSH AUSTIN 2017, the premier conference for transactional tax compliance automation. Here, you’ll find the people, the time and the intimate setting to explore these issues in depth, with the best-of-the-best in our industry. A Conference for Tax Professionals and Developers In my time at Avalara, I’ve developed a deep appreciation for the researchers, analysts, and professionals who make up our team. Tax is a complicated subject, and it takes a lot of effort to design a tax software suite that provides as much...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/03/25/crush-conference/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/03/08/rest-v2-17-3-patch-notes/">REST v2.17.3 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | March 08, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the March 2017 monthly update to the AvaTax REST v2 API. UPDATE 2017-03-13: Due to some requests for urgent updates, the release date for this patch has been accelerated to March 14th Sandbox and March 16th Production. The old dates were March 16th Sandbox and March 21st Production. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-03-14 (UPDATED) Production https://rest.avatax.com 2017-03-16 (UPDATED) Refund Transaction API A new API, POST /api/v2/companies/ABC/transactions/DEF/refund, allows you to create refunds for transactions quickly and easily. The Refund API allows you to quickly and easily reverse a SalesInvoice. You have the option of specifying...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/03/08/rest-v2-17-3-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/03/07/customer-exemption-handling/">Customer Exemption Handling</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Aaron Robles | March 07, 2017</p>
+                        
+                        <p class="blog-excerpt">You’re all set to build an integration into AvaTax for your client when they bring up another facet of their business with you not previously mentioned: They need to properly calculate for the tax exempt clients as well. As luck would have it, there are various ways AvaTax on its own can handle exemptions, so look no further! Exempt vs. Non-taxable So, can you just mark certain transactions or line items non-taxable? Many of you may have already noticed that we have a way to consider the various line items of a transaction either taxable or non-taxable via our TaxCodes....</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/03/07/customer-exemption-handling/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/03/03/whats-a-doc-status-error/">What's a DocStatusError?</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Mark Withers | March 03, 2017</p>
+                        
+                        <p class="blog-excerpt">So you’re using the AvaTax API, and you attempt to create a transaction just like usual - but this time, you get a new error message: DocStatusError. What does this error mean, and how should my code handle it? What's a Document Status? AvaTax checks the state of a transaction based on the code sent with a CreateTransaction request. As outlined in the previous blog posts Lifecycle of a Transaction and Type of Transactions, when you use a transaction type with a suffix of Invoice, AvaTax will record and save the transaction. It starts out in status saved. If you...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/03/03/whats-a-doc-status-error/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/03/02/avatax-free-trial/">Free TaxRates API</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | March 02, 2017</p>
+                        
+                        <p class="blog-excerpt">Want to try out AvaTax before you buy? As of the February release, AvaTax now offers both a free TaxRates API and a free trial of AvaTax - both of which are available today in the AvaTax SDK! Free TaxRates Starting a small business? Want tax rates without all the hassle? Avalara now offers a free TaxRates API that is available for all addresses in the United States. This API is ready to use, requires no setup at all, and provides rates and boundaries based on the same advanced tax content that Avalara uses to provide its enterprise service, AvaTax....</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/03/02/avatax-free-trial/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/02/16/rest-v2-17-2-patch-notes/">REST v2.17.2 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | February 16, 2017</p>
+                        
+                        <p class="blog-excerpt">This article is about the February 2017 monthly update to the AvaTax REST v2 API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-02-23 Production https://rest.avatax.com 2017-02-27 Free Tax Rates! Avalara is pleased to announce the freely available REST v2 TaxRates API! The TaxRates API provides basic tax functionality for no cost. You also now have available an API that creates a free 30-day trial of AvaTax Professional. This free trial account comes with no obligations and allows you to experiment with a fully featured version of Avalara AvaTax. After 30 days, you may continue to use the free TaxRates API or...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/02/16/rest-v2-17-2-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/02/07/the-avatax-release-schedule/">The AvaTax Release Schedule</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | February 07, 2017</p>
+                        
+                        <p class="blog-excerpt">Many of you know that Avalara publishes updates to its world-leading AvaTax software suite for tax processing roughly once per month, but do you know how our process works? For today’s article, we’ll give you a brief description of how we create new features, notify our customers about our plans, and eventually launch our software to production. Monthly Release Cadence Our most important commitment to our customers and partners is that we provide a stable and useful API. Our customers expect that the API will grow over time and add awesome new features, but at the same time they know...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/02/07/the-avatax-release-schedule/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/01/23/lifecycle-of-a-transaction/">Lifecycle of a Transaction</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | January 23, 2017</p>
+                        
+                        <p class="blog-excerpt">The centerpiece of Avalara’s world-leading AvaTax service is the ‘Transaction’. A Transaction can reflect one of many different types of business documents, and it’s worth discussing how a transaction can change over time. Let’s begin by understanding how a “Sales” transaction is created, and how it can change over time. The Transaction State Diagram In AvaTax, a sales transaction is an exchange that occurs between two companies. Although other types of transactions exist that can be within a single company - for example, inventory transfer transactions - in today’s use case we will only examine transactions that occur between two...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/01/23/lifecycle-of-a-transaction/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/01/11/declaring-nexus/">Declaring Nexus in REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | January 11, 2017</p>
+                        
+                        <p class="blog-excerpt">One of the most frequent questions I am asked is “Where do I need to collect taxes?” The challenge of determining which jurisdictions you fall under is a complex one. In the United States, the rule that determines when your company has to obey a particular jurisdiction’s tax law is called ‘Nexus’, so AvaTax uses this word to refer to the overall concept of selecting jurisdictions where you are signed up to collect and remit taxes. Keep in mind, these rules have significant legal repercussions, and you should strongly consider getting legal or tax advice to ensure that your Nexus...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/01/11/declaring-nexus/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2017/01/05/from-rest-v1-to-rest-v2/">From REST v1 to REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Joseph Savarese | January 05, 2017</p>
+                        
+                        <p class="blog-excerpt">As Easy as v1, v2… Well, not exactly, but it’s definitely easy to switch from our REST v1 to our REST v2 and the benefits are huge. We’ve built a wide range of functionality into our new REST v2 API and all of that is in addition to everything our REST v1 had to offer. To highlight some of the changes let’s first run through the various methods of our v1 and show exactly how they’ve changed in the upgraded v2. Then we can dive into some of those additions and look at how they’re intended to help users file...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2017/01/05/from-rest-v1-to-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/12/30/rest-v2-17-1-patch-notes/">REST v2.17.1 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | December 30, 2016</p>
+                        
+                        <p class="blog-excerpt">This article is about the January 2017 monthly update to the AvaTax REST v2 API. UPDATE 2017-01-18 - Due to testing on the Recordset Count issue for pagination described below, we have elected to remove the $include=count option and restore the previous recordset count behavior. All queries will receive correct recordset counts except for queries on the /api/v2/transactions endpoint. We have delayed the correct implementation of recordset count for the transactions table to the 2.17.2 release. As a result of this change, the release to Sandbox has been rescheduled for Jan 24th. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2017-01-24 Production...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/12/30/rest-v2-17-1-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/12/15/landed-cost-who-pays/">Who Pays for Landed Cost?</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Amy Morgan | December 15, 2016</p>
+                        
+                        <p class="blog-excerpt">Update March 22, 2018 - AvaTax REST has a new syntax for representing DDP. This post is retained for historical purposes and the information around DDP and DAP remains relevant. You may read about the new LandedCost integration at https://developer.avalara.com/blog/2018/03/13/calculate-customs-duties-in-rest/. With the release of the LandedCost calculator functionality, AvaTax now provides features to help you sell across country borders. LandedCost will calculate the customs duty for your cross-border shipments. However, using the calculator requires telling the API which party will be responsible for paying the customs duty &amp; import taxes. Specific to B2C sales, calculating the landed cost depends on...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/12/15/landed-cost-who-pays/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/12/09/address-validation-in-rest-v2/">Address Validation in REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | December 09, 2016</p>
+                        
+                        <p class="blog-excerpt">In addition to calculating tax, the AvaTax suite of products can also help you produce a robust user experience for your customers. If your customer provides a partial or mistyped address, the Address Validation API can help determine the right address based on the partial information your customer provided. For today’s blog post, I will walk you through the Address Validation functionality built into AvaTax REST v2. Validate a Partial Address We’ll begin by using the ResolveAddress endpoint to validate an incomplete address. Let’s say your salesperson was on the phone with a customer, and they took down all the...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/12/09/address-validation-in-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/12/05/csharp-nuget-library/">AvaTax.NET client library available on NuGet</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | December 05, 2016</p>
+                        <p><img src="/developer-dot/public/images/blog/nuget-avatax-client-library.png" class="blog-preview-image" alt="blog preview image"/></p>
+                        <p class="blog-excerpt">For those Avalara customers using Microsoft’s DotNet languages, Avalara has published an official AvaTax client library on NuGet, the official repository for open source code in the DotNet world! This client library is already configured with all the code and logic you need to get started incorporating tax calculation into your application, and it can greatly speed up your development cycle. For today’s article, I’ll walk you through the process of adding AvaTax to your DotNet project using this simple new library. Create a New Project To begin, let’s create a fresh new program. I happen to be partial to...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/12/05/csharp-nuget-library/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/12/05/avatax-connector-app/">Avatax Connector App</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Anagha Sulakhe | December 05, 2016</p>
+                        <p><img src="/developer-dot/public/images/blog/DevDot_ResetLisenceKey.png" class="blog-preview-image" alt="blog preview image"/></p>
+                        <p class="blog-excerpt">Using The REST API To Build a Connector Avalara’s new REST API v2 now offers a wide variety of functionality for integrating ERP systems with AvaTax. In the new REST API, you can now add companies, estimate tax on the fly, validate addresses, and more! For today’s article, we will focus on building a web application to showcase how to use the new REST API to build a connector. Core Functionality I am writing today’s example using Microsoft’s C# and MVC40 libraries to demonstrate the following features of AvaTax Basic Authentication Address Validation Generate Tax on an Invoice I will be using...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/12/05/avatax-connector-app/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/11/28/point-of-sale-data-api/">Point-of-Sale Data API</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Kevin Hess | November 28, 2016</p>
+                        
+                        <p class="blog-excerpt">One of the most common questions we get from our point-of-sale customers is about the need to operate in a disconnected environment, while maintaining the same level of accuracy of a connected environment. Many businesses can face periods of intermittent internet connectivity, preventing live calls to our tax engine. Some businesses wish to operate entirely disconnected. In either scenario, businesses require the means to calculate tax locally. Today, we’ll walk through a new API launching in the AvaTax 2.16.12 release - an API that generates a tax content file that can be consumed by a merchant’s point-of-sale (POS) application, supporting...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/11/28/point-of-sale-data-api/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/11/22/rest-v2-16-12-patch-notes/">REST v2.16.12 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | November 22, 2016</p>
+                        
+                        <p class="blog-excerpt">This article is about the December 2016 monthly update to the AvaTax REST v2 API. UPDATED 2016-12-07 - The team added the definition of “Mixed” sourcing to the client library to address California sourcing scenarios prior to launch. Launch has been rescheduled for Tuesday, December 13th. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2016-12-01 Production https://rest.avatax.com 2016-12-13 POST /api/v2/transactions/create The sourcing field on TransactionLineModel had a mismatch between its documentation and its return value. In release 2.16.11, the field was documented as a string, but its value was being returned as an integer. Many libraries would still successfully parse this value...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/11/22/rest-v2-16-12-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/11/18/types-of-transactions/">Types of Transactions</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | November 18, 2016</p>
+                        
+                        <p class="blog-excerpt">AvaTax is a full service engine for calculating transactional taxes, including sales, use, VAT, and many other tax types. In order to properly calculate taxes in these different circumstances, AvaTax must also support a wide variety of transaction types. In today’s article, I will walk you through the differences between these transactions and describe how to map them to your business processes. Orders vs Invoices Our customers require both the ability to estimate tax for a transaction, and to record the actual tax for that transaction. Many customers use AvaTax as a way to predict taxes before taking action -...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/11/18/types-of-transactions/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/11/11/geocoding-in-rest-v2/">Geocoding in REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | November 11, 2016</p>
+                        
+                        <p class="blog-excerpt">The tax on your transactions is heavily dependent on where the transactions occur. In the US sales and use tax world, transactions are generally taxed based on either the “Origin” or “Destination” - but for most retail sales, these two addresses are almost always the same. When you visit your local grocery store, they charge you a single rate based on product type and the location of the store; but if you place an order online, the tax you pay will be influenced by a number of factors including the origin location of the warehouse and the destination address where...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/11/11/geocoding-in-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/11/04/estimating-tax-with-rest-v2/">Estimating Tax with REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | November 04, 2016</p>
+                        
+                        <p class="blog-excerpt">The AvaTax REST API provides lots of different levels of estimated tax values, and sometimes it may be hard to know the right way to estimate tax for your customers. For today’s blog article, I will be walking you through the different types of estimates that are available in AvaTax REST v2 and how they can help you. AvaTax is of course built on correctly identifying the exact tax amounts for an invoice; and to do this, we incorporate dozens of factors including the origin and destination address, dollar amounts, taxability rules, nexus declarations, registration rules, customer exemption certificates, and...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/11/04/estimating-tax-with-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/31/rest-v2-16-11-patch-notes/">REST v2.16.11 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 31, 2016</p>
+                        
+                        <p class="blog-excerpt">REST v2.16.11 Patch Notes AvaTax REST v2.16.11 has now adopted the naming system used by AvaTax SOAP (API version/year/month). Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2016-11-02 Production https://rest.avatax.com 2016-11-09 POST /api/v2/taxrates Corrected a bug that caused the TaxRates API to show duplicate rates. POST /api/v2/transactions/create New fields have been added to the API. These fields are optional and do not require changes to your existing code. Added new fields on the create transaction model: debugLevel (string, optional): If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'. Enum, possible values = ['Normal',...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/31/rest-v2-16-11-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/24/batch-transaction-upload-in-rest-v2/">Batched Transactions in REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 24, 2016</p>
+                        
+                        <p class="blog-excerpt">Uploading Batched Transactions One of the most common inquiries we get at Avalara is about the need to reconcile, or publish, a full list of a company’s transactions at the end of the month. Many businesses work by cash register day by day, and at the end of each month they produce a report listing all the transactions that they processed. Sometimes businesses will have one report for each location, or cash register, or salesperson; and they need a batch process they can use to upload all of these transactions into AvaTax for later reconciliation, or for filing tax returns....</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/24/batch-transaction-upload-in-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/20/rest-v2-3-1-patch-notes/">REST v2.3.1 Patch Notes</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 20, 2016</p>
+                        
+                        <p class="blog-excerpt">REST v2.3.1 Patch Notes For those of you who participated in the AvaTax REST v2 Preview program, I’d like to take this opportunity to thank you for your time and effort helping us debug a huge software release. We’ve now implemented a clean, modern, consistent REST API that covers tax functionality from top to bottom - and we’ve established a great platform for continuing improvements. Now that the program is winding down, please take note of a few differences between the final release of REST v2 and the preview program you tested in August/September: New URL for REST v2 The...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/20/rest-v2-3-1-patch-notes/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/13/landedcost-with-rest-v2/">LandedCost with REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 13, 2016</p>
+                        
+                        <p class="blog-excerpt">Updated March 22, 2018 - AvaTax REST has a new syntax for making LandedCost calculations. This post is retained for historical purposes. You may read about the new LandedCost integration at https://developer.avalara.com/blog/2018/03/22/calculate-customs-duties-in-rest/. Selling Cross-Border With the release of the LandedCost calculator functionality, AvaTax now provides features to help you sell across country borders. LandedCost will help you identify customs duty for various types of harmonized tariff codes. Once you’ve begun using AvaTax REST v2, you’ll have to make a few minor changes to begin using the LandedCost calculator. Here’s what you need to know. Harmonized Tariff Schedule (HTS) For every...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/13/landedcost-with-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/06/filtering-in-rest-v2/">Filtering in AvaTax REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 06, 2016</p>
+                        
+                        <p class="blog-excerpt">I'm sure I left this somewhere... The REST API pattern is designed to make it easy to store and retrieve data. Every piece of data in REST is assigned a single unique URL - and you can always fetch that item back by retrieving its URL. It works a bit like this: Request POST /api/v2/companies { "name": "Bob's Artisan Pottery" } Result In the result headers, you’ll get back this response that tells you the URL of your newly created object: Location: /api/v2/companies/123 Then, when it’s time to fetch something back, you can retrieve it back using that location, and...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/06/filtering-in-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/04/getting-started-with-avatax-rest-v2/">Getting Started with AvaTax REST v2</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 04, 2016</p>
+                        
+                        <p class="blog-excerpt">It's time to make taxing more relaxing! Over the next fifteen minutes, I’ll walk you through the process of using Avalara’s V2 REST API to implement a simple web-based eCommerce platform. We’ll show you how to request an account, set up a company, and process tax for that company. Everything we will do today can be fully scripted - so as soon as you’ve gone through this demo, you’ll be know everything you need to add transactional taxes to your platform. For today, we’ll set up the company “Bob’s Artisan Pottery”, an online store that sells mugs. As Bob McExample,...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/04/getting-started-with-avatax-rest-v2/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/10/03/new-rest-v2-api-for-avatax/">A New REST v2 API For AvaTax</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Ted Spence | October 03, 2016</p>
+                        
+                        <p class="blog-excerpt">AvaTax at 12 Years of Age Avalara’s world-class tax API, originally launched in 2004, has by now helped thousands of businesses all across the world make great strides in automating tax compliance. We’ve processed billions of transactions and filed millions of tax returns using AvaTax technology since those tiny beginnings. The secret to Avalara’s success is constant innovation. The AvaTax API, connectors, and services you use today have been under continuous development since Avalara was founded. As AvaTax adds features, we’ve outgrown our original SOAP and XML implementation, and we’ve decided to deliver a new and fresh API to our...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/10/03/new-rest-v2-api-for-avatax/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-5">
+                    <div class="blog-preview">
+                        <div class="gradient"></div>
+                        <h4><a href="/developer-dot/blog/2016/09/30/getting-started-with-avalara-apis/">Getting Started With Avalara's APIs</a></h4>
+                        <h5></h5>
+                        <p class="byline">By Joe Savarese | September 30, 2016</p>
+                        
+                        <p class="blog-excerpt">First Steps with Avalara APIs Not well versed in Computer Programming yet? Not a problem!- You can access the power of Avalara’s new AvaTax API in no time just like I did! Hello, as a fresh Intern within the Engineering team here at Avalara, I was given the great opportunity to attend a Demo on Avalara’s new REST API (being that I work on a different project this was all new to me). I nervously arrived on Bainbridge Island and found a seat in a room full of experienced Developers and Quality Assurance specialists already setting up to check out...</p>
+                        <div class="readMore">
+                            <a href="/developer-dot/blog/2016/09/30/getting-started-with-avalara-apis/" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        
+    </main>
+</section>
+</main>
+        </section>
+         
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/blog/avatax/index.html"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

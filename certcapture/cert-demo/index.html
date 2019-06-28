@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce Plugin Demo | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/certcapture/cert-demo/">
+
+    
+    <meta property="og:title" content="eCommerce Plugin Demo | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="eCommerce Plugin Demo">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=certCapture>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid overview">
+          
+        <section class="row">
+            <main class="col-md-12"><script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript" src="../cert-demo.js"></script>
+
+<script type="text/javascript" src="https://beta.certcapture.com/Gencert2/js"></script>
+
+<h1>eCommerce Plugin Demo</h1>
+<p>The eCommerce plugin is used to embed CertCapture's exemption document submission form into your eCommerce site so it can communicate with CertCapture. For more information about the plugin, <a href="https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Install_Avalara_CertCapture_for_Ecommerce" target="_blank">check out the documentation.</a></p>
+<hr id="cert-divider" />
+
+<div id="gencert_test">
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Step 1: Setup</h3>
+            <p>Pick the GenCert URL you'd like to hit and choose your exposure zone.</p>
+            <form>
+                <div class="form-group row">
+                    <label for="api-url" class="col-sm-3 col-form-label">GenCert URL</label>
+                    <div class="col-sm-9">
+                        <input id="gencert-url" class="form-control" placeholder="https://beta.certcapture.com" value="https://beta.certcapture.com/" type="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Exposure Zone</label>
+                    <div class="col-sm-9">
+                        <select id="set-zone" class="form-control" onchange="updateCertScript();">
+                            
+                                <option value="Alabama">Alabama</option>
+                            
+                                <option value="Alaska">Alaska</option>
+                            
+                                <option value="Alberta">Alberta</option>
+                            
+                                <option value="American Samoa">American Samoa</option>
+                            
+                                <option value="Arizona">Arizona</option>
+                            
+                                <option value="Arkansas">Arkansas</option>
+                            
+                                <option value="British Columbia">British Columbia</option>
+                            
+                                <option value="California">California</option>
+                            
+                                <option value="Colorado">Colorado</option>
+                            
+                                <option value="Connecticut">Connecticut</option>
+                            
+                                <option value="Delaware">Delaware</option>
+                            
+                                <option value="District Of Columbia">District Of Columbia</option>
+                            
+                                <option value="Federal Withholding">Federal Withholding</option>
+                            
+                                <option value="Florida">Florida</option>
+                            
+                                <option value="Georgia">Georgia</option>
+                            
+                                <option value="Guam">Guam</option>
+                            
+                                <option value="Hawaii">Hawaii</option>
+                            
+                                <option value="Idaho">Idaho</option>
+                            
+                                <option value="Illinois">Illinois</option>
+                            
+                                <option value="Indiana">Indiana</option>
+                            
+                                <option value="Iowa">Iowa</option>
+                            
+                                <option value="Kansas">Kansas</option>
+                            
+                                <option value="Kentucky">Kentucky</option>
+                            
+                                <option value="Louisiana">Louisiana</option>
+                            
+                                <option value="Maine">Maine</option>
+                            
+                                <option value="Manitoba">Manitoba</option>
+                            
+                                <option value="Maryland">Maryland</option>
+                            
+                                <option value="Massachusetts">Massachusetts</option>
+                            
+                                <option value="Michigan">Michigan</option>
+                            
+                                <option value="Minnesota">Minnesota</option>
+                            
+                                <option value="Mississippi">Mississippi</option>
+                            
+                                <option value="Missouri">Missouri</option>
+                            
+                                <option value="Montana">Montana</option>
+                            
+                                <option value="Nebraska">Nebraska</option>
+                            
+                                <option value="Nevada">Nevada</option>
+                            
+                                <option value="New Brunswick">New Brunswick</option>
+                            
+                                <option value="Newfoundland">Newfoundland</option>
+                            
+                                <option value="New Hampshire">New Hampshire</option>
+                            
+                                <option value="New Jersey">New Jersey</option>
+                            
+                                <option value="New Mexico">New Mexico</option>
+                            
+                                <option value="New York">New York</option>
+                            
+                                <option value="North Carolina">North Carolina</option>
+                            
+                                <option value="North Dakota">North Dakota</option>
+                            
+                                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            
+                                <option value="Northwest Territories">Northwest Territories</option>
+                            
+                                <option value="Nova Scotia">Nova Scotia</option>
+                            
+                                <option value="Nunavut">Nunavut</option>
+                            
+                                <option value="Ohio">Ohio</option>
+                            
+                                <option value="Oklahoma">Oklahoma</option>
+                            
+                                <option value="Ontario">Ontario</option>
+                            
+                                <option value="Oregon">Oregon</option>
+                            
+                                <option value="Pennsylvania">Pennsylvania</option>
+                            
+                                <option value="Prince Edward Island">Prince Edward Island</option>
+                            
+                                <option value="Puerto Rico">Puerto Rico</option>
+                            
+                                <option value="Quebec">Quebec</option>
+                            
+                                <option value="Rhode Island">Rhode Island</option>
+                            
+                                <option value="Saskatchewan">Saskatchewan</option>
+                            
+                                <option value="South Carolina">South Carolina</option>
+                            
+                                <option value="South Dakota">South Dakota</option>
+                            
+                                <option value="Tennessee">Tennessee</option>
+                            
+                                <option value="Texas">Texas</option>
+                            
+                                <option value="U.S. Virgin Islands">U.S. Virgin Islands</option>
+                            
+                                <option value="Utah">Utah</option>
+                            
+                                <option value="Vermont">Vermont</option>
+                            
+                                <option value="Virginia">Virginia</option>
+                            
+                                <option value="Washington">Washington</option>
+                            
+                                <option value="West Virginia">West Virginia</option>
+                            
+                                <option value="Wisconsin">Wisconsin</option>
+                            
+                                <option value="Wyoming">Wyoming</option>
+                            
+                                <option value="Yukon">Yukon</option>
+                            
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <h3>Step 2: Get your token</h3>
+            <p>Use your eCommerce credentials to generate a valid token. If you already have a valid token, just paste it in the script box and you can move on to Step 3.</p>
+            <form>
+                <div class="form-group row">
+                    <label for="api-url" class="col-sm-3 col-form-label">URL</label>
+                    <div class="col-sm-9">
+                        <input id="api-url" class="form-control" placeholder="https://beta-api.certcapture.com" value="https://beta-api.certcapture.com" type="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="api-user" class="col-sm-3 col-form-label">User Name</label>
+                    <div class="col-sm-9">
+                        <input id="api-user" class="form-control" placeholder="userName01" type="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="api-password" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                        <input id="api-password" class="form-control" placeholder="p@ssW0rd" type="password" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="client-id" class="col-sm-3 col-form-label">Client ID</label>
+                    <div class="col-sm-9">
+                        <input id="client-id" class="form-control" placeholder="111" type="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="customer-number" class="col-sm-3 col-form-label">Customer Number</label>
+                    <div class="col-sm-9">
+                        <input id="customer-number" class="form-control" placeholder="222" type="text" />
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-primary cert-btn" onclick="getToken()">Get Token</button>
+        </div>
+        <div class="col-md-3">
+            <!-- options -->
+            <h3>Step 3: Select your parameters (optional)</h3>
+            <p>If you would like to include any of the parameters below, click the appropriate box. If not, move on to Step 4.</p>
+            <div>
+                <ul id="test-options" onchange="updateCertScript();">
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="edit_purchaser" />Edit Purchaser
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="show_files" />Show Files
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="submit_to_stack" />Submit To Stack
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="preview" />Preview
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="upload_only" />Upload Only
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="fill_only" />Fill Only
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="customer_list" />Customer List
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="append_barcode" />Append Barcode
+                            </label>
+                        </li>
+                    
+                        <li>
+                            <label>
+                                <input type="checkbox" class="cert-demo-option" id="upload_form_unavailable" />Upload If Form Unavailable
+                            </label>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- request example script -->
+        <div class="col-md-6">
+            <h3>Step 4: Submit your script</h3>
+            <p>If you've completed steps 1 - 3, just click submit. If the script box is empty, click 'Fill Script' to see an up-to-date script based on your input for previous steps.</p>
+            <button class="btn btn-link " id="cert-demo-refill-btn" onclick="updateCertScript();">Fill Script</button>
+            <div id="script-test">
+                <div id="sample-script" class="code-snippet respScroll api-console-output">
+                    <textarea id="cert-request" spellcheck="false">
+GenCert.init(document.getElementById( 'form-container' ), { 
+  edit_purchaser: false, 
+  ship_zone: 'Alabama', 
+  token: ''
+});
+GenCert.show();
+                    </textarea>
+                </div>
+                <button class="btn btn-primary" id="cert-demo-submit" onclick="submitEcom();">Submit</button>
+            </div>
+        </div><!-- end request example script -->
+    </div><!-- end row -->
+</div>
+<!-- end gencert_test -->
+
+<!-- Form output -->
+<div id="form-parent-container">
+    <div id="form-container" class="form-output"></div>
+</div>
+<p><button class="btn btn-primary cert-btn form-output" id="cert-demo-back-btn" onclick="backToDemo();">Back to demo</button></p>
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/certcapture/cert-demo.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

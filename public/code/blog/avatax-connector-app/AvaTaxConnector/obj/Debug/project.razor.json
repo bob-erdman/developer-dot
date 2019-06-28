@@ -1,0 +1,18 @@
+{
+  "FilePath": "/Users/genevieve.conty/Documents/Avalara/developer-dot/public/code/blog/avatax-connector-app/AvaTaxConnector/AvaTaxConnector.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": []
+}

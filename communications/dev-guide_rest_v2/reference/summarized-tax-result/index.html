@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5.1.19 - Summarized Tax Result | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/communications/dev-guide_rest_v2/reference/summarized-tax-result/">
+
+    
+    <meta property="og:title" content="Chapter 5.1.19 - Summarized Tax Result | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="Chapter 5.1.19 - Summarized Tax Result">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=communications>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid comms_rest_v2_dev_guide">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/communications">Avalara communications</a></li>
+            <li class="text-uppercase">comms rest v2 dev guide</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row">
+            <main class="col-md-12">
+  
+    <div class="row padding-sides half">
+      <nav class="col-md-3">
+        <div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
+    <h3>Chapters</h3>
+    <ol>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/getting-started/">Getting Started</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculate-taxes/">Calculate Taxes</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/commit-uncommit/">Commit/Uncommit</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/reference/">Reference</a>
+            
+            <ol>
+                <li>Calculate Taxes
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/Reference/request-config/">Request Config</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/company-data/">Company Data</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/location/">Location</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/billing-period/">Billing Period</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/tax-override/">Tax Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe Harbor Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/tax-bracket/">Tax Bracket</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/key-value-pair/">Key Value Pair</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes Response</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/invoice-result/">Invoice Result</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/error-response/">Error Response</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/line-item-result/">Line Item Result</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed Tax Result</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized Tax Result</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/reporting-information/">Reporting Information</a></li>
+                    </ol>
+                </li>
+                <li>Commit
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/commit-request/">Commit Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/commit-response/">Commit Response</a></li>
+                    </ol>
+                </li>
+                <li>Jurisdiction Determination
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-request/">Zip Lookup Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup Result</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/location-item/">Location Item</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/geocode-requests/">Geocode Requests</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/geocode-result/">Geocode Result</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/address/">Address</a></li>
+                    </ol>
+                </li>
+                <li>Lookups
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/service-info/">Service Info</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/version-info/">Version Info</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/tax-type-data/">Tax Type Data</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/ts-pair-data/">TS Pair Data</a></li>
+                    </ol>
+                </li>
+                <li>Errors
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/general-errors/">General Errors</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/calculate-tax-errors/">Calculate Tax Errors</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/commit-errors/">Commit Errors</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/jurisdiction-determination-errors/">Jurisdiction Determination Errors</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/reference/lookup-errors/">Lookup Errors</a></li>
+                    </ol>
+                </li>
+            </ol>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculating-tax-offline/">Calculating Tax Offline</a>
+            
+        </li>
+    </ol>
+</div>
+      </nav>
+      <main class="col-md-9 small-no-padding">
+        <h1>
+            Chapter 5.1.19 - Summarized Tax Result
+            
+        </h1>
+        <ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/reference/detailed-tax-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/reference/reporting-information/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+<h3>Summarized Tax Result</h3>
+
+<p>The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarized invoice taxes:</p>
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+            <td><code>max</code></td>
+            <td><code>[double]</code> Max Base
+            <br />
+            The maximum base for the tax bracket
+            </td>
+        </tr>
+        <tr>
+            <td><code>min</code></td>
+            <td><code>[double]</code> Min Base
+            <br />
+            The minimum base for the tax bracket
+            </td>
+        </tr>
+        <tr>
+            <td><code>tchg</code></td>
+            <td><code>[double]</code> Total Charge
+            <br />
+            Summarized charge amounts applied to the tax item from Invoice processing.  Each entry in the summarized data has an individual total charge as it applies to the calculation of that specific summarized tax type and jurisdiction
+            </td>
+        </tr>
+        <tr>
+            <td><code>calc</code></td>
+            <td><code>[int]</code> Calculation Type
+            <br />
+            Indicates how the tax is calculated
+            <ul class="dev-guide-list">
+                <li><code>1</code> <b>Rate</b>: Taxable Measure is multiplied by Rate</li>
+                <li><code>2</code> <b>Fixed</b>: Fixed taxes represent a fixed tax that applies to the product being taxed</li>
+                <li><code>3</code> <b>PerMinute</b>: Number of Minutes is multiplied by Rate</li>
+                <li><code>4</code> <b>PerLine</b>: Number of Lines is multiplied by Rate</li>
+                <li><code>5</code> <b>SelfTaxingRate</b>: Taxable Measure is multiplied by Self-Taxing Rate</li>
+                <li><code>6</code> <b>PerBracket</b>: Number of Lines is multiplied by Rate based on tax bracket for line count</li>
+                <li><code>7</code> <b>FixedOnTier</b>: Sale Amount is multiplied by Rate based on tax tier for sale amount</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>cat</code></td>
+            <td><code>[string]</code> Tax Category Name 
+            <ul class="dev-guide-list">
+              <li>Max length: 50 bytes</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>cid</code></td>
+            <td><code>[int]</code> Tax Category ID</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td><code>[string]</code> Tax Name 
+            <ul class="dev-guide-list">
+              <li>Max length: 50 bytes</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>exm</code></td>
+            <td><code>[double]</code> Exempt Sale Amount</td>
+        </tr>
+        <tr>
+            <td><code>lns</code></td>
+            <td><code>[int]</code> Number of lines taxed</td>
+        </tr>
+        <tr>
+            <td><code>pcd</code></td>
+            <td><code>[int]</code> Reporting PCode
+            <br />
+            PCode representing reporting tax jurisdiction</td>
+        </tr>
+        <tr>
+            <td><code>taxpcd</code></td>
+            <td><code>[int]</code> Taxing PCode
+            <br />
+            PCode representing taxing jurisdiction.   Only returned when <code>retext</code> in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>rate</code></td>
+            <td><code>[double]</code> Applicable tax rate</td>
+        </tr>
+        <tr>
+            <td><code>sur</code></td>
+            <td><code>[bool]</code> Surcharge
+            <br />
+            Indicates if this tax is a surcharge
+            <ul class="dev-guide-list">
+                <li><code>true</code>: Surcharge rules apply to this tax</li>
+                <li><code>false</code>: Tax is not a surcharge</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>tax</code></td>
+            <td><code>[double]</code> Summarized Tax Amount</td>
+        </tr>
+        <tr>
+            <td><code>lvl</code></td>
+            <td><code>[int]</code> Tax Level
+            <br />
+            Indicates the jurisdiction level of the tax
+            <ul class="dev-guide-list">
+                <li><code>0</code>: Federal</li>
+                <li><code>1</code>: State</li>
+                <li><code>2</code>: County</li>
+                <li><code>3</code>: City</li>
+                <li><code>4</code>: Unincorporated</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>tid</code></td>
+            <td><code>[int]</code> Tax Type ID</td>
+        </tr>
+        <tr>
+            <td><code>usexm</code></td>
+            <td><code>[bool]</code> User Exempt
+            <br />
+            Flag indicating if the tax has been exempted by the user via <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/exemption/">Exemptions</a> (<code>exms</code>)
+            <ul class="dev-guide-list">
+                <li><code>true</code>: Tax has been exempted by the user</li>
+                <li><code>false</code>: Tax hasn't been exempted by the user</li>
+            </ul>
+            Only returned when <code>retext</code> in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>notax</code></td>
+            <td><code>[bool]</code> Is No Tax Transaction
+            <br />
+            Flag indicating that the transaction processed successfully but returned no taxes.  If no taxes are generated, the taxing jurisdiction used in the response is returned.
+            <ul class="dev-guide-list">
+                <li><code>true</code>: Item is a no tax entry</li>
+                <li><code>false</code>: Item returned taxes</li>
+            </ul>
+            Only returned when <code>retext</code> in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>trans</code></td>
+            <td><code>[int]</code> Transaction Type
+            <br />
+            Transaction type use to calculate tax.  For bundles, this field shows the specific bundled item transaction type.  Only returned when <code>retext</code> in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>svc</code></td>
+            <td><code>[int]</code> Service Type
+            <br />
+            Service type use to calculate tax.  For bundles, this field shows the specific bundled item transaction type.  Only returned when <code>retext</code> in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>chg</code></td>
+            <td><code>[double]</code> Charge
+            <br />
+            Charge used to calculate tax.  
+            <ul class="dev-guide-list">
+                <li>For bundles, this field shows the percentage of the charge applied to the bundled item</li>
+                <li>For tax inclusive calls, this field shows the calculated charge</li>
+            </ul>
+            Only returned when <code>retext</code> in <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/request-config/">RequestConfig</a> is set to <code>true</code></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<p><br /></p>
+
+<h3>Example</h3>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"summ"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tchg"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALES AND USE TAXES"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Tax"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lns"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"taxpcd"</span><span class="p">:</span><span class="w"> </span><span class="mi">377300</span><span class="w">
+    </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sur"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3125</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usexm"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notax"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trans"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"svc"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span></code></pre></figure>
+
+<ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/reference/detailed-tax-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/reference/reporting-information/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+      </main>
+    </div>
+    
+
+
+
+
+
+
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/communications/dev-guide_rest_v2/reference/summarized-tax-result.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

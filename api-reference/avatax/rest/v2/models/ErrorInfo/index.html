@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErrorInfo | Avatax REST API | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/ErrorInfo/">
+
+    
+    <meta property="og:title" content="ErrorInfo | Avatax REST API | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="Information about the error that occurred"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="ErrorInfo | Avatax REST API">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=avaTax>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid api_references">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/avatax">Avalara avaTax</a></li>
+            <li class="text-uppercase">api reference</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row padding-sides">
+            <nav class="col-md-3 api-ref">
+                 <div id='the-nav' class='nav-wrapper hidden-xs hidden-sm api-ref-nav' style='height: 100%; overflow-y: auto;'>
+    <ul class='api-ref-side-nav nav nav-pills nav-stacked'>
+        
+        
+
+        
+        
+
+        
+            
+            
+
+            
+            
+            
+                
+                    <li>
+                        <a href="/developer-dot/api-reference/avatax/rest/v2">Avatax REST API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                        
+                            
+                                <div style="padding-left:10px;">
+    <ul class='api-ref-side-nav-active nav nav-pills nav-stacked sub-nav'>
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Accounts">Accounts</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Addresses">Addresses</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Batches">Batches</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/CertExpressInvites">CertExpressInvites</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Certificates">Certificates</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Companies">Companies</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Contacts">Contacts</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Customers">Customers</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/DataSources">DataSources</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Definitions">Definitions</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/DistanceThresholds">DistanceThresholds</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/FilingCalendars">FilingCalendars</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Filings">Filings</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Free">Free</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Items">Items</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/JurisdictionOverrides">JurisdictionOverrides</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Locations">Locations</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/MultiDocument">MultiDocument</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Nexus">Nexus</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Notices">Notices</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Notifications">Notifications</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Onboarding">Onboarding</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Registrar">Registrar</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Reports">Reports</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Settings">Settings</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Subscriptions">Subscriptions</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/TaxCodes">TaxCodes</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/TaxContent">TaxContent</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/TaxRules">TaxRules</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Transactions">Transactions</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Upcs">Upcs</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Users">Users</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+                <li><a style="overflow: hidden" href="/developer-dot/api-reference/avatax/rest/v2/methods/Utilities">Utilities</a></li>
+                
+            
+        
+            
+            
+            
+
+            
+            <li><a style="color:#ff6600; overflow: hidden;" href="/developer-dot/api-reference/avatax/rest/v2/models">Models</a></li>
+            
+            
+        
+    </ul>
+</div>
+
+                            
+                        
+                    </li>
+                 
+            
+        
+            
+            
+
+            
+            
+            
+                 
+            
+        
+            
+            
+
+            
+            
+            
+                
+                    <li>
+                        <a href="/developer-dot/api-reference/avatax/soap">Avatax SOAP API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                        
+                    </li>
+                 
+            
+        
+            
+            
+
+            
+            
+            
+                 
+            
+        
+            
+            
+
+            
+            
+            
+                 
+            
+        
+
+        
+        <li class="older-api">
+            Older APIs
+            <div style="padding-left:10px;">
+    <ul class='api-ref-side-nav-active nav nav-pills nav-stacked sub-nav'>
+            
+            
+
+            
+                
+                
+
+                
+                
+                
+            
+                
+                
+
+                
+                
+                
+                    <li>
+                        <a href="/developer-dot/api-reference/avatax/account/soap">Avatax AccountSvc SOAP API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                        
+                    </li>
+                
+            
+                
+                
+
+                
+                
+                
+            
+                
+                
+
+                
+                
+                
+                    <li>
+                        <a href="/developer-dot/api-reference/avatax/rest/v1">Legacy REST API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                        
+                    </li>
+                
+            
+                
+                
+
+                
+                
+                
+                    <li>
+                        <a href="/developer-dot/api-reference/avatax/batch/soap">Avatax BatchSvc SOAP API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                        
+                    </li>
+                
+            
+    </ul>
+</div>
+        </li>
+        
+
+    </ul>
+</div>
+ 
+            </nav>
+            <main class="col-md-9 small-no-padding"><div id='react-root'></div>
+<script>
+    window.PAGE_MODEL = {"description":"Information about the error that occurred","type":"object","properties":{"code":{"description":"Type of error that occurred","enum":["ServerConfiguration","AccountInvalidException","CompanyInvalidException","EntityNotFoundError","ValueRequiredError","RangeError","RangeCompareError","RangeSetError","TaxpayerNumberRequired","EntityLimitExceeded","CommonPassword","WeakPassword","StringLengthError","MaxStringLengthError","EmailValidationError","EmailMissingError","InvalidQueryField","InvalidQueryValue","SyntaxError","TooManyParametersError","UnterminatedValueError","DeleteUserSelfError","OldPasswordInvalid","CannotChangePassword","ReadOnly","DateFormatError","NoDefaultCompany","AccountTypeNotSupported","InvalidFirmClientOffer","AuthenticationException","AuthorizationException","ValidationException","InactiveUserError","AuthenticationIncomplete","BasicAuthIncorrect","IdentityServerError","BearerTokenInvalid","ModelRequiredException","AccountExpiredException","BearerTokenNotSupported","InvalidSecurityRole","InvalidRegistrarAction","RemoteServerError","NoFilterCriteriaException","OpenClauseException","JsonFormatError","InvalidDecimalValue","PermissionRequired","UnhandledException","InactiveAccount","LinkageNotAllowed","LinkageStatusUpdateNotSupported","ReportingCompanyMustHaveContactsError","CompanyProfileNotSet","CannotAssignUserToCompany","MustAssignUserToCompany","InvalidTaxTypeMapping","ModelStateInvalid","DateRangeError","InvalidDateRangeError","RuleMustHaveTaxCode","RuleTypeRestricted","AllJurisRuleLimits","InvalidCompanyLocationSetting","InvalidAdjustmentType","DeleteInformation","OutOfRange","UnspecifiedTimeZone","CannotCreateDeletedObjects","CannotModifyDeletedObjects","ReturnNameNotFound","InvalidAddressTypeAndCategory","DefaultCompanyLocation","InvalidCountry","InvalidCountryRegion","BrazilValidationError","BrazilExemptValidationError","BrazilPisCofinsError","JurisdictionNotFoundError","MedicalExciseError","RateDependsTaxabilityError","RateDependsEuropeError","InvalidRateTypeCode","RateTypeNotSupported","CannotUpdateNestedObjects","UPCCodeInvalidChars","UPCCodeInvalidLength","IncorrectPathError","InvalidJurisdictionType","MustConfirmResetLicenseKey","DuplicateCompanyCode","TINFormatError","DuplicateNexusError","UnknownNexusError","ParentNexusNotFound","InvalidTaxCodeType","CannotActivateCompany","DuplicateEntityProperty","ReportingEntityError","InvalidReturnOperationError","CannotDeleteCompany","CountryOverridesNotAvailable","JurisdictionOverrideMismatch","DuplicateSystemTaxCode","SSTOverridesNotAvailable","NexusDateMismatch","NexusParentDateMismatch","BearerTokenParseUserIdError","RetrieveUserError","InvalidConfigurationSetting","InvalidConfigurationValue","InvalidEnumValue","TaxCodeAssociatedTaxRule","CannotSwitchAccountId","RequestIncomplete","AccountNotNew","PasswordLengthInvalid","InvalidEcmsOverrideCode","AccountDoesNotExist","InvalidTaxType","IncorrectFieldValue","LeadingOrTrailingException","NotEnoughAddressesInfo","ReportNotInitiated","FailedToBuildReport","ReportNotFinished","FailedToDownloadReport","MalformedFilterException","ExpectedConjunctionError","CriteriaNotSupportedError","CompanyAccountAndParentAccountMismatch","InvalidFileContentType","RequestTooLarge","EcmsDisabled","UnknownConjunctionError","NoLinesDiscounted","FailedToDelete","CircularCompanyHierarchies","DuplicateEntry","DuplicateFieldNameInOrderBy","CannotAdjustDocumentType","UserNoAccess","InvalidEntry","TransactionAlreadyCancelled","QueryParameterOutOfRange","BatchSalesAuditMustBeZippedError","BatchZipMustContainOneFileError","BatchInvalidFileTypeError","BatchCannotSaveBatchFile","BatchCannotGetBatchFile","BatchCannotDeleteBatchFile","BatchMustContainOneFile","MissingBatchFileContent","PointOfSaleFileSize","PointOfSaleSetup","InvalidInputDate","GetTaxError","AddressConflictException","DocumentCodeConflict","MissingAddress","InvalidParameterValue","DocumentFetchLimit","InvalidAddress","AddressLocationNotFound","MissingLine","InvalidAddressTextCase","DocumentNotCommitted","InvalidDocumentTypesToFetch","TimeoutRequested","InvalidPostalCode","InvalidSubscriptionDescription","InvalidSubscriptionTypeId","CannotChangeFilingStatus","ServerUnreachable","SubscriptionRequired","AccountExists","InvitationOnly","FreeTrialNotAvailable","AccountExistsDifferentEmail","AvalaraIdentityApiError","InvalidIPAddress","OfferCodeAlreadyApplied","AccountAlreadyExists","RefundTypeAndPercentageMismatch","InvalidDocumentTypeForRefund","RefundTypeAndLineMismatch","RefundLinesRequired","InvalidRefundType","RefundPercentageForTaxOnly","LineNoOutOfRange","RefundPercentageOutOfRange","RefundPercentageMissing","MustUseCreateTransaction","MustAcceptTermsAndConditions","FilingCalendarCannotBeDeleted","InvalidEffectiveDate","NonOutletForm","OverlappingFilingCalendar","FilingCalendarCannotBeEdited","CannotModifyLockedTransaction","LineAlreadyExists","LineDoesNotExist","LinesNotSpecified","LineDetailsDoesNotExist","CannotCreateTransactionWithDeletedDataSource","InvalidBusinessType","CannotModifyExemptCert","CertificatesError","MissingRequiredFields","CertificatesNotSetup","AddRelationshipsError","ConflictingExposureZone","MissingFieldToCreateExposureZone","MissingExemptReason","InvalidExemptReason","InvalidExemptionOperation","ConflictingFields","InvalidPdfOrImageFile","InvalidCoverLetterTitle","AccountNotProvisioned","InvalidRequestContentType","ExemptionPaginationLimits","ExemptionSortLimits","CustomerCantBeBothShipToAndBillTo","BillToCustomerExpected","ShipToCustomerExpected","EcmsSstCertsRequired","TransactionNotCancelled","TooManyTransactions","OnlyTaxDateOverrideIsAllowed","TransactionAlreadyExists","DateMismatch","InvalidDocumentStatusForVerify","TotalAmountMismatch","TotalTaxMismatch","InvalidDocumentType","MultiDocumentPartiallyLocked","TransactionIsCommitted","InvalidDocumentStatus","CommsConfigClientIdMissing","CommsConfigClientIdBadValue","AccountInNewStatusException","WorksheetException","InvalidAccountOverride","AccountOverrideNotAuthorized","FieldNotQueryableError","UsernameRequired","InvalidAuditMessage","FieldNotOrderableError","CannotDeleteParentBeforeChildNexus","NexusChildDateMismatch","CannotModifySstNexus","RemoteValidationError","AdvancedRuleRequestRuleError","AdvancedRuleResponseRuleError","AdvancedRuleError","TaxRuleRequiresNexus","UPCCodeNotUnique","TaxCodeAssociatedWithItemCodeNotFound","DuplicateSystemForItem","CannotDismissGlobalNotification","CannotUpdateAccountTypeId","UnsupportedFileFormat","UnsupportedOutputFileType","TaxProfileNotProvided","InvalidTaxProfile","CompanyTaxProfileEntryRequired","ErrorReadingTaxProfileEntry","TraceDataNotAvailable","InvalidParameterUnitMeasurementType","ParameterUnitRequired","InvalidParameterValueDataType","InvalidParameterAttributeType","SubscriptionRequiredForParameter","InvalidAccountType","GenericTaxCodeForItem","CannotCertifyCompany","NoVoidedDocuments","InadequateCommittedDocuments","DocumentCodeIsGuid","CustomerVendorCodeIsGuid","InadequateDocumentLineCount","SameDocumentDescription","NoExemptionNoOrCustomerUsageType","InadequateUniqueAddresses","ItemCodesAreAllSame","TaxCodesAreAllSame","RepeatedLinesInDocument","TaxDateOverrideAndNegativeLineAmount","AllUSDCurrencyCodes","NoDocumentsToTest"],"type":"string","example":"DuplicateCompanyCode","x-enum-metadata":{"name":"ErrorCodeId","summary":"Represents a error code message","values":[{"name":"ServerConfiguration","value":1,"summary":"Server has a configuration or setup problem"},{"name":"AccountInvalidException","value":2,"summary":"User doesn't have rights to this account or company"},{"name":"CompanyInvalidException","value":3},{"name":"EntityNotFoundError","value":4,"summary":"Use this error message when the user is trying to fetch a single object and the object either does not exist or cannot be seen by the current user."},{"name":"ValueRequiredError","value":5},{"name":"RangeError","value":6},{"name":"RangeCompareError","value":7},{"name":"RangeSetError","value":8},{"name":"TaxpayerNumberRequired","value":9},{"name":"EntityLimitExceeded","value":10},{"name":"CommonPassword","value":11},{"name":"WeakPassword","value":12},{"name":"StringLengthError","value":13},{"name":"MaxStringLengthError","value":14},{"name":"EmailValidationError","value":15},{"name":"EmailMissingError","value":16},{"name":"InvalidQueryField","value":17},{"name":"InvalidQueryValue","value":18},{"name":"SyntaxError","value":19},{"name":"TooManyParametersError","value":20},{"name":"UnterminatedValueError","value":21},{"name":"DeleteUserSelfError","value":22},{"name":"OldPasswordInvalid","value":23},{"name":"CannotChangePassword","value":24},{"name":"ReadOnly","value":25},{"name":"DateFormatError","value":26},{"name":"NoDefaultCompany","value":27},{"name":"AccountTypeNotSupported","value":28},{"name":"InvalidFirmClientOffer","value":29},{"name":"AuthenticationException","value":30},{"name":"AuthorizationException","value":31},{"name":"ValidationException","value":32},{"name":"InactiveUserError","value":33},{"name":"AuthenticationIncomplete","value":34},{"name":"BasicAuthIncorrect","value":35},{"name":"IdentityServerError","value":36},{"name":"BearerTokenInvalid","value":37},{"name":"ModelRequiredException","value":38},{"name":"AccountExpiredException","value":39},{"name":"BearerTokenNotSupported","value":41},{"name":"InvalidSecurityRole","value":42},{"name":"InvalidRegistrarAction","value":43},{"name":"RemoteServerError","value":44},{"name":"NoFilterCriteriaException","value":45},{"name":"OpenClauseException","value":46},{"name":"JsonFormatError","value":47},{"name":"InvalidDecimalValue","value":48},{"name":"PermissionRequired","value":49},{"name":"UnhandledException","value":50},{"name":"InactiveAccount","value":51},{"name":"LinkageNotAllowed","value":52},{"name":"LinkageStatusUpdateNotSupported","value":53},{"name":"ReportingCompanyMustHaveContactsError","value":60},{"name":"CompanyProfileNotSet","value":61},{"name":"CannotAssignUserToCompany","value":62},{"name":"MustAssignUserToCompany","value":63},{"name":"InvalidTaxTypeMapping","value":64},{"name":"ModelStateInvalid","value":70},{"name":"DateRangeError","value":80},{"name":"InvalidDateRangeError","value":81},{"name":"RuleMustHaveTaxCode","value":82},{"name":"RuleTypeRestricted","value":83},{"name":"AllJurisRuleLimits","value":84},{"name":"InvalidCompanyLocationSetting","value":85},{"name":"InvalidAdjustmentType","value":99},{"name":"DeleteInformation","value":100},{"name":"OutOfRange","value":118},{"name":"UnspecifiedTimeZone","value":119},{"name":"CannotCreateDeletedObjects","value":120},{"name":"CannotModifyDeletedObjects","value":121},{"name":"ReturnNameNotFound","value":122},{"name":"InvalidAddressTypeAndCategory","value":123},{"name":"DefaultCompanyLocation","value":124},{"name":"InvalidCountry","value":125},{"name":"InvalidCountryRegion","value":126},{"name":"BrazilValidationError","value":127},{"name":"BrazilExemptValidationError","value":128},{"name":"BrazilPisCofinsError","value":129},{"name":"JurisdictionNotFoundError","value":130},{"name":"MedicalExciseError","value":131},{"name":"RateDependsTaxabilityError","value":132},{"name":"RateDependsEuropeError","value":133},{"name":"InvalidRateTypeCode","value":134},{"name":"RateTypeNotSupported","value":135},{"name":"CannotUpdateNestedObjects","value":136},{"name":"UPCCodeInvalidChars","value":137},{"name":"UPCCodeInvalidLength","value":138},{"name":"IncorrectPathError","value":139},{"name":"InvalidJurisdictionType","value":140},{"name":"MustConfirmResetLicenseKey","value":141},{"name":"DuplicateCompanyCode","value":142},{"name":"TINFormatError","value":143},{"name":"DuplicateNexusError","value":144},{"name":"UnknownNexusError","value":145},{"name":"ParentNexusNotFound","value":146},{"name":"InvalidTaxCodeType","value":147},{"name":"CannotActivateCompany","value":148},{"name":"DuplicateEntityProperty","value":149},{"name":"ReportingEntityError","value":150},{"name":"InvalidReturnOperationError","value":151},{"name":"CannotDeleteCompany","value":152},{"name":"CountryOverridesNotAvailable","value":153},{"name":"JurisdictionOverrideMismatch","value":154},{"name":"DuplicateSystemTaxCode","value":155},{"name":"SSTOverridesNotAvailable","value":156},{"name":"NexusDateMismatch","value":157},{"name":"NexusParentDateMismatch","value":159},{"name":"BearerTokenParseUserIdError","value":160},{"name":"RetrieveUserError","value":161},{"name":"InvalidConfigurationSetting","value":162},{"name":"InvalidConfigurationValue","value":163},{"name":"InvalidEnumValue","value":164},{"name":"TaxCodeAssociatedTaxRule","value":165},{"name":"CannotSwitchAccountId","value":166},{"name":"RequestIncomplete","value":167},{"name":"AccountNotNew","value":168},{"name":"PasswordLengthInvalid","value":169},{"name":"InvalidEcmsOverrideCode","value":171},{"name":"AccountDoesNotExist","value":172},{"name":"InvalidTaxType","value":173},{"name":"IncorrectFieldValue","value":174},{"name":"LeadingOrTrailingException","value":175},{"name":"NotEnoughAddressesInfo","value":176},{"name":"ReportNotInitiated","value":177},{"name":"FailedToBuildReport","value":178},{"name":"ReportNotFinished","value":179},{"name":"FailedToDownloadReport","value":181},{"name":"MalformedFilterException","value":182},{"name":"ExpectedConjunctionError","value":183},{"name":"CriteriaNotSupportedError","value":184},{"name":"CompanyAccountAndParentAccountMismatch","value":185},{"name":"InvalidFileContentType","value":186},{"name":"RequestTooLarge","value":187},{"name":"EcmsDisabled","value":188},{"name":"UnknownConjunctionError","value":189},{"name":"NoLinesDiscounted","value":190},{"name":"FailedToDelete","value":191},{"name":"CircularCompanyHierarchies","value":192},{"name":"DuplicateEntry","value":193},{"name":"DuplicateFieldNameInOrderBy","value":194},{"name":"CannotAdjustDocumentType","value":195},{"name":"UserNoAccess","value":196},{"name":"InvalidEntry","value":197},{"name":"TransactionAlreadyCancelled","value":198},{"name":"QueryParameterOutOfRange","value":199},{"name":"BatchSalesAuditMustBeZippedError","value":200,"summary":"Batch errors"},{"name":"BatchZipMustContainOneFileError","value":201},{"name":"BatchInvalidFileTypeError","value":202},{"name":"BatchCannotSaveBatchFile","value":203},{"name":"BatchCannotGetBatchFile","value":204},{"name":"BatchCannotDeleteBatchFile","value":205},{"name":"BatchMustContainOneFile","value":206},{"name":"MissingBatchFileContent","value":207},{"name":"PointOfSaleFileSize","value":250,"summary":"Point Of Sale API exceptions"},{"name":"PointOfSaleSetup","value":251},{"name":"InvalidInputDate","value":252},{"name":"GetTaxError","value":300,"summary":"Errors in Soap V1 Passthrough / GetTax calls"},{"name":"AddressConflictException","value":301},{"name":"DocumentCodeConflict","value":303},{"name":"MissingAddress","value":304},{"name":"InvalidParameterValue","value":306},{"name":"DocumentFetchLimit","value":308},{"name":"InvalidAddress","value":309},{"name":"AddressLocationNotFound","value":310},{"name":"MissingLine","value":311},{"name":"InvalidAddressTextCase","value":312},{"name":"DocumentNotCommitted","value":313},{"name":"InvalidDocumentTypesToFetch","value":315},{"name":"TimeoutRequested","value":316},{"name":"InvalidPostalCode","value":317},{"name":"InvalidSubscriptionDescription","value":318,"summary":"Subscription error codes"},{"name":"InvalidSubscriptionTypeId","value":319},{"name":"CannotChangeFilingStatus","value":401,"summary":"Represents a malformed document fetch command"},{"name":"ServerUnreachable","value":500,"summary":"Represents a SQL server timeout error / deadlock error"},{"name":"SubscriptionRequired","value":600,"summary":"Partner API error codes"},{"name":"AccountExists","value":601},{"name":"InvitationOnly","value":602},{"name":"FreeTrialNotAvailable","value":606},{"name":"AccountExistsDifferentEmail","value":607},{"name":"AvalaraIdentityApiError","value":608},{"name":"InvalidIPAddress","value":609},{"name":"OfferCodeAlreadyApplied","value":610},{"name":"AccountAlreadyExists","value":611},{"name":"RefundTypeAndPercentageMismatch","value":701,"summary":"Refund API error codes"},{"name":"InvalidDocumentTypeForRefund","value":702},{"name":"RefundTypeAndLineMismatch","value":703},{"name":"RefundLinesRequired","value":704},{"name":"InvalidRefundType","value":705},{"name":"RefundPercentageForTaxOnly","value":706},{"name":"LineNoOutOfRange","value":707},{"name":"RefundPercentageOutOfRange","value":708},{"name":"RefundPercentageMissing","value":709},{"name":"MustUseCreateTransaction","value":800,"summary":"Free API error codes"},{"name":"MustAcceptTermsAndConditions","value":801},{"name":"FilingCalendarCannotBeDeleted","value":900,"summary":"Filing Calendar Error Codes"},{"name":"InvalidEffectiveDate","value":901},{"name":"NonOutletForm","value":902},{"name":"OverlappingFilingCalendar","value":903},{"name":"FilingCalendarCannotBeEdited","value":904},{"name":"CannotModifyLockedTransaction","value":1100,"summary":"Create or update transaction error codes"},{"name":"LineAlreadyExists","value":1101},{"name":"LineDoesNotExist","value":1102},{"name":"LinesNotSpecified","value":1103},{"name":"LineDetailsDoesNotExist","value":1104},{"name":"CannotCreateTransactionWithDeletedDataSource","value":1105},{"name":"InvalidBusinessType","value":1200,"summary":"Exempt cert error codes"},{"name":"CannotModifyExemptCert","value":1201},{"name":"CertificatesError","value":1203},{"name":"MissingRequiredFields","value":1204},{"name":"CertificatesNotSetup","value":1205},{"name":"AddRelationshipsError","value":1206},{"name":"ConflictingExposureZone","value":1208},{"name":"MissingFieldToCreateExposureZone","value":1209},{"name":"MissingExemptReason","value":1210},{"name":"InvalidExemptReason","value":1211},{"name":"InvalidExemptionOperation","value":1212},{"name":"ConflictingFields","value":1213},{"name":"InvalidPdfOrImageFile","value":1214},{"name":"InvalidCoverLetterTitle","value":1215},{"name":"AccountNotProvisioned","value":1216},{"name":"InvalidRequestContentType","value":1217},{"name":"ExemptionPaginationLimits","value":1218},{"name":"ExemptionSortLimits","value":1219},{"name":"CustomerCantBeBothShipToAndBillTo","value":1220},{"name":"BillToCustomerExpected","value":1221},{"name":"ShipToCustomerExpected","value":1222},{"name":"EcmsSstCertsRequired","value":1223},{"name":"TransactionNotCancelled","value":1300,"summary":"Multi document error codes"},{"name":"TooManyTransactions","value":1301},{"name":"OnlyTaxDateOverrideIsAllowed","value":1302},{"name":"TransactionAlreadyExists","value":1303},{"name":"DateMismatch","value":1305},{"name":"InvalidDocumentStatusForVerify","value":1306},{"name":"TotalAmountMismatch","value":1307},{"name":"TotalTaxMismatch","value":1308},{"name":"InvalidDocumentType","value":1310},{"name":"MultiDocumentPartiallyLocked","value":1312},{"name":"TransactionIsCommitted","value":1313},{"name":"InvalidDocumentStatus","value":1314},{"name":"CommsConfigClientIdMissing","value":1400,"summary":"Communications Tax error codes"},{"name":"CommsConfigClientIdBadValue","value":1401},{"name":"AccountInNewStatusException","value":1404,"summary":"Account Activate error codes"},{"name":"WorksheetException","value":1405,"summary":"Worksheet Exception"},{"name":"InvalidAccountOverride","value":1406},{"name":"AccountOverrideNotAuthorized","value":1407},{"name":"FieldNotQueryableError","value":1408},{"name":"UsernameRequired","value":1409},{"name":"InvalidAuditMessage","value":1410},{"name":"FieldNotOrderableError","value":1411},{"name":"CannotDeleteParentBeforeChildNexus","value":1500,"summary":"Nexus validation error codes"},{"name":"NexusChildDateMismatch","value":1501},{"name":"RemoteValidationError","value":1502,"summary":"Remote validation Error"},{"name":"CannotModifySstNexus","value":1503},{"name":"AdvancedRuleRequestRuleError","value":1602,"summary":"Advanced rule errors"},{"name":"AdvancedRuleResponseRuleError","value":1603},{"name":"AdvancedRuleError","value":1605},{"name":"TaxRuleRequiresNexus","value":1701,"summary":"Miscellaneous"},{"name":"UPCCodeNotUnique","value":1702},{"name":"TaxCodeAssociatedWithItemCodeNotFound","value":1704},{"name":"DuplicateSystemForItem","value":1705},{"name":"CannotDismissGlobalNotification","value":1706},{"name":"CannotUpdateAccountTypeId","value":1713},{"name":"UnsupportedFileFormat","value":1800,"summary":"SendSales API errors"},{"name":"UnsupportedOutputFileType","value":1801},{"name":"TaxProfileNotProvided","value":1900,"summary":"TaxProfile API errors"},{"name":"InvalidTaxProfile","value":1901},{"name":"CompanyTaxProfileEntryRequired","value":1902},{"name":"ErrorReadingTaxProfileEntry","value":1903},{"name":"TraceDataNotAvailable","value":2000,"summary":"AuditAccount API errors"},{"name":"InvalidParameterUnitMeasurementType","value":2100,"summary":"Item parameter errors"},{"name":"ParameterUnitRequired","value":2101},{"name":"InvalidParameterValueDataType","value":2102},{"name":"InvalidParameterAttributeType","value":2103},{"name":"SubscriptionRequiredForParameter","value":2104},{"name":"InvalidAccountType","value":2105,"summary":"Accounting Firm errors"},{"name":"GenericTaxCodeForItem","value":2200,"summary":"Certify Company Errors"},{"name":"CannotCertifyCompany","value":2201},{"name":"NoVoidedDocuments","value":2202},{"name":"InadequateCommittedDocuments","value":2203},{"name":"DocumentCodeIsGuid","value":2204},{"name":"CustomerVendorCodeIsGuid","value":2205},{"name":"InadequateDocumentLineCount","value":2206},{"name":"SameDocumentDescription","value":2207},{"name":"NoExemptionNoOrCustomerUsageType","value":2208},{"name":"InadequateUniqueAddresses","value":2209},{"name":"ItemCodesAreAllSame","value":2210},{"name":"TaxCodesAreAllSame","value":2211},{"name":"RepeatedLinesInDocument","value":2213},{"name":"TaxDateOverrideAndNegativeLineAmount","value":2214},{"name":"AllUSDCurrencyCodes","value":2215},{"name":"NoDocumentsToTest","value":2218}]}},"message":{"description":"Short one-line message to summaryize what went wrong","type":"string","example":"The company code 'DEFAULT' has already been defined.  Please select a different company code."},"target":{"description":"What object or service caused the error?","enum":["Unknown","HttpRequest","HttpRequestHeaders","IncorrectData","AvaTaxApiServer","AvalaraIdentityServer","CustomerAccountSetup"],"type":"string","example":"HttpRequest","x-enum-metadata":{"name":"ErrorTargetCode","summary":"What object experienced the error?","values":[{"name":"Unknown","value":0,"summary":"Error target is unknown"},{"name":"HttpRequest","value":1,"summary":"There was an error in the request URL, querystring, or body"},{"name":"HttpRequestHeaders","value":2,"summary":"There was an error in the HTTP Request headers"},{"name":"IncorrectData","value":3,"summary":"Some data provided by the user was incorrect"},{"name":"AvaTaxApiServer","value":10,"summary":"There was an error in the AvaTax API Server"},{"name":"AvalaraIdentityServer","value":11,"summary":"There was an error in the Avalara Identity Server"},{"name":"CustomerAccountSetup","value":12,"summary":"The customer's account setup does not permit certain actions"}]}},"details":{"description":"Array of detailed error messages","uniqueItems":false,"type":"array","items":{"$ref":"#/definitions/ErrorDetail"},"example":[{"code":"DeleteInformation","number":142,"message":"The entity was marked as deleted.","description":"Object successfully marked as deleted.","faultCode":"Client","helpLink":"http://developer.avalara.com/avatax/errors/DeleteInformation","severity":"Success"}]}},"example":{"code":"DuplicateCompanyCode","message":"The company code 'DEFAULT' has already been defined.  Please select a different company code.","target":"HttpRequest","details":[{"code":"DeleteInformation","number":142,"message":"The entity was marked as deleted.","description":"Object successfully marked as deleted.","faultCode":"Client","helpLink":"http://developer.avalara.com/avatax/errors/DeleteInformation","severity":"Success"}]},"x-methods-used-in":[]};
+    window.MODEL_NAME = 'ErrorInfo';
+</script>
+<script src='/public/js/render-model-bundle.js'></script>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'developeravalaracom'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/avatax/rest/v2.json"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

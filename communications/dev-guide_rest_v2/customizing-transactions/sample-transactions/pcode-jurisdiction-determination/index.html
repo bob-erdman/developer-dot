@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4.4.1 - PCode Jurisdiction Determination | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/">
+
+    
+    <meta property="og:title" content="Chapter 4.4.1 - PCode Jurisdiction Determination | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="Chapter 4.4.1 - PCode Jurisdiction Determination">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=communications>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid comms_rest_v2_dev_guide">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/communications">Avalara communications</a></li>
+            <li class="text-uppercase">comms rest v2 dev guide</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row">
+            <main class="col-md-12">
+  
+    <div class="row padding-sides half">
+      <nav class="col-md-3">
+        <div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
+    <h3>Chapters</h3>
+    <ol>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/getting-started/">Getting Started</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculate-taxes/">Calculate Taxes</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/commit-uncommit/">Commit/Uncommit</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>
+            
+            <ol>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profiles</a></li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">Account Customizations</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/bundle-file/">Bundle File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/exclusion-file/">Exclusion File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/override-file/">Override File</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/nexus-file/">Nexus File</a></li>
+                    </ol>
+                </li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/">Transaction Use Cases</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/">Simple Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">Multi-line Request</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a>
+                        <ol>
+                            <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/category-exemption/">Category Exemptions</a></li>
+                            <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-type-exemption/">Tax Type Exemptions</a></li>
+                        </ol>
+                        </li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/inter-intrastate/">Interstate/Intrastate Determination</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Override</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a>
+                            <ol>
+                                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau-attribute-property/">SAU Attributes and Properties</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/proration/">Proration</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/transaction-information/">Transaction Information</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/commit/">Transaction-Level Commit/Uncommit</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustments</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Displaying Tax Results</a></li>
+                    </ol>
+                </li>
+                <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/jurisdiction-determination-use-cases/">Jurisdiction Determination Use Cases</a>
+                    <ol>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination/">PCode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/geocode-jurisdiction-determination/">Geocode</a></li>
+                        <li><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/all_adr-jurisdiction-determination/">all_adr File</a></li>
+                    </ol>
+                </li>
+            </ol>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/reference/">Reference</a>
+            
+        </li>
+        <li ><a href="/developer-dot/communications/dev-guide_rest_v2/calculating-tax-offline/">Calculating Tax Offline</a>
+            
+        </li>
+    </ol>
+</div>
+      </nav>
+      <main class="col-md-9 small-no-padding">
+        <h1>
+            Chapter 4.4.1 - PCode Jurisdiction Determination
+            
+        </h1>
+        <ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/jurisdiction-determination-use-cases/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/geocode-jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+<p>The <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/getting-started/environments-endpoints#jur_determine"><code>/api/v2/afc/PCode</code> Jurisdiction Determination endpoint</a> returns a list of PCodes associated with a specified location.</p>
+
+<h3>PCode Jurisdiction Determination</h3>
+<p>The PCode Jurisdiction Determination endpoint accepts a <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-request/">Zip Lookup Request</a>.  Specify a location, best match or exact match, and how many results you want to see.  Location data, including PCode, is returned along with additional details in the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup Result</a>.</p>
+
+<h4>Location Data</h4>
+<p>Specify a location.</p>
+<ul class="dev-guide-list">
+    <li>Include least one of the location fields:</li>
+        <ul class="dev-guide-list">
+            <li>Country (<code>CountryISO</code>)</li>
+            <li>State (<code>State</code>)</li>
+            <li>County (<code>County</code>)</li>
+            <li>City (<code>City</code>)</li>
+            <li>Postal Code (<code>ZipCode</code>)</li>
+        </ul>
+    <li>Country defaults to "USA" if not supplied</li>
+</ul>
+<p><br /></p>
+<h4>Best Match</h4>
+<p>The Best Match flag (<code>BestMatch</code>) indicates the type of results.</p>
+<ul class="dev-guide-list">
+    <li><code>true</code>: Best match is returned</li>
+        <ul class="dev-guide-list">
+            <li>An exact match is attempted first</li>
+            <li>Best Match is applied if the exact match search fails</li>
+        </ul>
+    <li><code>false</code>: Only an exact match is returned</li>
+    <li>Check the <code>MatchTypeApplied</code> <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup Result</a> field to see which match type is used</li>
+</ul>
+<p><br />
+Considerations when using the Best Match flag:</p>
+<ul class="dev-guide-list">
+    <li>Punctuation in a city names is ignored</li>
+    <li>Whitespace in a city name is ignored</li>
+    <li>For example, the city name "LAND O' LAKES" is returned as an exact match when "LAND O LAKES" or "LANDOLAKES" are supplied because both punctuation and white space is ignored</li>
+</ul>
+<p><br /></p>
+<h4>Limit Results</h4>
+<p>The Limit Results field (<code>LimitResults</code>) is used to limit the number of matches returned in the <a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup Result</a>.</p>
+<ul class="dev-guide-list">
+    <li>Default is 100 results - passing <code>0</code> sets the limit to the default</li>
+    <li>Maximum is 1,000 results - passing a value greater than the max sets the limit to the maximum</li>
+</ul>
+
+<h3>PCode Jurisdiction Determination Example 1 - Best Match</h3>
+<p>This example demonstrates a best match PCode Jurisdiction Determination request.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAINT LOUIS"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVELETH"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ZipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55734"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"BestMatch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LimitResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>One location (<code>LocationData</code>) is returned using a best match (<code>MatchTypeApplied</code>).</p>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"LocationData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST LOUIS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVELETH"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1956600</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MatchCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"InputMatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Best"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"MatchTypeApplied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Best"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ResultsLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>PCode Jurisdiction Determination Example 2 - Zip Code</h3>
+<p>This example demonstrates a best match request using only a zip code (<code>ZipCode</code>).</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"ZipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"BestMatch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LimitResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>Five locations (<code>LocationData</code>) are returned using an exact match (<code>MatchTypeApplied</code>).</p>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"LocationData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"IsAlternate"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW YORK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPIRE STATE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"IsAlternate"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW YORK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREELEY SQUARE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"IsAlternate"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW YORK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ONE HUNDRED THIRTY EIGHTH"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"IsAlternate"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW YORK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANHATTAN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW YORK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW YORK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">2604100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MatchCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"InputMatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Best"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"MatchTypeApplied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exact"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ResultsLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="example3">PCode Jurisdiction Determination Example 3 - India Best Match</h3>
+<p>This example demonstrates a PCode lookup in India (<code>CountryISO</code> is set to “IND”).</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IND"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tirumala"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"BestMatch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LimitResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>The country of India (<code>CountyISO</code>) is returned even though a local jurisdiction is requested.</p>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse3">View the Response JSON</a>
+  <div id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"LocationData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IND"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"County"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">5148400</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"MatchCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"InputMatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Best"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"MatchTypeApplied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Best"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ResultsLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>PCode Jurisdiction Determination Example 4 - India Exact Match</h3>
+<p>Similar to <a class="dev-guide-link" href="#example3">Example 3</a>, but with an exact match requested (<code>BestMatch</code> set to <code>false</code>).</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"CountryIso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IND"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tirumala"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"BestMatch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LimitResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h4>Response</h4>
+<p>No results are returned because an exact match for the requested jurisdiction can’t be found.</p>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse4">View the Response JSON</a>
+  <div id="collapse4" class="panel-collapse collapse">
+    <div class="panel-body">
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"LocationData"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"MatchCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"InputMatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exact"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"MatchTypeApplied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exact"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ResultsLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    </div>
+  </div>
+</div>
+
+<h3>See Also</h3>
+<h4>Input Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-request/">Zip Lookup request</a></li>
+</ul>
+
+<h4>Output Objects</h4>
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/developer-dot/communications/dev-guide_rest_v2/reference/zip-lookup-result/">Zip Lookup result</a></li>
+</ul>
+
+<ul class="pager">
+  <li class="previous"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/jurisdiction-determination-use-cases/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/developer-dot/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/geocode-jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+      </main>
+    </div>
+    
+
+
+
+
+
+
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/pcode-jurisdiction-determination.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

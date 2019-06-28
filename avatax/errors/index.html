@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Error Codes | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/avatax/errors/">
+
+    
+    <meta property="og:title" content="REST Error Codes | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="REST Error Codes">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=AvaTax>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav apis " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid use_cases">
+          
+
+
+<div class="breadcrumbs">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li><span class="text-uppercase">Tax Calculation API</span>s</li>
+            <li class="text-uppercase"><a href="/developer-dot/avatax">Avalara AvaTax</a></li>
+            <li class="text-uppercase">use cases</li>
+        </ul>
+    </div>
+</div>
+  
+        <section class="row padding-sides half">
+            <nav class="col-md-3">
+                 <ul class="api-ref-side-nav nav nav-pills nav-stacked hidden-xs hidden-sm">
+    <li ><a href="/developer-dot/avatax/use-cases">Document Workflow</a></li>
+    <li ><a href="/developer-dot/avatax/calculating-tax">Calculating Tax</a></li>
+    <li ><a href="/developer-dot/avatax/address-validation">Address Validation</a></li>
+    <li ><a href="/developer-dot/avatax/reportable-transactions">Reportable Transactions</a></li>
+    <li ><a href="/developer-dot/avatax/handling-return-invoices">Product Returns</a></li>
+    <li ><a href="/developer-dot/avatax/handling-tax-exempt-customers">Exempt Transactions</a></li>
+    <li ><a href="/developer-dot/avatax/voiding-documents">Voiding Documents</a></li>
+    <li ><a href="/developer-dot/avatax/vat-transactions">VAT Transactions</a></li>
+    <li ><a href="/developer-dot/avatax/drop-shipping">Drop Shipping</a></li>
+    <li ><a href="/developer-dot/avatax/consumer-use-tax">Consumer Use Tax</a></li>
+    <li ><a href="/developer-dot/avatax/batch-file-reference">Batch File Reference</a></li>
+    <li ><a href="/developer-dot/avatax/automated-provisioning">Automated Provisioning</a></li>
+    <li ><a href="/developer-dot/avatax/soap-or-rest">SOAP or REST</a></li>
+    <li ><a href="/developer-dot/avatax/filtering-in-rest/">Filtering in REST</a></li>
+    <li ><a href="/developer-dot/avatax/authentication-in-rest/">Authentication in REST</a></li>
+    <li ><a href="/developer-dot/avatax/client-headers/">Client Profile Headers</a></li>
+    <li ><a href="/developer-dot/avatax/finding-your-companyid">Finding Your CompanyId</a></li>
+    <li ><a href="/developer-dot/avatax/proxy-server-settings">Proxy Server Settings</a></li>
+    <li ><a href="/developer-dot/avatax/ssl-certificates">SSL Certificates</a></li>
+    <li ><a href="/developer-dot/avatax/errors-and-outages">Errors and Outages</a></li>
+    <li class="active" ><a href="/developer-dot/avatax/errors">REST Error Codes</a></li>
+    <li ><a href="/developer-dot/avatax/common-errors">SOAP Error Codes</a></li>
+    <li ><a href="/developer-dot/avatax/service-availability-and-performance">Service Availability</a></li>
+    <li ><a href="/developer-dot/avatax/going-live">Going Live</a></li>
+    <li ><a href="/developer-dot/avatax/logins">Logins and Resources</a></li>
+    <li ><a href="/developer-dot/avatax/cloudconnect">Cloud Connect</a></li>
+
+</ul>
+<div class="sm-section-nav dropdown visible-xs-block visible-sm-block">
+    <button id="use-case-nav" type="button" data-toggle="dropdown">Use Cases</button>
+    <p>Tax Use Cases</p>
+    <ul class="dropdown-menu" aria-labelledby="use-case-nav">
+        <li><a href="/developer-dot/avatax/use-cases">Document Workflow</a></li>
+        <li><a href="/developer-dot/avatax/calculating-tax">Calculating Tax</a></li>
+        <li><a href="/developer-dot/avatax/address-validation">Address Validation</a></li>
+        <li><a href="/developer-dot/avatax/reportable-transactions">Reportable Transactions</a></li>
+        <li><a href="/developer-dot/avatax/handling-return-invoices">Product Returns</a></li>
+        <li><a href="/developer-dot/avatax/handling-tax-exempt-customers">Exempt Transactions</a></li>
+        <li><a href="/developer-dot/avatax/voiding-documents">Voiding Documents</a></li>
+        <li><a href="/developer-dot/avatax/vat-transactions">VAT Transactions</a></li>
+        <li><a href="/developer-dot/avatax/drop-shipping">Drop Shipping</a></li>
+        <li><a href="/developer-dot/avatax/consumer-use-tax">Consumer Use Tax</a></li>
+        <li><a href="/developer-dot/avatax/batch-file-reference/">Batch File Reference</a></li>
+        <li><a href="/developer-dot/avatax/automated-provisioning">Automated Provisioning</a></li>
+        <li><a href="/developer-dot/avatax/soap-or-rest">SOAP or REST</a></li>
+        <li><a href="/developer-dot/avatax/filtering-in-rest/">Filtering in REST</a></li>
+        <li><a href="/developer-dot/avatax/authentication-in-rest/">Authentication in REST</a></li>
+        <li><a href="/developer-dot/avatax/client-headers/">Client Profile Headers</a></li>
+        <li><a href="/developer-dot/avatax/finding-your-companyid">Finding Your CompanyId</a></li>
+        <li><a href="/developer-dot/avatax/proxy-server-settings">Proxy Server Settings</a></li>
+        <li><a href="/developer-dot/avatax/ssl-certificates">SSL Certificates</a></li>
+        <li><a href="/developer-dot/avatax/errors-and-outages">Errors and Outages</a></li>
+        <li><a href="/developer-dot/avatax/errors">REST Error Codes</a></li>
+        <li><a href="/developer-dot/avatax/common-errors">SOAP Error Codes</a></li>
+        <li><a href="/developer-dot/avatax/service-availability-and-performance">Service Availability</a></li>
+        <li><a href="/developer-dot/avatax/going-live">Going Live</a></li>
+        <li><a href="/developer-dot/avatax/logins">Logins and Resources</a></li>
+        <li><a href="/developer-dot/avatax/cloudconnect">Cloud Connect</a></li>
+    </ul>
+</div>
+ 
+            </nav>
+            <main class="col-md-9">
+  
+    <h1>REST Error Codes
+        
+    </h1>
+<p>Also see <a href="/developer-dot/avatax/common-errors">SOAP Error Codes</a> for error messages defined in the SOAP v1 API.</p>
+
+<table class="styled-table">
+	<thead>
+		<tr>
+			<th valign="top" width="75">Number</th>
+			<th valign="top" width="168">Message</th>
+			<th valign="top" width="245">Summary</th>
+		</tr>
+	</thead>
+	<tbody>
+        <tr>
+			<td>1</td>
+			<td><a href="ServerConfiguration">ServerConfiguration</a></td>
+			<td>Indicates that there is a server configuration problem with one of the servers in Avalara's AvaTax cluster.</td>
+		</tr>		
+        <tr>
+			<td>2</td>
+			<td><a href="AccountInvalidException">AccountInvalidException</a></td>
+			<td>You attempted to read information about an account that does not exist.</td>
+		</tr>		
+        <tr>
+			<td>3</td>
+			<td><a href="CompanyInvalidException">CompanyInvalidException</a></td>
+			<td>You attempted to modify a company that does not exist.</td>
+		</tr>		
+        <tr>
+			<td>4</td>
+			<td><a href="EntityNotFoundError">EntityNotFoundError</a></td>
+			<td>You attempted to act on, retrieve, update, or delete an object that does not exist.</td>
+		</tr>		
+        <tr>
+			<td>5</td>
+			<td><a href="ValueRequiredError">ValueRequiredError</a></td>
+			<td>You submitted a request and did not provide a value in a required field.</td>
+		</tr>		
+        <tr>
+			<td>6</td>
+			<td><a href="RangeError">RangeError</a></td>
+			<td>You attempted to set a value that must be within a range, but your value was outside of the range.</td>
+		</tr>		
+        <tr>
+			<td>7</td>
+			<td><a href="RangeCompareError">RangeCompareError</a></td>
+			<td>You specified an out-of-bounds field value.</td>
+		</tr>		
+        <tr>
+			<td>8</td>
+			<td><a href="RangeSetError">RangeSetError</a></td>
+			<td>You attempted to set a value that was not permitted.</td>
+		</tr>		
+        <tr>
+			<td>9</td>
+			<td><a href="TaxpayerNumberRequired">TaxpayerNumberRequired</a></td>
+			<td>Customers subscribing to Avalara Returns must identify each company by its United States Taxpayer ID Number (TIN).</td>
+		</tr>		
+        <tr>
+			<td>10</td>
+			<td><a href="EntityLimitExceeded">EntityLimitExceeded</a></td>
+			<td>The number of entities in the request exceeded the limit.</td>
+		</tr>		
+        <tr>
+			<td>11</td>
+			<td><a href="CommonPassword">CommonPassword</a></td>
+			<td>The password you have chosen is a commonly-guessed password and cannot be used.</td>
+		</tr>		
+        <tr>
+			<td>12</td>
+			<td><a href="WeakPassword">WeakPassword</a></td>
+			<td>The password you specified does not meet minimum complexity requirements.</td>
+		</tr>		
+        <tr>
+			<td>13</td>
+			<td><a href="StringLengthError">StringLengthError</a></td>
+			<td>One of the strings you uploaded to the server is too long and cannot be saved.</td>
+		</tr>		
+        <tr>
+			<td>14</td>
+			<td><a href="MaxStringLengthError">MaxStringLengthError</a></td>
+			<td>The string you provided was too long for the field.</td>
+		</tr>		
+        <tr>
+			<td>15</td>
+			<td><a href="EmailValidationError">EmailValidationError</a></td>
+			<td>You attempted to provide an email address that does not conform to email address standards.</td>
+		</tr>		
+        <tr>
+			<td>16</td>
+			<td><a href="EmailMissingError">EmailMissingError</a></td>
+			<td>You must provide an email address with this request.</td>
+		</tr>		
+        <tr>
+			<td>17</td>
+			<td><a href="InvalidQueryField">InvalidQueryField</a></td>
+			<td>A field in the query was not found.</td>
+		</tr>		
+        <tr>
+			<td>18</td>
+			<td><a href="InvalidQueryValue">InvalidQueryValue</a></td>
+			<td>The value provided for a query field is invalid.</td>
+		</tr>		
+        <tr>
+			<td>19</td>
+			<td><a href="SyntaxError">SyntaxError</a></td>
+			<td>The filter parameter has a syntax error.</td>
+		</tr>		
+        <tr>
+			<td>20</td>
+			<td><a href="TooManyParametersError">TooManyParametersError</a></td>
+			<td>The filter parameter has too many values.</td>
+		</tr>		
+        <tr>
+			<td>21</td>
+			<td><a href="UnterminatedValueError">UnterminatedValueError</a></td>
+			<td>A filter value was not properly terminated.</td>
+		</tr>		
+        <tr>
+			<td>22</td>
+			<td><a href="DeleteUserSelfError">DeleteUserSelfError</a></td>
+			<td>A user account may not call DELETE on the user itself.</td>
+		</tr>		
+        <tr>
+			<td>23</td>
+			<td><a href="OldPasswordInvalid">OldPasswordInvalid</a></td>
+			<td>You attempted to reset a password but you did not provide a correct old password value.</td>
+		</tr>		
+        <tr>
+			<td>24</td>
+			<td><a href="CannotChangePassword">CannotChangePassword</a></td>
+			<td>You attempted to change passwords for a user who is not permitted to change their password.</td>
+		</tr>		
+        <tr>
+			<td>25</td>
+			<td><a href="ReadOnly">ReadOnly</a></td>
+			<td>The field is read-only.</td>
+		</tr>		
+        <tr>
+			<td>26</td>
+			<td><a href="DateFormatError">DateFormatError</a></td>
+			<td>The date value you provided was incorrectly formatted.</td>
+		</tr>		
+        <tr>
+			<td>27</td>
+			<td><a href="NoDefaultCompany">NoDefaultCompany</a></td>
+			<td>Your account does not currently have a default company.</td>
+		</tr>		
+        <tr>
+			<td>28</td>
+			<td><a href="AccountTypeNotSupported">AccountTypeNotSupported</a></td>
+			<td>This account type cannot perform this operation.</td>
+		</tr>		
+        <tr>
+			<td>29</td>
+			<td><a href="InvalidFirmClientOffer">InvalidFirmClientOffer</a></td>
+			<td>Offer is not valid for a firm client account.</td>
+		</tr>		
+        <tr>
+			<td>30</td>
+			<td><a href="AuthenticationException">AuthenticationException</a></td>
+			<td>The credentials you provided to AvaTax could not be validated.</td>
+		</tr>		
+        <tr>
+			<td>31</td>
+			<td><a href="AuthorizationException">AuthorizationException</a></td>
+			<td>Your account is not authorized to call this API.</td>
+		</tr>		
+        <tr>
+			<td>32</td>
+			<td><a href="ValidationException">ValidationException</a></td>
+			<td>Your API call contained an incorrectly structured object.</td>
+		</tr>		
+        <tr>
+			<td>33</td>
+			<td><a href="InactiveUserError">InactiveUserError</a></td>
+			<td>This user account is currently inactive.</td>
+		</tr>		
+        <tr>
+			<td>34</td>
+			<td><a href="AuthenticationIncomplete">AuthenticationIncomplete</a></td>
+			<td>Your API call did not contain authentication information.</td>
+		</tr>		
+        <tr>
+			<td>35</td>
+			<td><a href="BasicAuthIncorrect">BasicAuthIncorrect</a></td>
+			<td>Your Basic authorization header was not encoded correctly.</td>
+		</tr>		
+        <tr>
+			<td>36</td>
+			<td><a href="IdentityServerError">IdentityServerError</a></td>
+			<td>A problem was detected with Avalara Identity.</td>
+		</tr>		
+        <tr>
+			<td>37</td>
+			<td><a href="BearerTokenInvalid">BearerTokenInvalid</a></td>
+			<td>The Bearer Token that you used for authentication was not valid.</td>
+		</tr>		
+        <tr>
+			<td>38</td>
+			<td><a href="ModelRequiredException">ModelRequiredException</a></td>
+			<td>You called an API that requires an object, but you did not provide an object.</td>
+		</tr>		
+        <tr>
+			<td>39</td>
+			<td><a href="AccountExpiredException">AccountExpiredException</a></td>
+			<td>Your AvaTax account has expired, or is not yet enabled.  You may need to contact your customer account manager for assistance.</td>
+		</tr>		
+        <tr>
+			<td>41</td>
+			<td><a href="BearerTokenNotSupported">BearerTokenNotSupported</a></td>
+			<td>Bearer Token authentication is not yet supported with this API.</td>
+		</tr>		
+        <tr>
+			<td>42</td>
+			<td><a href="InvalidSecurityRole">InvalidSecurityRole</a></td>
+			<td>You do not have permission to create or update users with this security role.</td>
+		</tr>		
+        <tr>
+			<td>43</td>
+			<td><a href="InvalidRegistrarAction">InvalidRegistrarAction</a></td>
+			<td>The action you attempted is restricted.</td>
+		</tr>		
+        <tr>
+			<td>44</td>
+			<td><a href="RemoteServerError">RemoteServerError</a></td>
+			<td>A remote server AvaTax depends on is not working.</td>
+		</tr>		
+        <tr>
+			<td>45</td>
+			<td><a href="NoFilterCriteriaException">NoFilterCriteriaException</a></td>
+			<td>You provided a filter with your query, but did not specify any criteria.</td>
+		</tr>		
+        <tr>
+			<td>46</td>
+			<td><a href="OpenClauseException">OpenClauseException</a></td>
+			<td>Your $filter value has a mismatched open parenthesis / close parenthesis.</td>
+		</tr>		
+        <tr>
+			<td>47</td>
+			<td><a href="JsonFormatError">JsonFormatError</a></td>
+			<td>The JSON you sent with your request was invalid.</td>
+		</tr>		
+        <tr>
+			<td>48</td>
+			<td><a href="InvalidDecimalValue">InvalidDecimalValue</a></td>
+			<td>A field in your request has too many decimal places or too many digits over all.</td>
+		</tr>		
+        <tr>
+			<td>49</td>
+			<td><a href="PermissionRequired">PermissionRequired</a></td>
+			<td>User doesn't have permission for action.</td>
+		</tr>		
+        <tr>
+			<td>50</td>
+			<td><a href="UnhandledException">UnhandledException</a></td>
+			<td>The API you attempted to call resulted in an unhandled exception within Avalara AvaTax.</td>
+		</tr>		
+        <tr>
+			<td>51</td>
+			<td><a href="InactiveAccount">InactiveAccount</a></td>
+			<td>The account is currently inactive.</td>
+		</tr>		
+        <tr>
+			<td>52</td>
+			<td><a href="LinkageNotAllowed">LinkageNotAllowed</a></td>
+			<td>The client account cannot be linked to the firm.</td>
+		</tr>		
+        <tr>
+			<td>53</td>
+			<td><a href="LinkageStatusUpdateNotSupported">LinkageStatusUpdateNotSupported</a></td>
+			<td>The status cannot be updated.</td>
+		</tr>		
+        <tr>
+			<td>60</td>
+			<td><a href="ReportingCompanyMustHaveContactsError">ReportingCompanyMustHaveContactsError</a></td>
+			<td>A company that is designated to report taxes must have at least one designated contact person.</td>
+		</tr>		
+        <tr>
+			<td>61</td>
+			<td><a href="CompanyProfileNotSet">CompanyProfileNotSet</a></td>
+			<td>This error occurs when you try to modify the tax profile of a company that inherits its tax profile from its parent.</td>
+		</tr>		
+        <tr>
+			<td>62</td>
+			<td><a href="CannotAssignUserToCompany">CannotAssignUserToCompany</a></td>
+			<td>Only Company-level users may be assigned to a company.</td>
+		</tr>		
+        <tr>
+			<td>63</td>
+			<td><a href="MustAssignUserToCompany">MustAssignUserToCompany</a></td>
+			<td>Company level users must be assigned to a company within this account.</td>
+		</tr>		
+        <tr>
+			<td>64</td>
+			<td><a href="InvalidTaxTypeMapping">InvalidTaxTypeMapping</a></td>
+			<td>The tax type mapping provided is not valid.</td>
+		</tr>		
+        <tr>
+			<td>70</td>
+			<td><a href="ModelStateInvalid">ModelStateInvalid</a></td>
+			<td>You provided an incorrectly structured object to AvaTax.</td>
+		</tr>		
+        <tr>
+			<td>80</td>
+			<td><a href="DateRangeError">DateRangeError</a></td>
+			<td>This error occurs when you create an object whose end date is before its effective date.</td>
+		</tr>		
+        <tr>
+			<td>81</td>
+			<td><a href="InvalidDateRangeError">InvalidDateRangeError</a></td>
+			<td>You specified a date outside of the allowable range.</td>
+		</tr>		
+        <tr>
+			<td>82</td>
+			<td><a href="RuleMustHaveTaxCode">RuleMustHaveTaxCode</a></td>
+			<td>A tax rule with type ProductTaxabilityRule cannot have a null tax code or be assigned to all tax codes.</td>
+		</tr>		
+        <tr>
+			<td>83</td>
+			<td><a href="RuleTypeRestricted">RuleTypeRestricted</a></td>
+			<td>You attempted to use a restricted tax rule type.</td>
+		</tr>		
+        <tr>
+			<td>84</td>
+			<td><a href="AllJurisRuleLimits">AllJurisRuleLimits</a></td>
+			<td>The field isAllJuris cannot be set to true at this jurisdiction level.</td>
+		</tr>		
+        <tr>
+			<td>85</td>
+			<td><a href="InvalidCompanyLocationSetting">InvalidCompanyLocationSetting</a></td>
+			<td>You used a company location that does not exist.</td>
+		</tr>		
+        <tr>
+			<td>99</td>
+			<td><a href="InvalidAdjustmentType">InvalidAdjustmentType</a></td>
+			<td>The adjustment type record permits only a specified list of values.</td>
+		</tr>		
+        <tr>
+			<td>100</td>
+			<td><a href="DeleteInformation">DeleteInformation</a></td>
+			<td>This message represents information provided about an object that was deleted.</td>
+		</tr>		
+        <tr>
+			<td>118</td>
+			<td><a href="OutOfRange">OutOfRange</a></td>
+			<td>You attempted to set a value that must be within a range, but your value was outside of the range.</td>
+		</tr>		
+        <tr>
+			<td>119</td>
+			<td><a href="UnspecifiedTimeZone">UnspecifiedTimeZone</a></td>
+			<td>You specified a date/time value without a timezone.</td>
+		</tr>		
+        <tr>
+			<td>120</td>
+			<td><a href="CannotCreateDeletedObjects">CannotCreateDeletedObjects</a></td>
+			<td>You may not create an object with a "Deleted" flag.</td>
+		</tr>		
+        <tr>
+			<td>121</td>
+			<td><a href="CannotModifyDeletedObjects">CannotModifyDeletedObjects</a></td>
+			<td>If an object has been deleted, you may not modify it further after its deletion.</td>
+		</tr>		
+        <tr>
+			<td>122</td>
+			<td><a href="ReturnNameNotFound">ReturnNameNotFound</a></td>
+			<td>You attempted to create a filing calendar for a return that is not recognized by AvaTax.</td>
+		</tr>		
+        <tr>
+			<td>123</td>
+			<td><a href="InvalidAddressTypeAndCategory">InvalidAddressTypeAndCategory</a></td>
+			<td>When creating a location, you must specify a compatible AddressType and AddressCategory value.</td>
+		</tr>		
+        <tr>
+			<td>124</td>
+			<td><a href="DefaultCompanyLocation">DefaultCompanyLocation</a></td>
+			<td>The default location for a company must be a physical-type location rather than a salesperson-type location.</td>
+		</tr>		
+        <tr>
+			<td>125</td>
+			<td><a href="InvalidCountry">InvalidCountry</a></td>
+			<td>The country code you provided is not recognized as a valid ISO 3166 country code.</td>
+		</tr>		
+        <tr>
+			<td>126</td>
+			<td><a href="InvalidCountryRegion">InvalidCountryRegion</a></td>
+			<td>You specified a country/region that was not recognized by the ISO 3166 country/region code system.</td>
+		</tr>		
+        <tr>
+			<td>127</td>
+			<td><a href="BrazilValidationError">BrazilValidationError</a></td>
+			<td>Reserved for future use.</td>
+		</tr>		
+        <tr>
+			<td>128</td>
+			<td><a href="BrazilExemptValidationError">BrazilExemptValidationError</a></td>
+			<td>Reserved for future use.</td>
+		</tr>		
+        <tr>
+			<td>129</td>
+			<td><a href="BrazilPisCofinsError">BrazilPisCofinsError</a></td>
+			<td>Reserved for future use.</td>
+		</tr>		
+        <tr>
+			<td>130</td>
+			<td><a href="JurisdictionNotFoundError">JurisdictionNotFoundError</a></td>
+			<td>The specified jurisdiction could not be found.</td>
+		</tr>		
+        <tr>
+			<td>131</td>
+			<td><a href="MedicalExciseError">MedicalExciseError</a></td>
+			<td>You attempted to create a tax rule that designated a device as medical excise tax for an incorrect jurisdiction.</td>
+		</tr>		
+        <tr>
+			<td>132</td>
+			<td><a href="RateDependsTaxabilityError">RateDependsTaxabilityError</a></td>
+			<td>You created a tax rule with a RateDepends option, but that rule is not a TaxabilityRule.</td>
+		</tr>		
+        <tr>
+			<td>133</td>
+			<td><a href="RateDependsEuropeError">RateDependsEuropeError</a></td>
+			<td>The RateDepends option is only valid for countries in the European Union.</td>
+		</tr>		
+        <tr>
+			<td>134</td>
+			<td><a href="InvalidRateTypeCode">InvalidRateTypeCode</a></td>
+			<td>This rate type is not valid in the country provided.</td>
+		</tr>		
+        <tr>
+			<td>135</td>
+			<td><a href="RateTypeNotSupported">RateTypeNotSupported</a></td>
+			<td>You attempted to choose a rate type that is not supported for the country you selected.</td>
+		</tr>		
+        <tr>
+			<td>136</td>
+			<td><a href="CannotUpdateNestedObjects">CannotUpdateNestedObjects</a></td>
+			<td>In AvaTax REST, you can create objects with nested children, but you cannot update objects with nested children.</td>
+		</tr>		
+        <tr>
+			<td>137</td>
+			<td><a href="UPCCodeInvalidChars">UPCCodeInvalidChars</a></td>
+			<td>Your UPC code contains invalid characters.</td>
+		</tr>		
+        <tr>
+			<td>138</td>
+			<td><a href="UPCCodeInvalidLength">UPCCodeInvalidLength</a></td>
+			<td>Your UPC code was too long to fit into the standard UPC object field.</td>
+		</tr>		
+        <tr>
+			<td>139</td>
+			<td><a href="IncorrectPathError">IncorrectPathError</a></td>
+			<td>You attempted to modify an object but you provided an object that matches a different URL.</td>
+		</tr>		
+        <tr>
+			<td>140</td>
+			<td><a href="InvalidJurisdictionType">InvalidJurisdictionType</a></td>
+			<td>You specified a jurisdiction type that is not recognized.</td>
+		</tr>		
+        <tr>
+			<td>141</td>
+			<td><a href="MustConfirmResetLicenseKey">MustConfirmResetLicenseKey</a></td>
+			<td>When resetting a license key for your account, you must provide a flag that indicates that you really want to reset your license key.</td>
+		</tr>		
+        <tr>
+			<td>142</td>
+			<td><a href="DuplicateCompanyCode">DuplicateCompanyCode</a></td>
+			<td>You cannot create two companies with the same company code.</td>
+		</tr>		
+        <tr>
+			<td>143</td>
+			<td><a href="TINFormatError">TINFormatError</a></td>
+			<td>The U.S. Taxpayer Identification Number you provided is not in a recognized format.</td>
+		</tr>		
+        <tr>
+			<td>144</td>
+			<td><a href="DuplicateNexusError">DuplicateNexusError</a></td>
+			<td>Nexus is a concept used to declare that your business is subject to taxation by a particular jurisdiction; you may not declare any one jurisdiction more than once.</td>
+		</tr>		
+        <tr>
+			<td>145</td>
+			<td><a href="UnknownNexusError">UnknownNexusError</a></td>
+			<td>You attempted to declare nexus in a jurisdiction that is not recognized by AvaTax.</td>
+		</tr>		
+        <tr>
+			<td>146</td>
+			<td><a href="ParentNexusNotFound">ParentNexusNotFound</a></td>
+			<td>You attempted to create a nexus in a tax authority that is underneath a parent tax authority, but you have not yet declared nexus with the parent tax authority.</td>
+		</tr>		
+        <tr>
+			<td>147</td>
+			<td><a href="InvalidTaxCodeType">InvalidTaxCodeType</a></td>
+			<td>You specified a tax code type that is not recognized by Avalara.</td>
+		</tr>		
+        <tr>
+			<td>148</td>
+			<td><a href="CannotActivateCompany">CannotActivateCompany</a></td>
+			<td>A company can only be activated when it has a valid tax profile.</td>
+		</tr>		
+        <tr>
+			<td>149</td>
+			<td><a href="DuplicateEntityProperty">DuplicateEntityProperty</a></td>
+			<td>You attempted to create an object with a duplicate name or code.</td>
+		</tr>		
+        <tr>
+			<td>150</td>
+			<td><a href="ReportingEntityError">ReportingEntityError</a></td>
+			<td>You attempted to use a Returns API on a company not designated to file returns.</td>
+		</tr>		
+        <tr>
+			<td>151</td>
+			<td><a href="InvalidReturnOperationError">InvalidReturnOperationError</a></td>
+			<td>You attempted to modify a tax filing return that has been approved.</td>
+		</tr>		
+        <tr>
+			<td>152</td>
+			<td><a href="CannotDeleteCompany">CannotDeleteCompany</a></td>
+			<td>You attempted to delete a company with committed transactions.</td>
+		</tr>		
+        <tr>
+			<td>153</td>
+			<td><a href="CountryOverridesNotAvailable">CountryOverridesNotAvailable</a></td>
+			<td>The jurisdiction override feature is only available in the United States.</td>
+		</tr>		
+        <tr>
+			<td>154</td>
+			<td><a href="JurisdictionOverrideMismatch">JurisdictionOverrideMismatch</a></td>
+			<td>An address override cannot be created for this jurisdiction.</td>
+		</tr>		
+        <tr>
+			<td>155</td>
+			<td><a href="DuplicateSystemTaxCode">DuplicateSystemTaxCode</a></td>
+			<td>You attempted to create a duplicate TaxCode object.</td>
+		</tr>		
+        <tr>
+			<td>156</td>
+			<td><a href="SSTOverridesNotAvailable">SSTOverridesNotAvailable</a></td>
+			<td>Companies participating in Streamlined Sales Tax may not override addresses in SST states.</td>
+		</tr>		
+        <tr>
+			<td>157</td>
+			<td><a href="NexusDateMismatch">NexusDateMismatch</a></td>
+			<td>You declared nexus on a date when that nexus was not available.</td>
+		</tr>		
+        <tr>
+			<td>159</td>
+			<td><a href="NexusParentDateMismatch">NexusParentDateMismatch</a></td>
+			<td>You declared nexus on a date when that nexus was not available.</td>
+		</tr>		
+        <tr>
+			<td>160</td>
+			<td><a href="BearerTokenParseUserIdError">BearerTokenParseUserIdError</a></td>
+			<td>The bearer token you provided could not be parsed.</td>
+		</tr>		
+        <tr>
+			<td>161</td>
+			<td><a href="RetrieveUserError">RetrieveUserError</a></td>
+			<td>Your bearer token does not have a provisioned AvaTax account.</td>
+		</tr>		
+        <tr>
+			<td>162</td>
+			<td><a href="InvalidConfigurationSetting">InvalidConfigurationSetting</a></td>
+			<td>The configuration setting you specified is invalid.</td>
+		</tr>		
+        <tr>
+			<td>163</td>
+			<td><a href="InvalidConfigurationValue">InvalidConfigurationValue</a></td>
+			<td>The configuration value you supplied was invalid.</td>
+		</tr>		
+        <tr>
+			<td>164</td>
+			<td><a href="InvalidEnumValue">InvalidEnumValue</a></td>
+			<td>You specified an invalid value for a field.</td>
+		</tr>		
+        <tr>
+			<td>165</td>
+			<td><a href="TaxCodeAssociatedTaxRule">TaxCodeAssociatedTaxRule</a></td>
+			<td>This tax code cannot be deleted because it is in use.</td>
+		</tr>		
+        <tr>
+			<td>166</td>
+			<td><a href="CannotSwitchAccountId">CannotSwitchAccountId</a></td>
+			<td>You may not change the accountId value on a company.</td>
+		</tr>		
+        <tr>
+			<td>167</td>
+			<td><a href="RequestIncomplete">RequestIncomplete</a></td>
+			<td>Your API request contained unprintable characters or was incomplete.</td>
+		</tr>		
+        <tr>
+			<td>168</td>
+			<td><a href="AccountNotNew">AccountNotNew</a></td>
+			<td>Only accounts in 'New' status may be activated.</td>
+		</tr>		
+        <tr>
+			<td>169</td>
+			<td><a href="PasswordLengthInvalid">PasswordLengthInvalid</a></td>
+			<td>Your password did not meet length requirements.</td>
+		</tr>		
+        <tr>
+			<td>171</td>
+			<td><a href="InvalidEcmsOverrideCode">InvalidEcmsOverrideCode</a></td>
+			<td>The EcmsOverrideCode value you supplied conflicts with a system-defined code.</td>
+		</tr>		
+        <tr>
+			<td>172</td>
+			<td><a href="AccountDoesNotExist">AccountDoesNotExist</a></td>
+			<td>You attempted to modify an account that does not exist.</td>
+		</tr>		
+        <tr>
+			<td>173</td>
+			<td><a href="InvalidTaxType">InvalidTaxType</a></td>
+			<td>You specified a tax type that does not exist.</td>
+		</tr>		
+        <tr>
+			<td>174</td>
+			<td><a href="IncorrectFieldValue">IncorrectFieldValue</a></td>
+			<td>You attempted to call the Reporting API with an incorrect field value.</td>
+		</tr>		
+        <tr>
+			<td>175</td>
+			<td><a href="LeadingOrTrailingException">LeadingOrTrailingException</a></td>
+			<td>The value you provided in the `$filter` parameter was incorrect.</td>
+		</tr>		
+        <tr>
+			<td>176</td>
+			<td><a href="NotEnoughAddressesInfo">NotEnoughAddressesInfo</a></td>
+			<td>A tax transaction must have both an origin and a destination address.</td>
+		</tr>		
+        <tr>
+			<td>177</td>
+			<td><a href="ReportNotInitiated">ReportNotInitiated</a></td>
+			<td>This report has not yet been created.</td>
+		</tr>		
+        <tr>
+			<td>178</td>
+			<td><a href="FailedToBuildReport">FailedToBuildReport</a></td>
+			<td>The report request you submitted could not be processed.</td>
+		</tr>		
+        <tr>
+			<td>179</td>
+			<td><a href="ReportNotFinished">ReportNotFinished</a></td>
+			<td>This report is not yet completed.</td>
+		</tr>		
+        <tr>
+			<td>181</td>
+			<td><a href="FailedToDownloadReport">FailedToDownloadReport</a></td>
+			<td>A server error prevented the report file from being downloaded.</td>
+		</tr>		
+        <tr>
+			<td>182</td>
+			<td><a href="MalformedFilterException">MalformedFilterException</a></td>
+			<td>The `$filter` parameter could not be parsed.</td>
+		</tr>		
+        <tr>
+			<td>183</td>
+			<td><a href="ExpectedConjunctionError">ExpectedConjunctionError</a></td>
+			<td>The `$filter` criteria in your API request was missing a conjunction.</td>
+		</tr>		
+        <tr>
+			<td>184</td>
+			<td><a href="CriteriaNotSupportedError">CriteriaNotSupportedError</a></td>
+			<td>Your `$filter` parameter contains criteria that are not supported.</td>
+		</tr>		
+        <tr>
+			<td>185</td>
+			<td><a href="CompanyAccountAndParentAccountMismatch">CompanyAccountAndParentAccountMismatch</a></td>
+			<td>This operation is not permitted in technical support.</td>
+		</tr>		
+        <tr>
+			<td>186</td>
+			<td><a href="InvalidFileContentType">InvalidFileContentType</a></td>
+			<td>The file content type could not be determined correctly.</td>
+		</tr>		
+        <tr>
+			<td>187</td>
+			<td><a href="RequestTooLarge">RequestTooLarge</a></td>
+			<td>The request you submitted was too large to process.</td>
+		</tr>		
+        <tr>
+			<td>188</td>
+			<td><a href="EcmsDisabled">EcmsDisabled</a></td>
+			<td>The ECMS configuration value for this account does not permit exemption certificates.</td>
+		</tr>		
+        <tr>
+			<td>189</td>
+			<td><a href="UnknownConjunctionError">UnknownConjunctionError</a></td>
+			<td>You attempted to use an invalid conjunction in your filter.</td>
+		</tr>		
+        <tr>
+			<td>190</td>
+			<td><a href="NoLinesDiscounted">NoLinesDiscounted</a></td>
+			<td>You attempted to specify a discount, but did not identify any lines to discount.</td>
+		</tr>		
+        <tr>
+			<td>191</td>
+			<td><a href="FailedToDelete">FailedToDelete</a></td>
+			<td>You attempted to delete an object that was in use.</td>
+		</tr>		
+        <tr>
+			<td>192</td>
+			<td><a href="CircularCompanyHierarchies">CircularCompanyHierarchies</a></td>
+			<td>Creating this company as submitted would result in a circular hierarchical reference.</td>
+		</tr>		
+        <tr>
+			<td>193</td>
+			<td><a href="DuplicateEntry">DuplicateEntry</a></td>
+			<td>The key or name already exists.</td>
+		</tr>		
+        <tr>
+			<td>194</td>
+			<td><a href="DuplicateFieldNameInOrderBy">DuplicateFieldNameInOrderBy</a></td>
+			<td>A sort or order filter criteria for this request was repeated.</td>
+		</tr>		
+        <tr>
+			<td>195</td>
+			<td><a href="CannotAdjustDocumentType">CannotAdjustDocumentType</a></td>
+			<td>The document type is an immutable property.</td>
+		</tr>		
+        <tr>
+			<td>196</td>
+			<td><a href="UserNoAccess">UserNoAccess</a></td>
+			<td>This user has a security role that blocks usage of this service.</td>
+		</tr>		
+        <tr>
+			<td>197</td>
+			<td><a href="InvalidEntry">InvalidEntry</a></td>
+			<td>Invalid entry.</td>
+		</tr>		
+        <tr>
+			<td>198</td>
+			<td><a href="TransactionAlreadyCancelled">TransactionAlreadyCancelled</a></td>
+			<td>The transaction has already been cancelled</td>
+		</tr>		
+        <tr>
+			<td>199</td>
+			<td><a href="QueryParameterOutOfRange">QueryParameterOutOfRange</a></td>
+			<td>The query parameter is out of range.</td>
+		</tr>		
+        <tr>
+			<td>200</td>
+			<td><a href="BatchSalesAuditMustBeZippedError">BatchSalesAuditMustBeZippedError</a></td>
+			<td>Sales audit files must be uploaded in ZIP or RAR formats.</td>
+		</tr>		
+        <tr>
+			<td>201</td>
+			<td><a href="BatchZipMustContainOneFileError">BatchZipMustContainOneFileError</a></td>
+			<td>Compressed files uploaded to the Batch service must contain exactly one file.</td>
+		</tr>		
+        <tr>
+			<td>202</td>
+			<td><a href="BatchInvalidFileTypeError">BatchInvalidFileTypeError</a></td>
+			<td>You uploaded a batch file with an incorrect file type.</td>
+		</tr>		
+        <tr>
+			<td>203</td>
+			<td><a href="BatchCannotSaveBatchFile">BatchCannotSaveBatchFile</a></td>
+			<td>AvaTax cannot save the batch file.</td>
+		</tr>		
+        <tr>
+			<td>204</td>
+			<td><a href="BatchCannotGetBatchFile">BatchCannotGetBatchFile</a></td>
+			<td>Batch file could not be found.</td>
+		</tr>		
+        <tr>
+			<td>205</td>
+			<td><a href="BatchCannotDeleteBatchFile">BatchCannotDeleteBatchFile</a></td>
+			<td>Batch file deletion is not allowed.</td>
+		</tr>		
+        <tr>
+			<td>206</td>
+			<td><a href="BatchMustContainOneFile">BatchMustContainOneFile</a></td>
+			<td>This batch object must contain only one file.</td>
+		</tr>		
+        <tr>
+			<td>207</td>
+			<td><a href="MissingBatchFileContent">MissingBatchFileContent</a></td>
+			<td>The batch object must contain a file to be processed.</td>
+		</tr>		
+        <tr>
+			<td>250</td>
+			<td><a href="PointOfSaleFileSize">PointOfSaleFileSize</a></td>
+			<td>The Point-Of-Sale API cannot build this file dynamically.</td>
+		</tr>		
+        <tr>
+			<td>251</td>
+			<td><a href="PointOfSaleSetup">PointOfSaleSetup</a></td>
+			<td>Invalid parameter provided in the Point-Of-Sale file request.</td>
+		</tr>		
+        <tr>
+			<td>252</td>
+			<td><a href="InvalidInputDate">InvalidInputDate</a></td>
+			<td>You attempted to set a date value that must be within a range, but your value was outside of the range.</td>
+		</tr>		
+        <tr>
+			<td>300</td>
+			<td><a href="GetTaxError">GetTaxError</a></td>
+			<td>A problem occurred when you attempted to create a transaction through AvaTax.</td>
+		</tr>		
+        <tr>
+			<td>301</td>
+			<td><a href="AddressConflictException">AddressConflictException</a></td>
+			<td>You attempted to add multiple addresses to a transaction that was flagged as a single-address transaction.</td>
+		</tr>		
+        <tr>
+			<td>303</td>
+			<td><a href="DocumentCodeConflict">DocumentCodeConflict</a></td>
+			<td>You attempted to create a document with a code that matches an existing transaction.</td>
+		</tr>		
+        <tr>
+			<td>304</td>
+			<td><a href="MissingAddress">MissingAddress</a></td>
+			<td>When creating transactions, you must at a minimum provide an origin and destination address.</td>
+		</tr>		
+        <tr>
+			<td>306</td>
+			<td><a href="InvalidParameterValue">InvalidParameterValue</a></td>
+			<td>When adding parameters to your CreateTransactionModel, you must specify a parameter of the correct type.</td>
+		</tr>		
+        <tr>
+			<td>308</td>
+			<td><a href="DocumentFetchLimit">DocumentFetchLimit</a></td>
+			<td>You attempted to fetch more than 1000 transaction documents at a time.</td>
+		</tr>		
+        <tr>
+			<td>309</td>
+			<td><a href="InvalidAddress">InvalidAddress</a></td>
+			<td>The address you provided was incomplete.</td>
+		</tr>		
+        <tr>
+			<td>310</td>
+			<td><a href="AddressLocationNotFound">AddressLocationNotFound</a></td>
+			<td>The specified location code does not exist.</td>
+		</tr>		
+        <tr>
+			<td>311</td>
+			<td><a href="MissingLine">MissingLine</a></td>
+			<td>You attempted to create a tax transaction with no lines.</td>
+		</tr>		
+        <tr>
+			<td>312</td>
+			<td><a href="InvalidAddressTextCase">InvalidAddressTextCase</a></td>
+			<td>You provided an invalid parameter to the address resolution endpoint.</td>
+		</tr>		
+        <tr>
+			<td>313</td>
+			<td><a href="DocumentNotCommitted">DocumentNotCommitted</a></td>
+			<td>You attempted to lock a transaction (aka Document) that was not committed.</td>
+		</tr>		
+        <tr>
+			<td>315</td>
+			<td><a href="InvalidDocumentTypesToFetch">InvalidDocumentTypesToFetch</a></td>
+			<td>Temporary documents cannot be fetched from the API.</td>
+		</tr>		
+        <tr>
+			<td>316</td>
+			<td><a href="TimeoutRequested">TimeoutRequested</a></td>
+			<td>You requested a timeout error from the AvaTax API.</td>
+		</tr>		
+        <tr>
+			<td>317</td>
+			<td><a href="InvalidPostalCode">InvalidPostalCode</a></td>
+			<td>The postal code you provided could not be found.</td>
+		</tr>		
+        <tr>
+			<td>318</td>
+			<td><a href="InvalidSubscriptionDescription">InvalidSubscriptionDescription</a></td>
+			<td>Subscription description cannot be None when subscriptionTypeId is not provided</td>
+		</tr>		
+        <tr>
+			<td>319</td>
+			<td><a href="InvalidSubscriptionTypeId">InvalidSubscriptionTypeId</a></td>
+			<td>Invalid subscription TypeId.</td>
+		</tr>		
+        <tr>
+			<td>401</td>
+			<td><a href="CannotChangeFilingStatus">CannotChangeFilingStatus</a></td>
+			<td>The requested filing status change is invalid.</td>
+		</tr>		
+        <tr>
+			<td>500</td>
+			<td><a href="ServerUnreachable">ServerUnreachable</a></td>
+			<td>One of the servers in the Avalara AvaTax API cluster is unreachable and your API call could not be completed.</td>
+		</tr>		
+        <tr>
+			<td>600</td>
+			<td><a href="SubscriptionRequired">SubscriptionRequired</a></td>
+			<td>This Avalara API call requires an active subscription to a specific service.</td>
+		</tr>		
+        <tr>
+			<td>601</td>
+			<td><a href="AccountExists">AccountExists</a></td>
+			<td>An account tied to this email address already exists.</td>
+		</tr>		
+        <tr>
+			<td>602</td>
+			<td><a href="InvitationOnly">InvitationOnly</a></td>
+			<td>You attempted to contact an API that is available by invitation only.</td>
+		</tr>		
+        <tr>
+			<td>606</td>
+			<td><a href="FreeTrialNotAvailable">FreeTrialNotAvailable</a></td>
+			<td>The Free Trial API is not available on this server.</td>
+		</tr>		
+        <tr>
+			<td>607</td>
+			<td><a href="AccountExistsDifferentEmail">AccountExistsDifferentEmail</a></td>
+			<td>An account with this username already exists.</td>
+		</tr>		
+        <tr>
+			<td>608</td>
+			<td><a href="AvalaraIdentityApiError">AvalaraIdentityApiError</a></td>
+			<td>A server configuration problem has been detected.</td>
+		</tr>		
+        <tr>
+			<td>609</td>
+			<td><a href="InvalidIPAddress">InvalidIPAddress</a></td>
+			<td>Your IP address has not been approved.</td>
+		</tr>		
+        <tr>
+			<td>610</td>
+			<td><a href="OfferCodeAlreadyApplied">OfferCodeAlreadyApplied</a></td>
+			<td>The offer code has already been applied to this account.</td>
+		</tr>		
+        <tr>
+			<td>611</td>
+			<td><a href="AccountAlreadyExists">AccountAlreadyExists</a></td>
+			<td>This combination of the account name and company address already exists.</td>
+		</tr>		
+        <tr>
+			<td>701</td>
+			<td><a href="RefundTypeAndPercentageMismatch">RefundTypeAndPercentageMismatch</a></td>
+			<td>You specified a `Full` refund, but the percentage parameter was not null.</td>
+		</tr>		
+        <tr>
+			<td>702</td>
+			<td><a href="InvalidDocumentTypeForRefund">InvalidDocumentTypeForRefund</a></td>
+			<td>The document you attempted to refund was not a SalesInvoice.</td>
+		</tr>		
+        <tr>
+			<td>703</td>
+			<td><a href="RefundTypeAndLineMismatch">RefundTypeAndLineMismatch</a></td>
+			<td>You specified a `Full` refund, but the lines parameter was not null.</td>
+		</tr>		
+        <tr>
+			<td>704</td>
+			<td><a href="RefundLinesRequired">RefundLinesRequired</a></td>
+			<td>Your RefundTransaction API call was missing necessary information.</td>
+		</tr>		
+        <tr>
+			<td>705</td>
+			<td><a href="InvalidRefundType">InvalidRefundType</a></td>
+			<td>You specified an invalid refund type.</td>
+		</tr>		
+        <tr>
+			<td>706</td>
+			<td><a href="RefundPercentageForTaxOnly">RefundPercentageForTaxOnly</a></td>
+			<td>You attempted to create a TaxOnly refund for a partial percentage.</td>
+		</tr>		
+        <tr>
+			<td>707</td>
+			<td><a href="LineNoOutOfRange">LineNoOutOfRange</a></td>
+			<td>You attempted to refund a line item that did not exist in the original transaction.</td>
+		</tr>		
+        <tr>
+			<td>708</td>
+			<td><a href="RefundPercentageOutOfRange">RefundPercentageOutOfRange</a></td>
+			<td>You submitted a refund percentage lower than 0% or higher than 100%</td>
+		</tr>		
+        <tr>
+			<td>709</td>
+			<td><a href="RefundPercentageMissing">RefundPercentageMissing</a></td>
+			<td>You specified a refund type of percentage, but did not specify the percentage.</td>
+		</tr>		
+        <tr>
+			<td>800</td>
+			<td><a href="MustUseCreateTransaction">MustUseCreateTransaction</a></td>
+			<td>The free tax rates API applies only to transactions within the United States.</td>
+		</tr>		
+        <tr>
+			<td>801</td>
+			<td><a href="MustAcceptTermsAndConditions">MustAcceptTermsAndConditions</a></td>
+			<td>You must read and accept Avalara's terms and conditions to get a FreeTrial Account</td>
+		</tr>		
+        <tr>
+			<td>900</td>
+			<td><a href="FilingCalendarCannotBeDeleted">FilingCalendarCannotBeDeleted</a></td>
+			<td>A filing calendar cannot be deleted once in use.</td>
+		</tr>		
+        <tr>
+			<td>901</td>
+			<td><a href="InvalidEffectiveDate">InvalidEffectiveDate</a></td>
+			<td>The effective date for your filing request is not valid.</td>
+		</tr>		
+        <tr>
+			<td>902</td>
+			<td><a href="NonOutletForm">NonOutletForm</a></td>
+			<td>This form does not permit Outlet or Location-based reporting.</td>
+		</tr>		
+        <tr>
+			<td>903</td>
+			<td><a href="OverlappingFilingCalendar">OverlappingFilingCalendar</a></td>
+			<td>This filing calendar overlaps with another calendar.</td>
+		</tr>		
+        <tr>
+			<td>904</td>
+			<td><a href="FilingCalendarCannotBeEdited">FilingCalendarCannotBeEdited</a></td>
+			<td>The filing calander cannot be edited.</td>
+		</tr>		
+        <tr>
+			<td>1100</td>
+			<td><a href="CannotModifyLockedTransaction">CannotModifyLockedTransaction</a></td>
+			<td>A locked transaction may not be modified.</td>
+		</tr>		
+        <tr>
+			<td>1101</td>
+			<td><a href="LineAlreadyExists">LineAlreadyExists</a></td>
+			<td>You attempted to add a line with a conflicting line number.</td>
+		</tr>		
+        <tr>
+			<td>1102</td>
+			<td><a href="LineDoesNotExist">LineDoesNotExist</a></td>
+			<td>You attempted to remove a line that did not exist.</td>
+		</tr>		
+        <tr>
+			<td>1103</td>
+			<td><a href="LinesNotSpecified">LinesNotSpecified</a></td>
+			<td>You attempted to create a transaction with zero lines.</td>
+		</tr>		
+        <tr>
+			<td>1104</td>
+			<td><a href="LineDetailsDoesNotExist">LineDetailsDoesNotExist</a></td>
+			<td>The specified line detail ID cannot be found.</td>
+		</tr>		
+        <tr>
+			<td>1105</td>
+			<td><a href="CannotCreateTransactionWithDeletedDataSource">CannotCreateTransactionWithDeletedDataSource</a></td>
+			<td>The selected DataSource has been deleted and cannot be used for creating a transaction.</td>
+		</tr>		
+        <tr>
+			<td>1200</td>
+			<td><a href="InvalidBusinessType">InvalidBusinessType</a></td>
+			<td>The business type field on the ECMS record is invalid.</td>
+		</tr>		
+        <tr>
+			<td>1201</td>
+			<td><a href="CannotModifyExemptCert">CannotModifyExemptCert</a></td>
+			<td>Exemption certificates cannot be modified using the Company API.</td>
+		</tr>		
+        <tr>
+			<td>1203</td>
+			<td><a href="CertificatesError">CertificatesError</a></td>
+			<td>The certificate API has returned an error.</td>
+		</tr>		
+        <tr>
+			<td>1204</td>
+			<td><a href="MissingRequiredFields">MissingRequiredFields</a></td>
+			<td>A certificate must have either a filename, a PDF file attachment, or one JPG image for each page in the certificate.</td>
+		</tr>		
+        <tr>
+			<td>1205</td>
+			<td><a href="CertificatesNotSetup">CertificatesNotSetup</a></td>
+			<td>The company has not been configured with this certificate.</td>
+		</tr>		
+        <tr>
+			<td>1206</td>
+			<td><a href="AddRelationshipsError">AddRelationshipsError</a></td>
+			<td>The certificate system could not link the two objects as requested.</td>
+		</tr>		
+        <tr>
+			<td>1208</td>
+			<td><a href="ConflictingExposureZone">ConflictingExposureZone</a></td>
+			<td>Exposure zones must have unique names.</td>
+		</tr>		
+        <tr>
+			<td>1209</td>
+			<td><a href="MissingFieldToCreateExposureZone">MissingFieldToCreateExposureZone</a></td>
+			<td>Avalara's Certificates service requires extra information to create an exposure zone.</td>
+		</tr>		
+        <tr>
+			<td>1210</td>
+			<td><a href="MissingExemptReason">MissingExemptReason</a></td>
+			<td>A certificate must have an exemption reason.</td>
+		</tr>		
+        <tr>
+			<td>1211</td>
+			<td><a href="InvalidExemptReason">InvalidExemptReason</a></td>
+			<td>The exemption reason you specified cannot be found.</td>
+		</tr>		
+        <tr>
+			<td>1212</td>
+			<td><a href="InvalidExemptionOperation">InvalidExemptionOperation</a></td>
+			<td>Filtering operation is not supported</td>
+		</tr>		
+        <tr>
+			<td>1213</td>
+			<td><a href="ConflictingFields">ConflictingFields</a></td>
+			<td>A certificate must have be stored in only one format: filename, PDF, or images.</td>
+		</tr>		
+        <tr>
+			<td>1214</td>
+			<td><a href="InvalidPdfOrImageFile">InvalidPdfOrImageFile</a></td>
+			<td>You provided a value in the PDF or image file fields, but the value was empty.</td>
+		</tr>		
+        <tr>
+			<td>1215</td>
+			<td><a href="InvalidCoverLetterTitle">InvalidCoverLetterTitle</a></td>
+			<td>THe cover letter you specified for this CertExpress invitation was not found.</td>
+		</tr>		
+        <tr>
+			<td>1216</td>
+			<td><a href="AccountNotProvisioned">AccountNotProvisioned</a></td>
+			<td>The automatic provisioning process for exemption certificates failed.</td>
+		</tr>		
+        <tr>
+			<td>1217</td>
+			<td><a href="InvalidRequestContentType">InvalidRequestContentType</a></td>
+			<td>Invalid request content type in the request.</td>
+		</tr>		
+        <tr>
+			<td>1218</td>
+			<td><a href="ExemptionPaginationLimits">ExemptionPaginationLimits</a></td>
+			<td>AvaTax exemption data does not support this type of pagination.</td>
+		</tr>		
+        <tr>
+			<td>1219</td>
+			<td><a href="ExemptionSortLimits">ExemptionSortLimits</a></td>
+			<td>AvaTax exemption data does not support sorting by more than one field.</td>
+		</tr>		
+        <tr>
+			<td>1220</td>
+			<td><a href="CustomerCantBeBothShipToAndBillTo">CustomerCantBeBothShipToAndBillTo</a></td>
+			<td>An AvaTax customer record can be either a BillTo customer address or a ShipTo customer address, but not both.</td>
+		</tr>		
+        <tr>
+			<td>1221</td>
+			<td><a href="BillToCustomerExpected">BillToCustomerExpected</a></td>
+			<td>The API call you made requires a BillTo customer as a parameter, but you used a ShipTo customer.</td>
+		</tr>		
+        <tr>
+			<td>1222</td>
+			<td><a href="ShipToCustomerExpected">ShipToCustomerExpected</a></td>
+			<td>The API call you made expects a ShipTo customer record, but you supplied a BillTo customer instead.</td>
+		</tr>		
+        <tr>
+			<td>1223</td>
+			<td><a href="EcmsSstCertsRequired">EcmsSstCertsRequired</a></td>
+			<td>The `EcmsSstCertsRequired` field should be set to true.</td>
+		</tr>		
+        <tr>
+			<td>1300</td>
+			<td><a href="TransactionNotCancelled">TransactionNotCancelled</a></td>
+			<td>A multi-company transaction was partially created.</td>
+		</tr>		
+        <tr>
+			<td>1301</td>
+			<td><a href="TooManyTransactions">TooManyTransactions</a></td>
+			<td>The MultiDocument transaction you attempted to create is too complex.</td>
+		</tr>		
+        <tr>
+			<td>1302</td>
+			<td><a href="OnlyTaxDateOverrideIsAllowed">OnlyTaxDateOverrideIsAllowed</a></td>
+			<td>Multi-company transactions may only override tax dates.</td>
+		</tr>		
+        <tr>
+			<td>1303</td>
+			<td><a href="TransactionAlreadyExists">TransactionAlreadyExists</a></td>
+			<td>This transaction already exists and cannot be overwritten.</td>
+		</tr>		
+        <tr>
+			<td>1305</td>
+			<td><a href="DateMismatch">DateMismatch</a></td>
+			<td>The values in your verify call did not match the transaction.</td>
+		</tr>		
+        <tr>
+			<td>1306</td>
+			<td><a href="InvalidDocumentStatusForVerify">InvalidDocumentStatusForVerify</a></td>
+			<td>Documents can only be verified from the `Saved` or `Posted` statuses.</td>
+		</tr>		
+        <tr>
+			<td>1307</td>
+			<td><a href="TotalAmountMismatch">TotalAmountMismatch</a></td>
+			<td>The values in your verify call did not match the transaction.</td>
+		</tr>		
+        <tr>
+			<td>1308</td>
+			<td><a href="TotalTaxMismatch">TotalTaxMismatch</a></td>
+			<td>The values in your verify call did not match the transaction.</td>
+		</tr>		
+        <tr>
+			<td>1310</td>
+			<td><a href="InvalidDocumentType">InvalidDocumentType</a></td>
+			<td>A document could not be found with the specified type.</td>
+		</tr>		
+        <tr>
+			<td>1312</td>
+			<td><a href="MultiDocumentPartiallyLocked">MultiDocumentPartiallyLocked</a></td>
+			<td>A MultiDocument was partially locked for reporting.</td>
+		</tr>		
+        <tr>
+			<td>1313</td>
+			<td><a href="TransactionIsCommitted">TransactionIsCommitted</a></td>
+			<td>This API can only modify transactions that are not yet committed.</td>
+		</tr>		
+        <tr>
+			<td>1314</td>
+			<td><a href="InvalidDocumentStatus">InvalidDocumentStatus</a></td>
+			<td>The document status is incorrect for this operation.</td>
+		</tr>		
+        <tr>
+			<td>1400</td>
+			<td><a href="CommsConfigClientIdMissing">CommsConfigClientIdMissing</a></td>
+			<td>You attempted to call a Communications tax API, but your client ID value is missing.</td>
+		</tr>		
+        <tr>
+			<td>1401</td>
+			<td><a href="CommsConfigClientIdBadValue">CommsConfigClientIdBadValue</a></td>
+			<td>The Avalara Communications Client ID value associated with your account is invalid.</td>
+		</tr>		
+        <tr>
+			<td>1404</td>
+			<td><a href="AccountInNewStatusException">AccountInNewStatusException</a></td>
+			<td>You may not obtain a license key until you have accepted Avalara's terms and conditions.</td>
+		</tr>		
+        <tr>
+			<td>1405</td>
+			<td><a href="WorksheetException">WorksheetException</a></td>
+			<td>An error occurred in the Liability Worksheet calculation service.</td>
+		</tr>		
+        <tr>
+			<td>1406</td>
+			<td><a href="InvalidAccountOverride">InvalidAccountOverride</a></td>
+			<td>Invalid AccountOverride format.</td>
+		</tr>		
+        <tr>
+			<td>1407</td>
+			<td><a href="AccountOverrideNotAuthorized">AccountOverrideNotAuthorized</a></td>
+			<td>The current role you are in does not permit account override function</td>
+		</tr>		
+        <tr>
+			<td>1408</td>
+			<td><a href="FieldNotQueryableError">FieldNotQueryableError</a></td>
+			<td>A field in the query is not a queryable.</td>
+		</tr>		
+        <tr>
+			<td>1409</td>
+			<td><a href="UsernameRequired">UsernameRequired</a></td>
+			<td>A username is required</td>
+		</tr>		
+        <tr>
+			<td>1410</td>
+			<td><a href="InvalidAuditMessage">InvalidAuditMessage</a></td>
+			<td>Please review your audit message and ensure no special characters are used.</td>
+		</tr>		
+        <tr>
+			<td>1411</td>
+			<td><a href="FieldNotOrderableError">FieldNotOrderableError</a></td>
+			<td>The field you have tried to sort cannot be organized in the desired manner.</td>
+		</tr>		
+        <tr>
+			<td>1500</td>
+			<td><a href="CannotDeleteParentBeforeChildNexus">CannotDeleteParentBeforeChildNexus</a></td>
+			<td>The nexus cannot be deleted due to child nexus tied to it.</td>
+		</tr>		
+        <tr>
+			<td>1501</td>
+			<td><a href="NexusChildDateMismatch">NexusChildDateMismatch</a></td>
+			<td>Nexus out of date range with its children.</td>
+		</tr>		
+        <tr>
+			<td>1502</td>
+			<td><a href="RemoteValidationError">RemoteValidationError</a></td>
+			<td>The AvaTax API encountered an internal error and could not continue.</td>
+		</tr>		
+        <tr>
+			<td>1503</td>
+			<td><a href="CannotModifySstNexus">CannotModifySstNexus</a></td>
+			<td>SST nexuses cannot be modified by user.</td>
+		</tr>		
+        <tr>
+			<td>1602</td>
+			<td><a href="AdvancedRuleRequestRuleError">AdvancedRuleRequestRuleError</a></td>
+			<td>Advanced rule failed to execute.</td>
+		</tr>		
+        <tr>
+			<td>1603</td>
+			<td><a href="AdvancedRuleResponseRuleError">AdvancedRuleResponseRuleError</a></td>
+			<td>Failed to execute the advanced rule script.</td>
+		</tr>		
+        <tr>
+			<td>1605</td>
+			<td><a href="AdvancedRuleError">AdvancedRuleError</a></td>
+			<td>An error occured when using or applying Advanced Tax Rules.</td>
+		</tr>		
+        <tr>
+			<td>1701</td>
+			<td><a href="TaxRuleRequiresNexus">TaxRuleRequiresNexus</a></td>
+			<td>Nexus is not declared in this region, therefore no tax rule can be created.</td>
+		</tr>		
+        <tr>
+			<td>1702</td>
+			<td><a href="UPCCodeNotUnique">UPCCodeNotUnique</a></td>
+			<td>A single UPC code can be defined only once for each company.</td>
+		</tr>		
+        <tr>
+			<td>1704</td>
+			<td><a href="TaxCodeAssociatedWithItemCodeNotFound">TaxCodeAssociatedWithItemCodeNotFound</a></td>
+			<td>The tax code in the request could not be found.</td>
+		</tr>		
+        <tr>
+			<td>1705</td>
+			<td><a href="DuplicateSystemForItem">DuplicateSystemForItem</a></td>
+			<td>An item in this request has multiple entries for a given system code.</td>
+		</tr>		
+        <tr>
+			<td>1706</td>
+			<td><a href="CannotDismissGlobalNotification">CannotDismissGlobalNotification</a></td>
+			<td>This notification cannot be dismissed because it is a global notification.</td>
+		</tr>		
+        <tr>
+			<td>1713</td>
+			<td><a href="CannotUpdateAccountTypeId">CannotUpdateAccountTypeId</a></td>
+			<td>Cannot update AccountTypeId.</td>
+		</tr>		
+        <tr>
+			<td>1800</td>
+			<td><a href="UnsupportedFileFormat">UnsupportedFileFormat</a></td>
+			<td>The requested output file format is invalid.</td>
+		</tr>		
+        <tr>
+			<td>1801</td>
+			<td><a href="UnsupportedOutputFileType">UnsupportedOutputFileType</a></td>
+			<td>You must specify either CSV or JSON file formats.</td>
+		</tr>		
+        <tr>
+			<td>1900</td>
+			<td><a href="TaxProfileNotProvided">TaxProfileNotProvided</a></td>
+			<td>A tax profile was not included in your request.</td>
+		</tr>		
+        <tr>
+			<td>1901</td>
+			<td><a href="InvalidTaxProfile">InvalidTaxProfile</a></td>
+			<td>The tax profile must be a valid ZIP file.</td>
+		</tr>		
+        <tr>
+			<td>1902</td>
+			<td><a href="CompanyTaxProfileEntryRequired">CompanyTaxProfileEntryRequired</a></td>
+			<td>The import tax profile request is missing a company model and company tax profile.</td>
+		</tr>		
+        <tr>
+			<td>1903</td>
+			<td><a href="ErrorReadingTaxProfileEntry">ErrorReadingTaxProfileEntry</a></td>
+			<td>AvaTax was unable to parse your tax profile entry.</td>
+		</tr>		
+        <tr>
+			<td>2000</td>
+			<td><a href="TraceDataNotAvailable">TraceDataNotAvailable</a></td>
+			<td>The trace data is not available for the date and time selected.</td>
+		</tr>		
+        <tr>
+			<td>2100</td>
+			<td><a href="InvalidParameterUnitMeasurementType">InvalidParameterUnitMeasurementType</a></td>
+			<td>A paremeter in the request has an unexpected unit of measurement type.</td>
+		</tr>		
+        <tr>
+			<td>2101</td>
+			<td><a href="ParameterUnitRequired">ParameterUnitRequired</a></td>
+			<td>A parameter in the request doesn't have a unit of measure.</td>
+		</tr>		
+        <tr>
+			<td>2102</td>
+			<td><a href="InvalidParameterValueDataType">InvalidParameterValueDataType</a></td>
+			<td>A parameter value in the request has an invalid data type.</td>
+		</tr>		
+        <tr>
+			<td>2103</td>
+			<td><a href="InvalidParameterAttributeType">InvalidParameterAttributeType</a></td>
+			<td>A parameter in the request doesn't match the expected attribute type.</td>
+		</tr>		
+        <tr>
+			<td>2104</td>
+			<td><a href="SubscriptionRequiredForParameter">SubscriptionRequiredForParameter</a></td>
+			<td>The account's subscription level doesn't include use of the parameter in your request.</td>
+		</tr>		
+        <tr>
+			<td>2105</td>
+			<td><a href="InvalidAccountType">InvalidAccountType</a></td>
+			<td>Account Type must be 'firm' for this action.</td>
+		</tr>		
+        <tr>
+			<td>2200</td>
+			<td><a href="GenericTaxCodeForItem">GenericTaxCodeForItem</a></td>
+			<td>Company item contains a generic taxcode.</td>
+		</tr>		
+        <tr>
+			<td>2201</td>
+			<td><a href="CannotCertifyCompany">CannotCertifyCompany</a></td>
+			<td>Company cannot be certified.</td>
+		</tr>		
+        <tr>
+			<td>2202</td>
+			<td><a href="NoVoidedDocuments">NoVoidedDocuments</a></td>
+			<td>Company does not have any voided documents.</td>
+		</tr>		
+        <tr>
+			<td>2203</td>
+			<td><a href="InadequateCommittedDocuments">InadequateCommittedDocuments</a></td>
+			<td>Company must have at least two committed documents.</td>
+		</tr>		
+        <tr>
+			<td>2204</td>
+			<td><a href="DocumentCodeIsGuid">DocumentCodeIsGuid</a></td>
+			<td>Company has a document code which is a GUID.</td>
+		</tr>		
+        <tr>
+			<td>2205</td>
+			<td><a href="CustomerVendorCodeIsGuid">CustomerVendorCodeIsGuid</a></td>
+			<td>Company's customer vendor code is a GUID.</td>
+		</tr>		
+        <tr>
+			<td>2206</td>
+			<td><a href="InadequateDocumentLineCount">InadequateDocumentLineCount</a></td>
+			<td>Company has inadequate document line count.</td>
+		</tr>		
+        <tr>
+			<td>2207</td>
+			<td><a href="SameDocumentDescription">SameDocumentDescription</a></td>
+			<td>All documents have same description.</td>
+		</tr>		
+        <tr>
+			<td>2208</td>
+			<td><a href="NoExemptionNoOrCustomerUsageType">NoExemptionNoOrCustomerUsageType</a></td>
+			<td>The exemption number or customer usage type is missing.</td>
+		</tr>		
+        <tr>
+			<td>2209</td>
+			<td><a href="InadequateUniqueAddresses">InadequateUniqueAddresses</a></td>
+			<td>Recent documents do not show at least 2 unique addresses.</td>
+		</tr>		
+        <tr>
+			<td>2210</td>
+			<td><a href="ItemCodesAreAllSame">ItemCodesAreAllSame</a></td>
+			<td>All item codes for the document are the same.</td>
+		</tr>		
+        <tr>
+			<td>2211</td>
+			<td><a href="TaxCodesAreAllSame">TaxCodesAreAllSame</a></td>
+			<td>All tax codes for the documents are the same.</td>
+		</tr>		
+        <tr>
+			<td>2213</td>
+			<td><a href="RepeatedLinesInDocument">RepeatedLinesInDocument</a></td>
+			<td>Company has repeated lines in a document.</td>
+		</tr>		
+        <tr>
+			<td>2214</td>
+			<td><a href="TaxDateOverrideAndNegativeLineAmount">TaxDateOverrideAndNegativeLineAmount</a></td>
+			<td>Company has tax DateOverride and negative LineAmount.</td>
+		</tr>		
+        <tr>
+			<td>2215</td>
+			<td><a href="AllUSDCurrencyCodes">AllUSDCurrencyCodes</a></td>
+			<td>All recent documents have USD currency codes.</td>
+		</tr>		
+        <tr>
+			<td>2218</td>
+			<td><a href="NoDocumentsToTest">NoDocumentsToTest</a></td>
+			<td>This company doesn't have documents.</td>
+		</tr></tbody></table>
+
+
+
+
+
+
+
+
+<br/>
+<hr/>
+<br/>
+<h4>Related Community Discussions</h4>
+<div id="gsfn_list_widget">
+<div id="gsfn_content">Loading...</div>
+</div>
+<script src="https://getsatisfaction.com/avalara/widgets/javascripts/f585970/widgets.js" type="text/javascript"></script><script src="https://getsatisfaction.com/avalara/topics.widget?callback=gsfnTopicsCallback&amp;length=240&amp;limit=5&amp;sort=recently_active&amp;user_defined_code=errors" type="text/javascript"></script>
+<div id="getsat-widget-8157"></div>
+<script src="https://loader.engage.gsfn.us/loader.js" type="text/javascript"></script><script type="text/javascript">// <![CDATA[
+if (typeof GSFN !== "undefined") { GSFN.loadWidget(8157,{"containerId":"getsat-widget-8157"}); }
+// ]]>
+</script>
+
+</main>
+        </section>
+          
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/avatax/errors/index.md"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>

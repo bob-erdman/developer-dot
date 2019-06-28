@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="robots" content="index,follow" /> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvaTax Developer Blog Posts | Avalara Developer</title>
+
+    
+    
+    
+    
+    
+    <meta name="description" content="API solutions for end-to-end tax compliance">
+
+    <link rel="canonical" href="https://developer.avalara.com/blog/">
+
+    
+    <meta property="og:title" content="AvaTax Developer Blog Posts | Avalara Developer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Avalara Developer Network" />
+    <meta property="og:description" content="API solutions for end-to-end tax compliance"/>
+    <meta property="og:image" content="/developer-dot/public/images/default_share.png" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://developer.avalara.com/public/images/default_share.png "/>
+    <meta name="twitter:title" content="AvaTax Developer Blog Posts">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@avalara" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/developer-dot/public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/developer-dot/public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/developer-dot/public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/developer-dot/public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/developer-dot/public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/developer-dot/public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/developer-dot/public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/developer-dot/public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/developer-dot/public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/developer-dot/public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/developer-dot/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/developer-dot/public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/developer-dot/public/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/developer-dot/public/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/developer-dot/public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
+    <link rel="stylesheet" href="/developer-dot/public/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adobe Dynamic Tab Manager Tag Manager -->
+    <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
+    <!-- End Adobe Dynamic Tab Manager Tag Manager -->
+</head>
+ 
+
+<body id="top" data-product=blog>
+    <header>
+        <!-- style ref: https://www.avalara.com/us/en/blog/2019/01/avatax-19-1-patch-notes.html -->
+        <nav class="navbar navbar-static" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+            <div class="pageTitle" style="float: left">
+                <a href="/developer-dot/">
+                    <img src="/developer-dot/public/images/Avalara_logo.svg" alt="Avalara Developer Network">
+                    <span>Developer</span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span>Menu</span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav blogs " style="padding-top: 8px">
+                    <li class="apis visible-xs-block"><a href="/developer-dot/avalara-apis"><span class="text-uppercase">API</span>s</a></li>
+                    <li class="visible-xs-block"><a href="/developer-dot/avatax/dev-guide/"><span class="text-uppercase">AvaTax Developer Guide</span></a></li>
+                    <li class="apis dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">API</span>s <i class="caret"></i></a>
+                        <div class="dropdown-menu dropdown-menu-large" style="min-width: 700px; padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-12"><a href="/developer-dot/avalara-apis">APIs overview</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Tax calculation</h2>
+                                    
+                                        <h4>Avalara AvaTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/avatax">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/avatax/dev-guide">Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/avatax/rest/v2">API reference</a></li>
+                                            
+                                            <br/>
+                                            <li><a href="/developer-dot/avatax/use-cases">Use Cases</a></li>
+                                            <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Communications</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/communications">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_rest_v2">REST v2 Developer Guide</a></li>
+                                            
+                                                <li><a href="/developer-dot/communications/dev-guide_geo_soap">AFC Geo Soap Developer Guide</a></li>
+                                            
+                                        </ul>
+                                     
+                                    
+                                        <h4>Avalara Excise</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/excise">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/excise/5_18_0">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    
+                                        <h4>Avalara MyLodgeTax</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href=/mylodge>Overview</a></li>
+                                            
+                                                <li><a href=/api-reference/myLodgeAPI/overview-onboarding/>API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    	
+                                        <h4>Avalara Item Classification</h4>	
+                                        <ul class="pipe">	
+                                            	
+                                                <li><a href=/item-classification>Overview</a></li>	
+                                            	
+                                                <li><a href=/api-reference/item-classification/v2/>API reference</a></li>	
+                                            	
+                                        </ul>	
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Compliance document management</h2>
+                                    
+                                        <h4>Avalara CertCapture</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/certcapture">Overview</a></li>
+                                            
+                                                <li><a href="http://docs.certcapture6xrest.apiary.io/">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                    <h2>Returns &amp; filing</h2>
+                                     
+                                    
+                                        <h4>Avalara TrustFile</h4>
+                                        <ul class="pipe">
+                                            
+                                                <li><a href="/developer-dot/trustfile">Overview</a></li>
+                                            
+                                                <li><a href="/developer-dot/api-reference/trustfile/api">API reference</a></li>
+                                            
+                                        </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sdk dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">SDK</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li ><a href="/developer-dot/avatax/signup">Get Started with AvaTax</a></li>
+                            <br/>
+                            <li><a href="/developer-dot/sdk/">The AvaTax SDK</a></li>
+                            <li><a href="/developer-dot/sdk/soap">SOAP SDK</a></li>
+                            <br/>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
+                            <li><a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://pypi.python.org/pypi/Avalara">Install Python SDK via PyPI</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                        </ul>
+                    </li>
+                    <li class="tests dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/tests/communications-test">Avalara for Communications Test Cases</a></li>
+                            <li><a href="/developer-dot/tests/testing-your-integration/">Avalara Test Cases</a></li>
+
+                        </ul>
+                    </li>            
+                    <li class="certification dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Become Certified</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe" style="min-width: 230px">
+                            <li><a href="/developer-dot/certification/">Overview</a></li>
+                            <li><a href="/developer-dot/certification/excise/">Avalara Excise</a></li>
+                            <li><a href="/developer-dot/certification/avatax/">Certification Badges</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources dropdown dropdown-large hidden-xs">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-large noPipe">
+                            <li><a href="/developer-dot/resources/conferences">Avalara CRUSH Conference</a></li>
+                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html">API Patch Notes</a></li>
+                            <li><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+                            <li><a href="/developer-dot/resources/support">Developer Support Options</a></li>
+                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                            <li><a href="https://www.avalara.com/us/en/learn/webinars.html#developerwebinars">Webinars</a></li>
+                            <li><a href="https://offers.avalara.com/monthlydevelopernewsletter/">Monthly Developer Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/conferences"><span class="text-uppercase">Avalara CRUSH Conference</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/patch-updates.html"><span class="text-uppercase">API Patch Notes</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://www.avalara.com/us/en/blog/category/developer.html"><span class="text-uppercase">Developer Blog</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/developer-dot/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Webinars</span></a></li>
+                    <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
+                    
+                </ul>
+                
+                <div style="float: right;">
+                    
+                        <a href="/developer-dot/avatax/avatax-demo/" class="btn btn-signup btn-demo" style="margin-top: 8px">Demo API</a>
+                    
+                    <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-signup" style="margin-top: 8px">Free Trial</a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid ">
+        
+        <section class="row padding-sides">
+            <main class="col-md-12">
+  
+    <div class="breadcrumbs blog">
+    <div class="col-md-12">
+        <ul class="pipe">
+            <li class="text-uppercase">Resources</li>
+            <li class="text-uppercase"><a href="https://www.avalara.com/us/en/blog/category/developer.html">Developer Blog</a></li>
+            
+        </ul>
+    </div>
+</div>
+<br />
+
+    <div class="row padding-sides half">
+      <nav class="col-md-3">
+        <ul class = "api-ref-side-nav nav nav-pills nav-stacked hidden-xs hidden-sm">
+    <h4>Categories</h4>
+    <h5>
+        <li class="active" >
+            <a class="capitalize" href="/developer-dot/blog/">All</a>
+        </li>
+        
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/announcements/">announcements</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/avatax/">avatax</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/batches/">batches</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/c#/">c#</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/certcapture/">certcapture</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/community/">community</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/conference/">conference</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                     <a class="text-uppercase" href="/developer-dot/blog/crush/">crush</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/exemptions/">exemptions</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/free-tax-rates/">free tax rates</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/how-to/">how to</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/landed-cost/">landed cost</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/patch-notes/">patch notes</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                     <a class="text-uppercase" href="/developer-dot/blog/sdk/">sdk</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/shipping/">shipping</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/tax-content/">tax content</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/tax-rules/">tax rules</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/troubleshooting/">troubleshooting</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                     <a class="text-uppercase" href="/developer-dot/blog/ui/">ui</a> 
+                
+                </li>
+                    
+         
+             
+                 
+                
+                <li >
+                 
+                
+                    <a class="capitalize" href="/developer-dot/blog/web/">web</a> 
+                
+                </li>
+                    
+        
+
+        <li class="active" >
+            <a class="capitalize" href="/developer-dot/blog/older">Older</a>
+        </li>
+    </h5>
+</ul>
+<div class="sm-section-nav dropdown visible-xs-block visible-sm-block">
+    <button id="use-case-nav" type="button" data-toggle="dropdown">Categories</button>
+    <ul class="dropdown-menu" aria-labelledby="use-case-nav">
+        <li class="active" ><a class="capitalize" href="/developer-dot/blog/">All</a></li>
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/older/">older</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/avatax/">avatax</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/how-to/">how to</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/announcements/">announcements</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/landed-cost/">landed cost</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/patch-notes/">patch notes</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/tax-content/">tax content</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/certcapture/">certcapture</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="text-uppercase" href="/developer-dot/blog/sdk/">sdk</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/free-tax-rates/">free tax rates</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/troubleshooting/">troubleshooting</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/exemptions/">exemptions</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/community/">community</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/crush/">crush</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/shipping/">shipping</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/conference/">conference</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/c#/">c#</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/batches/">batches</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/tax-rules/">tax rules</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="text-uppercase" href="/developer-dot/blog/ui/">ui</a>
+                    
+
+                </li>
+            
+        
+            
+                
+                
+                <li  >
+                    
+                    
+                        <a class="capitalize" href="/developer-dot/blog/web/">web</a>
+                    
+
+                </li>
+            
+        
+    </ul>
+</div>
+
+      </nav>
+      <main class="col-md-9 small-no-padding">
+        <h4>
+          AvaTax Developer Blog Posts
+          
+        </h4>
+        <div class="container">
+    <div class="row">
+        
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2019/01/15/AvaTax-19-1-patch-notes/">AvaTax API 19.1 Patch Notes</a></h4>
+                <h5></h5>
+                <p class="byline">By Qijing Yu | January 15, 2019</p>
+                
+                <p class="blog-excerpt">This article is about the January 2019 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2019-01-21 Production https://rest.avatax.com 2019-01-30 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. AVATAXCODE as a classification system In addition to globally recognized classification systems, as TARIC, HTS, etc., Avalara maintains our own classification system, called...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2019/01/15/AvaTax-19-1-patch-notes/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/12/13/AvaTax-18-12-patch-notes/">AvaTax API 18.12 Patch Notes</a></h4>
+                <h5></h5>
+                <p class="byline">By Qijing Yu | December 13, 2018</p>
+                
+                <p class="blog-excerpt">This article is about the December 2018 monthly update to the AvaTax API. Environment URL Release Date Sandbox https://sandbox-rest.avatax.com 2018-12-26 Production https://rest.avatax.com 2019-01-07 Sandbox Testing Window The AvaTax release schedule includes a preview period where the latest software is available for integration testing in the AvaTax Sandbox Environment two weeks before launching to production. If your engineering team would like a sandbox account for integration testing purposes, please contact your account manager or open a support ticket. Advanced Items Setup In addition to existing basic configurations for Items, we are now allowing more advanced settings, including: Items can be tagged...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/12/13/AvaTax-18-12-patch-notes/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/12/07/refundTransaction-vs-CreateTransaction/">RefundTransaction vs ReturnInvoice</a></h4>
+                <h5></h5>
+                <p class="byline">By Genevieve Conty | December 07, 2018</p>
+                
+                <p class="blog-excerpt">When you find you need to refund a transaction, you have two options to create your return invoice: Use the RefundTransaction API endpoint Use the CreateTransaction API endpoint with `type = ReturnInvoice` What’s the difference? The RefundTransaction endpoint is a shortcut for creating return invoices that requires fewer inputs and user information. On the other hand, the CreateTransaction endpoint is useful in situations where refunds are especially complex, like when you want to refund partial quantities or partial lines. When do you use Refund Transaction Endpoint? For most refunds, the RefundTransaction endpoint can do everything you need. The endpoint sets...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/12/07/refundTransaction-vs-CreateTransaction/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/11/26/general-delivery-avatax/">General Delivery in AvaTax</a></h4>
+                <h5></h5>
+                <p class="byline">By Wayne Myer | November 26, 2018</p>
+                
+                <p class="blog-excerpt">What is General Delivery? General Delivery is a United States Postal System means to temporarily route mail for customers who lack a permanent location. Examples of this might be: • customers who want PO Box service when there are no boxes available • touring cyclists who need parts and supplies delivered along their route • some retailers may not ship to a PO Box, but will ship to General Delivery There are other applications and USPS use cases for General Delivery. You can read more about those uses at the USPS site. When using General Delivery, the USPS delivers mail...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/11/26/general-delivery-avatax/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/11/15/using-include-with-createTransaction/">Using $include with CreateTransaction</a></h4>
+                <h5></h5>
+                <p class="byline">By Genevieve Conty | November 15, 2018</p>
+                
+                <p class="blog-excerpt">The CreateTransaction endpoint is one of our most used endpoints, so we’ve baked in a certain flexibility to allow our users to ensure they get the exact information they need. How did we do this? Our team built the $include parameter to help you pinpoint data you’ll use in your calculations. Now the question is: how do you actually make use of this parameter? First, let’s start with an example of an unedited response from the CreateTransaction endpoint: Click here to view a CreateTransaction response { "id": 6783815606, "code": "ec52444f-1eda-4df4-b6ff-279efe984160", "companyId": 474615, "date": "2018-10-23", "status": "Committed", "type": "SalesInvoice", "batchCode": "",...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/11/15/using-include-with-createTransaction/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/11/06/tax-rate-by-line/">Tax Rates for Lines and Documents</a></h4>
+                <h5></h5>
+                <p class="byline">By Ted Spence | November 06, 2018</p>
+                
+                <p class="blog-excerpt">The Avalara engineering team built AvaTax so it can solve tax problems for you and make your life easier. We solve compliance problems of all shapes and sizes; and our software must be both accurate and usable. So what happens when accuracy and usability come into conflict? Let’s talk about tax rates. Documents and Lines When you visit your local grocery store or market, you receive a receipt that lists all the items you purchase, your total, and the amount of tax charged. You can verify the total sums up correctly, but you’ll notice something interesting. Most grocery receipts display...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/11/06/tax-rate-by-line/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/10/25/better-ui-components/">Custom HTML Tags</a></h4>
+                <h5></h5>
+                <p class="byline">By Jordan Brennan | October 25, 2018</p>
+                
+                <p class="blog-excerpt">Custom HTML Tags How to design better UI components and avoid over-engineering tl;dr: it’s a new approach and it’s NOT another js thing vying for market share. Yay! HTML now and forever I like writing code. I’ve written in Java, PHP, C#, perl shutters, and JavaScript. As much as I love js, my favorite is probably HTML because of the way its declarative nature allows me to easily express what I’m envisioning in my mind and, with one click of the refresh button, I get to immediately see my creation on screen. It’s design and engineering all in one motion...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/10/25/better-ui-components/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+        <div class="col-md-5">
+            <div class="blog-preview">
+                <div class="gradient"></div>
+                <h4><a href="/developer-dot/blog/2018/10/15/why-sales-tax-calculation-ecommerce-shopping-cart/">Why Sales Tax Calculation Is Crucial For Your Ecommerce Shopping Cart</a></h4>
+                <h5></h5>
+                <p class="byline">By Wayne Myer | October 15, 2018</p>
+                
+                <p class="blog-excerpt">Ecommerce rollouts can be complicated, with many moving parts. With all the demands businesses place on eCommerce systems, it can be easy to treat sales tax calculation as an afterthought. That’s a mistake. Sales tax calculation is a key component of any eCommerce site. Paying attention to putting the right sales tax solution in place upfront will save developers and their organizations a lot of headaches later. The fact is, sales tax is complex and it’s not getting any simpler anytime soon. For any given tax jurisdiction, there are a dizzying array of sales-tax rules and rates — and they...</p>
+                <div class="readMore">
+                    <a href="/developer-dot/blog/2018/10/15/why-sales-tax-calculation-ecommerce-shopping-cart/" class="btn btn-blog">Read More</a>
+                </div>
+            </div>
+       </div>        
+    
+    </div>
+</div>
+
+<div>
+    <div>
+    <!-- Begin MailChimp Signup Form -->
+<link href="/developer-dot//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+
+    <div align="right"><iframe src="https://madmimi.com/signups/05295087ca434605bc702c79dc713e29/iframe" scrolling="no" frameborder="0" height="294" style="max-width: 400px; width: 100%;"></iframe></div>
+    <div align="right"><h2>Subscribe via RSS! <a href="http://feeds.feedburner.com/AvalaraDeveloperBlog"><img src="/developer-dot/public/images/feed-icon-28x28.png"></a></h2></div> 
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+</div>
+
+</div>
+
+<h5>
+    <ul class="blog-pagination">
+        
+        <li class="previous">Newer</li>
+        
+        <li class="page_number">Page 1 of 17</li>
+        
+        <li><a href="/developer-dot/blog/page2/" class="next">Older</a></li>
+        
+    </ul>
+</h5>
+
+      </main>
+    </div>
+  
+
+
+
+
+
+
+</main>
+        </section>
+         
+    </div>
+    
+        <footer>
+            <ul class="global">
+                <li><a href="https://www.avalara.com/"><span class="icon-sphere"></span>Avalara.com</a></li>
+                <li><a href="https://help.avalara.com/"><span class="icon-help"></span>Help Center</a></li>
+            </ul>
+
+
+            <ul class="social">
+                <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+                <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+                <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+                <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
+            </ul>
+            
+            
+
+
+            <ul class="legal">
+                <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
+                <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
+                <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
+            </ul>
+
+            <ul class="github">
+                <li class="social github-icon"><a href="https://github.com/Avalara/developer-dot/edit/master/blog/index.html"><span>GH</span> Edit this page on GitHub</a></li>
+
+            </ul>
+        </footer>
+    
+    <script src="/developer-dot/public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="/developer-dot/public/js/vendor/bootstrap.min.js"></script>
+
+    
+    <script src="/developer-dot/public/js/vendor/aws-sdk-2.5.3.min.js"></script>
+    <script>
+        AWS.config.region = 'us-west-2';
+    </script>
+
+    
+
+    <!-- Adobe Dynamic Tag Manager -->
+    <script type="text/javascript">
+        _satellite.pageBottom();
+    </script>
+    <!-- End Adobe Dynamic Tag Manager -->
+</body>
+
+</html>
